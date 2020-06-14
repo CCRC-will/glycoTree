@@ -1,0 +1,6 @@
+.DS_Store
+log/*.txt
+export/
+data/*.lst
+data/fully_determined/
+
