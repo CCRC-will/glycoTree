@@ -15,11 +15,25 @@ cd ./csv
 pwd
 rm G*.csv
 rm *.lst
-cd ..
+
+cd ./mapped
 pwd
+rm G*.csv
+rm report.csv
+ls
 
 cd ..
 pwd
+ls
 
 cd ..
 pwd
+ls
+
+cd ..
+pwd
+ls
+
+cd ..
+pwd
+ls

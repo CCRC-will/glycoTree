@@ -59,4 +59,10 @@ mkdir ./data/fully_determined/csv/mapped
 
 java -jar ./code/TreeBuilder3.jar -l ./data/fully_determined/csv/files.lst -s $sugar_file -c $node_file -n 3 -v 1 -m 3 -e 2 -o ./model/ext.csv > ./log/map_residues.txt
 
-grep "unassigned" ./data/fully_determined/csv/mapped/G* > ./log/unassigned.txt
+grep -h "unassigned" ./data/fully_determined/csv/mapped/G* > ./log/unassigned.txt
+
+echo annotating residues with enzyme information
+
+enzyme_file=`ls ./model/enzyme-mappings*.csv`
+echo using node file $enzyme_file
+awk -f ./code/mkCSVmap.awk $enzyme_file ./data/fully_determined/csv/mapped/G*.csv  > ./model/annotated_residues.csv
