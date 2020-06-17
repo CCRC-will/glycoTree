@@ -11,8 +11,17 @@ Shell commands are on lines starting with the command prompt ($)
 1. Generate a csv list of mammalian N-glycans from GlyGen, using the glycan Advanced Search page with the following parameters:
 	- Glycan Type: N-glycan
 	- Organism: Homo Sapiens OR Mus musculus OR Rattus norvegicus
+	
+Directly from the API:
+
+	https://api.glygen.org/glycan/search?query={%22operation%22:%22AND%22,%22query_type%22:%22search_glycan%22,%22mass_type%22:%22Native%22,%22enzyme%22:{},%22glytoucan_ac%22:%22%22,%22organism%22:{%22organism_list%22:[{%22name%22:%22Rattus%20norvegicus%22,%22id%22:10116},{%22name%22:%22Homo%20sapiens%22,%22id%22:9606},{%22name%22:%22Mus%20musculus%22,%22id%22:10090}],%22operation%22:%22or%22},%22glycan_type%22:%22N-glycan%22,%22glycan_subtype%22:%22%22,%22protein_identifier%22:%22%22,%22glycan_motif%22:%22%22,%22pmid%22:%22%22}
+	
+Get the result:
+	
+	https://api.glygen.org/glycan/list?query={%22id%22:%22e8b4153e7906060643e367c04eca06f7%22,%22offset%22:1,%22limit%22:5000,%22order%22:%22asc%22}
 
 2. Download the resulting glycan_list csv file and save the results in the directory holding this readme file. The downloaded file will have a long name, like glycan_list_b18bcd2099e0c23295d54860b0ae93b4.csv
+
 Move the glycan_list file to directory ./data and change its name to mammal_N-glycans.csv mammal_N-glycans.csv, like this ...
 
 $	mkdir ./data	
@@ -24,7 +33,7 @@ $	mv glycan_list_b18bcd2099e0c23295d54860b0ae93b4.csv ./data/mammal_N-glycans.cs
 	
 4. Save the resulting file (fully_determined.zip) in the "./data" directory.
 	
-		Note that steps 1 - 5 are NOT AUTOMATED.
+		Note that steps 1 - 4 are NOT AUTOMATED.
 
 !!!!! AUTOMATION STARTS HERE !!!!!
 	You can ignore the rest of this file if you automate the remaining steps by invoking 
@@ -40,12 +49,18 @@ $	tar -xf ./data/fully_determined.zip -C ./data/fully_determined
 
 $	awk -f ./code/extractFilenames.awk ./data/mammal_N-glycans.csv > ./data/mammal_N-glycans.lst
 
-7. Make a list of all GlycoCT files for fully-determined structures.
-	Note: files.lst is removed first so it will not be included (self referentially) in the list
+NOTE - if the mammal_N-glycans are in a json file, use extractFilenames_json.awk
+$	awk -f ./code/extractFilenames_json.awk ./data/mammal_N-glycans.json > ./data/mammal_N-glycans.lst
 
-$    rm data/fully_determined/files.lst
-$	ls -1 ./data/fully_determined/ > ./data/fully_determined/files.lst
-	
+
+7. Make a list of all GlycoCT files for fully-determined structures.
+
+$	cd ./data/fully_determined/
+$	ls -1 G[0-3]*.txt > files.lst
+$	ls -1 G[4-6]*.txt >> files.lst
+$	ls -1 G[7-9]*.txt >> files.lst
+$	cd ../../
+
 8. Generate a file list corresponding to the intersection of fully-determined.lst and mammal_N-glycans.lst:
 
 $	awk -f ./code/intersect.awk data/mammal_N-glycans.lst ./data/fully_determined/files.lst > ./data/complete.lst 
@@ -57,12 +72,12 @@ $	awk -v d="./data/fully_determined/" '{printf("%s%s\n", d, $1);}' ./data/comple
 
 ##### Part B: converting GLycoCT files to csv files #####
 
-10. The file data/complete-paths.lst can be used as input by GCT3csv.java.  First, a place to put the csv files is required:
+10. The file data/complete-paths.lst can be used as input by GCT3csv.jar.  First, a place to put the csv files is required:
 
 $	mkdir ./data/fully_determined/csv
 
 11. Generate csv files - the file GCT2csv.jar (must be present in the directory ./code/)
-$	java -jar ./code/GCT2csv.jar ./data/complete_paths.lst list 0
+$	java -jar ./code/GCT2csv.jar ./data/complete_paths.lst list 0 > ./log/make_csv.txt
 
 ##### Part C: mapping residues in the csv files to the canonical tree #####
 
@@ -71,9 +86,9 @@ ls -1 ./data/fully_determined/csv/G*.csv > ./data/fully_determined/csv/files.lst
 
 13. Map the residues in the csv files to the canonical tree
 -- The command below works for the most up-to-date model files at the time of this writing ... 
-The script ./prepare_N-tree.sh uses the versions found in the directory .model/
+The script ./prepare_N-tree.sh uses the versions found in the directory ./model/
 
-$	java -jar TreeBuilder3.jar -l ./data/fully_determined/csv/files.lst -s ./model/sugars_V-2.0.csv -c ./model/N-nodes_V-2.2.csv -n 3 -v 1 -m 3 -e 2 -o ./model/ext.csv
+$	java -jar ./code/TreeBuilder3.jar -l ./data/fully_determined/csv/files.lst -s ./model/sugars_V-2.0.csv -c ./model/N-nodes_V-2.2.csv -n 3 -v 1 -m 3 -e 2 -o ./model/ext.csv
 
 14. After TreeBuilder[3] is run with  "-e 2", check which residues remain unassigned:
 
@@ -81,8 +96,8 @@ $	grep "unassigned" ./data/fully_determined/csv/mapped/G* > ./log/unassigned.txt
 
 ##### Part C: annotating residues in the canonically mapped csv files with enzymes #####
 
-15. Annotate residues with enzymes ./code/mkCSVmap.awk
+15. Annotate residues with enzymes using ./code/mkCSVmap.awk
 -- The command below works for the most up-to-date enzyme-mappings file at the time of this writing ... 
-The script ./prepare_N-tree.sh uses the version found in the directory .model/
+The script ./prepare_N-tree.sh uses the version found in the directory ./model/
 $	awk -f ./code/mkCSVmap.awk ./model/enzyme-mappings_v-2.1.csv ./data/fully_determined/csv/mapped/G*.csv  > ./model/annotated_residues.csv
 
