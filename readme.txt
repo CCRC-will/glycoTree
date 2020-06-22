@@ -2,7 +2,7 @@ Preparing the N-glycan canonical tree
 
 
 This workflow is partially automated using the bash script "prepare_N-tree.sh"
-Only steps 1 - 4 (collecting input files) are required as prerequisites fo the automation
+Only step 1 (collecting input file specifying the structures of mamallian N-glycans) is required as prerequisites fo the automation
 All commands assume the active directory is the one holding this readme file
 Shell commands are on lines starting with the command prompt ($)
 
@@ -12,32 +12,33 @@ Shell commands are on lines starting with the command prompt ($)
 	- Glycan Type: N-glycan
 	- Organism: Homo Sapiens OR Mus musculus OR Rattus norvegicus
 	
-Directly from the API:
+This can be done directly from the API using the following URI:	
 
-	https://api.glygen.org/glycan/search?query={%22operation%22:%22AND%22,%22query_type%22:%22search_glycan%22,%22mass_type%22:%22Native%22,%22enzyme%22:{},%22glytoucan_ac%22:%22%22,%22organism%22:{%22organism_list%22:[{%22name%22:%22Rattus%20norvegicus%22,%22id%22:10116},{%22name%22:%22Homo%20sapiens%22,%22id%22:9606},{%22name%22:%22Mus%20musculus%22,%22id%22:10090}],%22operation%22:%22or%22},%22glycan_type%22:%22N-glycan%22,%22glycan_subtype%22:%22%22,%22protein_identifier%22:%22%22,%22glycan_motif%22:%22%22,%22pmid%22:%22%22}
-	
-Get the result:
-	
-	https://api.glygen.org/glycan/list?query={%22id%22:%22e8b4153e7906060643e367c04eca06f7%22,%22offset%22:1,%22limit%22:5000,%22order%22:%22asc%22}
+https://api.glygen.org/directsearch/glycan/?query={%22operation%22:%22AND%22,%22query_type%22:%22search_glycan%22,%22mass_type%22:%22Native%22,%22enzyme%22:{},%22glytoucan_ac%22:%22%22,%22organism%22:{%22organism_list%22:[{%22name%22:%22Rattus%20norvegicus%22,%22id%22:10116},{%22name%22:%22Homo%20sapiens%22,%22id%22:9606},{%22name%22:%22Mus%20musculus%22,%22id%22:10090}],%22operation%22:%22or%22},%22glycan_type%22:%22N-glycan%22,%22glycan_subtype%22:%22%22,%22protein_identifier%22:%22%22,%22glycan_motif%22:%22%22,%22pmid%22:%22%22}
 
-2. Download the resulting glycan_list csv file and save the results in the directory holding this readme file. The downloaded file will have a long name, like glycan_list_b18bcd2099e0c23295d54860b0ae93b4.csv
+Unfortunately, the API does not currently support a curl implementation of this query
 
-Move the glycan_list file to directory ./data and change its name to mammal_N-glycans.csv mammal_N-glycans.csv, like this ...
+Save the resulting json file (api.glygen.org.json) in this directory, i.e., 
+	THE DIRECTORY HOLDING the script "prepare_N-tree.sh"
+
+!!!!! AUTOMATION STARTS HERE !!!!!
+	You can ignore the rest of this file if you automate the remaining steps by invoking 
+$	./prepare_N-tree.sh
+
+2. Move the glycan_list (json) file to directory ./data and change its name to mammal_N-glycans.json, like this ...
 
 $	mkdir ./data	
-$	mv glycan_list_b18bcd2099e0c23295d54860b0ae93b4.csv ./data/mammal_N-glycans.csv
+$	mv api.glygen.org.json ./data/mammal_N-glycans.json
 		
 3. Download the GlycoCT files specifying structures of all fully-defined glycans in GlyGen from:
-
-	https://github.com/glygen-glycan-data/PyGly/blob/master/smw/glycandata/export/fully_determined.zip
+	
+$	curl -o ./data/t2.zip https://raw.githubusercontent.com/glygen-glycan-data/PyGly/master/smw/glycandata/export/fully_determined.zip
 	
 4. Save the resulting file (fully_determined.zip) in the "./data" directory.
 	
 		Note that steps 1 - 4 are NOT AUTOMATED.
 
-!!!!! AUTOMATION STARTS HERE !!!!!
-	You can ignore the rest of this file if you automate the remaining steps by invoking 
-$	./prepare_N-tree.sh
+
 
 5. Unpack the zip file, creating directory called ".data/fully_determined".
 
@@ -47,11 +48,7 @@ $	tar -xf ./data/fully_determined.zip -C ./data/fully_determined
 
 6. Extract the GlyTouCan accessions and generate file names for the mammalian N-glycans using data in the csv file ...
 
-$	awk -f ./code/extractFilenames.awk ./data/mammal_N-glycans.csv > ./data/mammal_N-glycans.lst
-
-NOTE - if the mammal_N-glycans are in a json file, use extractFilenames_json.awk
 $	awk -f ./code/extractFilenames_json.awk ./data/mammal_N-glycans.json > ./data/mammal_N-glycans.lst
-
 
 7. Make a list of all GlycoCT files for fully-determined structures.
 

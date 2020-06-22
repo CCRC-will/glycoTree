@@ -2,5 +2,7 @@
 log/*.txt
 export/
 data/*.lst
+data/*.zip
+data/*.json
 data/fully_determined/
 

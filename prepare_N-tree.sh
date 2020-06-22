@@ -1,6 +1,17 @@
 #!/bin/bash
 
 echo
+echo renaming and moving api.glygen.org to ./data/
+
+mkdir ./data	
+mv api.glygen.org.json ./data/mammal_N-glycans.json
+
+echo
+echo fetching fully_determined.zip file from github
+
+curl -o ./data/fully_determined.zip https://raw.githubusercontent.com/glygen-glycan-data/PyGly/master/smw/glycandata/export/fully_determined.zip
+
+echo
 echo unpacking 'fully_determined.zip'
 
 cd ./data/
@@ -13,7 +24,7 @@ echo Extracting file list from csv file ...
 
 cd ..
 pwd
-awk -f ./code/extractFilenames.awk ./data/mammal_N-glycans.csv > ./data/mammal_N-glycans.lst
+awk -f ./code/extractFilenames_json.awk ./data/mammal_N-glycans.json > ./data/mammal_N-glycans.lst
 
 echo
 echo Generating fully-determined files.lst
