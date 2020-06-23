@@ -52,7 +52,7 @@ echo Converting GlycoCT to csv files
 mkdir ./data/fully_determined/csv
 mkdir ./log
 
-java -jar ./code/GCT2csv.jar ./data/complete_paths.lst list 0 > ./log/make_csv.txt
+java -jar ./code/GenerateCSV.jar ./data/complete_paths.lst list 0 > ./log/make_csv.txt
 
 echo
 echo generating csv "files.lst"
