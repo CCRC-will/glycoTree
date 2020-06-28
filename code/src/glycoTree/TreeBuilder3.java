@@ -1365,7 +1365,7 @@ public class TreeBuilder3 {
 
 					// first create archetype, if new, add to archetype list
 					NodeArchetype na = new NodeArchetype(sugarList, sugarName, anomer, absolute, ring);
-// for (int q=0; q<na.size(); q++) System.out.printf("\n@@@ archetype: %s", na.get(q));
+
 					if ((v > 3) && (na.sugar == null))
 						System.out.printf(" Error: Cannot assign an SNFG Sugar to %s from file %s\n", sugarName, fn);
 
