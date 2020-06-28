@@ -2,6 +2,7 @@ package gctTOcsv;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Sorter {
 	/**
@@ -18,12 +19,12 @@ public class Sorter {
 	 * @param map the Map whose keys are to be numerically sorted
 	 * @return an array of String, whose values have been numerically sorted
 	 */
-	public String[] sortMapKeysNumeric (Map<String, Map<String,String>> map) {
+	public String[] sortMapKeysNumeric (Map<String, ?> map) {
 		String[] sortedKeys = new String[map.size()];
 		int[] sortedNumericIndices = new int[map.size()];
 		int count = 0;
 		// populate sortedArray with (int) keys
-		for (Map.Entry<String, Map<String,String>> entry : map.entrySet())  {
+		for (Map.Entry<String, ?> entry : map.entrySet())  {
 			sortedNumericIndices[count++] = Integer.valueOf(entry.getKey() );
 		}
 		Arrays.sort(sortedNumericIndices);
@@ -32,5 +33,8 @@ public class Sorter {
 		}
 		return (sortedKeys);
 	}
+	
+
+
 
 }
