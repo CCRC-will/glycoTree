@@ -1,5 +1,6 @@
 Preparing the N-glycan canonical tree
 
+https://github.com/CCRC-will/gTree.git
 
 This workflow is partially automated using the bash script "prepare_N-tree.sh"
 Only step 1 (collecting input file specifying the structures of mamallian N-glycans) is required as prerequisites fo the automation

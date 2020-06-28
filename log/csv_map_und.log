@@ -1,0 +1,2615 @@
+Current Time : 2020-06-28 12:08
+Verbosity: 1
+Match mode: 3
+Match length: 3
+Extension mode for Canonical Tree: 2
+List File Name: ./data/und/csv/files.lst
+Sugar File Name: ./model/sugars_V-2.1.csv
+Canonical Node File Name: ./model/N-nodes_V-2.2.csv
+
+
+###### Using a list (./data/und/csv/files.lst) containing input files ######
+
+
+########## Processing file ./data/und/csv/G00249IY.csv ##########
+
+rejectCode: 2 *** Glycan G00249IY has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G00249IY.csv) *
+
+
+########## Processing file ./data/und/csv/G00553AN.csv ##########
+
+rejectCode: 3 *** Glycan G00553AN has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G00553AN.csv) *
+
+
+########## Processing file ./data/und/csv/G00800WJ.csv ##########
+
+rejectCode: 2 *** Glycan G00800WJ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G00800WJ.csv) *
+
+
+########## Processing file ./data/und/csv/G01223AA.csv ##########
+
+rejectCode: 3 *** Glycan G01223AA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G01223AA.csv) *
+
+
+########## Processing file ./data/und/csv/G01543ZX.csv ##########
+
+rejectCode: 3 *** Glycan G01543ZX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G01543ZX.csv) *
+
+
+########## Processing file ./data/und/csv/G01817YC.csv ##########
+
+rejectCode: 2 *** Glycan G01817YC has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G01817YC.csv) *
+
+
+########## Processing file ./data/und/csv/G02402FF.csv ##########
+
+rejectCode: 3 *** Glycan G02402FF has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G02402FF.csv) *
+
+
+########## Processing file ./data/und/csv/G03081ER.csv ##########
+
+rejectCode: 2 *** Glycan G03081ER has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G03081ER.csv) *
+
+
+########## Processing file ./data/und/csv/G03195HW.csv ##########
+
+rejectCode: 3 *** Glycan G03195HW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G03195HW.csv) *
+
+
+########## Processing file ./data/und/csv/G03984TW.csv ##########
+
+rejectCode: 3 *** Glycan G03984TW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G03984TW.csv) *
+
+
+########## Processing file ./data/und/csv/G04595ZA.csv ##########
+
+rejectCode: 3 *** Glycan G04595ZA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G04595ZA.csv) *
+
+
+########## Processing file ./data/und/csv/G04689DA.csv ##########
+
+rejectCode: 3 *** Glycan G04689DA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G04689DA.csv) *
+
+
+########## Processing file ./data/und/csv/G04959WS.csv ##########
+
+rejectCode: 2 *** Glycan G04959WS has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G04959WS.csv) *
+
+
+########## Processing file ./data/und/csv/G05395FV.csv ##########
+
+rejectCode: 3 *** Glycan G05395FV has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G05395FV.csv) *
+
+
+########## Processing file ./data/und/csv/G05850WN.csv ##########
+
+rejectCode: 2 *** Glycan G05850WN has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G05850WN.csv) *
+
+
+########## Processing file ./data/und/csv/G05953WP.csv ##########
+
+rejectCode: 2 *** Glycan G05953WP has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G05953WP.csv) *
+
+
+########## Processing file ./data/und/csv/G06215XQ.csv ##########
+
+rejectCode: 2 *** Glycan G06215XQ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G06215XQ.csv) *
+
+
+########## Processing file ./data/und/csv/G06601SQ.csv ##########
+
+rejectCode: 3 *** Glycan G06601SQ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G06601SQ.csv) *
+
+
+########## Processing file ./data/und/csv/G06707ZH.csv ##########
+
+rejectCode: 3 *** Glycan G06707ZH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G06707ZH.csv) *
+
+
+########## Processing file ./data/und/csv/G08011QI.csv ##########
+
+rejectCode: 3 *** Glycan G08011QI has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G08011QI.csv) *
+
+
+########## Processing file ./data/und/csv/G08378WD.csv ##########
+
+rejectCode: 3 *** Glycan G08378WD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G08378WD.csv) *
+
+
+########## Processing file ./data/und/csv/G08577PR.csv ##########
+
+rejectCode: 3 *** Glycan G08577PR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G08577PR.csv) *
+
+
+########## Processing file ./data/und/csv/G08712ES.csv ##########
+
+rejectCode: 2 *** Glycan G08712ES has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G08712ES.csv) *
+
+
+########## Processing file ./data/und/csv/G10601XM.csv ##########
+
+rejectCode: 3 *** Glycan G10601XM has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G10601XM.csv) *
+
+
+########## Processing file ./data/und/csv/G10898KH.csv ##########
+
+rejectCode: 2 *** Glycan G10898KH has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G10898KH.csv) *
+
+
+########## Processing file ./data/und/csv/G11254FL.csv ##########
+
+rejectCode: 1 *** Glycan G11254FL has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G11254FL.csv) *
+
+
+########## Processing file ./data/und/csv/G11450PA.csv ##########
+
+rejectCode: 2 *** Glycan G11450PA has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G11450PA.csv) *
+
+
+########## Processing file ./data/und/csv/G11528MV.csv ##########
+
+rejectCode: 2 *** Glycan G11528MV has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G11528MV.csv) *
+
+
+########## Processing file ./data/und/csv/G11948QD.csv ##########
+
+rejectCode: 3 *** Glycan G11948QD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G11948QD.csv) *
+
+
+########## Processing file ./data/und/csv/G12604EW.csv ##########
+
+rejectCode: 3 *** Glycan G12604EW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G12604EW.csv) *
+
+
+########## Processing file ./data/und/csv/G12708JQ.csv ##########
+
+rejectCode: 2 *** Glycan G12708JQ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G12708JQ.csv) *
+
+
+########## Processing file ./data/und/csv/G13661YX.csv ##########
+
+rejectCode: 2 *** Glycan G13661YX has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G13661YX.csv) *
+
+
+########## Processing file ./data/und/csv/G13849JB.csv ##########
+
+rejectCode: 3 *** Glycan G13849JB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G13849JB.csv) *
+
+
+########## Processing file ./data/und/csv/G13991MC.csv ##########
+
+rejectCode: 2 *** Glycan G13991MC has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G13991MC.csv) *
+
+
+########## Processing file ./data/und/csv/G14176QY.csv ##########
+
+rejectCode: 3 *** Glycan G14176QY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G14176QY.csv) *
+
+
+########## Processing file ./data/und/csv/G14199EY.csv ##########
+
+rejectCode: 2 *** Glycan G14199EY has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G14199EY.csv) *
+
+
+########## Processing file ./data/und/csv/G14244NF.csv ##########
+
+rejectCode: 2 *** Glycan G14244NF has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G14244NF.csv) *
+
+
+########## Processing file ./data/und/csv/G14389GM.csv ##########
+
+rejectCode: 3 *** Glycan G14389GM has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G14389GM.csv) *
+
+
+########## Processing file ./data/und/csv/G14548ZL.csv ##########
+
+rejectCode: 3 *** Glycan G14548ZL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G14548ZL.csv) *
+
+
+########## Processing file ./data/und/csv/G14882EB.csv ##########
+
+rejectCode: 3 *** Glycan G14882EB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G14882EB.csv) *
+
+
+########## Processing file ./data/und/csv/G15365AE.csv ##########
+
+rejectCode: 2 *** Glycan G15365AE has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G15365AE.csv) *
+
+
+########## Processing file ./data/und/csv/G15791TK.csv ##########
+
+rejectCode: 3 *** Glycan G15791TK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G15791TK.csv) *
+
+
+########## Processing file ./data/und/csv/G15956KF.csv ##########
+
+rejectCode: 3 *** Glycan G15956KF has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G15956KF.csv) *
+
+
+########## Processing file ./data/und/csv/G16758MX.csv ##########
+
+rejectCode: 2 *** Glycan G16758MX has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G16758MX.csv) *
+
+
+########## Processing file ./data/und/csv/G16808DC.csv ##########
+
+rejectCode: 3 *** Glycan G16808DC has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G16808DC.csv) *
+
+
+########## Processing file ./data/und/csv/G17205DU.csv ##########
+
+rejectCode: 1 *** Glycan G17205DU has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G17205DU.csv) *
+
+
+########## Processing file ./data/und/csv/G18013WR.csv ##########
+
+rejectCode: 2 *** Glycan G18013WR has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G18013WR.csv) *
+
+
+########## Processing file ./data/und/csv/G18211PK.csv ##########
+
+rejectCode: 3 *** Glycan G18211PK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G18211PK.csv) *
+
+
+########## Processing file ./data/und/csv/G18960KY.csv ##########
+
+rejectCode: 3 *** Glycan G18960KY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G18960KY.csv) *
+
+
+########## Processing file ./data/und/csv/G19099PA.csv ##########
+
+rejectCode: 3 *** Glycan G19099PA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G19099PA.csv) *
+
+
+########## Processing file ./data/und/csv/G21001NA.csv ##########
+
+rejectCode: 3 *** Glycan G21001NA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G21001NA.csv) *
+
+
+########## Processing file ./data/und/csv/G21218WO.csv ##########
+
+rejectCode: 3 *** Glycan G21218WO has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G21218WO.csv) *
+
+
+########## Processing file ./data/und/csv/G21327TO.csv ##########
+
+rejectCode: 2 *** Glycan G21327TO has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G21327TO.csv) *
+
+
+########## Processing file ./data/und/csv/G21986MJ.csv ##########
+
+rejectCode: 3 *** Glycan G21986MJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G21986MJ.csv) *
+
+
+########## Processing file ./data/und/csv/G22137OG.csv ##########
+
+rejectCode: 3 *** Glycan G22137OG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G22137OG.csv) *
+
+
+########## Processing file ./data/und/csv/G22511DQ.csv ##########
+
+rejectCode: 3 *** Glycan G22511DQ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G22511DQ.csv) *
+
+
+########## Processing file ./data/und/csv/G22674CI.csv ##########
+
+rejectCode: 3 *** Glycan G22674CI has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G22674CI.csv) *
+
+
+########## Processing file ./data/und/csv/G22721QX.csv ##########
+
+rejectCode: 2 *** Glycan G22721QX has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G22721QX.csv) *
+
+
+########## Processing file ./data/und/csv/G22859OA.csv ##########
+
+rejectCode: 3 *** Glycan G22859OA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G22859OA.csv) *
+
+
+########## Processing file ./data/und/csv/G23437PF.csv ##########
+
+rejectCode: 2 *** Glycan G23437PF has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G23437PF.csv) *
+
+
+########## Processing file ./data/und/csv/G23695IQ.csv ##########
+
+rejectCode: 2 *** Glycan G23695IQ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G23695IQ.csv) *
+
+
+########## Processing file ./data/und/csv/G24131KD.csv ##########
+
+rejectCode: 2 *** Glycan G24131KD has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G24131KD.csv) *
+
+
+########## Processing file ./data/und/csv/G24132CP.csv ##########
+
+rejectCode: 3 *** Glycan G24132CP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G24132CP.csv) *
+
+
+########## Processing file ./data/und/csv/G24202BK.csv ##########
+
+rejectCode: 2 *** Glycan G24202BK has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G24202BK.csv) *
+
+
+########## Processing file ./data/und/csv/G24501HF.csv ##########
+
+rejectCode: 3 *** Glycan G24501HF has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G24501HF.csv) *
+
+
+########## Processing file ./data/und/csv/G24897QX.csv ##########
+
+rejectCode: 3 *** Glycan G24897QX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G24897QX.csv) *
+
+
+########## Processing file ./data/und/csv/G25180HQ.csv ##########
+
+rejectCode: 3 *** Glycan G25180HQ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G25180HQ.csv) *
+
+
+########## Processing file ./data/und/csv/G25386IJ.csv ##########
+
+rejectCode: 3 *** Glycan G25386IJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G25386IJ.csv) *
+
+
+########## Processing file ./data/und/csv/G25495RY.csv ##########
+
+rejectCode: 3 *** Glycan G25495RY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G25495RY.csv) *
+
+
+########## Processing file ./data/und/csv/G25713RA.csv ##########
+
+rejectCode: 2 *** Glycan G25713RA has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G25713RA.csv) *
+
+
+########## Processing file ./data/und/csv/G26014MK.csv ##########
+
+rejectCode: 3 *** Glycan G26014MK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26014MK.csv) *
+
+
+########## Processing file ./data/und/csv/G26076FX.csv ##########
+
+rejectCode: 3 *** Glycan G26076FX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26076FX.csv) *
+
+
+########## Processing file ./data/und/csv/G26164VG.csv ##########
+
+rejectCode: 3 *** Glycan G26164VG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26164VG.csv) *
+
+
+########## Processing file ./data/und/csv/G26267FS.csv ##########
+
+rejectCode: 2 *** Glycan G26267FS has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26267FS.csv) *
+
+
+########## Processing file ./data/und/csv/G26335RK.csv ##########
+
+rejectCode: 3 *** Glycan G26335RK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26335RK.csv) *
+
+
+########## Processing file ./data/und/csv/G26371XR.csv ##########
+
+rejectCode: 3 *** Glycan G26371XR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26371XR.csv) *
+
+
+########## Processing file ./data/und/csv/G26777RD.csv ##########
+
+rejectCode: 2 *** Glycan G26777RD has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26777RD.csv) *
+
+
+########## Processing file ./data/und/csv/G26896YH.csv ##########
+
+rejectCode: 3 *** Glycan G26896YH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G26896YH.csv) *
+
+
+########## Processing file ./data/und/csv/G27290LL.csv ##########
+
+rejectCode: 2 *** Glycan G27290LL has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G27290LL.csv) *
+
+
+########## Processing file ./data/und/csv/G27310MQ.csv ##########
+
+rejectCode: 3 *** Glycan G27310MQ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G27310MQ.csv) *
+
+
+########## Processing file ./data/und/csv/G28003YJ.csv ##########
+
+rejectCode: 2 *** Glycan G28003YJ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G28003YJ.csv) *
+
+
+########## Processing file ./data/und/csv/G28362DW.csv ##########
+
+rejectCode: 3 *** Glycan G28362DW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G28362DW.csv) *
+
+
+########## Processing file ./data/und/csv/G28387ZC.csv ##########
+
+rejectCode: 3 *** Glycan G28387ZC has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G28387ZC.csv) *
+
+
+########## Processing file ./data/und/csv/G29721UX.csv ##########
+
+rejectCode: 3 *** Glycan G29721UX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G29721UX.csv) *
+
+
+########## Processing file ./data/und/csv/G29783JJ.csv ##########
+
+rejectCode: 3 *** Glycan G29783JJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G29783JJ.csv) *
+
+
+########## Processing file ./data/und/csv/G30048DT.csv ##########
+
+rejectCode: 2 *** Glycan G30048DT has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G30048DT.csv) *
+
+
+########## Processing file ./data/und/csv/G30838QM.csv ##########
+
+rejectCode: 2 *** Glycan G30838QM has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G30838QM.csv) *
+
+
+########## Processing file ./data/und/csv/G30939HN.csv ##########
+
+rejectCode: 2 *** Glycan G30939HN has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G30939HN.csv) *
+
+
+########## Processing file ./data/und/csv/G31118FR.csv ##########
+
+rejectCode: 2 *** Glycan G31118FR has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G31118FR.csv) *
+
+
+########## Processing file ./data/und/csv/G31153XO.csv ##########
+
+rejectCode: 2 *** Glycan G31153XO has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G31153XO.csv) *
+
+
+########## Processing file ./data/und/csv/G31372JR.csv ##########
+
+rejectCode: 1 *** Glycan G31372JR has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G31372JR.csv) *
+
+
+########## Processing file ./data/und/csv/G31618AH.csv ##########
+
+rejectCode: 1 *** Glycan G31618AH has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G31618AH.csv) *
+
+
+########## Processing file ./data/und/csv/G31838XA.csv ##########
+
+rejectCode: 1 *** Glycan G31838XA has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G31838XA.csv) *
+
+
+########## Processing file ./data/und/csv/G32246SI.csv ##########
+
+rejectCode: 2 *** Glycan G32246SI has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G32246SI.csv) *
+
+
+########## Processing file ./data/und/csv/G32671AN.csv ##########
+
+rejectCode: 3 *** Glycan G32671AN has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G32671AN.csv) *
+
+
+########## Processing file ./data/und/csv/G32854GF.csv ##########
+
+rejectCode: 3 *** Glycan G32854GF has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G32854GF.csv) *
+
+
+########## Processing file ./data/und/csv/G33785ND.csv ##########
+
+rejectCode: 3 *** Glycan G33785ND has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G33785ND.csv) *
+
+
+########## Processing file ./data/und/csv/G34306IB.csv ##########
+
+rejectCode: 2 *** Glycan G34306IB has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G34306IB.csv) *
+
+
+########## Processing file ./data/und/csv/G35211AB.csv ##########
+
+rejectCode: 3 *** Glycan G35211AB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G35211AB.csv) *
+
+
+########## Processing file ./data/und/csv/G35364KM.csv ##########
+
+rejectCode: 3 *** Glycan G35364KM has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G35364KM.csv) *
+
+
+########## Processing file ./data/und/csv/G35687VS.csv ##########
+
+rejectCode: 3 *** Glycan G35687VS has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G35687VS.csv) *
+
+
+########## Processing file ./data/und/csv/G36134VO.csv ##########
+
+rejectCode: 3 *** Glycan G36134VO has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G36134VO.csv) *
+
+
+########## Processing file ./data/und/csv/G36167NI.csv ##########
+
+rejectCode: 3 *** Glycan G36167NI has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G36167NI.csv) *
+
+
+########## Processing file ./data/und/csv/G37588ZB.csv ##########
+
+rejectCode: 3 *** Glycan G37588ZB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G37588ZB.csv) *
+
+
+########## Processing file ./data/und/csv/G37868ZX.csv ##########
+
+rejectCode: 2 *** Glycan G37868ZX has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G37868ZX.csv) *
+
+
+########## Processing file ./data/und/csv/G38349VC.csv ##########
+
+rejectCode: 2 *** Glycan G38349VC has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G38349VC.csv) *
+
+
+########## Processing file ./data/und/csv/G38946SH.csv ##########
+
+rejectCode: 3 *** Glycan G38946SH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G38946SH.csv) *
+
+
+########## Processing file ./data/und/csv/G39172SO.csv ##########
+
+rejectCode: 3 *** Glycan G39172SO has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G39172SO.csv) *
+
+
+########## Processing file ./data/und/csv/G39229GR.csv ##########
+
+rejectCode: 3 *** Glycan G39229GR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G39229GR.csv) *
+
+
+########## Processing file ./data/und/csv/G39841VH.csv ##########
+
+rejectCode: 2 *** Glycan G39841VH has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G39841VH.csv) *
+
+
+########## Processing file ./data/und/csv/G39945EK.csv ##########
+
+rejectCode: 3 *** Glycan G39945EK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G39945EK.csv) *
+
+
+########## Processing file ./data/und/csv/G39952PY.csv ##########
+
+rejectCode: 2 *** Glycan G39952PY has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G39952PY.csv) *
+
+
+########## Processing file ./data/und/csv/G40012WS.csv ##########
+
+rejectCode: 3 *** Glycan G40012WS has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G40012WS.csv) *
+
+
+########## Processing file ./data/und/csv/G40124HY.csv ##########
+
+rejectCode: 3 *** Glycan G40124HY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G40124HY.csv) *
+
+
+########## Processing file ./data/und/csv/G41405QQ.csv ##########
+
+rejectCode: 3 *** Glycan G41405QQ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G41405QQ.csv) *
+
+
+########## Processing file ./data/und/csv/G42081JA.csv ##########
+
+rejectCode: 2 *** Glycan G42081JA has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G42081JA.csv) *
+
+
+########## Processing file ./data/und/csv/G42735RP.csv ##########
+
+rejectCode: 3 *** Glycan G42735RP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G42735RP.csv) *
+
+
+########## Processing file ./data/und/csv/G42826YI.csv ##########
+
+rejectCode: 2 *** Glycan G42826YI has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G42826YI.csv) *
+
+
+########## Processing file ./data/und/csv/G42832NT.csv ##########
+
+rejectCode: 2 *** Glycan G42832NT has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G42832NT.csv) *
+
+
+########## Processing file ./data/und/csv/G43549OX.csv ##########
+
+rejectCode: 3 *** Glycan G43549OX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G43549OX.csv) *
+
+
+########## Processing file ./data/und/csv/G43753QH.csv ##########
+
+rejectCode: 1 *** Glycan G43753QH has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G43753QH.csv) *
+
+
+########## Processing file ./data/und/csv/G43947VZ.csv ##########
+
+rejectCode: 3 *** Glycan G43947VZ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G43947VZ.csv) *
+
+
+########## Processing file ./data/und/csv/G43953LS.csv ##########
+
+rejectCode: 3 *** Glycan G43953LS has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G43953LS.csv) *
+
+
+########## Processing file ./data/und/csv/G44121LY.csv ##########
+
+rejectCode: 3 *** Glycan G44121LY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G44121LY.csv) *
+
+
+########## Processing file ./data/und/csv/G44369QM.csv ##########
+
+rejectCode: 2 *** Glycan G44369QM has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G44369QM.csv) *
+
+
+########## Processing file ./data/und/csv/G44413JJ.csv ##########
+
+rejectCode: 3 *** Glycan G44413JJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G44413JJ.csv) *
+
+
+########## Processing file ./data/und/csv/G44576HQ.csv ##########
+
+rejectCode: 2 *** Glycan G44576HQ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G44576HQ.csv) *
+
+
+########## Processing file ./data/und/csv/G44659VQ.csv ##########
+
+rejectCode: 2 *** Glycan G44659VQ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G44659VQ.csv) *
+
+
+########## Processing file ./data/und/csv/G44905SX.csv ##########
+
+rejectCode: 1 *** Glycan G44905SX has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G44905SX.csv) *
+
+
+########## Processing file ./data/und/csv/G45045RU.csv ##########
+
+rejectCode: 3 *** Glycan G45045RU has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G45045RU.csv) *
+
+
+########## Processing file ./data/und/csv/G45116BB.csv ##########
+
+rejectCode: 2 *** Glycan G45116BB has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G45116BB.csv) *
+
+
+########## Processing file ./data/und/csv/G45238KD.csv ##########
+
+rejectCode: 3 *** Glycan G45238KD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G45238KD.csv) *
+
+
+########## Processing file ./data/und/csv/G45495MK.csv ##########
+
+rejectCode: 2 *** Glycan G45495MK has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G45495MK.csv) *
+
+
+########## Processing file ./data/und/csv/G45841FE.csv ##########
+
+rejectCode: 3 *** Glycan G45841FE has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G45841FE.csv) *
+
+
+########## Processing file ./data/und/csv/G46720ZO.csv ##########
+
+rejectCode: 3 *** Glycan G46720ZO has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G46720ZO.csv) *
+
+
+########## Processing file ./data/und/csv/G46754UW.csv ##########
+
+rejectCode: 2 *** Glycan G46754UW has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G46754UW.csv) *
+
+
+########## Processing file ./data/und/csv/G46759WS.csv ##########
+
+rejectCode: 3 *** Glycan G46759WS has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G46759WS.csv) *
+
+
+########## Processing file ./data/und/csv/G46923KZ.csv ##########
+
+rejectCode: 3 *** Glycan G46923KZ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G46923KZ.csv) *
+
+
+########## Processing file ./data/und/csv/G47299BP.csv ##########
+
+rejectCode: 3 *** Glycan G47299BP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G47299BP.csv) *
+
+
+########## Processing file ./data/und/csv/G47909JD.csv ##########
+
+rejectCode: 3 *** Glycan G47909JD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G47909JD.csv) *
+
+
+########## Processing file ./data/und/csv/G48409OW.csv ##########
+
+rejectCode: 3 *** Glycan G48409OW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G48409OW.csv) *
+
+
+########## Processing file ./data/und/csv/G48712ZJ.csv ##########
+
+rejectCode: 3 *** Glycan G48712ZJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G48712ZJ.csv) *
+
+
+########## Processing file ./data/und/csv/G48787LE.csv ##########
+
+rejectCode: 3 *** Glycan G48787LE has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G48787LE.csv) *
+
+
+########## Processing file ./data/und/csv/G49467LT.csv ##########
+
+rejectCode: 3 *** Glycan G49467LT has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G49467LT.csv) *
+
+
+########## Processing file ./data/und/csv/G49991UY.csv ##########
+
+rejectCode: 2 *** Glycan G49991UY has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G49991UY.csv) *
+
+
+########## Processing file ./data/und/csv/G50707YR.csv ##########
+
+rejectCode: 3 *** Glycan G50707YR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G50707YR.csv) *
+
+
+########## Processing file ./data/und/csv/G50903RY.csv ##########
+
+rejectCode: 2 *** Glycan G50903RY has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G50903RY.csv) *
+
+
+########## Processing file ./data/und/csv/G51177EP.csv ##########
+
+rejectCode: 1 *** Glycan G51177EP has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G51177EP.csv) *
+
+
+########## Processing file ./data/und/csv/G51369CD.csv ##########
+
+rejectCode: 3 *** Glycan G51369CD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G51369CD.csv) *
+
+
+########## Processing file ./data/und/csv/G51471ON.csv ##########
+
+rejectCode: 3 *** Glycan G51471ON has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G51471ON.csv) *
+
+
+########## Processing file ./data/und/csv/G51497BL.csv ##########
+
+rejectCode: 2 *** Glycan G51497BL has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G51497BL.csv) *
+
+
+########## Processing file ./data/und/csv/G51623PN.csv ##########
+
+rejectCode: 3 *** Glycan G51623PN has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G51623PN.csv) *
+
+
+########## Processing file ./data/und/csv/G51705EB.csv ##########
+
+rejectCode: 2 *** Glycan G51705EB has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G51705EB.csv) *
+
+
+########## Processing file ./data/und/csv/G52003QG.csv ##########
+
+rejectCode: 3 *** Glycan G52003QG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G52003QG.csv) *
+
+
+########## Processing file ./data/und/csv/G52126RR.csv ##########
+
+rejectCode: 3 *** Glycan G52126RR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G52126RR.csv) *
+
+
+########## Processing file ./data/und/csv/G52603AI.csv ##########
+
+rejectCode: 3 *** Glycan G52603AI has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G52603AI.csv) *
+
+
+########## Processing file ./data/und/csv/G52776UT.csv ##########
+
+rejectCode: 3 *** Glycan G52776UT has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G52776UT.csv) *
+
+
+########## Processing file ./data/und/csv/G52782YT.csv ##########
+
+rejectCode: 2 *** Glycan G52782YT has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G52782YT.csv) *
+
+
+########## Processing file ./data/und/csv/G53492UE.csv ##########
+
+rejectCode: 3 *** Glycan G53492UE has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G53492UE.csv) *
+
+
+########## Processing file ./data/und/csv/G53604QR.csv ##########
+
+rejectCode: 3 *** Glycan G53604QR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G53604QR.csv) *
+
+
+########## Processing file ./data/und/csv/G53725UB.csv ##########
+
+rejectCode: 3 *** Glycan G53725UB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G53725UB.csv) *
+
+
+########## Processing file ./data/und/csv/G53965RU.csv ##########
+
+rejectCode: 2 *** Glycan G53965RU has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G53965RU.csv) *
+
+
+########## Processing file ./data/und/csv/G54422SY.csv ##########
+
+rejectCode: 2 *** Glycan G54422SY has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G54422SY.csv) *
+
+
+########## Processing file ./data/und/csv/G54639VI.csv ##########
+
+rejectCode: 2 *** Glycan G54639VI has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G54639VI.csv) *
+
+
+########## Processing file ./data/und/csv/G54652ZD.csv ##########
+
+rejectCode: 2 *** Glycan G54652ZD has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G54652ZD.csv) *
+
+
+########## Processing file ./data/und/csv/G54682XF.csv ##########
+
+rejectCode: 3 *** Glycan G54682XF has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G54682XF.csv) *
+
+
+########## Processing file ./data/und/csv/G54696PD.csv ##########
+
+rejectCode: 3 *** Glycan G54696PD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G54696PD.csv) *
+
+
+########## Processing file ./data/und/csv/G54904QW.csv ##########
+
+rejectCode: 3 *** Glycan G54904QW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G54904QW.csv) *
+
+
+########## Processing file ./data/und/csv/G55504WE.csv ##########
+
+rejectCode: 1 *** Glycan G55504WE has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G55504WE.csv) *
+
+
+########## Processing file ./data/und/csv/G56069TX.csv ##########
+
+rejectCode: 2 *** Glycan G56069TX has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G56069TX.csv) *
+
+
+########## Processing file ./data/und/csv/G56501FP.csv ##########
+
+rejectCode: 2 *** Glycan G56501FP has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G56501FP.csv) *
+
+
+########## Processing file ./data/und/csv/G56809XB.csv ##########
+
+rejectCode: 3 *** Glycan G56809XB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G56809XB.csv) *
+
+
+########## Processing file ./data/und/csv/G57153UY.csv ##########
+
+rejectCode: 3 *** Glycan G57153UY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G57153UY.csv) *
+
+
+########## Processing file ./data/und/csv/G57789QC.csv ##########
+
+rejectCode: 3 *** Glycan G57789QC has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G57789QC.csv) *
+
+
+########## Processing file ./data/und/csv/G58063ME.csv ##########
+
+rejectCode: 2 *** Glycan G58063ME has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58063ME.csv) *
+
+
+########## Processing file ./data/und/csv/G58229BR.csv ##########
+
+rejectCode: 2 *** Glycan G58229BR has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58229BR.csv) *
+
+
+########## Processing file ./data/und/csv/G58232MG.csv ##########
+
+rejectCode: 2 *** Glycan G58232MG has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58232MG.csv) *
+
+
+########## Processing file ./data/und/csv/G58268WC.csv ##########
+
+rejectCode: 2 *** Glycan G58268WC has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58268WC.csv) *
+
+
+########## Processing file ./data/und/csv/G58444TO.csv ##########
+
+rejectCode: 3 *** Glycan G58444TO has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58444TO.csv) *
+
+
+########## Processing file ./data/und/csv/G58481XO.csv ##########
+
+rejectCode: 2 *** Glycan G58481XO has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58481XO.csv) *
+
+
+########## Processing file ./data/und/csv/G58848QS.csv ##########
+
+rejectCode: 3 *** Glycan G58848QS has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G58848QS.csv) *
+
+
+########## Processing file ./data/und/csv/G59576IJ.csv ##########
+
+rejectCode: 3 *** Glycan G59576IJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G59576IJ.csv) *
+
+
+########## Processing file ./data/und/csv/G59821FL.csv ##########
+
+rejectCode: 2 *** Glycan G59821FL has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G59821FL.csv) *
+
+
+########## Processing file ./data/und/csv/G60496YL.csv ##########
+
+rejectCode: 3 *** Glycan G60496YL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G60496YL.csv) *
+
+
+########## Processing file ./data/und/csv/G60542VK.csv ##########
+
+rejectCode: 3 *** Glycan G60542VK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G60542VK.csv) *
+
+
+########## Processing file ./data/und/csv/G60984DZ.csv ##########
+
+rejectCode: 2 *** Glycan G60984DZ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G60984DZ.csv) *
+
+
+########## Processing file ./data/und/csv/G61170KL.csv ##########
+
+rejectCode: 3 *** Glycan G61170KL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G61170KL.csv) *
+
+
+########## Processing file ./data/und/csv/G61505ZR.csv ##########
+
+rejectCode: 3 *** Glycan G61505ZR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G61505ZR.csv) *
+
+
+########## Processing file ./data/und/csv/G61726TP.csv ##########
+
+rejectCode: 2 *** Glycan G61726TP has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G61726TP.csv) *
+
+
+########## Processing file ./data/und/csv/G61894MD.csv ##########
+
+rejectCode: 3 *** Glycan G61894MD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G61894MD.csv) *
+
+
+########## Processing file ./data/und/csv/G61937QU.csv ##########
+
+rejectCode: 1 *** Glycan G61937QU has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G61937QU.csv) *
+
+
+########## Processing file ./data/und/csv/G62091GQ.csv ##########
+
+rejectCode: 1 *** Glycan G62091GQ has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G62091GQ.csv) *
+
+
+########## Processing file ./data/und/csv/G62768NK.csv ##########
+
+rejectCode: 3 *** Glycan G62768NK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G62768NK.csv) *
+
+
+########## Processing file ./data/und/csv/G62837IG.csv ##########
+
+rejectCode: 3 *** Glycan G62837IG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G62837IG.csv) *
+
+
+########## Processing file ./data/und/csv/G63046OH.csv ##########
+
+rejectCode: 3 *** Glycan G63046OH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G63046OH.csv) *
+
+
+########## Processing file ./data/und/csv/G63640QH.csv ##########
+
+rejectCode: 3 *** Glycan G63640QH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G63640QH.csv) *
+
+
+########## Processing file ./data/und/csv/G63976LA.csv ##########
+
+rejectCode: 2 *** Glycan G63976LA has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G63976LA.csv) *
+
+
+########## Processing file ./data/und/csv/G64076LG.csv ##########
+
+rejectCode: 2 *** Glycan G64076LG has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G64076LG.csv) *
+
+
+########## Processing file ./data/und/csv/G64411TU.csv ##########
+
+rejectCode: 3 *** Glycan G64411TU has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G64411TU.csv) *
+
+
+########## Processing file ./data/und/csv/G65365UP.csv ##########
+
+rejectCode: 1 *** Glycan G65365UP has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G65365UP.csv) *
+
+
+########## Processing file ./data/und/csv/G65550TC.csv ##########
+
+rejectCode: 3 *** Glycan G65550TC has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G65550TC.csv) *
+
+
+########## Processing file ./data/und/csv/G65896IX.csv ##########
+
+rejectCode: 2 *** Glycan G65896IX has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G65896IX.csv) *
+
+
+########## Processing file ./data/und/csv/G66377OH.csv ##########
+
+rejectCode: 3 *** Glycan G66377OH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G66377OH.csv) *
+
+
+########## Processing file ./data/und/csv/G66504LK.csv ##########
+
+rejectCode: 2 *** Glycan G66504LK has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G66504LK.csv) *
+
+
+########## Processing file ./data/und/csv/G66751BK.csv ##########
+
+rejectCode: 3 *** Glycan G66751BK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G66751BK.csv) *
+
+
+########## Processing file ./data/und/csv/G67196QU.csv ##########
+
+rejectCode: 3 *** Glycan G67196QU has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G67196QU.csv) *
+
+
+########## Processing file ./data/und/csv/G67381VP.csv ##########
+
+rejectCode: 3 *** Glycan G67381VP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G67381VP.csv) *
+
+
+########## Processing file ./data/und/csv/G67656PN.csv ##########
+
+rejectCode: 3 *** Glycan G67656PN has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G67656PN.csv) *
+
+
+########## Processing file ./data/und/csv/G67971GL.csv ##########
+
+rejectCode: 3 *** Glycan G67971GL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G67971GL.csv) *
+
+
+########## Processing file ./data/und/csv/G68698AP.csv ##########
+
+rejectCode: 3 *** Glycan G68698AP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G68698AP.csv) *
+
+
+########## Processing file ./data/und/csv/G68866GS.csv ##########
+
+rejectCode: 3 *** Glycan G68866GS has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G68866GS.csv) *
+
+
+########## Processing file ./data/und/csv/G68969GZ.csv ##########
+
+rejectCode: 2 *** Glycan G68969GZ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G68969GZ.csv) *
+
+
+########## Processing file ./data/und/csv/G71071YT.csv ##########
+
+rejectCode: 3 *** Glycan G71071YT has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G71071YT.csv) *
+
+
+########## Processing file ./data/und/csv/G71527NE.csv ##########
+
+rejectCode: 2 *** Glycan G71527NE has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G71527NE.csv) *
+
+
+########## Processing file ./data/und/csv/G71549MK.csv ##########
+
+rejectCode: 2 *** Glycan G71549MK has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G71549MK.csv) *
+
+
+########## Processing file ./data/und/csv/G71919QK.csv ##########
+
+rejectCode: 3 *** Glycan G71919QK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G71919QK.csv) *
+
+
+########## Processing file ./data/und/csv/G74111QE.csv ##########
+
+rejectCode: 2 *** Glycan G74111QE has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G74111QE.csv) *
+
+
+########## Processing file ./data/und/csv/G74239ZQ.csv ##########
+
+rejectCode: 3 *** Glycan G74239ZQ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G74239ZQ.csv) *
+
+
+########## Processing file ./data/und/csv/G74311PB.csv ##########
+
+rejectCode: 3 *** Glycan G74311PB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G74311PB.csv) *
+
+
+########## Processing file ./data/und/csv/G74320MK.csv ##########
+
+rejectCode: 3 *** Glycan G74320MK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G74320MK.csv) *
+
+
+########## Processing file ./data/und/csv/G74910CR.csv ##########
+
+rejectCode: 3 *** Glycan G74910CR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G74910CR.csv) *
+
+
+########## Processing file ./data/und/csv/G75052YA.csv ##########
+
+rejectCode: 2 *** Glycan G75052YA has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G75052YA.csv) *
+
+
+########## Processing file ./data/und/csv/G75798PH.csv ##########
+
+rejectCode: 1 *** Glycan G75798PH has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G75798PH.csv) *
+
+
+########## Processing file ./data/und/csv/G75977KH.csv ##########
+
+rejectCode: 3 *** Glycan G75977KH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G75977KH.csv) *
+
+
+########## Processing file ./data/und/csv/G76519VT.csv ##########
+
+rejectCode: 3 *** Glycan G76519VT has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G76519VT.csv) *
+
+
+########## Processing file ./data/und/csv/G77122IZ.csv ##########
+
+rejectCode: 2 *** Glycan G77122IZ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G77122IZ.csv) *
+
+
+########## Processing file ./data/und/csv/G77149EE.csv ##########
+
+rejectCode: 3 *** Glycan G77149EE has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G77149EE.csv) *
+
+
+########## Processing file ./data/und/csv/G77177HT.csv ##########
+
+rejectCode: 3 *** Glycan G77177HT has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G77177HT.csv) *
+
+
+########## Processing file ./data/und/csv/G77282MO.csv ##########
+
+rejectCode: 2 *** Glycan G77282MO has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G77282MO.csv) *
+
+
+########## Processing file ./data/und/csv/G77805RB.csv ##########
+
+rejectCode: 3 *** Glycan G77805RB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G77805RB.csv) *
+
+
+########## Processing file ./data/und/csv/G78019KD.csv ##########
+
+rejectCode: 2 *** Glycan G78019KD has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G78019KD.csv) *
+
+
+########## Processing file ./data/und/csv/G78454JO.csv ##########
+
+rejectCode: 2 *** Glycan G78454JO has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G78454JO.csv) *
+
+
+########## Processing file ./data/und/csv/G78644BR.csv ##########
+
+rejectCode: 2 *** Glycan G78644BR has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G78644BR.csv) *
+
+
+########## Processing file ./data/und/csv/G79089EU.csv ##########
+
+rejectCode: 3 *** Glycan G79089EU has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G79089EU.csv) *
+
+
+########## Processing file ./data/und/csv/G79473WX.csv ##########
+
+rejectCode: 3 *** Glycan G79473WX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G79473WX.csv) *
+
+
+########## Processing file ./data/und/csv/G79564YR.csv ##########
+
+rejectCode: 3 *** Glycan G79564YR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G79564YR.csv) *
+
+
+########## Processing file ./data/und/csv/G79745PG.csv ##########
+
+rejectCode: 2 *** Glycan G79745PG has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G79745PG.csv) *
+
+
+########## Processing file ./data/und/csv/G79939YZ.csv ##########
+
+rejectCode: 2 *** Glycan G79939YZ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G79939YZ.csv) *
+
+
+########## Processing file ./data/und/csv/G80678MA.csv ##########
+
+rejectCode: 2 *** Glycan G80678MA has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G80678MA.csv) *
+
+
+########## Processing file ./data/und/csv/G80759CD.csv ##########
+
+rejectCode: 3 *** Glycan G80759CD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G80759CD.csv) *
+
+
+########## Processing file ./data/und/csv/G81247ZO.csv ##########
+
+rejectCode: 2 *** Glycan G81247ZO has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G81247ZO.csv) *
+
+
+########## Processing file ./data/und/csv/G81282CC.csv ##########
+
+rejectCode: 3 *** Glycan G81282CC has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G81282CC.csv) *
+
+
+########## Processing file ./data/und/csv/G81413UE.csv ##########
+
+rejectCode: 3 *** Glycan G81413UE has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G81413UE.csv) *
+
+
+########## Processing file ./data/und/csv/G82020ZR.csv ##########
+
+rejectCode: 3 *** Glycan G82020ZR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G82020ZR.csv) *
+
+
+########## Processing file ./data/und/csv/G82138AT.csv ##########
+
+rejectCode: 2 *** Glycan G82138AT has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G82138AT.csv) *
+
+
+########## Processing file ./data/und/csv/G82514MH.csv ##########
+
+rejectCode: 1 *** Glycan G82514MH has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G82514MH.csv) *
+
+
+########## Processing file ./data/und/csv/G82763XK.csv ##########
+
+rejectCode: 3 *** Glycan G82763XK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G82763XK.csv) *
+
+
+########## Processing file ./data/und/csv/G83009TH.csv ##########
+
+rejectCode: 2 *** Glycan G83009TH has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G83009TH.csv) *
+
+
+########## Processing file ./data/und/csv/G83213GG.csv ##########
+
+rejectCode: 2 *** Glycan G83213GG has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G83213GG.csv) *
+
+
+########## Processing file ./data/und/csv/G83252PW.csv ##########
+
+rejectCode: 3 *** Glycan G83252PW has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G83252PW.csv) *
+
+
+########## Processing file ./data/und/csv/G83386PJ.csv ##########
+
+rejectCode: 3 *** Glycan G83386PJ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G83386PJ.csv) *
+
+
+########## Processing file ./data/und/csv/G84155GY.csv ##########
+
+rejectCode: 3 *** Glycan G84155GY has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G84155GY.csv) *
+
+
+########## Processing file ./data/und/csv/G84331QL.csv ##########
+
+rejectCode: 3 *** Glycan G84331QL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G84331QL.csv) *
+
+
+########## Processing file ./data/und/csv/G84362VL.csv ##########
+
+rejectCode: 3 *** Glycan G84362VL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G84362VL.csv) *
+
+
+########## Processing file ./data/und/csv/G85095TB.csv ##########
+
+rejectCode: 3 *** Glycan G85095TB has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G85095TB.csv) *
+
+
+########## Processing file ./data/und/csv/G85196QC.csv ##########
+
+rejectCode: 2 *** Glycan G85196QC has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G85196QC.csv) *
+
+
+########## Processing file ./data/und/csv/G85737WG.csv ##########
+
+rejectCode: 3 *** Glycan G85737WG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G85737WG.csv) *
+
+
+########## Processing file ./data/und/csv/G86414TE.csv ##########
+
+rejectCode: 3 *** Glycan G86414TE has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G86414TE.csv) *
+
+
+########## Processing file ./data/und/csv/G86503RS.csv ##########
+
+rejectCode: 1 *** Glycan G86503RS has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G86503RS.csv) *
+
+
+########## Processing file ./data/und/csv/G86632ZU.csv ##########
+
+rejectCode: 3 *** Glycan G86632ZU has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G86632ZU.csv) *
+
+
+########## Processing file ./data/und/csv/G86705PH.csv ##########
+
+rejectCode: 2 *** Glycan G86705PH has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G86705PH.csv) *
+
+
+########## Processing file ./data/und/csv/G87433AX.csv ##########
+
+rejectCode: 3 *** Glycan G87433AX has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G87433AX.csv) *
+
+
+########## Processing file ./data/und/csv/G87618BG.csv ##########
+
+rejectCode: 3 *** Glycan G87618BG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G87618BG.csv) *
+
+
+########## Processing file ./data/und/csv/G87947EJ.csv ##########
+
+rejectCode: 2 *** Glycan G87947EJ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G87947EJ.csv) *
+
+
+########## Processing file ./data/und/csv/G88455FN.csv ##########
+
+rejectCode: 3 *** Glycan G88455FN has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G88455FN.csv) *
+
+
+########## Processing file ./data/und/csv/G89370FG.csv ##########
+
+rejectCode: 2 *** Glycan G89370FG has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G89370FG.csv) *
+
+
+########## Processing file ./data/und/csv/G89664KV.csv ##########
+
+rejectCode: 3 *** Glycan G89664KV has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G89664KV.csv) *
+
+
+########## Processing file ./data/und/csv/G90352XZ.csv ##########
+
+rejectCode: 2 *** Glycan G90352XZ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G90352XZ.csv) *
+
+
+########## Processing file ./data/und/csv/G90443NH.csv ##########
+
+rejectCode: 3 *** Glycan G90443NH has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G90443NH.csv) *
+
+
+########## Processing file ./data/und/csv/G90717TP.csv ##########
+
+rejectCode: 3 *** Glycan G90717TP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G90717TP.csv) *
+
+
+########## Processing file ./data/und/csv/G90789YQ.csv ##########
+
+rejectCode: 2 *** Glycan G90789YQ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G90789YQ.csv) *
+
+
+########## Processing file ./data/und/csv/G91471TQ.csv ##########
+
+rejectCode: 1 *** Glycan G91471TQ has an unmapped residue that can extend the canonical tree described in
+  ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G91471TQ.csv) *
+
+
+########## Processing file ./data/und/csv/G91623TN.csv ##########
+
+rejectCode: 3 *** Glycan G91623TN has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G91623TN.csv) *
+
+
+########## Processing file ./data/und/csv/G92188CK.csv ##########
+
+rejectCode: 3 *** Glycan G92188CK has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G92188CK.csv) *
+
+
+########## Processing file ./data/und/csv/G92337QR.csv ##########
+
+rejectCode: 3 *** Glycan G92337QR has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G92337QR.csv) *
+
+
+########## Processing file ./data/und/csv/G93141AZ.csv ##########
+
+rejectCode: 3 *** Glycan G93141AZ has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G93141AZ.csv) *
+
+
+########## Processing file ./data/und/csv/G93856AJ.csv ##########
+
+rejectCode: 2 *** Glycan G93856AJ has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G93856AJ.csv) *
+
+
+########## Processing file ./data/und/csv/G93993PD.csv ##########
+
+rejectCode: 3 *** Glycan G93993PD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G93993PD.csv) *
+
+
+########## Processing file ./data/und/csv/G93999ON.csv ##########
+
+rejectCode: 2 *** Glycan G93999ON has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G93999ON.csv) *
+
+
+########## Processing file ./data/und/csv/G94373HA.csv ##########
+
+rejectCode: 3 *** Glycan G94373HA has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G94373HA.csv) *
+
+
+########## Processing file ./data/und/csv/G96079KC.csv ##########
+
+rejectCode: 2 *** Glycan G96079KC has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G96079KC.csv) *
+
+
+########## Processing file ./data/und/csv/G96095QD.csv ##########
+
+rejectCode: 3 *** Glycan G96095QD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G96095QD.csv) *
+
+
+########## Processing file ./data/und/csv/G96894DL.csv ##########
+
+rejectCode: 3 *** Glycan G96894DL has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G96894DL.csv) *
+
+
+########## Processing file ./data/und/csv/G98425JK.csv ##########
+
+rejectCode: 2 *** Glycan G98425JK has an INTERNAL residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G98425JK.csv) *
+
+
+########## Processing file ./data/und/csv/G98455QP.csv ##########
+
+rejectCode: 3 *** Glycan G98455QP has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G98455QP.csv) *
+
+
+########## Processing file ./data/und/csv/G98666DD.csv ##########
+
+rejectCode: 3 *** Glycan G98666DD has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G98666DD.csv) *
+
+
+########## Processing file ./data/und/csv/G98961TI.csv ##########
+
+rejectCode: 3 *** Glycan G98961TI has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G98961TI.csv) *
+
+
+########## Processing file ./data/und/csv/G99035PG.csv ##########
+
+rejectCode: 3 *** Glycan G99035PG has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G99035PG.csv) *
+
+
+########## Processing file ./data/und/csv/G99952ON.csv ##########
+
+rejectCode: 3 *** Glycan G99952ON has a residue that does not match the tree described in
+   ./model/N-nodes_V-2.2.csv
+
+
+* Generating CSV (./data/und/csv/mapped/G99952ON.csv) *
+
+
+* Writing to Report file (./data/und/csv/mapped/report.csv) *
