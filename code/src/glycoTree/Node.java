@@ -28,7 +28,7 @@ public class Node {
 	/**
 	 * the molecular site at which the Node is linked to its parent (i.e., its aglycon).
 	 */
-	public int site = 0;
+	public String site = "0";
 	
 	/**
 	 * a String ID for  the node, facilitates generation of connection tables simply by specifying the NodeID of the 
@@ -118,7 +118,7 @@ public class Node {
 	 * @param formName a name specifying the Node's basic name, lacking substituents 
 	 * but including the ring form (used to name new canonical residues)
 	 */
-	public Node(NodeArchetype archetype, String residueName, String nodeID, int site, String nodeName, String parentID, String formName) {
+	public Node(NodeArchetype archetype, String residueName, String nodeID, String site, String nodeName, String parentID, String formName) {
 		super();
 		this.archetype = archetype;
 		this.nodeID = nodeID;
@@ -173,7 +173,7 @@ public class Node {
 		int score = 1;
 		
 		if (mode == 0) { // exact match required - the two Nodes must have the same archetype object
-			if ( (this.archetype == otherNode.archetype) && (this.site == otherNode.site) ) score = 0;
+			if ( (this.archetype == otherNode.archetype) && (this.site.compareTo(otherNode.site) == 0) ) score = 0;
 		} else {
 			// various kinds of fuzzy matching enabled - site is irrelevant
 			// In future versions that perform subtree (motif) matching, at this point
@@ -183,7 +183,7 @@ public class Node {
 		}
 	
 		if (verbosity > 5) 
-			System.out.printf("\ncompare %s (%s, %d) to %s (%s, %d) -> %d", 
+			System.out.printf("\ncompare %s (%s, %s) to %s (%s, %s) -> %d", 
 					this.nodeID, this.archetype, this.site, otherNode.nodeID, otherNode.archetype, otherNode.site, score);
 		return(score);
 	} // end of compareTo()

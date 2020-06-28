@@ -229,7 +229,7 @@ public class TreeBuilder3 {
 		// String reportString = "\n\nData processing report for " + rs + " using
 		// canonical tree from file " + canonicalNodeFileName + "\n";
 		String[] codes = { "0: perfect match", "1: unmatched leaf", "2: unmatched internal", "3: unmatched residue", "", "", "",
-				"7: sugar not found", "8: matching paths too short", "9: glycan too short"  };
+				"7: sugar not found", "8: matching paths too short", "9: glycan too short", "10: corrupt input"  };
 		String reportString = "glycan_ID,total score,mismatched leaf ID,rank,description,path score,matching pruned path length,longest matching path,path length threshold,strongest rejection criterion";
 
 		if (v > 0) {
@@ -365,20 +365,25 @@ public class TreeBuilder3 {
 			// import data from current structure file, populate targetNodeMap
 			if (v > 1)
 				System.out.printf("\n* Importing probe nodes (assigning archetypes, parents and children) *");
-			importData(glycanFileName, 1, archList, probeNodes);
+			int probeCheck = importData(glycanFileName, 1, archList, probeNodes);
+			if (probeCheck < 0) {
+				System.out.printf("\n## poorly formed input file %s (code %d)##\n", glycanFileName, probeCheck);
+				rejectCode = 10;
+			} else {
 
-			if (v > 1)
-				System.out.printf("\n\n* Ranking probe nodes *");
+				if (v > 1)
+					System.out.printf("\n\n* Ranking probe nodes *");
 
-			maxRank = createRankList(probeNodes, probeRankList);
-			if (v > 1)
-				System.out.printf("\nMaximum Probe Rank is: %d", maxRank);
-			if (maxRank < matchLength) {
-				// cannot possibly map structure to canonical tree
-				rejectCode = 9; // 9 -> the glycan is shorter than matchLength
-				// maxRejectCode = 9;
-				reportString += "\n" + glycanID + ", -1,0,0,glycan is too short,0,0,0," + matchLength + ","
-						+ codes[rejectCode];
+				maxRank = createRankList(probeNodes, probeRankList);
+				if (v > 1)
+					System.out.printf("\nMaximum Probe Rank is: %d", maxRank);
+				if (maxRank < matchLength) {
+					// cannot possibly map structure to canonical tree
+					rejectCode = 9; // 9 -> the glycan is shorter than matchLength
+					// maxRejectCode = 9;
+					reportString += "\n" + glycanID + ", -1,0,0,glycan is too short,0,0,0," + matchLength + ","
+							+ codes[rejectCode];
+				}
 			}
 
 			Map<String, Integer> pseudoMatchStats = new HashMap<String, Integer>();
@@ -554,6 +559,11 @@ public class TreeBuilder3 {
 			Boolean processFiles = false;
 			if (v > 0) System.out.printf("\nrejectCode: %d", rejectCode);
 			switch (rejectCode) {
+			case 10: // the input file is corrupted
+				if (v > 0)
+					System.out.printf(" Input file is corrupted - process aborted for\n   %s\n", glycanFileName);
+				processFiles = false;
+				break;
 			case 9: // The glycan is too short (DP < matchLength)
 				if (v > 0)
 					System.out.printf(" Longest path in glycan is %d but matchLength is %d: process aborted for\n   %s\n", maxRank,
@@ -628,8 +638,13 @@ public class TreeBuilder3 {
 			}
 			// arguments: glycan_ID,total score,mismatched leaf ID,rank,description,path
 			// score,rejection code,longest pruned path, longest path,threshold";
-			reportString += "\n" + glycanID + "," + totalScore + ",summary,-,-," + ",-,"
-					+ matchStats.get("longestMatch") + "," + matchLength + "," + codes[rejectCode];
+			if (rejectCode < 10) {
+				reportString += "\n" + glycanID + "," + totalScore + ",summary,-,-," + ",-,"
+						+ matchStats.get("longestMatch") + "," + matchLength + "," + codes[rejectCode];
+			} else {
+				reportString += "\n" + glycanID + ",-1,summary,-,-," + ",-,"
+						+ "null," + matchLength + "," + codes[rejectCode];
+			}
 		}
 
 		if (foundAfile) {
@@ -808,8 +823,14 @@ public class TreeBuilder3 {
 		int score = 1;
 		try {
 			if (one.parent == null) {
-				// enable use of fuzzy matching (mode > 0) only for root Node of probe
-				score = one.compareTo(theOther, mode, v);
+				if (one.parentID.matches("0") ) {
+					// Node one is the root Node
+					// enable use of fuzzy matching (mode > 0) only for root Node of probe
+					score = one.compareTo(theOther, mode, v);
+				} else {
+					// Node one is an internal Node (one.parentID is "x"), i.e., from "UND" section of GlycoCT
+					score = 9;
+				}
 			} else {
 				// use exact matching (mode = 0) for all other Nodes of probe
 				score = one.compareTo(theOther, 0, v);
@@ -973,7 +994,7 @@ public class TreeBuilder3 {
         	if (n.archetype.sugar.synonymPC == null)
         		return (false);
         }
-        if (n.site == -1)
+        if (n.site.compareTo("-1") == 0)
 			return (false);
 
 		// otherwise ...
@@ -1064,15 +1085,14 @@ public class TreeBuilder3 {
 			residueID = n.nodeID;
 			residueName = n.residueName;
 		}
-		String parentID = "0";
-		int site = 0;
+		String parentID = n.parentID;
+		String site = n.site;
 		if (n.parent != null) {
-			if (n.parent.canonicalNode != null) {
-				parentID = n.parent.canonicalNode.nodeID;
-			} else {
+			if (n.parent.canonicalNode == null) {
 				parentID = n.parent.nodeID;
+			} else {
+				parentID = n.parent.canonicalNode.nodeID;
 			}
-			site = n.site;
 		}
 		NodeArchetype na = n.archetype;
 		SNFGSugar sug = na.sugar;
@@ -1323,6 +1343,8 @@ public class TreeBuilder3 {
 				while (input.hasNext()) {
 					String line = input.next();
 					String[] vals = line.split(",");
+					// need to bail if vals.length() < offset + 8
+					if (vals.length < offset + 9) return -1;
 					String glycanID = vals[0]; // not used when offset == 0
 					String residueName = vals[offset + 0];
 					String nodeID = vals[offset + 1];
@@ -1379,14 +1401,14 @@ public class TreeBuilder3 {
 						e.printStackTrace();
 					}
 
-					Node n = new Node(na, residueName, nodeID, Integer.parseInt(site), nodeName, parentID, formName);
+					Node n = new Node(na, residueName, nodeID, site, nodeName, parentID, formName);
 					if (!archIsNew) {
 						// if archetype already exists, use that archetype for this node
 						n.archetype = matchingArchetype; 
 					}
 					nodeMap.put(nodeID, n);
 					if (v > 4)
-						System.out.printf(" New Node %s %s with name [%s], canonical name [%s], formName [%s],\n  and parent %s, linked at position %d",
+						System.out.printf(" New Node %s %s with name [%s], canonical name [%s], formName [%s],\n  and parent %s, linked at position %s",
 								nodeID, nodeMap.get(nodeID), n.archetype.sugar.name, n.residueName,  n.formName,
 								nodeMap.get(nodeID).parentID, nodeMap.get(nodeID).site);
 				}
@@ -1396,7 +1418,7 @@ public class TreeBuilder3 {
 				e.printStackTrace();
 				return (0);
 			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.printf("\nArray out of bounds for file %s (offset is %d)\n", fn, offset);
+				System.out.printf("\nArray index out of bounds for file %s (offset is %d)\n", fn, offset);
 				e.printStackTrace();
 			}
 		} else {
@@ -1410,13 +1432,18 @@ public class TreeBuilder3 {
 		// set all parents and children
 		for (Map.Entry<String, Node> entry : nodeMap.entrySet()) {
 			Node n = entry.getValue();
-			if (nodeMap.get(n.parentID) != null) {
+			if (v > 4)
+				System.out.printf("\n node[%s] has parentID %s", n.nodeID, n.parentID);
+			if (nodeMap.get(n.parentID) != null) { // @@@ this if logic needs fixin'
 				n.setParent(nodeMap);
 				if (v > 4)
-					System.out.printf("\nset up Node %s (%s) with parent %s (%s) substituted at %d", n.nodeID, n,
+					System.out.printf("\n   assigned parent for Node %s (%s): parent %s (%s) substituted at %s", n.nodeID, n,
 							nodeMap.get(n.parentID).nodeID, nodeMap.get(n.parentID), n.site);
 				// add node n as a child of its parent (just assigned)
 				n.parent.children.put(n.nodeID, n);
+			} else {
+				if (v > 4)
+					System.out.printf("\n   Node %s (%s) has no parent", n.nodeID, n);
 			}
 
 		}

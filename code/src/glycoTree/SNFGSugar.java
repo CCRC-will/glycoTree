@@ -15,7 +15,7 @@ package glycoTree;
  */
 public class SNFGSugar {
 	/**
-	 * the SFFG name of ghe sugar
+	 * the SFFG name of the sugar
 	 */
 	String name;
 	
