@@ -12,7 +12,23 @@ import java.util.Map;
  * context facilitates mapping of specific residues in a glycan with biological phenomena, such as the enzymes 
  * involved in processing the residue during biosynthesis, any motifs or epitopes in which the residue is included,
  * and many other possibilities.
- * 
+ *
+ *  <br>
+ *  Copyright 2020 William S York
+ *  <br>
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  <br>
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  <br>
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+ * <br>
  * @author wsyork
  *
  */
@@ -162,7 +178,7 @@ public class Node {
 	 * of their archetypes (fast!!)
 	 * @param otherNode the Node to which this Node is being compared 
 	 * @param mode specifies the strictness of the comparison <br> 
-	 * &nbsp;&nbsp; mode = 0 requires an exact match to return a result of 0 (archetypes are identical)</br>
+	 * &nbsp;&nbsp; mode = 0 requires an exact match to return a result of 0 (archetypes are identical)<br>
 	 * &nbsp;&nbsp; mode = 1 allows fuzzy matching e.g., alditols can match reducing sugars
 	 * @param verbosity the verbosity of the output to stdout upon execution of the method
 	 * @return the score of the comparison - zero indicates a match, one indicates a mismatch

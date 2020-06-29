@@ -10,6 +10,22 @@ package glycoTree;
  * of a specific sugar.  This class also holds two synonyms (to facilitate sugar look-up) and the name of a closely related 
  * sugar with the same SNFG image. For example, "Glcol" is a quasi synonym of "Glc" because both are represented
  *  by a blue  circle.
+ * <br>
+ *  Copyright 2020 William S York
+ *  <br>
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  <br>
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  <br>
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+ * <br>
 
  * @author wsyork
  */

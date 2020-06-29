@@ -9,8 +9,23 @@ import java.util.ArrayList;
  * Each instance of the Class NodeArchetype holds information about the basic structure of a {@link glycoTree.Node}.<br>
  * This is limited to the {@link glycoTree.SNFGSugar} (which specifies the basic sugar backbone), its anomeric
  * configuration, its absolute configuration, and its ring form - this allows rapid comparison of Nodes simply
- * by comparing their archetypes.
- * 
+ * by comparing their archetypes
+ * <br>
+ *  Copyright 2020 William S York
+ *  <br>
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  <br>
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  <br>
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+ * <br>
  * @author wsyork
  *
  */
@@ -86,7 +101,7 @@ public class NodeArchetype {
 	 * compares one archetype to another, returning a score (0 indicates a perfect match)
 	 * @param theOther the other archetype to which this.NodeArchetype is compared
 	 * @param mode the strictness of the matching criteria
-	 * &nbsp;&nbsp; mode = 0 requires an exact match to return a result of 0 (archetypes are identical)</br>
+	 * &nbsp;&nbsp; mode = 0 requires an exact match to return a result of 0 (archetypes are identical)<br>
 	 * &nbsp;&nbsp; mode = 1 fuzzy matching by ignoring anomeric configuration<br>
 	 * &nbsp;&nbsp; mode = 2 fuzzy matching by ignoring anomeric configuration and ring form<br>
 	 * &nbsp;&nbsp; mode = 3 quasi matching by SNFG symbol - e.g., Glcol matches Glc (both are blue circles)

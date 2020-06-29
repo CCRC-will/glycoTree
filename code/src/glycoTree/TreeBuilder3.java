@@ -18,9 +18,24 @@ import java.util.*;
  * such as enzymes involved in their biogenesis/biodegradation or their
  * inclusion in structural motifs having specific biological functions.
  * <br>
+ *  Copyright 2020 William S York
+ *  <br>
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  <br>
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  <br>
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+ * <br>
  * Usage: &nbsp;&nbsp; 
  * java -jar TreeBuilder3.jar [options]<br>
- * &nbsp;&nbsp; (See {@link #main(String[])} method for options.)
+ * &nbsp;&nbsp; (See {@link #main(String[])} method for options)
  * @author wsyork
  * 
  */
@@ -126,7 +141,7 @@ public class TreeBuilder3 {
 	 * that are directly attached to canonical residues - use only for structures that are known to be biologically relevant<br>
 	 * -o: the name of the output file containing the nodes to extend the glycotree<br>
 	 * -m: the matching mode; <br>
-	 * &nbsp;&nbsp; "-m 0" requires an exact match to return a result of 0 (archetypes are identical)</br>
+	 * &nbsp;&nbsp; "-m 0" requires an exact match to return a result of 0 (archetypes are identical)<br>
 	 * &nbsp;&nbsp; "-m 1" fuzzy matching by ignoring anomeric configuration<br>
 	 * &nbsp;&nbsp; "-m 2" fuzzy matching by ignoring anomeric configuration and ring form<br>
 	 * &nbsp;&nbsp; "-m 3" quasi matching by SNFG symbol - e.g., Glcol matches Glc (both are blue circles)<br>
