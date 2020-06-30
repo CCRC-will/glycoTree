@@ -1,4 +1,5 @@
 .DS_Store
+prepare_N-tree.sh
 log/*.txt
 log/*.log
 export/
