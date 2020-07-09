@@ -227,7 +227,7 @@ public class SVGflatten {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.printf("file %s does not exist", fn);
+			System.out.printf("\n\n ***** File %s does not exist! *****", fn);
 		}	
 		
 		String[] csvLines = new String[fileLines.size()];
@@ -354,6 +354,7 @@ public class SVGflatten {
 		}
 		Map<String, Map<String, String>> gtResidues = new HashMap<String, Map<String, String>>();
 		Map<String, Map<String, String>> svgResidues = new HashMap<String, Map<String, String>>();
+		
 		String[] csvLines = readCSV(cFileName);
 		for (int i = 1; i < csvLines.length; i++) { // skip the header line where i == 0
 			String[] vals = csvLines[i].split(",");
@@ -535,7 +536,11 @@ public class SVGflatten {
 		    aString = aStr.toString();
 
 		    if (v > 5) System.out.printf("\n\n  Assigning new IDs to mappable SVG objects");
-		    mapTheIDs(gtResidues, svgResidues, gtRoot, svgRoot, accession);
+		    if ( gtResidues.isEmpty() ) {
+		    	System.out.printf("\n***** Cannot map residues to csv data for %s; using svg IDs in semantic ids *****", accession);
+		    } else {
+			    mapTheIDs(gtResidues, svgResidues, gtRoot, svgRoot, accession);		    	
+		    }
 
 		    if (v > 5) System.out.printf("\n\n  Cleaning up unmappable IDs in SVG objects");
 		    cleanUpIDs(svgResidues, accession);
