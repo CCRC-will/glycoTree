@@ -29,6 +29,6 @@ The  glycoTree model has been initially developed for N-glycans, and its extensi
 Preparation of the N-glycan canonical tree data is partially automated using the bash script "populate_N-tree.sh" Only step 1 (collecting input file specifying the structures of mamallian N-glycans) is required as a prerequisites for the automation.
 This script generates a glycoTree csv file for each glycan in the source data directory and populates the "annotated_glycans.csv" file.
 
-Transformation of svg files is performed by the script convertSVG.sh, which invokes the SVGflatten class.
+Transformation of svg files is performed by the script convertSVG.sh, which invokes the SVGflatten class.  Transformed svg files are held in subfolders of the data/svg/ folder.  Mappings of the original svg element id's with the new, semantic id's are held in the map_xxx files in the model/ folder.
 
 Please examine these scripts and read the javadocs or comment lines in the programs they invoke for more insight regarding the usage of these programs in other contexts.
