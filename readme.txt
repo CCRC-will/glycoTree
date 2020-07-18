@@ -5,7 +5,7 @@ and extended by implementing a description logics approach that facilitates sema
 York, W.S., A. Sheth, K. Kochut, J.A. Miller, C. Thomas, K. Gomadam, X. Yi, and M. Nagarajan.  2004.
 "Semantic integration of glycomics data and information."  Invited lecture, The Human Disease Glycomics/Proteome Initiative 1st Workshop, Osaka, Japan, August 23-24. 
 
-An extensive and rigorous implementation was developed in the form of the GlycO ontology. See:
+An extensive and rigorous implementation of glycoTree was developed in the form of the GlycO ontology. See:
 https://bioportal.bioontology.org/ontologies/GLYCO
 
 Semantics defined in the GlycO ontology was leveraged to enable curation of
@@ -15,90 +15,20 @@ The software in this GitHub repository is a further extension of the concepts de
 the GlyGen initiative (York, et al, 2020, PMID: 31616925), financially supported by the NIH Common Fund:
 https://projectreporter.nih.gov/project_info_description.cfm?aid=9391499
 
+The glycoTree project includes several different software packages, including:
+- GenerateCSV - a java class that takes GlycoCT files as input and generated csv files in "glycoTree" format
+- TreeBuilder -a java class that semantially annotates the glycoTree files by mapping the sugar residues they specify to residues in the canonical glycoTree
+- several awk and shell scripts that collect files, invoke the java classes, and make inferential assertions, which are saved in other files
+- SVGflatten - a java class that transforms svg encodings of glycan structure images by removing unnecessary layers, incorporating semantic id attributes to the svg drawing elements, and adding an image element showing the anomeric configuration of the reducing residue (which is missing in the original svg files).  The semantic id's specify an image element type (residue, link, or link annotation), the GlyTouCan accession of the rendered glycan, and the canonical index of each residue in the structure, like this: "R-G40194MN:NC".
 
+The  glycoTree model has been initially developed for N-glycans, and its extension to include O-glycans is in progress. The model comprises several files:
+- the glycoTree itself is defined in a "nodes" file (currently "N-nodes_V-2.2.csv" for N-glycans).  This file is based on the tree initially specified in the GlycO ontology. Extension of the tree with the incorporation of new structures is semiautomatic; new nodes are suggested by TreeBuilder, and those deemed biochemcially consistent are manually added to the tree by a human curator.  Once a residue has been added to the canonical tree, it should be immutable.  This does not imply any biological relevance of the residue; its relevance is specified only by mapping it to a specific biological process (e.g., biosynthesis of N-glycans).
+- mappings of canonical residues to biological processes are held in manually generated mapping files, which are highly curated.  The file "enzyme-mappings_v-2.1.csv" currently holds "glycoenzymes" mapped to specific residues in the canonical N-glycan tree.  For example, the enzyme ALG1 (which catalyzes the addition of the core beta-mannosyl residue to the growing N-glycan lipid-linked precusor) is mapped to "N-glycan_core_b-D-Manp" (the core beta-mannosyl residue).
+- assertions for individual N-glycan structures (indexed using GlyTouCan accessions) are inferred from these mappings and currently held in a summary file called "annotated_glycans.csv".  For example, this file asserts that in humans, biosynthesis of a SPECIFIC glycan (e.g., G00176HZ) involves the addition of the core beta-mannose by the glycosyltransferase (GT) with UniProt accession Q9BT22.
 
-Preparing the N-glycan canonical tree
+Preparation of the N-glycan canonical tree data is partially automated using the bash script "populate_N-tree.sh" Only step 1 (collecting input file specifying the structures of mamallian N-glycans) is required as a prerequisites for the automation.
+This script generates a glycoTree csv file for each glycan in the source data directory and populates the "annotated_glycans.csv" file.
 
+Transformation of svg files is performed by the script convertSVG.sh, which invokes the SVGflatten class.
 
-This workflow is partially automated using the bash script "populate_N-tree.sh"
-Only step 1 (collecting input file specifying the structures of mamallian N-glycans) is required as prerequisites fo the automation
-All commands assume the active directory is the one holding this readme file
-Shell commands are on lines starting with the command prompt ($)
-
-##### Part A: Collect and list biologically relevant GlycoCT files #####
-
-** Prepare a directory ./data/ to hold glycan structure files
-
-$	mkdir data
-
-** Generate a json file describing all mammalian N-glycans in GlyGen, using the following parameters:
-	- Glycan Type: N-glycan
-	- Organism: Homo Sapiens OR Mus musculus OR Rattus norvegicus
-	
-This can be done directly in a browser using the GlyGen API with the following URI:	
-
-https://api.glygen.org/directsearch/glycan/?query={"operation":"AND","query_type":"search_glycan","organism":{"organism_list":[{"name":"Rattus norvegicus","id":10116},{"name":"Homo sapiens","id":9606},{"name":"Mus musculus","id":10090}],"operation":"or"},"glycan_type":"N-glycan"}
-
-** Save the resulting json file in the subdirectory ./data/ as
-./data/mammal_N-glycans.json
-
-
-***** AUTOMATION STARTS HERE *****
-	You can ignore the rest of this file if you automate the remaining steps by invoking 
-$	./populate_N-tree.sh
-
-		
-** Prepare directories to hold the (defined and undefined) GlycoCT files embodied in ./data/mammal_N-glycans.json
-
-$	mkdir ./data/def
-$	mkdir ./data/und
-
-** Extract the GlycoCT files from ./data/mammal_N-glycans.json
-
-$	awk -f ./code/gctExtract.awk ./data/mammal_N-glycans.json 
-
-** Make lists of GlycoCT files in the ./data/def/ and ./data/und/ directories
-
-$	ls -1 ./data/def/G*.txt > ./data/def.lst
-$	ls -1 ./data/und/G*.txt > ./data/und.lst
-
-
-##### Part B: converting GlycoCT files to csv files #####
-
-** Prepare directories to hold the (defined and undefined) csv files
-
-$	mkdir ./data/def/csv
-$	mkdir ./data/und/csv
-
-** Generate csv files - the file GenerateCSV.jar (must be present in the directory ./code/)
-
-$	java -jar ./code/GenerateCSV.jar ./data/def.lst list 0 > ./log/def_csv.log
-
-##### Part C: mapping residues in the csv files to the canonical tree #####
-
-** Generate an input glycan csv file list for ./code/TreeBuilder3.jar
-
-$	ls -1 ./data/def/csv/G*.csv > ./data/def/csv/files.lst
-
-** Prepare directories to hold the mapped csv files
-
-$	mkdir ./data/def/csv/mapped
-$	mkdir ./data/und/csv/mapped
-
-** Map the residues in the csv files to the canonical tree
--- The command below works for the most up-to-date model files at the time of this writing ... 
-The script ./populate_N-tree.sh uses the current versions found in the directory ./model/
-
-$	java -jar ./code/TreeBuilder3.jar -l ./data/def/csv/files.lst -s ./model/sugars_V-2.0.csv -c ./model/N-nodes_V-2.2.csv -n 3 -v 1 -m 3 -e 2 -o ./model/ext.csv > ./log/csv_map.log
-
-** After TreeBuilder[3] is run with  "-e 2", check which residues remain unassigned:
-
-$	grep -h "unassigned" ./data/def/csv/mapped/G* > ./model/unassigned.csv
-
-##### Part C: annotating residues in the canonically mapped csv files with enzymes #####
-
-** Annotate residues with enzymes using ./code/mkCSVmap.awk
--- The command below works for the most up-to-date enzyme-mappings file at the time of this writing ... 
-The script ./populate_N-tree.sh uses the current version found in the directory ./model/
-$	awk -f ./code/mkCSVmap.awk ./model/enzyme-mappings_v-2.1.csv ./data/def/csv/mapped/G*.csv  > ./model/annotated_residues.csv
-
+Please examine these scripts and read the javadocs or comment lines in the programs they invoke for more insight regarding the usage of these programs in other contexts.

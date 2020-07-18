@@ -43,7 +43,8 @@ import java.util.Scanner;
  * for example, "R-G95575GS:1".  In either case, if the svg residue is not mappable to the csv 
  * encoding (e.g., if the path from the residue to the root residue is not fully defined) the svg 
  * residue will be assigned a semantic id that includes its svg id, preceeded by the character "S", 
- * e.g.,  "R-G95575GS:S7"
+ * e.g.,  "R-G95575GS:S7"<br>
+ * An output csv file that maps all ID replacements is also generated.
  * <br>
  *  Copyright 2020 William S York
  *  <br>
@@ -69,34 +70,44 @@ public class SVGflatten {
 	 * the verbosity of the output to stdout
 	 */
 	public static int v = 9;
+
+	public static StringBuilder mapStr; 
+	public static String mapFileName = "";
 	
 	// The following Strings are declared globally, and reinitialized for each new structure
 	//  This is not optimal  - Possible improvement: declare all three locally and put into 
 	//  a locally declared HashMap, pass this Map as a method argument ...
-	//  A bit more verbose, but keeps data local
+	//  A bit more verbose, but keeps data local - TODO later
 	public static String nString = "";
 	public static String lString = "";
 	public static String aString = "";
-	
+	public static Boolean addReducingAnomer = false;
+
 
 	/**
-	 * The core execution method, that collects data and generates svg output.
+	 * The core execution method, which collects data and generates svg output.
 	 * Command line arguments (args):<br>
 	 * -l: the name of a file containing a list of svg input files to process<br>
 	 * -s: the name of a single svg file encoding a glycan image to process<br>
-	 * -a: a String specifying the version of the output (e.g., "v2.0") - used in
-	 * naming the output file to prevent file-name degeneracy<br>
+	 * -a: a String specifying the specific type of the output (e.g., "gTree.v2.0") - used
+	 *  in naming the output file - to prevent file-name degeneracy<br>
 	 * -c: the name of the directory holding the csv files used in batch processing -
 	 * if -c is not specified, csv files are fetched from the same directory that
-	 * holds the corresponding svg input file<br>
+	 * holds the corresponding svg input file - if the csv file cannot be found, svg
+	 * objects are assigned id's ending in the numerical part of their original svg id's<br>
 	 * -o: the name of the directory to which the generated svg files are written -
 	 * if -o is not specified, svg files are written to the same directory that
 	 * holds the corresponding svg input file<br>
 	 * -v: verbosity has a value of 0-9. For batch processing, use "-v 0" or "-v 1" 
 	 * to minimize the information that is written to std out<br>
+	 * -r: add a &lt;text&gt; tag to the new svg encoding to render the reducing end anomeric form<br>
+	 * -m: the name of the mapping file (records replacement of svg IDs with semantic id's)
 	 * @param args	 An array of parameters passed to the program at initiation
 	 */
 	public static void main(String args[]) {
+		mapStr = new StringBuilder("accession,svg_id,semantic_id");
+		
+		
 		String svgFileName = "";
 		String listFileName = null;
 		String outDir = "./";
@@ -127,6 +138,10 @@ public class SVGflatten {
 						i++;
 						listFileName = args[i];
 						break;
+					case 'm':
+						i++;
+						mapFileName = args[i];
+						break;
 					case 'a':
 						i++;
 						versionStr = args[i];
@@ -141,6 +156,10 @@ public class SVGflatten {
 						i++;
 						outDir = args[i];
 						outDirSet = true;
+						break;
+					case 'r':
+						i++;
+						if (args[i].matches("1")) addReducingAnomer = true;
 						break;
 					case 'v':
 						i++;
@@ -195,11 +214,12 @@ public class SVGflatten {
 			svgEncoding = processData(csvFileName, svgFileName );	
 			if (v > 3) System.out.printf("\n\n%s\n",svgEncoding);
 			
-			
-			
-			
+			// write svgEncoding to output file
 			writeData(svgEncoding, outFileName);
-			// output svgEncoding to output file
+			
+			// write ID mapping to output file
+			if (v > 3) System.out.printf("\n\n###### Mappings #####\n\n %s", mapStr.toString());
+			if (mapFileName.length() > 0) writeData(mapStr.toString(), mapFileName);
 		}
 		
 	} // end of main()
@@ -218,12 +238,11 @@ public class SVGflatten {
 				Scanner input = new Scanner(file);
 				while (input.hasNext()) {
 				String line = input.next();
-					if (v > 5) System.out.printf("\nReading line %s", line);
+					if (v > 5) System.out.printf("\nReading line:    %s", line);
 					fileLines.add(line);
 				}
 				input.close();
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
@@ -238,8 +257,8 @@ public class SVGflatten {
 	
 	/**
 	 * Generates a list of file names by reading an input file whose name is specified by the String fn
-	 * @param fn A String containing the name of a file listing  input (svg) files  
-	 * @return An ArrayList containing names of svg input file for processing
+	 * @param fn A String containing the name of a file listing input (svg) files  
+	 * @return An ArrayList containing names of svg input files to be processed
 	 */
 	public static ArrayList<String> parseListFile(String fn) {
 		ArrayList<String> result = new ArrayList<String>();
@@ -360,6 +379,7 @@ public class SVGflatten {
 			String[] vals = csvLines[i].split(",");
 			String id = vals[2];
 			String name = vals[3];
+			String anomer = vals[4];
 			String parent = vals[7];
 			String site = vals[8];
 
@@ -367,6 +387,7 @@ public class SVGflatten {
 			Map<String, String> residue = new HashMap<String, String>();
 			residue.put("id", id);
 			residue.put("name", name);
+			residue.put("anomer", anomer);
 			residue.put("parent", parent);
 			residue.put("site", site);
 			gtResidues.put(id, residue);
@@ -445,7 +466,10 @@ public class SVGflatten {
 			        	String gType = gID.split("-")[0].toUpperCase();	
 			        	
 			        	String key = "";
-			        	if (!gType.matches("B") ) { // brackets are NOT residues
+			        	if (gType.matches("B") ) { // brackets are NOT residues
+			        		key = "B";
+				        	gStr = new String("\n    <g style=\"" + gStyle + "\">");
+			        	} else {
 			        		key = addResidue(gID, svgResidues);
 			        		if (v > 3) {
 			        			System.out.printf("\n    Processing svg residue with key %s", key);
@@ -454,17 +478,17 @@ public class SVGflatten {
 			        			System.out.printf("\n    gType is %s", gType);
 			        			System.out.printf("\n    accession is %s", accession);
 			        		}
-			        	} else {
-			        		key = "B";
-				        	gStr = new String("\n    <g style=\"" + gStyle + "\">");
 			        	}
-			        	
 			        	
 			        	// switch on value of gType
 			    		String newID = "not ready"; // newID will be set upon mapping of svg to csv
 			        	switch (gType) {
-			        	case "R": // gElement wraps a residue
-			        		nStr.append(type_R(gID, ch, gStr, svgResidues.get(key), key ) );
+			        	case "R": // gElement wraps a residue (but rarely some text)
+			        		String type_Result = type_R(gID, ch, gStr, svgResidues.get(key), key );
+			        		nStr.append(type_Result );
+			        		if ( type_Result.contains("text-anchor" ) ) { // CANNOT have a pure text node in svgResidues
+			        			svgResidues.remove(key);
+			        		}
 			        		break;
 			        	case "L": // gElement wraps a link
 			        		lStr.append(type_L(gID, ch, gStr, svgResidues.get(key)) );
@@ -493,9 +517,9 @@ public class SVGflatten {
 			        	if (fcnType.compareTo("rect") == 0) {
 			        		String h = fce.getAttribute("height");
 			        		String w = fce.getAttribute("width");
-
-			        		String temp = "\n<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  height=\"" + 
-			    					h + "\" width=\"" + w + "\"\n  style=\"" + svgStyle + "\" >";
+			        		String svgID = accession + "_svg";
+			        		String temp = "\n<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\"  xmlns=\"http://www.w3.org/2000/svg\" " + 
+			        				"id=\""  + svgID + "\" height=\"" + h + "\" width=\"" + w + "\"  style=\"" + svgStyle + "\" >";
 			        		if (v > 3) {
 			        			System.out.printf("\n    Image boundary <rect>\n      height: %s\n      width: %s", h, w);
 			        			System.out.printf("\n    <svg> tag string:%s", temp);
@@ -522,15 +546,49 @@ public class SVGflatten {
 				}
 			}
 			
-			// get roots and assign their parents if necesary
+			// get roots and if necessary assign their parents 
+
 		    Map<String, String> gtRoot = getRoot(gtResidues);
 		    Map<String, String> svgRoot = getRoot(svgResidues);
-		    
+		    String anomerChar = "";
+		    // if (gtRoot.get("anomer") != null && !gtRoot.get("anomer").isEmpty()) {
+		    if (gtRoot != null && !gtRoot.isEmpty()) {
+		    	anomerChar = gtRoot.get("anomer");
+		    }
 		    if (v > 5) {
+		    	System.out.printf("\n\n    Assigned gt root anomer %s", anomerChar);	    	
+		    	System.out.printf("\n    Assigned svg root: %s", svgRoot.toString());
+		    	System.out.printf("\n     svg root coordinates: (%s,%s)", svgRoot.get("x"), svgRoot.get("y"));
 		    	showMap(gtResidues, "gTreeResidues");
 				showMap(svgResidues, "svgResidues");
 		    }
-			
+
+		    if (addReducingAnomer) {  // GENERATE REDUCING ANOMER ANNOTATION
+		    	if (svgRoot.get("x") != null && !svgRoot.get("x").isEmpty()) {
+
+		    		Double x = Double.parseDouble(svgRoot.get("x")) + 30;
+		    		Double y = Double.parseDouble(svgRoot.get("y")) + 15;
+		    		String rootAnomer = "";
+
+		    		switch(anomerChar) {
+		    		case "a":
+		    			rootAnomer = "&#x03B1;";
+		    			break;
+		    		case "b":
+		    			rootAnomer = "&#x03B2;";
+		    			break;
+		    		default:
+		    			break;
+		    		}
+
+		    		String anomerString = "\n    <g style=\"fill:white; text-rendering:optimizeSpeed;\">" +
+		    				"\n      <text style=\"fill:black; stroke:none;  font-size:12px; font-family:'Serif';\" x=\"" +
+		    				x + "\" y=\"" + y + "\" text-anchor=\"middle\">" + rootAnomer + "</text>" +
+		    				"\n    </g>";
+		    		aStr.append(anomerString);
+		    	}
+		    }
+		    
 		    lString = lStr.toString();
 		    nString = nStr.toString();
 		    aString = aStr.toString();
@@ -573,7 +631,8 @@ public class SVGflatten {
 	
 	
 	/**
-	 * assigns semantic IDs to svg objects that cannot be mapped to a residue in the csv input file
+	 * assigns semantic IDs to svg &lt;g&gt; "R", "L" and "LI" objects that cannot be mapped to a residue 
+	 * in the csv input file
 	 * @param svgMap a Map of Maps holding the residues specified by the original svg encoding
 	 * @param accession the accession of the glycan whose image is being processed
 	 */
@@ -603,16 +662,18 @@ public class SVGflatten {
 		for (String k1 : theMap.keySet() ) {
 			Map<String, String> theRes = theMap.get(k1);
 			if (theRes.containsKey("parent") ) {
-				// the residue has a parent attribute
+				// the residue (usually a gTree object) has a parent attribute
 				if (theRes.get("parent").matches("0") )
 					return(theRes);
 			} else {
-				// the residue has NO parent attribute
+				// the residue (usually an svg object) has NO parent attribute
 				theRes.put("parent", "0");
 				return(theRes);				
 			}
 
 		}
+		
+		// the following is reachable only if no root can be found
 		return(null);
 	} // end of method getRoot()
 	
@@ -622,15 +683,17 @@ public class SVGflatten {
 	 * @param processedStr a String that is to be modified by replacing the id
 	 * @param replacementID a String holding the new ID
 	 * @param svgRes the Map holding the &lt;svg&gt; residue and its properties
-	 * @param key the HashMap key of the residue whose id is to be modified
-	 * @param type a String specifying the type of &lt;svg&gt; element corresponding (R | L | LI)
+	 * @param key String specifying the HashMap key ("resID", "linkID", or "annID") for the specific type of svg residue ID 
+	 * svg residue ID to be modified - e.g., key "linkID" points to something like "r-1:3,2")
+	 * @param type a String specifying the type of &lt;svg&gt; element corresponding (R or L or LI)
 	 * @param accession the accession of the glycan being processed
-	 * @param preID a String to be placed before the index part of the semantic id: either "" or "S" for ummappable residues
+	 * @param preID a String to be placed before the index part of the semantic id: empty ("") for 
+	 * mappable residues or "S" (i.e., original svg index) for ummappable residues
 	 * @return the modified version of the processed String
 	 */
 	public static String replaceID(String processedStr, String replacementID, Map<String, String> svgRes, String key,
 			String type, String accession, String preID) {
-		
+		// add argument, Boolean keep to keep the svg index part of the id, e.g., l-1:3,4 -> L-Gxxxxxxx:3,4
 		String result = new String(processedStr);
 		
 		if (svgRes.containsKey(key)) {
@@ -638,6 +701,8 @@ public class SVGflatten {
 			String oldID = svgRes.get(key);
 			String newID  = type + "-" + accession + ":" + preID + replacementID;
 			if (v > 5) System.out.printf("\n    Replacing SVG id %s with new id %s",  oldID, newID);
+			
+			mapStr.append("\n" + accession + ",\"" + oldID + "\"," + newID);
 
 			String prefix = processedStr.substring(0, processedStr.indexOf(oldID));
 			String suffix = processedStr.substring(processedStr.indexOf(oldID) + oldID.length(), processedStr.length());
@@ -653,11 +718,11 @@ public class SVGflatten {
 	
 	/**
 	 * maps ids of the &lt;svg&gt; elements to residues in the glycoTree encoding, allowing the &lt;svg&gt; elements to be modified
-	 *   by changing their ids to semantic ids
+	 *   by changing their original ids to semantic ids
 	 * @param gtMap a Map of Maps specifying a tree containing the residues specified in the glycoTree csv file
 	 * @param svgMap a Map of Maps specifying a tree containing the residues specified in the svg file
-	 * @param thisGTres the glycoTree residue that is the focus of this instance of mapIDs() (it's recursive, so multiple 
-	 *    instances of this method are invoked) 
+	 * @param thisGTres the glycoTree residue that is the focus of this instance of mapIDs() - 
+	 *  mapTheIDs() is recursive, so multiple instances (one per glycoTree residue) of this method are invoked
 	 * @param thisSVGres the &lt;svg&gt; encoded residue that is the focus of this instance of mapIDs()
 	 * @param accession the accession of the glycan being processed - required for semantic annotation
 	 */
@@ -688,7 +753,8 @@ public class SVGflatten {
 						Map<String, String>svgRes =svgMap.get(svgKey);
 						if(svgRes.containsKey("parent") ) {
 							String svgParent = svgRes.get("parent");
-							if (svgParent.matches(thisSVGres.get("id") ) ) {
+							String thisID = thisSVGres.get("id");
+							if ( (thisID != null) && (svgParent.matches(thisID) )  ){
 								// thisSVGres is parent of svgRes
 								// now, compare site of the parallel children (gtRes, svgRes)
 								if (gtRes.get("site").matches(svgRes.get("site") )  ) {
@@ -709,10 +775,11 @@ public class SVGflatten {
 	
 	
 	/**
-	 * adds a new Map (i.e., residue) to the Map of Maps containing the svg-encoded residues
+	 * adds a new Map (i.e., residue) to the Map of Maps containing the svg-encoded residues - modifies
+	 * the HashMap that contains parameters describing the svg-encoded residues
 	 * @param gID the id of the &lt;g&gt; element in the original svg encoding of the structure
 	 * @param svgResidues the Map of Maps containing the svg-encoded residues
-	 * @return the key pointing to the new residue
+	 * @return the numerical index of the new residue. E.g., when gID="r-1:7" the value "7" is returned
 	 */
 	public static String addResidue(String gID, Map<String, Map<String, String>> svgResidues) {
 		String[] keySplit = gID.split(":")[1].split(","); 
@@ -729,16 +796,19 @@ public class SVGflatten {
 	
 	
 	/**
-	 * processes residue (R) nodes in the svg encoding
-	 * @param gID the svg ID of the residue node
+	 * processes residue (R) nodes in the svg encoding to generate a String to be included in 
+	 * the newly-generated svg encoding
+	 * @param gID the svg ID of the residue node that is being processed
 	 * @param childNodes a list of the children of the residue &lt;g&gt; element in the original svg file
-	 * @param gStr a String holding the residue &lt;g&gt; element in the new svg file
+	 * @param gStr a String holding the residue &lt;g&gt; element in the original svg file
 	 * @param residue the svg residue (HashMap) being processed
-	 * @param key the svg ID for the residue
+	 * @param index a String representation of the index of the svg residue. This is a unique
+	 * key in the context of an individual svg encoding - for example, when gID="r-1:4", key="4"
 	 * @return a String holding the newly generated residue &lt;g&gt; element and enclosed shape elements
-	 * (e.g., &lt;rect&gt;, &lt;circle&gt;)
+	 * (e.g., &lt;rect&gt;, &lt;circle&gt;) - in rare cases, the svg "R" element just contains a supplemental
+	 * annotation string (like "6S"), in which case an svg &lt;text&gt; element is generated
 	 */
-	public static String type_R(String gID, NodeList childNodes, String gStr, Map<String, String> residue, String key) {
+	public static String type_R(String gID, NodeList childNodes, String gStr, Map<String, String> residue, String index) {
 		// generates a shape node (circle, rect, polygon) to replace the bloated shape definitions
 		
 		if (v > 3) {
@@ -751,17 +821,47 @@ public class SVGflatten {
 		Node fcn = childNodes.item(0);
 		Element fce = (Element) fcn;
 		NamedNodeMap fcAtts = fce.getAttributes();
+		
 		for (int j = 0; j < fcAtts.getLength(); j++ ) {
 			if (fcAtts.item(j).getNodeName().compareTo("style") !=0) { // style redefined above
 				if (v > 3) System.out.printf("\n      %s", fcAtts.item(j));
 				shapeAtts = shapeAtts.concat(" " + fcAtts.item(j).toString());
 			}
 		}
+		
 		// loop through children to find rgb and use it to form the style of the first child
 		if (v > 3) System.out.printf("\n    Children:");
 		for (int i = 0; i < childNodes.getLength(); i++ ) {
-			if (v > 3) System.out.printf("\n   shape: <%s>", childNodes.item(i).getNodeName());
 			Element child = (Element) childNodes.item(i);
+
+			String shapeName = child.getNodeName();
+			if (v > 3) System.out.printf("\n       shape: <%s>", shapeName);
+
+			if (shapeName.matches("path")) { 
+				// there is a path inside an "R" element - extract information and prevent drawing the <rect> (useless in this case) 
+				String dStr = child.getAttribute("d").toString();
+				// map and display the path string
+				Map<String, String> tp = new HashMap<String, String>();
+
+				try {
+					tp = mapChar(dStr);
+				} catch (Exception e) {
+					e.printStackTrace();
+					return("");
+				}
+
+				String textNodeStr = "<text style=\"fill:black; stroke:none; " +
+						" font-size:" + tp.get("size") + "; font-family:'" + tp.get("font") + "';\" x=\"" + tp.get("x") +
+						"\" y=\"" + tp.get("y") + "\" text-anchor=\"middle\">" + tp.get("char") + "</text>"; 
+				// remove id from svg text (which could be redundant inside any enclosing <html>) from gStr
+				String gStrAlt = "\n    <g style=\"fill:white; text-rendering:optimizeSpeed;\" >" ;
+				String textStr = gStrAlt + "\n      " + textNodeStr + "\n    </g>";
+				if (v > 3) System.out.printf("\n    textStr:      %s", textStr);
+
+				// bail out of R_type() method - no shape drawing is appropriate for this svg element
+				return(textStr);
+			}
+
 			String childStyle = child.getAttribute("style");
 			Boolean macho = childStyle.matches("(.*)rgb(.*)");
 			if (macho) {  // if the child has an rgb string in its style string
@@ -770,14 +870,21 @@ public class SVGflatten {
 				if (matcher.find()) {
 					String rgb = matcher.group(0);
 					residue.put("color", rgb);
-					if (v > 4) System.out.printf("\n    adding node color %s to residue", rgb);
+					if (v > 4) System.out.printf("\n        adding node color %s to residue", rgb);
 					style = style.concat("fill:" + rgb + ";");	    
 				}
+				// get and save coordinates to generate reducing end anomer annotation
+				NamedNodeMap childAtts = child.getAttributes();
+				String x = childAtts.getNamedItem("x").toString().split("\"")[1];
+				String y = childAtts.getNamedItem("y").toString().split("\"")[1];
+				if (v > 3)	System.out.printf("\n&&& coordinates for residue[%s] are (%s,%s)", index, x, y);
+				residue.put("x", x);
+				residue.put("y", y);
 			}
 		}
 		
     	residue.put("resID", gID);
-    	residue.put("id", key);
+    	residue.put("id", index);
 
 		String shapeStr = gStr + "\n      <" + fcn.getNodeName() + " style=\"" + style + "\" " + shapeAtts + "/>\n    </g>";
 		if (v > 3) System.out.printf("\n    new style: %s\n    shapeStr:      %s", style, shapeStr);
@@ -790,7 +897,7 @@ public class SVGflatten {
 	 * processes link nodes (edges) in the svg encoding
 	 * @param gID the svg ID of the link node
 	 * @param childNodes a list of the children of the link &lt;g&gt; element in the original svg file
-	 * @param gStr a String holding the link &lt;g&gt; element in the new svg file
+	 * @param gStr a String holding the link &lt;g&gt; element in the original svg file
 	 * @param residue a Map defining the properties of the svg residue
 	 * @return a String holding the newly generated link &lt;g&gt; element and enclosed edge element
 	 * (encoded as a &lt;polygon&gt;)
@@ -829,8 +936,8 @@ public class SVGflatten {
 	
 	/**
 	 * process "B" elements (paths corresponding to brackets) in the svg encoding
-	 * @param childNodes the child elements of a &lt;g&gt; element from the svg encoding
-	 * @param gStr a String holding the svg encoding of the &lt;g&gt; element
+	 * @param childNodes the child elements of a type-B &lt;g&gt; element from the svg encoding
+	 * @param gStr a String holding the svg encoding of the &lt;g&gt; element in the original file
 	 * @return a String holding the &lt;g&gt; element and enclosed path specifying the bracket
 	 */
 	public static String type_B(NodeList childNodes, String gStr) {
@@ -856,67 +963,50 @@ public class SVGflatten {
 	
 	/**
 	 * processes annotation nodes (e.g., "alpha" and "6") in the svg encoding
-	 * @param gID the svg ID of the annotation node
-	 * @param childNodes a list of the children of the annotation &lt;g&gt; element in the original svg file
-	 * @param gStr a String holding the annotation &lt;g&gt; element in the new svg file
-	 * @param residue the svg residue (Map)
+	 * @param gID the svg ID of the annotation node - ultimately, another method will replace this 
+	 *  with a semantic ID
+	 * @param childNodes a list of the children of the (LI) annotation &lt;g&gt; element in the original svg file
+	 * @param gStr a String holding the annotation &lt;g&gt; element in the original svg file
+	 * @param residue the svg residue (encoded as a HashMap)
 	 * @return a String holding the newly generated link-annotation &lt;g&gt; element and enclosed text elements
 	 */
 	public static String type_LI(String gID, NodeList childNodes, String gStr, Map<String, String> residue) {
 		
 		String annotationStr = gStr;
-		String site = "y";
+		String site = "";
 
 		if (v > 3) System.out.printf("\n    Children:");
 		for (int i = 0; i < childNodes.getLength(); i++ ) {
 			String nodeName = childNodes.item(i).getNodeName();
 			if (v > 3) System.out.printf("\n      <%s>", nodeName);
 
-			if (nodeName.compareTo("path") == 0) {
+			if (nodeName.matches("path")) { 
+				// convert path to explicit ascii character(s)
 				Element thisNode = (Element) childNodes.item(i);
-				NamedNodeMap atts = thisNode.getAttributes();
 
-				for (int j = 0; j < atts.getLength(); j++ ) {
-					// parse atts.item(j) to get attribute "d", and use this for character mapping
-					if (atts.item(j).getNodeName().compareTo("d") == 0) {
+				String dStr = thisNode.getAttribute("d").toString();
+				// tp holds text parameters
+				Map<String, String> tp = new HashMap<String, String>();
 
-						String[] thisAtt = atts.item(j).toString().split("\"");
-						String dStr = thisAtt[1];
-						String[] data = dStr.split(" ");
-						try {
-							// get the mapping parameters for the d attribute
-							HashMap<String, String> hm = mapChar(dStr);
-							// the reference x coordinate is in the zeroth element of data[]
-							double x = Double.parseDouble(data[0].substring(1, data[0].length()) );
-							// dx is retrieved from pathMapper
-							double dx = Double.parseDouble(hm.get("dx") );
-							x += dx;
-							x = Math. round(x * 10) / 10.0;
-							double y = Double.parseDouble(data[1]);
-							double dy = Double.parseDouble(hm.get("dy") );
-							y += dy;
-							y = Math. round(y * 10) / 10.0;
-							String ff = hm.get("font");
-							String fs = hm.get("size");
-
-							// create <text> tag matching path (using mapChar - pathMapper)
-							annotationStr += "\n      <text style=\"fill:black; stroke:none; " +
-									" font-size:" + fs + "; font-family:'" + ff + "';\" x=\"" + x + "\" y=\"" + y + "\" text-anchor=\"middle\" >"; 
-
-							String mappedChar = hm.get("char");
-							annotationStr += mappedChar + "</text>";
-							if ( mappedChar.matches("[0-9]") ) {
-								// mappedChar is a single-digit number, i.e., a unique site
-								site = mappedChar;
-							}
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-
-					}
+				try {
+					tp = mapChar(dStr);
+				} catch (Exception e) {
+					e.printStackTrace();
+					return(gStr + "</g>");
 				}
+
+				if ( tp.get("char").matches("[0-9]") ) { 
+					// tp.get("char") is a single-digit number, i.e., a unique site
+					site = tp.get("char");
+				}
+				String textStr = "\n      <text style=\"fill:black; stroke:none; " +
+						" font-size:" + tp.get("size") + "; font-family:'" + tp.get("font") + "';\" x=\"" + tp.get("x") +
+						"\" y=\"" + tp.get("y") + "\" text-anchor=\"middle\">" + tp.get("char") + "</text>"; 
+				annotationStr += textStr;
 			}
 		}
+
+
 		if (v > 4) {
 			System.out.printf("\n    adding link site %s to residue", site);
 			System.out.printf("\n    adding annID %s to residue", gID);
@@ -929,48 +1019,67 @@ public class SVGflatten {
 		return(annotationStr);	
 	} // end of method type_LI()
 	
+	
 	/**
 	 * maps the "d" attribute of an svg &lt;path&gt; used in the original svg encoding to render a character to
 	 * a set of parameters specifying the attributes of an svg &lt;text&gt; element used in the newly-generated
 	 * svg encoding to render the same character
-	 * @param dStr a String holding the "d" attribute of an svg &lt;path&gt; used in the original svg encoding to render a character 
-	 * @return a HashMap containing the information required to generate a &lt;text&gt; element used to render
-	 * the character in the newly-generated svg encoding
+	 * @param dStr a String holding the "d" attribute of an svg &lt;path&gt; used in the original svg encoding to 
+	 * render a character 
+	 * @return a HashMap containing the information ("char", "dx", "x", "dy", "y", "font", and "size")
+	 * required to generate a &lt;text&gt; element used to render the character in the newly-generated svg encoding
 	 * @throws Exception thrown when dStr cannot be mapped to a character
 	 */
 	public static HashMap<String, String> mapChar(String dStr) throws Exception {
-		String[] dArray = dStr.split(" ");
+		String[] data = dStr.split(" ");
 		
+		// dMapStr is a string of non-numeric characters that represents the character without reference to size or position
 		// the first part of dMapStr is the number of data points in dStr (separated by " ")
-		String dMapStr = String.format("%d", dArray.length);
+		String dMapStr = String.format("%d", data.length);
 
-		for (int i = 0; i < dArray.length; i++) {
+		for (int i = 0; i < data.length; i++) {
 			// look for an alphabet character at start of each data point
 			Pattern pattern = Pattern.compile("^[A-Za-z]");
-			Matcher matcher = pattern.matcher(dArray[i]);
+			Matcher matcher = pattern.matcher(data[i]);
 			if (matcher.find()) {
 				// extend dMapStr
 				dMapStr += matcher.group(0);    
 			}
 		}
-
-		
+			
 		PathMapper mapper = PathMapper.forName(dMapStr);
+		String c = mapper.getChar();
+		String dx = mapper.getdx();
+		String dy = mapper.getdy();
+		String font = mapper.getFont();
+		String size = mapper.getSize();
+		
+		Double x = Double.parseDouble(data[0].substring(1, data[0].length()) );
+		x += Double.parseDouble(dx);
+		x = Math. round(x * 10) / 10.0;
+		// Double xStr = (Double)x;
+		Double y = Double.parseDouble(data[1]);
+		y += Double.parseDouble(dy);
+		y = Math. round(y * 10) / 10.0;
+
 		if (v > 3) {
-			System.out.printf("\n      dMapStr %s\n        mapped to String '%s'",  dMapStr, mapper.getChar());
-			System.out.printf("\n        dx is %s", mapper.getdx() );
-			System.out.printf("\n        dy is %s", mapper.getdy() );			
-			System.out.printf("\n        font is %s", mapper.getFont() );			
-			System.out.printf("\n        size is %s", mapper.getSize() );			
+			System.out.printf("\n         dMapStr %s\n          mapped to String '%s'",  dMapStr, c);
+			System.out.printf("\n          dx is %s", dx );
+			System.out.printf("\n          x is %s", x );			
+			System.out.printf("\n          dy is %s", dy );			
+			System.out.printf("\n          y is %s", y );			
+			System.out.printf("\n          font is %s", font );			
+			System.out.printf("\n          size is %s", size );			
 		}
 		
 		HashMap<String,String> result = new HashMap<String, String>();
-		result.put("char", mapper.getChar() );
-		result.put("dx", mapper.getdx() );
-		result.put("dy", mapper.getdy() );
-		result.put("font", mapper.getFont() );
-		result.put("size", mapper.getSize() );
-
+		result.put("char", c );
+		result.put("dx", dx );
+		result.put("x", x.toString() );
+		result.put("dy", dy );
+		result.put("y", y.toString() );
+		result.put("font", font );
+		result.put("size", size );
 		
 		return(result);
 	}

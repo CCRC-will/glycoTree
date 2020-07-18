@@ -28,6 +28,7 @@ package svgConvert;
 public enum PathMapper {
 
 	// constants specifying pre-defined pathMapper objects
+	// still need to define 2S, 3S, and 6S
 	FAIL("---", "0", "0", "0", "Serif", "12px"),
 	
 	THREESIX("3/6", "227MQQQQQQQQQQQQLLQQQQQQLLLQQQQQQLLZLLLLZQQQQQQQQZQQQQQQQQQQQQLLQQQQZ", "7", "8","Baskerville", "11px"),
@@ -42,15 +43,20 @@ public enum PathMapper {
 	FIVE_X("5x", "105MLLLLQQQQQQQQLQQQQQQQQLZLLLLLLLLLLLLZ", "6", "10","Helvetica", "14px"),
 	SIX_X("6x", "129MQQQQQQQQZLQQQQQQQQQQQQQQQQZLLLLLLLLLLLLZ", "3", "6","Helvetica", "14px"),
 
-	D("D", "49MLLQQQQLZLQQQQLLZ", "2", "6", "Helvetica", "10px"),
-	QM("?", "95MQQQQQQQQZQQQQQQLLLQQQQQQLLZ", "1", "1.0", "Baskerville", "14px"),
-	ALPHA("&#x03B1;", "107MLQQQQQQQQLLQLLQLLQQLQQLZLQQQQQQLZ", "-1.0", "1.0", "Serif", "12px"),
-	BETA("&#x03B2;", "103MQQQQQLLLQQQQQLZLQQQQQQQQQQQLLZ", "1.5", "0.5", "Serif", "12px"),
+	Three_S("3S", "215MQQQQQQLQQQQQQLLLQQQQQQLQQQQQQZLQQQQQQLQQQQQQLQQQQQQLQQQQQQZ", "3", "6","Helvetica", "14px"),
+	Four_S("4S", "139MLLLZLLLLLLLLLLLZLQQQQQQLQQQQQQLQQQQQQLQQQQQQZ", "4", "9","Helvetica", "14px"),
+	Six_S("6S", "209MQQQQQQQQZLQQQQQQQQQQQQQQQQZLQQQQQQLQQQQQQLQQQQQQLQQQQQQZ", "4", "6","Helvetica", "14px"),
+	
 	ONE("1", "25MLLLLLLLLLLLZ", "2", "0","Baskerville", "14px"),
 	TWO("2", "71MLLQQQQQQLLLLLLLLQQQQQQZ", "2.5", "6.5","Baskerville", "14px"),
 	THREE("3", "113MQQQQQQQQQQQQLLQQQQQQLLLQQQQQQLLZ", "3", "9","Baskerville", "14px"),
 	FOUR("4", "41MLLLZLLLLLLLLLLLLLLLZ", "-0.5", "3.0","Baskerville", "14px"),
 	SIX("6", "105MQQQQQQQQZQQQQQQQQQQQQLLQQQQZ", "0.0", "0.0","Baskerville", "14px"),
+	
+	D("D", "49MLLQQQQLZLQQQQLLZ", "2", "6", "Helvetica", "10px"),
+	QM("?", "95MQQQQQQQQZQQQQQQLLLQQQQQQLLZ", "1", "1.0", "Baskerville", "14px"),
+	ALPHA("&#x03B1;", "107MLQQQQQQQQLLQLLQLLQQLQQLZLQQQQQQLZ", "-1.0", "1.0", "Serif", "12px"),
+	BETA("&#x03B2;", "103MQQQQQLLLQQQQQLZLQQQQQQQQQQQLLZ", "1.5", "0.5", "Serif", "12px"),
 	LC_O("o", "69MQQQQQQQQZQQQQQQQQZ", "0.0", "4.5", "SansSerif", "12px");
 	// add constants for "?" "3|6", "2|6", etc
 			

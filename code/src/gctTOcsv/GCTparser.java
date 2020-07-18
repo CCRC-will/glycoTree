@@ -303,8 +303,16 @@ public class GCTparser {
 		String extendedName = resName;
 		for (int i = 0; i < NSUBTITUTES.length; i++ ) {
 			String[] kv = NSUBTITUTES[i].split(",");
-			if (kv[0].matches(substituentName.toLowerCase()) )
-				extendedName = resName + kv[1];
+			if (kv[0].matches(substituentName.toLowerCase()) ) {
+				// make sure that existing O-substituents are KEPT at the END of the name
+				if (resName.contains("-")) {
+					String[] nameParts = resName.split("-");
+					System.out.printf("\n!!!!!!! split components are %s %s %s", nameParts[0], kv[1], nameParts[1]);
+					extendedName = nameParts[0] + kv[1] + "-" + nameParts[1];
+				} else {
+					extendedName = resName + kv[1];
+				}
+			}
 		}
 		
 		for (int i = 0; i < OSUBTITUTES.length; i++ ) {

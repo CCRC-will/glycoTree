@@ -264,10 +264,15 @@ public class GenerateCSV {
 				break;
 
 			case "LIN":
-				String[] parts = suffix.split("[\\(\\)]");
-				String parentID = parts[0].replaceAll("[a-zA-Z].*", "");
-				String childID = parts[2].replaceAll("[a-zA-Z].*", "");
-				String linkPos = parts[1].split("[+-]")[0];
+				String[] parts = suffix.split("[\\(\\)]");  // split at open and close parentheses
+				String parentID = parts[0].replaceAll("[a-zA-Z].*", "");  // numerical part before parentheses open
+				String childID = parts[2].replaceAll("[a-zA-Z].*", ""); // numerical part after parentheses close
+				String linkPos = parts[1].split("[+]")[0]; // part in parentheses before +
+				if (linkPos.matches("-1")) {
+					System.out.printf("\n!!!!!!!!! linkPos changed from %s",  linkPos);
+					linkPos = "";
+					System.out.printf(" to %s", linkPos);
+				}
 				if (v > 2) System.out.printf("\n\nLIN: [%s]: parentID %s; childID %s; link %s", suffix, parentID, childID, linkPos);
 				if ( resList.containsKey(parentID) ) { // the parent is a residue
 					if ( resList.containsKey(childID) ) { // the child is a residue
@@ -275,7 +280,6 @@ public class GenerateCSV {
 						childNode.put("parent", parentID);
 						childNode.put("link_position", linkPos);
 					} else if (subList.containsKey(childID) ) { // the child is a substituent
-
 						// extend parent name
 						String pName = resList.get(parentID).get("name");
 						String sName = subList.get(childID);

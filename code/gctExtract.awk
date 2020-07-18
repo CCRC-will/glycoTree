@@ -1,9 +1,8 @@
 ## glycoct field MUST PRECEED glytoucan_ac field
+##  output directory is ./data/gct/
 
 BEGIN {
   FS = "\"";
-  ## def is a boolean: 1 -> defined; 0 -> not defined
-  def = 1;
   foundglycoct = 0;
   gctEncoding = "error";
   log_file = "./log/gct_extract.log";
@@ -11,17 +10,14 @@ BEGIN {
 }
 
 $2 ~ "glycoct" {
-  if ($4 ~ "UND") def = 0;
+ ## add line feeds
   gsub(" ", "\n", $4);
   gctEncoding = $4;
   foundglycoct = 1;
 }
 
 $2 ~ "glytoucan_ac" {
-  outfile = "./data/def/" $4 ".txt";
-  if (def == 0) {
-    outfile = "./data/und/" $4 ".txt";
-  }
+  outfile = "./data/gct/" $4 ".txt";
   if (foundglycoct == 1) {
     printf("%s", gctEncoding) > outfile;
     close(outfile);
@@ -30,6 +26,5 @@ $2 ~ "glytoucan_ac" {
   }
   gctEncoding = "error";
   foundglycoct = 0;
-  def = 1;
 }
 
