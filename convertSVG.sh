@@ -15,3 +15,5 @@ java -jar ./code/SVGflatten.jar -l ./data/svg/files.lst -c ./data/gct/csv/mapped
 echo semantic annotation of svg encoding with GlycoCT indices
 java -jar ./code/SVGflatten.jar -l ./data/svg/files.lst -c ./data/gct/csv -a GlycoCT -o ./data/svg/GlycoCT_svg -m ./model/map_GlycoCT.csv -v 1 -r 1 > ./log/GlycoCT_svg.log
 
+echo Combining semantic id map files
+awk -f ./code/hashem.awk ./model/map_gTree.csv ./model/map_GlycoCT.csv > ./model/map_both.csv

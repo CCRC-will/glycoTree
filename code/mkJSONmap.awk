@@ -1,6 +1,14 @@
-## Usage: awk -f mkJSONmap.awk <enzyme_csv_file> <glycan_csv_files>
+## Usage: awk -f mkJSONmap.awk <id_map_file> <enzyme_csv_file> <glycan_csv_files>
 ## Creates a JSON representation of each structure in the glycan_csv_files, 
 ##  including canonical residue mappings and the enzymes that process each residue
+
+function getKey(str) {
+  split(str, a, ":");
+  split(a[1], b, "-");
+  k = b[2] "_" a[2];
+  return k;
+}
+
 
 BEGIN {
   FS = ",";
@@ -13,7 +21,21 @@ FNR == 1 {
   file_rank++;
 }
 
-file_rank == 1 {
+file_rank == 1 && FNR > 1 {
+  ## process id_map_file
+  split($(NF - 1), a, "-");
+  t = a[1];
+
+  if (t == "R") {
+    split($NF, a, ":");
+    gct = a[2];
+    key = getKey($(NF-1));
+    gctIndex[key] = gct; 
+  }
+}
+
+file_rank == 2 {
+  ## count corresponds to the line number in te enzyme_csv_file
   count++;
   id[count] = $2;
   type[count] = $3;
@@ -31,22 +53,25 @@ file_rank == 1 {
   branch_site_specificity[count] = substr($14, 1, length($14)-1);
 }
 
-file_rank > 1 && FNR == 2 {
-  if (file_rank > 2) {
+file_rank > 2 && FNR == 2 {
+  if (file_rank > 3) {
     ## close the previous glycan record
     printf("\n      ]");
     printf("\n    },\n");
   }
-  printf("    {\n      \"accession\": \"%s\",",  $1);
+  accession = $1;
+  printf("    {\n      \"accession\": \"%s\",",  accession);
   printf(" \n      \"residues\": [");
 }
 
 
-file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
+file_rank > 2 && FNR > 1 { ## printf("FNR is %s", FNR);
   if (FNR > 2) printf(",");
   printf("\n        {");
   printf("\n          \"canonical_name\": \"%s\",", $2);
   printf("\n          \"residue_id\": \"%s\",", $3);
+  key = accession "_" $3;
+  printf("\n          \"glycoct_index\": \"%s\",", gctIndex[key]);
   printf("\n          \"sugar_name\": \"%s\",", $4);
   printf("\n          \"anomer\": \"%s\",", $5);
   printf("\n          \"absolute_configuration\": \"%s\",", $6);
@@ -56,8 +81,10 @@ file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   printf("\n          \"enzymes\": [");
   enz_count = 0;
   for (i = 1; i <= count; i++) {
-    if ($3 == id[i]) {
-      if (enz_count++ > 0) printf(","); ## close previous enzyme record
+    ## for every line [i] in the enzyme_csv_file 
+    if ($3 == id[i]) { 
+      ## $3 may match the id of multiple lines in the enzyme_csv_file (multiple enzymes)
+      if (enz_count++ > 0) printf(","); ## close previous enzyme record and increment enz_count
       printf("\n            {"); 
       printf("\n              \"uniprot\": \"%s\",", uniprot[i]);
       printf("\n              \"species\": \"%s\",", species[i]);

@@ -1,3 +1,0 @@
-
-data/gct/csv/G05026ZL.csv and ./data/gct/csv/mapped/G05026ZL.csv have different number of lines (3, 0)
-data/gct/csv/G68544GH.csv and ./data/gct/csv/mapped/G68544GH.csv have different number of lines (2, 0)

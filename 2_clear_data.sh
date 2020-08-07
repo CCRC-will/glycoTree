@@ -22,6 +22,11 @@ rm G*.csv
 rm report.csv
 ls
 
-cd ../../..
+cd ./sorted
+pwd
+rm G*.csv
+ls
+
+cd ../../../..
 pwd
 ls
