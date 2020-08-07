@@ -1,0 +1,30 @@
+	<svg height="56px" viewBox="0 0 190 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" >
+
+			<polygon points="44 55 66 27 142 49 120 77" id="sand" opacity="0"
+														fill="wheat" stroke="none" stroke-width="1">
+				<animate id="show_sand" begin="indefinite" fill="freeze" attributeName="opacity" from="0" to="0.8" dur="1000ms" />
+				<animate id="hide_sand" begin="indefinite" fill="freeze" attributeName="opacity" from="0.8" to="0" dur="300ms" />
+			</polygon>	
+
+			<polyline points="66 27 142 49 167 20" id="top_line"   >
+				<animate id="mv_top" begin="indefinite" fill="freeze" attributeName="points" dur="750ms" to="44 55 120 77 142 49"/>
+				<animate id="vm_top" begin="indefinite" fill="freeze" attributeName="points" dur="750ms" to="66 27 142 49 167 20"/>
+				<animateTransform id="rot_top" begin="indefinite" fill="freeze" attributeName="transform" attributeType="XML" type="rotate" from="0 105 37" to="180 105 37" dur="1s" />
+				<animateTransform id="tor_top" begin="indefinite" fill="freeze" attributeName="transform" attributeType="XML" type="rotate" from="180 105 37" to="0 105 37" dur="1s" />
+			</polyline>
+			
+			<polyline points="20 84 44 55 120 77" id="bottom_line" >
+				<animate id="mv_bottom" begin="indefinite" fill="freeze" attributeName="points" dur="750ms" to="44 55 66 27 142 49"/>
+				<animate id="vm_bottom" begin="indefinite" fill="freeze" attributeName="points" dur="750ms" to="20 84 44 55 120 77"/>
+				<animateTransform id="rot_bottom" begin="indefinite" fill="freeze" attributeName="transform" attributeType="XML" type="rotate" from="0 82 66" to="180 82 66" dur="1s" />
+				<animateTransform id="tor_bottom" begin="indefinite" fill="freeze" attributeName="transform" attributeType="XML" type="rotate" from="180 82 66" to="0 82 66" dur="1s" />
+			</polyline>
+			
+			<polyline points="131 63 55 41" id="middle_line"   >
+				<animate id="mv_middle" begin="indefinite" fill="freeze" attributeName="points" dur="750ms" to="120 91 44 69"/>
+				<animate id="vm_middle" begin="indefinite" fill="freeze" attributeName="points" dur="750ms" to="131 63 55 41"/>				
+			</polyline>
+
+		</g>
+	</svg>

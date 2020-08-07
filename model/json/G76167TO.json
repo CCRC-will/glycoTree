@@ -1,0 +1,150 @@
+{
+  "accession": "G76167TO", 
+  "residues": [
+    {
+      "canonical_name": "N-glycan_core_D-GlcNAc_A",
+      "residue_id": "NA",
+      "glycoct_index": "1",
+      "sugar_name": "GlcNAc",
+      "anomer": "x",
+      "absolute_configuration": "D",
+      "ring_form": "x",
+      "parent": "0",
+      "site": "0",
+      "enzymes": [
+        {
+          "uniprot": "P42867",
+          "species": "mouse",
+          "type": "GT",
+          "orthology_group": "Dpagt1",
+          "protein_refseq": "NP_031901",
+          "dna_refseq": "NM_007875",
+          "gene_name": "Dpagt1",
+          "gene_id": "13478",
+          "required_residues": "",
+          "blocking_residues": "",
+          "notes": "",
+          "branch_site_specificity": ""
+        },
+        {
+          "uniprot": "Q9H3H5",
+          "species": "human",
+          "type": "GT",
+          "orthology_group": "Dpagt1",
+          "protein_refseq": "NP_001373",
+          "dna_refseq": "NM_001382",
+          "gene_name": "DPAGT1",
+          "gene_id": "1798",
+          "required_residues": "",
+          "blocking_residues": "",
+          "notes": "",
+          "branch_site_specificity": ""
+        }
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "9",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "7",
+      "site": "6",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "8",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "7",
+      "site": "3",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "7",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "3",
+      "site": "6",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "6",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "5",
+      "site": "2",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "5",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "4",
+      "site": "2",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "4",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "3",
+      "site": "3",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "3",
+      "glycoct_index": "",
+      "sugar_name": "Man",
+      "anomer": "b",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "2",
+      "site": "3|4",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "unassigned",
+      "residue_id": "2",
+      "glycoct_index": "",
+      "sugar_name": "GlcNAc",
+      "anomer": "b",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "NA",
+      "site": "3|4",
+      "enzymes": [
+      ]
+    }
+   ]
+}
