@@ -333,7 +333,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "14",
-      "glycoct_index": "",
+      "glycoct_index": "14",
       "sugar_name": "HexNAc",
       "anomer": "b",
       "absolute_configuration": "x",
@@ -346,7 +346,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "12",
-      "glycoct_index": "",
+      "glycoct_index": "12",
       "sugar_name": "HexNAc",
       "anomer": "b",
       "absolute_configuration": "x",

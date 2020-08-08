@@ -609,7 +609,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "10",
-      "glycoct_index": "",
+      "glycoct_index": "10",
       "sugar_name": "NeuNGc",
       "anomer": "a",
       "absolute_configuration": "D",

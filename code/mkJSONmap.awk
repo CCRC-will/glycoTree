@@ -21,20 +21,7 @@ FNR == 1 {
   file_rank++;
 }
 
-file_rank == 1 && FNR > 1 {
-  ## process id_map_file
-  split($(NF - 1), a, "-");
-  t = a[1];
-
-  if (t == "R") {
-    split($NF, a, ":");
-    gct = a[2];
-    key = getKey($(NF-1));
-    gctIndex[key] = gct; 
-  }
-}
-
-file_rank == 2 {
+file_rank == 1 {
   ## count corresponds to the line number in te enzyme_csv_file
   count++;
   id[count] = $2;
@@ -53,8 +40,8 @@ file_rank == 2 {
   branch_site_specificity[count] = substr($14, 1, length($14)-1);
 }
 
-file_rank > 2 && FNR == 2 {
-  if (file_rank > 3) {
+file_rank > 1 && FNR == 2 {
+  if (file_rank > 2) {
     ## close the previous glycan record
     printf("\n      ]");
     printf("\n    },\n");
@@ -65,13 +52,12 @@ file_rank > 2 && FNR == 2 {
 }
 
 
-file_rank > 2 && FNR > 1 { ## printf("FNR is %s", FNR);
+file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   if (FNR > 2) printf(",");
   printf("\n        {");
   printf("\n          \"canonical_name\": \"%s\",", $2);
   printf("\n          \"residue_id\": \"%s\",", $3);
-  key = accession "_" $3;
-  printf("\n          \"glycoct_index\": \"%s\",", gctIndex[key]);
+  printf("\n          \"glycoct_index\": \"%s\",", $11);
   printf("\n          \"sugar_name\": \"%s\",", $4);
   printf("\n          \"anomer\": \"%s\",", $5);
   printf("\n          \"absolute_configuration\": \"%s\",", $6);

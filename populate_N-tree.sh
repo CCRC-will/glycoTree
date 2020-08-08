@@ -81,8 +81,8 @@ awk -f ./code/hashem.awk ./model/map_gTree.csv ./model/map_GlycoCT.csv > ./model
 
 echo
 echo Annotating residues with biosynthetic enzymes - result in single large json file
-awk -f ./code/mkJSONmap.awk ./model/map_both.csv $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv  > ./model/annotated_glycans.json
+awk -f ./code/mkJSONmap.awk $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv  > ./model/annotated_glycans.json
 echo
 echo Annotating residues with biosynthetic enzymes - results in one json file for each structure
-awk -f ./code/mkJSONmanyMaps.awk ./model/map_both.csv $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv
+awk -f ./code/mkJSONmanyMaps.awk $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv
 

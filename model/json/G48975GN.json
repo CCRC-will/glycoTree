@@ -471,7 +471,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "11",
-      "glycoct_index": "",
+      "glycoct_index": "11",
       "sugar_name": "Fuc",
       "anomer": "a",
       "absolute_configuration": "L",

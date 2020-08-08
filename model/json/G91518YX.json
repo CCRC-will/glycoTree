@@ -374,7 +374,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "13",
-      "glycoct_index": "",
+      "glycoct_index": "13",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",

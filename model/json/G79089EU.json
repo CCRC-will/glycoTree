@@ -734,7 +734,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "19",
-      "glycoct_index": "",
+      "glycoct_index": "19",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",

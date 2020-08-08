@@ -374,7 +374,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "12",
-      "glycoct_index": "",
+      "glycoct_index": "12",
       "sugar_name": "Man",
       "anomer": "x",
       "absolute_configuration": "D",
@@ -387,7 +387,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "11",
-      "glycoct_index": "",
+      "glycoct_index": "11",
       "sugar_name": "Man",
       "anomer": "x",
       "absolute_configuration": "D",

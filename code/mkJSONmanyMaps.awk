@@ -1,4 +1,4 @@
-## Usage: awk -f mkJSONmanyMaps.awk <id_map_file> <enzyme_csv_file> <glycan_csv_files>
+## Usage: awk -f mkJSONmanyMaps.awk  <enzyme_csv_file> <glycan_csv_files>
 ## Creates a separate file with the JSON representation of each structure in the 
 ##  glycan_csv_files, including canonical residue mappings and the enzymes 
 ##  that process each residue.
@@ -22,20 +22,7 @@ FNR == 1 {
   file_rank++;
 }
 
-file_rank == 1 && FNR > 1 {
-  ## process id_map_file
-  split($(NF - 1), a, "-");
-  t = a[1];
-
-  if (t == "R") {
-    split($NF, a, ":");
-    gct = a[2];
-    key = getKey($(NF-1));
-    gctIndex[key] = gct; 
-  }
-}
-
-file_rank == 2 {
+file_rank == 1 {
   count++;
   id[count] = $2;
   type[count] = $3;
@@ -53,8 +40,8 @@ file_rank == 2 {
   branch_site_specificity[count] = substr($14, 1, length($14)-1);
 }
 
-file_rank > 2 && FNR == 2 {
-  if (file_rank > 3) {
+file_rank > 1 && FNR == 2 {
+  if (file_rank > 2) {
     ## close the previous glycan record
     printf("\n   ]") >> outFile;
     printf("\n}\n") >> outFile;
@@ -67,13 +54,12 @@ file_rank > 2 && FNR == 2 {
 }
 
 
-file_rank > 2 && FNR > 1 { ## printf("FNR is %s", FNR);
+file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   if (FNR > 2) printf(",") >> outFile;
   printf("\n    {") >> outFile;
   printf("\n      \"canonical_name\": \"%s\",", $2) >> outFile;
   printf("\n      \"residue_id\": \"%s\",", $3) >> outFile;
-  key = accession "_" $3;
-  printf("\n      \"glycoct_index\": \"%s\",", gctIndex[key]) >> outFile
+  printf("\n      \"glycoct_index\": \"%s\",", $11) >> outFile
   printf("\n      \"sugar_name\": \"%s\",", $4) >> outFile;
   printf("\n      \"anomer\": \"%s\",", $5) >> outFile;
   printf("\n      \"absolute_configuration\": \"%s\",", $6) >> outFile;

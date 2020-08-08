@@ -596,7 +596,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "17",
-      "glycoct_index": "",
+      "glycoct_index": "17",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -609,7 +609,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "15",
-      "glycoct_index": "",
+      "glycoct_index": "15",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",

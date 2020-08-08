@@ -169,7 +169,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "8",
-      "glycoct_index": "",
+      "glycoct_index": "8",
       "sugar_name": "GlcNAc",
       "anomer": "x",
       "absolute_configuration": "D",
@@ -182,7 +182,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "7",
-      "glycoct_index": "",
+      "glycoct_index": "7",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
@@ -195,7 +195,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "2",
-      "glycoct_index": "",
+      "glycoct_index": "2",
       "sugar_name": "Fuc",
       "anomer": "a",
       "absolute_configuration": "L",
@@ -208,7 +208,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "12",
-      "glycoct_index": "",
+      "glycoct_index": "12",
       "sugar_name": "GalNAc",
       "anomer": "x",
       "absolute_configuration": "D",
@@ -221,7 +221,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "11",
-      "glycoct_index": "",
+      "glycoct_index": "11",
       "sugar_name": "GlcNAc",
       "anomer": "x",
       "absolute_configuration": "D",
@@ -234,7 +234,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "10",
-      "glycoct_index": "",
+      "glycoct_index": "10",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",

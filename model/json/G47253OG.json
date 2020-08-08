@@ -637,7 +637,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "17",
-      "glycoct_index": "",
+      "glycoct_index": "17",
       "sugar_name": "NeuNAc",
       "anomer": "x",
       "absolute_configuration": "D",
@@ -650,7 +650,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "11",
-      "glycoct_index": "",
+      "glycoct_index": "11",
       "sugar_name": "NeuNAc",
       "anomer": "x",
       "absolute_configuration": "D",

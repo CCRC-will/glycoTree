@@ -363,7 +363,7 @@
     {
       "canonical_name": "N-glycan_b-D-Galp_6",
       "residue_id": "N6",
-      "glycoct_index": "",
+      "glycoct_index": "16",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -721,7 +721,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "17",
-      "glycoct_index": "",
+      "glycoct_index": "17",
       "sugar_name": "NeuNAc",
       "anomer": "a",
       "absolute_configuration": "D",

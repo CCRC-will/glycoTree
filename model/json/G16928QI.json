@@ -887,7 +887,7 @@
     {
       "canonical_name": "unassigned",
       "residue_id": "20",
-      "glycoct_index": "",
+      "glycoct_index": "20",
       "sugar_name": "Fuc",
       "anomer": "a",
       "absolute_configuration": "L",
