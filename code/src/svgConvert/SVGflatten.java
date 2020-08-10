@@ -526,6 +526,17 @@ public class SVGflatten {
 			        		}
 			        		headStr.append(temp); 
 			    			headStr.append("\n  <g>");
+			    			gStr = new String("\n    <g style=\"" + gStyle + "\" id=\"C-" + accession + ":0\" >");
+			    			NamedNodeMap fcAtts = fce.getAttributes();
+			    			String shapeAtts = "";
+			    			for (int j = 0; j < fcAtts.getLength(); j++ ) if (fcAtts.item(j).toString().contains("style") == false) {
+			    				if (v > 3) 
+			    					System.out.printf("\n      %s", fcAtts.item(j));
+			    				shapeAtts = shapeAtts.concat(" " + fcAtts.item(j).toString());
+			    			}
+			    			shapeAtts = shapeAtts.concat(" style=\"fill:rgb(255,255,255); stroke:none;\" ");
+			    			String bStr = gStr + "\n      <" + fcn.getNodeName() + shapeAtts + "/>\n    </g>";
+			    			headStr.append(bStr);
 			        	}
 			        	
 			        	// some text is defined as a path, with no associated id
