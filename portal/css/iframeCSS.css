@@ -1,0 +1,10 @@
+.boxHighlight {
+	fill: rgb(255,239,207);
+	stroke: rgb(207,31,31);
+	stroke-width: 3;
+}
+
+.svgText {
+	font-size:18px;
+	stroke: none;
+}

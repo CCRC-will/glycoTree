@@ -1,0 +1,99 @@
+
+#header {
+	position: fixed;
+	top: 0px;
+	left : 0px;
+	top: 0px;
+	z-index: 99;
+	border: 0;
+	background: #2F78B7;
+	padding: 10px 30px 12px;
+	outline: 0;
+	width: 100%;
+	height: 56px;
+	text-align: left;
+}
+
+	
+div span {
+	height: 56px;
+	display: inline-block;
+	vertical-align: top;
+	color: white;
+	font-size: 56px;
+	font-weight: bold;
+	margin-left: 24px;
+}
+	
+#header_1 {
+	margin-right: 20px;
+}
+
+#header_2 {
+	font-style: italic;
+}
+
+body {
+	text-align: center;
+}
+
+
+#helpDiv {
+	position: fixed;
+	z-index: 90;
+	height: 50px;
+	width: 400px;
+	left: 20px;
+	top: 80px;
+	background-color: rgb(255,255,255);
+}
+
+#div1 {  
+	position: absolute;
+	height: 210px;
+	top: 160px;
+	left : 20px;
+}	
+
+#iframe1 {
+	height: 200px;
+	width: 10px;
+	position: absolute;
+	top: 0px;
+	left : 0px;
+	background-color: rgb(255,255,255);
+	text-align: right;
+	border: none;
+}
+
+#div2 {
+	position: fixed;
+	z-index: 88;
+	left: 600px;
+	top: 80px;
+	height: 25px;
+	border-style: none;
+	background-color: rgb(255,255,255);
+}
+
+#infoDiv {
+	z-index: 50;
+	position: fixed;
+	top: 100px;
+	left : 0px;
+	height: 500px;
+	text-align: left;
+	padding: 20px;
+	overflow: auto;
+}
+
+.head1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+	
+
+
+	
+
+	

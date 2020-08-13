@@ -1,4 +1,9 @@
 #header {
+	position: fixed;
+	top: 0px;
+	left : 0px;
+	top: 0px;
+	z-index: 99;
 	border: 0;
 	background: #2F78B7;
 	padding: 10px 30px 12px;

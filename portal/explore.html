@@ -4,61 +4,16 @@
 <head>
 <meta charset="utf-8">
 
-<title>SVG glycan</title>
+<title>GlyGen Sandbox: Explore</title>
 	
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/sbheader.js"></script>
-<link rel="stylesheet" type="text/css" href="css/sbheader.css">
-	
-<style>
-	
+<script src="js/explore.js"></script>
+<link rel="stylesheet" type="text/css" href="css/explore.css">
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
 	
-#div1 {  
-	position: absolute;
-	height: 210px;
-	top: 160px;
-	left : 20px;
-}	
-
-#div2 {
-	position: absolute;
-	left: 400px;
-	top: 100px;
-	height: 350px;
-	width: 500px;
-	border-style: none;
-}
-	
-#iframe1 {
-	height: 200px;
-	width: 10px;
-	position: relative;
-	top: 0px;
-	left : 0px;
-	background-color: rgb(255,255,255);
-	text-align: center;
-}
-
-#helpDiv {
-	height: 60px;
-	width: 500px;
-	position: absolute;
-	left: 0px;
-	top: 100px;
-	border: red;
-}
-	
-#infoDiv {
-	height:150px;
-	width: 500px;
-	position: relative;
-	top: 0px;
-	left : 0px;
-	border-style: none;
-}
-	
-</style>
 
 <script>
 // development variables
@@ -67,457 +22,12 @@ var v = 4;
 var ifr = "iframe1";
 var hDiv = "helpDiv";
 var iDiv = "infoDiv";
+var iframeCSS = "css/iframeCSS.css";
 // appearance variables
 // global scope tCount used in logo transformations
 var tCount = 0;
 var fadePercent = 0.7;
-// constants
-var nodeType = {'R':'residue', 'L':'link', 'LI':'text'};
-// data variables
-var demoData = ["G01378OV", "G92241FG"];
-var acc = [];
-var svgPath = [];
-var jsonPath = [];
-var data = [];
-
-function populateInput(p) {
-	acc.push(p);
-	svgPath.push('svg/' + p + '.gTree.svg');
-	jsonPath.push('json/' + p + '.json');
-}
-
-	
-function gNodeLog(gNode) {
-	var gKids = gNode.children;
-	for (var j = 0; j < gKids.length; j++) {
-		var nn = gKids[j].nodeName;
-		txt = "Entered <" + nn + ">:";	
-		
-		switch(nn) {
-			case "rect":
-			txt += " x " + gKids[j].getAttribute("x");
-			txt += "; y " + gKids[j].getAttribute("y");
-			txt += "; height " + gKids[j].getAttribute("height");
-			txt += "; width " + gKids[j].getAttribute("width");						
-			break;
-			case "circle":
-			txt += " cx " + gKids[j].getAttribute("cx");
-			txt += "; cy " + gKids[j].getAttribute("cy");
-			txt += "; r " + gKids[j].getAttribute("r");
-			break;
-			case "polygon":
-			txt += " points " + gKids[j].getAttribute("points");
-			break;
-			case "text":
-			txt += " text " + gKids[j].textContent;
-			break;
-		}
-	}
-	console.log(txt)
-}  // end of function gNodeLog()
-
-	
-function enterNode() {
-	var id = this.getAttribute("id");
-	var parts = parseID(id);
-	var t = parts['type'];
-	var txt = "<br>&nbsp; Click now to explore " + nodeType[t] + " " + parts['resID'] +
-		" in glycan " + parts['accession'];
-	$('#'+hDiv).html(txt); 
-	if (v > 3) gNodeLog(this);
-
-} // end of function enterNode()
-	
-	
-function exitNode() {
-	$('#'+hDiv).html("<br>Move the mouse over a residue");
-} // end of function enterNode()
-	
-
-function clickNode() {
-	var id = this.getAttribute("id");
-	var str = "&nbsp; clicked SVG object with id  " + id;
-	var parts = parseID(id);
-	var type = parts["type"];
-	var accession = parts["accession"];
-	// temporary
-	var resID = parts["resID"];	
-	
-	var txt = "<br>Exploring glycan " + accession + " residue: " + resID + 
-		"<br>component: " + nodeType[type];
-		
-	$("#"+iDiv).html(txt);
-
-	var drawn = getDrawnElements("all");
-	recolorElements(drawn, "revert");
-
-	drawn = getDrawnElements(accession);
-	recolorElements(drawn, "fade");
-
-	// inside <svg> must get children as DOM object then convert to jquery object (no class!!)
-	var drawnDOM = this.children;
-	drawn = $(drawnDOM).removeClass();
-	recolorElements(drawn, "revert");
-	
-} // end of function clickNode()	 
-	 
-
-	
-	
-function fadeColor(cStr, bg, fp) {
-	// returns a String!!!
-	// bg is canvas background color (RGB)
-	// cStr is current color-style of object (e.g., fill="rgb(255,255,0))
-
-	var rgb = cStr.split(/[\\(\\)]/)[1]; // regex parentheses start/end
-	if (cStr.localeCompare("black") == 0) rgb = "0,0,0";
-	var rgbC = rgb.split(",");
-	// reuse rgb variable
-	rgb = bg.split(/[\\(\\)]/)[1]; // regular expression
-	var rgbB = rgb.split(",");
-	var faded = ["255", "255", "255"];  // default white
-	for (var i = 0; i < 3; i++){
-		faded[i] = Math.round((fp * rgbB[i]) + ((1 - fp) * rgbC[i]));
-	}
-	var result = "rgb(" + faded.toString() + ")";
-	if (v > 5) console.log("      calculated color: " + result);
-	return(result);
-}  // end of function fade()
-
-	
-	
-
-function parseID(id) {
-	var parts = new Array();
-	var dashSplit = id.split("-");
-	parts["type"] = dashSplit[0];
-	var colonSplit = dashSplit[1].split(":");
-	parts["accession"] = colonSplit[0];
-	parts["resID"] = colonSplit[1];
-	return(parts);
-}  // end of function parseID()
-	
-	
-function resizeFrames() {
-	// resize iframe and information div's
-	if (v > 2) console.log("##### Resizing Frames #####");
-	var canvasH = 55;
-	var canvasW = 25;
-	var b = $('#' + ifr).contents().find('body');
-	b.css('text-align', 'right');
-	
-	var s = b.find('svg');
-	// USE VANILLA JAVASCRIPT TO GET/SET ATTRIBUTES of SVG elements!!
-	for (var i = 0; i < s.length; i++) {
-		var w = 1.0 * s[i].getAttribute('width');
-		var h = 1.0 * s[i].getAttribute('height');
-		if (v > 4) console.log("  svg[" + i + "] height: " + h + "; width: " + w );
-		canvasH +=  40 + h;
-		canvasW = Math.max(canvasW, w + 20);
-	}
-	var fr = $('#' + ifr);
-	fr.css("width", canvasW + "px");
-	fr.css("height", canvasH + "px");
-	
-	var div2 = $('#div2');
-	var newLeft = canvasW + 45;
-	div2.css('left', newLeft + 'px');
-	div2.css('height', canvasH + "px");
-	if (v > 4) {
-		console.log("  canvas -> height: " + canvasH + "; width: " + canvasW );
-		console.log("  div2 -> left: " + newLeft + "; height: " + canvasH );
-	}
-} // end of function resizeFrames()
-
-	
-	
-function getDrawnElements(accession) {
-	var b = $('#' + ifr).contents().find('body');
-	var select = "#" + accession + "_svg";
-	if (accession.localeCompare("all") == 0) select = "svg";
-	var s = b.find(select);
-
-	// get the  drawing-element great- grandchildren of the image
-	// child is <g>; grandchildren are also <g>; great-grandchildren are <circle>, <rect> etc
-	var g = s.find('g');
-	var drawnElements = g.children().not('g');
-	if (v > 5) {
-		console.log("Retrieved " + s.length + " svg image(s) selected as " + select);
-		console.log("  " + g.length + " child <g> elements");
-		console.log("    " + drawnElements.length + " child drawn elements");
-	}
-	return(drawnElements);
-}
-	
-	
-function recolorElements(drawn, mode) {
-	// mode 'revert' reverts back to original colors; 'fade' fades colors
-	var fp = fadePercent;
-	var bg = $('#' + ifr).css('background-color'); 
-	if (v > 2) console.log("### Recoloring " + drawn.length + " Element(s) ###");
-	drawn.each(function( index ) {
-		if (v > 4) {
-			// could get parent <g> node id and display it as well, but ...
-			//   var id = this.parent().attr('id');
-			console.log( index + ": <" + this.nodeName + "> recolor mode " + mode);
-		}
-		// change fill of element
-		
-		if (this.hasAttribute("origFill")) {
-			var fill = this.getAttribute("origFill");
-			// change fill only if it has an actual original value
-			if (fill.localeCompare("none") != 0) {
-				if (mode.localeCompare("revert") == 0) {
-					this.style.fill = fill;
-				} else {
-					var faded = fadeColor(fill, bg, fp);
-					this.style.fill = faded;
-				}
-				if (v > 5) console.log("      fill changed to " + this.style.fill);
-			} 
-		}
-		
-	
-		// change stroke of element
-		if (this.hasAttribute("origStroke")) {
-		// var stroke = window.getComputedStyle(this, null).getPropertyValue("stroke");
-			var stroke = this.getAttribute("origStroke");
-			if ( (stroke != null) && (stroke.localeCompare("none") != 0) ) {
-				if (mode.localeCompare("revert") == 0) {
-					this.style.stroke = stroke;
-				} else {
-					faded = fadeColor(stroke, bg, fp);
-					this.style.stroke = faded;
-				}
-				if (v > 5) console.log("      stroke changed to " + this.style.stroke);
-			}
-		}
-		
-	});
-}  // end of function recolorElements()
-
-	
-	
-function saveColors() {
-	// saves original 'fill' and 'stroke' values of svg <elements>
-	if (v > 2) {
-		console.log("##### Saving SVG Colors #####");
-	}
-	var drawn = getDrawnElements("all"); 
-	var fill = "";
-	var stroke = "";
-	for (var j = 0; j < drawn.length; j++) {
-		fill = drawn[j].style.fill;
-		drawn[j].setAttribute("origFill", fill);
-		stroke = drawn[j].style.stroke;
-		// elements drawn with no specified stroke use black stroke
-		if (stroke.localeCompare("") == 0) stroke = "black"; 
-		drawn[j].setAttribute("origStroke", stroke);
-		if (v > 4) {
-			console.log("  " + j + ": <" + drawn[j].nodeName +
-				"> fill: " + drawn[j].getAttribute('origFill') +
-				";  stroke: " + drawn[j].getAttribute('origStroke'));
-		}
-	}
-}
-
-
-
-function addSVGevents() {
-	// adds event listeners to svg objects and saves their original 'fill' and 'stroke' values
-	if (v > 2) {
-		console.log("##### Adding Event Listeners to SVG Elements #####");
-	}
-
-	var b = $('#' + ifr).contents().find('body');
-	var g = b.find('g[id]');
-
-	for (var i = 0; i < g.length; i++) {
-
-		// USE VANILLA JAVASCRIPT for attributes
-		var theID = g[i].getAttribute("id");
-
-		//if (theID !== undefined && theID !== null) {
-			// add event listeners for objects that have an id
-			g[i].addEventListener("mouseout", exitNode);
-			g[i].addEventListener("mouseover", enterNode);
-			g[i].addEventListener("click", clickNode);
-			
-			// the following is for testing - may be useful later for mapping
-			//   svg elements to json elements
-			
-			// from svg
-			var idParts  = parseID(theID);
-			var resID = idParts['resID'];  
-			var accession = idParts['accession'];
-			var type = idParts['type'];
-
-			// from json 
-			var glycan = data[accession];
-			var residues = glycan.residues;
-			var res = residues[resID]; 
-
-			if (v > 4) { 
-				console.log("  svg <g> element[" + i + "] ->  type: " + type +
-					";  accession: " + accession +
-					";  resID " + resID);
-				canon = res.canonical_name;
-				console.log("       data 'data[" + accession + "].residues[" + resID + "]':  name '" + canon + "'");
-			}
-
-		//}
-	}
-} // end of function addSVGevents()
-
-function setResidueKeys() {
-	// converts residues of each glycan from array[0,1,2,...] to associative array
-	if (v > 1) console.log("#### Setting Up Associative Array for Residues ####");
-	for (var key in data) {
-		if (v > 3) console.log("  in glycan[" + key + "]");
-		var residues = data[key].residues;
-		for (var j = 0; j < residues.length; j++ ) {
-			var resID = residues[j].residue_id;
-			if (v > 4) console.log("    residue[" + resID + "]");
-			residues[resID] = residues[j];
-		}
-	}
-} // end of function setResidueKeys()
-
-
-	
-function showData() {
-	// show json data
-	// TODO: make txt depend on v
-	var txt = "";
-	for (var key in data) {
-		var glycan = data[key];
-		txt += "\nglycan: " + key + "";
-		var residues = glycan.residues;
-		for (var j = 0; j < residues.length; j++ ) {
-			var res =residues[j];  // reused for all v > 1
-			if (v > 1) {
-				var resID = res.residue_id;
-				var canon = res.canonical_name;
-				txt += "\n  residue: " + resID + "; canonical_name: " + canon + ";";
-				txt += " linked to  " + res.site + "' of " + res.parent;
-			}
-			if (v > 2) {
-				//var anomer = res.anomer;
-				txt += "\n    anomer: " + res.anomer;
-				txt += "; absolute_configuration: " + res.absolute_configuration;
-				txt += "; sugar_name: " + res.sugar_name;
-				txt += "; ring_form: " + res.ring_form;
-				txt += "; parent: " + res.parent;
-				txt += "; linkage site: " + res.site;
-				txt += ";";
-			}
-			if (v > 3) {
-				var enzymes = res.enzymes;
-				txt += "\n    enzymes:"
-				for (var k = 0; k < enzymes.length; k++) {
-					enz = enzymes[k];
-					txt += "\n      gene_name: " + enz.gene_name;
-					txt += "; species: " + enz.species;
-					txt += "; type: " + enz.type;
-					txt += "; uniprot: " + enz.uniprot;
-					txt += "\n        orthology_group: " + enz.orthology_group;
-					txt += "; gene_id: " + enz.gene_id;
-					txt += "; dna_refseq: " + enz.dna_refseq;
-					txt += "; protein_refseq: " + enz.protein_refseq;
-				}
-			}
-		}
-	}
-	console.log(txt);
-}  // end of function showData()
-	
-function getJSON(theURL, c, accession) {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			data[accession] =  JSON.parse(this.responseText);
-			// when done loading, get the next json file
-			c++;
-			getNextJSON(c);
-		}
-	};
-	xhttp.open("GET", theURL, true);
-	xhttp.send();
-} // end of function getJSON()
-	
-function getNextJSON(c) {
-	if (c < jsonPath.length) {
-		if (v > 2) console.log("getting next json: " + jsonPath[c]);
-		getJSON(jsonPath[c], c, acc[c]);
-	} else {
-		// after all are loaded, set up graphics and data
-		resizeFrames();  // calculate required <element> sizes and locations
-		setResidueKeys();  // convert json 'residues' to associative array
-		saveColors(); // saves original colors in svg <elements>
-		addSVGevents();
-		if (v > 2) console.log("##### Finished Setup #####");
-	}
-} // end of function getNextJSON()
-	
-	
-	
-function getSVG(theURL, c, accession, frameID) {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			// USING VANILLA JAVASCRIPT (jquery fails inside <svg> without converting objects)
-			//   try something like the following:
-			//     var fd = $('#'+ frameID).removeClass(); // convert html object to jquery object
-			//     fd.html(this.responseText);  // use jquery to populate iframe
-			var fd = document.getElementById(frameID).contentWindow.document;
-			fd.write("<br>" + this.responseText + "<br><b><center>" + accession + "</b></center> ");
-			// when done loading svg image, get the next one
-			c++;
-			getNextSVG(c);
-		}
-	};
-	xhttp.open("GET", theURL, true);
-	xhttp.send();
-} // end of function getSVG()
-	
-	
-		
-function getNextSVG(c) {
-	if (c < svgPath.length) {
-		if (v > 2) console.log("getting next SVG: " + svgPath[c] );
-		getSVG(svgPath[c], c, acc[c], ifr);
-	} else {
-		getNextJSON(0);
-	}
-} // end of function getNextSVG()
-	
-
-
-	
-function initialize() {
-	if (v > 2) console.log("##### Initializing #####");
-	alert("This page is for demonstration only ... A fully functional page is coming soon!");
-	setupAnimation('logo_svg', 'header');
-	var args = window.location.search.substring(1).split("&");
-	// setup arrays with input parameters
-	// normally, demoData would be taken from URL args ...
-	demoData.forEach(populateInput);	
-	// fetch and process the images and data
-	getNextSVG(0);
-	$("#verbosity").val(v);
-} // end of function initialize()
-
-
-function changeV() {
-	v = $("#verbosity").val();
-	console.log("verbosity changed to " + v);
-}
-	
-function changeB() {
-	var bg = $("#bgColor").val();
-	$("#"+ifr).css("background-color", bg);
-	console.log("background changed to " + bg);
-}
+var boxHighlightColor = "rgb(255,239,207)";
 </script>
 		
 </head>
@@ -533,21 +43,42 @@ function changeB() {
 <div id="helpDiv" ><br>Move the mouse over the structure</div>
 
 <div id="div1">
-	<iframe id="iframe1" class="svg">
+	<iframe id="iframe1" >
 	<p>Your browser does not support iframes.</p>
 	</iframe>
 </div>
 
 <div id="div2">
-&nbsp;  &nbsp; Background:
-	<select id="bgColor" onchange="changeB()";>
-		<option value="rgb(111,111,111)">grey</option>
-		<option value="rgb(216,255,239)">green</option>
-		<option value="rgb(255,216,216)">pink</option>
-		<option value="rgb(255,255,255)" selected>white</option>
-	</select>
+ &nbsp;  &nbsp; Verbosity:
+	<select id="verbosity" onchange="changeV()";>
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6" selected>6</option>
+</select>  &nbsp;
+&nbsp;  &nbsp; 
+	<button onclick="showData()">Show All JSON Data</button>
 	<br>
-	<div id="infoDiv" ><br>Information shown here</div>
+</div>
+
+<div id="infoDiv" >
+	<center>
+	<h2>Information shown here</h2>
+	</center>
+	<!--
+	<h3> To Do:</h3>
+	<ul>
+		<li> &nbsp; retrieve data using associative arrays </li>
+		<li> &nbsp; implement "show residues" in svg image </li>
+		<li> &nbsp; explore css <i>within</i> iframe content document </li>
+		<li> &nbsp; make svg accession clickable </li>
+		<li> &nbsp; highlight canvas on mouseover</li>
+		<li> &nbsp; keep highlight when node clicked and adjust fade background</li>
+	</ul>
+	-->
 </div>
 	  
 </body>
