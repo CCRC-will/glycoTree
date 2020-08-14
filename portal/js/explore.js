@@ -80,64 +80,99 @@ function clickNode() {
 		var rd = data[accession].residues['_' + resID];
 		// ed is enzyme data for residues[resID]
 		var ed = rd.enzymes;
-		var tData = [];
-		for (var i in ed) {
-			tData[i] = [ed[i].gene_name, ed[i].uniprot, ed[i].uniprot, ed[i].species, ed[i].type,
-					   ed[i].dna_refseq, ed[i].protein_refseq];
-		}
-
-		var table = $('#clickTable').DataTable( {
-			data: tData,
-			paging: false,
-			columns: [
-				
-				{ 
-					title: "Gene",
-					"render": function(data, type, row, meta){
-						if(type === 'display'){
-							data = '<a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=' 
-								+ data + '" target="genecards">' + data + '</a>';
-						}
-						return data;
-					}
-				},				{ 
-					title: "GlyGen",
-					"render": function(data, type, row, meta){
-						if(type === 'display'){
-							data = '<a href="https://glygen.org/protein_detail.html?uniprot_canonical_ac=' 
-								+ data + '" target="glygen">' + data + '</a>';
-						}
-						return data;
-					}
-				},
-				{ 
-					title: "uniProt",
-					"render": function(data, type, row, meta){
-						if(type === 'display'){
-							data = '<a href="https://www.uniprot.org/uniprot/' 
-								+ data + '" target="uniprot">' + data + '</a>';
-						}
-						return data;
-					}
-				},
-				{ 
-					title: "Species",
-					"render": function(data, type, row, meta){
-						if(type === 'display'){
-							data = '<a href="https://www.ncbi.nlm.nih.gov/taxonomy/?term=' 
-								+ data + '" target="species">' + data + '</a>';
-						}
-						return data;
-					}
-				},
-				{ title: "Type" },
-				{ title: "DNA RefSeq" },
-				{ title: "Protein RefSeq" }
-			]
-		} );
+		setupResultsTable('clickTable', ed);
 	} 
-
 } // end of function clickNode()
+
+
+function setupResultsTable(tableName, tableData) {
+	// make this a function with arguments tableName (clickTable) and tableData (ed)
+	var table = $('#'+tableName).DataTable( {
+		data: tableData,
+		paging: false,
+		columns: [
+			{ 
+				"title": "Gene",
+				"data": "gene_name",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=' 
+							+ data + '" target="genecards">' + data + '</a>';
+					}
+					return data;
+				}
+			},				{ 
+				"title": "GlyGen",
+				"data": "uniprot",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://glygen.org/protein_detail.html?uniprot_canonical_ac=' 
+							+ data + '" target="glygen">' + data + '</a>';
+					}
+					return data;
+				}
+			},
+			{ 
+				"title": "UniProt",
+				"data": "uniprot",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://www.uniprot.org/uniprot/' 
+							+ data + '" target="uniprot">' + data + '</a>';
+					}
+					return data;
+				}
+			},
+			{ 
+				"title": "Species",
+				"data": "species",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://www.ncbi.nlm.nih.gov/taxonomy/?term=' 
+							+ data + '" target="species">' + data + '</a>';
+					}
+					return data;
+				}
+			},
+			{ 
+				"title": "Type",
+				"data": "type"
+			},
+			{ 
+				"title": "DNA RefSeq",
+				"data": "dna_refseq",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://www.ncbi.nlm.nih.gov/mesh/?term=' 
+							+ data + '" target="dna_refseq">' + data + '</a>';
+					}
+					return data;
+				}
+			},
+			{ 
+				"title": "Protein RefSeq",
+				"data": "protein_refseq",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://www.uniprot.org/uniprot/?query=' 
+							+ data + '" target="protein_refseq">' + data + '</a>';
+					}
+					return data;
+				}
+			}
+		]
+	} );
+
+	$('a.toggle-vis').on( 'click', function (e) {
+		e.preventDefault();
+
+		// Get the column API object
+		var column = table.column( $(this).attr('data-column') );
+
+		// Toggle the visibility
+		column.visible( ! column.visible() );
+	} );	
+}
 
 
 function getResultTxt(accession, resID) {
@@ -151,11 +186,20 @@ function getResultTxt(accession, resID) {
 		txt += " residue " + resID + "</p>";
 		// rd is 'residue data'
 		var rd = data[accession].residues['_' + resID];	
-		txt += rd.canonical_name + 
-		" (GlycoCT index " + rd.glycoct_index +
-		")<br> linked to residue " + rd.parent + " at site " + rd.site +
-		"<p class='head1'> Enzymes involved in biosynthesis of this residue";
-		txt += "<table id='clickTable' class='display' width='100%'></table></p>";
+		txt += rd.anomer + "-" + rd.absolute_configuration + "-" + rd.sugar_name + rd.ring_form;
+		txt += " (GlycoCT index " + rd.glycoct_index +
+		")<br> linked to residue " + rd.parent + " at site " + rd.site;
+		
+		txt += "<br><table id='clickTable' class='display' width='100%'></table>";
+
+		txt += "<br><b>Show/Hide: </b>" +
+			"<a class='toggle-vis' data-column='0'>Gene</a>" + 
+			"; <a class='toggle-vis' data-column='1'>GlyGen</a>" + 
+			"; <a class='toggle-vis' data-column='2'>UniProt</a>" + 
+			"; <a class='toggle-vis' data-column='3'>Species</a>" + 
+			"; <a class='toggle-vis' data-column='4'>Type</a>" + 
+			"; <a class='toggle-vis' data-column='5'>DNA RefSeq</a>" + 
+			"; <a class='toggle-vis' data-column='6'>Protein RefSeq</a>"; 
 	}
 
 	return(txt);
