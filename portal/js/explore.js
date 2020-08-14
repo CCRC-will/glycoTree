@@ -183,9 +183,11 @@ function getResultTxt(accession, resID) {
 	if (resID == '0') {
 		txt += ", which has " + data[accession].residues.length + " residues</p>";
 	} else {
-		txt += " residue " + resID + "</p>";
 		// rd is 'residue data'
 		var rd = data[accession].residues['_' + resID];	
+		if (rd.canonical_name == "unassigned") txt += " (unassigned)";
+		txt += " residue " + resID + "</p>";
+
 		txt += rd.anomer + "-" + rd.absolute_configuration + "-" + rd.sugar_name + rd.ring_form;
 		txt += " (GlycoCT index " + rd.glycoct_index +
 		")<br> linked to residue " + rd.parent + " at site " + rd.site;
