@@ -1,0 +1,8 @@
+	<svg height="56px" viewBox="0 0 110 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g fill="none" stroke="#2E78B7" stroke-width="7.5" stroke-linecap="round" >
+			<polygon points="4 35 26 7 100 29 80 57" fill="wheat" stroke="none" stroke-width="1"></polygon>	
+			<polyline points="4 35 80 57 100 29" id="top_line"></polyline>	
+			<polyline points="4 35 26 7 100 29" id="bottom_line" ></polyline>
+			<polyline points="80 71 4 49" id="middle_line"></polyline>
+		</g>
+	</svg>

@@ -6,6 +6,8 @@
 
 <title>GlyGen Sandbox: Explore</title>
 	
+<link rel="icon" href="svg/sbSmall.svg" type="image/icon type">
+	
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/sbheader.js"></script>
 <script src="js/explore.js"></script>
@@ -17,7 +19,7 @@
 
 <script>
 // development variables
-var v = 4;
+var v = 6;
 // context variables (HTML)
 var ifr = "iframe1";
 var hDiv = "helpDiv";
@@ -40,7 +42,7 @@ var boxHighlightColor = "rgb(255,239,207)";
 	<span id="header_2">Sand Box</span>
 </div>
 	
-<div id="helpDiv" ><br>Move the mouse over the structure</div>
+<div id="helpDiv" ><br>Move the mouse over a structure &#128071;</div>
 
 <div id="div1">
 	<iframe id="iframe1" >
@@ -49,17 +51,8 @@ var boxHighlightColor = "rgb(255,239,207)";
 </div>
 
 <div id="div2">
- &nbsp;  &nbsp; Verbosity:
-	<select id="verbosity" onchange="changeV()";>
-		<option value="0">0</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6" selected>6</option>
-</select>  &nbsp;
-&nbsp;  &nbsp; 
+	<button onclick="toggleResidueAnnotations()">Toggle Annotations</button>
+	&nbsp; &nbsp;  &nbsp; 
 	<button onclick="showData()">Show All JSON Data</button>
 	<br>
 </div>
@@ -68,17 +61,6 @@ var boxHighlightColor = "rgb(255,239,207)";
 	<center>
 	<h2>Information shown here</h2>
 	</center>
-	<!--
-	<h3> To Do:</h3>
-	<ul>
-		<li> &nbsp; retrieve data using associative arrays </li>
-		<li> &nbsp; implement "show residues" in svg image </li>
-		<li> &nbsp; explore css <i>within</i> iframe content document </li>
-		<li> &nbsp; make svg accession clickable </li>
-		<li> &nbsp; highlight canvas on mouseover</li>
-		<li> &nbsp; keep highlight when node clicked and adjust fade background</li>
-	</ul>
-	-->
 </div>
 	  
 </body>

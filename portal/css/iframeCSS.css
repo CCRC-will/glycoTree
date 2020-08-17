@@ -8,3 +8,16 @@
 	font-size:18px;
 	stroke: none;
 }
+
+.annotationShown {
+	font-size: 8px;
+	stroke: none;
+	text-anchor: middle;
+	dominant-baseline: middle;
+	fill: black;
+	visibility: visible;
+}
+
+.annotationHidden {
+	visibility: hidden;
+}

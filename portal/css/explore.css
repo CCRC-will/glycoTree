@@ -44,14 +44,14 @@ body {
 	height: 50px;
 	width: 400px;
 	left: 20px;
-	top: 80px;
+	top: 75px;
 	background-color: rgb(255,255,255);
 }
 
 #div1 {  
 	position: absolute;
 	height: 210px;
-	top: 160px;
+	top: 120px;
 	left : 20px;
 }	
 
@@ -73,6 +73,7 @@ body {
 	top: 80px;
 	height: 25px;
 	border-style: none;
+	text-align: center;
 	background-color: rgb(255,255,255);
 }
 
