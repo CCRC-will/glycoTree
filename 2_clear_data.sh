@@ -33,7 +33,13 @@ rm G*.csv
 ls
 
 echo
-cd ../../../..
+cd ./pc_annotated
+pwd
+rm G*.csv
+ls
+
+echo
+cd ../../../../..
 pwd
 ls
 

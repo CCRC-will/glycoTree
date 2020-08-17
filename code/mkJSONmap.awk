@@ -58,6 +58,7 @@ file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   printf("\n          \"canonical_name\": \"%s\",", $2);
   printf("\n          \"residue_id\": \"%s\",", $3);
   printf("\n          \"glycoct_index\": \"%s\",", $11);
+  printf("\n          \"pubchem_id\": \"%s\",", $12);
   printf("\n          \"sugar_name\": \"%s\",", $4);
   printf("\n          \"anomer\": \"%s\",", $5);
   printf("\n          \"absolute_configuration\": \"%s\",", $6);

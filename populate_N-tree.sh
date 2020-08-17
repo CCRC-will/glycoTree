@@ -50,18 +50,22 @@ echo Sorting mapped residues
 ./code/sortCSV.sh ./data/gct/csv/mapped 0
 
 echo
+echo Adding PubChem IDs
+awk -v out="./data/gct/csv/mapped/sorted/pc_annotated/" -f ./code/addPCids.awk ./model/pc_sugars.csv ./data/gct/csv/mapped/sorted/G*.csv
+
+echo
 echo Generating list of unassigned residues 
 echo "glycan_ID,residue,residue_ID,name,anomer,absolute,ring,parent_ID,site,form_name" > ./model/unassigned.csv
-grep -h "unassigned" ./data/gct/csv/mapped/sorted/G* >> ./model/unassigned.csv
+grep -h "unassigned" ./data/gct/csv/mapped/sorted/pc_annotated/G* >> ./model/unassigned.csv
 
 echo
 echo Annotating residues with biosynthetic enzymes in csv format
-awk -f ./code/mkCSVmap.awk $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv  > ./model/annotated_glycans.csv
+awk -f ./code/mkCSVmap.awk $enzyme_file ./data/gct/csv/mapped/sorted/pc_annotated/G*.csv  > ./model/annotated_glycans.csv
 
 if [ $# -gt 0 ]; then
   echo
   echo fetching svg files from $1
-  ./fetchSVGfiles.sh ./data/gct/csv/mapped/sorted/ $1 ./data/svg/
+  ./fetchSVGfiles.sh ./data/gct/csv/mapped/sorted/pc_annotated/ $1 ./data/svg/
 fi
 
 echo
@@ -81,8 +85,8 @@ awk -f ./code/hashem.awk ./model/map_gTree.csv ./model/map_GlycoCT.csv > ./model
 
 echo
 echo Annotating residues with biosynthetic enzymes - results in single large json file
-awk -f ./code/mkJSONmap.awk $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv  > ./model/annotated_glycans.json
+awk -f ./code/mkJSONmap.awk $enzyme_file ./data/gct/csv/mapped/sorted/pc_annotated/G*.csv  > ./model/annotated_glycans.json
 echo
 echo Annotating residues with biosynthetic enzymes - results in one json file for each structure
-awk -f ./code/mkJSONmanyMaps.awk $enzyme_file ./data/gct/csv/mapped/sorted/G*.csv
+awk -f ./code/mkJSONmanyMaps.awk $enzyme_file ./data/gct/csv/mapped/sorted/pc_annotated/G*.csv
 
