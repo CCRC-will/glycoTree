@@ -1,5 +1,7 @@
 .boxHighlight {
 	fill: rgb(233,239,244);
+	stroke: rgb(47,120,183);
+	stroke-width: 3;
 }
 
 .svgText {
@@ -21,5 +23,5 @@
 }
 
 body {
-	margin: 00px;
+	margin-right: 60px;
 }

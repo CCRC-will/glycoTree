@@ -64,19 +64,21 @@ function enterNode() {
 	// the following fails ???
 	var s = $(this).parentsUntil("svg"); // returns an array!!!!
 	console.log("entered element in " + s[0].getAttribute('id'));
-	s[0].setAttributeNS(null, "transform", "scale(1.05)");
+	s[0].setAttributeNS(null, "transform", "scale(1.2)");
 */
 	// complex way to get and modify containing svg
 	// $(this).parentsUntil("svg") finds an object that cannot be properly accessed
 	// apparently, svg object must be an element of an array to be modified ???
 
+	var ii = $('#' + ifr);
+	// alert(ii.attr('width'));
 	var b = $('#' + ifr).contents().find('body');
 	var s = b.find('svg');
 	for (var i = 0; i < s.length; i++) {
 		var c = $(s[i]).find(this);
 		if (c.length == 1) { // this is a descendant of the <svg> object
 			if (v > 4) console.log("mouse entered svg " + s[i].getAttribute('id'));
-			s[i].setAttributeNS(null, "transform", "scale(1.05)");
+			s[i].setAttributeNS(null, "transform", "scale(1.2)");
 		}
 	}
 	
@@ -338,7 +340,7 @@ function setupFrames() {
 		var accession = s[i].getAttribute('id').split('_')[0];
 		if (v > 4) console.log("  svg[" + i + "] height: " + h + "; width: " + w );
 		canvasH +=  40 + h;
-		canvasW = Math.max(canvasW, w + 20);
+		canvasW = Math.max(canvasW, w + 120);
 		// The following lines show how to append text to svg canvas
 		//   allows precise positioning !!!
 		//    can be used to annotate residues with canonical IDs
@@ -720,7 +722,7 @@ function getSVG(theURL, c, accession, frameID) {
 			//     var fd = $('#'+ frameID).removeClass(); // convert html object to jquery object
 			//     fd.html(this.responseText);  // use jquery to populate iframe
 			var fd = document.getElementById(frameID).contentWindow.document;
-			fd.write(this.responseText + '<br><br><br>');
+			fd.write("<br><br><br>" + this.responseText);
 			// when done loading svg image, get the next one
 			c++;
 			getNextSVG(c);
