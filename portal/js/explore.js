@@ -59,12 +59,39 @@ function enterNode() {
 	txt +=  parts['accession'] + t + rid;
 	$('#'+hDiv).html(txt); 
 	if (v > 3) gNodeLog(this);
+	
+/*	
+	// the following fails ???
+	var s = $(this).parentsUntil("svg"); // returns an array!!!!
+	console.log("entered element in " + s[0].getAttribute('id'));
+	s[0].setAttributeNS(null, "transform", "scale(1.05)");
+*/
+	// complex way to get and modify containing svg
+	// $(this).parentsUntil("svg") finds an object that cannot be properly accessed
+	// apparently, svg object must be an element of an array to be modified ???
 
-} // end of function enterNode()
+	var b = $('#' + ifr).contents().find('body');
+	var s = b.find('svg');
+	for (var i = 0; i < s.length; i++) {
+		var c = $(s[i]).find(this);
+		if (c.length == 1) { // this is a descendant of the <svg> object
+			if (v > 4) console.log("mouse entered svg " + s[i].getAttribute('id'));
+			s[i].setAttributeNS(null, "transform", "scale(1.05)");
+		}
+	}
+	
+
+} // end of function enterNode() 
 	
 	
 function exitNode() {
 	$('#'+hDiv).html("<br>Move the mouse over a structure");
+	var b = $('#' + ifr).contents().find('body');	
+	var s = b.find('svg');
+	for (var i = 0; i < s.length; i++) {
+		s[i].setAttributeNS(null, "transform", "scale(1.0)");
+	}
+
 } // end of function enterNode()
 	
 
@@ -111,7 +138,7 @@ function setupResultsTable(tableName, tableData) {
 				"data": "uniprot",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://glygen.org/protein_detail.html?uniprot_canonical_ac=' 
+						data = '<a href="https://www.glygen.org/protein/' 
 							+ data + '" target="glygen">' + data + '</a>';
 					}
 					return data;
@@ -144,27 +171,16 @@ function setupResultsTable(tableName, tableData) {
 				"data": "type"
 			},
 			{ 
-				"title": "DNA RefSeq",
-				"data": "dna_refseq",
+				"title": "Gene ID",
+				"data": "gene_id",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.ncbi.nlm.nih.gov/mesh/?term=' 
+						data = '<a href="https://www.ncbi.nlm.nih.gov/gene/' 
 							+ data + '" target="dna_refseq">' + data + '</a>';
 					}
 					return data;
 				}
 			},
-			{ 
-				"title": "Protein RefSeq",
-				"data": "protein_refseq",
-				"render": function(data, type, row, meta){
-					if(type === 'display'){
-						data = '<a href="https://www.uniprot.org/uniprot/?query=' 
-							+ data + '" target="protein_refseq">' + data + '</a>';
-					}
-					return data;
-				}
-			}
 		]
 	} );
 
@@ -181,7 +197,7 @@ function setupResultsTable(tableName, tableData) {
 
 
 function getResultTxt(accession, resID) {
-	var url = "https://www.glygen.org/glycan_detail.html?glytoucan_ac=" + accession;
+	var url = "https://www.glygen.org/glycan/" + accession;
 	var txt = "<p class='head1'>Exploring glycan <a href='" + url +
 		"' target='glygen_frame'>" + accession + "</a>"; 
 
@@ -220,8 +236,7 @@ function getResultTxt(accession, resID) {
 				"; <a class='toggle-vis' data-column='2'>UniProt</a>" + 
 				"; <a class='toggle-vis' data-column='3'>Species</a>" + 
 				"; <a class='toggle-vis' data-column='4'>Type</a>" + 
-				"; <a class='toggle-vis' data-column='5'>DNA RefSeq</a>" + 
-				"; <a class='toggle-vis' data-column='6'>Protein RefSeq</a>"; 
+				"; <a class='toggle-vis' data-column='5'>Gene ID</a>"; 
 		} else {
 			txt += "</p><p>&#128683; The residue you clicked cannot be mapped to a glycoTree object &#128683;</p>"
 		}

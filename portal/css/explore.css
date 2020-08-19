@@ -7,20 +7,20 @@
 	z-index: 99;
 	border: 0;
 	background: #2F78B7;
-	padding: 10px 30px 12px;
+	padding: 5px 5px 5px;
 	outline: 0;
 	width: 100%;
-	height: 56px;
+	height: 36px;
 	text-align: left;
 }
 
 	
 div span {
-	height: 56px;
+	height: 36px;
 	display: inline-block;
 	vertical-align: top;
 	color: white;
-	font-size: 56px;
+	font-size: 36px;
 	font-weight: bold;
 	margin-left: 24px;
 }
@@ -44,14 +44,14 @@ body {
 	height: 50px;
 	width: 400px;
 	left: 20px;
-	top: 75px;
+	top: 45px;
 	background-color: rgb(255,255,255);
 }
 
 #div1 {  
 	position: absolute;
-	height: 210px;
-	top: 120px;
+	height: 10px;
+	top: 80px;
 	left : 20px;
 }	
 
@@ -70,7 +70,7 @@ body {
 	position: fixed;
 	z-index: 88;
 	left: 600px;
-	top: 80px;
+	top: 50px;
 	height: 25px;
 	border-style: none;
 	text-align: center;
@@ -80,7 +80,7 @@ body {
 #infoDiv {
 	z-index: 50;
 	position: fixed;
-	top: 100px;
+	top: 50px;
 	left : 0px;
 	height: 500px;
 	text-align: left;
@@ -92,7 +92,6 @@ body {
 	font-size: 18px;
 	font-weight: bold;
 }
-	
 
 
 	
