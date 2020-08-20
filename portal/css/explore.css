@@ -47,20 +47,14 @@ body {
 	top: 45px;
 	background-color: rgb(255,255,255);
 }
-
-#div1 {  
-	position: absolute;
-	height: 10px;
-	top: 80px;
-	left : 20px;
-}	
+	
 
 #iframe1 {
 	height: 200px;
 	width: 10px;
 	position: absolute;
-	top: 0px;
-	left : 0px;
+	top: 80px;
+	left : 20px;
 	background-color: rgb(255,255,255);
 	text-align: right;
 	border: none;

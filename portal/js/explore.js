@@ -70,15 +70,13 @@ function enterNode() {
 	// $(this).parentsUntil("svg") finds an object that cannot be properly accessed
 	// apparently, svg object must be an element of an array to be modified ???
 
-	var ii = $('#' + ifr);
-	// alert(ii.attr('width'));
 	var b = $('#' + ifr).contents().find('body');
 	var s = b.find('svg');
 	for (var i = 0; i < s.length; i++) {
 		var c = $(s[i]).find(this);
 		if (c.length == 1) { // this is a descendant of the <svg> object
 			if (v > 4) console.log("mouse entered svg " + s[i].getAttribute('id'));
-			s[i].setAttributeNS(null, "transform", "scale(1.2)");
+			s[i].setAttributeNS(null, "transform", "scale(1.2, 1.2)");
 		}
 	}
 	
@@ -91,7 +89,7 @@ function exitNode() {
 	var b = $('#' + ifr).contents().find('body');	
 	var s = b.find('svg');
 	for (var i = 0; i < s.length; i++) {
-		s[i].setAttributeNS(null, "transform", "scale(1.0)");
+		s[i].setAttributeNS(null, "transform", "scale(1.0, 1.0)");
 	}
 
 } // end of function enterNode()
