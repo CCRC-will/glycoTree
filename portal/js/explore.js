@@ -1,5 +1,5 @@
 // constants
-var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas'};
+var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 // data variables
 var acc = [];
@@ -8,6 +8,7 @@ var jsonPath = [];
 var data = [];
 var svgCanvasColor = "rgb(255,255,255)";
 var annotated = false;
+var overNode = false;
 
 function populateInput(p) {
 	acc.push(p);
@@ -69,28 +70,47 @@ function enterNode() {
 	// complex way to get and modify containing svg
 	// $(this).parentsUntil("svg") finds an object that cannot be properly accessed
 	// apparently, svg object must be an element of an array to be modified ???
-
-	var b = $('#' + ifr).contents().find('body');
-	var s = b.find('svg');
-	for (var i = 0; i < s.length; i++) {
-		var c = $(s[i]).find(this);
-		if (c.length == 1) { // this is a descendant of the <svg> object
-			if (v > 4) console.log("mouse entered svg " + s[i].getAttribute('id'));
-			s[i].setAttributeNS(null, "transform", "scale(1.2, 1.2)");
+	if (v > 5) console.log("entered node type " + parts['type']);
+	if (parts['type'] == "C") { // mouse entered the canvas
+		if (v > 5) console.log("entered canvas, overNode is " + overNode);
+		if (overNode == false) { // mouse did not enter from node
+			// increase the scale of the canvas
+			var b = $('#' + ifr).contents().find('body');
+			var s = b.find('svg');
+			for (var i = 0; i < s.length; i++) {
+				var c = $(s[i]).find(this);
+				if (c.length == 1) { // 'this' is a descendant of the <svg> object
+					if (v > 4) console.log("mouse entered svg " + s[i].getAttribute('id'));
+					s[i].setAttributeNS(null, "transform", "scale(1.2)");
+				}
+			}
 		}
+	} else { // mouse entered a node in the canvas
+		overNode = true;
 	}
 	
 
 } // end of function enterNode() 
 	
 	
-function exitNode() {
+function exitNode() { 
 	$('#'+hDiv).html("<br>Move the mouse over a structure");
-	var b = $('#' + ifr).contents().find('body');	
-	var s = b.find('svg');
-	for (var i = 0; i < s.length; i++) {
-		s[i].setAttributeNS(null, "transform", "scale(1.0, 1.0)");
-	}
+	var id = this.getAttribute("id");
+	var parts = parseID(id);
+	if (v > 5) console.log("exited node, overNode is " + overNode);
+	setTimeout(function(){ // wait for mouse enter event to be processed
+		if ( (parts['type'] == "C") && (overNode == false) ){  // mouse exited the canvas
+			// set all canvases to their original size
+			var b = $('#' + ifr).contents().find('body');	
+			var s = b.find('svg');
+			for (var i = 0; i < s.length; i++) {
+				s[i].setAttributeNS(null, "transform", "scale(1.0)");
+			}
+		} else { // mouse just exited a node in the canvas (so it's still in the canvas)
+			overNode = false;
+		}
+		
+	}, 10);
 
 } // end of function enterNode()
 	
@@ -210,11 +230,19 @@ function getResultTxt(accession, resID) {
 			if (rd.canonical_name == "unassigned") txt += " (unassigned)";
 			txt += " residue " + resID + "</p>";
 			
-			// combine sugar name and ring form to give proper chemcial name
+			// combine sugar name and ring form to give proper chemical name
 			var sName = rd.sugar_name;
+			// place ring form before "NAc" or "NGc" or "-", whichever comes first
 			var nacLoc = sName.indexOf('NAc');
 			var ngcLoc = sName.indexOf('NGc');
+			var dashLoc = sName.indexOf('-');
 			var nLoc = Math.max(nacLoc, ngcLoc);
+			if (dashLoc > -1) { // there is a '-' in the name
+				if (nLoc == -1) {  // there is no Nx in the name
+					nLoc = dashLoc;
+				}
+			}
+			console.log("dashLoc is " + dashLoc + "  nLoc is " + nLoc);
 			var rf =  "<i>" + rd.ring_form + "</i>";
 			var wholeName = sName + rf;
 			if (nLoc > -1) {
@@ -256,20 +284,36 @@ function highlight(accession, clickedNode, type) {
 	drawn.removeClass(["boxHighlight"]);
 
 	// highlight the svg canvas holding the clicked node
-	// the clickedNode is (actually) <g> whose parent is <g>, whose child[0] is <g>, whose child[0] is <rect> (canvas)
-	var cn = $(clickedNode).parent().children()[0].children[0];
-	var cnn = $(cn); // convert to jquery object
-	cn.style = "";
-	cnn.addClass("boxHighlight");
-	var thefill = $(cnn).css('fill');
+	// g is the <g> element holding other <g> elements in the clicked svg image
+	// when node inside of canvas is clicked ...
+	var g = $(clickedNode).parentsUntil('svg');  // NOT INCLUSIVE OF 'svg'!!!! stops at <g>]
+	// if added text annotation is clicked
+	if (type == "A") {
+		var b = $('#' + ifr).contents().find('body');	
+		var s = b.find("#" + accession + "_svg");
+		g = s.children();
+	}
+		
+	// console.log("g is " + g + " with length " + g.length);
+	var g0 = g[0];
+	// WEIRD - must use mixed jquery and vanilla javascript 
+	//   jquery 'children()' returns an array of vanilla javascript elements, 
+	//      whose children are fetched by 'children'  (NO parentheses)
+	var c = $(g0).children()[0].children[0]; 
+	// console.log("g0 is " + g0.nodeName + "    c is " + c);
+	
+	var cj = $(c); // convert to jquery object
+	cj.style = "";
+	cj.addClass("boxHighlight");
+	var thefill = $(cj).css('fill');
 	svgCanvasColor = thefill; // global scope - used by recolorElements
 	
 	// fade the contents of the svg canvas containing the clicked clickedNode
 	drawn = getDrawnElements(accession);
 	// if the svg canvas is clicked, do not fade its contents
 	if (type != "C") recolorElements(drawn, "fade");
-	// reset cnn.style (overwritten by last line)
-	cn.style = "";
+	// reset canvas style (overwritten by next line)
+	c.style = "";
 
 	// revert the clicked clickedNode to its original color(s)
 	// inside <svg> - must retrieve children of clickable <g> element 
@@ -330,7 +374,15 @@ function setupFrames() {
 	var b = $('#' + ifr).contents().find('body');
 	b.css('text-align', 'right');
 	
+	//  DOES NOT WORK below //
 	var s = b.find('svg');
+	var zoomIn = document.createElementNS('http://www.w3.org/2000/svg','animate');
+	zoomIn.setAttributeNS(null,'attributeName','scale');
+	zoomIn.setAttributeNS(null,'from','1.0');
+	zoomIn.setAttributeNS(null,'to','1.2');
+	zoomIn.setAttribute('dur', '500ms');
+	//  DOES NOT WORK above //
+	
 	// USE VANILLA JAVASCRIPT TO GET/SET ATTRIBUTES of SVG elements!!
 	for (var i = 0; i < s.length; i++) {
 		var w = 1.0 * s[i].getAttribute('width');
@@ -339,15 +391,26 @@ function setupFrames() {
 		if (v > 4) console.log("  svg[" + i + "] height: " + h + "; width: " + w );
 		canvasH +=  40 + h;
 		canvasW = Math.max(canvasW, w + 120);
-		// The following lines show how to append text to svg canvas
-		//   allows precise positioning !!!
-		//    can be used to annotate residues with canonical IDs
-
+		// annotate canvas with accession by appending text element
 		// this annotation has no ID - it cannot be clicked and it is not toggled
-		var element = formTextElement((w/2)-40, 0.96*h, 'svgText', "", accession);
-		s[i].appendChild(element);
+		var textElement = formTextElement((w/2)-40, 0.96*h, 'svgText', "", accession);
+		s[i].appendChild(textElement);
+		
+		//  DOES NOT WORK below //
+		var theID = s[i].getAttribute("id");
+		var zID = theID + "_zoom";
+		// console.log("svg zoom ID is " + zID );
+		zoomIn.setAttribute('id', zID);
+		// console.log("zoom: " + zoomIn);
+		// console.log("zoom to: " + zoomIn.getAttribute('to'));
+		s[i].appendChild(zoomIn);
+		//  DOES NOT WORK above - zoomIn is NOT appended to svg encoding//
 	}
+	// animate zoom with controlled speed - needs work
 	
+
+
+
 	var newLeft = canvasW + 45;
 
 	// setup the iframe
@@ -466,16 +529,16 @@ function annotateResidues() {
 
 
 function formTextElement(x, y, c, id, t) {
-	var element = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-	element. setAttributeNS(null, 'x', x);
-	element. setAttributeNS(null, 'y', y);
-	element. setAttributeNS(null, 'class', c);
+	var te = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	te. setAttributeNS(null, 'x', x);
+	te. setAttributeNS(null, 'y', y);
+	te. setAttributeNS(null, 'class', c);
 	if (id != "") {
-		element. setAttributeNS(null, 'id', id);
+		te. setAttributeNS(null, 'id', id);
 	}
 	var txt = document.createTextNode(t);
-	element. appendChild(txt);
-	return(element);
+	te. appendChild(txt);
+	return(te);
 } // end of function formTextElement()
 
 
@@ -585,46 +648,23 @@ function addSVGevents() {
 	}
 
 	var b = $('#' + ifr).contents().find('body');
-	var g = b.find('g[id]');
+	var g = b.find('g[id], text[id]');
 
+
+
+	
 	for (var i = 0; i < g.length; i++) {
 
 		// USE VANILLA JAVASCRIPT for attributes
-		var theID = g[i].getAttribute("id");
-
 		// add event listeners for objects that have an id
 		g[i].addEventListener("mouseout", exitNode);
 		g[i].addEventListener("mouseover", enterNode);
 		g[i].addEventListener("click", clickNode);
-
-		// the following is for testing - may be useful later for mapping
-		//   svg elements to json elements
-
-		// from svg
-		var idParts  = parseID(theID);
-		var resIndex = idParts['resID'];  
-		var accession = idParts['accession'];
-		var type = idParts['type'];
-
-		// from json 
-		var glycan = data[accession];
-		var residues = glycan.residues;
-		// resIndex cannot be 0 (-> canvas) or contain "S" (-> unmapped node)
-		if ( (resIndex != 0) && (!resIndex.includes("S") ) ) {
-			// To avoid resKey conflicts, resKey always begins with "#"
-			var resKey = "#" + resIndex;
-			var res = residues[resKey]; 
-
-			if (v > 4) {
-				console.log("  svg <g> element[" + i + "] ->  type: " + type +
-					";  accession: " + accession +
-					";  resKey " + resKey);
-				canon = res.canonical_name;
-				console.log("       data 'data[" + accession + "].residues[" + resKey + "]':  name is '" + canon + "'");
-			}
-		}
 	}
 		
+	
+	
+
 } // end of function addSVGevents()
 
 function setResidueKeys() {
