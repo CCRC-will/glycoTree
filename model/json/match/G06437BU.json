@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G06437BU",
+  "dp":  "20",
+  "related_glycans": [ 
+   {
+     "accession": "G06437BU",
+     "relative_dp": "+0",
+     "match": "20"
+   },
+   {
+     "accession": "G21050RT",
+     "relative_dp": "+0",
+     "match": "20"
+   }
+  ]
+}

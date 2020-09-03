@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G80578OK",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G63787RZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G80578OK",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G85767HW",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G86517XT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G92575UZ",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G82801WV",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G82801WV",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G84163ZT",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G84777MO",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G98207CW",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

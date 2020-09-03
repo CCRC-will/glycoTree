@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G37140SO",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G37140SO",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G45256SO",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G52187WF",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G76583MP",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G93500PH",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

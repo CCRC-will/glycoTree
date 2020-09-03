@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G10182XZ",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G10182XZ",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G10209QU",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G42680EX",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G61751GZ",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G70073SG",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G79348ZY",
+     "relative_dp": "+1",
+     "match": "7"
+   }
+  ]
+}

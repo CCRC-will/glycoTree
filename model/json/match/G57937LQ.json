@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G57937LQ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G13537KO",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G57937LQ",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

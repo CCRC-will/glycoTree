@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G11929SN",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G11929SN",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G55479DB",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G80294GH",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

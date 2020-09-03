@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G14782PJ",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G14782PJ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G42322YV",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G53485VW",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G79950YS",
+     "relative_dp": "+1",
+     "match": "15"
+   }
+  ]
+}

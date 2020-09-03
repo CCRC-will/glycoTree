@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G77244ZA",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G01613KN",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G31991IV",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G77244ZA",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
+}

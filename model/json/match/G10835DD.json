@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G10835DD",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G10835DD",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G59752BW",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

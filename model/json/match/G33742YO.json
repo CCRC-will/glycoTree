@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G33742YO",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G29011JC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G33742YO",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G35096EN",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G65415JG",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G71690HK",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G75584LU",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

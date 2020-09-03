@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G53944MR",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G07337US",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G13156PQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G17689DH",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G20284VH",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G53944MR",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G55818EE",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G90889KG",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

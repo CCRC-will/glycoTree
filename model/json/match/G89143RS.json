@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G89143RS",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G29764SO",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G89143RS",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

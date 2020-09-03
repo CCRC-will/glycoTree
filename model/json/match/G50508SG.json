@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G50508SG",
+  "dp":  "22",
+  "related_glycans": [ 
+   {
+     "accession": "G40343KH",
+     "relative_dp": "+0",
+     "match": "22"
+   },
+   {
+     "accession": "G50508SG",
+     "relative_dp": "+0",
+     "match": "22"
+   },
+   {
+     "accession": "G57835AK",
+     "relative_dp": "+0",
+     "match": "22"
+   }
+  ]
+}

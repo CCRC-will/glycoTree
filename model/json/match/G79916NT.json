@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G79916NT",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G65832JS",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G79916NT",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

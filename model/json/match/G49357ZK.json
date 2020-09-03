@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G49357ZK",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G13592VY",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G49357ZK",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G89036WC",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

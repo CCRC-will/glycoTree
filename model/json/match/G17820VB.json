@@ -1,0 +1,116 @@
+{
+  "probe_acc": "G17820VB",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G03216SJ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G06131VP",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G07380TS",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G17820VB",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G20894MY",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G27874QL",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G36053YX",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G41576FY",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G45187EI",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G45997JW",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G52663AD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G58403SV",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G58517TJ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G67066JI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G72533FB",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G77396HT",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G79809MM",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G79996DQ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G84874EV",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G93788SW",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G99270AV",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G99503MW",
+     "relative_dp": "+1",
+     "match": "10"
+   }
+  ]
+}

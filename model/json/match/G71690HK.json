@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G71690HK",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G05382JE",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G33742YO",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G46712PI",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G61207RZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G71690HK",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G78681QL",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

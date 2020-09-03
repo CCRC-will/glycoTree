@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G52645LW",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G12222NC",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G41455NO",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G52645LW",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G79578JB",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G87136DV",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

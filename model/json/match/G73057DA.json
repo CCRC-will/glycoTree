@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G73057DA",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G34527RW",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G38047QV",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G39029JR",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G47675LW",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G73057DA",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

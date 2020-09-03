@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G19019TY",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G09670SR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G16733YD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G19019TY",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G92219PK",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G97123TW",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G61575RT",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G69170UT",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G77646FX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G82050MN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G97123TW",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

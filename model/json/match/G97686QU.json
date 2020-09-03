@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G97686QU",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G04445KN",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G37841NF",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G53168IY",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G92024SL",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G97686QU",
+     "relative_dp": "+0",
+     "match": "8"
+   }
+  ]
+}

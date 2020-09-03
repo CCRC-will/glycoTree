@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G86555OF",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G86555OF",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G89058RF",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

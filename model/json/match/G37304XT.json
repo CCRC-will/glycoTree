@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G37304XT",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G10228OD",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G37304XT",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G40542QP",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G48767NV",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G56770AH",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G58571IP",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G61941WO",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

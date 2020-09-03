@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G19242QH",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G19242QH",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G49933AX",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

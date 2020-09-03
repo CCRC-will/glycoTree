@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G10417XF",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G10417XF",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G23296IL",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

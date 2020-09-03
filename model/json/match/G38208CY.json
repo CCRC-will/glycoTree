@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G38208CY",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G38208CY",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G38549YL",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G39992DR",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G67342MA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G70708LW",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

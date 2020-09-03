@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G23546LY",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G23546LY",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G24748QU",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G29695SR",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G68283NG",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G89364NG",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

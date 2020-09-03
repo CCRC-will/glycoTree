@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G82955EQ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G01476WA",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G62779OI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G82955EQ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G87073UP",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G87107PF",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G87535DG",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

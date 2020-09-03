@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G46767VX",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G25471TG",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G46767VX",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G54513OG",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G55867TY",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

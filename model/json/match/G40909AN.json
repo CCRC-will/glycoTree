@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G40909AN",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G40909AN",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G50364FV",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G73439VG",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G93758YP",
+     "relative_dp": "+1",
+     "match": "17"
+   }
+  ]
+}

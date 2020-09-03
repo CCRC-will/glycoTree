@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G45844BS",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G38997JB",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G45844BS",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G98115AV",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

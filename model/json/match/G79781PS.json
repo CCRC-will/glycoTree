@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G79781PS",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G36118RA",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G39893KL",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G61334IA",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G79781PS",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

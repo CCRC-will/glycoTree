@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G20877ZV",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G13210XL",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G20877ZV",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G48040FY",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G77812KJ",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

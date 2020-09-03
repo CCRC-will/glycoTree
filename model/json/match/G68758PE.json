@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G68758PE",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G68758PE",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G81153QC",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

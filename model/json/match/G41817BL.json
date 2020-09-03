@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G41817BL",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G16828VN",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G17264LS",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G20966TZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G41817BL",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G44747CU",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G67924FL",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G70052MF",
+     "relative_dp": "+1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G64398GR",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G33788DD",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G64398GR",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G67173FM",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G82894XV",
+     "relative_dp": "+1",
+     "match": "15"
+   }
+  ]
+}

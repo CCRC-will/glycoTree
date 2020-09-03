@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G43325ZI",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G43325ZI",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G89036WC",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

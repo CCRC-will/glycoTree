@@ -1,0 +1,116 @@
+{
+  "probe_acc": "G47925EV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G00998NI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G22117HL",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G41821MR",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G44541JO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G45533OY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G47782UT",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G47925EV",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G49495MH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G52880ZN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G53809CJ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G53889SN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G65294YU",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G65597BI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G69461KL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G75903TQ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G78059CC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G79556AB",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G82252QI",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G87937HR",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G90017UO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G90028HY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G90987JA",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G47280HM",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G19444JC",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G23722TU",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G43499QE",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G47280HM",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G77748PL",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G83926PC",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

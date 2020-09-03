@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G51050LD",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G40670DJ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G51050LD",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

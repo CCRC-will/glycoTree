@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G35837ET",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G35837ET",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G41576FY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G44825QL",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G79809MM",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G93788SW",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

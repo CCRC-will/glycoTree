@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G74066YL",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G04576KS",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G16828VN",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G44747CU",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G49933AX",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G67924FL",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G74066YL",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G93164KQ",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

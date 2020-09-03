@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G64693IG",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G06730AH",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G30529FG",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G64693IG",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G72407WU",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G82779CI",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

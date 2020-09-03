@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G43131ZX",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G43131ZX",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G56655CC",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G62968IF",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G63889NK",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G75412QZ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G89168LM",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

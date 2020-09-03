@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G93075HW",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G59942FB",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G93075HW",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

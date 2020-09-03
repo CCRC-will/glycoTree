@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G96091LW",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G07228BR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G28659UB",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G39029JR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G73302KW",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G74645FT",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G78155FK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G96091LW",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

@@ -1,3 +1,16 @@
+/*  READ THIS BEFORE MODIFYING:
+- iframe is a SEPARATE document
+- in SVG, sometimes it is necessary to invoke jquery functions, other times
+   it is necessary to invoke vanilla javascript functions
+- parentsUntil() returns an ORDERED array, NOT inclusive of the "Until" element
+   the order is from closest ancestor to most distant ancestor
+- many jquery functions return arrays, not single elements
+- most mouse events are triggered from <g> elements with IDs - do NOT navigate
+    starting with the actual clicked element, but rather from the <g> element
+	containing it
+- added annotations are apended to SVG, and as such are direct children of the <svg> element
+*/
+
 // constants
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
@@ -12,8 +25,11 @@ var overNode = false;
 
 function populateInput(p) {
 	acc.push(p);
-	svgPath.push('svg/' + p + '.gTree.svg');
-	jsonPath.push('json/' + p + '.json');
+	// svgPath.push('svg/' + p + '.gTree.svg');
+	//  The following paths are hard-coded temporarily to facilitate provisioning
+	//     using GitHub/GitHack
+	svgPath.push('../model/gTree_svg/' + p + '.gTree.svg');
+	jsonPath.push('../model/json/complete/' + p + '.json');
 }
 
 	
@@ -61,20 +77,21 @@ function enterNode() {
 	$('#'+hDiv).html(txt); 
 	if (v > 3) gNodeLog(this);
 	
-/*	
-	// the following fails ???
-	var s = $(this).parentsUntil("svg"); // returns an array!!!!
-	console.log("entered element in " + s[0].getAttribute('id'));
-	s[0].setAttributeNS(null, "transform", "scale(1.2)");
-*/
-	// complex way to get and modify containing svg
-	// $(this).parentsUntil("svg") finds an object that cannot be properly accessed
-	// apparently, svg object must be an element of an array to be modified ???
-	if (v > 5) console.log("entered node type " + parts['type']);
+	// scale the svg image holding the canvas
+	var s = $(this).parentsUntil("body"); // returns an array!!!!
+	if (v > 5) { 
+		console.log("  entered node type " + parts['type']);
+		console.log("    this: " + this);
+		for (var i =  0; i < s.length; i++) {
+			console.log("    " + i + ": " + s[i]);
+		}
+	}
 	if (parts['type'] == "C") { // mouse entered the canvas
 		if (v > 5) console.log("entered canvas, overNode is " + overNode);
 		if (overNode == false) { // mouse did not enter from node
 			// increase the scale of the canvas
+			/* 
+			// this long way works, but parentsUntil() is more direct
 			var b = $('#' + ifr).contents().find('body');
 			var s = b.find('svg');
 			for (var i = 0; i < s.length; i++) {
@@ -84,6 +101,12 @@ function enterNode() {
 					s[i].setAttributeNS(null, "transform", "scale(1.2)");
 				}
 			}
+			*/
+			//  parentsUntil returns an array, starting from the closest ancestor 
+			//   to the most remote - not inclusinve of the "Until" ancestor
+			// q = $(s[0]).removeClass();
+			s[1].setAttributeNS(null, "transform", "scale(1.2)");
+			// console.log("s[0] is " + s[0] + "  with parent " + s[0].parent);
 		}
 	} else { // mouse entered a node in the canvas
 		overNode = true;
@@ -100,7 +123,7 @@ function exitNode() {
 	if (v > 5) console.log("exited node, overNode is " + overNode);
 	setTimeout(function(){ // wait for mouse enter event to be processed
 		if ( (parts['type'] == "C") && (overNode == false) ){  // mouse exited the canvas
-			// set all canvases to their original size
+			// set ALL canvases to their original size
 			var b = $('#' + ifr).contents().find('body');	
 			var s = b.find('svg');
 			for (var i = 0; i < s.length; i++) {
@@ -110,9 +133,9 @@ function exitNode() {
 			overNode = false;
 		}
 		
-	}, 10);
+	}, 5);
 
-} // end of function enterNode()
+} // end of function exitNode()
 	
 
 function clickNode() {
@@ -258,13 +281,14 @@ function getResultTxt(accession, resID) {
 				"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
 			txt += "<br><table id='clickTable' class='display' width='100%'></table>";
 
-			txt += "<br><b>Show/Hide: </b>" +
+			txt += "<br> <b>Show/Hide: </b>" +
 				"<a class='toggle-vis' data-column='0'>Gene</a>" + 
 				"; <a class='toggle-vis' data-column='1'>GlyGen</a>" + 
 				"; <a class='toggle-vis' data-column='2'>UniProt</a>" + 
 				"; <a class='toggle-vis' data-column='3'>Species</a>" + 
 				"; <a class='toggle-vis' data-column='4'>Type</a>" + 
-				"; <a class='toggle-vis' data-column='5'>Gene ID</a>"; 
+				"; <a class='toggle-vis' data-column='5'>Gene ID</a>" +
+				"<br> <b>You can copy this table and paste it into Excel or Numbers!</b>"; 
 		} else {
 			txt += "</p><p>&#128683; The residue you clicked cannot be mapped to a glycoTree object &#128683;</p>"
 		}
@@ -283,23 +307,23 @@ function highlight(accession, clickedNode, type) {
 	// remove css class "boxHighlight" from all drawn elements
 	drawn.removeClass(["boxHighlight"]);
 
-	// highlight the svg canvas holding the clicked node
-	// g is the <g> element holding other <g> elements in the clicked svg image
-	// when node inside of canvas is clicked ...
+	// highlight the <rect> serving as the svg canvas that surrounds the clicked node
+	// var g holds the <g> element holding other <g> elements in the clicked svg image
+	// when node inside of g is clicked ...
 	var g = $(clickedNode).parentsUntil('svg');  // NOT INCLUSIVE OF 'svg'!!!! stops at <g>]
-	// if added text annotation is clicked
+	// clicked text annotation is  is NOT inside of g
+	//   must traverse all the way to <body> (not inclusive) then get <g> from ancestor <svg>
 	if (type == "A") {
-		var b = $('#' + ifr).contents().find('body');	
-		var s = b.find("#" + accession + "_svg");
+		var s = $(clickedNode).parentsUntil('body'); 
 		g = s.children();
 	}
 		
-	// console.log("g is " + g + " with length " + g.length);
+	// the zeroth element of g is the <g> element holding other <g> elements
 	var g0 = g[0];
 	// WEIRD - must use mixed jquery and vanilla javascript 
 	//   jquery 'children()' returns an array of vanilla javascript elements, 
 	//      whose children are fetched by 'children'  (NO parentheses)
-	var c = $(g0).children()[0].children[0]; 
+	var c = $(g0).children()[0].children[0]; // the <rect> serving as canvas
 	// console.log("g0 is " + g0.nodeName + "    c is " + c);
 	
 	var cj = $(c); // convert to jquery object
@@ -407,9 +431,6 @@ function setupFrames() {
 		//  DOES NOT WORK above - zoomIn is NOT appended to svg encoding//
 	}
 	// animate zoom with controlled speed - needs work
-	
-
-
 
 	var newLeft = canvasW + 45;
 

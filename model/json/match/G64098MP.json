@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G64098MP",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G02471GW",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G10691MJ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G64098MP",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G92777SG",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G96223WK",
+     "relative_dp": "+1",
+     "match": "12"
+   }
+  ]
+}

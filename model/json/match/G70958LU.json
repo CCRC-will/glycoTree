@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G70958LU",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G16600BL",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G36211GH",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G70958LU",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G71957GO",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

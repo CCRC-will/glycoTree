@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G46712PI",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G00176HZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G04508HC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G35096EN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G46712PI",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G49369WH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G53322JT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G71690HK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G93767EH",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G40428GO",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G02122FK",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G36362BK",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G40428GO",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
+}

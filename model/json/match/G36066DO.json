@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G36066DO",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G36066DO",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G91511MZ",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

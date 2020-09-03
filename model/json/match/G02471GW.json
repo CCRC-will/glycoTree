@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G02471GW",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G02471GW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G18869TR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G32305RZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G35455OM",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G42110JE",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G64098MP",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

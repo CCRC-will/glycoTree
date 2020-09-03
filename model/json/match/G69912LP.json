@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G69912LP",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G41720HN",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G64669AQ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G65984FE",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G69912LP",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G80858MF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G89637WE",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

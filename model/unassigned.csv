@@ -472,6 +472,10 @@ G03917QY,unassigned,16,HexNAc,x,x,p,15,x,HexpNAc,16,899
 G03917QY,unassigned,15,Man,a,D,p,NC,x,Manp,15,18950
 G03917QY,unassigned,13,Hex,x,x,p,12,x,Hexp,13,206
 G03917QY,unassigned,12,HexNAc,x,x,p,7,x,HexpNAc,12,899
+G03948VT,unassigned,15,NeuNAc,a,D,p,14,3,NeupNAc,15,906
+G03948VT,unassigned,14,Gal,b,D,p,12,4,Galp,14,6036
+G03948VT,unassigned,13,Fuc,a,L,p,12,3,Fucp,13,17106
+G03948VT,unassigned,12,Glc,b,D,p,N1,4,Glcp,12,5793
 G03984TW,unassigned,18,Fuc,a,L,p,x,x,Fucp,18,17106
 G03984TW,unassigned,16,NeuNAc,a,D,p,15,3,NeupNAc,16,906
 G03984TW,unassigned,15,Gal,b,D,p,x,x,Galp,15,6036
@@ -2580,6 +2584,7 @@ G24823MG,unassigned,10,NeuNAc,a,D,p,9,6,NeupNAc,10,906
 G24857RT,unassigned,21,Fuc,a,L,p,x,x,Fucp,21,17106
 G24857RT,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19,906
 G24857RT,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17,906
+G24875YE,unassigned,16,NeuNAc,a,D,p,N72,6,NeupNAc,16,906
 G24891EL,unassigned,29,NeuNAc,a,D,p,N10,3|6,NeupNAc,29,906
 G24891EL,unassigned,24,NeuNAc,a,D,p,N60,3|6,NeupNAc,24,906
 G24891EL,unassigned,15,NeuNAc,a,D,p,N8,3|6,NeupNAc,15,906
@@ -5112,6 +5117,7 @@ G47253CO,unassigned,12,HexNAc,x,x,p,N4,x,HexpNAc,12,899
 G47253OG,unassigned,17,NeuNAc,x,D,p,N6,x,NeupNAc,17,906
 G47253OG,unassigned,11,NeuNAc,x,D,p,N3,x,NeupNAc,11,906
 G47299BP,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17,906
+G47302FP,unassigned,10,Neu,a,D,p,N3,6,Neup,10,
 G47613FH,unassigned,9,Man,a,D,p,NC,3|6,Manp,9,18950
 G47613FH,unassigned,8,Man,x,D,p,6,x,Manp,8,18950
 G47613FH,unassigned,7,Man,x,D,p,6,x,Manp,7,18950
@@ -6019,6 +6025,7 @@ G55184VW,unassigned,10,GlcNAc,x,D,p,N4,2,GlcpNAc,10,439174
 G55185WK,unassigned,25,NeuNAc,a,D,p,x,x,NeupNAc,25,906
 G55185WK,unassigned,23,NeuNAc,a,D,p,x,x,NeupNAc,23,906
 G55185WK,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21,906
+G55314RK,unassigned,17,Fuc,a,L,p,N75,3,Fucp,17,17106
 G55318GC,unassigned,9,Gal,b,D,p,7,4,Galp,9,6036
 G55318GC,unassigned,7,GlcNAc,b,D,p,6,4|6,GlcpNAc,7,439174
 G55318GC,unassigned,6,Man,a,D,p,NC,3|6,Manp,6,18950

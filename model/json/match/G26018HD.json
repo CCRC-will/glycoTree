@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G26018HD",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G04855ZO",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G21246OH",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G26018HD",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G37597FW",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G84153KU",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G90870DG",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

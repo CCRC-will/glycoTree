@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G20966TZ",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G08520NM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G17264LS",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G20966TZ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G38297TU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G40289RO",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G41817BL",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G56748EO",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G78341DP",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

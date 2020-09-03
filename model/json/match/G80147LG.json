@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G80147LG",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G24811FP",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G27919IH",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G29024OJ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G70059SD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G80147LG",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G94116NC",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

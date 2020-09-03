@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G39299DH",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G17164DX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G23296IL",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G39299DH",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G72919IM",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G74369SL",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

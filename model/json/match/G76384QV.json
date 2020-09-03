@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G76384QV",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G31037WG",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G31606TH",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G32829EU",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G33019PZ",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G76384QV",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G88122ZQ",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G92681HQ",
+     "relative_dp": "-1",
+     "match": "16"
+   }
+  ]
+}

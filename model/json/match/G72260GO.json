@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G72260GO",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G23416CI",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G24812WY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G44152CO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G72260GO",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

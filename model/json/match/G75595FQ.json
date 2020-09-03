@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G75595FQ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G20079RG",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G30309QX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G71013KY",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G75595FQ",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

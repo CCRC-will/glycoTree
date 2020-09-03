@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G07699XI",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G07699XI",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G29797YX",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G78155FK",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

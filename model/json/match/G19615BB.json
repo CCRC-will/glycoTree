@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G19615BB",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G08242BT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G19287UY",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G19615BB",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G26394UA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G40173TB",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G46503KK",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

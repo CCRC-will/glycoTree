@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G39439UR",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G10209QU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G10664FL",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G39439UR",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

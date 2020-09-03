@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G84108IZ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G17413FR",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G54258NG",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G56749GV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G64048GU",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G72954XC",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G84108IZ",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

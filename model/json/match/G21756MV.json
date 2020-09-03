@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G21756MV",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G18584GW",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G19104OH",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G21756MV",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G95333ZG",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

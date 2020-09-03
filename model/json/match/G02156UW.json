@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G02156UW",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G00986YT",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G02156UW",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G04483SK",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G59804RR",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G80637VS",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G88884NJ",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

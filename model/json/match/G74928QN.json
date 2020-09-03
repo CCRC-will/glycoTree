@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G74928QN",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G29449JO",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G38291RB",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G61707PW",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G74928QN",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

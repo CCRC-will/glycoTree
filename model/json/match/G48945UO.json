@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G48945UO",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G13267ZY",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G28959FS",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G32305RZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G43694RQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G48945UO",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G71782CJ",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

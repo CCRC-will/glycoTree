@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G47606XQ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G47606XQ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G54151YB",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G87107PF",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G87535DG",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

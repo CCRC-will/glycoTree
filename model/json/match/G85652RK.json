@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G85652RK",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G16441MS",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G35747ZX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G51896IF",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G58827HR",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G85652RK",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

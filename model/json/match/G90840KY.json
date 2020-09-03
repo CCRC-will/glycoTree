@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G90840KY",
+  "dp":  "21",
+  "related_glycans": [ 
+   {
+     "accession": "G59742GY",
+     "relative_dp": "+1",
+     "match": "21"
+   },
+   {
+     "accession": "G64894MA",
+     "relative_dp": "+1",
+     "match": "21"
+   },
+   {
+     "accession": "G65243FP",
+     "relative_dp": "+0",
+     "match": "21"
+   },
+   {
+     "accession": "G68203DZ",
+     "relative_dp": "+1",
+     "match": "21"
+   },
+   {
+     "accession": "G84390MS",
+     "relative_dp": "+0",
+     "match": "21"
+   },
+   {
+     "accession": "G90840KY",
+     "relative_dp": "+0",
+     "match": "21"
+   }
+  ]
+}

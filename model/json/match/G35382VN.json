@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G35382VN",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G35382VN",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G54953LX",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

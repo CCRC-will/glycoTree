@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G30529FG",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G06730AH",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G07328EF",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G17164DX",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G30529FG",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G53817FJ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G64693IG",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G74120DW",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G82779CI",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

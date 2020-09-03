@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G50730KL",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G08520NM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G38297TU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G50730KL",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G78341DP",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

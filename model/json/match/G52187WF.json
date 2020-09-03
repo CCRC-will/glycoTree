@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G52187WF",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G00951UF",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G02290KA",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G37140SO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G52187WF",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G77974XY",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

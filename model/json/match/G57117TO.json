@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G57117TO",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G00978TF",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G57117TO",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G69411IG",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G86386QT",
+     "relative_dp": "-1",
+     "match": "7"
+   }
+  ]
+}

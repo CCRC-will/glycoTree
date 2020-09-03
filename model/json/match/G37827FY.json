@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G37827FY",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G36859SD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G37827FY",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G52080WL",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G62779OI",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G66937TJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G86002PC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G87073UP",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G99129GB",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

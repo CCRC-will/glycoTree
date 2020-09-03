@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G21311YA",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G01361CV",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G11041DA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G16344ZG",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G21311YA",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G45598BE",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G47975JA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G66153IB",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G86270DU",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

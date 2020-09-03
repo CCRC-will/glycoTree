@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G99382AP",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G20079RG",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G30309QX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G44541JO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G71013KY",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G87937HR",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G90017UO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G99382AP",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

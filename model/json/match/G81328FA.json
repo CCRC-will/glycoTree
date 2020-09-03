@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G81328FA",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G26264SQ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G81328FA",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

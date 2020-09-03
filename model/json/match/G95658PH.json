@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G95658PH",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G84504LI",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G95658PH",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G11278YL",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G11278YL",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G42672MA",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G64633BH",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G09921WG",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G64633BH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G79348ZY",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

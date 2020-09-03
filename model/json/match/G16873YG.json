@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G16873YG",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G16873YG",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G58004KD",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G90784AP",
+     "relative_dp": "+1",
+     "match": "18"
+   },
+   {
+     "accession": "G95251MI",
+     "relative_dp": "+1",
+     "match": "18"
+   }
+  ]
+}

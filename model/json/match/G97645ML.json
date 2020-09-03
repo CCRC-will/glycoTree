@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G97645ML",
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G16403CC",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G96719MC",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G97645ML",
+     "relative_dp": "+0",
+     "match": "19"
+   }
+  ]
+}

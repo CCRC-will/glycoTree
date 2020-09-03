@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G71332MU",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G06635WE",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G71332MU",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

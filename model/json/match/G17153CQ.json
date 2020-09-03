@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G17153CQ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G17153CQ",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G84964KJ",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

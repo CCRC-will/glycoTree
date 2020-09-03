@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G61283FH",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G07169PS",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G08096ND",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G17875TE",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G29905OR",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G61283FH",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G85041WE",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G87308QC",
+     "relative_dp": "-1",
+     "match": "6"
+   }
+  ]
+}

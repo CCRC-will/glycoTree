@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G32364DF",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G17857ZF",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G23722TU",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G32364DF",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G83926PC",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G65680SX",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G13267ZY",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G65680SX",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

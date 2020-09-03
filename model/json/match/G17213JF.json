@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G17213JF",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G17213JF",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G56376TA",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G63838JW",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

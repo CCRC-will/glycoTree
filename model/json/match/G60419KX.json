@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G60419KX",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G24705DL",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G51921XC",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G60419KX",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G63919RG",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G72662IG",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G94876HV",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G24122ZI",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G60227QI",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G67413BG",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G94876HV",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
+}
