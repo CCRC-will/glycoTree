@@ -12,6 +12,7 @@
 */
 
 // constants
+var v = 0; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 // data variables
@@ -22,6 +23,8 @@ var data = [];
 var svgCanvasColor = "rgb(255,255,255)";
 var annotated = false;
 var overNode = false;
+var jsonCount = 0;
+var iframeCSSset = false;
 
 function populateInput(p) {
 	acc.push(p);
@@ -140,28 +143,125 @@ function exitNode() {
 
 function clickNode() {
 	var id = this.getAttribute("id");
-	var str = "&nbsp; clicked SVG object with id  " + id;
 	var parts = parseID(id);
 	var type = parts["type"];
 	var accession = parts["accession"];
-	// temporary
+	var rd = data[accession].residues
+	
 	highlight(accession, this, type);
 	var resID = parts["resID"];
-	var txt = getResultTxt(accession, resID, rd);
+	var txt = getInfoText(accession, resID);
 	$("#"+iDiv).html(txt);
 	if ((resID != '0') && (resID.match(/S/) == null) ) { 
 		// the canvas itself was not clicked
 		//  and the residue is mappable to a glycoTree object
-		var rd = data[accession].residues['#' + resID];
 		// ed is enzyme data for residues[resID]
-		var ed = rd.enzymes;
-		setupResultsTable('clickTable', ed);
+		var ed = rd['#' + resID].enzymes;
+		setupEnzymeTable('enzymeTable', ed);
+	} else {
+		// set up residue table and related glycan table
+		var rg = data[accession]["related_glycans"];
+		if (typeof rg != "undefined") {
+			setupRelatedGlycanTable("relatedTable", rg);
+			// process related_glycans -> table and buttons
+		}
+		setupResidueTable("residueTable", rd);
 	}
 } // end of function clickNode()
 
 
-function setupResultsTable(tableName, tableData) {
-	// make this a function with arguments tableName (clickTable) and tableData (ed)
+function setupResidueTable(tableName, tableData) {
+	var table = $('#'+tableName).DataTable( {
+		data: tableData,
+		order: [[ 2, "asc" ]],
+		paging: false,
+		columns: [
+			{ 
+				"title": "Residue ID",
+				"data": "residue_id"
+			},
+			{ 
+				"title": "Monosaccharide",
+				"data": "html_name"
+			},
+			{ 
+				"title": "Linked to Residue",
+				"data": "parent"
+			},
+			{ 
+				"title": "Linkage Site",
+				"data": "site"
+			}
+		]
+	} );
+	
+} // end of function setupResidueTable()
+
+
+
+function setupRelatedGlycanTable(tableName, tableData) {
+	var table = $('#'+tableName).DataTable( {
+		data: tableData,
+		order: [[ 3, "asc" ]],
+		paging: false,
+		columns: [
+			{ 
+				"title": "Add Glycan",
+				"data": "accession",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<button>' + data + '</button>';
+					}
+					return data;
+				}				
+			},
+			{ 
+				"title": "Explore",
+				"data": "accession",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="explore.html?' 
+							+ data + '" target="_blank">explore</a>';
+					}
+					return data;
+				}
+			},			{ 
+				"title": "GlyGen",
+				"data": "accession",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://www.glygen.org/glycan/' 
+							+ data + '" target="glygen">' + data + '</a>';
+					}
+					return data;
+				}
+			},
+			{ 
+				"title": "Relative DP",
+				"data": "relative_dp"
+			},
+			{ 
+				"title": "Matching Residues",
+				"data": "match"
+			}
+		]
+	} );
+
+	
+	// the following hack could use improvement!
+	$('#'+tableName).on( 'click', 'button', function () {
+		var tr = $(this).closest('tr');
+		var value = $(tr).find('td').eq(0)[0].innerHTML;
+		addGlycan(value.split(/[<>]/)[2], true);
+		return false;
+	});
+		
+
+} // end of function setupRelatedGlycanTable
+
+
+
+function setupEnzymeTable(tableName, tableData) {
 	var table = $('#'+tableName).DataTable( {
 		data: tableData,
 		paging: false,
@@ -227,34 +327,120 @@ function setupResultsTable(tableName, tableData) {
 		]
 	} );
 
+	// Toggle column visibility
 	$('a.toggle-vis').on( 'click', function (e) {
 		e.preventDefault();
-
-		// Get the column API object
 		var column = table.column( $(this).attr('data-column') );
-
-		// Toggle the visibility
 		column.visible( ! column.visible() );
 	} );	
 }
 
 
-function getResultTxt(accession, resID) {
+function getInfoText(accession, resID) {
 	var url = "https://www.glygen.org/glycan/" + accession;
-	var txt = "<p class='head1'>Exploring glycan <a href='" + url +
+	var txt = "<a id='glycanTable'></a>"
+	txt += "<p class='head1'>Exploring glycan <a href='" + url +
 		"' target='glygen_frame'>" + accession + "</a>"; 
-
 	if (resID == '0') {
-		txt += ", which has " + data[accession].residues.length + " residues</p>";
+		// the background canvas was clicked
+		txt += " (" + data[accession].residues.length + " residues)</p>";
+		txt += "<a href='#resTable'>Go To the Residue Table</a>";
+		var rg = data[accession]["related_glycans"];
+		var aTxt = "";
+		if  (typeof rg != "undefined")  {
+			if (accession == acc[0] ) {
+				// create related glycan table object
+				txt += "<hr>&emsp;<button onclick='addAll(\"" + accession + "\")'>Add All Related Glycans</button>";
+				txt += "&emsp;<button onclick='location.reload();'>Clear All Related Glycans</button>";
+				txt += "<p><b>Glycans related to " + accession + "</b>";
+				txt += "<table id='relatedTable' class='display' width='100%'></table>";
+				aTxt = "<a href='#glycanTable' >Go to the Related Glycan Table</a>";
+			} else {
+				txt += "<hr><p><b><a href='explore.html?" + accession + "' target='_blank'>Explore glycans related to " +
+					accession + "</a> in a new <i>Sandbox Explore</i> window</b></p>";
+			}
+		} else {
+			txt += "<hr><p><b>No data for glycans related to " + accession + " are available<br>" +
+				accession + "</b> <i>cannot be fully mapped to GlycoTree</i></p>";
+		}
+		// create residue table object
+		txt += "<br><a id='resTable'></a>" + aTxt;
+		txt += "<hr><b>Residues in " + accession + "</b>";
+		txt += "<table id='residueTable' class='display' width='100%'></table>";
 	} else {
+		var rd = data[accession].residues['#' + resID];
 		// rd is 'residue data'
 		if (resID.match(/S/) == null) {
-			var rd = data[accession].residues['#' + resID];	
 			if (rd.canonical_name == "unassigned") txt += " (unassigned)";
 			txt += " residue " + resID + "</p>";
 			
-			// combine sugar name and ring form to give proper chemical name
-			var sName = rd.sugar_name;
+			// htmlName = htmlFormatName(rd);
+			txt += "<b>" + rd.html_name + "</b>";
+			txt += " linked to residue " + rd.parent + " at site " + rd.site;
+			txt += "<br> <a href='gctMessage.html' target='message'>GlycoCT</a> index " + rd.glycoct_index;
+			txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
+				"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
+			txt += "<hr><p><b>Enzymes impacting residue " + resID + " during biosynthesis of " + accession + "</b>";
+			txt += "<table id='enzymeTable' class='display' width='100%'></table>";
+
+			txt += "<br> <b>Show/Hide: </b>" +
+				"<a class='toggle-vis' data-column='0'>Gene</a>" + 
+				"; <a class='toggle-vis' data-column='1'>GlyGen</a>" + 
+				"; <a class='toggle-vis' data-column='2'>UniProt</a>" + 
+				"; <a class='toggle-vis' data-column='3'>Species</a>" + 
+				"; <a class='toggle-vis' data-column='4'>Type</a>" + 
+				"; <a class='toggle-vis' data-column='5'>Gene ID</a>";
+		} else {
+			txt += "</p><p>&#128683; The residue you clicked cannot be mapped to a glycoTree object &#128683;</p>"
+		}
+	}
+
+	return(txt);
+} // end of  function getInfoText()
+
+
+function addGlycan(accession, single) {
+	console.log("trying to add " + accession);
+	if (!acc.includes(accession)) {
+		console.log("adding " + accession);	
+		populateInput(accession);
+		console.log("accession list now has " + acc.length + " structures");
+		// if multiple glycans are being added, wait until all input variables are populated before fetching data
+		if (single) getNextSVG(jsonCount); 
+	}
+} // end of function addGlycan()
+
+function addAll(accession) {
+	// get accessions for all related glycans
+	var rg = data[accession]["related_glycans"];
+	console.log("adding " + rg.length + " glycans related to " + accession);
+	var rgCopy = rg.slice();
+	
+	// sort rgCopy by relative_dp -> same order as sorted table
+	rgCopy.sort(function(a, b) {
+		var nameA = a.relative_dp;
+		var nameB = b.relative_dp;
+		if (nameA < nameB) {
+			return 1;
+		}
+		if (nameA > nameB) {
+			return -1;
+		}
+		// equal relative_dp
+		return 0;
+	});
+	
+	for (var i = 0; i < rgCopy.length; i++) {
+		var newAccession = rgCopy[i].accession;
+		// false -> wait until all input variables are populated before fetching data
+		addGlycan(newAccession, false);
+	}
+	getNextSVG(jsonCount); // 
+} // end of function addAll()
+
+
+function htmlFormatName(residueData) {
+			var sName = residueData.sugar_name;
 			// place ring form before "NAc" or "NGc" or "-", whichever comes first
 			var nacLoc = sName.indexOf('NAc');
 			var ngcLoc = sName.indexOf('NGc');
@@ -265,37 +451,17 @@ function getResultTxt(accession, resID) {
 					nLoc = dashLoc;
 				}
 			}
-			console.log("dashLoc is " + dashLoc + "  nLoc is " + nLoc);
-			var rf =  "<i>" + rd.ring_form + "</i>";
+			var rf =  "<i>" + residueData.ring_form + "</i>";
 			var wholeName = sName + rf;
 			if (nLoc > -1) {
 				wholeName = sName.substring(0, nLoc) + rf + sName.substring(nLoc);
 			} else {
 				
 			}
-			var anom = greek[rd.anomer]; // lookup greek letter
-			txt += "<b>" + anom + "-" + rd.absolute_configuration + "-" + wholeName + "</b>";
-			txt += " linked to residue " + rd.parent + " at site " + rd.site;
-			txt += "<br> <a href='gctMessage.html' target='message'>GlycoCT</a> index " + rd.glycoct_index;
-			txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
-				"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
-			txt += "<br><table id='clickTable' class='display' width='100%'></table>";
-
-			txt += "<br> <b>Show/Hide: </b>" +
-				"<a class='toggle-vis' data-column='0'>Gene</a>" + 
-				"; <a class='toggle-vis' data-column='1'>GlyGen</a>" + 
-				"; <a class='toggle-vis' data-column='2'>UniProt</a>" + 
-				"; <a class='toggle-vis' data-column='3'>Species</a>" + 
-				"; <a class='toggle-vis' data-column='4'>Type</a>" + 
-				"; <a class='toggle-vis' data-column='5'>Gene ID</a>" +
-				"<br> <b>You can copy this table and paste it into Excel or Numbers!</b>"; 
-		} else {
-			txt += "</p><p>&#128683; The residue you clicked cannot be mapped to a glycoTree object &#128683;</p>"
-		}
-	}
-
-	return(txt);
-} // end of  function getResultTxt()
+			var anom = greek[residueData.anomer]; // lookup greek letter
+			var cName = anom + "-" + residueData.absolute_configuration + "-" + wholeName;
+			return(cName);
+} // end or function htmlFormatName()
 
 
 function highlight(accession, clickedNode, type) {
@@ -645,20 +811,22 @@ function saveColors() {
 	var stroke = "";
 	for (var j = 0; j < drawn.length; j++) {
 		fill = drawn[j].style.fill;
-		// the following line may produce unwanted results: "none" has a meaning
-		// if (!(fill.length > 0)) fill = "none";
-		drawn[j].setAttribute("origFill", fill);
 		stroke = drawn[j].style.stroke;
 		// elements drawn with no specified stroke use black stroke
 		if (stroke.localeCompare("") == 0) stroke = "black"; 
-		drawn[j].setAttribute("origStroke", stroke);
+		
+		// do NOT reset origiFill and origStroke to CURRENT values
+		if (drawn[j].hasAttribute("origFill") == false)
+			drawn[j].setAttribute("origFill", fill);
+		if (drawn[j].hasAttribute("origStroke") == false)
+			drawn[j].setAttribute("origStroke", stroke);
 		if (v > 4) {
 			console.log("  " + j + ": <" + drawn[j].nodeName +
 				"> fill: " + drawn[j].getAttribute('origFill') +
 				";  stroke: " + drawn[j].getAttribute('origStroke'));
 		}
 	}
-}
+} // end of function saveColors()
 
 
 
@@ -699,15 +867,18 @@ function setResidueKeys() {
 			// FAILS WHEN resID == j - so need prefix "#"
 			var key2 = "#" + residues[j].residue_id;
 			residues[key2] = residues[j];
+			var htmlName = htmlFormatName(residues[key2]);
+			residues[key2].html_name = htmlName;
 			if (v > 4) {
-				console.log("   object key generated for " + glycan + ".residues[" + j + "] -> '" +
-							key2 + "'");
-				console.log("   data['" + key + "'].residues['" + key2 + "'].canonical_name is " + 
-							data[key].residues[key2].canonical_name);
+				console.log("   object key generated for " + glycan + ".residues[" 
+							+ j + "]  -> '" + key2 + "'");
+				console.log("   data['" + key + "'].residues['" + key2 + "']: html name is '" + 
+							residues[key2].html_name +  "'");
 			}
 		}
 	}
 } // end of function setResidueKeys()
+
 
 
 	
@@ -739,6 +910,7 @@ function setupCSSiframe(ifrID, cssSrc) {
 	cssLink.rel = "stylesheet"; 
 	cssLink.type = "text/css"; 
 	ifrHead[0].appendChild(cssLink);
+	iframeCSSset = true;
 } // end of function setupCSSiframe()
 	
 function getJSON(theURL, c, accession) {
@@ -748,6 +920,7 @@ function getJSON(theURL, c, accession) {
 			data[accession] =  JSON.parse(this.responseText);
 			// when done loading, get the next json file
 			c++;
+			jsonCount = c;
 			getNextJSON(c);
 		}
 	};
@@ -765,7 +938,7 @@ function getNextJSON(c) {
 		setResidueKeys();  // convert json 'residues' to associative array
 		saveColors(); // saves original colors in svg <elements>
 		addSVGevents();
-		setupCSSiframe(ifr, iframeCSS);
+		if (iframeCSSset == false) setupCSSiframe(ifr, iframeCSS);
 		if (v > 2) console.log("##### Finished Setup #####");
 	}
 } // end of function getNextJSON()
@@ -798,7 +971,7 @@ function getNextSVG(c) {
 		if (v > 2) console.log("getting next SVG: " + svgPath[c] );
 		getSVG(svgPath[c], c, acc[c], ifr);
 	} else {
-		getNextJSON(0);
+		getNextJSON(jsonCount);
 	}
 } // end of function getNextSVG()
 	
