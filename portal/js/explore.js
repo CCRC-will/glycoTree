@@ -179,6 +179,9 @@ function setupResidueTable(tableName, tableData) {
 		data: tableData,
 		order: [[ 2, "asc" ]],
 		paging: false,
+		"columnDefs": [
+			{"className": "dt-center", "targets": "_all"}
+		],
 		columns: [
 			{ 
 				"title": "Residue ID",
@@ -206,11 +209,14 @@ function setupResidueTable(tableName, tableData) {
 function setupRelatedGlycanTable(tableName, tableData) {
 	var table = $('#'+tableName).DataTable( {
 		data: tableData,
-		order: [[ 3, "asc" ]],
+		order: [[ 4, "asc" ]],
 		paging: false,
+		"columnDefs": [
+			{"className": "dt-center", "targets": "_all"}
+		],
 		columns: [
 			{ 
-				"title": "Add Glycan",
+				"title": "Add Neighbor",
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
@@ -220,7 +226,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 				}				
 			},
 			{ 
-				"title": "Chemical Neighbors",
+				"title": "New Sandbox",
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
@@ -282,6 +288,9 @@ function setupEnzymeTable(tableName, tableData) {
 	var table = $('#'+tableName).DataTable( {
 		data: tableData,
 		paging: false,
+		"columnDefs": [
+			{"className": "dt-center", "targets": "_all"}
+		],
 		columns: [
 			{ 
 				"title": "Gene",
@@ -372,13 +381,13 @@ function getInfoText(accession, resID) {
 				txt += "&emsp;<button onclick='location.reload();'>Clear All Chemical Neighbors</button>";
 				txt += "<p><b>Chemical Neighbors of " + accession + "</b>";
 				txt += "<table id='relatedTable' class='display' width='100%'></table>";
-				aTxt = "<a href='#glycanTable' >Go to the Related Glycan Table</a>";
+				aTxt = "<a href='#glycanTable' >Go to the Chemical Neighbor Table</a>";
 			} else {
 				txt += "<hr><p><b><a href='explore.html?" + accession + 
-					"' target='_blank'>Explore glycans chemical neighbors of " +
+					"' target='_blank'>Explore chemical neighbors of " +
 					accession + "</a> in a new <i>Sandbox</i></b>";
 				txt += "<br><b><a href='https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=" +
-					accession + "' target='_blank'>Explore glycans related  to " +
+					accession + "' target='_blank'>Explore structure encodings related  to " +
 					accession + "</a> in a <i>GNOme</i> window</b></p>";
 			}
 		} else {
@@ -945,26 +954,15 @@ function getJSON(theURL, c, accession) {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			data[accession] =  JSON.parse(this.responseText);
-			console.log("GOT JSON FILE #" + jsonCount + " FOR " + accession);
+			if (v > 2) console.log("Retrieved json file #" + jsonCount + " for " + accession);
 			c++;
 			jsonCount = c;
-			// getNextJSON(c);
 		}
 	};
 	xhttp.open("GET", theURL, true);
 	xhttp.send();
 } // end of function getJSON()
-	
-function getNextJSON(c) {
-	if (c < jsonPath.length) {
-		if (v > 2) console.log("getting next json: " + jsonPath[c]);
-		getJSON(jsonPath[c], c, acc[c]);
-	} else if (7 == 2) {
-
-	}
-} // end of function getNextJSON()
-	
-	
+		
 	
 function getSVG(theURL, c, accession) {
 	var xhttp = new XMLHttpRequest();
@@ -985,41 +983,31 @@ function getNextSVG(c) {
 	while (c < svgPath.length) {
 		// only set rendered to false once, at the time svg is fetched
 		rendered[c] = false;  		
-		console.log("rendered[" + c + "] is " + rendered[c]);
-		console.log("getting next SVG: " + svgPath[c]);
-		console.log("   svgPath.length is " + svgPath.length);
 		getSVG(svgPath[c], c, acc[c]);
-		console.log("getting next json: " + jsonPath[c]);
+		if (v > 2) {
+			console.log("getting next SVG: " + svgPath[c]);
+			console.log("getting next json: " + jsonPath[c]);
+		}
 		getJSON(jsonPath[c], c, acc[c]);
 		c++;
 	} 
 } // end of function getNextSVG()
 
-// probably not used
-function getObjLength(obj) {
-	var num = 0;
-	for(var prop in obj) {
-		if(obj.hasOwnProperty(prop))  ++num;
-	}
-	return(num);
-}
-
 function processFiles() {
 	if ( (svgCount < acc.length) || (jsonCount < acc.length) ) {
-		console.log("\nnot ready!");
 		window.setTimeout(processFiles, 250); 
     } else {
-		console.log("\n### Number of loaded svg files is " + svgCount);
 		// after all are loaded, add all svg encodings to iframe 
 		var fd = document.getElementById(ifr).contentWindow.document;
-		for  (var key in svgEncoding) { 
-			// check if image has been rendered yet 
-			for (i in acc) if (acc[i] == key) j = i;
-			if (rendered[j] == false) {
+
+		for (i in acc) {
+			if (rendered[i] == false) {
+				var key = acc[i];
 				fd.write("<br><br><br>" + svgEncoding[key]);			
-				rendered[j] = true; 
-			}
+				rendered[i] = true; 
+			}			
 		}
+		
 		// set up graphics and data
 		setupFrames();  // calculate required <element> sizes and locations
 		setResidueKeys();  // convert json 'residues' to associative array
