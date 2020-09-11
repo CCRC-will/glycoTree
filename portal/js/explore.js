@@ -19,12 +19,16 @@ var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 var acc = [];
 var svgPath = [];
 var jsonPath = [];
+var svgEncoding = [];
 var data = [];
 var svgCanvasColor = "rgb(255,255,255)";
 var annotated = false;
 var overNode = false;
 var jsonCount = 0;
+var svgCount = 0;
+var rendered = [];
 var iframeCSSset = false;
+
 
 function populateInput(p) {
 	acc.push(p);
@@ -216,16 +220,29 @@ function setupRelatedGlycanTable(tableName, tableData) {
 				}				
 			},
 			{ 
-				"title": "Explore",
+				"title": "Chemical Neighbors",
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
 						data = '<a href="explore.html?' 
-							+ data + '" target="_blank">explore</a>';
+							+ data + '" target="_blank">' + data + '</a>';
 					}
 					return data;
 				}
-			},			{ 
+			},	
+			
+			{ 
+				"title": "GNOme",
+				"data": "accession",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = '<a href="https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=' 
+							+ data + '" target="gnome">' + data + '</a>';
+					}
+					return data;
+				}
+			},
+			{ 
 				"title": "GlyGen",
 				"data": "accession",
 				"render": function(data, type, row, meta){
@@ -350,18 +367,23 @@ function getInfoText(accession, resID) {
 		if  (typeof rg != "undefined")  {
 			if (accession == acc[0] ) {
 				// create related glycan table object
-				txt += "<hr>&emsp;<button onclick='addAll(\"" + accession + "\")'>Add All Related Glycans</button>";
-				txt += "&emsp;<button onclick='location.reload();'>Clear All Related Glycans</button>";
-				txt += "<p><b>Glycans related to " + accession + "</b>";
+				txt += "<hr>&emsp;<button onclick='addAll(\"" + accession +
+					"\")'>Add All Chemical Neighbors</button>";
+				txt += "&emsp;<button onclick='location.reload();'>Clear All Chemical Neighbors</button>";
+				txt += "<p><b>Chemical Neighbors of " + accession + "</b>";
 				txt += "<table id='relatedTable' class='display' width='100%'></table>";
 				aTxt = "<a href='#glycanTable' >Go to the Related Glycan Table</a>";
 			} else {
-				txt += "<hr><p><b><a href='explore.html?" + accession + "' target='_blank'>Explore glycans related to " +
-					accession + "</a> in a new <i>Sandbox Explore</i> window</b></p>";
+				txt += "<hr><p><b><a href='explore.html?" + accession + 
+					"' target='_blank'>Explore glycans chemical neighbors of " +
+					accession + "</a> in a new <i>Sandbox</i></b>";
+				txt += "<br><b><a href='https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=" +
+					accession + "' target='_blank'>Explore glycans related  to " +
+					accession + "</a> in a <i>GNOme</i> window</b></p>";
 			}
 		} else {
-			txt += "<hr><p><b>No data for glycans related to " + accession + " are available<br>" +
-				accession + "</b> <i>cannot be fully mapped to GlycoTree</i></p>";
+			txt += "<hr><p><b>No data for Chemical Neighbors of " + accession + " are available</b><br>Reason: " +
+				accession + " <i>cannot be fully mapped to GlycoTree</i></p>";
 		}
 		// create residue table object
 		txt += "<br><a id='resTable'></a>" + aTxt;
@@ -406,7 +428,10 @@ function addGlycan(accession, single) {
 		populateInput(accession);
 		console.log("accession list now has " + acc.length + " structures");
 		// if multiple glycans are being added, wait until all input variables are populated before fetching data
-		if (single) getNextSVG(jsonCount); 
+		if (single) {
+			getNextSVG(jsonCount); 
+			processFiles();
+		}
 	}
 } // end of function addGlycan()
 
@@ -435,7 +460,9 @@ function addAll(accession) {
 		// false -> wait until all input variables are populated before fetching data
 		addGlycan(newAccession, false);
 	}
-	getNextSVG(jsonCount); // 
+	getNextSVG(jsonCount); 
+	processFiles();
+	//  need to render and process all new files@@@@@@@@@@@ 
 } // end of function addAll()
 
 
@@ -918,10 +945,10 @@ function getJSON(theURL, c, accession) {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			data[accession] =  JSON.parse(this.responseText);
-			// when done loading, get the next json file
+			console.log("GOT JSON FILE #" + jsonCount + " FOR " + accession);
 			c++;
 			jsonCount = c;
-			getNextJSON(c);
+			// getNextJSON(c);
 		}
 	};
 	xhttp.open("GET", theURL, true);
@@ -932,32 +959,20 @@ function getNextJSON(c) {
 	if (c < jsonPath.length) {
 		if (v > 2) console.log("getting next json: " + jsonPath[c]);
 		getJSON(jsonPath[c], c, acc[c]);
-	} else {
-		// after all are loaded, set up graphics and data
-		setupFrames();  // calculate required <element> sizes and locations
-		setResidueKeys();  // convert json 'residues' to associative array
-		saveColors(); // saves original colors in svg <elements>
-		addSVGevents();
-		if (iframeCSSset == false) setupCSSiframe(ifr, iframeCSS);
-		if (v > 2) console.log("##### Finished Setup #####");
+	} else if (7 == 2) {
+
 	}
 } // end of function getNextJSON()
 	
 	
 	
-function getSVG(theURL, c, accession, frameID) {
+function getSVG(theURL, c, accession) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			// USING VANILLA JAVASCRIPT (jquery fails inside <svg> without converting objects)
-			//   try something like the following:
-			//     var fd = $('#'+ frameID).removeClass(); // convert html object to jquery object
-			//     fd.html(this.responseText);  // use jquery to populate iframe
-			var fd = document.getElementById(frameID).contentWindow.document;
-			fd.write("<br><br><br>" + this.responseText);
-			// when done loading svg image, get the next one
-			c++;
-			getNextSVG(c);
+			svgEncoding[accession] = this.responseText;
+			console.log("GOT SVG FILE #" + svgCount + " FOR " + accession);
+			svgCount ++;
 		}
 	};
 	xhttp.open("GET", theURL, true);
@@ -967,17 +982,56 @@ function getSVG(theURL, c, accession, frameID) {
 	
 		
 function getNextSVG(c) {
-	if (c < svgPath.length) {
-		if (v > 2) console.log("getting next SVG: " + svgPath[c] );
-		getSVG(svgPath[c], c, acc[c], ifr);
-	} else {
-		getNextJSON(jsonCount);
-	}
+	while (c < svgPath.length) {
+		// only set rendered to false once, at the time svg is fetched
+		rendered[c] = false;  		
+		console.log("rendered[" + c + "] is " + rendered[c]);
+		console.log("getting next SVG: " + svgPath[c]);
+		console.log("   svgPath.length is " + svgPath.length);
+		getSVG(svgPath[c], c, acc[c]);
+		console.log("getting next json: " + jsonPath[c]);
+		getJSON(jsonPath[c], c, acc[c]);
+		c++;
+	} 
 } // end of function getNextSVG()
-	
+
+// probably not used
+function getObjLength(obj) {
+	var num = 0;
+	for(var prop in obj) {
+		if(obj.hasOwnProperty(prop))  ++num;
+	}
+	return(num);
+}
+
+function processFiles() {
+	if ( (svgCount < acc.length) || (jsonCount < acc.length) ) {
+		console.log("\nnot ready!");
+		window.setTimeout(processFiles, 250); 
+    } else {
+		console.log("\n### Number of loaded svg files is " + svgCount);
+		// after all are loaded, add all svg encodings to iframe 
+		var fd = document.getElementById(ifr).contentWindow.document;
+		for  (var key in svgEncoding) { 
+			// check if image has been rendered yet 
+			for (i in acc) if (acc[i] == key) j = i;
+			if (rendered[j] == false) {
+				fd.write("<br><br><br>" + svgEncoding[key]);			
+				rendered[j] = true; 
+			}
+		}
+		// set up graphics and data
+		setupFrames();  // calculate required <element> sizes and locations
+		setResidueKeys();  // convert json 'residues' to associative array
+		saveColors(); // saves original colors in svg <elements>
+		addSVGevents();
+		if (iframeCSSset == false) setupCSSiframe(ifr, iframeCSS);
+		if (v > 2) 
+			console.log("##### Finished Setup #####");
+    }
+}
 
 
-	
 function initialize() {
 	if (v > 2) console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
@@ -987,6 +1041,7 @@ function initialize() {
 	// fetch and process the images and data
 	getNextSVG(0);
 	$("#verbosity").val(v);
+	processFiles();
 } // end of function initialize()
 
 
