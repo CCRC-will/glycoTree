@@ -184,19 +184,19 @@ function setupResidueTable(tableName, tableData) {
 		],
 		columns: [
 			{ 
-				"title": "Residue ID",
-				"data": "residue_id"
-			},
-			{ 
 				"title": "Symbol",
 				"data": "sugar_name",
 				render: function(data, type, row, meta) {
-					return '<img src="snfg_images/' + data + '.jpg">'
+					return '<img src="snfg_images/' + data + '.svg">'
 				}
 
 			},			{ 
 				"title": "Monosaccharide",
 				"data": "html_name"
+			},
+			{ 
+				"title": "Residue ID",
+				"data": "residue_id"
 			},
 			{ 
 				"title": "Linked to Residue",
@@ -414,9 +414,10 @@ function getInfoText(accession, resID) {
 			txt += " residue " + resID + "</p>";
 			
 			// htmlName = htmlFormatName(rd);
-			txt += "<b>" + rd.html_name + "</b>";
+			txt += "<img src='snfg_images/" + rd.sugar_name + ".svg'>&emsp;<b>" + rd.html_name + "</b>";
+			var sym = 
 			txt += " linked to residue " + rd.parent + " at site " + rd.site;
-			txt += "<br> <a href='gctMessage.html' target='message'>GlycoCT</a> index " + rd.glycoct_index;
+			txt += "<br> <a href='gctMessage.html' target='message'>GlycoCT</a> index: " + rd.glycoct_index;
 			txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
 				"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
 			txt += "<hr><p><b>Enzymes impacting residue " + resID + " during biosynthesis of " + accession + "</b>";
