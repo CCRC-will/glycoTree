@@ -177,7 +177,7 @@ function clickNode() {
 function setupResidueTable(tableName, tableData) {
 	var table = $('#'+tableName).DataTable( {
 		data: tableData,
-		order: [[ 2, "asc" ]],
+		order: [[ 3, "asc" ]],
 		paging: false,
 		"columnDefs": [
 			{"className": "dt-center", "targets": "_all"}
@@ -188,6 +188,13 @@ function setupResidueTable(tableName, tableData) {
 				"data": "residue_id"
 			},
 			{ 
+				"title": "Symbol",
+				"data": "sugar_name",
+				render: function(data, type, row, meta) {
+					return '<img src="snfg_images/' + data + '.jpg">'
+				}
+
+			},			{ 
 				"title": "Monosaccharide",
 				"data": "html_name"
 			},
@@ -216,7 +223,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 		],
 		columns: [
 			{ 
-				"title": "Add Neighbor",
+				"title": "View Neighbor",
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
@@ -371,29 +378,30 @@ function getInfoText(accession, resID) {
 		// the background canvas was clicked
 		txt += " (" + data[accession].residues.length + " residues)</p>";
 		txt += "<a href='#resTable'>Go To the Residue Table</a>";
+		txt += "<br><b><a href='https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=" +
+			accession + "' target='_blank'>Explore structure encodings that subsume " +
+			accession + "</a> in a <i>GNOme</i> window</b>";
 		var rg = data[accession]["related_glycans"];
 		var aTxt = "";
 		if  (typeof rg != "undefined")  {
 			if (accession == acc[0] ) {
 				// create related glycan table object
 				txt += "<hr>&emsp;<button onclick='addAll(\"" + accession +
-					"\")'>Add All Chemical Neighbors</button>";
-				txt += "&emsp;<button onclick='location.reload();'>Clear All Chemical Neighbors</button>";
+					"\")'>View All Chemical Neighbors</button>";
+				txt += "&emsp;<button onclick='location.reload();'>Hide All Chemical Neighbors</button>";
 				txt += "<p><b>Chemical Neighbors of " + accession + "</b>";
 				txt += "<table id='relatedTable' class='display' width='100%'></table>";
 				aTxt = "<a href='#glycanTable' >Go to the Chemical Neighbor Table</a>";
 			} else {
 				txt += "<hr><p><b><a href='explore.html?" + accession + 
 					"' target='_blank'>Explore chemical neighbors of " +
-					accession + "</a> in a new <i>Sandbox</i></b>";
-				txt += "<br><b><a href='https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=" +
-					accession + "' target='_blank'>Explore structure encodings related  to " +
-					accession + "</a> in a <i>GNOme</i> window</b></p>";
+					accession + "</a> in a new <i>Sandbox</i></b></p>";
 			}
 		} else {
 			txt += "<hr><p><b>No data for Chemical Neighbors of " + accession + " are available</b><br>Reason: " +
 				accession + " <i>cannot be fully mapped to GlycoTree</i></p>";
 		}
+
 		// create residue table object
 		txt += "<br><a id='resTable'></a>" + aTxt;
 		txt += "<hr><b>Residues in " + accession + "</b>";
