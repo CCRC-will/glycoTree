@@ -5,7 +5,7 @@
 	left : 0px;
 	top: 0px;
 	z-index: 99;
-	border: 0;
+	border: none;
 	background: #2F78B7;
 	padding: 5px 5px 5px;
 	outline: 0;
@@ -14,7 +14,17 @@
 	text-align: left;
 }
 
-	
+#progressDiv {
+	position: fixed;
+	z-index: 95;
+	height: 70px;
+	width: 70px;
+	left: 720px;
+	top: 120px;
+	background-color: #FFFFFF;
+	opacity: 0.8;
+}	
+
 div span {
 	height: 36px;
 	display: inline-block;
@@ -76,7 +86,7 @@ body {
 	position: fixed;
 	top: 50px;
 	left : 0px;
-	height: 500px;
+	height: 600px;
 	text-align: left;
 	padding: 20px;
 	overflow: auto;

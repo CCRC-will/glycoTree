@@ -12,7 +12,7 @@
 */
 
 // constants
-var v = 0; // verbosity of console.log
+var v = 3; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 // data variables
@@ -187,7 +187,8 @@ function setupResidueTable(tableName, tableData) {
 				"title": "Symbol",
 				"data": "sugar_name",
 				render: function(data, type, row, meta) {
-					return '<img src="snfg_images/' + data + '.svg">'
+					var svgName = data.split("-")[0];
+					return '<img src="snfg_images/' + svgName + '.svg">'
 				}
 
 			},			{ 
@@ -413,9 +414,8 @@ function getInfoText(accession, resID) {
 			if (rd.canonical_name == "unassigned") txt += " (unassigned)";
 			txt += " residue " + resID + "</p>";
 			
-			// htmlName = htmlFormatName(rd);
-			txt += "<img src='snfg_images/" + rd.sugar_name + ".svg'>&emsp;<b>" + rd.html_name + "</b>";
-			var sym = 
+			var svgName = rd.sugar_name.split("-")[0];
+			txt += "<img src='snfg_images/" + svgName + ".svg'>&emsp;<b>" + rd.html_name + "</b>";
 			txt += " linked to residue " + rd.parent + " at site " + rd.site;
 			txt += "<br> <a href='gctMessage.html' target='message'>GlycoCT</a> index: " + rd.glycoct_index;
 			txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
@@ -440,11 +440,13 @@ function getInfoText(accession, resID) {
 
 
 function addGlycan(accession, single) {
-	console.log("trying to add " + accession);
+	if (v > 2) console.log("trying to add " + accession);
 	if (!acc.includes(accession)) {
-		console.log("adding " + accession);	
+		// do not do any of the following unless the glycan is absent from array 'acc'
+		$("#progressDiv").css("visibility","visible");
+		if (v > 2) console.log("adding " + accession);	
 		populateInput(accession);
-		console.log("accession list now has " + acc.length + " structures");
+		if (v > 2) console.log("accession list now has " + acc.length + " structures");
 		// if multiple glycans are being added, wait until all input variables are populated before fetching data
 		if (single) {
 			getNextSVG(jsonCount); 
@@ -456,7 +458,7 @@ function addGlycan(accession, single) {
 function addAll(accession) {
 	// get accessions for all related glycans
 	var rg = data[accession]["related_glycans"];
-	console.log("adding " + rg.length + " glycans related to " + accession);
+	if (v > 2) console.log("adding " + rg.length + " glycans related to " + accession);
 	var rgCopy = rg.slice();
 	
 	// sort rgCopy by relative_dp -> same order as sorted table
@@ -609,13 +611,16 @@ function setupFrames() {
 	var b = $('#' + ifr).contents().find('body');
 	b.css('text-align', 'right');
 	
-	//  DOES NOT WORK below //
 	var s = b.find('svg');
+
+	//  DOES NOT WORK below //
+	/*
 	var zoomIn = document.createElementNS('http://www.w3.org/2000/svg','animate');
 	zoomIn.setAttributeNS(null,'attributeName','scale');
 	zoomIn.setAttributeNS(null,'from','1.0');
 	zoomIn.setAttributeNS(null,'to','1.2');
 	zoomIn.setAttribute('dur', '500ms');
+	*/
 	//  DOES NOT WORK above //
 	
 	// USE VANILLA JAVASCRIPT TO GET/SET ATTRIBUTES of SVG elements!!
@@ -632,13 +637,15 @@ function setupFrames() {
 		s[i].appendChild(textElement);
 		
 		//  DOES NOT WORK below //
+		/*
 		var theID = s[i].getAttribute("id");
 		var zID = theID + "_zoom";
-		// console.log("svg zoom ID is " + zID );
+		console.log("svg zoom ID is " + zID );
 		zoomIn.setAttribute('id', zID);
-		// console.log("zoom: " + zoomIn);
-		// console.log("zoom to: " + zoomIn.getAttribute('to'));
+		console.log("zoom: " + zoomIn);
+		console.log("zoom to: " + zoomIn.getAttribute('to'));
 		s[i].appendChild(zoomIn);
+		*/
 		//  DOES NOT WORK above - zoomIn is NOT appended to svg encoding//
 	}
 	// animate zoom with controlled speed - needs work
@@ -963,10 +970,12 @@ function getJSON(theURL, c, accession) {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			data[accession] =  JSON.parse(this.responseText);
-			if (v > 2) console.log("Retrieved json file #" + jsonCount + " for " + accession);
-			c++;
-			jsonCount = c;
+			if (v > 2) console.log("Retrieved JSON file #" + jsonCount + " - " + accession);
+			jsonCount++;
 		}
+	};
+	xhttp.onerror = function() {
+		alert("JSON file request failed");
 	};
 	xhttp.open("GET", theURL, true);
 	xhttp.send();
@@ -978,9 +987,12 @@ function getSVG(theURL, c, accession) {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			svgEncoding[accession] = this.responseText;
-			console.log("GOT SVG FILE #" + svgCount + " FOR " + accession);
+			if (v > 2) console.log("# Retrieved SVG file #" + svgCount + " - " + accession);
 			svgCount ++;
 		}
+	};
+	xhttp.onerror = function() {
+		alert("SVG file request failed");
 	};
 	xhttp.open("GET", theURL, true);
 	xhttp.send();
@@ -1003,9 +1015,12 @@ function getNextSVG(c) {
 } // end of function getNextSVG()
 
 function processFiles() {
+	if (v > 5) console.log("executing processFiles()");
 	if ( (svgCount < acc.length) || (jsonCount < acc.length) ) {
-		window.setTimeout(processFiles, 250); 
+		if (v > 5) console.log("waiting");
+		window.setTimeout(processFiles, 500); 
     } else {
+		if (v > 5) console.log("processing");
 		// after all are loaded, add all svg encodings to iframe 
 		var fd = document.getElementById(ifr).contentWindow.document;
 
@@ -1023,13 +1038,14 @@ function processFiles() {
 		saveColors(); // saves original colors in svg <elements>
 		addSVGevents();
 		if (iframeCSSset == false) setupCSSiframe(ifr, iframeCSS);
-		if (v > 2) 
-			console.log("##### Finished Setup #####");
+		if (v > 2) console.log("##### Finished Setup #####");
+		$("#progressDiv").css("visibility","hidden");
     }
 }
 
 
 function initialize() {
+	$("#progressDiv").css("visibility","visible");
 	if (v > 2) console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
 	var args = window.location.search.substring(1).split("&");
@@ -1044,11 +1060,11 @@ function initialize() {
 
 function changeV() {
 	v = $("#verbosity").val();
-	console.log("verbosity changed to " + v);
+	if (v > 2) console.log("verbosity changed to " + v);
 }
 	
 function changeB() {
 	var bg = $("#bgColor").val();
 	$("#"+ifr).css("background-color", bg);
-	console.log("background changed to " + bg);
+	if (v > 2) console.log("background changed to " + bg);
 }
