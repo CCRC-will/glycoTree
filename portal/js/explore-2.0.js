@@ -12,7 +12,7 @@
 */
 
 // constants
-var v = 2; // verbosity of console.log
+var v = 1; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 // data variables
@@ -30,14 +30,9 @@ var svgCount = 0;
 var dataReady = false;
 var allDataRequested = false;
 var glycanSelector = "all";
-var selectStrings = {
-		"all": "All Glycans Biosynthetically Related to the Reference Glycan",
-		"precursors": "Direct Precursors of the Reference Glycan",
-		"products": "Direct Products of the Reference Glycan",
-		"anomers": "Isomers of the Reference Glycan: Modified Reducing End",
-		"match": "Biosynthetically Related Glycans: Matching Reducing End",
-		"specified": "Biosynthetically Related Glycans: Fully Specified Reducing End"
-	};
+var probeEnd = "";
+var probeSubCount = "0";
+
 
 
 function populateInput(p) {
@@ -134,7 +129,7 @@ function enterNode() {
 	
 	
 function exitNode() { 
-	$('#'+hDiv).html("<br>Move the mouse over a structure");
+	$('#'+hDiv).html("<br>Move the mouse over a structure or residue");
 	var id = this.getAttribute("id");
 	var parts = parseID(id);
 	if (v > 5) console.log("exited node, overNode is " + overNode);
@@ -234,6 +229,8 @@ function setupResidueTable(tableName, tableData) {
 
 
 function setupRelatedGlycanTable(tableName, tableData) {
+	var nRes = data[acc[0]].residues.length;
+	
 	var table = $('#'+tableName).DataTable( {
 		data: tableData,
 		order: [[ 3, "asc" ]],
@@ -259,8 +256,8 @@ function setupRelatedGlycanTable(tableName, tableData) {
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=' 
-							+ data + '" target="gnome">' + data + '</a>';
+						data = '<a href="' + URLs["gnome"] + data +   
+							'" target="gnome">' + data + '</a>';
 					}
 					return data;
 				}
@@ -271,21 +268,32 @@ function setupRelatedGlycanTable(tableName, tableData) {
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.glygen.org/glycan/' 
-							+ data + '" target="glygen">' + data + '</a>';
+						data = '<a href="' + URLs["glygen"] + data +  
+							'" target="glygen">' + data + '</a>';
 					}
 					return data;
 				}
 			},
 			
 			{ 
-				"title": "Relative DP",
-				"data": "relative_dp"
+				"title": "Residues",
+				"data": "relative_dp",
+				"render": function(data, type, row, meta){
+					if(type === 'display'){
+						data = nRes + (1.0 * data);
+					}
+					return data;
+				}
 			},
 			
 			{ 
 				"title": "Matching Residues",
 				"data": "match"
+			},
+			
+			{ 
+				"title": "Substituents",
+				"data": "sub_count"
 			},
 			
 			{ 
@@ -375,24 +383,43 @@ function setupEnzymeTable(tableName, tableData) {
 	} );	
 }
 
+function customStrings(accession, resID) {
+	// customize mStr values for this glycan and residue
+	mStr["infoHead"] = templates["infoHead"].replace("@GLYGEN", URLs["glygen"]);
+	mStr["infoHead"] = mStr["infoHead"].replace(/@ACCESSION/g, accession);	
+	mStr["gnomeLink"] = templates["gnomeLink"].replace("@GNOME", URLs["gnome"]);
+	mStr["gnomeLink"] = mStr["gnomeLink"].replace(/@ACCESSION/g, accession);
+	mStr["sandLink"] = templates["sandLink"].replace(/@ACCESSION/g, accession);
+	mStr["enzHead"] = templates["enzHead"].replace(/@ACCESSION/g, accession);
+	mStr["enzHead"] = mStr["enzHead"].replace(/@RESID/g, resID);
+} // end of function customStrings()
+
 
 function getInfoText(accession, resID) {
-	var url = "https://www.glygen.org/glycan/" + accession;
+	customStrings(accession, resID);
 	var txt = "<a id='glycanTable'></a>"
-	txt += "<p class='head1'>Exploring glycan <a href='" + url +
-		"' target='glygen_frame'>" + accession + "</a>"; 
+	txt += "<p class='head1'>" + mStr["infoHead"]; 
 	if (resID == '0') {
+		// rgRef <- glycans related to THE REFERENCE ACCESSION
+		var rgRef = data[acc[0]]["related_glycans"];
+		var thisSubCount = 0;
 		// the background canvas was clicked
-		txt += " (" + data[accession].residues.length + " residues)</p>";
-		txt += "<p><a href='#resTable'>Go To the Residue Table</a></p>";
-		txt += "<p><b>Use the <a href='https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=" + accession + "' target='_blank'><i>GNOme</i></a> Ontology to explore subsumption relationships for " +
-			accession + "</b></p>";
-		var rg = data[accession]["related_glycans"];
+		for (i = 0; i < rgRef.length; i++) {
+			if (rgRef[i].accession == accession) {
+				thisSubCount = rgRef[i]["sub_count"];
+			}
+		}
+		txt += " [" + data[accession].residues.length + " residues, " +
+			thisSubCount + " substituent(s)]</p>";
+		txt += "<p><a href='#resTable'>" + dStr["resTable"] + "</a></p>";
+		txt += "<p><b>" + mStr["gnomeLink"] + "</b></p>";
 		var aTxt = "";
+		// rg <- glycans related to THIS ACCESSION
+		var rg = data[accession]["related_glycans"];
 		if  (typeof rg != "undefined")  {
 			if (accession == acc[0] ) {
 				// create related glycan table object
-				txt += "<hr><p><b>Glycans Biosynthetically Related to " + accession + "</b>";
+				txt += "<hr><p><b>" + mStr["listHead"] + "</b>";
 				
 				txt += " &emsp; <select class='selectScope' id='glycanSelect'>";
 				for (key in selectStrings) {
@@ -402,10 +429,9 @@ function getInfoText(accession, resID) {
 				
 				
 				txt += "<table id='relatedTable' class='display' width='100%'></table>";
-				aTxt = "<p><a href='#glycanTable' >Go to the Biosynthetically Related Glycan Table</a></p>";
+				aTxt = "<p><a href='#glycanTable' >" + dStr["glyTable"] + "</a></p>";
 			} else {
-				txt += "<hr><p><b>Open a new <a href='explore.html?" + accession + 
-					"' target='_blank'><i>Sandbox</i></a> to explore glycans biosynthetically related to " + accession + "</b></p>"; 
+				txt += "<hr><p><b>" + mStr["sandLink"] + "</b></p>"; 
 			}
 		} else {
 			txt += "<hr><p><b>No data for glycans biosynthetically related to " + accession + 
@@ -425,12 +451,17 @@ function getInfoText(accession, resID) {
 			txt += " residue " + resID + "</p>";
 			
 			var svgName = rd.sugar_name.split("-")[0];
-			txt += "<img src='snfg_images/" + svgName + ".svg'>&emsp;<b>" + rd.html_name + "</b>";
+			
+			txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + svgName +
+				"' target='pubchem'><img src='snfg_images/" + svgName + ".svg'></a>";
+			
+			txt += "&emsp;<b>" + rd.html_name + "</b>";
+
 			txt += " linked to residue " + rd.parent + " at site " + rd.site;
-			txt += "<br> <a href='gctMessage.html' target='message'>GlycoCT</a> index: " + rd.glycoct_index;
-			txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
-				"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
-			txt += "<hr><p><b>Enzymes impacting residue " + resID + " during biosynthesis of " + accession + "</b>";
+			txt += " (<a href='gctMessage.html' target='message'>GlycoCT</a> index: " + rd.glycoct_index + ")";
+			// txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
+			//	"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
+			txt += "<hr><p><b>" + mStr["enzHead"] + "</b>";
 			txt += "<table id='enzymeTable' class='display' width='100%'></table>";
 
 			txt += "<br> <b>Show/Hide: </b>" +
@@ -943,22 +974,45 @@ function setResidueKeys() {
 
 
 function setRelatedReducingStructures(probe) {
+	if (v > 2) console.log("## Setting reducing structures ##");
 	// get related_glycans for probe
 	var related = data[probe].related_glycans;
 	for (var i in related) {
-		// for each related_glycan
+		// for each related_glycan [i]
 		var key = related[i].accession;
-		// get reducing end of related glycan [i]
+		// get reducing end and substituents of related glycan [i]
 		var relatedGlycanResidues = data[key].residues;
+		var subCount = 0;
+		var reducingEnd = "null";
+		var substituents = [];
 		for (j in relatedGlycanResidues) {
 			// for each residue [j] in related_glycan [i]
-			if (relatedGlycanResidues[j].parent == 0) {
-				related[i].reducing_end = relatedGlycanResidues[j].html_name;
+			if (/[A-Z]/.test(j) == false) { 
+				// only check numerically indexed residues
+				
+				if (relatedGlycanResidues[j].parent == 0) {
+					reducingEnd = relatedGlycanResidues[j].html_name;
+				}
+				var thisSubstituent = {};
+				var sugarName = relatedGlycanResidues[j].sugar_name;
+				if (sugarName.includes("-")) {
+					if (v > 4) console.log(i + "," + j + ": found substituent " + sugarName +
+						 " in " + key );
+					var sugarParts = sugarName.split("-");
+					var id = relatedGlycanResidues[j].residue_id;
+					thisSubstituent[id] = sugarParts[1];
+					substituents.push(thisSubstituent);
+					subCount++;
+				}
 			}
 		}
-		if (v > 2) {
-			console.log("  set reducing end for " + key +
+		related[i].reducing_end = reducingEnd;
+		related[i].sub_count = subCount;
+		related[i].substituents = substituents;
+		if (v > 3) {
+			console.log("  Set reducing end for " + key +
 				" (" + relatedGlycanResidues.length + " residues): " + related[i].reducing_end);
+			console.log("  Set number of substituents in " + key + ": " + subCount);
 		}
 	}
 } // end of function setRelatedReducingStructures()
@@ -1041,17 +1095,28 @@ function getNextSVG(c) {
 } // end of function getNextSVG()
 
 
+function simXOR(x, y) {
+	// NO XOR IN JAVASCRIPT - SO SIMULATE IT
+	return( x || y ) && !( x && y );
+}
+
+
 function getSelectedData(selector) {
 	console.log("glycan selector is " + selector);
 	// returns an edited array of related_glycans objects for rendering and listing
 	var probeData = data[acc[0]];
 	var rg = probeData["related_glycans"];
-	var probeEnd = "";
+
 	for (i in rg) {
-		if (rg[i].accession == acc[0]) probeEnd = rg[i].reducing_end;
+		if (rg[i].accession == acc[0]) {
+			probeEnd = rg[i].reducing_end;
+			probeSubCount = rg[i].sub_count;
+		}
 	}
-	console.log("probe is " + acc[0]);
-	console.log("probeEnd is " + probeEnd);
+	if (v > 2) {
+		console.log("   probe is " + acc[0]);
+		console.log("   probeEnd is " + probeEnd);
+	}
 	var rgEdited = [];
 	switch(selector) {
 		case "all":
@@ -1063,22 +1128,29 @@ function getSelectedData(selector) {
 			break;
 		case "precursors":
 			for (i in rg) {
-				if ((rg[i].relative_dp < 0) && (rg[i].reducing_end == probeEnd) ) {
+				var endOK = (rg[i].reducing_end == probeEnd);
+				var dpOK = ( (rg[i].sub_count == probeSubCount) && (rg[i].relative_dp < 0));
+				var subOK = ( (rg[i].sub_count < probeSubCount) && (rg[i].relative_dp == 0) );
+				if (endOK) if( simXOR(dpOK, subOK) ) {
 					rgEdited.push(rg[i]);
 				}
 			}
 			break;
 		case "products":
 			for (i in rg) {
-				if ((rg[i].relative_dp > 0) && (rg[i].reducing_end == probeEnd) ) {
+				var endOK = (rg[i].reducing_end == probeEnd);
+				var dpOK = ( (rg[i].sub_count == probeSubCount) && (rg[i].relative_dp > 0));
+				var subOK = ( (rg[i].sub_count > probeSubCount)  && (rg[i].relative_dp == 0) );
+				if (endOK) if( simXOR(dpOK, subOK) ) {
 					rgEdited.push(rg[i]);
 				}
 			}
 			break;
 		case "anomers":
 			for (i in rg) {
-				if ((rg[i].relative_dp == 0) && (rg[i].reducing_end != probeEnd) ) {
-					rgEdited.push(rg[i]);
+				if ((rg[i].relative_dp == 0) && 
+					( (rg[i].reducing_end != probeEnd) || (rg[i].sub_count != probeSubCount) ) ) {
+						rgEdited.push(rg[i]);
 				}
 			}
 			break;
@@ -1127,9 +1199,9 @@ function processFiles() {
 		if (allDataRequested == true) setRelatedReducingStructures(acc[0]);
 		var fd = document.getElementById(ifr).contentWindow.document;
 		// render the probe structure - write html as text then add to iframe
-		var htmlEncoding = "&emsp; <br><center><h3>Reference Glycan</h3></center>";
+		var htmlEncoding = "&emsp; <br><center><h3>" + dStr["imgHead"] + "</h3></center>";
 		htmlEncoding += "<p>" + svgEncoding[acc[0]] + "&emsp; <br></p><hr>";
-		htmlEncoding += "<center><h4>" + selectStrings[glycanSelector] + "</h4></center>";
+		htmlEncoding += "<center><b>" + mStr["listHead"] + "<br>" + selectStrings[glycanSelector] + "</b></center>";
 		
 		if (acc.length > 1) {
 			// selected data does NOT include the reference structure - only related structures
@@ -1142,6 +1214,7 @@ function processFiles() {
 				htmlEncoding += sep + "<p>" + svgEncoding[key];
 				sep = "&emsp; <br>";
 			}
+			htmlEncoding += "<br></p>"
 		}
 		
 		fd.open();
@@ -1174,6 +1247,7 @@ function initialize() {
 	// fetch and process the images and data
 	dataReady = false;
 	getNextSVG(0);
+	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, acc[0]);
 	processFiles();
 	addAll(); 
 	$("#verbosity").val(v);
