@@ -1,3 +1,5 @@
+// These data could be easily converted to json objects and used as such
+
 // strings used in 'select' tag
 var selectStrings = {
 		"all": "All Biosynthetically Related Glycans",
@@ -31,5 +33,10 @@ var dStr = {
 
 var URLs = {
 	"gnome": "https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus=",
-	"glygen": "https://www.glygen.org/glycan/"
+	"glygen_glycan": "https://www.glygen.org/glycan/",
+	"gene": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=",
+	"glygen_protein": "https://www.glygen.org/protein/",
+	"uniprot": "https://www.uniprot.org/uniprot/",
+	"taxonomy": "https://www.ncbi.nlm.nih.gov/taxonomy/?term=",
+	"gene_id": "https://www.ncbi.nlm.nih.gov/gene/"
 }

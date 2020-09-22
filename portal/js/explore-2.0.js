@@ -33,6 +33,16 @@ var glycanSelector = "all";
 var probeEnd = "";
 var probeSubCount = "0";
 
+document.onkeydown = setV;
+
+function setV(e) {
+	var c = e.keyCode;
+	var cs = String.fromCharCode(c);
+	if (/[0-9]/.test(cs) == true) { 
+		v = 1*cs;
+		console.log("verbosity changed to " + v);
+	}
+}
 
 
 function populateInput(p) {
@@ -268,7 +278,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 				"data": "accession",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="' + URLs["glygen"] + data +  
+						data = '<a href="' + URLs["glygen_glycan"] + data +  
 							'" target="glygen">' + data + '</a>';
 					}
 					return data;
@@ -276,7 +286,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 			},
 			
 			{ 
-				"title": "Residues",
+				"title": "DP",
 				"data": "relative_dp",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
@@ -287,7 +297,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 			},
 			
 			{ 
-				"title": "Matching Residues",
+				"title": "Match",
 				"data": "match"
 			},
 			
@@ -319,18 +329,19 @@ function setupEnzymeTable(tableName, tableData) {
 				"data": "gene_name",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=' 
-							+ data + '" target="genecards">' + data + '</a>';
+						data = '<a href="' + URLs["gene"] + data + 
+							'" target="genecards">' + data + '</a>';
 					}
 					return data;
 				}
-			},				{ 
+			},
+			{ 
 				"title": "GlyGen",
 				"data": "uniprot",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.glygen.org/protein/' 
-							+ data + '" target="glygen">' + data + '</a>';
+						data = '<a href="' + URLs["glygen_protein"] + data + 
+							'" target="glygen">' + data + '</a>';
 					}
 					return data;
 				}
@@ -340,8 +351,8 @@ function setupEnzymeTable(tableName, tableData) {
 				"data": "uniprot",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.uniprot.org/uniprot/' 
-							+ data + '" target="uniprot">' + data + '</a>';
+						data = '<a href="' + URLs["uniprot"] + data + 
+							'" target="uniprot">' + data + '</a>';
 					}
 					return data;
 				}
@@ -351,8 +362,8 @@ function setupEnzymeTable(tableName, tableData) {
 				"data": "species",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.ncbi.nlm.nih.gov/taxonomy/?term=' 
-							+ data + '" target="species">' + data + '</a>';
+						data = '<a href="' + URLs["taxonomy"] + data + 
+							'" target="species">' + data + '</a>';
 					}
 					return data;
 				}
@@ -366,8 +377,8 @@ function setupEnzymeTable(tableName, tableData) {
 				"data": "gene_id",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="https://www.ncbi.nlm.nih.gov/gene/' 
-							+ data + '" target="dna_refseq">' + data + '</a>';
+						data = '<a href="' + URLs["gene_id"] + data + 
+							'" target="dna_refseq">' + data + '</a>';
 					}
 					return data;
 				}
@@ -385,7 +396,7 @@ function setupEnzymeTable(tableName, tableData) {
 
 function customStrings(accession, resID) {
 	// customize mStr values for this glycan and residue
-	mStr["infoHead"] = templates["infoHead"].replace("@GLYGEN", URLs["glygen"]);
+	mStr["infoHead"] = templates["infoHead"].replace("@GLYGEN", URLs["glygen_glycan"]);
 	mStr["infoHead"] = mStr["infoHead"].replace(/@ACCESSION/g, accession);	
 	mStr["gnomeLink"] = templates["gnomeLink"].replace("@GNOME", URLs["gnome"]);
 	mStr["gnomeLink"] = mStr["gnomeLink"].replace(/@ACCESSION/g, accession);
@@ -409,8 +420,8 @@ function getInfoText(accession, resID) {
 				thisSubCount = rgRef[i]["sub_count"];
 			}
 		}
-		txt += " [" + data[accession].residues.length + " residues, " +
-			thisSubCount + " substituent(s)]</p>";
+		txt += " - " + data[accession].residues.length + " residues, " +
+			thisSubCount + " substituent(s)</p>";
 		txt += "<p><a href='#resTable'>" + dStr["resTable"] + "</a></p>";
 		txt += "<p><b>" + mStr["gnomeLink"] + "</b></p>";
 		var aTxt = "";
@@ -1253,11 +1264,6 @@ function initialize() {
 	$("#verbosity").val(v);
 } // end of function initialize()
 
-
-function changeV() {
-	v = $("#verbosity").val();
-	if (v > 2) console.log("verbosity changed to " + v);
-}
 	
 function changeB() {
 	var bg = $("#bgColor").val();
