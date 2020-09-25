@@ -33,14 +33,24 @@ var glycanSelector = "all";
 var probeEnd = "";
 var probeSubCount = "0";
 
-document.onkeydown = setV;
+document.onkeydown = keySet;
 
-function setV(e) {
+function keySet(e) {
+	// implement response to keystrokes
 	var c = e.keyCode;
-	var cs = String.fromCharCode(c);
-	if (/[0-9]/.test(cs) == true) { 
-		v = 1*cs;
+	var lc = String.fromCharCode(c).toLowerCase();
+	if (/[0-9]/.test(lc) == true) { 
+		v = 1 * lc;
 		console.log("verbosity changed to " + v);
+	}
+	if (lc === "j") {
+		showData();
+	}
+	if (lc === "i") {
+		processFiles();
+	}
+	if (lc === "h") {
+		$('#' + iDiv).html("<h2>Help Text Goes Here</h2>");
 	}
 }
 
@@ -86,6 +96,7 @@ function gNodeLog(gNode) {
 
 	
 function enterNode() {
+	if (this.style) this.style.cursor = "pointer";
 	var id = this.getAttribute("id");
 	var parts = parseID(id);
 	var t = ', ' + nodeType[parts['type']] + ' ';
