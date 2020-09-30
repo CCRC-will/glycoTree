@@ -1,4 +1,4 @@
-// These data could be easily converted to json objects and used as such
+// These data could be easily converted to json objects and consumed as such
 
 // strings used in 'select' tag
 var selectStrings = {
@@ -14,8 +14,8 @@ var selectStrings = {
 var templates = {
 	"infoHead": "Exploring glycan <a href='@GLYGEN@ACCESSION' target='glygen_frame'>@ACCESSION</a>",
 	"listHead": "Glycans Biosynthetically Related to @ACCESSION",
-	"gnomeLink": "Explore incompletely defined representations of <a href='@GNOME@ACCESSION' target='_blank'>@ACCESSION</a> using the <i>GNOme Ontology</i>",
-	"sandLink": "Open a new <i>Sandbox</i> to explore glycans biosynthetically related to <a href='explore.html?@ACCESSION' target='_blank'>@ACCESSION</a>",
+	"gnomeLink": "Explore accessions related to <a href='@GNOME@ACCESSION' target='_blank'>@ACCESSION</a> using the <i>GNOme Subsumption Browser</i>",
+	"sandLink": "<a href='explore.html?@ACCESSION' target='_blank'>Open a new <i>Sandbox</i></a> to explore glycans biosynthetically related to @ACCESSION",
 	"enzHead": "Enzymes directly impacting residue @RESID during biosynthesis of @ACCESSION"
 };
 

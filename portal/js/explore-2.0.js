@@ -196,6 +196,8 @@ function clickResponse(node) {
 		var ed = rd['#' + resID].enzymes;
 		setupEnzymeTable('enzymeTable', ed);
 	} else {
+		// the canvas itself was clicked
+		setupTabs();
 		// set up residue table and related glycan table
 		//var rg = data[accession]["related_glycans"];
 		setupRelatedGlycanTable("relatedTable", selectedData);
@@ -411,16 +413,39 @@ function customStrings(accession, resID) {
 	mStr["infoHead"] = mStr["infoHead"].replace(/@ACCESSION/g, accession);	
 	mStr["gnomeLink"] = templates["gnomeLink"].replace("@GNOME", URLs["gnome"]);
 	mStr["gnomeLink"] = mStr["gnomeLink"].replace(/@ACCESSION/g, accession);
+	// NEXT LINE - TEMPORARY EXPLICIT HARD CODING - WTF?
+	// mStr["gnomeLink"] = "<a href='https://www.glygen.org/glycan/G71835BN' target='glygen_frame'>G71835BN</a>";
 	mStr["sandLink"] = templates["sandLink"].replace(/@ACCESSION/g, accession);
 	mStr["enzHead"] = templates["enzHead"].replace(/@ACCESSION/g, accession);
 	mStr["enzHead"] = mStr["enzHead"].replace(/@RESID/g, resID);
 } // end of function customStrings()
 
 
+function setupTabs() {
+	$('#tabs li a:not(:first)').addClass('inactive');
+	$('.tableHolder').hide();
+	$('.tableHolder:first').show();
+	$('#tabs li a').click(function(){
+		var t = $(this).attr('href');
+		$('#tabs li a').addClass('inactive');        
+		$(this).removeClass('inactive');
+		$('.tableHolder').hide();
+		$(t).fadeIn('slow');
+		return false;
+	})
+
+	if($(this).hasClass('inactive')){ 
+		$('#tabs li a').addClass('inactive');         
+		$(this).removeClass('inactive');
+		$('.tableHolder').hide();
+		$(t).fadeIn('slow');    
+	}
+} // end of function setupTabs()
+
+
 function getInfoText(accession, resID) {
 	customStrings(accession, resID);
-	var txt = "<a id='glycanTable'></a>"
-	txt += "<p class='head1'>" + mStr["infoHead"]; 
+	var txt = "<p class='head1'>" + mStr["infoHead"]; 
 	if (resID == '0') {
 		// rgRef <- glycans related to THE REFERENCE ACCESSION
 		var rgRef = data[acc[0]]["related_glycans"];
@@ -433,15 +458,30 @@ function getInfoText(accession, resID) {
 		}
 		txt += " - " + data[accession].residues.length + " residues, " +
 			thisSubCount + " substituent(s)</p>";
-		txt += "<p><a href='#resTable'>" + dStr["resTable"] + "</a></p>";
-		txt += "<p><b>" + mStr["gnomeLink"] + "</b></p>";
-		var aTxt = "";
+		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>";
+		
+		// START OF TABS DIV
+		txt += "<div id='tabbox'>" +
+			"<ul id='tabs'>" +
+			"<li><a href='#glycan_table_div'>Related Glycans</a></li>" +
+			"<li><a href='#residue_table_div'>Residues</a></li>" +
+			"<li><a href='#enzyme_table_div'>Enzymes</a></li>" +
+			"</ul>" +
+			"</div>";
+		// END OF TABS DIV
+		
+		// START OF CONTENT BOX
+		txt += "<div id='contentbox'>";
+		
+		// START OF GLYCAN TABLE SECTION
+		txt += "<div class='tableHolder' id='glycan_table_div'>"
 		// rg <- glycans related to THIS ACCESSION
 		var rg = data[accession]["related_glycans"];
 		if  (typeof rg != "undefined")  {
 			if (accession == acc[0] ) {
 				// create related glycan table object
-				txt += "<hr><p><b>" + mStr["listHead"] + "</b>";
+				txt += "<p><b>" + mStr["listHead"] + "</b>";
+				// GLYCAN TABLE DROPDOWN (SELECT)
 				
 				txt += " &emsp; <select class='selectScope' id='glycanSelect'>";
 				for (key in selectStrings) {
@@ -451,20 +491,36 @@ function getInfoText(accession, resID) {
 				
 				
 				txt += "<table id='relatedTable' class='display' width='100%'></table>";
-				aTxt = "<p><a href='#glycanTable' >" + dStr["glyTable"] + "</a></p>";
 			} else {
-				txt += "<hr><p><b>" + mStr["sandLink"] + "</b></p>"; 
+				txt += "<p><b>" + mStr["sandLink"] + "</b></p>"; 
 			}
 		} else {
 			txt += "<hr><p><b>No data for glycans biosynthetically related to " + accession + 
 				" are available</b><br>Reason: " + accession + 
 				" <i>cannot be fully mapped to GlycoTree</i></p>";
 		}
-
-		// create residue table object
-		txt += "<a id='resTable'></a><p><hr></p>" + aTxt;
+		txt += "</div>"
+		// END OF GLYCAN TABLE SECTION
+		
+		// START OF RESIDUE TABLE SECTION
+		txt += "<div class='tableHolder' id='residue_table_div'>"
 		txt += "<b>Residues in " + accession + "</b>";
 		txt += "<table id='residueTable' class='display' width='100%'></table>";
+		txt += "</div>"
+		// END OF RESIDUE TABLE SECTION
+		
+		// START OF ENZYME TABLE SECTION
+		txt += "<div class='tableHolder' id='enzyme_table_div'>"
+		txt += "<p>&#128736; <b>Table showing all enzymes involved in the biosynthesis of " + accession +
+			" is under development</b> &#128736;</p>";
+		txt += "<p>For now, click on each residue of " + accession +
+			" to view enzymes directly impacting that residue</p>";
+		txt += "</div>";
+		// END OF RESIDUE TABLE SECTION
+		
+		// END OF CONTENT BOX
+		txt += "</div>";
+
 	} else {
 		var rd = data[accession].residues['#' + resID];
 		// rd is 'residue data'
@@ -480,7 +536,7 @@ function getInfoText(accession, resID) {
 			txt += "&emsp;<b>" + rd.html_name + "</b>";
 
 			txt += " linked to residue " + rd.parent + " at site " + rd.site;
-			txt += " (<a href='gctMessage.html' target='message'>GlycoCT</a> index: " + rd.glycoct_index + ")";
+			txt += " (<a href='https://www.glygen.org/glycan/" + accession + "#Dseqence' target='glycoct'>GlycoCT</a> index: " + rd.glycoct_index + ")";
 			// txt += "<br> <a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + rd.pubchem_id +
 			//	"' target='pubchem'> PubChem compound: " + rd.pubchem_id + "</a>";
 			txt += "<hr><p><b>" + mStr["enzHead"] + "</b>";
@@ -954,9 +1010,6 @@ function addSVGevents() {
 	var b = $('#' + ifr).contents().find('body');
 	var g = b.find('g[id], text[id]');
 
-
-
-	
 	for (var i = 0; i < g.length; i++) {
 
 		// USE VANILLA JAVASCRIPT for attributes
@@ -965,9 +1018,6 @@ function addSVGevents() {
 		g[i].addEventListener("mouseover", enterNode);
 		g[i].addEventListener("click", clickNode);
 	}
-		
-
-	
 
 } // end of function addSVGevents()
 

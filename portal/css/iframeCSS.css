@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .boxHighlight {
 	fill: rgb(233,239,244);
 	stroke: rgb(47,120,183);
@@ -17,6 +21,7 @@
 	fill: rgb(0, 0, 63);
 	stroke: none;
 	visibility: visible;
+	pointer-events: none;
 }
 
 .annotationHidden {
