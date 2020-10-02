@@ -109,27 +109,6 @@ function enterNode() {
 	txt +=  parts['accession'] + t + rid;
 	$('#'+hDiv).html(txt); 
 	if (v > 6) gNodeLog(this);
-	
-	// scale the svg image holding the canvas
-	var s = $(this).parentsUntil("body"); // returns an array!!!!
-	if (v > 5) { 
-		console.log("  entered node type " + parts['type']);
-		console.log("    this: " + this);
-		for (var i =  0; i < s.length; i++) {
-			console.log("    " + i + ": " + s[i]);
-		}
-	}
-	if (parts['type'] == "C") { // mouse entered the canvas
-		if (v > 5) console.log("entered canvas, overNode is " + overNode);
-		if (overNode == false) { // mouse did not enter from node
-			// increase the scale of the canvas
-			// !!! s[1].setAttributeNS(null, "transform", "scale(1.2)");
-			// console.log("s[0] is " + s[0] + "  with parent " + s[0].parent);
-		}
-	} else { // mouse entered a node in the canvas
-		overNode = true;
-	}
-	
 
 } // end of function enterNode() 
 	
@@ -139,19 +118,6 @@ function exitNode() {
 	var id = this.getAttribute("id");
 	var parts = parseID(id);
 	if (v > 5) console.log("exited node, overNode is " + overNode);
-	setTimeout(function(){ // wait for mouse enter event to be processed
-		if ( (parts['type'] == "C") && (overNode == false) ){  // mouse exited the canvas
-			// set ALL canvases to their original size
-			var b = $('#' + ifr).contents().find('body');	
-			var s = b.find('svg');
-			for (var i = 0; i < s.length; i++) {
-				// !!! s[i].setAttributeNS(null, "transform", "scale(1.0)");
-			}
-		} else { // mouse just exited a node in the canvas (so it's still in the canvas)
-			overNode = false;
-		}
-		
-	}, 5);
 
 } // end of function exitNode()
 	
@@ -666,7 +632,7 @@ function highlight(accession, clickedNode, type) {
 	//   (which has an id) as DOM object then convert to jquery object
 	//     also remove any DOM class attributes from these children
 	var drawnDOM = clickedNode.children; // DOM object
-	drawn = $(drawnDOM).removeClass(); // jquery object
+	drawn = $(drawnDOM); // drawn -> jquery object
 	// reset fill and stroke of clicked object
 	recolorElements(drawn, "revert"); 
 	// if svg canvas is clicked, invoke class boxHighlight
@@ -719,16 +685,6 @@ function setupFrames() {
 	b.css('text-align', 'right');
 	
 	var s = b.find('svg');
-
-	//  DOES NOT WORK below //
-	/*
-	var zoomIn = document.createElementNS('http://www.w3.org/2000/svg','animate');
-	zoomIn.setAttributeNS(null,'attributeName','scale');
-	zoomIn.setAttributeNS(null,'from','1.0');
-	zoomIn.setAttributeNS(null,'to','1.2');
-	zoomIn.setAttribute('dur', '500ms');
-	*/
-	//  DOES NOT WORK above //
 	
 	// USE VANILLA JAVASCRIPT TO GET/SET ATTRIBUTES of SVG elements!!
 	for (var i = 0; i < s.length; i++) {
@@ -742,18 +698,6 @@ function setupFrames() {
 		// this annotation has no ID - it cannot be clicked and it is not toggled
 		var textElement = formTextElement((w/2)-40, 0.96*h, 'svgText', "", accession);
 		s[i].appendChild(textElement);
-		
-		//  DOES NOT WORK below //
-		/*
-		var theID = s[i].getAttribute("id");
-		var zID = theID + "_zoom";
-		console.log("svg zoom ID is " + zID );
-		zoomIn.setAttribute('id', zID);
-		console.log("zoom: " + zoomIn);
-		console.log("zoom to: " + zoomIn.getAttribute('to'));
-		s[i].appendChild(zoomIn);
-		*/
-		//  DOES NOT WORK above - zoomIn is NOT appended to svg encoding//
 	}
 	// animate zoom with controlled speed - needs work
 
@@ -813,7 +757,7 @@ function annotateResidues() {
 		var accession = s[i].id.split("_")[0];
 		if (v > 3) console.log("##### annotating glycan " + accession + " #####");
 
-		var ss = $(s[i]).removeClass(); // svg image to jquery object
+		var ss = $(s[i]);//.removeClass(); // svg image to jquery object
 		var g = ss.find('g[id]');  // <g> elements with 'id' attribute
 
 		g.each(function( index2 ) { // each descendant <g> element having 'id'
@@ -1273,6 +1217,10 @@ function processFiles() {
 		
 		fd.open();
 		fd.write(htmlEncoding);
+		var b = $('#' + ifr).contents().find('body');
+		var s = b.find("svg"); // all <svg> elements in iframe body
+		// s.css("opacity", "0.6");
+		s.addClass("zoomer"); 
 		// fd.close();
 		// set up graphics and data
 		setupFrames();  // calculate required <element> sizes and locations

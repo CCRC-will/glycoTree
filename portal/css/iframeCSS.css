@@ -31,3 +31,12 @@ body {
 body {
 	margin-right: 60px;
 }
+
+.zoomer {
+	transform: scale(1);
+	transition: all 300ms;
+}
+
+.zoomer:hover {
+  transform: scale(1.2);
+}
