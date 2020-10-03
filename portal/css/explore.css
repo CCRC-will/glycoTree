@@ -96,6 +96,10 @@ body {
 	overflow: auto;
 }
 
+.no_und {
+	text-decoration: none;
+}
+
 .head1 {
 	font-size: 18px;
 	font-weight: bold;

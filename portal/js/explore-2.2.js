@@ -49,9 +49,6 @@ function keySet(e) {
 	if (lc === "i") {
 		processFiles();
 	}
-	if (lc === "h") {
-		$('#' + iDiv).html("<h2>Help Text Goes Here</h2>");
-	}
 }
 
 
@@ -114,7 +111,7 @@ function enterNode() {
 	
 	
 function exitNode() { 
-	$('#'+hDiv).html("<br>Move the mouse over a structure or residue");
+	$('#'+hDiv).html("<br>Click a structure or residue");
 	var id = this.getAttribute("id");
 	var parts = parseID(id);
 	if (v > 5) console.log("exited node, overNode is " + overNode);
@@ -134,7 +131,7 @@ function clickResponse(node) {
 	var parts = parseID(id);
 	var type = parts["type"];
 	var accession = parts["accession"];
-	var rd = data[accession].residues
+	var rd = data[accession].residues;
 	
 	highlight(accession, node, type);
 	var resID = parts["resID"];
@@ -160,8 +157,33 @@ function clickResponse(node) {
 			glycanSelector = $(this).val();
 			processFiles();
 		});
+		// set up ALL enzymes table
+		var allEnzymes = getAllEnzymes(rd);
+		if (v > 4) console.log("  total number of enzymes is " + allEnzymes.length);
+		setupEnzymeTable('enzymeTable', allEnzymes);
 	}
 } // end of function clickNode()
+
+
+function getAllEnzymes(residueArray) {
+	// generate an array of enzyme objects associated with residueArray
+	var allEnzymes = [];
+	for (key in residueArray) {
+		if (!key.includes("#")) {
+			var ed = residueArray[key].enzymes;
+			for (key2 in ed) {
+				var ok2add = true;
+				for (i in allEnzymes) {
+					if (ed[key2].gene_name === allEnzymes[i].gene_name) {
+						ok2add = false;
+					}
+				}
+				if (ok2add) allEnzymes.push(ed[key2]);				
+			}
+		}
+	}
+	return(allEnzymes);
+} // end of function getAllEnzymes()
 
 
 function setupResidueTable(tableName, tableData) {
@@ -178,10 +200,11 @@ function setupResidueTable(tableName, tableData) {
 				"data": "sugar_name",
 				render: function(data, type, row, meta) {
 					var svgName = data.split("-")[0];
-					return '<img src="snfg_images/' + svgName + '.svg">'
+					return "<a href='https://pubchem.ncbi.nlm.nih.gov/compound/" + svgName +
+						"' target='pubchem'><img src='snfg_images/" + svgName + ".svg'></a>"
 				}
-
-			},			{ 
+			},
+			{ 
 				"title": "Monosaccharide",
 				"data": "html_name"
 			},
@@ -370,6 +393,8 @@ function customStrings(accession, resID) {
 	mStr["sandLink"] = templates["sandLink"].replace(/@ACCESSION/g, accession);
 	mStr["enzHead"] = templates["enzHead"].replace(/@ACCESSION/g, accession);
 	mStr["enzHead"] = mStr["enzHead"].replace(/@RESID/g, resID);
+	mStr["enzAll"] = templates["enzAll"].replace(/@ACCESSION/g, accession);
+	
 } // end of function customStrings()
 
 
@@ -463,10 +488,13 @@ function getInfoText(accession, resID) {
 		
 		// START OF ENZYME TABLE SECTION
 		txt += "<div class='tableHolder' id='enzyme_table_div'> \n\
-  <p>&#128736; <b>Table showing all enzymes involved in the biosynthesis of " + accession +
-	" is under development</b> &#128736;</p> \n\
-  <p>For now, click on each residue of " + accession +
-	" to view enzymes directly impacting that residue</p> \n\
+	<b>" + mStr["enzAll"] + 
+	"<a href=\"javascript: document.getElementById('table_end').scrollIntoView();\" class='no_und'> \
+	<sup>&#135;</sup></a></b></p> \n\
+	<table id='enzymeTable' class='display' width='100%'></table> \n\
+	<p id='table_end'> \n\
+		<sup>&#135;</sup>" + dStr["tableEnd"] +
+	"</p> \n\
 </div> \n";
 		// END OF RESIDUE TABLE SECTION
 		
