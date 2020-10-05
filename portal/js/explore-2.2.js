@@ -12,7 +12,7 @@
 */
 
 // constants
-var v = 1; // verbosity of console.log
+var v = 3; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 // data variables
@@ -25,9 +25,11 @@ var selectedData = [];
 var svgCanvasColor = "rgb(255,255,255)";
 var annotated = false;
 var overNode = false;
+var relatedDataExists = false;
 var jsonCount = 0;
 var svgCount = 0;
-var dataReady = false;
+var dataAvailable = true;
+var unavailable = [];
 var allDataRequested = false;
 var glycanSelector = "all";
 var probeEnd = "";
@@ -43,16 +45,11 @@ function keySet(e) {
 		v = 1 * lc;
 		console.log("verbosity changed to " + v);
 	}
-	if (lc === "j") {
-		showData();
-	}
-	if (lc === "i") {
-		processFiles();
-	}
 }
 
 
 function populateInput(p) {
+	console.log("populating arrays for " + p); // vvv
 	acc.push(p);
 	// svgPath.push('svg/' + p + '.gTree.svg');
 	//  The following paths are hard-coded temporarily to facilitate provisioning
@@ -388,8 +385,6 @@ function customStrings(accession, resID) {
 	mStr["infoHead"] = mStr["infoHead"].replace(/@ACCESSION/g, accession);	
 	mStr["gnomeLink"] = templates["gnomeLink"].replace("@GNOME", URLs["gnome"]);
 	mStr["gnomeLink"] = mStr["gnomeLink"].replace(/@ACCESSION/g, accession);
-	// NEXT LINE - TEMPORARY EXPLICIT HARD CODING - WTF?
-	// mStr["gnomeLink"] = "<a href='https://www.glygen.org/glycan/G71835BN' target='glygen_frame'>G71835BN</a>";
 	mStr["sandLink"] = templates["sandLink"].replace(/@ACCESSION/g, accession);
 	mStr["enzHead"] = templates["enzHead"].replace(/@ACCESSION/g, accession);
 	mStr["enzHead"] = mStr["enzHead"].replace(/@RESID/g, resID);
@@ -424,15 +419,8 @@ function getInfoText(accession, resID) {
 	customStrings(accession, resID);
 	var txt = "<p class='head1'>" + mStr["infoHead"]; 
 	if (resID == '0') {
-		// rgRef <- glycans related to THE REFERENCE ACCESSION
-		var rgRef = data[acc[0]]["related_glycans"];
-		var thisSubCount = 0;
 		// the background canvas was clicked
-		for (i = 0; i < rgRef.length; i++) {
-			if (rgRef[i].accession == accession) {
-				thisSubCount = rgRef[i]["sub_count"];
-			}
-		}
+		var thisSubCount = countElements(getSubstituents(accession));
 		txt += " - " + data[accession].residues.length + " residues, " +
 			thisSubCount + " substituent(s)</p> \n";
 		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>\n";
@@ -534,32 +522,24 @@ linked to residue " + rd.parent + " at site " + rd.site +
 } // end of  function getInfoText()
 
 
-function addGlycan(accession, single) {
-	if (v > 2) console.log("trying to add " + accession);
+function addGlycan(accession) {
 	if (!acc.includes(accession)) {
 		// do not do any of the following unless the glycan is absent from array 'acc'
-		$("#progressDiv").css("visibility","visible");
+		 // $("#progressDiv").css("visibility","visible");
 		if (v > 2) console.log("adding " + accession);	
 		populateInput(accession);
 		if (v > 2) console.log("accession list now has " + acc.length + " structures");
-		// if multiple glycans are being added, wait until all input variables are populated before fetching data
-		if (single) {
-			getNextSVG(jsonCount); 
-			processFiles();
-		}
 	}
 } // end of function addGlycan()
 
-function addAll() {
-	// get accessions for all related glycans
-	console.log("### Adding All Related Glycans ###");
-	if ( dataReady == false ) {
-		console.log("   - waiting to add all related glycans -");
-		window.setTimeout(addAll, 200); 
-    } else {
-		var probe = acc[0];
-		var rg = data[probe]["related_glycans"];
-		console.log("  adding " + rg.length + " glycans related to " + probe);
+function getRelatedAccessions() {
+	// add data for all related glycans
+	console.log("### Adding Data for All Related Glycans ### ");
+	var probe = acc[0];
+
+	var rg = data[probe]["related_glycans"];
+	if ( (dataAvailable == true) && (typeof rg != "undefined") ) {
+		if (v > 2) console.log("  adding " + rg.length + " glycans related to " + probe);
 		var rgCopy = rg.slice();
 
 		// sort rgCopy by relative_dp -> same order as sorted table
@@ -579,14 +559,12 @@ function addAll() {
 		for (var i = 0; i < rgCopy.length; i++) {
 			var newAccession = rgCopy[i].accession;
 			// false -> wait until all input variables are populated before fetching data
-			addGlycan(newAccession, false);
+			addGlycan(newAccession);
 		}
-		getNextSVG(jsonCount); 
 		allDataRequested = true;
-		processFiles();
-		//  need to render and process all new files@@@@@@@@@@@ 
 	}
-} // end of function addAll()
+
+} // end of function getRelatedAccessions()
 
 
 function htmlFormatName(residueData) {
@@ -679,6 +657,7 @@ function fadeColor(cStr, bg, fp) {
 	var rgb = cStr.split(/[\\(\\)]/)[1]; // regex parentheses start/end
 	if (cStr.localeCompare("black") == 0) rgb = "0,0,0";
 	if (cStr.localeCompare("white") == 0) rgb = "255,255,255";
+	if (!cStr.includes(",")) rgb = "0,0,0";
 	var rgbC = rgb.split(",");
 	// reuse rgb variable
 	rgb = bg.split(/[\\(\\)]/)[1]; // regular expression
@@ -999,51 +978,57 @@ function setResidueKeys() {
 } // end of function setResidueKeys()
 
 
-function setRelatedReducingStructures(probe) {
-	if (v > 2) console.log("## Setting reducing structures ##");
+function setRelatedParams(probe) {
+	if (v > 2) console.log("## Setting reducing-end structure and substituents for related glycans ##");
 	// get related_glycans for probe
 	var related = data[probe].related_glycans;
 	for (var i in related) {
 		// for each related_glycan [i]
+		// get the accession of the related glycan
 		var key = related[i].accession;
-		// get reducing end and substituents of related glycan [i]
-		var relatedGlycanResidues = data[key].residues;
-		var subCount = 0;
-		var reducingEnd = "null";
-		var substituents = [];
-		for (j in relatedGlycanResidues) {
-			// for each residue [j] in related_glycan [i]
-			if (/[A-Z]/.test(j) == false) { 
-				// only check numerically indexed residues
-				
-				if (relatedGlycanResidues[j].parent == 0) {
-					reducingEnd = relatedGlycanResidues[j].html_name;
-				}
-				var thisSubstituent = {};
-				var sugarName = relatedGlycanResidues[j].sugar_name;
-				if (sugarName.includes("-")) {
-					if (v > 4) console.log(i + "," + j + ": found substituent " + sugarName +
-						 " in " + key );
-					var sugarParts = sugarName.split("-");
-					var id = relatedGlycanResidues[j].residue_id;
-					thisSubstituent[id] = sugarParts[1];
-					substituents.push(thisSubstituent);
-					subCount++;
-				}
-			}
-		}
-		related[i].reducing_end = reducingEnd;
-		related[i].sub_count = subCount;
-		related[i].substituents = substituents;
+		related[i].reducing_end = getReducingEndStructure(key);
+		related[i].substituents = getSubstituents(key);
+		related[i].sub_count = countElements(related[i].substituents);
 		if (v > 3) {
 			console.log("  Set reducing end for " + key +
-				" (" + relatedGlycanResidues.length + " residues): " + related[i].reducing_end);
-			console.log("  Set number of substituents in " + key + ": " + subCount);
+				" (" + data[key].residues.length + " residues): " + related[i].reducing_end);
+			console.log("  Set number of substituents in " + key + ": " + related[i].sub_count);
 		}
 	}
-} // end of function setRelatedReducingStructures()
+} // end of function setRelatedParams()
 
-	
+function getSubstituents(accession) {
+	var residues = data[accession].residues;
+	var substituents = [];
+	for (j in residues) {
+		// only check numerically indexed residues
+		if (/[A-Z]/.test(j) == false) { 
+			var thisSubstituent = {};
+			var sugarName = residues[j].sugar_name;
+			if (sugarName.includes("-")) {
+				if (v > 4) console.log(i + "," + j + ": found substituent " + sugarName +
+					 " in " + key );
+				var sugarParts = sugarName.split("-");
+				var id = residues[j].residue_id;
+				thisSubstituent[id] = sugarParts[1];
+				substituents.push(thisSubstituent);
+			}
+		}
+	}
+	return(substituents);
+} // end of function getSubstituents()
+
+
+function getReducingEndStructure(accession) {
+	var residues = data[accession].residues;
+	for (j in residues) {
+		// only check numerically indexed residues
+		if (residues[j].parent == 0) {
+			return(residues[j].html_name);
+		}
+	}
+} // end of function getReducingEndStructure()
+
 function showData() {
 	// show json data
 	// TODO: make txt depend on v
@@ -1072,44 +1057,39 @@ function setupCSSiframe(ifrID, cssSrc) {
 	cssLink.type = "text/css"; 
 	ifrHead[0].appendChild(cssLink);
 } // end of function setupCSSiframe()
-
-	
-function getJSON(theURL, c, accession) {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			data[accession] =  JSON.parse(this.responseText);
-			if (v > 2) console.log("Retrieved JSON file #" + jsonCount + " - " + accession);
-			jsonCount++;
-		}
-	};
-	xhttp.onerror = function() {
-		alert("JSON file request failed");
-	};
-	xhttp.open("GET", theURL, true);
-	xhttp.send();
-} // end of function getJSON()
 		
 	
-function getSVG(theURL, c, accession) {
+function fetchData(theURL, accession, dest, isJSON) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			svgEncoding[accession] = this.responseText;
-			if (v > 2) console.log("# Retrieved SVG file #" + svgCount + " - " + accession);
-			svgCount ++;
+			if (isJSON) {
+				dest[accession] = JSON.parse(this.responseText);
+			} else {
+				dest[accession] = this.responseText;
+			}
+			if (v > 0) console.log(" ... Retrieved a file for " + accession);
+		}
+		if (this.readyState == 4 && this.status == 404) {
+			if (isJSON) {
+				unavailable.push("JSON data for " + accession);
+			} else {
+				unavailable.push("SVG Encoding for " + accession);
+			}
+			if (v > 0) console.log("File " + theURL + " not found" + dest);
+			dataAvailable = false;
 		}
 	};
 	xhttp.onerror = function() {
-		alert("SVG file request failed");
+		alert("File request failed: " + theURL);
 	};
 	xhttp.open("GET", theURL, true);
 	xhttp.send();
-} // end of function getSVG()
+} // end of function fetchData()
 	
 		
 function getNextSVG(c) {
-	while (c < svgPath.length) {
+	while ((c < svgPath.length) && (dataOK == true) ){
 		getSVG(svgPath[c], c, acc[c]);
 		if (v > 2) {
 			console.log("getting next SVG: " + svgPath[c]);
@@ -1216,13 +1196,12 @@ function getSelectedData(selector) {
 
 function processFiles() {
 	if (v > 0) console.log("### Processing Data From Files ###");
-	if ( (svgCount < acc.length) || (jsonCount < acc.length) ) {
-		if (v > 0) console.log("  - waiting to process data from files -");
-		window.setTimeout(processFiles, 500); 
-    } else {
-		if (v > 0) console.log("  - processing data from files -");
+
 		setResidueKeys();  // convert json 'residues' to associative array
-		if (allDataRequested == true) setRelatedReducingStructures(acc[0]);
+		var related = data[acc[0]].related_glycans;
+		relatedDataExists = (typeof related != "undefined");
+		if ( allDataRequested && relatedDataExists ) 
+			setRelatedParams(acc[0]);
 		var fd = document.getElementById(ifr).contentWindow.document;
 		// render the probe structure - write html as text then add to iframe
 		var htmlEncoding = "&emsp; <br><center><h3>" + dStr["imgHead"] + "</h3></center>";
@@ -1257,35 +1236,98 @@ function processFiles() {
 		setupCSSiframe(ifr, iframeCSS);
 		if (v > 2) console.log("##### Finished Setup #####");
 		$("#progressDiv").css("visibility","hidden");
-		dataReady = true;
 		if (allDataRequested == true)  {
 			// simulate click of probe glycan canvas 
 			var topCanvas = $('#' + ifr).contents().find("g")[1];
 			clickResponse(topCanvas);
 		}
-    }
+}
+
+
+function getFiles(i) {
+	fetchData(svgPath[i], acc[i], svgEncoding, false);
+	fetchData(jsonPath[i], acc[i], data, true);
+} // end of function getData()
+
+
+function countElements(object) {
+	var count = 0;
+	for(var key in object) {
+		if(object.hasOwnProperty(key)) ++count;
+	}
+	return count;
+}
+
+
+function dataReady() {
+	var n1 = acc.length;
+	var n2 = countElements(svgEncoding);
+	var n3 = countElements(data);
+	var ready = ((n1 > 0) && (n2 === n1) && (n3 === n2))
+	return(ready);
+} // end of function dataReady()
+
+
+function wait2add() {
+	if (dataReady() == false) {
+		if (v > 2) console.log("  ready is " + dataReady() + " - waiting to add accessions");
+		if (dataAvailable) {
+			window.setTimeout(wait2add, 200); 
+		} else {
+			terminate("Reference Glycan");
+		}
+    } else {
+		getRelatedAccessions();
+		if (allDataRequested)
+			for (i = 1; i < acc.length; i++) {
+				getFiles(i);
+			}
+		if (acc.length > 1) {
+			wait2process();
+		} else {
+			processFiles();
+		}
+	}
+}
+
+
+function wait2process () {
+	if (dataReady() == false) {
+		if (v > 2) console.log("  ready is " + dataReady() + " - waiting to process accessions");
+		if (dataAvailable) {
+			window.setTimeout(wait2process, 200); 
+		} else {
+			terminate("Related Glycan");
+		}
+    } else {
+		if (v > 4) console.log("... ready to process data ");
+		processFiles();
+	}
+}
+
+
+function terminate(which) {
+	var termStr = "<br><br><br><br><br><br><h1>" + which + " Data for " + acc[0] + " Is Not Available</h1>";
+	termStr += "<h3>Missing: </h3>";
+	for (i = 0; i < unavailable.length; i++) {
+		termStr += "<h3>" + unavailable[i] + "</h3>";
+	}
+	$("#" + hDiv).html(termStr);
+	$("#" + iDiv).html("");
+	$("#progressDiv").css("visibility","hidden");
 }
 
 
 function initialize() {
 	$("#progressDiv").css("visibility","visible");
-	if (v > 2) console.log("##### Initializing #####");
+	if (v > 1) console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
 	var args = window.location.search.substring(1).split("&");
 	// setup arrays with input parameters
-	if (args) args.forEach(populateInput);	
-	// fetch and process the images and data
-	dataReady = false;
-	getNextSVG(0);
+	if (args) populateInput(args[0]);	
 	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, acc[0]);
-	processFiles();
-	addAll(); 
-	$("#verbosity").val(v);
-} // end of function initialize()
+	// fetch and process the images and data
+	getFiles(0);
+	wait2add();
 
-	
-function changeB() {
-	var bg = $("#bgColor").val();
-	$("#"+ifr).css("background-color", bg);
-	if (v > 2) console.log("background changed to " + bg);
-}
+} // end of function initialize()

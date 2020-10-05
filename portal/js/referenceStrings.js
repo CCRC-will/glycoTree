@@ -15,9 +15,9 @@ var templates = {
 	"infoHead": "Exploring glycan <a href='@GLYGEN@ACCESSION' target='glygen_frame'>@ACCESSION</a>",
 	"listHead": "Glycans Biosynthetically Related to @ACCESSION",
 	"gnomeLink": "Explore accessions related to <a href='@GNOME@ACCESSION' target='_blank'>@ACCESSION</a> using the <i>GNOme Subsumption Browser</i>",
-	"sandLink": "<a href='explore.html?@ACCESSION' target='_blank'>Open a new <i>Sandbox</i></a> to explore glycans biosynthetically related to @ACCESSION",
+	"sandLink": "You must <a href='explore.html?@ACCESSION' target='_blank'>open a new <i>Sandbox</i></a> to explore glycans biosynthetically related to @ACCESSION",
 	"enzHead": "Enzymes that directly impact residue @RESID during biosynthesis of @ACCESSION",
-	"enzAll": "All enzymes that directly impact residues in @ACCESSION during its biosynthesis"
+	"enzAll": "Enzymes that directly impact residues in @ACCESSION during its biosynthesis"
 };
 
 // modified versions of template strings
@@ -30,11 +30,12 @@ var dStr = {
 	"resTable": "Go to the Residue Table",
 	"glyTable": "Go to the Glycan Table",
 	"imgHead": "Reference Glycan",
-	"tableEnd":	"Only enzymes (e.g., glycosyl transferases) that directly impact (e.g., attach) \
-		the residues found in the mature glycan are shown.  Enzymes involved in generating precursors \
-		such as lipid-linked intermediates or nucleotide sugars are not shown.<br> \
-		To see specific enzymes that directly impact each residue in the glycan, click on that residue \
-		in its SNFG representation."
+	"tableEnd":	"Only enzymes (e.g., glycosyl transferases) directly impacting (e.g., attaching) \
+		the residues that are found in the mature glycan and that are mapped to GlycoTree are shown. \
+		<br>Enzymes involved in generating precursors \
+		such as lipid-linked intermediates or nucleotide sugars are <b>not shown</b>.<br> \
+		To see specific enzymes that directly impact each residue in the glycan, <b>click on that residue</b> \
+		in its SNFG representation on the left."
 }
 
 var URLs = {
