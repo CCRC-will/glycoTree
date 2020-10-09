@@ -1,3 +1,4 @@
+
 {
   "accession": "G56516KW", 
   "residues": [
@@ -1233,5 +1234,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G31540AF",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G56516KW",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G92485DY",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
 }

@@ -1,3 +1,4 @@
+
 {
   "accession": "G45888VL", 
   "residues": [
@@ -729,5 +730,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G25407RZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G45888VL",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G73683LQ",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
 }

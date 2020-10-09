@@ -1,3 +1,4 @@
+
 {
   "accession": "G79916NT", 
   "residues": [
@@ -939,5 +940,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G65832JS",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G79916NT",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
 }

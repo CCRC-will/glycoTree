@@ -1,3 +1,4 @@
+
 {
   "accession": "G29764SO", 
   "residues": [
@@ -911,5 +912,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G02470WS",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G29764SO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G89143RS",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
 }

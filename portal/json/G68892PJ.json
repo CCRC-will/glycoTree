@@ -1,3 +1,4 @@
+
 {
   "accession": "G68892PJ", 
   "residues": [
@@ -1233,5 +1234,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G31559RO",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G52790YS",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G68892PJ",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
 }

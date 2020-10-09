@@ -1,3 +1,4 @@
+
 {
   "accession": "G40482NA", 
   "residues": [
@@ -743,5 +744,33 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G10691MJ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G20815TK",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G22979QH",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G28948UC",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G40482NA",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
 }

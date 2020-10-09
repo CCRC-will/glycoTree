@@ -1,3 +1,4 @@
+
 {
   "accession": "G20544CY", 
   "residues": [
@@ -1009,5 +1010,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G20544CY",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G81294ZY",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
 }

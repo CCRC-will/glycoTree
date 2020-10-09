@@ -1,3 +1,4 @@
+
 {
   "accession": "G80510YA", 
   "residues": [
@@ -1107,5 +1108,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G00797ZX",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G80510YA",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
 }

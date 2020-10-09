@@ -1,3 +1,4 @@
+
 {
   "accession": "G49935CA", 
   "residues": [
@@ -1009,5 +1010,33 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G21459ST",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G49935CA",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G72919IM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G74369SL",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G83269PQ",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
 }

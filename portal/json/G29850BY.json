@@ -1,3 +1,4 @@
+
 {
   "accession": "G29850BY", 
   "residues": [
@@ -1107,5 +1108,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G14520ZO",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G18196JE",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G29850BY",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
 }

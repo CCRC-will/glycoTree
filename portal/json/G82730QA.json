@@ -1,3 +1,4 @@
+
 {
   "accession": "G82730QA", 
   "residues": [
@@ -939,5 +940,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G03164NE",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G82730QA",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
 }

@@ -1,3 +1,4 @@
+
 {
   "accession": "G44825QL", 
   "residues": [
@@ -855,5 +856,33 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G35837ET",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G39452ZZ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G44825QL",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G45359RY",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G75839SN",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
 }

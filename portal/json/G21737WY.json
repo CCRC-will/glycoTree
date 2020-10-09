@@ -1,3 +1,4 @@
+
 {
   "accession": "G21737WY", 
   "residues": [
@@ -1443,5 +1444,33 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G21737WY",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G24125FE",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G72131JM",
+     "relative_dp": "-1",
+     "match": "18"
+   },
+   {
+     "accession": "G80552MJ",
+     "relative_dp": "-1",
+     "match": "18"
+   },
+   {
+     "accession": "G94531EZ",
+     "relative_dp": "-1",
+     "match": "18"
+   }
+  ]
 }

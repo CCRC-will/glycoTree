@@ -49,7 +49,7 @@
       <rect style="stroke:black; fill:rgb(255,212,0);"  height="22" width="22" x="30" y="128"/>
     </g>
     <g style="fill:white; text-rendering:optimizeSpeed;" >
-      <text style="fill:black; stroke:none;  font-size:12px; font-family:'Serif';" x="35.7" y="119.3" text-anchor="middle">---</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Helvetica';" x="39.7" y="123.3" text-anchor="middle">?S</text>
     </g>
     <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G05187WH:N4">
       <circle style="stroke:black; fill:rgb(0,166,81);"  cx="145" cy="64" r="11"/>
@@ -61,7 +61,7 @@
       <rect style="stroke:black; fill:rgb(255,212,0);"  height="22" width="22" x="30" y="53"/>
     </g>
     <g style="fill:white; text-rendering:optimizeSpeed;" >
-      <text style="fill:black; stroke:none;  font-size:12px; font-family:'Serif';" x="35.7" y="44.3" text-anchor="middle">---</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Helvetica';" x="39.7" y="48.3" text-anchor="middle">?S</text>
     </g>
     <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G05187WH:N29">
       <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="73.7" y="151.0" text-anchor="middle">4</text>

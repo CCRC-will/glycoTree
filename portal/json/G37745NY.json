@@ -1,3 +1,4 @@
+
 {
   "accession": "G37745NY", 
   "residues": [
@@ -645,5 +646,33 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G07041CT",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G36581MF",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G37745NY",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G62519IY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G68817WF",
+     "relative_dp": "+1",
+     "match": "12"
+   }
+  ]
 }

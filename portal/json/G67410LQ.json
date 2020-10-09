@@ -1,3 +1,4 @@
+
 {
   "accession": "G67410LQ", 
   "residues": [
@@ -1191,5 +1192,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G12438DW",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G67410LQ",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
 }

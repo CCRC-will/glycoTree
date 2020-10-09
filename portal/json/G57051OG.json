@@ -1,3 +1,4 @@
+
 {
   "accession": "G57051OG", 
   "residues": [
@@ -561,5 +562,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G40200RC",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G57051OG",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
 }

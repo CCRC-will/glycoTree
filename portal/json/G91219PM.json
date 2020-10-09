@@ -1,3 +1,4 @@
+
 {
   "accession": "G91219PM", 
   "residues": [
@@ -631,5 +632,38 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G18948TG",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G57930PW",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G72079JG",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G87784HD",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G91219PM",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G98256YA",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
 }

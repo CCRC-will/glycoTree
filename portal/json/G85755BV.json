@@ -1,3 +1,4 @@
+
 {
   "accession": "G85755BV", 
   "residues": [
@@ -1261,5 +1262,13 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G85755BV",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
 }

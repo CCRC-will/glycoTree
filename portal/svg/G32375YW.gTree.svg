@@ -43,7 +43,7 @@
       <rect style="stroke:black; fill:rgb(255,212,0);"  height="22" width="22" x="30" y="82"/>
     </g>
     <g style="fill:white; text-rendering:optimizeSpeed;" >
-      <text style="fill:black; stroke:none;  font-size:12px; font-family:'Serif';" x="35.7" y="73.3" text-anchor="middle">---</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Helvetica';" x="39.7" y="77.3" text-anchor="middle">?S</text>
     </g>
     <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G32375YW:N4">
       <circle style="stroke:black; fill:rgb(0,166,81);"  cx="145" cy="41" r="11"/>

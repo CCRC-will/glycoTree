@@ -1,3 +1,4 @@
+
 {
   "accession": "G62808KR", 
   "residues": [
@@ -617,5 +618,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G18165XJ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G34595KJ",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G62808KR",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G94718HG",
+     "relative_dp": "+1",
+     "match": "9"
+   }
+  ]
 }

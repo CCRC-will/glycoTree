@@ -1,3 +1,4 @@
+
 {
   "accession": "G51562OR", 
   "residues": [
@@ -1331,5 +1332,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G16481GK",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G51562OR",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G83455QZ",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G95695ZV",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
 }

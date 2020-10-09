@@ -1,3 +1,4 @@
+
 {
   "accession": "G02322JK", 
   "residues": [
@@ -939,5 +940,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G02322JK",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G07947TY",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G11635LG",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
 }

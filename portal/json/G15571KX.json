@@ -1,3 +1,4 @@
+
 {
   "accession": "G15571KX", 
   "residues": [
@@ -981,5 +982,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G15571KX",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G16529MG",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G81874XM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G96916QO",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
 }

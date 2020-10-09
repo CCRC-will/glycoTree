@@ -1,3 +1,4 @@
+
 {
   "accession": "G62848AR", 
   "residues": [
@@ -477,5 +478,173 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G04077XA",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G04699RP",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G05187WH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G06216UH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G06673TD",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G09482NW",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G09670SR",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G11960UF",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G13968YX",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G16733YD",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G21256CQ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G29676WX",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G30303UZ",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G33721WT",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G35429JB",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G39437XQ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G40786FB",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G42525DE",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G49743VF",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G52358FD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G60653VD",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G62848AR",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G67045LB",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G67385FR",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G75333EX",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G75734VP",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G81914RV",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G83062JW",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G85542KD",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G89285QP",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G92219PK",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G93198UO",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G99897FQ",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
 }

@@ -1,3 +1,4 @@
+
 {
   "accession": "G72407WU", 
   "residues": [
@@ -869,5 +870,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G64693IG",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G72407WU",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G72919IM",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G74369SL",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
 }

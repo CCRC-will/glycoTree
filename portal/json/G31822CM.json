@@ -1,3 +1,4 @@
+
 {
   "accession": "G31822CM", 
   "residues": [
@@ -841,5 +842,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G31822CM",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G55781KV",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G57166CI",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
 }

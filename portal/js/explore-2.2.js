@@ -12,7 +12,7 @@
 */
 
 // constants
-var v = 3; // verbosity of console.log
+var v = 2; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?'};
 // data variables
@@ -49,13 +49,13 @@ function keySet(e) {
 
 
 function populateInput(p) {
-	console.log("populating arrays for " + p); // vvv
+	if (v > 3) console.log("## Populating arrays for " + p + "##"); // vvv
 	acc.push(p);
 	// svgPath.push('svg/' + p + '.gTree.svg');
 	//  The following paths are hard-coded temporarily to facilitate provisioning
 	//     using GitHub/GitHack
-	svgPath.push('../model/gTree_svg/' + p + '.gTree.svg');
-	jsonPath.push('../model/json/complete/' + p + '.json');
+	svgPath.push('svg/' + p + '.gTree.svg');
+	jsonPath.push('json/' + p + '.json');
 }
 
 	
@@ -185,6 +185,7 @@ function getAllEnzymes(residueArray) {
 
 function setupResidueTable(tableName, tableData) {
 	var table = $('#'+tableName).DataTable( {
+
 		data: tableData,
 		order: [[ 3, "asc" ]],
 		paging: false,
@@ -225,8 +226,19 @@ function setupResidueTable(tableName, tableData) {
 
 function setupRelatedGlycanTable(tableName, tableData) {
 	var nRes = data[acc[0]].residues.length;
-	
+
 	var table = $('#'+tableName).DataTable( {
+/* 
+// The following (commented) lines work, but the button is rendered in a very strange way 
+// I invite anyone who wants to make this work to do so!!
+// This will require including extra js and css files from cdn.datatables.net (see explore.html <head>)
+		dom: 'Bfrtip',
+		buttons: [{
+				extend: "csv",
+				text: '<span style="color:black; font-size:28px; text-align:left;">Save as CSV</span>'
+			}
+		],
+*/
 		data: tableData,
 		order: [[ 3, "asc" ]],
 		paging: false,
@@ -1068,7 +1080,7 @@ function fetchData(theURL, accession, dest, isJSON) {
 			} else {
 				dest[accession] = this.responseText;
 			}
-			if (v > 0) console.log(" ... Retrieved a file for " + accession);
+			if (v > 2) console.log(" ... Retrieved a file for " + accession);
 		}
 		if (this.readyState == 4 && this.status == 404) {
 			if (isJSON) {

@@ -1,3 +1,4 @@
+
 {
   "accession": "G28896CL", 
   "residues": [
@@ -855,5 +856,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G22898PA",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G28896CL",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
 }

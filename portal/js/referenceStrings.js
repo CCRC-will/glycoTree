@@ -30,12 +30,13 @@ var dStr = {
 	"resTable": "Go to the Residue Table",
 	"glyTable": "Go to the Glycan Table",
 	"imgHead": "Reference Glycan",
-	"tableEnd":	"Only enzymes (e.g., glycosyl transferases) directly impacting (e.g., attaching) \
-		the residues that are found in the mature glycan and that are mapped to GlycoTree are shown. \
-		<br>Enzymes involved in generating precursors \
-		such as lipid-linked intermediates or nucleotide sugars are <b>not shown</b>.<br> \
-		To see specific enzymes that directly impact each residue in the glycan, <b>click on that residue</b> \
-		in its SNFG representation on the left."
+	"tableEnd":	"The proteins in this list are limited to those enzymes  \
+(e.g., glycosyl transferases) that <i>directly impact</i> (e.g., attach) \
+<b>residues that are mapped to GlycoTree <i>and</i> that are found in the mature glycan</b>. \
+<br>Enzymes involved in generating precursors \
+such as lipid-linked intermediates or nucleotide sugars are <b>not shown</b>.<br> \
+To see specific enzymes that directly impact each residue in the glycan, <b>click on that residue</b> \
+in its SNFG representation on the left."
 }
 
 var URLs = {

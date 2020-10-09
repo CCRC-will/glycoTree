@@ -1,3 +1,4 @@
+
 {
   "accession": "G20662UG", 
   "residues": [
@@ -1233,5 +1234,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G20662UG",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G31032XG",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G53504BR",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G80943NY",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
 }

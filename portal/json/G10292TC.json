@@ -1,3 +1,4 @@
+
 {
   "accession": "G10292TC", 
   "residues": [
@@ -1009,5 +1010,38 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G02483WT",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G10292TC",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G53485VW",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G56655CC",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G62968IF",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G63889NK",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
 }

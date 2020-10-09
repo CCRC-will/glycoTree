@@ -1,3 +1,4 @@
+
 {
   "accession": "G49401CB", 
   "residues": [
@@ -589,5 +590,33 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G11637WL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G31993QW",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G46308WD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G46763GM",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G49401CB",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
 }

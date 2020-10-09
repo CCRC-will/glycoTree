@@ -1,3 +1,4 @@
+
 {
   "accession": "G03895SR", 
   "residues": [
@@ -967,5 +968,113 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G03895SR",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G04989WY",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G09118YK",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G11671GQ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G16150CJ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G36519NW",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G51098AA",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G54338PJ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G54599TH",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G57955DP",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G58217PP",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G58931VV",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G59345UT",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G63547QM",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G65449BO",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G67898UK",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G75704ZB",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G82258GN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G90111MD",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G91413ZX",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G94277TH",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
 }

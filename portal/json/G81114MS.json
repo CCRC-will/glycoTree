@@ -1,3 +1,4 @@
+
 {
   "accession": "G81114MS", 
   "residues": [
@@ -1247,5 +1248,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G27273FD",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G41800OU",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G42731RJ",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G81114MS",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
 }

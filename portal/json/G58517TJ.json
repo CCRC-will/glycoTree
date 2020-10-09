@@ -1,3 +1,4 @@
+
 {
   "accession": "G58517TJ", 
   "residues": [
@@ -645,5 +646,113 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G00503EE",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G00536FZ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G03921DY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G05948HK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G07380TS",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G07695ZT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G08161JQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G08577ZR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G17820VB",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G24329OK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G39452ZZ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G45187EI",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G45359RY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G45997JW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G56852BX",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G58517TJ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G72221XM",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G75839SN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G81554CS",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G89905SH",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G99270AV",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
 }

@@ -1,3 +1,4 @@
+
 {
   "accession": "G25392ZR", 
   "residues": [
@@ -1919,5 +1920,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "24",
+  "related_glycans": [ 
+   {
+     "accession": "G25392ZR",
+     "relative_dp": "+0",
+     "match": "24"
+   },
+   {
+     "accession": "G79037RU",
+     "relative_dp": "+0",
+     "match": "24"
+   }
+  ]
 }

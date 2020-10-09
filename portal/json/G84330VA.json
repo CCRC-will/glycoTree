@@ -1,3 +1,4 @@
+
 {
   "accession": "G84330VA", 
   "residues": [
@@ -1555,5 +1556,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "21",
+  "related_glycans": [ 
+   {
+     "accession": "G62836JK",
+     "relative_dp": "+0",
+     "match": "21"
+   },
+   {
+     "accession": "G84330VA",
+     "relative_dp": "+0",
+     "match": "21"
+   }
+  ]
 }

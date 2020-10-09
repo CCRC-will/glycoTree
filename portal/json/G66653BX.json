@@ -1,3 +1,4 @@
+
 {
   "accession": "G66653BX", 
   "residues": [
@@ -813,5 +814,28 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G41576FY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G66653BX",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G79809MM",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G93788SW",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
 }

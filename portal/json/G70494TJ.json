@@ -1,3 +1,4 @@
+
 {
   "accession": "G70494TJ", 
   "residues": [
@@ -1205,5 +1206,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G70494TJ",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G92848CF",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
 }

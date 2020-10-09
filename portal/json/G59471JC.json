@@ -1,3 +1,4 @@
+
 {
   "accession": "G59471JC", 
   "residues": [
@@ -1079,5 +1080,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G53854XZ",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G59471JC",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
 }

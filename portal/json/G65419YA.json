@@ -1,3 +1,4 @@
+
 {
   "accession": "G65419YA", 
   "residues": [
@@ -1135,5 +1136,18 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G06404ZJ",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G65419YA",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
 }

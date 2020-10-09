@@ -1,3 +1,4 @@
+
 {
   "accession": "G84908OR", 
   "residues": [
@@ -785,5 +786,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G36701GV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G84908OR",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G91511MZ",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
 }

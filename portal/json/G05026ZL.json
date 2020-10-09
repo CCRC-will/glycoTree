@@ -1,3 +1,4 @@
+
 {
   "accession": "G05026ZL", 
   "residues": [
@@ -127,5 +128,23 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "2",
+  "related_glycans": [ 
+   {
+     "accession": "G05026ZL",
+     "relative_dp": "+0",
+     "match": "2"
+   },
+   {
+     "accession": "G65996GC",
+     "relative_dp": "+1",
+     "match": "2"
+   },
+   {
+     "accession": "G68544GH",
+     "relative_dp": "-1",
+     "match": "1"
+   }
+  ]
 }

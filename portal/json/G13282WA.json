@@ -1,3 +1,4 @@
+
 {
   "accession": "G13282WA", 
   "residues": [
@@ -1429,5 +1430,38 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G13282WA",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G14233VW",
+     "relative_dp": "+1",
+     "match": "19"
+   },
+   {
+     "accession": "G27844UM",
+     "relative_dp": "+1",
+     "match": "19"
+   },
+   {
+     "accession": "G40513EI",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G80654ZK",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G92594VG",
+     "relative_dp": "+1",
+     "match": "19"
+   }
+  ]
 }

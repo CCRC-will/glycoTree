@@ -1,3 +1,4 @@
+
 {
   "accession": "G78161IO", 
   "residues": [
@@ -939,5 +940,38 @@
         }
       ]
     }
-   ]
+   ],
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G14438ZT",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G17168RO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G39813YP",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G56147VV",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G60330MA",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G78161IO",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
 }
