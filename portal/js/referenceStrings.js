@@ -30,13 +30,20 @@ var dStr = {
 	"resTable": "Go to the Residue Table",
 	"glyTable": "Go to the Glycan Table",
 	"imgHead": "Reference Glycan",
-	"tableEnd":	"The proteins in this list are limited to those enzymes  \
+	"tableEnd":	"These data were compiled by \
+<a href='https://www.ccrc.uga.edu/personnel/index.php?uid=79&personnel=Non%20Tenure-Track%20Faculty' \
+target='_blank'>Alison Nairn</a>, and reflect knowledge developed by \
+Dr. Kelley Moremen, Dr. Nairn, and other members of his laboratory.  These data are published in a different \
+format on this <a href='https://www.ccrc.uga.edu/~moremen/glycomics/' target='_blank'><b>web site</b></a>.<br> \
+The proteins in this list are limited to those enzymes  \
 (e.g., glycosyl transferases) that <i>directly impact</i> (e.g., attach) \
 <b>residues that are mapped to GlycoTree <i>and</i> that are found in the mature glycan</b>. \
 <br>Enzymes involved in generating precursors \
 such as lipid-linked intermediates or nucleotide sugars are <b>not shown</b>.<br> \
+Software to generate and display full biosynthetic pathways for each glycan is currently under development. <br>\
 To see specific enzymes that directly impact each residue in the glycan, <b>click on that residue</b> \
-in its SNFG representation on the left."
+in its <a href='https://www.ncbi.nlm.nih.gov/glycans/snfg.html' target='_blank'>SNFG</a> \
+representation on the left."
 }
 
 var URLs = {

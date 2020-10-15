@@ -194,7 +194,7 @@ function setupResidueTable(tableName, tableData) {
 		],
 		columns: [
 			{ 
-				"title": "Symbol",
+				"title": "<a href='https://www.ncbi.nlm.nih.gov/glycans/snfg.html' target='_blank'>SNFG Symbol</a>",
 				"data": "sugar_name",
 				render: function(data, type, row, meta) {
 					var svgName = data.split("-")[0];
@@ -1334,10 +1334,13 @@ function initialize() {
 	$("#progressDiv").css("visibility","visible");
 	if (v > 1) console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
-	var args = window.location.search.substring(1).split("&");
+	var arg = window.location.search.substring(1).split("&")[0];
 	// setup arrays with input parameters
-	if (args) populateInput(args[0]);	
-	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, acc[0]);
+	// account for http requests from html <form> (GET method)
+	var a = arg.split("=");
+	a = a[a.length - 1];
+	populateInput(a);	
+	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, a);
 	// fetch and process the images and data
 	getFiles(0);
 	wait2add();
