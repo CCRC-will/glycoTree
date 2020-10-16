@@ -1,10 +1,10 @@
 #!/bin/bash
 # creates an index.html file the sandbox portal
 
-ls -1 ./model/gTree_svg/G[0-4]*.svg > temp1.lst
-ls -1 ./model/gTree_svg/G[5-9]*.svg >> temp1.lst
+ls -1 ./portal/svg/G[0-4]*.svg > temp1.lst
+ls -1 ./portal/svg/G[5-9]*.svg >> temp1.lst
 
-sed s/\\/model\\/gTree_svg\\///g temp1.lst > temp2.lst
+sed s/\\/portal\\/svg\\///g temp1.lst > temp2.lst
 sed s/gTree.svg//g temp2.lst > temp3.lst
 sed s/[.]//g temp3.lst > svg.lst
 
