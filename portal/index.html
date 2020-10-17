@@ -59,11 +59,12 @@
 		var ifr = $("#iframe0");
 	} // end of function initialize()
 	
-	function showImage(acc) {
+	function showImage(access) {
 		var frm = document.getElementById('iframe0');
 		//var frm = $('#iframe0');
-		frm.src = 'svg/' + acc + '.gTree.svg'; 
-		document.getElementById('accession').value = acc;		
+		frm.src = 'svg/' + access + '.gTree.svg'; 
+		document.getElementById('accession').value = access;		
+		document.getElementById('glycan_info').innerHTML = "<h1>" + access + "</h1>";		
 	}
 </script>
 		
@@ -85,6 +86,7 @@
 	  <input type="text" id="accession" name="accession">
 	  <input type="submit" value="Explore">
 	</form>
+	<p id="glycan_info">Glycan Info</p>
 	<iframe id="iframe0">
 	</iframe>
 </div>
