@@ -1,12 +1,67 @@
-
 {
   "accession": "G66362JB", 
   "residues": [
     {
+      "canonical_name": "N-glycan_b-D-Galp_E40",
+      "residue_id": "NE40",
+      "glycoct_index": "10",
+      "pubchem_id": "",
+      "sugar_name": "Gal",
+      "anomer": "b",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "N3",
+      "site": "4",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "N-glycan_b-D-Galp_E39",
+      "residue_id": "NE39",
+      "glycoct_index": "16",
+      "pubchem_id": "",
+      "sugar_name": "Gal",
+      "anomer": "b",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "N6",
+      "site": "4",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "N-glycan_a-D-Galp_E133",
+      "residue_id": "NE133",
+      "glycoct_index": "17",
+      "pubchem_id": "",
+      "sugar_name": "Gal",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "NE39",
+      "site": "3",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "N-glycan_a-D-Galp_E132",
+      "residue_id": "NE132",
+      "glycoct_index": "11",
+      "pubchem_id": "",
+      "sugar_name": "Gal",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "NE40",
+      "site": "3",
+      "enzymes": [
+      ]
+    },
+    {
       "canonical_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
       "glycoct_index": "5",
-      "pubchem_id": "18950",
+      "pubchem_id": "",
       "sugar_name": "Man",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -48,7 +103,7 @@
       "canonical_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
       "glycoct_index": "3",
-      "pubchem_id": "439174",
+      "pubchem_id": "",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -132,7 +187,7 @@
       "canonical_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "glycoct_index": "1",
-      "pubchem_id": "439174",
+      "pubchem_id": "",
       "sugar_name": "GlcNAc",
       "anomer": "x",
       "absolute_configuration": "D",
@@ -174,7 +229,7 @@
       "canonical_name": "N-glycan_b-D-Galp_6",
       "residue_id": "N6",
       "glycoct_index": "15",
-      "pubchem_id": "6036",
+      "pubchem_id": "",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -272,7 +327,7 @@
       "canonical_name": "N-glycan_b-D-GlcpNAc_5",
       "residue_id": "N5",
       "glycoct_index": "13",
-      "pubchem_id": "439174",
+      "pubchem_id": "",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -314,7 +369,7 @@
       "canonical_name": "N-glycan_a-D-Manp_4",
       "residue_id": "N4",
       "glycoct_index": "12",
-      "pubchem_id": "18950",
+      "pubchem_id": "",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
@@ -356,7 +411,7 @@
       "canonical_name": "N-glycan_b-D-Galp_3",
       "residue_id": "N3",
       "glycoct_index": "9",
-      "pubchem_id": "6036",
+      "pubchem_id": "",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -454,7 +509,7 @@
       "canonical_name": "N-glycan_b-D-GlcpNAc_2",
       "residue_id": "N2",
       "glycoct_index": "7",
-      "pubchem_id": "439174",
+      "pubchem_id": "",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
@@ -496,7 +551,7 @@
       "canonical_name": "N-glycan_a-L-Fucp_15",
       "residue_id": "N15",
       "glycoct_index": "18",
-      "pubchem_id": "17106",
+      "pubchem_id": "",
       "sugar_name": "Fuc",
       "anomer": "a",
       "absolute_configuration": "L",
@@ -538,7 +593,7 @@
       "canonical_name": "N-glycan_a-D-Manp_1",
       "residue_id": "N1",
       "glycoct_index": "6",
-      "pubchem_id": "18950",
+      "pubchem_id": "",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
@@ -574,62 +629,6 @@
           "notes": "",
           "branch_site_specificity": ""
         }
-      ]
-    },
-    {
-      "canonical_name": "unassigned",
-      "residue_id": "17",
-      "glycoct_index": "17",
-      "pubchem_id": "6036",
-      "sugar_name": "Gal",
-      "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "16",
-      "site": "3",
-      "enzymes": [
-      ]
-    },
-    {
-      "canonical_name": "unassigned",
-      "residue_id": "16",
-      "glycoct_index": "16",
-      "pubchem_id": "6036",
-      "sugar_name": "Gal",
-      "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N6",
-      "site": "4",
-      "enzymes": [
-      ]
-    },
-    {
-      "canonical_name": "unassigned",
-      "residue_id": "11",
-      "glycoct_index": "11",
-      "pubchem_id": "6036",
-      "sugar_name": "Gal",
-      "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "10",
-      "site": "3",
-      "enzymes": [
-      ]
-    },
-    {
-      "canonical_name": "unassigned",
-      "residue_id": "10",
-      "glycoct_index": "10",
-      "pubchem_id": "6036",
-      "sugar_name": "Gal",
-      "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N3",
-      "site": "4",
-      "enzymes": [
       ]
     }
    ]
