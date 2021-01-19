@@ -1,76 +1,82 @@
 #!/bin/bash
 
+here=`pwd`
+echo "clear data script called from $here"
 echo "Clearing intermediate data"
-cd ./data
-pwd
-rm *.lst
 
 echo
-cd ./gct
-pwd
-rm *.lst
-rm G*.txt
-ls
+rm $here/data/*.lst
+echo $here/data
+ls $here/data
 
 echo
-cd ./csv
-pwd
-rm G*.csv
-rm *.lst
-ls
+find $here/data/svg/ -name "G*.svg" -print -maxdepth 1 | xargs -I % rm %
+rm $here/data/svg/*.lst
+echo $here/data/svg/G*.svg
+ls $here/data/svg
 
 echo
-cd ./mapped
-pwd
-rm G*.csv
-rm report.csv
-ls
+rm $here/data/gct/*.lst
+find $here/data/gct/ -name "G*.txt" -print -maxdepth 1 | xargs -I % rm %
+echo $here/data/gct
+ls $here/data/gct
 
 echo
-cd ./sorted
-pwd
-rm G*.csv
-ls
+find $here/data/gct/csv/ -name "G*.csv" -print -maxdepth 1 | xargs -I % rm %
+rm $here/data/gct/csv/*.lst
+echo $here/data/gct/csv
+ls $here/data/gct/csv/
 
 echo
-cd ./pc_annotated
-pwd
-rm G*.csv
-ls
+find $here/data/gct/csv/mapped/ -name "G*.csv" -print -maxdepth 1 | xargs -I % rm %
+rm $here/data/gct/csv/mapped/report.csv
+echo $here/data/gct/csv/mapped
+ls $here/data/gct/csv/mapped/
 
 echo
-cd ../../../../..
-pwd
-ls
+find $here/data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | xargs -I % rm %
+echo $here/data/gct/csv/mapped/sorted
+ls $here/data/gct/csv/mapped/sorted/
+
+echo
+find $here/data/gct/csv/mapped/sorted/pc_annotated/ -name "G*.csv" -print -maxdepth 1 | xargs -I % rm %
+echo $here/data/gct/csv/mapped/sorted/pc_annotated
+ls $here/data/gct/csv/mapped/sorted/pc_annotated/
 
 echo
 echo "Clearing generated model data"
 echo
-cd ../model
-pwd
-rm unassigned.csv
-rm annotated_glycans.csv
-rm annotated_glycans.json
-ls
+rm $here/model/unassigned.csv
+rm $here/model/annotated_glycans.csv
+rm $here/model/annotated_glycans.json
+echo $here/model
+ls $here/model/
 
 echo
-cd gTree_svg
-pwd
-rm G*.svg
-ls
+find $here/model/gTree_svg/ -name "G*.svg" -print -maxdepth 1 | xargs -I % rm %
+echo $here/model/gTree_svg
+ls $here/model/gTree_svg/
 
 echo
-cd ../GlycoCT_svg
-pwd
-rm G*.svg
-ls
+find $here/model/GlycoCT_svg/ -name "G*.svg" -print -maxdepth 1 | xargs -I % rm %
+echo $here/model/GlycoCT_svg
+ls $here/model/GlycoCT_svg/ 
 
 echo
-cd ../json
-pwd
-rm G*.json
-ls
+find $here/model/json/ -name "G*.json" -print -maxdepth 1 | xargs -I % rm %
+echo $here/model/json
+ls $here/model/json/
 
 echo
-cd ../..
-pwd
+find $here/model/json/complete/ -name "G*.json" -print -maxdepth 1 | xargs -I % rm %
+echo $here/model/json/complete
+ls $here/model/json/complete/
+
+echo
+find $here/model/json/match/ -name "G*.json" -print -maxdepth 1 | xargs -I % rm %
+echo $here/model/json/match
+ls $here/model/json/match/
+
+echo
+echo $here
+
