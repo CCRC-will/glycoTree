@@ -3,26 +3,6 @@
   "dp":  "6",
   "related_glycans": [ 
    {
-     "accession": "G00026MO",
-     "relative_dp": "-1",
-     "match": "5"
-   },
-   {
-     "accession": "G06920GM",
-     "relative_dp": "+0",
-     "match": "6"
-   },
-   {
-     "accession": "G10106TL",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G20624LQ",
-     "relative_dp": "-1",
-     "match": "5"
-   },
-   {
      "accession": "G22768VO",
      "relative_dp": "-1",
      "match": "5"
@@ -33,22 +13,12 @@
      "match": "6"
    },
    {
-     "accession": "G30915AU",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G39213VZ",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G40900UQ",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
      "accession": "G42679AH",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G48288NV",
      "relative_dp": "+1",
      "match": "6"
    },
@@ -58,47 +28,17 @@
      "match": "5"
    },
    {
-     "accession": "G45889JQ",
+     "accession": "G20624LQ",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
+     "accession": "G63820GM",
      "relative_dp": "+1",
      "match": "6"
    },
    {
-     "accession": "G49503QY",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G51699IR",
-     "relative_dp": "+0",
-     "match": "6"
-   },
-   {
-     "accession": "G56175ED",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G60149QJ",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G64481DJ",
-     "relative_dp": "+0",
-     "match": "6"
-   },
-   {
-     "accession": "G69987TD",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G84678BK",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
-     "accession": "G85100QD",
+     "accession": "G30915AU",
      "relative_dp": "+1",
      "match": "6"
    },
@@ -108,7 +48,117 @@
      "match": "6"
    },
    {
+     "accession": "G06721LM",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G44151FI",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G95382MF",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G64481DJ",
+     "relative_dp": "+0",
+     "match": "6"
+   },
+   {
+     "accession": "G85100QD",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G51699IR",
+     "relative_dp": "+0",
+     "match": "6"
+   },
+   {
+     "accession": "G60149QJ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G71989MV",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G84678BK",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G40900UQ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G10106TL",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G69987TD",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G99519QZ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G56175ED",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G74916CC",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
      "accession": "G88876JQ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G34749PQ",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
+     "accession": "G39213VZ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G00026MO",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
+     "accession": "G97547WF",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
+     "accession": "G06920GM",
+     "relative_dp": "+0",
+     "match": "6"
+   },
+   {
+     "accession": "G45889JQ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
+     "accession": "G49503QY",
      "relative_dp": "+1",
      "match": "6"
    }

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G78325SJ",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G28663KH",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G85460ZG",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G78325SJ",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G10106TL",
+     "relative_dp": "-1",
+     "match": "7"
+   }
+  ]
+}

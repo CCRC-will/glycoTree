@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G25886YT",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G25886YT",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G37591JC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G75850OP",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G08646YJ",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

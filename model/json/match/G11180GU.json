@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G11180GU",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G11180GU",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G64501OO",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G79404OF",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G60343KO",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

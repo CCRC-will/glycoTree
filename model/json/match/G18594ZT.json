@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G18594ZT",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G18594ZT",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G45776ET",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G78648QN",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G73836ED",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

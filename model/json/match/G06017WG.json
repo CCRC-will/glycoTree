@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G06017WG",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G59128IS",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G06017WG",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G56147VV",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G60330MA",
+     "relative_dp": "-1",
+     "match": "15"
+   }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G97970WP",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G57083FO",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G97970WP",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

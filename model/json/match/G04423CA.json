@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G04423CA",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G61203OK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G43351VW",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G02760XH",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G04423CA",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

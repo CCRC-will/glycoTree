@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G44210FS",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G51657FI",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G13746SQ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G18948TG",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G61456PF",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G98256YA",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G42439GB",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G44210FS",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

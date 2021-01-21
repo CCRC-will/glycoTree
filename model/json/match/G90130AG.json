@@ -3,14 +3,24 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G19687OL",
+     "accession": "G90130AG",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G44043ZX",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G71094TJ",
      "relative_dp": "-1",
      "match": "17"
    },
    {
-     "accession": "G90130AG",
-     "relative_dp": "+0",
-     "match": "18"
+     "accession": "G19687OL",
+     "relative_dp": "-1",
+     "match": "17"
    }
   ]
 }

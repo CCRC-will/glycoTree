@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G79790LK",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G49130JL",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G56621NM",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G79790LK",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G03347EL",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G06032HI",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

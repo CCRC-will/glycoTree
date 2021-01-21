@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G24767EG",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G33202XC",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G64127GJ",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G66572SF",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G78661LW",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G24767EG",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G63734KU",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G88426SE",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

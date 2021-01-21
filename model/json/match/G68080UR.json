@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G68080UR",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G85755BV",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G68080UR",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
+}

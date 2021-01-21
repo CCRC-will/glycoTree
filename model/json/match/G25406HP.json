@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G25406HP",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G25406HP",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G53272SL",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G80211PE",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

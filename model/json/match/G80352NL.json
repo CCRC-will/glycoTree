@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G80352NL",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G65603XA",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G63413QV",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G36727AR",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G80352NL",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G66282NU",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G03750RD",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

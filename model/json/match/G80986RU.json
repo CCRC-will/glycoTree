@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G80986RU",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G81432SH",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G08679EM",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G42365AT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G65079ZY",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G25505NO",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G80986RU",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

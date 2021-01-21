@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G96484SJ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G76603UJ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G47822QX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G21755KD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G96484SJ",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

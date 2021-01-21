@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G57601KU",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G57601KU",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G98862GW",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G81663ZI",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G82572FN",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

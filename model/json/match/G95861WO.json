@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G95861WO",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G88757PX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G95861WO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G38800CP",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

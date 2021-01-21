@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G89325VN",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G89325VN",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G64271PC",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

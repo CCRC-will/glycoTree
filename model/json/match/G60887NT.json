@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G60887NT",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G58422UX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G60887NT",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

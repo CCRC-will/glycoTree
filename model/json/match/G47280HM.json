@@ -8,12 +8,17 @@
      "match": "14"
    },
    {
-     "accession": "G23722TU",
+     "accession": "G43499QE",
      "relative_dp": "+1",
      "match": "14"
    },
    {
-     "accession": "G43499QE",
+     "accession": "G77748PL",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G36759VO",
      "relative_dp": "+1",
      "match": "14"
    },
@@ -23,7 +28,12 @@
      "match": "14"
    },
    {
-     "accession": "G77748PL",
+     "accession": "G23722TU",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G44092XR",
      "relative_dp": "+1",
      "match": "14"
    },
@@ -31,6 +41,11 @@
      "accession": "G83926PC",
      "relative_dp": "+1",
      "match": "14"
+   },
+   {
+     "accession": "G41611UP",
+     "relative_dp": "-1",
+     "match": "13"
    }
   ]
 }

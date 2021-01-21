@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G87192TH",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G11249YX",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G26844MI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G51995LA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G79010UT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G63712AL",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G87192TH",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

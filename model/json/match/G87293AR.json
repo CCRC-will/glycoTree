@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G87293AR",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G22836DF",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G49225WK",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G59655SA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G87293AR",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

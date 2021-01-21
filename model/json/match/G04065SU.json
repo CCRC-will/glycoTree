@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G04065SU",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G01069AK",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G54683UA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G04065SU",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

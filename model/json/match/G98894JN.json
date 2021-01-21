@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G98894JN",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G84536BM",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G98894JN",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

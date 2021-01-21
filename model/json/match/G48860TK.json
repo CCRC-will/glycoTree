@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G48860TK",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G00028MO",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G24305IZ",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G43014FZ",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G58214IQ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G55220VL",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G48860TK",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G03652TR",
+     "relative_dp": "-1",
+     "match": "7"
+   }
+  ]
+}

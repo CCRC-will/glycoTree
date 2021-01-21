@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G91729DG",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G91729DG",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G14905AZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G82868SO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G64343WH",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G30618VC",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G68175NA",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

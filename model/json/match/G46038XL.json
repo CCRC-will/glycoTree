@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G46038XL",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G46038XL",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G85599NG",
+     "relative_dp": "+1",
+     "match": "10"
+   }
+  ]
+}

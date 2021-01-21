@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G24984RR",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G98369DU",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G24984RR",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

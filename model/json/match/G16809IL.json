@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G16809IL",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G76983CM",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G51601CL",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G71812IK",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G80858MF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G65984FE",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G16809IL",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G89637WE",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

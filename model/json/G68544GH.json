@@ -5,13 +5,16 @@
       "canonical_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "glycoct_index": "1",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "0",
       "site": "0",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165210",
       "enzymes": [
         {
           "uniprot": "P42867",
@@ -43,5 +46,5 @@
         }
       ]
     }
-   ]
+  ]
 }

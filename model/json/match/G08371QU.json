@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G08371QU",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G89168LM",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G42400JK",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G08371QU",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G35679TE",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G92782XB",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G43131ZX",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

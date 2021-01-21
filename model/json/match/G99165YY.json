@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G99165YY",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G41596PV",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G15522RV",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G30060ZO",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G84712FX",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G99165YY",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
+}

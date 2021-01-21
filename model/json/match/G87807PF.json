@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G87807PF",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G15112UU",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G87807PF",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G86321OX",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G19537TS",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

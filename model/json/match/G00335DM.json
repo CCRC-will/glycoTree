@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G00335DM",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G00335DM",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G25984CA",
+     "relative_dp": "-1",
+     "match": "7"
+   }
+  ]
+}

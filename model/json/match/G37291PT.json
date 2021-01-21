@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G37291PT",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G85250EQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G00247PL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G51677OC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G42477ZH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G27783SY",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G49299ZV",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G37291PT",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G24888ZY",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

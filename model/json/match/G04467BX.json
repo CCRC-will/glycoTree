@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G04467BX",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G17286ZM",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G04467BX",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G06283RQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G44339HI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G35642GA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G09019KT",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

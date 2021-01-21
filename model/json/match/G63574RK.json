@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G63574RK",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G24620AI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G63574RK",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G51419BH",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G82207VX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G19958IL",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

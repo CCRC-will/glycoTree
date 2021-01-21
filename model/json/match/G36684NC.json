@@ -1,0 +1,116 @@
+{
+  "probe_acc": "G36684NC",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G68546CJ",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G53000RQ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G00480KJ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G88069QW",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G15164ZG",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G40762ZY",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G57601AP",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G90564EX",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G85650LS",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G26795PW",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G82357WL",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G36684NC",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G71442FU",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G05546WG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G28826SH",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G61706MD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G13477HM",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G05303BZ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G36191CD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G09782JM",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G04214MY",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G66741YQ",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

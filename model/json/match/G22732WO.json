@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G22732WO",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G21072IJ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G22732WO",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G63665MU",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G59746QC",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G12254MW",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

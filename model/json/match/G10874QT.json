@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G10874QT",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G10874QT",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G42013HP",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G98712QJ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G20815TK",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G19697JA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G00909PI",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G33704YC",
+     "relative_dp": "+1",
+     "match": "12"
+   }
+  ]
+}

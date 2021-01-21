@@ -1,0 +1,51 @@
+{
+  "probe_acc": "G44223QP",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G94297FY",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G83393GK",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G51715FH",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G31213GU",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G15204IM",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G44223QP",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G97575FW",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G53962WT",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G70410NP",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

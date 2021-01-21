@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G60929YB",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G50518XT",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G60929YB",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

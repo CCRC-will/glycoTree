@@ -1,4 +1,3 @@
-
 {
   "accession": "G57930PW", 
   "residues": [
@@ -6,13 +5,16 @@
       "canonical_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
       "glycoct_index": "5",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NB",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165212",
       "enzymes": [
         {
           "uniprot": "Q921Q3",
@@ -48,13 +50,16 @@
       "canonical_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
       "glycoct_index": "3",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NA",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165211",
       "enzymes": [
         {
           "uniprot": "Q9D081",
@@ -132,13 +137,16 @@
       "canonical_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "glycoct_index": "1",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "0",
       "site": "0",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165210",
       "enzymes": [
         {
           "uniprot": "P42867",
@@ -174,13 +182,16 @@
       "canonical_name": "N-glycan_a-D-Manp_4",
       "residue_id": "N4",
       "glycoct_index": "12",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NC",
       "site": "6",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165152",
       "enzymes": [
         {
           "uniprot": "Q9DBE8",
@@ -216,13 +227,16 @@
       "canonical_name": "N-glycan_a-D-Glcp_27",
       "residue_id": "N27",
       "glycoct_index": "11",
-      "pubchem_id": "5793",
       "sugar_name": "Glc",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N26",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165138",
       "enzymes": [
         {
           "uniprot": "Q3UGP8",
@@ -258,13 +272,16 @@
       "canonical_name": "N-glycan_a-D-Glcp_26",
       "residue_id": "N26",
       "glycoct_index": "10",
-      "pubchem_id": "5793",
       "sugar_name": "Glc",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N25",
       "site": "3",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165137",
       "enzymes": [
         {
           "uniprot": "Q6P8H8",
@@ -300,13 +317,16 @@
       "canonical_name": "N-glycan_a-D-Glcp_25",
       "residue_id": "N25",
       "glycoct_index": "9",
-      "pubchem_id": "5793",
       "sugar_name": "Glc",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N22",
       "site": "3",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165136",
       "enzymes": [
         {
           "uniprot": "Q3TAE8",
@@ -342,13 +362,16 @@
       "canonical_name": "N-glycan_a-D-Manp_24",
       "residue_id": "N24",
       "glycoct_index": "14",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N19",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165135",
       "enzymes": [
         {
           "uniprot": "Q8VDI9",
@@ -384,13 +407,16 @@
       "canonical_name": "N-glycan_a-D-Manp_23",
       "residue_id": "N23",
       "glycoct_index": "16",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N20",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165134",
       "enzymes": [
         {
           "uniprot": "Q8VDB2",
@@ -426,13 +452,16 @@
       "canonical_name": "N-glycan_a-D-Manp_22",
       "residue_id": "N22",
       "glycoct_index": "8",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N21",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165133",
       "enzymes": [
         {
           "uniprot": "Q3TZM9",
@@ -468,13 +497,16 @@
       "canonical_name": "N-glycan_a-D-Manp_21",
       "residue_id": "N21",
       "glycoct_index": "7",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N1",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165132",
       "enzymes": [
         {
           "uniprot": "Q3TZM9",
@@ -510,13 +542,16 @@
       "canonical_name": "N-glycan_a-D-Manp_20",
       "residue_id": "N20",
       "glycoct_index": "15",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N4",
       "site": "6",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165131",
       "enzymes": [
         {
           "uniprot": "Q8K2A8",
@@ -552,13 +587,16 @@
       "canonical_name": "N-glycan_a-D-Manp_19",
       "residue_id": "N19",
       "glycoct_index": "13",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N4",
       "site": "3",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165129",
       "enzymes": [
         {
           "uniprot": "Q8K2A8",
@@ -594,13 +632,16 @@
       "canonical_name": "N-glycan_a-D-Manp_1",
       "residue_id": "N1",
       "glycoct_index": "6",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NC",
       "site": "3",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165068",
       "enzymes": [
         {
           "uniprot": "Q9DBE8",
@@ -632,11 +673,41 @@
         }
       ]
     }
-   ],
+  ],
   "dp":  "14",
   "related_glycans": [ 
    {
+     "accession": "G96153DN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G94481KZ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G17988XO",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G51657FI",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G13746SQ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G18948TG",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G98256YA",
      "relative_dp": "-1",
      "match": "13"
    },
@@ -646,7 +717,7 @@
      "match": "14"
    },
    {
-     "accession": "G72079JG",
+     "accession": "G91219PM",
      "relative_dp": "+0",
      "match": "14"
    },
@@ -656,12 +727,12 @@
      "match": "14"
    },
    {
-     "accession": "G91219PM",
+     "accession": "G72079JG",
      "relative_dp": "+0",
      "match": "14"
    },
    {
-     "accession": "G98256YA",
+     "accession": "G58381OV",
      "relative_dp": "-1",
      "match": "13"
    }

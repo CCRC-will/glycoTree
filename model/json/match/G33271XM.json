@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G33271XM",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G59451NL",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G33271XM",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

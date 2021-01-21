@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G28231AL",
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G28231AL",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G86466QK",
+     "relative_dp": "-1",
+     "match": "18"
+   },
+   {
+     "accession": "G78341OF",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G31004HS",
+     "relative_dp": "-1",
+     "match": "18"
+   }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G66408EY",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G66408EY",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G85768QF",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G26160AS",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G41670EF",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G51050LD",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G93162SU",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G77861QN",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G41670EF",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G90769IN",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G27587OB",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G59081JJ",
+     "relative_dp": "-1",
+     "match": "15"
+   }
+  ]
+}

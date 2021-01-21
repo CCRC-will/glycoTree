@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G95910WJ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G36223VW",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G95910WJ",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

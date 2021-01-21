@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G91068DJ",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G75584LU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G91068DJ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G29011JC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G65415JG",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G70800WO",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G70800WO",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G36960FP",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

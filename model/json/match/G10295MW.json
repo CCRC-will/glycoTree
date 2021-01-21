@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G10295MW",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G57345HS",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G34175ZP",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G43288IJ",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G40200RC",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G92117KA",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G10295MW",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G57051OG",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G42097JO",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G42097JO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G85085MS",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G79518SC",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G77467SI",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G72771HB",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G64077VW",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

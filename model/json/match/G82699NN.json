@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G82699NN",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G15972DM",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G82699NN",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G80952QT",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G30293NE",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G39601JQ",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

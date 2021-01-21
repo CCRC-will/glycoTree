@@ -8,6 +8,16 @@
      "match": "8"
    },
    {
+     "accession": "G50880EE",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G30585MP",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G10664FL",
      "relative_dp": "+1",
      "match": "9"
@@ -16,6 +26,16 @@
      "accession": "G39439UR",
      "relative_dp": "+0",
      "match": "9"
+   },
+   {
+     "accession": "G55481KF",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G56737NO",
+     "relative_dp": "-1",
+     "match": "8"
    }
   ]
 }

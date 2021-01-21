@@ -111,7 +111,7 @@ public class NodeArchetype {
 	 */
 	public int compareTo(NodeArchetype theOther, int mode, int verbosity) {
 		int score = 1;
-		if (verbosity > 5) System.out.printf("\n Mode %d used for next comparison ", mode);
+		if (verbosity > 5) System.out.printf("\n  Mode %d used for archetype comparison", mode);
 		switch (mode) {
 		case 0: 
 			// exact match: score -> 0

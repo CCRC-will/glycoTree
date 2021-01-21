@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G54683UA",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G01069AK",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G91365ZQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G66111ZR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G42846BO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G01670UQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G54683UA",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G47911PU",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G04065SU",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

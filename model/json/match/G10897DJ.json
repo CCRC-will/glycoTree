@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G10897DJ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G05698FC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G10897DJ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G72893LL",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

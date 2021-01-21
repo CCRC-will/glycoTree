@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G42941KJ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G61941WO",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G48767NV",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G84712FF",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G17857ZF",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G42941KJ",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G32364DF",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G79349EV",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

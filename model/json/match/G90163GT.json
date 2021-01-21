@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G90163GT",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G70851FQ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G88038QS",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G05546WG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G90725ZC",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G05303BZ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G90163GT",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G78513VM",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G78011JO",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G78011JO",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G09115OQ",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G82234NO",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G62196IB",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

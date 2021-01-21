@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G15216UP",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G55314RK",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G15216UP",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

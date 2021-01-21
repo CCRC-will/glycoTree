@@ -3,12 +3,17 @@
   "dp":  "15",
   "related_glycans": [ 
    {
+     "accession": "G71332MU",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G06635WE",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G71332MU",
+     "accession": "G45747TC",
      "relative_dp": "+0",
      "match": "15"
    }

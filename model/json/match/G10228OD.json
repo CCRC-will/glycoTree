@@ -3,12 +3,62 @@
   "dp":  "14",
   "related_glycans": [ 
    {
+     "accession": "G56770AH",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
      "accession": "G10228OD",
      "relative_dp": "+0",
      "match": "14"
    },
    {
-     "accession": "G32592IB",
+     "accession": "G96794ZC",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G58931VV",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G58217PP",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G57466QX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G58571IP",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G91413ZX",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G40542QP",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G79215ZS",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G94804ZC",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G60660BN",
      "relative_dp": "+1",
      "match": "14"
    },
@@ -18,7 +68,7 @@
      "match": "14"
    },
    {
-     "accession": "G40542QP",
+     "accession": "G75704ZB",
      "relative_dp": "+1",
      "match": "14"
    },
@@ -33,37 +83,7 @@
      "match": "13"
    },
    {
-     "accession": "G56770AH",
-     "relative_dp": "+0",
-     "match": "14"
-   },
-   {
-     "accession": "G58217PP",
-     "relative_dp": "+1",
-     "match": "14"
-   },
-   {
-     "accession": "G58571IP",
-     "relative_dp": "+0",
-     "match": "14"
-   },
-   {
-     "accession": "G58931VV",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
-     "accession": "G75704ZB",
-     "relative_dp": "+1",
-     "match": "14"
-   },
-   {
-     "accession": "G79215ZS",
-     "relative_dp": "+1",
-     "match": "14"
-   },
-   {
-     "accession": "G91413ZX",
+     "accession": "G32592IB",
      "relative_dp": "+1",
      "match": "14"
    }

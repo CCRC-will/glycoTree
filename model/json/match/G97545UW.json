@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G97545UW",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G19444JC",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G97545UW",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G43499QE",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G77748PL",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G32808NL",
+     "relative_dp": "-1",
+     "match": "15"
+   }
+  ]
+}

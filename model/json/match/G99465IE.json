@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G99465IE",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G89255EP",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G66572SF",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G06131VP",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G99465IE",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G76127VR",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G99503MW",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G63734KU",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G36053YX",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

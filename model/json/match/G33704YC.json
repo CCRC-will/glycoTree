@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G33704YC",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G38407OC",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G10874QT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G12254MW",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G01244DB",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G33704YC",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

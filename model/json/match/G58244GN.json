@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G58244GN",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G06968OS",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G93447XI",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G33202XC",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G64127GJ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G42619IV",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G70163ZD",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G58244GN",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

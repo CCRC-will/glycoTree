@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G50343XZ",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G95898GD",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G56791SN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G63710WS",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G50343XZ",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

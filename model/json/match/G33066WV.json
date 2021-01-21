@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G33066WV",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G49383JW",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G33030OB",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G13335AQ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G98048XD",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G33066WV",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G39174FS",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

@@ -3,13 +3,13 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G00231WL",
-     "relative_dp": "+1",
-     "match": "16"
+     "accession": "G54018RP",
+     "relative_dp": "-1",
+     "match": "15"
    },
    {
-     "accession": "G02193CV",
-     "relative_dp": "+0",
+     "accession": "G42824AQ",
+     "relative_dp": "+1",
      "match": "16"
    },
    {
@@ -18,32 +18,12 @@
      "match": "15"
    },
    {
-     "accession": "G19469VZ",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G24816DA",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G26068PU",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G26935KA",
+     "accession": "G86782KC",
      "relative_dp": "+0",
      "match": "16"
    },
    {
-     "accession": "G40194MN",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
-     "accession": "G42824AQ",
+     "accession": "G99568AR",
      "relative_dp": "+1",
      "match": "16"
    },
@@ -53,17 +33,37 @@
      "match": "16"
    },
    {
+     "accession": "G24816DA",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G26935KA",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G00231WL",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
      "accession": "G50462VS",
      "relative_dp": "+1",
      "match": "16"
    },
    {
-     "accession": "G54018RP",
-     "relative_dp": "-1",
-     "match": "15"
+     "accession": "G40194MN",
+     "relative_dp": "+0",
+     "match": "16"
    },
    {
      "accession": "G71906BW",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G92574YO",
      "relative_dp": "+1",
      "match": "16"
    },
@@ -73,12 +73,7 @@
      "match": "16"
    },
    {
-     "accession": "G86782KC",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
-     "accession": "G92574YO",
+     "accession": "G19469VZ",
      "relative_dp": "+1",
      "match": "16"
    },
@@ -88,8 +83,13 @@
      "match": "16"
    },
    {
-     "accession": "G99568AR",
+     "accession": "G26068PU",
      "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G02193CV",
+     "relative_dp": "+0",
      "match": "16"
    }
   ]

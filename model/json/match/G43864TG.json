@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G43864TG",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G50159UX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G43864TG",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G19854PG",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G71118NV",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

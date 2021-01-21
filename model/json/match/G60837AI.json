@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G60837AI",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G60837AI",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G54552DT",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G28090UW",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

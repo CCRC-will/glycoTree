@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G73560HZ",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G73560HZ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G66937TJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G36859SD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G29706UC",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G99129GB",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

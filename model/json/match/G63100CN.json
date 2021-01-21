@@ -1,0 +1,11 @@
+{
+  "probe_acc": "G63100CN",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G63100CN",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

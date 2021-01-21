@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G58233BW",
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G58233BW",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G88582ZD",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G64666BO",
+     "relative_dp": "+1",
+     "match": "19"
+   },
+   {
+     "accession": "G94626AX",
+     "relative_dp": "+1",
+     "match": "19"
+   },
+   {
+     "accession": "G09576QH",
+     "relative_dp": "+1",
+     "match": "19"
+   }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G89498BT",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G89498BT",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G82639GQ",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G77174TF",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

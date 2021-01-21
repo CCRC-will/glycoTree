@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G66190PM",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G29396PC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G62517DC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G91873GT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G30048YR",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G78155FK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G66190PM",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

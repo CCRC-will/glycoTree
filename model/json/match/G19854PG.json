@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G19854PG",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G83101KA",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G43864TG",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G19854PG",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G99141XX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G56549DH",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

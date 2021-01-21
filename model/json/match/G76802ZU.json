@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G76802ZU",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G55015QS",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G12740VA",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G21755KD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G76802ZU",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

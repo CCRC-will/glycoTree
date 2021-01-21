@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G38637SA",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G35798GO",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G76554SR",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G38637SA",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G48809ZO",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

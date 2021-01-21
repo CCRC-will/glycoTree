@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G79546WW",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G46213JU",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G11637WL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G79546WW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G46308WD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G00741NZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G27263RW",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G31993QW",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

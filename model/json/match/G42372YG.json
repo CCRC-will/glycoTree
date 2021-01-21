@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G42372YG",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G51971TR",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G42372YG",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

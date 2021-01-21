@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G99204QC",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G97709WW",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G95186HE",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G99204QC",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G78030KJ",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

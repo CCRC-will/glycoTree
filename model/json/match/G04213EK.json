@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G04213EK",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G04213EK",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G79609RF",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G64538ZR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G57941UT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G35096EN",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

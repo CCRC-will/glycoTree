@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G82954PR",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G82954PR",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G71397MM",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

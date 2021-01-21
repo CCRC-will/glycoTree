@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G73170HU",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G85093QP",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G49544FY",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G73170HU",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G78885XB",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

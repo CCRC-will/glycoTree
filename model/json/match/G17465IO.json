@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G17465IO",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G51212OK",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G17465IO",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

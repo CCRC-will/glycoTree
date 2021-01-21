@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G92303LR",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G92303LR",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G19886LH",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G32484KU",
+     "relative_dp": "-1",
+     "match": "6"
+   }
+  ]
+}

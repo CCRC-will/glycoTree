@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G31220IW",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G27168SG",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G31220IW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G89099NM",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G32319IP",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G89669IB",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G44909WI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G56748EO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G24758NZ",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

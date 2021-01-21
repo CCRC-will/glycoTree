@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G10034LM",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G10034LM",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G92681HQ",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G90284FM",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G86466QK",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G31004HS",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G32829EU",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G98852TR",
+     "relative_dp": "-1",
+     "match": "16"
+   }
+  ]
+}

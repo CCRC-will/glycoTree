@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G12504XV",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G12504XV",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G78341DP",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G08520NM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G98766GK",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G24796HF",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G38297TU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G01999JH",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

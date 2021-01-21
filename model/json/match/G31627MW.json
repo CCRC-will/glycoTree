@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G31627MW",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G31627MW",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G49915LA",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
+}

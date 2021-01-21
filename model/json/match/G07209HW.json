@@ -1,0 +1,121 @@
+{
+  "probe_acc": "G07209HW",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G65500VO",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G07209HW",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G75584LU",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G54961LP",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G07169PS",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G63411NB",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G97686QU",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G29011JC",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G17875TE",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G09976WS",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G65415JG",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G92024SL",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G26182BM",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G42680EX",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G70073SG",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G29905OR",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G61751GZ",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G50222RE",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G70642RS",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G38047QV",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G24420RT",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G47675LW",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G34527RW",
+     "relative_dp": "+1",
+     "match": "7"
+   }
+  ]
+}

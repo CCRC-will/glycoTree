@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G30372WK",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G83644CC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G30372WK",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G74364UH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G17996ZO",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G76136FD",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

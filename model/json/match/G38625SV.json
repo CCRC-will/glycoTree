@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G38625SV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G14942ZU",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G75853FN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G67549HD",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G38625SV",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

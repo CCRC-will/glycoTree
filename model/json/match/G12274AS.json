@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G12274AS",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G12274AS",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G50165QT",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G33894ZI",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G39662GV",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G63536HB",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G63536HB",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G76924RW",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G26756UI",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G09416DG",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G26534TO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G64582TJ",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G15222RS",
+     "relative_dp": "+1",
+     "match": "9"
+   }
+  ]
+}

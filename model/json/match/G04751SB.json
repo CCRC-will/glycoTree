@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G04751SB",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G88757PX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G04751SB",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G82126PQ",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

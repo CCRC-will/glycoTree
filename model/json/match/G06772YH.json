@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G06772YH",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G20966TZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G82233UN",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G98602UY",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G06772YH",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

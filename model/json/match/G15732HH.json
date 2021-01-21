@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G15732HH",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G78341DP",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G08520NM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G38297TU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G01999JH",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G15732HH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G24172SG",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

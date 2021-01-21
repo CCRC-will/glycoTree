@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G12241WD",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G95536UW",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G12241WD",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

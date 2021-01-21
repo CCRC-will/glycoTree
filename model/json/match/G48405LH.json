@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G48405LH",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G78341DP",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G48405LH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G50730KL",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G08520NM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G38297TU",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G01999JH",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

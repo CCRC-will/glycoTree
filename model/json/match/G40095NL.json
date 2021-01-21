@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G40095NL",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G40095NL",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G68313WI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G39377JQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G24635ZS",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

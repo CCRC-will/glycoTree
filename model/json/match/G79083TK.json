@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G79083TK",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G15825OT",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G79083TK",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G76705RJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G40579SX",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

@@ -60,13 +60,17 @@ file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   printf("\n      \"canonical_name\": \"%s\",", $2) >> outFile;
   printf("\n      \"residue_id\": \"%s\",", $3) >> outFile;
   printf("\n      \"glycoct_index\": \"%s\",", $11) >> outFile;
-  printf("\n      \"pubchem_id\": \"%s\",", $12) >> outFile;
   printf("\n      \"sugar_name\": \"%s\",", $4) >> outFile;
   printf("\n      \"anomer\": \"%s\",", $5) >> outFile;
   printf("\n      \"absolute_configuration\": \"%s\",", $6) >> outFile;
   printf("\n      \"ring_form\": \"%s\",", $7) >> outFile;
   printf("\n      \"parent\": \"%s\",", $8) >> outFile;
   printf("\n      \"site\": \"%s\",", $9) >> outFile;
+  printf("\n      \"limited_to\": \"%s\",", $12) >> outFile;
+  printf("\n      \"not_found_in\": \"%s\",", $13) >> outFile;
+  printf("\n      \"notes\": \"%s\",", $14) >> outFile;
+  printf("\n      \"evidence\": \"%s\",", $15) >> outFile;
+
   printf("\n      \"enzymes\": [") >> outFile;
   enz_count = 0;
   for (i = 1; i <= count; i++) {

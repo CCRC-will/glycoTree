@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G47645YK",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G47645YK",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G91847ME",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

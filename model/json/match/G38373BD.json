@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G38373BD",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G14942ZU",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G95989NQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G44904UE",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G38373BD",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G75853FN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G67223RN",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G79088GV",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G63413QV",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G79088GV",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G36727AR",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G33817TY",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G11910RR",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G66282NU",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G29897FU",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

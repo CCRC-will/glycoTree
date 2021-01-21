@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G24796HF",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G20966TZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G82233UN",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G12504XV",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G98602UY",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G24796HF",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G99356PZ",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G27419MQ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G65937EW",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G57117TO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G61717JN",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G12398HZ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G99356PZ",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G17134VG",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G11350UX",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G17134VG",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G32483HZ",
+     "relative_dp": "+1",
+     "match": "17"
+   }
+  ]
+}

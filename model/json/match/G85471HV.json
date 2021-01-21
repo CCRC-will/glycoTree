@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G85471HV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G39181YB",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G12266SO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G09255AF",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G19483RZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G85471HV",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G64823DM",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

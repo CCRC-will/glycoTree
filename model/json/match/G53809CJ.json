@@ -3,12 +3,27 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G06731AE",
+     "accession": "G65617KZ",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G43665PB",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G17540HT",
      "relative_dp": "-1",
      "match": "11"
    },
    {
-     "accession": "G17540HT",
+     "accession": "G47925EV",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G06731AE",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -18,14 +33,9 @@
      "match": "11"
    },
    {
-     "accession": "G38249IZ",
+     "accession": "G54505OS",
      "relative_dp": "-1",
      "match": "11"
-   },
-   {
-     "accession": "G43665PB",
-     "relative_dp": "+1",
-     "match": "12"
    },
    {
      "accession": "G45533OY",
@@ -33,32 +43,12 @@
      "match": "12"
    },
    {
-     "accession": "G47925EV",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G53809CJ",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G54505OS",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G65294YU",
      "relative_dp": "-1",
      "match": "11"
    },
    {
-     "accession": "G65617KZ",
-     "relative_dp": "+1",
-     "match": "12"
-   },
-   {
-     "accession": "G70382WT",
+     "accession": "G38249IZ",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -68,19 +58,29 @@
      "match": "11"
    },
    {
-     "accession": "G75381NI",
+     "accession": "G70382WT",
      "relative_dp": "-1",
      "match": "11"
-   },
-   {
-     "accession": "G79556AB",
-     "relative_dp": "+0",
-     "match": "12"
    },
    {
      "accession": "G82252QI",
      "relative_dp": "-1",
      "match": "11"
+   },
+   {
+     "accession": "G75381NI",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G53809CJ",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G79556AB",
+     "relative_dp": "+0",
+     "match": "12"
    }
   ]
 }

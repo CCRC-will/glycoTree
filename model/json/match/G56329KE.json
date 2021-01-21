@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G56329KE",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G56329KE",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G70593DF",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

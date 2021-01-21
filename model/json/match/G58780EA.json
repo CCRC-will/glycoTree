@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G58780EA",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G58780EA",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G01752VH",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G41095QB",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G60829NM",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G82393PY",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

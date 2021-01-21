@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G76986IU",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G68411DS",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G50846BW",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G87106NZ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G76986IU",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G49299ZV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G26255AN",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

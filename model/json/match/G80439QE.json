@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G80439QE",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G94754ZO",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G43447HY",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G80439QE",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G11012KS",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G08826KQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G04078TP",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

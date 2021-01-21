@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G84347HP",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G93933CG",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G53854XZ",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G59471JC",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G84347HP",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

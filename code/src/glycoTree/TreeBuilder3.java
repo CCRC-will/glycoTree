@@ -39,7 +39,7 @@ import java.util.*;
  * java -jar TreeBuilder3.jar [options]<br>
  * &nbsp;&nbsp; (See {@link #main(String[])} method for options)
  * @author wsyork
- * 
+ * @version 2.0
  */
 public class TreeBuilder3 {
 	
@@ -414,7 +414,7 @@ public class TreeBuilder3 {
 				createLeafList(probeNodes, probeLeaves);
 
 				if (v > 1) {
-					System.out.printf("\nTarget Node leaves (rank):");
+					System.out.printf("\nProbe Node leaves (rank):");
 					listLeaves(probeLeaves);
 				}
 
@@ -467,6 +467,7 @@ public class TreeBuilder3 {
 				// }
 
 				if (mismatchMap.size() > 0) rejectCode = 3; 
+				if (v > 6) System.out.printf("\n  mismatchMap.size is %d", mismatchMap.size());
 
 				if ( (totalScore > 0) && (extendMode > 0) ) {
 					// The overall full-length match is not perfect, but assign possible mappings
@@ -474,12 +475,14 @@ public class TreeBuilder3 {
 					// prune mismatched leaves one at a time and match the pruned paths
 					int totalPrunedScore = 0;
 					for (Map.Entry<String, Node> entry : mismatchMap.entrySet()) {
-						// start with each mismatched probe leaf
+						// process each mismatched probe leaf
 						Node n = entry.getValue();
+						// leafNode changes during subsequent traversal to root
 						Node leafNode = n;
 
 						int prunedScore = 1;
-						while ( (prunedScore != 0) && (leafNode.rank > matchLength) && (rejectCode < 7) ) {
+						// @@@while ( (prunedScore != 0) && (leafNode.rank > matchLength) && (rejectCode < 7) ) {
+						while ( (prunedScore != 0) && (leafNode.rank > 1) && (rejectCode < 7) ) {
 							// traverse to matchLength residues from root (while a perfect match has not
 							// been found)
 							// this loop executes until it reaches close to the root or an assigned node
@@ -574,57 +577,57 @@ public class TreeBuilder3 {
 			}
 
 			Boolean processFiles = false;
-			if (v > 0) System.out.printf("\nrejectCode: %d", rejectCode);
+			if (v > 1) System.out.printf("\n  rejectCode: %d\n", rejectCode);
 			switch (rejectCode) {
 			case 10: // the input file is corrupted
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" Input file is corrupted - process aborted for\n   %s\n", glycanFileName);
 				processFiles = false;
 				break;
 			case 9: // The glycan is too short (DP < matchLength)
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" Longest path in glycan is %d but matchLength is %d: process aborted for\n   %s\n", maxRank,
 							matchLength, glycanFileName);
 				processFiles = false;
 				break;
 			case 8: // No possible paths with DP >= matchLength found
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** No glycan path with length >= %d matches canonical tree: process aborted for\n   %s\n",
 						matchLength, glycanFileName);
 				processFiles = false;
 			break;
 			case 7:
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** Digital description of glycan contains a residue name that is unsupported\n  %s\n",
 							 glycanFileName);
 				processFiles = false;
 				break;
 			case 3:
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** Glycan %s has a residue that does not match the tree described in\n   %s\n", 
 						glycanID, canonicalNodeFileName);
 				if (extendMode > 0) processFiles = true;
 				break;
 			case 2:
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** Glycan %s has an INTERNAL residue that does not match the tree described in\n   %s\n", 
 						glycanID, canonicalNodeFileName);
 				if (extendMode > 0) processFiles = true;
 				break;
 			case 1:
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** Glycan %s has an unmapped residue that can extend the canonical tree described in\n  %s\n", 
 						glycanID, canonicalNodeFileName);
 				if (extendMode > 0) processFiles = true;
 				break;
 			case 0:
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** Glycan %s matches perfectly with the tree described in\n   %s\n", 
 						glycanID, canonicalNodeFileName);
 				processFiles = true;
 				break;
 			default:
-				if (v > 0)
+				if (v > 1)
 					System.out.printf(" *** No rejection code available for glycan %s with the tree described in\n %s", 
 						glycanID, canonicalNodeFileName);
 				processFiles = false;
@@ -821,7 +824,7 @@ public class TreeBuilder3 {
 						minScore);
 		} else {
 			if (v > 2)
-				System.out.printf("\nleaf %s does not match\n", leafNode.nodeID);
+				System.out.printf("\n** leaf %s does not match **\n", leafNode.nodeID);
 			if ((updateMismatches) && (!mismatchMap.containsKey(leafNode.nodeID)))
 				mismatchMap.put(leafNode.nodeID, leafNode);
 		}
@@ -872,7 +875,7 @@ public class TreeBuilder3 {
 	public static void listChildren(Map<String, Node> map) {
 		for (Map.Entry<String, Node> entry : map.entrySet()) {
 			Node n = entry.getValue();
-			System.out.printf("\nChildren of node %s:", n.nodeID);
+			System.out.printf("\n   Node %s:", n.nodeID);
 			for (Map.Entry<String, Node> subEntry : n.children.entrySet()) {
 				Node child = subEntry.getValue();
 				System.out.printf(" %s", child.nodeID);
@@ -978,6 +981,11 @@ public class TreeBuilder3 {
 	 */
 	public static Boolean isFullyDefined(Node n) {
 		// are all the components of the node defined?
+		System.out.printf("\n New node attached at site %s\n", n.site);
+		if (n.site.contains("x"))
+			return (false);
+		if (n.site.contains("|"))
+			return (false);
 		if (n.nodeID == null)
 			return (false);
 		if (n.residueName == null)
@@ -1112,15 +1120,32 @@ public class TreeBuilder3 {
 			}
 		}
 		NodeArchetype na = n.archetype;
-		SNFGSugar sug = na.sugar;
-
+		Node cn = n.canonicalNode;
+		
+		if (v > 6) {
+			System.out.printf("\n  *** Making CSV:\n  n.nodeName %s; n.residueName %s", n.nodeName, n.residueName); //@@@@
+			System.out.printf("\n  *** canonicalNode is %s", cn);
+		}
+		
 		// different format calls required because they have a different number of variables
-		if (glycanID.compareTo("canonical") == 0) { // this data goes to a canonical tree extension csv file
-			csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s\n", residueName, residueID, n.nodeName,
-					na.anomer, na.absolute, na.ring, parentID, site, n.formName);
-		} else { // this data goes to a specific glycan csv file
-			csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", glycanID, residueName, residueID, n.nodeName, 
-					na.anomer, na.absolute, na.ring, parentID, site, n.formName, n.nodeID);
+		if (glycanID.compareTo("canonical") == 0) { 
+			// this data goes to a canonical tree extension csv file
+			csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s\n", residueName, residueID,
+					n.nodeName, na.anomer, na.absolute, na.ring, parentID, site, n.formName);
+		} else { 
+			// this data goes to a specific glycan csv file
+			//  most of this data is held in n (the current probe node being written), but curator's annotations are held
+			//    only in the canonical node (cn) to which the current probe node has been mapped
+			//  IF NO CANONICAL NODE IS ASSIGNED, CANNOT USE cn (which is null!)
+			if (cn != null) {
+				csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", glycanID, residueName, residueID,
+					n.nodeName, na.anomer, na.absolute, na.ring, parentID, site, n.formName, n.nodeID,
+					cn.limitedTo, cn.notFoundIn, cn.notes, cn.evidence);
+			} else {
+				csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", glycanID, residueName, residueID,
+					n.nodeName, na.anomer, na.absolute, na.ring, parentID, site, n.formName, n.nodeID,
+					"", "", "", "");
+			}
 		}
 		if (v > 4)
 			System.out.printf("\nprepared csvString: %s", csvString);
@@ -1143,11 +1168,10 @@ public class TreeBuilder3 {
 		try {
 			BufferedWriter w = new BufferedWriter(new FileWriter(fileName));
 			// FileWriter w = new FileWriter("out.csv", true);
-			w.write("glycan_ID,residue,residue_ID,name,anomer,absolute,ring,parent_ID,site,form_name,source_id\n");
+			w.write("glycan_ID,residue,residue_ID,name,anomer,absolute,ring,parent_ID,site,form_name,source_id,limited_to,not_found_in,notes,evidence\n");
 			String comments = "";
 			for (Map.Entry<String, Node> entry : nodeMap.entrySet()) {
 				Node n = entry.getValue();
-
 				try {
 					String line = generateCSVstring(n, glycanID);
 					w.write(line);
@@ -1350,17 +1374,18 @@ public class TreeBuilder3 {
 	 */
 	public static int importData(String fn, int offset, ArrayList<NodeArchetype> archs, Map<String, Node> nodeMap) {
 		int missedNodes = 0;
+		Boolean isCanonicalNode = false;
+		if (offset == 0) isCanonicalNode = true;
 		File file = new File(fn);
 		if (file.exists()) {
 			try {
-				Scanner input = new Scanner(file);
+				Scanner input = new Scanner(file).useDelimiter("\n");
 				String header = input.next();
 				if (v > 4)
 					System.out.printf("\nFile Header: %s", header);
 				while (input.hasNext()) {
 					String line = input.next();
 					String[] vals = line.split(",");
-					// need to bail if vals.length() < offset + 8
 					if (vals.length < offset + 9) return -1;
 					String glycanID = vals[0]; // not used when offset == 0
 					String residueName = vals[offset + 0];
@@ -1373,12 +1398,25 @@ public class TreeBuilder3 {
 					String parentID = vals[offset + 6];
 					String site = vals[offset + 7];
 					String formName =  vals[offset + 8];
-
+					String limitedTo = "";
+					String notFoundIn = "";
+					String notes = "";
+					String evidence = "";
+					
+					if (isCanonicalNode) {
+						if (vals.length > offset + 9) limitedTo = vals[offset + 9];
+						if (vals.length > offset + 10) notFoundIn = vals[offset + 10];
+						if (vals.length > offset + 11) notes = vals[offset + 11];
+						if (vals.length > offset + 12) evidence = vals[offset + 12];
+					}
+					
 					if (v > 4)
 						System.out.printf(
 								"\n\nData: %s\n Node Name: %s; Node ID: %s; nodeName: %s; sugarName: %s; anomer: %s;"
-										+ " absolute: %s; ring: %s; parent: %s; site %s; formName %s\n",
-								line, residueName, nodeID, nodeName, sugarName, anomer, absolute, ring, parentID, site, formName);
+										+ " absolute: %s; ring: %s; parent: %s; site %s; formName %s;" 
+										+ " limited to: %s; not found in: %s; notes : %s; evidence: %s\n",
+								line, residueName, nodeID, nodeName, sugarName, anomer, absolute, ring, parentID, site, formName,
+								limitedTo, notFoundIn, notes, evidence);
 
 					// first create archetype, if new, add to archetype list
 					NodeArchetype na = new NodeArchetype(sugarList, sugarName, anomer, absolute, ring);
@@ -1399,7 +1437,7 @@ public class TreeBuilder3 {
 								archIsNew = false;
 								matchingArchetype = cna; // save to add to node after its declaration (later)
 								if (v > 4) {
-									System.out.printf(" %s (%s) already has an archetype (%s: %s-%s-%s-%s)\n",
+									System.out.printf("\n   %s (%s) already has an archetype (%s: %s-%s-%s-%s)\n",
 											residueName, nodeID, cna, cna.anomer, cna.absolute, cna.sugar.name,
 											cna.ring);
 								}
@@ -1411,14 +1449,23 @@ public class TreeBuilder3 {
 							archs.add(na);
 							if (v > 4)
 								System.out.printf(
-										" New Node Archetype (%s [%s]):\n   %s-%s-%s-%s\n", na, na.sugar, 
+										"\n   New Node Archetype (%s [%s]):\n   %s-%s-%s-%s\n", na, na.sugar, 
 										na.anomer, na.absolute, na.sugar.name, na.ring);
 						}
 					} catch (NullPointerException e) {
 						e.printStackTrace();
 					}
 
-					Node n = new Node(na, residueName, nodeID, site, nodeName, parentID, formName);
+					// NEED to differentiate between new canonical Node (which contains curator's annotations)
+					//  and new probe Node, to which the curator's annotations are added 
+					//    only after mapping it to a specific canonical Node
+					Node n = null;
+					if (isCanonicalNode) {
+						n = new Node(na, residueName, nodeID, site, nodeName, parentID, formName,
+								limitedTo, notFoundIn, notes, evidence);
+					} else {
+						n = new Node(na, residueName, nodeID, site, nodeName, parentID, formName);						
+					}
 					if (!archIsNew) {
 						// if archetype already exists, use that archetype for this node
 						n.archetype = matchingArchetype; 
@@ -1450,11 +1497,11 @@ public class TreeBuilder3 {
 		for (Map.Entry<String, Node> entry : nodeMap.entrySet()) {
 			Node n = entry.getValue();
 			if (v > 4)
-				System.out.printf("\n node[%s] has parentID %s", n.nodeID, n.parentID);
+				System.out.printf("\n Node[%s] has parentID %s", n.nodeID, n.parentID);
 			if (nodeMap.get(n.parentID) != null) { // @@@ this if logic needs fixin'
 				n.setParent(nodeMap);
 				if (v > 4)
-					System.out.printf("\n   assigned parent for Node %s (%s): parent %s (%s) substituted at %s", n.nodeID, n,
+					System.out.printf("\n   assigned parent for Node %s (%s): %s (%s) substituted at %s", n.nodeID, n,
 							nodeMap.get(n.parentID).nodeID, nodeMap.get(n.parentID), n.site);
 				// add node n as a child of its parent (just assigned)
 				n.parent.children.put(n.nodeID, n);

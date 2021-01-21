@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G81333SO",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G48329CR",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G81333SO",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

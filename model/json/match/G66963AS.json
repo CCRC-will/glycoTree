@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G66963AS",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G48658PB",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G66963AS",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G98572JS",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G07568IR",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G02654EL",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G80163ME",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

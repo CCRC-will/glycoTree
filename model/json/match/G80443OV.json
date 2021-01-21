@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G80443OV",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G02422RD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G80443OV",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

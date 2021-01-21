@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G36759VO",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G36759VO",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G47280HM",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

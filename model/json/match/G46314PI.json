@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G46314PI",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G03004PD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G46314PI",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G13267ZY",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G22795QB",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G27123NH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G03764XL",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

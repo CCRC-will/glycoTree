@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G73946HM",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G39298CN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G57741SS",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G73946HM",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G40096SL",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

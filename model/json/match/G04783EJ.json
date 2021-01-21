@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G04783EJ",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G04783EJ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G05600OX",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G98790NR",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G12352RJ",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

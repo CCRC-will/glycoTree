@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G39383KR",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G39383KR",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G12438YM",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

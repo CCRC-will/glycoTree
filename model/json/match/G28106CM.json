@@ -1,0 +1,51 @@
+{
+  "probe_acc": "G28106CM",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G28106CM",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G78730ZV",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G79950YS",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G99533GU",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G60814ZB",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G77207RR",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G75824WJ",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G99342HD",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G69319YQ",
+     "relative_dp": "-1",
+     "match": "16"
+   }
+  ]
+}

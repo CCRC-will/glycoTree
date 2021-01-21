@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G36316RB",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G36316RB",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G38997JB",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G45844BS",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G98115AV",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

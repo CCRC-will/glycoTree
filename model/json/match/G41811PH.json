@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G41811PH",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G41811PH",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G27456PF",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G41178NB",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G49840MH",
+     "relative_dp": "+0",
+     "match": "7"
+   }
+  ]
+}

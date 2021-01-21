@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G83588YY",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G90284FM",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G11953VE",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G73775WR",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G54599TV",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G47756FE",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G83588YY",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

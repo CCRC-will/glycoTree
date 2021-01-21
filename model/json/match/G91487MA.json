@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G91487MA",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G78205VT",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G91487MA",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G87018HM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G37868JH",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G95019KZ",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

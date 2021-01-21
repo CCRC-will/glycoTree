@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G07368IA",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G43040IL",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G07368IA",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G21969UD",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G33802UM",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G89364NG",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G24748QU",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

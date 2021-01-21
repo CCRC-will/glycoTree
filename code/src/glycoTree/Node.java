@@ -30,7 +30,7 @@ import java.util.Map;
  *  along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
  * <br>
  * @author wsyork
- *
+ * @version 2.0
  */
 public class Node {
 	
@@ -103,8 +103,27 @@ public class Node {
 	 * substituent information
 	 */
 	public String formName;
+
+	/**
+	 * a String describing species to which observation of the Node has been limited
+	 */
+	public String limitedTo;
 	
-	// public  Map<String, Integer> pathScores = new  HashMap<String, Integer>();
+	/**
+	 * a String describing species in which the Node has been not been found
+	 */
+	public String notFoundIn;
+	
+	/**
+	 * a String consining glycoTree curator's notes for the Node
+	 */
+	public String notes;
+	
+	/**
+	 * A string specifying evidence for the curators annotations
+	 */
+	public String evidence;
+	
 	
 	/**
 	 * the minimum score for the Node calculated by comparing Nodes in its path to the root with a parallel
@@ -124,7 +143,38 @@ public class Node {
 	
 
 	/** 
-	 * used to generate a Node when its children and rank are <i>not</i> known (yet)
+	 * used to generate a Node when its children and rank are <i>not</i> yet known
+	 * but the curator's annotations <i>have</i> been mapped to the Node
+	 * @param archetype the Node's archetype
+	 * @param nodeID the Node's ID -  either a canonical residue ID (like N15) or a local structure-specific ID (like 4)
+	 * @param residueName the Node's residueName
+	 * @param nodeName the Node's name (orrepsonds to a SNFG sugar name plus substituents)
+	 * @param site the site of linkage to the Node's aglycon (parent)
+	 * @param parentID the ID of the Node's parent (aglycon)
+	 * @param formName a name specifying the Node's basic name, lacking substituents 
+	 * but including the ring form (used to name new canonical residues)
+	 */
+	public Node(NodeArchetype archetype, String residueName, String nodeID, String site, String nodeName, String parentID, String formName,
+			String limitedTo, String notFoundIn, String notes, String evidence) {
+		super();
+		this.archetype = archetype;
+		this.nodeID = nodeID;
+		this.site = site;
+		this.parentID = parentID;
+		this.residueName = residueName;
+		this.formName = formName;
+		this.nodeName = nodeName;
+		this.limitedTo = limitedTo;
+		this.notFoundIn = notFoundIn;
+		this.notes = notes;
+		this.evidence = evidence;
+	}
+	
+	
+
+	/** 
+	 * used to generate a Node when its children and rank are <i>not</i> yet known
+	 *   and the curator's annotations have <i>not</i> been mapped to the Node
 	 * @param archetype the Node's archetype
 	 * @param nodeID the Node's ID -  either a canonical residue ID (like N15) or a local structure-specific ID (like 4)
 	 * @param residueName the Node's residueName

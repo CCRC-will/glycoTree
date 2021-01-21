@@ -40,10 +40,10 @@ Dr. Kelley Moremen, Dr. Nairn, and other members of Dr. Moremen's laboratory.  (
 <b>residues that are mapped to GlycoTree <i>and</i> that are found in the mature glycan</b>. \
 <br>Enzymes involved in generating precursors \
 such as lipid-linked intermediates or nucleotide sugars are <b>not shown</b>.</p> \
-Software to generate and display full biosynthetic pathways for each glycan is currently under development. <br>\
-To see specific enzymes that directly impact each residue in the glycan, <b>click on that residue</b> \
-in its <a href='https://www.ncbi.nlm.nih.gov/glycans/snfg.html' target='_blank'>SNFG</a> \
-representation on the left."
+Software to generate and display the full biosynthetic pathway for each glycan is currently under development. <br>\
+To see specific enzymes that directly impact each residue in the glycan, click on the \
+<a href='https://www.ncbi.nlm.nih.gov/glycans/snfg.html' target='_blank'>SNFG</a> \
+symbol for that residue in a structure on the left."
 }
 
 var URLs = {

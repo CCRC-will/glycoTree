@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G93755GW",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G93755GW",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G66937TJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G36859SD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G04185VX",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G99129GB",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

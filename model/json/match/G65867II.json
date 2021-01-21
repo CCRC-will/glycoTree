@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G65867II",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G24336IA",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G03260OU",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G85545IG",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G37492BZ",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G65867II",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G51086FE",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

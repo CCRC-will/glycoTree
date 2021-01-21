@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G90779DH",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G90779DH",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G63547QM",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G56499YQ",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G57955DP",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G67898UK",
+     "relative_dp": "-1",
+     "match": "15"
+   }
+  ]
+}

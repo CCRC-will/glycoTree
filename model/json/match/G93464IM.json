@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G93464IM",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G24292VT",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G84423SZ",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G45256SO",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G93500PH",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G93464IM",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G76583MP",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

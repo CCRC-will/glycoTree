@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G64857LW",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G35734AU",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G59989VG",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G64857LW",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G97865QM",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

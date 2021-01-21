@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G50392ZV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G19310VN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G32201IL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G50392ZV",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G89532GI",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

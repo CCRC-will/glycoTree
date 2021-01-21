@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G36787EI",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G35402TO",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G36787EI",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G84041GN",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
+}

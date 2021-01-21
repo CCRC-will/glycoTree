@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G30060ZO",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G30060ZO",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G01613KN",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G99165YY",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G77244ZA",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G01001RL",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G31991IV",
+     "relative_dp": "-1",
+     "match": "16"
+   }
+  ]
+}

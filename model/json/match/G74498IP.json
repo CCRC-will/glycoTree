@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G74498IP",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G98736SM",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G74498IP",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

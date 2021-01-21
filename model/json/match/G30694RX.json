@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G30694RX",
+  "dp":  "21",
+  "related_glycans": [ 
+   {
+     "accession": "G30694RX",
+     "relative_dp": "+0",
+     "match": "21"
+   },
+   {
+     "accession": "G92140GK",
+     "relative_dp": "+1",
+     "match": "21"
+   }
+  ]
+}

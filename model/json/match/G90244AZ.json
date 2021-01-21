@@ -1,0 +1,51 @@
+{
+  "probe_acc": "G90244AZ",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G11929CD",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G02410EE",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G57262WV",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G90244AZ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G79523YN",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G29492IF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G02660WC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G62112AO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G06209KS",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

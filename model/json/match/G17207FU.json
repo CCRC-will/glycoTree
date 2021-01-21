@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G17207FU",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G46449AK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G17207FU",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

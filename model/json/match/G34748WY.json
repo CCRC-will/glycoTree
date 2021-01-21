@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G34748WY",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G34748WY",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G29147GG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G91208VE",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G63075AF",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G63075AF",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G45686NF",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G60667OL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G04964UA",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G70069EN",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

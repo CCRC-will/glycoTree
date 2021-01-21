@@ -235,7 +235,7 @@ public class SVGflatten {
 		File file = new File(fn);
 		if (file.exists()) {
 			try {
-				Scanner input = new Scanner(file);
+				Scanner input = new Scanner(file).useDelimiter("\n");
 				while (input.hasNext()) {
 				String line = input.next();
 					if (v > 5) System.out.printf("\nReading line:    %s", line);
@@ -265,7 +265,7 @@ public class SVGflatten {
 		File file = new File(fn);
 		if (file.exists()) {
 			try {
-				Scanner input = new Scanner(file);
+				Scanner input = new Scanner(file).useDelimiter("\n");
 				while (input.hasNext()) {
 					String line = input.next();
 					result.add(line);

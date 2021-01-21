@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G36400RA",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G36400RA",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G56014GC",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G42552PM",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G35257SQ",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G86601RH",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G97023FS",
+     "relative_dp": "-1",
+     "match": "6"
+   }
+  ]
+}

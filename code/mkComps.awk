@@ -7,7 +7,6 @@ BEGIN {
   FS = ",";
   assigned = 1; 
   compStr = "";
-  printf("accession,composition_string");
 }
 
 FNR == 1 && NR > 1 {

@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G91180QG",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G91180QG",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G16967GJ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G67358EC",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G51956RJ",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G72758KY",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

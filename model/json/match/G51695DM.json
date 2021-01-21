@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G51695DM",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G66016NA",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G51695DM",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G27992WA",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G81536GE",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G88500SX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G19124KK",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G20266PH",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G81536GE",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

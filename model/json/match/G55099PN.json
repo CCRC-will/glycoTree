@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G55099PN",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G55099PN",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G58422UX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G49104KI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G44504SC",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G75671DO",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G00805TZ",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G75671DO",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

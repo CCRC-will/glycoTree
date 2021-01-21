@@ -1,0 +1,16 @@
+{
+  "probe_acc": "",
+  "dp":  "0",
+  "related_glycans": [ 
+   {
+     "accession": "",
+     "relative_dp": "+0",
+     "match": "0"
+   },
+   {
+     "accession": "G68544GH",
+     "relative_dp": "+1",
+     "match": "0"
+   }
+  ]
+}

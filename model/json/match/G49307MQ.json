@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G49307MQ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G78276SQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G49307MQ",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G66513RC",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G91518OM",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G37260FV",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

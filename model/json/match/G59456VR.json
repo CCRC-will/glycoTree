@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G59456VR",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G89375LQ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G59456VR",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

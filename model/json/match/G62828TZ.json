@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G62828TZ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G04820ZT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G24121ID",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G62828TZ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G32305RZ",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

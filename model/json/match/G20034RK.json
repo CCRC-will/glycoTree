@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G20034RK",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G34499SX",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G95963DM",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G48442VP",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G20034RK",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G76666KS",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G22477EB",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G39111QK",
+     "relative_dp": "+1",
+     "match": "9"
+   }
+  ]
+}

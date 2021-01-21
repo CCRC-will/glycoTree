@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G42438ZG",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G66362JB",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G42438ZG",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G19520XO",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

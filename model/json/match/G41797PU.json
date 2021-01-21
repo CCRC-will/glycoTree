@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G41797PU",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G62746IY",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G41797PU",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G30062BR",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G13322RS",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

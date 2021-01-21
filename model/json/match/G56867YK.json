@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G56867YK",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G80966KZ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G59311AO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G56867YK",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G19747OA",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G36699PG",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

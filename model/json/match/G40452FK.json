@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G40452FK",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G23616ZX",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G40452FK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G28330DZ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G46298TE",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G14020CV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G03228NK",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G30569KZ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G21925JZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G14020CV",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G10666VQ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G04185VX",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

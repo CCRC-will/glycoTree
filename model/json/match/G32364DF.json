@@ -13,13 +13,23 @@
      "match": "14"
    },
    {
-     "accession": "G32364DF",
-     "relative_dp": "+0",
-     "match": "14"
+     "accession": "G42941KJ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G57970NA",
+     "relative_dp": "-1",
+     "match": "13"
    },
    {
      "accession": "G83926PC",
      "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G32364DF",
+     "relative_dp": "+0",
      "match": "14"
    }
   ]

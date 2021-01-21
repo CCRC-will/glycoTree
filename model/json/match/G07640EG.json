@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G07640EG",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G07640EG",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G38115KZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G61312PU",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G78944YP",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G04622LK",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

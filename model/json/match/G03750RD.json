@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G03750RD",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G65603XA",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G80352NL",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G03750RD",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

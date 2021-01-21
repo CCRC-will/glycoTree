@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G20885BK",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G20885BK",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G17348SA",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G45104SZ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G72112RK",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

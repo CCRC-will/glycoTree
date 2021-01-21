@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G14491HM",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G64761FU",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G18738PX",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G14491HM",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

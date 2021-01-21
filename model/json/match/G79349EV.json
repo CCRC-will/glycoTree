@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G79349EV",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G42941KJ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G79349EV",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

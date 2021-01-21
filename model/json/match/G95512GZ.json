@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G95512GZ",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G78205VT",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G91386RN",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G62307SM",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G95512GZ",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G60610NA",
+     "relative_dp": "-1",
+     "match": "16"
+   }
+  ]
+}

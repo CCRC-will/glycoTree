@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G20248TO",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G54626GN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G94252JR",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G20248TO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G13305QJ",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

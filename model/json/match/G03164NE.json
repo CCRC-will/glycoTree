@@ -3,7 +3,22 @@
   "dp":  "15",
   "related_glycans": [ 
    {
+     "accession": "G15730FJ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
      "accession": "G03164NE",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G89865CB",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G29857PJ",
      "relative_dp": "+0",
      "match": "15"
    },

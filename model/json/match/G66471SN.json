@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G66471SN",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G00738BQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G66471SN",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G60765GV",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

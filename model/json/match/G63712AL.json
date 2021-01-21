@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G63712AL",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G11249YX",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G26844MI",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G63712AL",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G87192TH",
+     "relative_dp": "+1",
+     "match": "12"
+   }
+  ]
+}

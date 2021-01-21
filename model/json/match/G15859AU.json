@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G15859AU",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G93839ET",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G15859AU",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

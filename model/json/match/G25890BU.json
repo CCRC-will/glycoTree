@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G25890BU",
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G25890BU",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G02025MF",
+     "relative_dp": "+0",
+     "match": "19"
+   }
+  ]
+}

@@ -47,7 +47,8 @@ public class GCTparser {
 			"1:5,p",
 			"2:6,p",
 			"0:0,o",
-			"x:x,x"
+			"x:x,x",
+			"1:x,x"
 	};
 
 	/**
@@ -63,6 +64,7 @@ public class GCTparser {
 			"lgal,Lgal",
 			"dgro,Dgro",
 			"dxyl,Dxyl",
+			"lgul,Lgul",
 			"xxyl,xxyl"
 	};
 
@@ -70,7 +72,7 @@ public class GCTparser {
 	 * array of valid GlycoCT "superclass" attributes, mapped to their glycoTree Strings
 	 */
 	static String[] SUGSIZE = {
-			"pent,pent",	
+			"pen,pen",	
 			"hex,hex",	
 			"hep,hep",	
 			"oct,oct",	
@@ -103,7 +105,8 @@ public class GCTparser {
 			"Man,man,hex",
 			"Neu,gro-gal,non,1:a-2:keto-3:d",
 			"Fuc,gal,hex,6:d",
-			"Xyl,xyl,pent"
+			"Xyl,xyl,pen",
+			"Gul,gul,hex"
 	};
 	
 	/**

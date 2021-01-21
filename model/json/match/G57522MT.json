@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G57522MT",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G57522MT",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G12438YM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G49504OJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G56038AR",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G71714EQ",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

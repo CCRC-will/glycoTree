@@ -1,4 +1,3 @@
-
 {
   "accession": "G47936PQ", 
   "residues": [
@@ -6,13 +5,16 @@
       "canonical_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
       "glycoct_index": "5",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NB",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165212",
       "enzymes": [
         {
           "uniprot": "Q921Q3",
@@ -48,13 +50,16 @@
       "canonical_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
       "glycoct_index": "3",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NA",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165211",
       "enzymes": [
         {
           "uniprot": "Q9D081",
@@ -132,13 +137,16 @@
       "canonical_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "glycoct_index": "1",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "x",
       "absolute_configuration": "D",
       "ring_form": "x",
       "parent": "0",
       "site": "0",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165210",
       "enzymes": [
         {
           "uniprot": "P42867",
@@ -174,13 +182,16 @@
       "canonical_name": "N-glycan_b-D-Galp_6",
       "residue_id": "N6",
       "glycoct_index": "15",
-      "pubchem_id": "6036",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N5",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165174",
       "enzymes": [
         {
           "uniprot": "P15535",
@@ -272,13 +283,16 @@
       "canonical_name": "N-glycan_b-D-GlcpNAc_5",
       "residue_id": "N5",
       "glycoct_index": "13",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N4",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165163",
       "enzymes": [
         {
           "uniprot": "Q921V5",
@@ -314,13 +328,16 @@
       "canonical_name": "N-glycan_a-D-Manp_4",
       "residue_id": "N4",
       "glycoct_index": "12",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NC",
       "site": "6",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165152",
       "enzymes": [
         {
           "uniprot": "Q9DBE8",
@@ -356,13 +373,16 @@
       "canonical_name": "N-glycan_b-D-Galp_3",
       "residue_id": "N3",
       "glycoct_index": "9",
-      "pubchem_id": "6036",
       "sugar_name": "Gal",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N2",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165141",
       "enzymes": [
         {
           "uniprot": "P15535",
@@ -454,13 +474,16 @@
       "canonical_name": "N-glycan_b-D-GlcpNAc_2",
       "residue_id": "N2",
       "glycoct_index": "7",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N1",
       "site": "2",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165130",
       "enzymes": [
         {
           "uniprot": "P27808",
@@ -496,13 +519,16 @@
       "canonical_name": "N-glycan_a-L-Fucp_15",
       "residue_id": "N15",
       "glycoct_index": "16",
-      "pubchem_id": "17106",
       "sugar_name": "Fuc",
       "anomer": "a",
       "absolute_configuration": "L",
       "ring_form": "p",
       "parent": "NA",
       "site": "6",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165122",
       "enzymes": [
         {
           "uniprot": "Q9WTS2",
@@ -538,13 +564,16 @@
       "canonical_name": "N-glycan_b-D-GlcpNAc_11",
       "residue_id": "N11",
       "glycoct_index": "10",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NC",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165080",
       "enzymes": [
         {
           "uniprot": "Q10470",
@@ -580,13 +609,16 @@
       "canonical_name": "N-glycan_a-D-Manp_1",
       "residue_id": "N1",
       "glycoct_index": "6",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NC",
       "site": "3",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165068",
       "enzymes": [
         {
           "uniprot": "Q9DBE8",
@@ -618,7 +650,7 @@
         }
       ]
     }
-   ],
+  ],
   "dp":  "11",
   "related_glycans": [ 
    {
@@ -627,97 +659,7 @@
      "match": "10"
    },
    {
-     "accession": "G10483PN",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G10733HY",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G13672YG",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G20079RG",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G20096RP",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G25520XG",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G29884LW",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G30309QX",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G41331JX",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G42295MA",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G47936PQ",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G49495MH",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G52112MC",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
      "accession": "G52934AK",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G55396DW",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G56271ML",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G58561KE",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G60534NQ",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G69461KL",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -727,13 +669,48 @@
      "match": "10"
    },
    {
-     "accession": "G72905QH",
+     "accession": "G55396DW",
      "relative_dp": "+1",
      "match": "11"
    },
    {
-     "accession": "G74325TG",
-     "relative_dp": "+0",
+     "accession": "G85767HW",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G14959WS",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G20096RP",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G30309QX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G28678TH",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G61684ET",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G10733HY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G99651QK",
+     "relative_dp": "+1",
      "match": "11"
    },
    {
@@ -742,7 +719,17 @@
      "match": "10"
    },
    {
-     "accession": "G85767HW",
+     "accession": "G29884LW",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G91023GB",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G60534NQ",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -752,22 +739,32 @@
      "match": "10"
    },
    {
-     "accession": "G86522OD",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G87937HR",
+     "accession": "G13672YG",
      "relative_dp": "+1",
      "match": "11"
    },
    {
-     "accession": "G90987JA",
+     "accession": "G49495MH",
      "relative_dp": "-1",
      "match": "10"
    },
    {
-     "accession": "G91023GB",
+     "accession": "G74325TG",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G41331JX",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G56271ML",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G39408YK",
      "relative_dp": "+1",
      "match": "11"
    },
@@ -780,6 +777,81 @@
      "accession": "G95617FJ",
      "relative_dp": "+1",
      "match": "11"
+   },
+   {
+     "accession": "G86522OD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G25520XG",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G20079RG",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G77498XG",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G58561KE",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G72905QH",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G90987JA",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G23377WN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G10483PN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G87937HR",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G52112MC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G47936PQ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G42295MA",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G21788RU",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G69461KL",
+     "relative_dp": "-1",
+     "match": "10"
    }
   ]
 }

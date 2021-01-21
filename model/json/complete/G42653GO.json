@@ -1,4 +1,3 @@
-
 {
   "accession": "G42653GO", 
   "residues": [
@@ -6,13 +5,16 @@
       "canonical_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
       "glycoct_index": "5",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NB",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165212",
       "enzymes": [
         {
           "uniprot": "Q921Q3",
@@ -48,13 +50,16 @@
       "canonical_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
       "glycoct_index": "3",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "b",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NA",
       "site": "4",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165211",
       "enzymes": [
         {
           "uniprot": "Q9D081",
@@ -132,13 +137,16 @@
       "canonical_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "glycoct_index": "1",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "x",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "0",
       "site": "0",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165210",
       "enzymes": [
         {
           "uniprot": "P42867",
@@ -174,13 +182,16 @@
       "canonical_name": "N-glycan_a-D-Manp_4",
       "residue_id": "N4",
       "glycoct_index": "10",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "NC",
       "site": "6",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165152",
       "enzymes": [
         {
           "uniprot": "Q9DBE8",
@@ -213,116 +224,192 @@
       ]
     },
     {
-      "canonical_name": "N-glycan_a-D-Manp_1",
-      "residue_id": "N1",
-      "glycoct_index": "6",
-      "pubchem_id": "18950",
-      "sugar_name": "Man",
-      "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "NC",
-      "site": "3",
-      "enzymes": [
-        {
-          "uniprot": "Q9DBE8",
-          "species": "mouse",
-          "type": "GT",
-          "orthology_group": "Alg2",
-          "protein_refseq": "NP_064382",
-          "dna_refseq": "NM_019998",
-          "gene_name": "Alg2",
-          "gene_id": "56737",
-          "required_residues": "",
-          "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9H553",
-          "species": "human",
-          "type": "GT",
-          "orthology_group": "Alg2",
-          "protein_refseq": "NP_149078",
-          "dna_refseq": "NM_033087",
-          "gene_name": "ALG2",
-          "gene_id": "85365",
-          "required_residues": "",
-          "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
-      ]
-    },
-    {
-      "canonical_name": "unassigned",
-      "residue_id": "9",
+      "canonical_name": "N-glycan_a-D-Manp_221",
+      "residue_id": "N221",
       "glycoct_index": "9",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
-      "parent": "8",
+      "parent": "N202",
       "site": "2",
+      "limited_to": "yeast",
+      "not_found_in": "",
+      "notes": "in N-mannans",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
       ]
     },
     {
-      "canonical_name": "unassigned",
-      "residue_id": "8",
-      "glycoct_index": "8",
-      "pubchem_id": "18950",
-      "sugar_name": "Man",
-      "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N1",
-      "site": "6",
-      "enzymes": [
-      ]
-    },
-    {
-      "canonical_name": "unassigned",
-      "residue_id": "7",
+      "canonical_name": "N-glycan_a-D-Manp_220",
+      "residue_id": "N220",
       "glycoct_index": "7",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N1",
       "site": "3",
+      "limited_to": "yeast",
+      "not_found_in": "",
+      "notes": "in N-mannans",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
       ]
     },
     {
-      "canonical_name": "unassigned",
-      "residue_id": "12",
+      "canonical_name": "N-glycan_a-D-Manp_219",
+      "residue_id": "N219",
       "glycoct_index": "12",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
-      "parent": "11",
+      "parent": "N204",
       "site": "2",
+      "limited_to": "yeast",
+      "not_found_in": "",
+      "notes": "in N-mannans",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
       ]
     },
     {
-      "canonical_name": "unassigned",
-      "residue_id": "11",
+      "canonical_name": "N-glycan_a-D-Manp_204",
+      "residue_id": "N204",
       "glycoct_index": "11",
-      "pubchem_id": "18950",
       "sugar_name": "Man",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "N4",
       "site": "2",
+      "limited_to": "yeast",
+      "not_found_in": "",
+      "notes": "in N-mannans",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
       ]
+    },
+    {
+      "canonical_name": "N-glycan_a-D-Manp_202",
+      "residue_id": "N202",
+      "glycoct_index": "8",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "N1",
+      "site": "6",
+      "limited_to": "yeast",
+      "not_found_in": "",
+      "notes": "in N-mannans",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
+      "enzymes": [
+      ]
+    },
+    {
+      "canonical_name": "N-glycan_a-D-Manp_1",
+      "residue_id": "N1",
+      "glycoct_index": "6",
+      "sugar_name": "Man",
+      "anomer": "a",
+      "absolute_configuration": "D",
+      "ring_form": "p",
+      "parent": "NC",
+      "site": "3",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165068",
+      "enzymes": [
+        {
+          "uniprot": "Q9DBE8",
+          "species": "mouse",
+          "type": "GT",
+          "orthology_group": "Alg2",
+          "protein_refseq": "NP_064382",
+          "dna_refseq": "NM_019998",
+          "gene_name": "Alg2",
+          "gene_id": "56737",
+          "required_residues": "",
+          "blocking_residues": "",
+          "notes": "",
+          "branch_site_specificity": ""
+        },
+        {
+          "uniprot": "Q9H553",
+          "species": "human",
+          "type": "GT",
+          "orthology_group": "Alg2",
+          "protein_refseq": "NP_149078",
+          "dna_refseq": "NM_033087",
+          "gene_name": "ALG2",
+          "gene_id": "85365",
+          "required_residues": "",
+          "blocking_residues": "",
+          "notes": "",
+          "branch_site_specificity": ""
+        }
+      ]
     }
-   ]
+  ],
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G59532XE",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G30762QR",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G57267KB",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G40352EF",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G34314SG",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G42653GO",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G39478RR",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G82529OA",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G70113QZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G53428EC",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G77025HC",
+     "relative_dp": "+1",
+     "match": "10"
+   }
+  ]
 }

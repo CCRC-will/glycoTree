@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G84764CL",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G33030OB",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G49961MS",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G36159AI",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G98048XD",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G84764CL",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G13006TG",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

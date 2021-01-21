@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G34754UR",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G34754UR",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G84879CH",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G31720WP",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

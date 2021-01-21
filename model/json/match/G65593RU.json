@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G65593RU",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G29492IF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G02660WC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G15727JK",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G65593RU",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

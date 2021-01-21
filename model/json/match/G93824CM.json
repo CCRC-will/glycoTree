@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G93824CM",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G93824CM",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G55861FV",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G18768EK",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G78803YD",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G08997GC",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G34508UC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G08997GC",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G83442GS",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G83508KY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G95952ST",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

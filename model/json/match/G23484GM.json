@@ -8,14 +8,9 @@
      "match": "14"
    },
    {
-     "accession": "G28298VW",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
-     "accession": "G40065EM",
-     "relative_dp": "-1",
-     "match": "13"
+     "accession": "G90712YJ",
+     "relative_dp": "+0",
+     "match": "14"
    },
    {
      "accession": "G75318VB",
@@ -23,14 +18,24 @@
      "match": "13"
    },
    {
-     "accession": "G90712YJ",
-     "relative_dp": "+0",
-     "match": "14"
+     "accession": "G42400JK",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G28298VW",
+     "relative_dp": "-1",
+     "match": "13"
    },
    {
      "accession": "G93446UA",
      "relative_dp": "+0",
      "match": "14"
+   },
+   {
+     "accession": "G40065EM",
+     "relative_dp": "-1",
+     "match": "13"
    }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G53752QB",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G53752QB",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G25640AW",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G18859UG",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

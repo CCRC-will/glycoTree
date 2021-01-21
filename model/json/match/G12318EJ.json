@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G12318EJ",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G47741BL",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G75120WS",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G12318EJ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G66313YW",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G69672LF",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

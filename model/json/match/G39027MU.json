@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G39027MU",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G39027MU",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G14888AE",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G48069JX",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

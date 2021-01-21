@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G64697JB",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G39181YB",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G35878KK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G64697JB",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G12740VA",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

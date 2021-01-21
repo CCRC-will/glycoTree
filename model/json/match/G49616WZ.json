@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G49616WZ",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G49616WZ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G59761EF",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G98453VS",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G91199QX",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

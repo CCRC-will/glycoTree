@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G97039HI",
+  "dp":  "19",
+  "related_glycans": [ 
+   {
+     "accession": "G41551CD",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G97039HI",
+     "relative_dp": "+0",
+     "match": "19"
+   },
+   {
+     "accession": "G42177JE",
+     "relative_dp": "+0",
+     "match": "19"
+   }
+  ]
+}

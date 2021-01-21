@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G68411DS",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G68411DS",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G62360SN",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G39906AT",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G26274XD",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G76986IU",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G53471VF",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G60284TY",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

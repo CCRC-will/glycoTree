@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G21219OJ",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G80264ZA",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G51710QD",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G94163JZ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G21219OJ",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

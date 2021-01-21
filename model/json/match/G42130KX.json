@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G42130KX",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G19739KB",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G42130KX",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G38159EA",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G20455AW",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

@@ -3,14 +3,14 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G36225RM",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G42504VW",
      "relative_dp": "+1",
      "match": "14"
+   },
+   {
+     "accession": "G36225RM",
+     "relative_dp": "-1",
+     "match": "13"
    },
    {
      "accession": "G95260HV",

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G78555BT",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G41278YY",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G03654ML",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G78555BT",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G07151FE",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G27167BO",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G22146HW",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

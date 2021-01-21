@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G16743PO",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G44656CN",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G20946SK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G16743PO",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

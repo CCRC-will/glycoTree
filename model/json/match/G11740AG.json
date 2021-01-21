@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G11740AG",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G93075HW",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G59942FB",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G00349CA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G71102UV",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G11740AG",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G04261UG",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G88827CD",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G13646GG",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G26703BH",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G77861QN",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G13646GG",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G16967GJ",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G67358EC",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G59081JJ",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

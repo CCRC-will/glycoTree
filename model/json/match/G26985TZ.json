@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G26985TZ",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G00028MO",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G26985TZ",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G58214IQ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G55220VL",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G03652TR",
+     "relative_dp": "-1",
+     "match": "7"
+   }
+  ]
+}

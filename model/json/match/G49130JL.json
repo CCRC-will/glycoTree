@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G49130JL",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G79183WP",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G49130JL",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G79790LK",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G72060AW",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G79617NL",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G14761OA",
+     "relative_dp": "+1",
+     "match": "12"
+   }
+  ]
+}

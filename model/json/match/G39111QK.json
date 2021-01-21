@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G39111QK",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G95963DM",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G74673OI",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G97511SW",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G20034RK",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G22477EB",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G39111QK",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G41912CL",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G41912CL",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G75097MF",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G56095ZZ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G29130SY",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

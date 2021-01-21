@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G46654QM",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G53170RJ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G20167OW",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G91023GB",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G58561KE",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G46654QM",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G42295MA",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

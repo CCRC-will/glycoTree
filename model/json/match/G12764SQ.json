@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G12764SQ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G30015VH",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G12764SQ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G72411HX",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

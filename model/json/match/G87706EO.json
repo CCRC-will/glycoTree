@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G87706EO",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G45720CA",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G64048GU",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G87706EO",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

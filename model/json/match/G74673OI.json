@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G74673OI",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G74673OI",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G97511SW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G22477EB",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G39111QK",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

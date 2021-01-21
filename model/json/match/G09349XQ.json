@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G09349XQ",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G34819LS",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G09349XQ",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G79099UV",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G07703ST",
+     "relative_dp": "+1",
+     "match": "17"
+   }
+  ]
+}

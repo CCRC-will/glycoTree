@@ -1,0 +1,116 @@
+{
+  "probe_acc": "G08863NS",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G17029IU",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G69060LX",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G90797SN",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G31010RQ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G22107KA",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G46638GC",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G08863NS",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G27092SD",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G90950UC",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G26756VT",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G97548TA",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G99645NK",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G35310KA",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G83490LO",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G01265XZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G84228AV",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G65680SX",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G08418PB",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G90870DG",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G97130PD",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G91247WI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G20030CU",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

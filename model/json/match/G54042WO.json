@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G54042WO",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G54042WO",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G59029AQ",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G21130MT",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G21130MT",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G77396HT",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G79996DQ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G58403SV",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G84776VF",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

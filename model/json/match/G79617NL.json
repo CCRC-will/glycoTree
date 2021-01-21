@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G79617NL",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G49130JL",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G91470EV",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G79617NL",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G82728DG",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G29112GC",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

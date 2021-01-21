@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G99997WS",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G29197GH",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G55743SL",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G99997WS",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G34072RB",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G85213FQ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G44046WQ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G74090KZ",
+     "relative_dp": "-1",
+     "match": "7"
+   }
+  ]
+}

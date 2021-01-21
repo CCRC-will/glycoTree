@@ -1,0 +1,51 @@
+{
+  "probe_acc": "G72060AW",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G48658PB",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G78503JC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G49130JL",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G72060AW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G49104KI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G06032HI",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G44504SC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G29112GC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G53230JC",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G43790PG",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G01265XZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G43790PG",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

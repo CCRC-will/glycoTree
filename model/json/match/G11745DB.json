@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G11745DB",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G11745DB",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G11615SW",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

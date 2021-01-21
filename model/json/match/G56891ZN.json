@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G56891ZN",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G56891ZN",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G54590FS",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G83423JP",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G17348SA",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G72112RK",
+     "relative_dp": "-1",
+     "match": "15"
+   }
+  ]
+}

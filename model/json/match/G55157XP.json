@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G55157XP",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G55157XP",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G88878CV",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

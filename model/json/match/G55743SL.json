@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G55743SL",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G55743SL",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G65500VO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G99997WS",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G79609RF",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G50222RE",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G93211HX",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

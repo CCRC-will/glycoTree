@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G14512NS",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G58516UP",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G14512NS",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G09976WS",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G72893LL",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G80661IW",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G24420RT",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

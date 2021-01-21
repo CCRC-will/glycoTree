@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G32114CQ",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G32114CQ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G88878CV",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

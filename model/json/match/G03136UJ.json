@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G03136UJ",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G70583LH",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G03136UJ",
+     "relative_dp": "+0",
+     "match": "12"
+   }
+  ]
+}

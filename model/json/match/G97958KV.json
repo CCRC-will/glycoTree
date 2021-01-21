@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G97958KV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G05143WC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G45365RV",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G06969ZX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G53096UD",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G49580XQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G73402RN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G97958KV",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

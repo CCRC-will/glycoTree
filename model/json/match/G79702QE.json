@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G79702QE",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G54584ER",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G79950YS",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G43070PV",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G53485VW",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G98565KP",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G99342HD",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G69319YQ",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G79702QE",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

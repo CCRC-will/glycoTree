@@ -8,8 +8,18 @@
      "match": "12"
    },
    {
+     "accession": "G54300AX",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
      "accession": "G72407WU",
      "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G74369SL",
+     "relative_dp": "+1",
      "match": "13"
    },
    {
@@ -18,7 +28,7 @@
      "match": "13"
    },
    {
-     "accession": "G74369SL",
+     "accession": "G70947EQ",
      "relative_dp": "+1",
      "match": "13"
    }

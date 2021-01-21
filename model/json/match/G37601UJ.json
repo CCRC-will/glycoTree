@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G37601UJ",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G77521TX",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G29147GG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G06648CG",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G37601UJ",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G37825LG",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G91208VE",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

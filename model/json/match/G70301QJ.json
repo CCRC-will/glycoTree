@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G70301QJ",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G70301QJ",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G48658PB",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

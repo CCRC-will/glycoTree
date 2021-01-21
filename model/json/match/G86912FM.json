@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G86912FM",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G86912FM",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G03473UD",
+     "relative_dp": "+0",
+     "match": "16"
+   }
+  ]
+}

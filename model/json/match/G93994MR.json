@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G93994MR",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G04820ZT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G24121ID",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G32305RZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G11278YL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G93994MR",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

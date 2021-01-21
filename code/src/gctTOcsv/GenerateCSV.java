@@ -158,8 +158,10 @@ public class GenerateCSV {
 				writer.close();
 
 			} catch (FileNotFoundException e) {
+				System.out.printf("Error in file %s\n", theFile);
 				e.printStackTrace();
 			} catch (UnsupportedEncodingException e) {
+				System.out.printf("Error in file %s\n", theFile);
 				e.printStackTrace();
 			}
 			
@@ -269,9 +271,8 @@ public class GenerateCSV {
 				String childID = parts[2].replaceAll("[a-zA-Z].*", ""); // numerical part after parentheses close
 				String linkPos = parts[1].split("[+]")[0]; // part in parentheses before +
 				if (linkPos.matches("-1")) {
-					System.out.printf("\n!!!!!!!!! linkPos changed from %s",  linkPos);
+					System.out.printf("\n ### linkPos undefined %s",  linkPos);
 					linkPos = "";
-					System.out.printf(" to %s", linkPos);
 				}
 				if (v > 2) System.out.printf("\n\nLIN: [%s]: parentID %s; childID %s; link %s", suffix, parentID, childID, linkPos);
 				if ( resList.containsKey(parentID) ) { // the parent is a residue
@@ -306,6 +307,7 @@ public class GenerateCSV {
 				break;
 			}
 		} catch (Exception e) {
+			System.out.printf("\n### Error in GlycoCT file ###\n    %s\n", gctLine);
 			e.printStackTrace();
 		}
 		return(section);

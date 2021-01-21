@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G84975AL",
+  "dp":  "20",
+  "related_glycans": [ 
+   {
+     "accession": "G00514XC",
+     "relative_dp": "+0",
+     "match": "20"
+   },
+   {
+     "accession": "G84975AL",
+     "relative_dp": "+0",
+     "match": "20"
+   }
+  ]
+}

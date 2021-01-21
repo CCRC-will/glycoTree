@@ -58,36 +58,39 @@ file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   printf("\n          \"canonical_name\": \"%s\",", $2);
   printf("\n          \"residue_id\": \"%s\",", $3);
   printf("\n          \"glycoct_index\": \"%s\",", $11);
-  printf("\n          \"pubchem_id\": \"%s\",", $12);
   printf("\n          \"sugar_name\": \"%s\",", $4);
   printf("\n          \"anomer\": \"%s\",", $5);
   printf("\n          \"absolute_configuration\": \"%s\",", $6);
   printf("\n          \"ring_form\": \"%s\",", $7);
   printf("\n          \"parent\": \"%s\",", $8);
   printf("\n          \"site\": \"%s\",", $9);
-  printf("\n          \"enzymes\": [");
-  enz_count = 0;
-  for (i = 1; i <= count; i++) {
-    ## for every line [i] in the enzyme_csv_file 
-    if ($3 == id[i]) { 
-      ## $3 may match the id of multiple lines in the enzyme_csv_file (multiple enzymes)
-      if (enz_count++ > 0) printf(","); ## close previous enzyme record and increment enz_count
-      printf("\n            {"); 
-      printf("\n              \"uniprot\": \"%s\",", uniprot[i]);
-      printf("\n              \"species\": \"%s\",", species[i]);
-      printf("\n              \"type\": \"%s\",", type[i]);
-      printf("\n              \"orthology_group\": \"%s\",", orthology_group[i]);
-      printf("\n              \"protein_refseq\": \"%s\",", protein_refseq[i]);
-      printf("\n              \"dna_refseq\": \"%s\",", dna_refseq[i]);
-      printf("\n              \"gene_name\": \"%s\",", gene_name[i]);
-      printf("\n              \"gene_id\": \"%s\",", gene_id[i]);
-      printf("\n              \"required_residues\": \"%s\",", required_residues[i]);
-      printf("\n              \"blocking_residues\": \"%s\",", blocking_residues[i]);
-      printf("\n              \"notes\": \"%s\",", notes[i]);
-      printf("\n              \"branch_site_specificity\": \"%s\"", branch_site_specificity[i]);
-      printf("\n            }");
-    }
-  }
+  printf("\n          \"limited_to\": \"%s\",", $12);
+  printf("\n          \"not_found_in\": \"%s\",", $13);
+  printf("\n          \"notes\": \"%s\",", $14);
+  printf("\n          \"evidence\": \"%s\",", $15);
+   printf("\n          \"enzymes\": [");
+   enz_count = 0;
+   for (i = 1; i <= count; i++) {
+     ## for every line [i] in the enzyme_csv_file 
+     if ($3 == id[i]) { 
+       ## $3 may match the id of multiple lines in the enzyme_csv_file (multiple enzymes)
+       if (enz_count++ > 0) printf(","); ## close previous enzyme record and increment enz_count
+       printf("\n            {"); 
+       printf("\n              \"uniprot\": \"%s\",", uniprot[i]);
+       printf("\n              \"species\": \"%s\",", species[i]);
+       printf("\n              \"type\": \"%s\",", type[i]);
+       printf("\n              \"orthology_group\": \"%s\",", orthology_group[i]);
+       printf("\n              \"protein_refseq\": \"%s\",", protein_refseq[i]);
+       printf("\n              \"dna_refseq\": \"%s\",", dna_refseq[i]);
+       printf("\n              \"gene_name\": \"%s\",", gene_name[i]);
+       printf("\n              \"gene_id\": \"%s\",", gene_id[i]);
+       printf("\n              \"required_residues\": \"%s\",", required_residues[i]);
+       printf("\n              \"blocking_residues\": \"%s\",", blocking_residues[i]);
+       printf("\n              \"notes\": \"%s\",", notes[i]);
+       printf("\n              \"branch_site_specificity\": \"%s\"", branch_site_specificity[i]);
+       printf("\n            }");
+     }
+   }
   printf("\n          ]");
   printf("\n        }");
 }

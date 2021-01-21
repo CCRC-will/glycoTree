@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G04269TC",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G04269TC",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G68578NZ",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G94132EL",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

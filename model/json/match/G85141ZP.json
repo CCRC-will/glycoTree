@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G85141ZP",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G36159AI",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G10040DS",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G85141ZP",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G13006TG",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

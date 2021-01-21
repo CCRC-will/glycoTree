@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G08062CY",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G79518SC",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G11402KL",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G64077VW",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G20720CG",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G08062CY",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

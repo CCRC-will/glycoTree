@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G75811ON",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G75811ON",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G25463XU",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G47006SF",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

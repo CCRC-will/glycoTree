@@ -6,6 +6,31 @@
      "accession": "G36521AS",
      "relative_dp": "+0",
      "match": "10"
+   },
+   {
+     "accession": "G84523VQ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G68194UU",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G29147GG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G18784ZP",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G91208VE",
+     "relative_dp": "-1",
+     "match": "9"
    }
   ]
 }

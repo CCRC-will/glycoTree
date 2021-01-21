@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G63659FK",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G95490LA",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G63659FK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G21498SM",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G19281RB",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

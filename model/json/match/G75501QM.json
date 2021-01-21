@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G75501QM",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G75501QM",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G39344CL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G15681WF",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G88814KX",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G65464PI",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G61718TK",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G78173WX",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G88814KX",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G97842ZO",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

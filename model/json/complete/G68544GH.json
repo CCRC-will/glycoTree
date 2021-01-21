@@ -1,4 +1,3 @@
-
 {
   "accession": "G68544GH", 
   "residues": [
@@ -6,13 +5,16 @@
       "canonical_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "glycoct_index": "1",
-      "pubchem_id": "439174",
       "sugar_name": "GlcNAc",
       "anomer": "a",
       "absolute_configuration": "D",
       "ring_form": "p",
       "parent": "0",
       "site": "0",
+      "limited_to": "",
+      "not_found_in": "",
+      "notes": "validated by Qrator",
+      "evidence": "PMID: 25165210",
       "enzymes": [
         {
           "uniprot": "P42867",
@@ -44,17 +46,22 @@
         }
       ]
     }
-   ],
+  ],
   "dp":  "1",
   "related_glycans": [ 
    {
-     "accession": "G05026ZL",
-     "relative_dp": "+1",
-     "match": "1"
+     "accession": "",
+     "relative_dp": "-1",
+     "match": "0"
    },
    {
      "accession": "G68544GH",
      "relative_dp": "+0",
+     "match": "1"
+   },
+   {
+     "accession": "G05026ZL",
+     "relative_dp": "+1",
      "match": "1"
    }
   ]

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G28882QV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G50880EE",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G10664FL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G07015TW",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G28882QV",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

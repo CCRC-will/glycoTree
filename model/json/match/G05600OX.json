@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G05600OX",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G04783EJ",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G24552KE",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G05600OX",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G01727PW",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G98790NR",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G12352RJ",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

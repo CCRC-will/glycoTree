@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G66634LZ",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G66634LZ",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G29492IF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G02660WC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G57117TO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G67728UJ",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

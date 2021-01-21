@@ -3,7 +3,7 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G10770RR",
+     "accession": "G97185IQ",
      "relative_dp": "+1",
      "match": "14"
    },
@@ -18,13 +18,13 @@
      "match": "14"
    },
    {
-     "accession": "G82033VN",
-     "relative_dp": "+0",
+     "accession": "G10770RR",
+     "relative_dp": "+1",
      "match": "14"
    },
    {
-     "accession": "G97185IQ",
-     "relative_dp": "+1",
+     "accession": "G82033VN",
+     "relative_dp": "+0",
      "match": "14"
    }
   ]

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G57511DS",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G90825UM",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G57511DS",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G50638US",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G40762ZY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G98223HN",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G85650LS",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

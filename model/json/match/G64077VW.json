@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G64077VW",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G42097JO",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G79518SC",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G11402KL",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G77467SI",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G64077VW",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G08062CY",
+     "relative_dp": "+1",
+     "match": "13"
+   }
+  ]
+}

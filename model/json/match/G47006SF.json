@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G47006SF",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G85200FA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G75811ON",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G25463XU",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G47006SF",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

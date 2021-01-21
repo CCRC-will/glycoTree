@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G48658CL",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G44845VH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G60383WH",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G48658CL",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

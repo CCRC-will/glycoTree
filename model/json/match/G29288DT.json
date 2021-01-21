@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G29288DT",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G29288DT",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G40821RK",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G70651XZ",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G01260RY",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G50119EM",
+     "relative_dp": "-1",
+     "match": "12"
+   }
+  ]
+}

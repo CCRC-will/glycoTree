@@ -11,6 +11,11 @@
      "accession": "G59471JC",
      "relative_dp": "+0",
      "match": "16"
+   },
+   {
+     "accession": "G84347HP",
+     "relative_dp": "-1",
+     "match": "15"
    }
   ]
 }

@@ -13,8 +13,10 @@ FNR == 1 {
 
 
 FNR > 1 {
+  ## generate accession array
   j = FNR - 2; ## zero-indexed; start with record 2
   accession[j] = $1;
+  printf("accession[%d] is %s - ", j, accession[j]);
   data[j] = $0;
   count = 0;
 }

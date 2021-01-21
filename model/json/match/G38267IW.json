@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G38267IW",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G42022OY",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G38267IW",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G71063DT",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G80717KS",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
+}

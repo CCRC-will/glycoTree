@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G75355YV",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G45256SO",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G62880PC",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G75355YV",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G93500PH",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G76583MP",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G61553DD",
+     "relative_dp": "-1",
+     "match": "9"
+   }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G61312PU",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G07640EG",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G11588II",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G61312PU",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G71857KQ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G87217OF",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G55065WV",
+     "relative_dp": "-1",
+     "match": "10"
+   }
+  ]
+}

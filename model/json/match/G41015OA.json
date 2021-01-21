@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G41015OA",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G39578OU",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G41015OA",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G92042VQ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G60230HH",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G52498MU",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G56202TA",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

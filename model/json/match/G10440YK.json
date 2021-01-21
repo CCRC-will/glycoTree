@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G10440YK",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G10440YK",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G16119YF",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G45995IV",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G42984ZU",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G82348BZ",
+     "relative_dp": "-1",
+     "match": "6"
+   }
+  ]
+}

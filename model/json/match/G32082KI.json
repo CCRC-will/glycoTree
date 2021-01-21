@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G32082KI",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G63411NB",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G32082KI",
+     "relative_dp": "+0",
+     "match": "7"
+   },
+   {
+     "accession": "G42680EX",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G70073SG",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G61751GZ",
+     "relative_dp": "-1",
+     "match": "6"
+   }
+  ]
+}

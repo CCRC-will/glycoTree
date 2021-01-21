@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G00463XD",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G91074JT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G59277TZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G43814TV",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G00463XD",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

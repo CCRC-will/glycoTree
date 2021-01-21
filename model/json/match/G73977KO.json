@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G73977KO",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G10385EY",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G05654CV",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G73499UJ",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G73977KO",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
+}
