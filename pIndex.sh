@@ -7,6 +7,9 @@ sed s/\\/portal\\/svg\\///g temp1.lst > temp2.lst
 sed s/gTree.svg//g temp2.lst > temp3.lst
 sed s/[.]//g temp3.lst > svg.lst
 
-rm -f temp1.lst temp2.lst temp3.lst
+sort svg.lst >  accessions.lst
 
-awk -f pIndex.awk pTemplate.txt svg.lst > ./portal/index.html
+awk -f pIndex.awk pTemplate.txt  accessions.lst > ./portal/index.html
+
+rm -f temp1.lst temp2.lst temp3.lst 
+
