@@ -1,0 +1,17 @@
+<html>
+<head>
+	<script>
+		function getNode(whichNode) {
+			window.open("node" + whichNode + ".html"); 
+		}
+	</script>
+
+</head>
+
+<body>
+
+<h2> To examine a canonical node, enter its id below (e.g., "N201")</h2>
+   <input type="text" name="node" onchange="getNode(this.value)">
+
+</body>
+</html>
