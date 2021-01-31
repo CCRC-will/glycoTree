@@ -416,206 +416,224 @@ public class SVGflatten {
 		try {
 
 			File svgFile = new File(sFileName);
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			
-			// override downloading the DTD, which causes failure when it is not available (usually the case)
-			dbFactory.setValidating(false);
-			dbFactory.setNamespaceAware(true);
-			dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
-			dbFactory.setFeature("http://xml.org/sax/features/validation", false);
-			dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
-			dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			if (svgFile.canRead() == false) {
+				System.out.printf("\n **** SVG file %s is not readable! ****\n", sFileName);
+				
+				StringBuilder es = new StringBuilder("<?xml version=\"1.0\"?>\n\n");
+				es.append("<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>\n");
+				es.append("<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\"  xmlns=\"http://www.w3.org/2000/svg\" id=\"");
+				es.append(accession  + "_svg\" height=\"120\" width=\"400\" >\n  <g>\n");
+				es.append("    <!-- ## Potentially clickable, semantically annotated canvas## -->\n");
+				es.append("    <g style=\"text-rendering:optimizeSpeed;\" id=\"C-" + accession + ":0\" >\n");
+				es.append("      <rect height=\"120\" width=\"400\" x=\"0\" y=\"0\" style=\"fill:rgb(251,251,255); stroke:none;\" />\n");
+				es.append("    </g>\n");
+				es.append("    <g style=\"text-rendering:optimizeSpeed;\" >\n");
+				es.append("     <text style=\"fill:black; stroke:none;  font-size:14px; font-family:'Helvetica'; font-weight:bold;\" x=\"200\" y=\"60\" text-anchor=\"middle\">");
+				es.append("No image is available for " + accession + "</text>\n");
+				es.append("    </g>\n  </g>\n</svg>");
+				
+				return(es.toString());
+			} else {
+				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
-			
-			
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(svgFile);
-			Node sNode = doc.getDocumentElement();
-			sNode.normalize();
-			Element svgElement = (Element) sNode;
-			String svgStyle = svgElement.getAttribute("style");
-			if (v > 3) {
-				System.out.printf("\n  SVG Root Node is a <%s> tag", sNode.getNodeName());
-				System.out.printf("\n  svgStyle:\n   %s", svgStyle);
-			}
-			
-
-
-			NodeList gList = svgElement.getElementsByTagName("g");
-			int tCount = 1;
-
-			for (int gIndex = 0; gIndex < gList.getLength(); gIndex++) {
-				Node gNode = gList.item(gIndex);
-				if (v > 3) System.out.printf("\n\n\n  <%s> Element[%d]:", gNode.getNodeName(), gIndex);
-
-				if (gNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element gElement = (Element) gNode;
-
-		        	String gStyle = gElement.getAttribute("style");
-		        	String gStr = "\n    <g style=\"" + gStyle + "\">";
-		        	// get the descendants of gElement 
-		    		NodeList ch = gElement.getElementsByTagName("*");
-		    		
-			        Boolean gHasID = gElement.hasAttribute("ID");
-			        if (gHasID) {
-			        	String gID = gElement.getAttribute("ID");
-			        	gStr = new String("\n    <g style=\"" + gStyle + "\" id=\"" + gID + "\">");
-			        	// parse the ID
-			        	// gType defines the kind of object wrapped by the <g> tag
-			        	//   possible values are: "R" (residue); "L" (link [edge]); "LI" (Link annotation); "B" (bracket)
-			        	String gType = gID.split("-")[0].toUpperCase();	
-			        	
-			        	String key = "";
-			        	if (gType.matches("B") ) { // brackets are NOT residues
-			        		key = "B";
-				        	gStr = new String("\n    <g style=\"" + gStyle + "\">");
-			        	} else {
-			        		key = addResidue(gID, svgResidues);
-			        		if (v > 3) {
-			        			System.out.printf("\n    Processing svg residue with key %s", key);
-			        			System.out.printf("\n    gID is %s", gID);
-			        			System.out.printf("\n    gStyle is %s", gStyle);
-			        			System.out.printf("\n    gType is %s", gType);
-			        			System.out.printf("\n    accession is %s", accession);
-			        		}
-			        	}
-			        	
-			        	// switch on value of gType
-			    		String newID = "not ready"; // newID will be set upon mapping of svg to csv
-			        	switch (gType) {
-			        	case "R": // gElement wraps a residue (but rarely some text)
-			        		String type_Result = type_R(gID, ch, gStr, svgResidues.get(key), key );
-			        		nStr.append(type_Result );
-			        		if ( type_Result.contains("text-anchor" ) ) { // CANNOT have a pure text node in svgResidues
-			        			svgResidues.remove(key);
-			        		}
-			        		break;
-			        	case "L": // gElement wraps a link
-			        		lStr.append(type_L(gID, ch, gStr, svgResidues.get(key)) );
-			        		break;
-			        	case "LI": // gElement wraps a link annotation
-			        		aStr.append(type_LI(gID, ch, gStr, svgResidues.get(key)) );
-			        		break;
-			        	case "B":
-			        		lStr.append(type_B(ch, gStr) );
-			        		break;
-			        	default:
-			        	}
-			        	
-
-			        } else { // the <g> Element has no ID: usually uninteresting, but may contain an image-bounding box
-			        	Node fcn = gElement.getFirstChild();
-			        	Element fce = (Element) fcn;
-
-			        	String fcnType = fcn.getNodeName();
-			        	if (v > 3) {
-			        		System.out.printf("\n    no ID Attribute");
-				        	System.out.printf("\n    first child Node is a <%s>", fcnType);
-			        	}
-
-			        	// the dimensions of the image are defined by a <g> tag with no id and whose first child is a <rect> 
-			        	if (fcnType.compareTo("rect") == 0) {
-			        		String h = fce.getAttribute("height");
-			        		String w = fce.getAttribute("width");
-			        		String svgID = accession + "_svg";
-			        		String temp = "\n<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\"  xmlns=\"http://www.w3.org/2000/svg\" " + 
-			        				"id=\""  + svgID + "\" height=\"" + h + "\" width=\"" + w + "\"  style=\"" + svgStyle + "\" >";
-			        		if (v > 3) {
-			        			System.out.printf("\n    Image boundary <rect>\n      height: %s\n      width: %s", h, w);
-			        			System.out.printf("\n    <svg> tag string:%s", temp);
-			        		}
-			        		headStr.append(temp); 
-			    			headStr.append("\n  <g>");
-			    			gStr = new String("\n    <g style=\"" + gStyle + "\" id=\"C-" + accession + ":0\" >");
-			    			NamedNodeMap fcAtts = fce.getAttributes();
-			    			String shapeAtts = "";
-			    			for (int j = 0; j < fcAtts.getLength(); j++ ) if (fcAtts.item(j).toString().contains("style") == false) {
-			    				if (v > 3) 
-			    					System.out.printf("\n      %s", fcAtts.item(j));
-			    				shapeAtts = shapeAtts.concat(" " + fcAtts.item(j).toString());
-			    			}
-			    			shapeAtts = shapeAtts.concat(" style=\"fill:rgb(255,255,255); stroke:none;\" ");
-			    			String bStr = gStr + "\n      <" + fcn.getNodeName() + shapeAtts + "/>\n    </g>";
-			    			headStr.append(bStr);
-			        	}
-			        	
-			        	// some text is defined as a path, with no associated id
-			        	if (fcnType.compareTo("path") == 0) {
-			        		String tIndex = "text" + tCount++;
-			        		if (v > 4) 
-			        			System.out.printf("\n    found unindexed text (%s)", tIndex);
-			        		// create nullRes to pass to type_LI - it won't be modified
-			        		Map<String, String> nullRes = new HashMap<String, String>();
-			        		// nullRes.put("null",  "null");
-			        		String nullID = "none";
-			        		aStr.append(type_LI(nullID, ch, gStr, nullRes) );
-			        	}
+				// override downloading the DTD, which causes failure when it is not available (usually the case)
+				dbFactory.setValidating(false);
+				dbFactory.setNamespaceAware(true);
+				dbFactory.setFeature("http://xml.org/sax/features/namespaces", false);
+				dbFactory.setFeature("http://xml.org/sax/features/validation", false);
+				dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+				dbFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
 
 
-			        }
 
+				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+				Document doc = dBuilder.parse(svgFile);
+				Node sNode = doc.getDocumentElement();
+				sNode.normalize();
+				Element svgElement = (Element) sNode;
+				String svgStyle = svgElement.getAttribute("style");
+				if (v > 3) {
+					System.out.printf("\n  SVG Root Node is a <%s> tag", sNode.getNodeName());
+					System.out.printf("\n  svgStyle:\n   %s", svgStyle);
 				}
+
+
+
+				NodeList gList = svgElement.getElementsByTagName("g");
+				int tCount = 1;
+
+				for (int gIndex = 0; gIndex < gList.getLength(); gIndex++) {
+					Node gNode = gList.item(gIndex);
+					if (v > 3) System.out.printf("\n\n\n  <%s> Element[%d]:", gNode.getNodeName(), gIndex);
+
+					if (gNode.getNodeType() == Node.ELEMENT_NODE) {
+						Element gElement = (Element) gNode;
+
+						String gStyle = gElement.getAttribute("style");
+						String gStr = "\n    <g style=\"" + gStyle + "\">";
+						// get the descendants of gElement 
+						NodeList ch = gElement.getElementsByTagName("*");
+
+						Boolean gHasID = gElement.hasAttribute("ID");
+						if (gHasID) {
+							String gID = gElement.getAttribute("ID");
+							gStr = new String("\n    <g style=\"" + gStyle + "\" id=\"" + gID + "\">");
+							// parse the ID
+							// gType defines the kind of object wrapped by the <g> tag
+							//   possible values are: "R" (residue); "L" (link [edge]); "LI" (Link annotation); "B" (bracket)
+							String gType = gID.split("-")[0].toUpperCase();	
+
+							String key = "";
+							if (gType.matches("B") ) { // brackets are NOT residues
+								key = "B";
+								gStr = new String("\n    <g style=\"" + gStyle + "\">");
+							} else {
+								key = addResidue(gID, svgResidues);
+								if (v > 3) {
+									System.out.printf("\n    Processing svg residue with key %s", key);
+									System.out.printf("\n    gID is %s", gID);
+									System.out.printf("\n    gStyle is %s", gStyle);
+									System.out.printf("\n    gType is %s", gType);
+									System.out.printf("\n    accession is %s", accession);
+								}
+							}
+
+							// switch on value of gType
+							String newID = "not ready"; // newID will be set upon mapping of svg to csv
+							switch (gType) {
+							case "R": // gElement wraps a residue (but rarely some text)
+								String type_Result = type_R(gID, ch, gStr, svgResidues.get(key), key );
+								nStr.append(type_Result );
+								if ( type_Result.contains("text-anchor" ) ) { // CANNOT have a pure text node in svgResidues
+									svgResidues.remove(key);
+								}
+								break;
+							case "L": // gElement wraps a link
+								lStr.append(type_L(gID, ch, gStr, svgResidues.get(key)) );
+								break;
+							case "LI": // gElement wraps a link annotation
+								aStr.append(type_LI(gID, ch, gStr, svgResidues.get(key)) );
+								break;
+							case "B":
+								lStr.append(type_B(ch, gStr) );
+								break;
+							default:
+							}
+
+
+						} else { // the <g> Element has no ID: usually uninteresting, but may contain an image-bounding box
+							Node fcn = gElement.getFirstChild();
+							Element fce = (Element) fcn;
+
+							String fcnType = fcn.getNodeName();
+							if (v > 3) {
+								System.out.printf("\n    no ID Attribute");
+								System.out.printf("\n    first child Node is a <%s>", fcnType);
+							}
+
+							// the dimensions of the image are defined by a <g> tag with no id and whose first child is a <rect> 
+							if (fcnType.compareTo("rect") == 0) {
+								String h = fce.getAttribute("height");
+								String w = fce.getAttribute("width");
+								String svgID = accession + "_svg";
+								String temp = "\n<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\"  xmlns=\"http://www.w3.org/2000/svg\" " + 
+										"id=\""  + svgID + "\" height=\"" + h + "\" width=\"" + w + "\"  style=\"" + svgStyle + "\" >";
+								if (v > 3) {
+									System.out.printf("\n    Image boundary <rect>\n      height: %s\n      width: %s", h, w);
+									System.out.printf("\n    <svg> tag string:%s", temp);
+								}
+								headStr.append(temp); 
+								headStr.append("\n  <g>");
+								gStr = new String("\n    <g style=\"" + gStyle + "\" id=\"C-" + accession + ":0\" >");
+								NamedNodeMap fcAtts = fce.getAttributes();
+								String shapeAtts = "";
+								for (int j = 0; j < fcAtts.getLength(); j++ ) if (fcAtts.item(j).toString().contains("style") == false) {
+									if (v > 3) 
+										System.out.printf("\n      %s", fcAtts.item(j));
+									shapeAtts = shapeAtts.concat(" " + fcAtts.item(j).toString());
+								}
+								shapeAtts = shapeAtts.concat(" style=\"fill:rgb(255,255,255); stroke:none;\" ");
+								String bStr = gStr + "\n      <" + fcn.getNodeName() + shapeAtts + "/>\n    </g>";
+								headStr.append(bStr);
+							}
+
+							// some text is defined as a path, with no associated id
+							if (fcnType.compareTo("path") == 0) {
+								String tIndex = "text" + tCount++;
+								if (v > 4) 
+									System.out.printf("\n    found unindexed text (%s)", tIndex);
+								// create nullRes to pass to type_LI - it won't be modified
+								Map<String, String> nullRes = new HashMap<String, String>();
+								// nullRes.put("null",  "null");
+								String nullID = "none";
+								aStr.append(type_LI(nullID, ch, gStr, nullRes) );
+							}
+
+
+						}
+
+					}
+				}
+
+				// get roots and if necessary assign their parents 
+
+				Map<String, String> gtRoot = getRoot(gtResidues);
+				Map<String, String> svgRoot = getRoot(svgResidues);
+				String anomerChar = "";
+				// if (gtRoot.get("anomer") != null && !gtRoot.get("anomer").isEmpty()) {
+				if (gtRoot != null && !gtRoot.isEmpty()) {
+					anomerChar = gtRoot.get("anomer");
+				}
+				if (v > 5) {
+					System.out.printf("\n\n    Assigned gt root anomer %s", anomerChar);	    	
+					System.out.printf("\n    Assigned svg root: %s", svgRoot.toString());
+					System.out.printf("\n     svg root coordinates: (%s,%s)", svgRoot.get("x"), svgRoot.get("y"));
+					showMap(gtResidues, "gTreeResidues");
+					showMap(svgResidues, "svgResidues");
+				}
+
+				if (addReducingAnomer) {  // GENERATE REDUCING ANOMER ANNOTATION
+					if (svgRoot.get("x") != null && !svgRoot.get("x").isEmpty()) {
+
+						Double x = Double.parseDouble(svgRoot.get("x")) + 30;
+						Double y = Double.parseDouble(svgRoot.get("y")) + 15;
+						String rootAnomer = "";
+
+						switch(anomerChar) {
+						case "a":
+							rootAnomer = "&#x03B1;";
+							break;
+						case "b":
+							rootAnomer = "&#x03B2;";
+							break;
+						default:
+							break;
+						}
+
+						String anomerString = "\n    <g style=\"fill:white; text-rendering:optimizeSpeed;\">" +
+								"\n      <text style=\"fill:black; stroke:none;  font-size:12px; font-family:'Serif';\" x=\"" +
+								x + "\" y=\"" + y + "\" text-anchor=\"middle\">" + rootAnomer + "</text>" +
+								"\n    </g>";
+						aStr.append(anomerString);
+					}
+				}
+
+				lString = lStr.toString();
+				nString = nStr.toString();
+				aString = aStr.toString();
+
+				if (v > 5) System.out.printf("\n\n  Assigning new IDs to mappable SVG objects");
+				if ( gtResidues.isEmpty() ) {
+					System.out.printf("\n***** Cannot map residues to csv data for %s; using svg IDs in semantic ids *****", accession);
+				} else {
+					mapTheIDs(gtResidues, svgResidues, gtRoot, svgRoot, accession);		    	
+				}
+
+				if (v > 5) System.out.printf("\n\n  Cleaning up unmappable IDs in SVG objects");
+				cleanUpIDs(svgResidues, accession);
+
+				svgStr = String.format("%s%s%s%s%s\n", headStr, lString, nString, aString, tailStr);
 			}
-			
-			// get roots and if necessary assign their parents 
-
-		    Map<String, String> gtRoot = getRoot(gtResidues);
-		    Map<String, String> svgRoot = getRoot(svgResidues);
-		    String anomerChar = "";
-		    // if (gtRoot.get("anomer") != null && !gtRoot.get("anomer").isEmpty()) {
-		    if (gtRoot != null && !gtRoot.isEmpty()) {
-		    	anomerChar = gtRoot.get("anomer");
-		    }
-		    if (v > 5) {
-		    	System.out.printf("\n\n    Assigned gt root anomer %s", anomerChar);	    	
-		    	System.out.printf("\n    Assigned svg root: %s", svgRoot.toString());
-		    	System.out.printf("\n     svg root coordinates: (%s,%s)", svgRoot.get("x"), svgRoot.get("y"));
-		    	showMap(gtResidues, "gTreeResidues");
-				showMap(svgResidues, "svgResidues");
-		    }
-
-		    if (addReducingAnomer) {  // GENERATE REDUCING ANOMER ANNOTATION
-		    	if (svgRoot.get("x") != null && !svgRoot.get("x").isEmpty()) {
-
-		    		Double x = Double.parseDouble(svgRoot.get("x")) + 30;
-		    		Double y = Double.parseDouble(svgRoot.get("y")) + 15;
-		    		String rootAnomer = "";
-
-		    		switch(anomerChar) {
-		    		case "a":
-		    			rootAnomer = "&#x03B1;";
-		    			break;
-		    		case "b":
-		    			rootAnomer = "&#x03B2;";
-		    			break;
-		    		default:
-		    			break;
-		    		}
-
-		    		String anomerString = "\n    <g style=\"fill:white; text-rendering:optimizeSpeed;\">" +
-		    				"\n      <text style=\"fill:black; stroke:none;  font-size:12px; font-family:'Serif';\" x=\"" +
-		    				x + "\" y=\"" + y + "\" text-anchor=\"middle\">" + rootAnomer + "</text>" +
-		    				"\n    </g>";
-		    		aStr.append(anomerString);
-		    	}
-		    }
-		    
-		    lString = lStr.toString();
-		    nString = nStr.toString();
-		    aString = aStr.toString();
-
-		    if (v > 5) System.out.printf("\n\n  Assigning new IDs to mappable SVG objects");
-		    if ( gtResidues.isEmpty() ) {
-		    	System.out.printf("\n***** Cannot map residues to csv data for %s; using svg IDs in semantic ids *****", accession);
-		    } else {
-			    mapTheIDs(gtResidues, svgResidues, gtRoot, svgRoot, accession);		    	
-		    }
-
-		    if (v > 5) System.out.printf("\n\n  Cleaning up unmappable IDs in SVG objects");
-		    cleanUpIDs(svgResidues, accession);
-
-			svgStr = String.format("%s%s%s%s%s\n", headStr, lString, nString, aString, tailStr);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
