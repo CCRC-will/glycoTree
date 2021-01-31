@@ -76,6 +76,11 @@
      "accession": "G65855MN",
      "relative_dp": "+1",
      "match": "8"
+   },
+   {
+     "accession": "G03203II",
+     "relative_dp": "-1",
+     "match": "7"
    }
   ]
 }

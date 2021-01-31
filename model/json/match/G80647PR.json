@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G80647PR",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G24155DW",
+     "relative_dp": "+1",
+     "match": "18"
+   },
+   {
+     "accession": "G41389HP",
+     "relative_dp": "+1",
+     "match": "18"
+   },
+   {
+     "accession": "G52216BO",
+     "relative_dp": "+1",
+     "match": "18"
+   },
+   {
+     "accession": "G13744OG",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G80647PR",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

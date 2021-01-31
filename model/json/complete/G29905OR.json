@@ -478,6 +478,11 @@
      "match": "5"
    },
    {
+     "accession": "G03203II",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
      "accession": "G00026MO",
      "relative_dp": "-1",
      "match": "5"

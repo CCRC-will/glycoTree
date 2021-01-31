@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G51168MK",
+  "dp":  "16",
+  "related_glycans": [ 
+   {
+     "accession": "G18584GW",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G81295TF",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G51168MK",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G21756MV",
+     "relative_dp": "-1",
+     "match": "15"
+   }
+  ]
+}

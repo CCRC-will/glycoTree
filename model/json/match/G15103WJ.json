@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G15103WJ",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G69964CA",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G99770NO",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G74325TG",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G25520XG",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G15103WJ",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G47936PQ",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

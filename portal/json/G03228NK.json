@@ -661,6 +661,11 @@
      "accession": "G10666VQ",
      "relative_dp": "-1",
      "match": "11"
+   },
+   {
+     "accession": "G86083QZ",
+     "relative_dp": "+0",
+     "match": "12"
    }
   ]
 }

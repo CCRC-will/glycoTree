@@ -93,6 +93,11 @@
      "match": "8"
    },
    {
+     "accession": "G76345AA",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
      "accession": "G12593TX",
      "relative_dp": "-1",
      "match": "7"

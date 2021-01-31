@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G02786XX",
+  "dp":  "36",
+  "related_glycans": [ 
+   {
+     "accession": "G76705YY",
+     "relative_dp": "+1",
+     "match": "36"
+   },
+   {
+     "accession": "G43873MM",
+     "relative_dp": "+1",
+     "match": "36"
+   },
+   {
+     "accession": "G81096RM",
+     "relative_dp": "+0",
+     "match": "36"
+   },
+   {
+     "accession": "G02786XX",
+     "relative_dp": "+0",
+     "match": "36"
+   }
+  ]
+}

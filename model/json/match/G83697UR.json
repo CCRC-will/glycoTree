@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G83697UR",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G76646HT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G83697UR",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

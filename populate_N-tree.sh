@@ -37,12 +37,9 @@ echo
 if [ $# -gt 0 ]; then
   echo fetching svg files from $1
   ./fetchSVG.sh ./data/gct/csv/ $1 ./data/svg/ > ./log/noSVG.lst
+  echo "Accessions lacking SVG support are listed in (./model/glycansLackingSVG.lst)"
+  sed 's/[.]svg//g' ./log/noSVG.lst > ./model/glycansLackingSVG.lst
 fi
-
-echo "Removing csv files lacking SVG support"
-sed 's/[.]svg//g' ./log/noSVG.lst > ./model/glycansLackingSVG.lst
-cat ./model/glycansLackingSVG.lst
-for file in `cat ./model/glycansLackingSVG.lst` ; do rm ./data/gct/csv/"$file.csv" ; done
 
 echo
 echo "Generating list of glycoTree csv files to process (./data/gct/csv/files.lst)"
@@ -82,15 +79,21 @@ echo "Annotating residues with biosynthetic enzymes in csv format (./model/annot
 find ./data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | xargs -I % awk -f ./code/mkCSVmap.awk $enzyme_file %  > ./model/annotated_glycans.csv
 
 echo
-echo "Generating a list of original svg files (./data/svg/files.lst)"
-find ./data/svg/ -name "G*.svg" -print -maxdepth 1  > ./data/svg/files.lst
+echo "Generating a list of all csv files (./data/gct/csv/files.lst)"
+find ./data/gct/csv -name "G*.csv" -print -maxdepth 1  > ./data/gct/csv/files.lst
+echo "Generating a list of mapped csv files (./data/gct/csv/mapped/files.lst)"
+find ./data/gct/csv/mapped -name "G*.csv" -print -maxdepth 1  > ./data/gct/csv/mapped/files.lst
+echo "Generating a list of svg files that may match the csv files (./data/svg/hope.lst)"
+sed 's/[.]csv/.svg/g' ./data/gct/csv/files.lst > ./data/svg/temp.lst
+sed 's/gct\/csv/svg/g' ./data/svg/temp.lst > ./data/svg/hope.lst
+rm ./data/svg/temp.lst
 
 echo
 echo Flattening svg files
 echo semantic annotation of svg encoding with canonical IDs
-java -jar ./code/SVGflatten.jar -l ./data/svg/files.lst -c ./data/gct/csv/mapped -a gTree -o ./model/gTree_svg -m ./model/map_gTree.csv -v 2 -r 1 > ./log/gTree_svg.log
+java -jar ./code/SVGflatten.jar -l ./data/svg/hope.lst -c ./data/gct/csv/mapped -a gTree -o ./model/gTree_svg -m ./model/map_gTree.csv -v 2 -r 1 > ./log/gTree_svg.log
 echo semantic annotation of svg encoding with GlycoCT indices
-java -jar ./code/SVGflatten.jar -l ./data/svg/files.lst -c ./data/gct/csv -a GlycoCT -o ./model/GlycoCT_svg -m ./model/map_GlycoCT.csv -v 2 -r 1 > ./log/GlycoCT_svg.log
+java -jar ./code/SVGflatten.jar -l ./data/svg/hope.lst -c ./data/gct/csv -a GlycoCT -o ./model/GlycoCT_svg -m ./model/map_GlycoCT.csv -v 2 -r 1 > ./log/GlycoCT_svg.log
 
 echo
 echo Combining semantic id map files

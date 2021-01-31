@@ -21,6 +21,11 @@
      "accession": "G36066DO",
      "relative_dp": "+0",
      "match": "13"
+   },
+   {
+     "accession": "G65307KA",
+     "relative_dp": "-1",
+     "match": "12"
    }
   ]
 }

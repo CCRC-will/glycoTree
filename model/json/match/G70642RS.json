@@ -86,6 +86,11 @@
      "accession": "G70642RS",
      "relative_dp": "+0",
      "match": "8"
+   },
+   {
+     "accession": "G03203II",
+     "relative_dp": "-1",
+     "match": "7"
    }
   ]
 }

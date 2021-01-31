@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G81295TF",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G81295TF",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G95333ZG",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G51168MK",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G19104OH",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

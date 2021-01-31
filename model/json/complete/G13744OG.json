@@ -1347,6 +1347,11 @@
      "accession": "G13744OG",
      "relative_dp": "+0",
      "match": "17"
+   },
+   {
+     "accession": "G80647PR",
+     "relative_dp": "+1",
+     "match": "17"
    }
   ]
 }

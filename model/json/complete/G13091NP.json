@@ -979,6 +979,11 @@
      "match": "12"
    },
    {
+     "accession": "G65307KA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G13091NP",
      "relative_dp": "+0",
      "match": "13"

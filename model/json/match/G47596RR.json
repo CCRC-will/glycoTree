@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G47596RR",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G23819TW",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G59003TR",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G47596RR",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G92442AF",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

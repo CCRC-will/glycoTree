@@ -441,6 +441,11 @@
   "dp":  "10",
   "related_glycans": [ 
    {
+     "accession": "G30517YN",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G95963DM",
      "relative_dp": "-1",
      "match": "9"

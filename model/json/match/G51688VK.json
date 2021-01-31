@@ -33,6 +33,11 @@
      "match": "7"
    },
    {
+     "accession": "G15503SL",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
      "accession": "G30673AC",
      "relative_dp": "-1",
      "match": "7"

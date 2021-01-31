@@ -28,9 +28,19 @@
      "match": "11"
    },
    {
+     "accession": "G11641YE",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
      "accession": "G04185VX",
      "relative_dp": "-1",
      "match": "10"
+   },
+   {
+     "accession": "G86083QZ",
+     "relative_dp": "+1",
+     "match": "11"
    }
   ]
 }

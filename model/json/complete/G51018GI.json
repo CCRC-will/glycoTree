@@ -977,6 +977,11 @@
      "accession": "G51018GI",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G64936OS",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

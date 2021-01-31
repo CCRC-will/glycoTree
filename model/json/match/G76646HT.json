@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G76646HT",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G82320NZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G76646HT",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G23290TL",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G83697UR",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G05478GN",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G29109PM",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

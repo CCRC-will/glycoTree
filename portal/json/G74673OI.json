@@ -468,6 +468,11 @@
      "match": "11"
    },
    {
+     "accession": "G29441UP",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
      "accession": "G22477EB",
      "relative_dp": "-1",
      "match": "10"
