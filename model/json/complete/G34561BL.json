@@ -985,14 +985,14 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G57970NA",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G34561BL",
      "relative_dp": "+0",
      "match": "14"
+   },
+   {
+     "accession": "G57970NA",
+     "relative_dp": "-1",
+     "match": "13"
    }
   ]
 }

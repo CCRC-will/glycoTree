@@ -8,14 +8,14 @@
      "match": "13"
    },
    {
-     "accession": "G59003TR",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G47596RR",
      "relative_dp": "+0",
      "match": "14"
+   },
+   {
+     "accession": "G59003TR",
+     "relative_dp": "-1",
+     "match": "13"
    },
    {
      "accession": "G92442AF",

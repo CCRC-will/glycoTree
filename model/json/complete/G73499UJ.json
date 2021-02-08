@@ -851,13 +851,13 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G10385EY",
-     "relative_dp": "+0",
+     "accession": "G05654CV",
+     "relative_dp": "+1",
      "match": "16"
    },
    {
-     "accession": "G05654CV",
-     "relative_dp": "+1",
+     "accession": "G10385EY",
+     "relative_dp": "+0",
      "match": "16"
    },
    {

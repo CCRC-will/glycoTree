@@ -990,17 +990,17 @@
      "match": "14"
    },
    {
+     "accession": "G56549DH",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G97078FW",
      "relative_dp": "+0",
      "match": "14"
    },
    {
      "accession": "G99141XX",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
-     "accession": "G56549DH",
      "relative_dp": "-1",
      "match": "13"
    }

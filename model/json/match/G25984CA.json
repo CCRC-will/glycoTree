@@ -3,13 +3,13 @@
   "dp":  "7",
   "related_glycans": [ 
    {
-     "accession": "G83948CA",
-     "relative_dp": "-1",
-     "match": "6"
-   },
-   {
      "accession": "G00335DM",
      "relative_dp": "+1",
+     "match": "7"
+   },
+   {
+     "accession": "G25984CA",
+     "relative_dp": "+0",
      "match": "7"
    },
    {
@@ -18,9 +18,9 @@
      "match": "6"
    },
    {
-     "accession": "G25984CA",
-     "relative_dp": "+0",
-     "match": "7"
+     "accession": "G83948CA",
+     "relative_dp": "-1",
+     "match": "6"
    }
   ]
 }

@@ -3,7 +3,7 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G68892PJ",
+     "accession": "G31559RO",
      "relative_dp": "+0",
      "match": "17"
    },
@@ -13,7 +13,7 @@
      "match": "17"
    },
    {
-     "accession": "G31559RO",
+     "accession": "G68892PJ",
      "relative_dp": "+0",
      "match": "17"
    }

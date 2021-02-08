@@ -3,17 +3,17 @@
   "dp":  "14",
   "related_glycans": [ 
    {
+     "accession": "G24046UO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
      "accession": "G34392KZ",
      "relative_dp": "+0",
      "match": "14"
    },
    {
      "accession": "G40341NV",
-     "relative_dp": "+0",
-     "match": "14"
-   },
-   {
-     "accession": "G24046UO",
      "relative_dp": "+0",
      "match": "14"
    }

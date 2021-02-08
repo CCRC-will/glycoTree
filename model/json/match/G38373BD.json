@@ -8,9 +8,9 @@
      "match": "11"
    },
    {
-     "accession": "G95989NQ",
-     "relative_dp": "-1",
-     "match": "10"
+     "accession": "G38373BD",
+     "relative_dp": "+0",
+     "match": "11"
    },
    {
      "accession": "G44904UE",
@@ -18,9 +18,9 @@
      "match": "11"
    },
    {
-     "accession": "G38373BD",
-     "relative_dp": "+0",
-     "match": "11"
+     "accession": "G67223RN",
+     "relative_dp": "-1",
+     "match": "10"
    },
    {
      "accession": "G75853FN",
@@ -28,7 +28,7 @@
      "match": "11"
    },
    {
-     "accession": "G67223RN",
+     "accession": "G95989NQ",
      "relative_dp": "-1",
      "match": "10"
    }

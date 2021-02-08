@@ -13,14 +13,14 @@
      "match": "14"
    },
    {
-     "accession": "G98790NR",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G12352RJ",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G98790NR",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

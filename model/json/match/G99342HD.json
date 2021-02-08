@@ -3,12 +3,22 @@
   "dp":  "16",
   "related_glycans": [ 
    {
+     "accession": "G02483WT",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G10292TC",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G28106CM",
      "relative_dp": "+1",
      "match": "16"
    },
    {
-     "accession": "G02483WT",
+     "accession": "G79702QE",
      "relative_dp": "-1",
      "match": "15"
    },
@@ -21,16 +31,6 @@
      "accession": "G99342HD",
      "relative_dp": "+0",
      "match": "16"
-   },
-   {
-     "accession": "G10292TC",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G79702QE",
-     "relative_dp": "-1",
-     "match": "15"
    }
   ]
 }

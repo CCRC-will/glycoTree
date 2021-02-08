@@ -3,12 +3,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G75445NA",
+     "accession": "G70548CP",
      "relative_dp": "+0",
      "match": "9"
    },
    {
-     "accession": "G70548CP",
+     "accession": "G75445NA",
      "relative_dp": "+0",
      "match": "9"
    }

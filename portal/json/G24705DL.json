@@ -940,53 +940,13 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G50554LM",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
      "accession": "G17441MI",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G98366ZJ",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G60419KX",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G48069JX",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G96963QG",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G48488XT",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G73759SD",
+     "accession": "G24705DL",
      "relative_dp": "+0",
-     "match": "13"
-   },
-   {
-     "accession": "G80537QW",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G42600SB",
-     "relative_dp": "+1",
      "match": "13"
    },
    {
@@ -1000,17 +960,57 @@
      "match": "13"
    },
    {
+     "accession": "G42600SB",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G48069JX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G48488XT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G49235GA",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G50554LM",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G60419KX",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
      "accession": "G63919RG",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G24705DL",
+     "accession": "G73759SD",
      "relative_dp": "+0",
      "match": "13"
    },
    {
-     "accession": "G49235GA",
+     "accession": "G80537QW",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G96963QG",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G98366ZJ",
      "relative_dp": "+1",
      "match": "13"
    }

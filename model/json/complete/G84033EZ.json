@@ -518,14 +518,14 @@
      "match": "8"
    },
    {
-     "accession": "G97686QU",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G84033EZ",
      "relative_dp": "+0",
      "match": "9"
+   },
+   {
+     "accession": "G97686QU",
+     "relative_dp": "-1",
+     "match": "8"
    }
   ]
 }

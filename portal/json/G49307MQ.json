@@ -716,7 +716,7 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G78276SQ",
+     "accession": "G37260FV",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -731,12 +731,12 @@
      "match": "13"
    },
    {
-     "accession": "G91518OM",
+     "accession": "G78276SQ",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G37260FV",
+     "accession": "G91518OM",
      "relative_dp": "-1",
      "match": "12"
    }

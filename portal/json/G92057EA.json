@@ -1013,7 +1013,7 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G96503EZ",
+     "accession": "G44361OH",
      "relative_dp": "+0",
      "match": "14"
    },
@@ -1023,7 +1023,7 @@
      "match": "14"
    },
    {
-     "accession": "G44361OH",
+     "accession": "G96503EZ",
      "relative_dp": "+0",
      "match": "14"
    }

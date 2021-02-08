@@ -593,6 +593,11 @@
   "dp":  "14",
   "related_glycans": [ 
    {
+     "accession": "G13006TG",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G26474XX",
      "relative_dp": "+0",
      "match": "14"
@@ -606,11 +611,6 @@
      "accession": "G85900AY",
      "relative_dp": "+0",
      "match": "14"
-   },
-   {
-     "accession": "G13006TG",
-     "relative_dp": "-1",
-     "match": "13"
    }
   ]
 }

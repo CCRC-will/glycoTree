@@ -1081,14 +1081,14 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G42022OY",
-     "relative_dp": "+0",
-     "match": "18"
-   },
-   {
      "accession": "G38267IW",
      "relative_dp": "-1",
      "match": "17"
+   },
+   {
+     "accession": "G42022OY",
+     "relative_dp": "+0",
+     "match": "18"
    },
    {
      "accession": "G71063DT",

@@ -676,6 +676,11 @@
      "match": "12"
    },
    {
+     "accession": "G22388FD",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G44598QA",
      "relative_dp": "-1",
      "match": "11"
@@ -684,11 +689,6 @@
      "accession": "G74286KY",
      "relative_dp": "+0",
      "match": "12"
-   },
-   {
-     "accession": "G22388FD",
-     "relative_dp": "-1",
-     "match": "11"
    }
   ]
 }

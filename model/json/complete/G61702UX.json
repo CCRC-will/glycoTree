@@ -564,6 +564,16 @@
      "match": "11"
    },
    {
+     "accession": "G56202TA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G60230HH",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G61702UX",
      "relative_dp": "+0",
      "match": "12"
@@ -574,17 +584,7 @@
      "match": "11"
    },
    {
-     "accession": "G60230HH",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G96024GG",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G56202TA",
      "relative_dp": "-1",
      "match": "11"
    }

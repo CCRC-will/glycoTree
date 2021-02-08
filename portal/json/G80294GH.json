@@ -856,37 +856,27 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G86357DX",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G83737UD",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G46432HW",
+     "accession": "G03207XQ",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G99808VS",
+     "accession": "G11929SN",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G37938RD",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G55653LB",
-     "relative_dp": "+0",
+     "accession": "G39595CR",
+     "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G76945TE",
-     "relative_dp": "+0",
-     "match": "13"
-   },
-   {
-     "accession": "G72690KN",
+     "accession": "G46432HW",
      "relative_dp": "+1",
      "match": "13"
    },
@@ -896,22 +886,22 @@
      "match": "12"
    },
    {
-     "accession": "G87921DA",
-     "relative_dp": "-1",
-     "match": "12"
+     "accession": "G55653LB",
+     "relative_dp": "+0",
+     "match": "13"
    },
    {
-     "accession": "G11929SN",
+     "accession": "G72690KN",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G03207XQ",
-     "relative_dp": "+1",
+     "accession": "G76945TE",
+     "relative_dp": "+0",
      "match": "13"
    },
    {
-     "accession": "G37938RD",
+     "accession": "G77915NM",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -926,12 +916,22 @@
      "match": "12"
    },
    {
-     "accession": "G39595CR",
-     "relative_dp": "+1",
-     "match": "13"
+     "accession": "G83737UD",
+     "relative_dp": "-1",
+     "match": "12"
    },
    {
-     "accession": "G77915NM",
+     "accession": "G86357DX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G87921DA",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G99808VS",
      "relative_dp": "-1",
      "match": "12"
    }

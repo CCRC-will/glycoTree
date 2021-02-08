@@ -50,18 +50,13 @@
   "dp":  "1",
   "related_glycans": [ 
    {
-     "accession": "",
-     "relative_dp": "-1",
-     "match": "0"
+     "accession": "G05026ZL",
+     "relative_dp": "+1",
+     "match": "1"
    },
    {
      "accession": "G68544GH",
      "relative_dp": "+0",
-     "match": "1"
-   },
-   {
-     "accession": "G05026ZL",
-     "relative_dp": "+1",
      "match": "1"
    }
   ]

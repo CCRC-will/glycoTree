@@ -1288,12 +1288,7 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G84680HD",
-     "relative_dp": "-1",
-     "match": "16"
-   },
-   {
-     "accession": "G99067GT",
+     "accession": "G10240SH",
      "relative_dp": "-1",
      "match": "16"
    },
@@ -1303,7 +1298,12 @@
      "match": "17"
    },
    {
-     "accession": "G10240SH",
+     "accession": "G84680HD",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
+     "accession": "G99067GT",
      "relative_dp": "-1",
      "match": "16"
    }

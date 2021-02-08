@@ -3,12 +3,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G84504LI",
+     "accession": "G58808TX",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G58808TX",
+     "accession": "G84504LI",
      "relative_dp": "+0",
      "match": "15"
    },

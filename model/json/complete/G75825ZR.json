@@ -803,12 +803,12 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G75825ZR",
+     "accession": "G25328BM",
      "relative_dp": "+0",
      "match": "14"
    },
    {
-     "accession": "G25328BM",
+     "accession": "G75825ZR",
      "relative_dp": "+0",
      "match": "14"
    }

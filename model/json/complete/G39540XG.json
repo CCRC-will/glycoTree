@@ -760,11 +760,6 @@
      "match": "11"
    },
    {
-     "accession": "G84329MX",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G17172ZR",
      "relative_dp": "+0",
      "match": "12"
@@ -773,6 +768,11 @@
      "accession": "G39540XG",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G84329MX",
+     "relative_dp": "-1",
+     "match": "11"
    }
   ]
 }

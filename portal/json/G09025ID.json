@@ -525,7 +525,12 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G44962ZM",
+     "accession": "G09025ID",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G30514JJ",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -535,14 +540,9 @@
      "match": "9"
    },
    {
-     "accession": "G30514JJ",
+     "accession": "G44962ZM",
      "relative_dp": "-1",
      "match": "9"
-   },
-   {
-     "accession": "G09025ID",
-     "relative_dp": "+0",
-     "match": "10"
    },
    {
      "accession": "G69960SA",

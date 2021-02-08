@@ -1036,13 +1036,8 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G99403QU",
+     "accession": "G55645TD",
      "relative_dp": "+0",
-     "match": "17"
-   },
-   {
-     "accession": "G72952WX",
-     "relative_dp": "+1",
      "match": "17"
    },
    {
@@ -1051,7 +1046,12 @@
      "match": "17"
    },
    {
-     "accession": "G55645TD",
+     "accession": "G72952WX",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G99403QU",
      "relative_dp": "+0",
      "match": "17"
    }

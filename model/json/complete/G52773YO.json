@@ -1030,14 +1030,14 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G52773YO",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G18581LO",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G52773YO",
+     "relative_dp": "+0",
+     "match": "15"
    }
   ]
 }

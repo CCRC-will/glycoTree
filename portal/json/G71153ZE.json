@@ -458,12 +458,12 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G71153ZE",
+     "accession": "G67628PC",
      "relative_dp": "+0",
      "match": "11"
    },
    {
-     "accession": "G67628PC",
+     "accession": "G71153ZE",
      "relative_dp": "+0",
      "match": "11"
    }

@@ -974,7 +974,7 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G88749TS",
+     "accession": "G36306KM",
      "relative_dp": "+0",
      "match": "15"
    },
@@ -984,7 +984,7 @@
      "match": "15"
    },
    {
-     "accession": "G36306KM",
+     "accession": "G88749TS",
      "relative_dp": "+0",
      "match": "15"
    }

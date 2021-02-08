@@ -1103,14 +1103,14 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G66992XO",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
      "accession": "G01521YU",
      "relative_dp": "-1",
      "match": "15"
+   },
+   {
+     "accession": "G21498SM",
+     "relative_dp": "+0",
+     "match": "16"
    },
    {
      "accession": "G51956RJ",
@@ -1123,8 +1123,8 @@
      "match": "15"
    },
    {
-     "accession": "G21498SM",
-     "relative_dp": "+0",
+     "accession": "G66992XO",
+     "relative_dp": "+1",
      "match": "16"
    }
   ]

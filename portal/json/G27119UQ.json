@@ -1091,14 +1091,14 @@
      "match": "15"
    },
    {
-     "accession": "G54584ER",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G27119UQ",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G54584ER",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

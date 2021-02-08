@@ -769,7 +769,7 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G53752QB",
+     "accession": "G18859UG",
      "relative_dp": "+0",
      "match": "12"
    },
@@ -779,7 +779,7 @@
      "match": "12"
    },
    {
-     "accession": "G18859UG",
+     "accession": "G53752QB",
      "relative_dp": "+0",
      "match": "12"
    }

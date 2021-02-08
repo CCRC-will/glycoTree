@@ -8,12 +8,7 @@
      "match": "14"
    },
    {
-     "accession": "G28459KM",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
-     "accession": "G83106XM",
+     "accession": "G08882LF",
      "relative_dp": "+0",
      "match": "15"
    },
@@ -23,12 +18,17 @@
      "match": "14"
    },
    {
+     "accession": "G28459KM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
      "accession": "G39018CC",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G08882LF",
+     "accession": "G83106XM",
      "relative_dp": "+0",
      "match": "15"
    }

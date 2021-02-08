@@ -13,17 +13,7 @@
      "match": "14"
    },
    {
-     "accession": "G47280HM",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G23722TU",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
-     "accession": "G83926PC",
      "relative_dp": "+0",
      "match": "15"
    },
@@ -31,6 +21,16 @@
      "accession": "G32364DF",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G47280HM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G83926PC",
+     "relative_dp": "+0",
+     "match": "15"
    }
   ]
 }

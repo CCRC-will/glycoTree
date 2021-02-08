@@ -1490,12 +1490,12 @@
   "dp":  "19",
   "related_glycans": [ 
    {
-     "accession": "G96719MC",
+     "accession": "G16403CC",
      "relative_dp": "+0",
      "match": "19"
    },
    {
-     "accession": "G16403CC",
+     "accession": "G96719MC",
      "relative_dp": "+0",
      "match": "19"
    },

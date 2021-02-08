@@ -839,6 +839,11 @@
   "dp":  "12",
   "related_glycans": [ 
    {
+     "accession": "G24705DL",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
      "accession": "G39027MU",
      "relative_dp": "-1",
      "match": "11"
@@ -850,11 +855,6 @@
    },
    {
      "accession": "G73759SD",
-     "relative_dp": "+1",
-     "match": "12"
-   },
-   {
-     "accession": "G24705DL",
      "relative_dp": "+1",
      "match": "12"
    }

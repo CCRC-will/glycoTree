@@ -811,14 +811,14 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G81328FA",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G23511JD",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G81328FA",
+     "relative_dp": "-1",
+     "match": "11"
    },
    {
      "accession": "G90672BM",

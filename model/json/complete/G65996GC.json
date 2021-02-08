@@ -182,9 +182,9 @@
   "dp":  "3",
   "related_glycans": [ 
    {
-     "accession": "G65996GC",
-     "relative_dp": "+0",
-     "match": "3"
+     "accession": "G05026ZL",
+     "relative_dp": "-1",
+     "match": "2"
    },
    {
      "accession": "G53394BX",
@@ -192,9 +192,9 @@
      "match": "3"
    },
    {
-     "accession": "G05026ZL",
-     "relative_dp": "-1",
-     "match": "2"
+     "accession": "G65996GC",
+     "relative_dp": "+0",
+     "match": "3"
    }
   ]
 }

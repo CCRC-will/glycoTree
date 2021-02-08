@@ -755,14 +755,14 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G97682ZN",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
      "accession": "G59915YZ",
      "relative_dp": "-1",
      "match": "11"
+   },
+   {
+     "accession": "G97682ZN",
+     "relative_dp": "+0",
+     "match": "12"
    }
   ]
 }

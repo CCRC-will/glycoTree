@@ -1333,9 +1333,9 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G77812KJ",
-     "relative_dp": "-1",
-     "match": "17"
+     "accession": "G13210XL",
+     "relative_dp": "+0",
+     "match": "18"
    },
    {
      "accession": "G20877ZV",
@@ -1343,12 +1343,12 @@
      "match": "18"
    },
    {
-     "accession": "G13210XL",
-     "relative_dp": "+0",
-     "match": "18"
+     "accession": "G48040FY",
+     "relative_dp": "-1",
+     "match": "17"
    },
    {
-     "accession": "G48040FY",
+     "accession": "G77812KJ",
      "relative_dp": "-1",
      "match": "17"
    }

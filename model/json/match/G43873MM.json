@@ -3,9 +3,9 @@
   "dp":  "37",
   "related_glycans": [ 
    {
-     "accession": "G76705YY",
-     "relative_dp": "+0",
-     "match": "37"
+     "accession": "G02786XX",
+     "relative_dp": "-1",
+     "match": "36"
    },
    {
      "accession": "G43873MM",
@@ -13,12 +13,12 @@
      "match": "37"
    },
    {
-     "accession": "G81096RM",
-     "relative_dp": "-1",
-     "match": "36"
+     "accession": "G76705YY",
+     "relative_dp": "+0",
+     "match": "37"
    },
    {
-     "accession": "G02786XX",
+     "accession": "G81096RM",
      "relative_dp": "-1",
      "match": "36"
    }

@@ -677,12 +677,12 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G94809SW",
+     "accession": "G62326NX",
      "relative_dp": "+0",
      "match": "14"
    },
    {
-     "accession": "G62326NX",
+     "accession": "G94809SW",
      "relative_dp": "+0",
      "match": "14"
    }

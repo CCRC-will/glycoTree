@@ -946,13 +946,8 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G79088GV",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
-     "accession": "G87504BP",
-     "relative_dp": "+1",
+     "accession": "G29897FU",
+     "relative_dp": "+0",
      "match": "15"
    },
    {
@@ -961,8 +956,13 @@
      "match": "14"
    },
    {
-     "accession": "G29897FU",
-     "relative_dp": "+0",
+     "accession": "G79088GV",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G87504BP",
+     "relative_dp": "+1",
      "match": "15"
    }
   ]

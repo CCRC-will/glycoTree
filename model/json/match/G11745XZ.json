@@ -8,11 +8,6 @@
      "match": "12"
    },
    {
-     "accession": "G90099GV",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G60736DD",
      "relative_dp": "-1",
      "match": "11"
@@ -24,6 +19,11 @@
    },
    {
      "accession": "G84467IZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G90099GV",
      "relative_dp": "-1",
      "match": "11"
    }

@@ -598,9 +598,9 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G43694RQ",
-     "relative_dp": "-1",
-     "match": "10"
+     "accession": "G16464LC",
+     "relative_dp": "+0",
+     "match": "11"
    },
    {
      "accession": "G28959FS",
@@ -608,14 +608,14 @@
      "match": "10"
    },
    {
-     "accession": "G71782CJ",
+     "accession": "G43694RQ",
      "relative_dp": "-1",
      "match": "10"
    },
    {
-     "accession": "G16464LC",
-     "relative_dp": "+0",
-     "match": "11"
+     "accession": "G71782CJ",
+     "relative_dp": "-1",
+     "match": "10"
    }
   ]
 }

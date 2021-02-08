@@ -541,17 +541,17 @@
      "match": "9"
    },
    {
-     "accession": "G95989NQ",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
      "accession": "G62349ZP",
      "relative_dp": "+0",
      "match": "9"
    },
    {
      "accession": "G67223RN",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G95989NQ",
      "relative_dp": "+1",
      "match": "9"
    }

@@ -8,9 +8,9 @@
      "match": "12"
    },
    {
-     "accession": "G95233RZ",
-     "relative_dp": "+1",
-     "match": "12"
+     "accession": "G10897DJ",
+     "relative_dp": "-1",
+     "match": "11"
    },
    {
      "accession": "G85319UV",
@@ -18,9 +18,9 @@
      "match": "11"
    },
    {
-     "accession": "G10897DJ",
-     "relative_dp": "-1",
-     "match": "11"
+     "accession": "G95233RZ",
+     "relative_dp": "+1",
+     "match": "12"
    }
   ]
 }

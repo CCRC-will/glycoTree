@@ -995,7 +995,7 @@
      "match": "13"
    },
    {
-     "accession": "G82050MN",
+     "accession": "G66313YW",
      "relative_dp": "-1",
      "match": "13"
    },
@@ -1005,17 +1005,17 @@
      "match": "13"
    },
    {
-     "accession": "G77646FX",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G71923IX",
      "relative_dp": "+0",
      "match": "14"
    },
    {
-     "accession": "G66313YW",
+     "accession": "G77646FX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G82050MN",
      "relative_dp": "-1",
      "match": "13"
    }

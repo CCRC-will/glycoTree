@@ -828,8 +828,13 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G92241FG",
+     "accession": "G40079RD",
      "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G53031JB",
+     "relative_dp": "+0",
      "match": "13"
    },
    {
@@ -848,13 +853,8 @@
      "match": "13"
    },
    {
-     "accession": "G40079RD",
+     "accession": "G92241FG",
      "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G53031JB",
-     "relative_dp": "+0",
      "match": "13"
    }
   ]

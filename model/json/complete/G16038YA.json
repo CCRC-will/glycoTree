@@ -637,6 +637,11 @@
   "dp":  "10",
   "related_glycans": [ 
    {
+     "accession": "G16038YA",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
      "accession": "G27048LG",
      "relative_dp": "-1",
      "match": "9"
@@ -645,11 +650,6 @@
      "accession": "G33742YO",
      "relative_dp": "-1",
      "match": "9"
-   },
-   {
-     "accession": "G16038YA",
-     "relative_dp": "+0",
-     "match": "10"
    }
   ]
 }

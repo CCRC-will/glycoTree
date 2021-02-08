@@ -952,23 +952,23 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G67362UI",
-     "relative_dp": "+1",
-     "match": "17"
-   },
-   {
-     "accession": "G83541HL",
-     "relative_dp": "+1",
-     "match": "17"
-   },
-   {
      "accession": "G57774MT",
      "relative_dp": "+0",
      "match": "17"
    },
    {
+     "accession": "G67362UI",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
      "accession": "G74074HU",
      "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G83541HL",
+     "relative_dp": "+1",
      "match": "17"
    }
   ]

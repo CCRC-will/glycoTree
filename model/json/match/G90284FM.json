@@ -8,21 +8,6 @@
      "match": "16"
    },
    {
-     "accession": "G90284FM",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
-     "accession": "G95404EQ",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G40606GB",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
      "accession": "G28957FB",
      "relative_dp": "-1",
      "match": "15"
@@ -33,9 +18,24 @@
      "match": "15"
    },
    {
+     "accession": "G40606GB",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G83588YY",
      "relative_dp": "-1",
      "match": "15"
+   },
+   {
+     "accession": "G90284FM",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G95404EQ",
+     "relative_dp": "+1",
+     "match": "16"
    }
   ]
 }

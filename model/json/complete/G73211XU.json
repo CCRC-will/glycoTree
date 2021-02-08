@@ -1119,14 +1119,14 @@
      "match": "15"
    },
    {
-     "accession": "G73211XU",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G43660IT",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G73211XU",
+     "relative_dp": "+0",
+     "match": "15"
    },
    {
      "accession": "G95919TI",

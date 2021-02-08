@@ -541,22 +541,22 @@
      "match": "9"
    },
    {
-     "accession": "G43325ZI",
-     "relative_dp": "+0",
-     "match": "9"
-   },
-   {
-     "accession": "G89036WC",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G16614GV",
      "relative_dp": "+1",
      "match": "9"
    },
    {
      "accession": "G41847IM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G43325ZI",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G89036WC",
      "relative_dp": "-1",
      "match": "8"
    }

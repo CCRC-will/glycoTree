@@ -452,9 +452,9 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G48369JO",
-     "relative_dp": "+1",
-     "match": "9"
+     "accession": "G03321AC",
+     "relative_dp": "-1",
+     "match": "8"
    },
    {
      "accession": "G04414GO",
@@ -462,22 +462,17 @@
      "match": "9"
    },
    {
-     "accession": "G39318IJ",
-     "relative_dp": "-1",
-     "match": "8"
+     "accession": "G04816EV",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G08060JF",
+     "relative_dp": "+1",
+     "match": "9"
    },
    {
      "accession": "G13049QY",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G44743IQ",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G95732UV",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -487,22 +482,7 @@
      "match": "9"
    },
    {
-     "accession": "G86385RC",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
-     "accession": "G03321AC",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G08060JF",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
-     "accession": "G81980VO",
+     "accession": "G39318IJ",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -512,13 +492,13 @@
      "match": "9"
    },
    {
-     "accession": "G55786MG",
-     "relative_dp": "+1",
-     "match": "9"
+     "accession": "G44743IQ",
+     "relative_dp": "-1",
+     "match": "8"
    },
    {
-     "accession": "G04816EV",
-     "relative_dp": "+0",
+     "accession": "G48369JO",
+     "relative_dp": "+1",
      "match": "9"
    },
    {
@@ -527,9 +507,29 @@
      "match": "9"
    },
    {
+     "accession": "G55786MG",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
      "accession": "G60646UB",
      "relative_dp": "+1",
      "match": "9"
+   },
+   {
+     "accession": "G81980VO",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G86385RC",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G95732UV",
+     "relative_dp": "-1",
+     "match": "8"
    }
   ]
 }

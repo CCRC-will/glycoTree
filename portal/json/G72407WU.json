@@ -912,12 +912,17 @@
   "dp":  "13",
   "related_glycans": [ 
    {
+     "accession": "G54300AX",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
      "accession": "G64693IG",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G54300AX",
+     "accession": "G70947EQ",
      "relative_dp": "+1",
      "match": "13"
    },
@@ -927,17 +932,12 @@
      "match": "13"
    },
    {
-     "accession": "G74369SL",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
      "accession": "G72919IM",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G70947EQ",
+     "accession": "G74369SL",
      "relative_dp": "+1",
      "match": "13"
    }

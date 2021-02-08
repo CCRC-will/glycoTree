@@ -3,14 +3,14 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G30060ZO",
-     "relative_dp": "-1",
-     "match": "17"
-   },
-   {
      "accession": "G01001RL",
      "relative_dp": "+0",
      "match": "18"
+   },
+   {
+     "accession": "G30060ZO",
+     "relative_dp": "-1",
+     "match": "17"
    }
   ]
 }

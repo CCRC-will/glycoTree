@@ -805,6 +805,11 @@
      "match": "12"
    },
    {
+     "accession": "G60765GV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G65307KA",
      "relative_dp": "-1",
      "match": "12"
@@ -813,11 +818,6 @@
      "accession": "G66471SN",
      "relative_dp": "+0",
      "match": "13"
-   },
-   {
-     "accession": "G60765GV",
-     "relative_dp": "-1",
-     "match": "12"
    }
   ]
 }

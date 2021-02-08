@@ -3,7 +3,7 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G61842MB",
+     "accession": "G18814PP",
      "relative_dp": "-1",
      "match": "16"
    },
@@ -13,7 +13,7 @@
      "match": "17"
    },
    {
-     "accession": "G18814PP",
+     "accession": "G61842MB",
      "relative_dp": "-1",
      "match": "16"
    }

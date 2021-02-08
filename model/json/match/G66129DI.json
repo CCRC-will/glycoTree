@@ -13,7 +13,12 @@
      "match": "10"
    },
    {
-     "accession": "G74248TD",
+     "accession": "G31993QW",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G46308WD",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -23,17 +28,12 @@
      "match": "11"
    },
    {
-     "accession": "G46308WD",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
      "accession": "G66129DI",
      "relative_dp": "+0",
      "match": "11"
    },
    {
-     "accession": "G31993QW",
+     "accession": "G74248TD",
      "relative_dp": "-1",
      "match": "10"
    }

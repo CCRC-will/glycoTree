@@ -3,13 +3,13 @@
   "dp":  "21",
   "related_glycans": [ 
    {
-     "accession": "G49446SO",
+     "accession": "G44137YR",
      "relative_dp": "+0",
      "match": "21"
    },
    {
-     "accession": "G64894MA",
-     "relative_dp": "+1",
+     "accession": "G49446SO",
+     "relative_dp": "+0",
      "match": "21"
    },
    {
@@ -18,8 +18,8 @@
      "match": "21"
    },
    {
-     "accession": "G44137YR",
-     "relative_dp": "+0",
+     "accession": "G64894MA",
+     "relative_dp": "+1",
      "match": "21"
    },
    {

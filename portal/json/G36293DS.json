@@ -715,6 +715,11 @@
      "match": "11"
    },
    {
+     "accession": "G36293DS",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
      "accession": "G43657WC",
      "relative_dp": "-1",
      "match": "10"
@@ -723,11 +728,6 @@
      "accession": "G47273WV",
      "relative_dp": "-1",
      "match": "10"
-   },
-   {
-     "accession": "G36293DS",
-     "relative_dp": "+0",
-     "match": "11"
    }
   ]
 }

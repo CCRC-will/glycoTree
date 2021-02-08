@@ -862,17 +862,17 @@
   "dp":  "15",
   "related_glycans": [ 
    {
+     "accession": "G64789SR",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G66765ZA",
      "relative_dp": "-1",
      "match": "14"
    },
    {
      "accession": "G83425EJ",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
-     "accession": "G64789SR",
      "relative_dp": "+0",
      "match": "15"
    },

@@ -441,12 +441,7 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G93299MA",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G80945SX",
+     "accession": "G55143WF",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -461,9 +456,14 @@
      "match": "10"
    },
    {
-     "accession": "G55143WF",
+     "accession": "G80945SX",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G93299MA",
+     "relative_dp": "+1",
+     "match": "10"
    }
   ]
 }

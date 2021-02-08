@@ -430,11 +430,6 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G70736PI",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
      "accession": "G68140PE",
      "relative_dp": "+1",
      "match": "11"
@@ -442,6 +437,11 @@
    {
      "accession": "G69390GI",
      "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G70736PI",
+     "relative_dp": "+0",
      "match": "11"
    },
    {

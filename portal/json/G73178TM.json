@@ -654,13 +654,13 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G73178TM",
-     "relative_dp": "+0",
+     "accession": "G71828FH",
+     "relative_dp": "+1",
      "match": "11"
    },
    {
-     "accession": "G71828FH",
-     "relative_dp": "+1",
+     "accession": "G73178TM",
+     "relative_dp": "+0",
      "match": "11"
    }
   ]

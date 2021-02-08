@@ -1002,22 +1002,22 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G15730FJ",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
-     "accession": "G29764SO",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G02470WS",
      "relative_dp": "+0",
      "match": "15"
    },
    {
      "accession": "G14428PM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G15730FJ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G29764SO",
      "relative_dp": "-1",
      "match": "14"
    }

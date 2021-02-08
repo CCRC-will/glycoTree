@@ -1086,6 +1086,11 @@
      "match": "18"
    },
    {
+     "accession": "G51768ZH",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G80298HR",
      "relative_dp": "-1",
      "match": "17"
@@ -1094,11 +1099,6 @@
      "accession": "G94679TQ",
      "relative_dp": "+0",
      "match": "18"
-   },
-   {
-     "accession": "G51768ZH",
-     "relative_dp": "-1",
-     "match": "17"
    }
   ]
 }

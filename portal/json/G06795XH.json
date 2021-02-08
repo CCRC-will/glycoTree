@@ -724,12 +724,22 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G71662HP",
+     "accession": "G03445UI",
      "relative_dp": "-1",
      "match": "10"
    },
    {
+     "accession": "G06795XH",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
      "accession": "G65356DX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G71662HP",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -742,16 +752,6 @@
      "accession": "G91873GT",
      "relative_dp": "-1",
      "match": "10"
-   },
-   {
-     "accession": "G03445UI",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G06795XH",
-     "relative_dp": "+0",
-     "match": "11"
    }
   ]
 }

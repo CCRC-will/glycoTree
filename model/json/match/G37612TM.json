@@ -3,14 +3,14 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G95677OZ",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
      "accession": "G37612TM",
      "relative_dp": "+0",
      "match": "13"
+   },
+   {
+     "accession": "G95677OZ",
+     "relative_dp": "-1",
+     "match": "12"
    }
   ]
 }

@@ -856,8 +856,8 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G79183WP",
-     "relative_dp": "+0",
+     "accession": "G23458QH",
+     "relative_dp": "+1",
      "match": "13"
    },
    {
@@ -881,8 +881,8 @@
      "match": "13"
    },
    {
-     "accession": "G23458QH",
-     "relative_dp": "+1",
+     "accession": "G79183WP",
+     "relative_dp": "+0",
      "match": "13"
    },
    {

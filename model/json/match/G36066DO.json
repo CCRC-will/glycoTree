@@ -3,9 +3,9 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G75764FQ",
-     "relative_dp": "-1",
-     "match": "12"
+     "accession": "G36066DO",
+     "relative_dp": "+0",
+     "match": "13"
    },
    {
      "accession": "G42415XD",
@@ -13,17 +13,17 @@
      "match": "12"
    },
    {
-     "accession": "G91511MZ",
+     "accession": "G65307KA",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G36066DO",
-     "relative_dp": "+0",
-     "match": "13"
+     "accession": "G75764FQ",
+     "relative_dp": "-1",
+     "match": "12"
    },
    {
-     "accession": "G65307KA",
+     "accession": "G91511MZ",
      "relative_dp": "-1",
      "match": "12"
    }

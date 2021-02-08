@@ -1490,14 +1490,14 @@
   "dp":  "19",
   "related_glycans": [ 
    {
-     "accession": "G38241TC",
-     "relative_dp": "-1",
-     "match": "18"
-   },
-   {
      "accession": "G31040SL",
      "relative_dp": "+0",
      "match": "19"
+   },
+   {
+     "accession": "G38241TC",
+     "relative_dp": "-1",
+     "match": "18"
    }
   ]
 }

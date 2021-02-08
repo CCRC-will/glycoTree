@@ -1068,17 +1068,17 @@
      "match": "14"
    },
    {
+     "accession": "G41656NL",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G46298TE",
      "relative_dp": "-1",
      "match": "14"
    },
    {
      "accession": "G70081SZ",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
-     "accession": "G41656NL",
      "relative_dp": "+0",
      "match": "15"
    }

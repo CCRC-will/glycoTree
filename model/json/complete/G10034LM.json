@@ -1265,12 +1265,12 @@
      "match": "17"
    },
    {
-     "accession": "G92681HQ",
-     "relative_dp": "-1",
-     "match": "16"
+     "accession": "G31004HS",
+     "relative_dp": "+1",
+     "match": "17"
    },
    {
-     "accession": "G90284FM",
+     "accession": "G32829EU",
      "relative_dp": "-1",
      "match": "16"
    },
@@ -1280,12 +1280,12 @@
      "match": "17"
    },
    {
-     "accession": "G31004HS",
-     "relative_dp": "+1",
-     "match": "17"
+     "accession": "G90284FM",
+     "relative_dp": "-1",
+     "match": "16"
    },
    {
-     "accession": "G32829EU",
+     "accession": "G92681HQ",
      "relative_dp": "-1",
      "match": "16"
    },

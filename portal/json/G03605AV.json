@@ -1165,12 +1165,12 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G10425AY",
+     "accession": "G03605AV",
      "relative_dp": "+0",
      "match": "18"
    },
    {
-     "accession": "G03605AV",
+     "accession": "G10425AY",
      "relative_dp": "+0",
      "match": "18"
    }

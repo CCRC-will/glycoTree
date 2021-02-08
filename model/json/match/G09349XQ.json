@@ -3,7 +3,7 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G34819LS",
+     "accession": "G07703ST",
      "relative_dp": "+1",
      "match": "17"
    },
@@ -13,13 +13,13 @@
      "match": "17"
    },
    {
-     "accession": "G79099UV",
-     "relative_dp": "+0",
+     "accession": "G34819LS",
+     "relative_dp": "+1",
      "match": "17"
    },
    {
-     "accession": "G07703ST",
-     "relative_dp": "+1",
+     "accession": "G79099UV",
+     "relative_dp": "+0",
      "match": "17"
    }
   ]

@@ -3,7 +3,7 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G60103QI",
+     "accession": "G05979RR",
      "relative_dp": "+1",
      "match": "11"
    },
@@ -28,13 +28,13 @@
      "match": "10"
    },
    {
-     "accession": "G60604SE",
-     "relative_dp": "+0",
+     "accession": "G60103QI",
+     "relative_dp": "+1",
      "match": "11"
    },
    {
-     "accession": "G05979RR",
-     "relative_dp": "+1",
+     "accession": "G60604SE",
+     "relative_dp": "+0",
      "match": "11"
    }
   ]

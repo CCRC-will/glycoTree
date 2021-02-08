@@ -903,9 +903,9 @@
      "match": "13"
    },
    {
-     "accession": "G94806YM",
-     "relative_dp": "+1",
-     "match": "13"
+     "accession": "G84368MT",
+     "relative_dp": "-1",
+     "match": "12"
    },
    {
      "accession": "G86475BX",
@@ -913,9 +913,9 @@
      "match": "13"
    },
    {
-     "accession": "G84368MT",
-     "relative_dp": "-1",
-     "match": "12"
+     "accession": "G94806YM",
+     "relative_dp": "+1",
+     "match": "13"
    }
   ]
 }

@@ -3,12 +3,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G53667CH",
+     "accession": "G44364RM",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G44364RM",
+     "accession": "G53667CH",
      "relative_dp": "+0",
      "match": "15"
    }

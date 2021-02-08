@@ -811,14 +811,14 @@
      "match": "14"
    },
    {
-     "accession": "G86294MW",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G77608VQ",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G86294MW",
+     "relative_dp": "+0",
+     "match": "15"
    }
   ]
 }

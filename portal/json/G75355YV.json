@@ -530,6 +530,11 @@
      "match": "9"
    },
    {
+     "accession": "G61553DD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G62880PC",
      "relative_dp": "-1",
      "match": "9"
@@ -540,17 +545,12 @@
      "match": "10"
    },
    {
-     "accession": "G93500PH",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
      "accession": "G76583MP",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G61553DD",
+     "accession": "G93500PH",
      "relative_dp": "-1",
      "match": "9"
    }

@@ -778,12 +778,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G93839ET",
+     "accession": "G15859AU",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G15859AU",
+     "accession": "G93839ET",
      "relative_dp": "+0",
      "match": "15"
    }

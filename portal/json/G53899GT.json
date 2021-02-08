@@ -379,7 +379,7 @@
   "dp":  "8",
   "related_glycans": [ 
    {
-     "accession": "G88235TO",
+     "accession": "G23799GS",
      "relative_dp": "-1",
      "match": "7"
    },
@@ -389,12 +389,12 @@
      "match": "8"
    },
    {
-     "accession": "G23799GS",
+     "accession": "G58824LL",
      "relative_dp": "-1",
      "match": "7"
    },
    {
-     "accession": "G58824LL",
+     "accession": "G88235TO",
      "relative_dp": "-1",
      "match": "7"
    }

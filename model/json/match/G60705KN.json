@@ -13,7 +13,12 @@
      "match": "12"
    },
    {
-     "accession": "G97765TT",
+     "accession": "G60705KN",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G79018NX",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -23,12 +28,7 @@
      "match": "13"
    },
    {
-     "accession": "G60705KN",
-     "relative_dp": "+0",
-     "match": "13"
-   },
-   {
-     "accession": "G79018NX",
+     "accession": "G97765TT",
      "relative_dp": "-1",
      "match": "12"
    }

@@ -8,7 +8,12 @@
      "match": "15"
    },
    {
-     "accession": "G93447XI",
+     "accession": "G14488UY",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G31494OZ",
      "relative_dp": "-1",
      "match": "15"
    },
@@ -18,7 +23,7 @@
      "match": "16"
    },
    {
-     "accession": "G14488UY",
+     "accession": "G93447XI",
      "relative_dp": "-1",
      "match": "15"
    },
@@ -26,11 +31,6 @@
      "accession": "G95512GZ",
      "relative_dp": "+1",
      "match": "16"
-   },
-   {
-     "accession": "G31494OZ",
-     "relative_dp": "-1",
-     "match": "15"
    }
   ]
 }

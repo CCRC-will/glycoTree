@@ -935,12 +935,12 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G86912FM",
+     "accession": "G03473UD",
      "relative_dp": "+0",
      "match": "16"
    },
    {
-     "accession": "G03473UD",
+     "accession": "G86912FM",
      "relative_dp": "+0",
      "match": "16"
    }

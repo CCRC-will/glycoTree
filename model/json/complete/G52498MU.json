@@ -569,7 +569,12 @@
      "match": "12"
    },
    {
-     "accession": "G92042VQ",
+     "accession": "G52498MU",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G56202TA",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -579,12 +584,7 @@
      "match": "11"
    },
    {
-     "accession": "G52498MU",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G56202TA",
+     "accession": "G92042VQ",
      "relative_dp": "-1",
      "match": "11"
    }

@@ -1159,14 +1159,14 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G93933CG",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
      "accession": "G84347HP",
      "relative_dp": "-1",
      "match": "15"
+   },
+   {
+     "accession": "G93933CG",
+     "relative_dp": "+0",
+     "match": "16"
    }
   ]
 }

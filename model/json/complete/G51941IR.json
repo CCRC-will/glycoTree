@@ -1002,17 +1002,17 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G46425HN",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G45720CA",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G64048GU",
+     "accession": "G46425HN",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G48277OH",
      "relative_dp": "-1",
      "match": "14"
    },
@@ -1022,7 +1022,7 @@
      "match": "15"
    },
    {
-     "accession": "G48277OH",
+     "accession": "G64048GU",
      "relative_dp": "-1",
      "match": "14"
    }

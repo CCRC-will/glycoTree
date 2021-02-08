@@ -878,9 +878,9 @@
      "match": "13"
    },
    {
-     "accession": "G78097CL",
-     "relative_dp": "-1",
-     "match": "13"
+     "accession": "G56175MM",
+     "relative_dp": "+0",
+     "match": "14"
    },
    {
      "accession": "G74807KC",
@@ -888,9 +888,9 @@
      "match": "14"
    },
    {
-     "accession": "G56175MM",
-     "relative_dp": "+0",
-     "match": "14"
+     "accession": "G78097CL",
+     "relative_dp": "-1",
+     "match": "13"
    }
   ]
 }

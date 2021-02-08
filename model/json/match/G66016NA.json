@@ -3,7 +3,7 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G66016NA",
+     "accession": "G27992WA",
      "relative_dp": "+0",
      "match": "11"
    },
@@ -13,7 +13,7 @@
      "match": "11"
    },
    {
-     "accession": "G27992WA",
+     "accession": "G66016NA",
      "relative_dp": "+0",
      "match": "11"
    }

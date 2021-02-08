@@ -3,12 +3,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G89036WC",
+     "accession": "G13592VY",
      "relative_dp": "-1",
      "match": "8"
    },
    {
-     "accession": "G13592VY",
+     "accession": "G41847IM",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -18,7 +18,7 @@
      "match": "9"
    },
    {
-     "accession": "G41847IM",
+     "accession": "G89036WC",
      "relative_dp": "-1",
      "match": "8"
    }

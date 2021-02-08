@@ -997,6 +997,11 @@
   "dp":  "18",
   "related_glycans": [ 
    {
+     "accession": "G20711NK",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G22949KX",
      "relative_dp": "-1",
      "match": "17"
@@ -1005,11 +1010,6 @@
      "accession": "G30880RA",
      "relative_dp": "+0",
      "match": "18"
-   },
-   {
-     "accession": "G20711NK",
-     "relative_dp": "-1",
-     "match": "17"
    },
    {
      "accession": "G87124HX",

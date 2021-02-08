@@ -8,14 +8,14 @@
      "match": "11"
    },
    {
-     "accession": "G54195NF",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
      "accession": "G34175ZP",
      "relative_dp": "-1",
      "match": "10"
+   },
+   {
+     "accession": "G39353RT",
+     "relative_dp": "+1",
+     "match": "11"
    },
    {
      "accession": "G43288IJ",
@@ -23,8 +23,8 @@
      "match": "10"
    },
    {
-     "accession": "G39353RT",
-     "relative_dp": "+1",
+     "accession": "G54195NF",
+     "relative_dp": "+0",
      "match": "11"
    }
   ]

@@ -1233,17 +1233,17 @@
   "dp":  "22",
   "related_glycans": [ 
    {
-     "accession": "G93655SG",
-     "relative_dp": "+0",
-     "match": "22"
-   },
-   {
      "accession": "G64685ZC",
      "relative_dp": "+0",
      "match": "22"
    },
    {
      "accession": "G73663PS",
+     "relative_dp": "+0",
+     "match": "22"
+   },
+   {
+     "accession": "G93655SG",
      "relative_dp": "+0",
      "match": "22"
    }

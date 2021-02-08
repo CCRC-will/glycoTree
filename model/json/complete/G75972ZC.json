@@ -1036,7 +1036,7 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G82036CW",
+     "accession": "G10189EJ",
      "relative_dp": "+1",
      "match": "17"
    },
@@ -1051,7 +1051,7 @@
      "match": "17"
    },
    {
-     "accession": "G10189EJ",
+     "accession": "G82036CW",
      "relative_dp": "+1",
      "match": "17"
    }

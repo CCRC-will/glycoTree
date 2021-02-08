@@ -1709,12 +1709,12 @@
   "dp":  "22",
   "related_glycans": [ 
    {
-     "accession": "G98906WL",
+     "accession": "G14431ZQ",
      "relative_dp": "+0",
      "match": "22"
    },
    {
-     "accession": "G14431ZQ",
+     "accession": "G98906WL",
      "relative_dp": "+0",
      "match": "22"
    }

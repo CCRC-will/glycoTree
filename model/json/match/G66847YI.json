@@ -3,17 +3,17 @@
   "dp":  "21",
   "related_glycans": [ 
    {
+     "accession": "G06444RU",
+     "relative_dp": "+0",
+     "match": "21"
+   },
+   {
      "accession": "G34585DT",
      "relative_dp": "+0",
      "match": "21"
    },
    {
      "accession": "G66847YI",
-     "relative_dp": "+0",
-     "match": "21"
-   },
-   {
-     "accession": "G06444RU",
      "relative_dp": "+0",
      "match": "21"
    }

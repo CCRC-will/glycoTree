@@ -3,13 +3,13 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G82954PR",
-     "relative_dp": "+1",
+     "accession": "G71397MM",
+     "relative_dp": "+0",
      "match": "11"
    },
    {
-     "accession": "G71397MM",
-     "relative_dp": "+0",
+     "accession": "G82954PR",
+     "relative_dp": "+1",
      "match": "11"
    }
   ]

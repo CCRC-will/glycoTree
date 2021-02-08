@@ -8,17 +8,17 @@
      "match": "10"
    },
    {
+     "accession": "G78255XL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G88038QS",
      "relative_dp": "+0",
      "match": "11"
    },
    {
      "accession": "G90163GT",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G78255XL",
      "relative_dp": "-1",
      "match": "10"
    }

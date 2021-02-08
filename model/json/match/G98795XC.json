@@ -3,9 +3,9 @@
   "dp":  "8",
   "related_glycans": [ 
    {
-     "accession": "G98795XC",
-     "relative_dp": "+0",
-     "match": "8"
+     "accession": "G08551YA",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G80142NN",
@@ -13,9 +13,9 @@
      "match": "7"
    },
    {
-     "accession": "G08551YA",
-     "relative_dp": "-1",
-     "match": "7"
+     "accession": "G98795XC",
+     "relative_dp": "+0",
+     "match": "8"
    }
   ]
 }

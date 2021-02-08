@@ -1055,14 +1055,14 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G87136DV",
-     "relative_dp": "+0",
-     "match": "14"
-   },
-   {
      "accession": "G52645LW",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G87136DV",
+     "relative_dp": "+0",
+     "match": "14"
    }
   ]
 }

@@ -918,12 +918,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G67536FA",
+     "accession": "G62488UG",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G62488UG",
+     "accession": "G67536FA",
      "relative_dp": "+0",
      "match": "15"
    }

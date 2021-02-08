@@ -513,12 +513,7 @@
      "match": "9"
    },
    {
-     "accession": "G76345AA",
-     "relative_dp": "+0",
-     "match": "9"
-   },
-   {
-     "accession": "G65937EW",
+     "accession": "G12398HZ",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -528,9 +523,14 @@
      "match": "8"
    },
    {
-     "accession": "G12398HZ",
+     "accession": "G65937EW",
      "relative_dp": "-1",
      "match": "8"
+   },
+   {
+     "accession": "G76345AA",
+     "relative_dp": "+0",
+     "match": "9"
    }
   ]
 }

@@ -974,17 +974,17 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G60532CM",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G22927MQ",
      "relative_dp": "+0",
      "match": "15"
    },
    {
      "accession": "G58768FH",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G60532CM",
      "relative_dp": "+0",
      "match": "15"
    }

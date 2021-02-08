@@ -1412,7 +1412,7 @@
   "dp":  "21",
   "related_glycans": [ 
    {
-     "accession": "G90542MP",
+     "accession": "G54158IT",
      "relative_dp": "+0",
      "match": "21"
    },
@@ -1422,7 +1422,7 @@
      "match": "21"
    },
    {
-     "accession": "G54158IT",
+     "accession": "G90542MP",
      "relative_dp": "+0",
      "match": "21"
    }

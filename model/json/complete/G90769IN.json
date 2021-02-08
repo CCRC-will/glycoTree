@@ -1288,17 +1288,17 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G70830AN",
+     "accession": "G00606LX",
      "relative_dp": "+1",
      "match": "17"
    },
    {
-     "accession": "G87260SO",
+     "accession": "G41670EF",
      "relative_dp": "-1",
      "match": "16"
    },
    {
-     "accession": "G00606LX",
+     "accession": "G70830AN",
      "relative_dp": "+1",
      "match": "17"
    },
@@ -1308,7 +1308,7 @@
      "match": "16"
    },
    {
-     "accession": "G41670EF",
+     "accession": "G87260SO",
      "relative_dp": "-1",
      "match": "16"
    },

@@ -564,11 +564,6 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G63838JW",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
      "accession": "G17157SF",
      "relative_dp": "+1",
      "match": "9"
@@ -576,6 +571,11 @@
    {
      "accession": "G24657IT",
      "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G63838JW",
+     "relative_dp": "+1",
      "match": "9"
    },
    {

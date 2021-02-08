@@ -3,56 +3,6 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G74438AB",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G29377XJ",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G81923ER",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G33909XJ",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G13836YR",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G71320DE",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G37276TY",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G70881GL",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G66474IG",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G12878NK",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
      "accession": "G03165SD",
      "relative_dp": "+1",
      "match": "11"
@@ -61,6 +11,56 @@
      "accession": "G09513RD",
      "relative_dp": "+1",
      "match": "11"
+   },
+   {
+     "accession": "G12878NK",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G13836YR",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G29377XJ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G33909XJ",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G37276TY",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G66474IG",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G70881GL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G71320DE",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G74438AB",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G81923ER",
+     "relative_dp": "-1",
+     "match": "10"
    }
   ]
 }

@@ -3,14 +3,14 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G42672MA",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
      "accession": "G11278YL",
      "relative_dp": "+0",
      "match": "10"
+   },
+   {
+     "accession": "G42672MA",
+     "relative_dp": "-1",
+     "match": "9"
    },
    {
      "accession": "G93994MR",

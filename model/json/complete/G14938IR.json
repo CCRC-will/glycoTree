@@ -806,9 +806,9 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G93029JO",
-     "relative_dp": "-1",
-     "match": "14"
+     "accession": "G11075DR",
+     "relative_dp": "+0",
+     "match": "15"
    },
    {
      "accession": "G14938IR",
@@ -816,12 +816,12 @@
      "match": "15"
    },
    {
-     "accession": "G11075DR",
-     "relative_dp": "+0",
-     "match": "15"
+     "accession": "G20924UR",
+     "relative_dp": "-1",
+     "match": "14"
    },
    {
-     "accession": "G20924UR",
+     "accession": "G93029JO",
      "relative_dp": "-1",
      "match": "14"
    }

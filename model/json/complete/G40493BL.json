@@ -760,14 +760,14 @@
      "match": "11"
    },
    {
-     "accession": "G81085EP",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G40493BL",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G81085EP",
+     "relative_dp": "-1",
+     "match": "11"
    }
   ]
 }

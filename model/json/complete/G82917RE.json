@@ -564,12 +564,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G51699UE",
+     "accession": "G25612NR",
      "relative_dp": "-1",
      "match": "8"
    },
    {
-     "accession": "G25612NR",
+     "accession": "G51699UE",
      "relative_dp": "-1",
      "match": "8"
    },

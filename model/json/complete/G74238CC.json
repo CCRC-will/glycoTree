@@ -924,12 +924,12 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G74238CC",
+     "accession": "G10845BX",
      "relative_dp": "+0",
      "match": "17"
    },
    {
-     "accession": "G10845BX",
+     "accession": "G74238CC",
      "relative_dp": "+0",
      "match": "17"
    }

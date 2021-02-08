@@ -13,6 +13,11 @@
      "match": "10"
    },
    {
+     "accession": "G55065WV",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G61312PU",
      "relative_dp": "+0",
      "match": "11"
@@ -24,11 +29,6 @@
    },
    {
      "accession": "G87217OF",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G55065WV",
      "relative_dp": "-1",
      "match": "10"
    }

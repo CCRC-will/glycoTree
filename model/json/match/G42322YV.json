@@ -3,6 +3,11 @@
   "dp":  "16",
   "related_glycans": [ 
    {
+     "accession": "G06820QR",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G14782PJ",
      "relative_dp": "-1",
      "match": "15"
@@ -14,11 +19,6 @@
    },
    {
      "accession": "G82845MH",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G06820QR",
      "relative_dp": "-1",
      "match": "15"
    }

@@ -3,7 +3,7 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G89498BT",
+     "accession": "G77174TF",
      "relative_dp": "+0",
      "match": "18"
    },
@@ -13,7 +13,7 @@
      "match": "18"
    },
    {
-     "accession": "G77174TF",
+     "accession": "G89498BT",
      "relative_dp": "+0",
      "match": "18"
    }

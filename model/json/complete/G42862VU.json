@@ -1148,7 +1148,7 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G95298UR",
+     "accession": "G16778ZK",
      "relative_dp": "+0",
      "match": "17"
    },
@@ -1158,7 +1158,7 @@
      "match": "17"
    },
    {
-     "accession": "G16778ZK",
+     "accession": "G95298UR",
      "relative_dp": "+0",
      "match": "17"
    }

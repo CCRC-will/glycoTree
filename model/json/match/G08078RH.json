@@ -3,12 +3,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G43685DC",
-     "relative_dp": "-1",
-     "match": "14"
+     "accession": "G08078RH",
+     "relative_dp": "+0",
+     "match": "15"
    },
    {
-     "accession": "G85208SY",
+     "accession": "G43685DC",
      "relative_dp": "-1",
      "match": "14"
    },
@@ -18,9 +18,9 @@
      "match": "15"
    },
    {
-     "accession": "G08078RH",
-     "relative_dp": "+0",
-     "match": "15"
+     "accession": "G85208SY",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

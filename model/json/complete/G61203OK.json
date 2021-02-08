@@ -834,7 +834,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G61203OK",
+     "accession": "G02760XH",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G04423CA",
      "relative_dp": "+0",
      "match": "15"
    },
@@ -844,12 +849,7 @@
      "match": "14"
    },
    {
-     "accession": "G02760XH",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
-     "accession": "G04423CA",
+     "accession": "G61203OK",
      "relative_dp": "+0",
      "match": "15"
    }

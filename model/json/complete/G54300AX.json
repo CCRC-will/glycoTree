@@ -944,14 +944,14 @@
      "match": "14"
    },
    {
-     "accession": "G72407WU",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G70947EQ",
      "relative_dp": "+0",
      "match": "14"
+   },
+   {
+     "accession": "G72407WU",
+     "relative_dp": "-1",
+     "match": "13"
    }
   ]
 }

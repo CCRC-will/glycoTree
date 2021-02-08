@@ -1133,22 +1133,12 @@
      "match": "15"
    },
    {
-     "accession": "G72356VO",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
-     "accession": "G97674NY",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
-     "accession": "G89877QI",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G72128LZ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G72356VO",
      "relative_dp": "-1",
      "match": "14"
    },
@@ -1158,9 +1148,19 @@
      "match": "14"
    },
    {
+     "accession": "G89877QI",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
      "accession": "G93638BI",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G97674NY",
+     "relative_dp": "+0",
+     "match": "15"
    }
   ]
 }

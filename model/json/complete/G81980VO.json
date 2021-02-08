@@ -412,12 +412,27 @@
      "match": "8"
    },
    {
-     "accession": "G97292GW",
+     "accession": "G04816EV",
      "relative_dp": "+1",
      "match": "8"
    },
    {
-     "accession": "G88235TO",
+     "accession": "G08936DJ",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G20621ZX",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G23799GS",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G24599MW",
      "relative_dp": "-1",
      "match": "7"
    },
@@ -437,39 +452,24 @@
      "match": "8"
    },
    {
-     "accession": "G53401FX",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
-     "accession": "G08936DJ",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
      "accession": "G44743IQ",
      "relative_dp": "+0",
      "match": "8"
    },
    {
-     "accession": "G20621ZX",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G23799GS",
+     "accession": "G46836GH",
      "relative_dp": "-1",
      "match": "7"
    },
    {
-     "accession": "G81980VO",
-     "relative_dp": "+0",
+     "accession": "G48630BP",
+     "relative_dp": "+1",
      "match": "8"
    },
    {
-     "accession": "G68668TB",
-     "relative_dp": "+1",
-     "match": "8"
+     "accession": "G53401FX",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G58824LL",
@@ -482,24 +482,24 @@
      "match": "7"
    },
    {
-     "accession": "G24599MW",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
-     "accession": "G04816EV",
+     "accession": "G68668TB",
      "relative_dp": "+1",
      "match": "8"
    },
    {
-     "accession": "G48630BP",
-     "relative_dp": "+1",
+     "accession": "G81980VO",
+     "relative_dp": "+0",
      "match": "8"
    },
    {
-     "accession": "G46836GH",
+     "accession": "G88235TO",
      "relative_dp": "-1",
      "match": "7"
+   },
+   {
+     "accession": "G97292GW",
+     "relative_dp": "+1",
+     "match": "8"
    }
   ]
 }

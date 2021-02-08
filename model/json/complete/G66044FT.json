@@ -1058,14 +1058,14 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G66044FT",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G64936OS",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G66044FT",
+     "relative_dp": "+0",
+     "match": "15"
    },
    {
      "accession": "G96677EZ",

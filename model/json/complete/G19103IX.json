@@ -1114,14 +1114,14 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G85093QP",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G19103IX",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G85093QP",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

@@ -396,7 +396,7 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G76983CM",
+     "accession": "G15681WF",
      "relative_dp": "+1",
      "match": "9"
    },
@@ -406,13 +406,13 @@
      "match": "9"
    },
    {
-     "accession": "G82168GG",
-     "relative_dp": "+0",
+     "accession": "G76983CM",
+     "relative_dp": "+1",
      "match": "9"
    },
    {
-     "accession": "G15681WF",
-     "relative_dp": "+1",
+     "accession": "G82168GG",
+     "relative_dp": "+0",
      "match": "9"
    }
   ]

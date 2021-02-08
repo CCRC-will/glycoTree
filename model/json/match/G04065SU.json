@@ -8,14 +8,14 @@
      "match": "11"
    },
    {
-     "accession": "G54683UA",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G04065SU",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G54683UA",
+     "relative_dp": "-1",
+     "match": "11"
    }
   ]
 }

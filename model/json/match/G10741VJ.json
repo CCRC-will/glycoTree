@@ -8,28 +8,8 @@
      "match": "10"
    },
    {
-     "accession": "G94116NC",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G99257WS",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G99229VQ",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G40264QS",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G63166WT",
-     "relative_dp": "+1",
+     "accession": "G10741VJ",
+     "relative_dp": "+0",
      "match": "11"
    },
    {
@@ -38,22 +18,12 @@
      "match": "11"
    },
    {
-     "accession": "G78059CC",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G49495MH",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G90987JA",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
      "accession": "G23377WN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G24811FP",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -63,7 +33,22 @@
      "match": "11"
    },
    {
-     "accession": "G80147LG",
+     "accession": "G40264QS",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G49495MH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G63166WT",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G69461KL",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -73,17 +58,32 @@
      "match": "11"
    },
    {
-     "accession": "G10741VJ",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G24811FP",
+     "accession": "G78059CC",
      "relative_dp": "-1",
      "match": "10"
    },
    {
-     "accession": "G69461KL",
+     "accession": "G80147LG",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G90987JA",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G94116NC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G99229VQ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G99257WS",
      "relative_dp": "-1",
      "match": "10"
    }

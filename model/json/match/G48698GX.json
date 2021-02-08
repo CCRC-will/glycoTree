@@ -3,17 +3,17 @@
   "dp":  "11",
   "related_glycans": [ 
    {
+     "accession": "G09605DV",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G48698GX",
      "relative_dp": "+0",
      "match": "11"
    },
    {
      "accession": "G74364UH",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G09605DV",
      "relative_dp": "-1",
      "match": "10"
    }

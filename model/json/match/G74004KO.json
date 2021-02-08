@@ -8,12 +8,7 @@
      "match": "11"
    },
    {
-     "accession": "G74004KO",
-     "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G38029ML",
+     "accession": "G25325YE",
      "relative_dp": "+1",
      "match": "11"
    },
@@ -23,12 +18,17 @@
      "match": "11"
    },
    {
-     "accession": "G25325YE",
+     "accession": "G36581PT",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G38029ML",
      "relative_dp": "+1",
      "match": "11"
    },
    {
-     "accession": "G36581PT",
+     "accession": "G74004KO",
      "relative_dp": "+0",
      "match": "11"
    }

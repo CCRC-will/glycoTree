@@ -430,9 +430,9 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G75501QM",
-     "relative_dp": "+0",
-     "match": "11"
+     "accession": "G15681WF",
+     "relative_dp": "-1",
+     "match": "10"
    },
    {
      "accession": "G39344CL",
@@ -440,9 +440,9 @@
      "match": "10"
    },
    {
-     "accession": "G15681WF",
-     "relative_dp": "-1",
-     "match": "10"
+     "accession": "G75501QM",
+     "relative_dp": "+0",
+     "match": "11"
    }
   ]
 }

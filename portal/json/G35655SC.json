@@ -800,12 +800,12 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G35655SC",
+     "accession": "G32646BW",
      "relative_dp": "+0",
      "match": "13"
    },
    {
-     "accession": "G32646BW",
+     "accession": "G35655SC",
      "relative_dp": "+0",
      "match": "13"
    },

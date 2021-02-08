@@ -3,12 +3,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G91550OH",
+     "accession": "G21767ND",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G21767ND",
+     "accession": "G91550OH",
      "relative_dp": "+0",
      "match": "15"
    }

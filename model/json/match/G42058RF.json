@@ -8,17 +8,17 @@
      "match": "10"
    },
    {
+     "accession": "G52663AD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G67066JI",
      "relative_dp": "-1",
      "match": "9"
    },
    {
      "accession": "G72533FB",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G52663AD",
      "relative_dp": "-1",
      "match": "9"
    }

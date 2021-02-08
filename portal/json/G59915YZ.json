@@ -669,17 +669,7 @@
      "match": "10"
    },
    {
-     "accession": "G97682ZN",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
      "accession": "G50774CV",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G98380JU",
      "relative_dp": "+1",
      "match": "11"
    },
@@ -697,6 +687,16 @@
      "accession": "G89532GI",
      "relative_dp": "-1",
      "match": "10"
+   },
+   {
+     "accession": "G97682ZN",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G98380JU",
+     "relative_dp": "+1",
+     "match": "11"
    }
   ]
 }

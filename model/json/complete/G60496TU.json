@@ -1092,12 +1092,12 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G60496TU",
+     "accession": "G03296OS",
      "relative_dp": "+0",
      "match": "17"
    },
    {
-     "accession": "G03296OS",
+     "accession": "G60496TU",
      "relative_dp": "+0",
      "match": "17"
    }

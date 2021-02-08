@@ -844,12 +844,7 @@
      "match": "12"
    },
    {
-     "accession": "G84648AY",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G99141XX",
+     "accession": "G56549DH",
      "relative_dp": "+1",
      "match": "12"
    },
@@ -859,7 +854,12 @@
      "match": "12"
    },
    {
-     "accession": "G56549DH",
+     "accession": "G84648AY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G99141XX",
      "relative_dp": "+1",
      "match": "12"
    }

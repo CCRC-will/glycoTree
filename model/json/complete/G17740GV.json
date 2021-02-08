@@ -1035,9 +1035,9 @@
      "match": "15"
    },
    {
-     "accession": "G89877QI",
-     "relative_dp": "-1",
-     "match": "14"
+     "accession": "G67079AO",
+     "relative_dp": "+0",
+     "match": "15"
    },
    {
      "accession": "G72128LZ",
@@ -1045,14 +1045,14 @@
      "match": "14"
    },
    {
-     "accession": "G93638BI",
+     "accession": "G89877QI",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G67079AO",
-     "relative_dp": "+0",
-     "match": "15"
+     "accession": "G93638BI",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

@@ -3,8 +3,8 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G20873FQ",
-     "relative_dp": "+0",
+     "accession": "G00909PI",
+     "relative_dp": "+1",
      "match": "12"
    },
    {
@@ -13,8 +13,8 @@
      "match": "11"
    },
    {
-     "accession": "G00909PI",
-     "relative_dp": "+1",
+     "accession": "G20873FQ",
+     "relative_dp": "+0",
      "match": "12"
    },
    {

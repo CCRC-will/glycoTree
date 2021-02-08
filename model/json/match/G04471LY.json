@@ -8,7 +8,7 @@
      "match": "11"
    },
    {
-     "accession": "G79609RF",
+     "accession": "G44504SC",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -18,14 +18,14 @@
      "match": "10"
    },
    {
-     "accession": "G44504SC",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
      "accession": "G67782JV",
      "relative_dp": "+1",
      "match": "11"
+   },
+   {
+     "accession": "G79609RF",
+     "relative_dp": "-1",
+     "match": "10"
    }
   ]
 }

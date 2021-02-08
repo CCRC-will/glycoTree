@@ -1058,17 +1058,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G31341PC",
+     "accession": "G21454AE",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G52345FK",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
-     "accession": "G21454AE",
+     "accession": "G31341PC",
      "relative_dp": "-1",
      "match": "14"
    },
@@ -1076,6 +1071,11 @@
      "accession": "G38022PE",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G52345FK",
+     "relative_dp": "+0",
+     "match": "15"
    }
   ]
 }

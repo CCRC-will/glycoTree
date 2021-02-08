@@ -1047,16 +1047,6 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G57260LH",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G87504BP",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
      "accession": "G11910RR",
      "relative_dp": "-1",
      "match": "15"
@@ -1065,6 +1055,16 @@
      "accession": "G29897FU",
      "relative_dp": "-1",
      "match": "15"
+   },
+   {
+     "accession": "G57260LH",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G87504BP",
+     "relative_dp": "+0",
+     "match": "16"
    }
   ]
 }

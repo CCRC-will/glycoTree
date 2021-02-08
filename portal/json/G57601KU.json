@@ -934,17 +934,17 @@
      "match": "14"
    },
    {
-     "accession": "G98862GW",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G81663ZI",
      "relative_dp": "-1",
      "match": "13"
    },
    {
      "accession": "G82572FN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G98862GW",
      "relative_dp": "-1",
      "match": "13"
    }

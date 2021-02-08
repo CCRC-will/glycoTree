@@ -1109,17 +1109,7 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G88864RV",
-     "relative_dp": "+0",
-     "match": "18"
-   },
-   {
      "accession": "G22237ZE",
-     "relative_dp": "-1",
-     "match": "17"
-   },
-   {
-     "accession": "G99943EE",
      "relative_dp": "-1",
      "match": "17"
    },
@@ -1127,6 +1117,16 @@
      "accession": "G66661ZY",
      "relative_dp": "+0",
      "match": "18"
+   },
+   {
+     "accession": "G88864RV",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G99943EE",
+     "relative_dp": "-1",
+     "match": "17"
    }
   ]
 }

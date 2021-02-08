@@ -3,14 +3,14 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G40806JH",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G33262KR",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G40806JH",
+     "relative_dp": "-1",
+     "match": "11"
    },
    {
      "accession": "G70052MF",

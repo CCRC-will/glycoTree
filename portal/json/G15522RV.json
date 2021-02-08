@@ -1330,6 +1330,11 @@
   "dp":  "17",
   "related_glycans": [ 
    {
+     "accession": "G07865ET",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
      "accession": "G15522RV",
      "relative_dp": "+0",
      "match": "17"
@@ -1338,11 +1343,6 @@
      "accession": "G99165YY",
      "relative_dp": "-1",
      "match": "16"
-   },
-   {
-     "accession": "G07865ET",
-     "relative_dp": "+1",
-     "match": "17"
    }
   ]
 }

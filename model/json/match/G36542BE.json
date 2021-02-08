@@ -3,12 +3,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G98671GW",
+     "accession": "G36542BE",
      "relative_dp": "+0",
      "match": "9"
    },
    {
-     "accession": "G36542BE",
+     "accession": "G98671GW",
      "relative_dp": "+0",
      "match": "9"
    }

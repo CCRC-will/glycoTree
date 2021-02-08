@@ -344,11 +344,6 @@
      "match": "7"
    },
    {
-     "accession": "G96768SN",
-     "relative_dp": "+0",
-     "match": "7"
-   },
-   {
      "accession": "G45995IV",
      "relative_dp": "-1",
      "match": "6"
@@ -357,6 +352,11 @@
      "accession": "G82348BZ",
      "relative_dp": "-1",
      "match": "6"
+   },
+   {
+     "accession": "G96768SN",
+     "relative_dp": "+0",
+     "match": "7"
    }
   ]
 }

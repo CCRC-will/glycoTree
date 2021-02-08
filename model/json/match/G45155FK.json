@@ -3,17 +3,17 @@
   "dp":  "11",
   "related_glycans": [ 
    {
+     "accession": "G44504SC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G45155FK",
      "relative_dp": "+0",
      "match": "11"
    },
    {
      "accession": "G49104KI",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G44504SC",
      "relative_dp": "-1",
      "match": "10"
    }

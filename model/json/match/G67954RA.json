@@ -8,9 +8,9 @@
      "match": "13"
    },
    {
-     "accession": "G93527UH",
-     "relative_dp": "+0",
-     "match": "14"
+     "accession": "G39174FS",
+     "relative_dp": "-1",
+     "match": "13"
    },
    {
      "accession": "G67954RA",
@@ -18,9 +18,9 @@
      "match": "14"
    },
    {
-     "accession": "G39174FS",
-     "relative_dp": "-1",
-     "match": "13"
+     "accession": "G93527UH",
+     "relative_dp": "+0",
+     "match": "14"
    }
   ]
 }

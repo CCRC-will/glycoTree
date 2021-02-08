@@ -946,7 +946,7 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G64761FU",
+     "accession": "G14491HM",
      "relative_dp": "+0",
      "match": "15"
    },
@@ -956,7 +956,7 @@
      "match": "15"
    },
    {
-     "accession": "G14491HM",
+     "accession": "G64761FU",
      "relative_dp": "+0",
      "match": "15"
    }

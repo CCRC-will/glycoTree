@@ -1165,12 +1165,12 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G18196JE",
+     "accession": "G14520ZO",
      "relative_dp": "+0",
      "match": "18"
    },
    {
-     "accession": "G14520ZO",
+     "accession": "G18196JE",
      "relative_dp": "+0",
      "match": "18"
    },

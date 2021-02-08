@@ -1187,7 +1187,7 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G65419YA",
+     "accession": "G06404ZJ",
      "relative_dp": "+0",
      "match": "16"
    },
@@ -1197,7 +1197,7 @@
      "match": "15"
    },
    {
-     "accession": "G06404ZJ",
+     "accession": "G65419YA",
      "relative_dp": "+0",
      "match": "16"
    }

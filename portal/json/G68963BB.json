@@ -401,12 +401,7 @@
      "match": "9"
    },
    {
-     "accession": "G68963BB",
-     "relative_dp": "+0",
-     "match": "9"
-   },
-   {
-     "accession": "G72085DL",
+     "accession": "G26939ZY",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -416,7 +411,12 @@
      "match": "9"
    },
    {
-     "accession": "G26939ZY",
+     "accession": "G68963BB",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G72085DL",
      "relative_dp": "-1",
      "match": "8"
    }

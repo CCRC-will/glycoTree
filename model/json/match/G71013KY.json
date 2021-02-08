@@ -3,32 +3,32 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G72718TT",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G71013KY",
+     "accession": "G20079RG",
      "relative_dp": "+0",
      "match": "10"
    },
    {
-     "accession": "G97910HZ",
+     "accession": "G22098NU",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G23980PE",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G99382AP",
+     "accession": "G25520XG",
      "relative_dp": "+1",
      "match": "10"
    },
    {
-     "accession": "G67942CH",
+     "accession": "G26150FI",
      "relative_dp": "+1",
      "match": "10"
    },
    {
-     "accession": "G39062YR",
+     "accession": "G30159WR",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -38,12 +38,82 @@
      "match": "10"
    },
    {
-     "accession": "G30159WR",
+     "accession": "G37046CZ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G39062YR",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G47936PQ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G53582JE",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G58667NI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G60956VN",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G61519GA",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G63480NF",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G67942CH",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G71013KY",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G72718TT",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G72821WX",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G74325TG",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G74837KH",
      "relative_dp": "-1",
      "match": "9"
    },
    {
      "accession": "G75143LK",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G75595FQ",
      "relative_dp": "+1",
      "match": "10"
    },
@@ -58,89 +128,19 @@
      "match": "10"
    },
    {
-     "accession": "G26150FI",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G61519GA",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G72821WX",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G74325TG",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G75595FQ",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G53582JE",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G25520XG",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G20079RG",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
-     "accession": "G60956VN",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G74837KH",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G37046CZ",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G23980PE",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G58667NI",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G47936PQ",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G22098NU",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G63480NF",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
      "accession": "G89663TB",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G97910HZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G99382AP",
+     "relative_dp": "+1",
+     "match": "10"
    }
   ]
 }

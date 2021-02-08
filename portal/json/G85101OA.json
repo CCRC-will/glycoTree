@@ -890,6 +890,11 @@
   "dp":  "15",
   "related_glycans": [ 
    {
+     "accession": "G36200ZL",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
      "accession": "G85101OA",
      "relative_dp": "+0",
      "match": "15"
@@ -898,11 +903,6 @@
      "accession": "G97453GF",
      "relative_dp": "+0",
      "match": "15"
-   },
-   {
-     "accession": "G36200ZL",
-     "relative_dp": "-1",
-     "match": "14"
    }
   ]
 }

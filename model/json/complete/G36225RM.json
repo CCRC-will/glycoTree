@@ -898,14 +898,14 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G36225RM",
-     "relative_dp": "+0",
-     "match": "13"
-   },
-   {
      "accession": "G13537KO",
      "relative_dp": "-1",
      "match": "12"
+   },
+   {
+     "accession": "G36225RM",
+     "relative_dp": "+0",
+     "match": "13"
    },
    {
      "accession": "G95260HV",

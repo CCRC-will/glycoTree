@@ -531,6 +531,11 @@
   "dp":  "12",
   "related_glycans": [ 
    {
+     "accession": "G47006SF",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
      "accession": "G85200FA",
      "relative_dp": "+0",
      "match": "12"
@@ -539,11 +544,6 @@
      "accession": "G96024GG",
      "relative_dp": "-1",
      "match": "11"
-   },
-   {
-     "accession": "G47006SF",
-     "relative_dp": "+1",
-     "match": "12"
    }
   ]
 }

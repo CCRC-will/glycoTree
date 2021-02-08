@@ -621,14 +621,14 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G73234BV",
-     "relative_dp": "+0",
-     "match": "14"
-   },
-   {
      "accession": "G28281DE",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G73234BV",
+     "relative_dp": "+0",
+     "match": "14"
    }
   ]
 }

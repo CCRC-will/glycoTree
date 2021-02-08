@@ -642,6 +642,11 @@
      "match": "10"
    },
    {
+     "accession": "G43664YB",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G51378TN",
      "relative_dp": "+1",
      "match": "10"
@@ -653,11 +658,6 @@
    },
    {
      "accession": "G99622IJ",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G43664YB",
      "relative_dp": "-1",
      "match": "9"
    }

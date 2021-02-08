@@ -3,7 +3,7 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G51930XP",
+     "accession": "G01342FO",
      "relative_dp": "+0",
      "match": "18"
    },
@@ -13,7 +13,7 @@
      "match": "17"
    },
    {
-     "accession": "G01342FO",
+     "accession": "G51930XP",
      "relative_dp": "+0",
      "match": "18"
    },

@@ -441,14 +441,14 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G92383TF",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
      "accession": "G74541EU",
      "relative_dp": "+0",
      "match": "10"
+   },
+   {
+     "accession": "G92383TF",
+     "relative_dp": "-1",
+     "match": "9"
    }
   ]
 }

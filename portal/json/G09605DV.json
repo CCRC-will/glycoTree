@@ -553,13 +553,13 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G48698GX",
+     "accession": "G06432WK",
      "relative_dp": "+1",
      "match": "10"
    },
    {
-     "accession": "G06432WK",
-     "relative_dp": "+1",
+     "accession": "G09605DV",
+     "relative_dp": "+0",
      "match": "10"
    },
    {
@@ -568,8 +568,8 @@
      "match": "9"
    },
    {
-     "accession": "G09605DV",
-     "relative_dp": "+0",
+     "accession": "G48698GX",
+     "relative_dp": "+1",
      "match": "10"
    }
   ]

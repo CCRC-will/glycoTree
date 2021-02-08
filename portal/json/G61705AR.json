@@ -1147,22 +1147,22 @@
      "match": "15"
    },
    {
-     "accession": "G40428GO",
-     "relative_dp": "+1",
-     "match": "15"
-   },
-   {
-     "accession": "G83402YY",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
      "accession": "G36362BK",
      "relative_dp": "+1",
      "match": "15"
    },
    {
+     "accession": "G40428GO",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
      "accession": "G61705AR",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G83402YY",
      "relative_dp": "+0",
      "match": "15"
    }

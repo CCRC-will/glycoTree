@@ -3,11 +3,6 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G89168LM",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
      "accession": "G11540FP",
      "relative_dp": "+0",
      "match": "16"
@@ -19,6 +14,11 @@
    },
    {
      "accession": "G43131ZX",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G89168LM",
      "relative_dp": "-1",
      "match": "15"
    }

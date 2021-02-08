@@ -3,12 +3,17 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G47975JA",
+     "accession": "G01260KO",
      "relative_dp": "-1",
      "match": "11"
    },
    {
-     "accession": "G17540HT",
+     "accession": "G01361CV",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G11041DA",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -18,22 +23,7 @@
      "match": "11"
    },
    {
-     "accession": "G69725KG",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G30460NZ",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G52971DE",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G66153IB",
+     "accession": "G16344ZG",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -43,77 +33,7 @@
      "match": "12"
    },
    {
-     "accession": "G28747XN",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G96921ZU",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G28218GE",
-     "relative_dp": "+1",
-     "match": "12"
-   },
-   {
-     "accession": "G45598BE",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G38249IZ",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G86270DU",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G76713YY",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G01361CV",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G01260KO",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G73825BL",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G70382WT",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G61614JZ",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G94045IP",
-     "relative_dp": "+1",
-     "match": "12"
-   },
-   {
-     "accession": "G11041DA",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G16344ZG",
+     "accession": "G17540HT",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -123,7 +43,92 @@
      "match": "12"
    },
    {
+     "accession": "G28218GE",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G28747XN",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G30460NZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G38249IZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G45598BE",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G47975JA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G52971DE",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G60012HO",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G60320IS",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G61614JZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G62387ZO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G66153IB",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G69725KG",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G70382WT",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G73825BL",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G75381NI",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G76713YY",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G86270DU",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -133,17 +138,12 @@
      "match": "12"
    },
    {
-     "accession": "G75381NI",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G60320IS",
+     "accession": "G94045IP",
      "relative_dp": "+1",
      "match": "12"
    },
    {
-     "accession": "G60012HO",
+     "accession": "G96921ZU",
      "relative_dp": "+0",
      "match": "12"
    }

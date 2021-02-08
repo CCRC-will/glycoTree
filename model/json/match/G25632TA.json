@@ -18,6 +18,11 @@
      "match": "11"
    },
    {
+     "accession": "G62387ZO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G82221BU",
      "relative_dp": "-1",
      "match": "11"
@@ -26,11 +31,6 @@
      "accession": "G97947UQ",
      "relative_dp": "+0",
      "match": "12"
-   },
-   {
-     "accession": "G62387ZO",
-     "relative_dp": "-1",
-     "match": "11"
    }
   ]
 }

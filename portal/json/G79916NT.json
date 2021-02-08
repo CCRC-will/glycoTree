@@ -985,7 +985,7 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G82853YO",
+     "accession": "G46560SM",
      "relative_dp": "-1",
      "match": "13"
    },
@@ -1000,7 +1000,7 @@
      "match": "14"
    },
    {
-     "accession": "G46560SM",
+     "accession": "G82853YO",
      "relative_dp": "-1",
      "match": "13"
    }

@@ -306,14 +306,14 @@
   "dp":  "7",
   "related_glycans": [ 
    {
-     "accession": "G33473DN",
-     "relative_dp": "+0",
-     "match": "7"
-   },
-   {
      "accession": "G15329MZ",
      "relative_dp": "-1",
      "match": "6"
+   },
+   {
+     "accession": "G33473DN",
+     "relative_dp": "+0",
+     "match": "7"
    },
    {
      "accession": "G44201QD",

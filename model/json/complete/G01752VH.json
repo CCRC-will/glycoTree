@@ -1114,14 +1114,14 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G58780EA",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G01752VH",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G58780EA",
+     "relative_dp": "-1",
+     "match": "14"
    },
    {
      "accession": "G82393PY",

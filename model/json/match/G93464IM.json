@@ -8,19 +8,19 @@
      "match": "10"
    },
    {
-     "accession": "G84423SZ",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
      "accession": "G45256SO",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G93500PH",
+     "accession": "G76583MP",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G84423SZ",
+     "relative_dp": "+0",
+     "match": "10"
    },
    {
      "accession": "G93464IM",
@@ -28,7 +28,7 @@
      "match": "10"
    },
    {
-     "accession": "G76583MP",
+     "accession": "G93500PH",
      "relative_dp": "-1",
      "match": "9"
    }

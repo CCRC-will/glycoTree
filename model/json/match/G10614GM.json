@@ -8,12 +8,7 @@
      "match": "8"
    },
    {
-     "accession": "G30585MP",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G90000WS",
+     "accession": "G10614GM",
      "relative_dp": "+0",
      "match": "9"
    },
@@ -23,12 +18,17 @@
      "match": "8"
    },
    {
+     "accession": "G30585MP",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G56737NO",
      "relative_dp": "-1",
      "match": "8"
    },
    {
-     "accession": "G10614GM",
+     "accession": "G90000WS",
      "relative_dp": "+0",
      "match": "9"
    }

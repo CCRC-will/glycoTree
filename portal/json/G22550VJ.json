@@ -497,7 +497,7 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G45262QY",
+     "accession": "G08894MB",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -507,12 +507,12 @@
      "match": "10"
    },
    {
-     "accession": "G69175BJ",
+     "accession": "G45262QY",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G08894MB",
+     "accession": "G69175BJ",
      "relative_dp": "-1",
      "match": "9"
    }

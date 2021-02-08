@@ -822,13 +822,13 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G34508UC",
-     "relative_dp": "+1",
+     "accession": "G08997GC",
+     "relative_dp": "+0",
      "match": "11"
    },
    {
-     "accession": "G08997GC",
-     "relative_dp": "+0",
+     "accession": "G34508UC",
+     "relative_dp": "+1",
      "match": "11"
    },
    {

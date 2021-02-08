@@ -3,22 +3,7 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G10034LM",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G92681HQ",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
-     "accession": "G54018RP",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G42824AQ",
+     "accession": "G00231WL",
      "relative_dp": "+1",
      "match": "16"
    },
@@ -28,9 +13,19 @@
      "match": "15"
    },
    {
-     "accession": "G56318NV",
+     "accession": "G10034LM",
      "relative_dp": "+1",
      "match": "16"
+   },
+   {
+     "accession": "G19469VZ",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G28957FB",
+     "relative_dp": "-1",
+     "match": "15"
    },
    {
      "accession": "G32829EU",
@@ -38,7 +33,32 @@
      "match": "16"
    },
    {
-     "accession": "G00231WL",
+     "accession": "G39183DW",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G42380GI",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G42824AQ",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G54018RP",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G56318NV",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G56963QZ",
      "relative_dp": "+1",
      "match": "16"
    },
@@ -53,33 +73,13 @@
      "match": "16"
    },
    {
-     "accession": "G42380GI",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
      "accession": "G92574YO",
      "relative_dp": "+1",
      "match": "16"
    },
    {
-     "accession": "G28957FB",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G56963QZ",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G39183DW",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G19469VZ",
-     "relative_dp": "+1",
+     "accession": "G92681HQ",
+     "relative_dp": "+0",
      "match": "16"
    },
    {

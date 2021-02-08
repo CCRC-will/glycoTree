@@ -452,17 +452,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G56653RI",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G10219AA",
      "relative_dp": "-1",
      "match": "8"
    },
    {
-     "accession": "G88380UG",
+     "accession": "G56653RI",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -475,6 +470,11 @@
      "accession": "G83717YJ",
      "relative_dp": "+0",
      "match": "9"
+   },
+   {
+     "accession": "G88380UG",
+     "relative_dp": "-1",
+     "match": "8"
    }
   ]
 }

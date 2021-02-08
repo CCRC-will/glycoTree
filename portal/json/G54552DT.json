@@ -424,7 +424,7 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G60837AI",
+     "accession": "G28090UW",
      "relative_dp": "+0",
      "match": "9"
    },
@@ -434,7 +434,7 @@
      "match": "9"
    },
    {
-     "accession": "G28090UW",
+     "accession": "G60837AI",
      "relative_dp": "+0",
      "match": "9"
    }

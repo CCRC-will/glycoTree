@@ -3,7 +3,7 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G57166CI",
+     "accession": "G31822CM",
      "relative_dp": "+0",
      "match": "15"
    },
@@ -13,7 +13,7 @@
      "match": "15"
    },
    {
-     "accession": "G31822CM",
+     "accession": "G57166CI",
      "relative_dp": "+0",
      "match": "15"
    }

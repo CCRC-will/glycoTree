@@ -3,13 +3,13 @@
   "dp":  "17",
   "related_glycans": [ 
    {
-     "accession": "G73520AV",
-     "relative_dp": "+0",
+     "accession": "G31004HS",
+     "relative_dp": "+1",
      "match": "17"
    },
    {
-     "accession": "G86466QK",
-     "relative_dp": "+1",
+     "accession": "G73520AV",
+     "relative_dp": "+0",
      "match": "17"
    },
    {
@@ -18,7 +18,7 @@
      "match": "16"
    },
    {
-     "accession": "G31004HS",
+     "accession": "G86466QK",
      "relative_dp": "+1",
      "match": "17"
    }

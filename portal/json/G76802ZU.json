@@ -626,17 +626,17 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G55015QS",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
      "accession": "G12740VA",
      "relative_dp": "-1",
      "match": "10"
    },
    {
      "accession": "G21755KD",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G55015QS",
      "relative_dp": "-1",
      "match": "10"
    },

@@ -396,12 +396,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G86884BW",
-     "relative_dp": "+0",
-     "match": "9"
+     "accession": "G23117SI",
+     "relative_dp": "-1",
+     "match": "8"
    },
    {
-     "accession": "G23117SI",
+     "accession": "G69812OF",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -411,9 +411,9 @@
      "match": "8"
    },
    {
-     "accession": "G69812OF",
-     "relative_dp": "-1",
-     "match": "8"
+     "accession": "G86884BW",
+     "relative_dp": "+0",
+     "match": "9"
    }
   ]
 }

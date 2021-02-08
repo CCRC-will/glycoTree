@@ -800,12 +800,12 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G72536JI",
+     "accession": "G04708ME",
      "relative_dp": "+0",
      "match": "13"
    },
    {
-     "accession": "G81432SH",
+     "accession": "G06195HM",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -820,14 +820,14 @@
      "match": "12"
    },
    {
-     "accession": "G06195HM",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G04708ME",
+     "accession": "G72536JI",
      "relative_dp": "+0",
      "match": "13"
+   },
+   {
+     "accession": "G81432SH",
+     "relative_dp": "-1",
+     "match": "12"
    }
   ]
 }

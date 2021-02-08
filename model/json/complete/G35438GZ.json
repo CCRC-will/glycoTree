@@ -1277,17 +1277,17 @@
   "dp":  "18",
   "related_glycans": [ 
    {
+     "accession": "G24875YE",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
      "accession": "G35438GZ",
      "relative_dp": "+0",
      "match": "18"
    },
    {
      "accession": "G56408DR",
-     "relative_dp": "+0",
-     "match": "18"
-   },
-   {
-     "accession": "G24875YE",
      "relative_dp": "+0",
      "match": "18"
    }

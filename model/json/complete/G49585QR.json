@@ -682,8 +682,28 @@
   "dp":  "11",
   "related_glycans": [ 
    {
+     "accession": "G00176HZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G00503EE",
      "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G00536FZ",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G04508HC",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G21246OH",
+     "relative_dp": "+0",
      "match": "11"
    },
    {
@@ -692,12 +712,22 @@
      "match": "11"
    },
    {
-     "accession": "G53322JT",
+     "accession": "G29112GC",
      "relative_dp": "-1",
      "match": "10"
    },
    {
-     "accession": "G04508HC",
+     "accession": "G38236XZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G40461OS",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G49369WH",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -707,7 +737,12 @@
      "match": "11"
    },
    {
-     "accession": "G38236XZ",
+     "accession": "G53230JC",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G53322JT",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -717,43 +752,13 @@
      "match": "11"
    },
    {
-     "accession": "G40461OS",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
      "accession": "G89905SH",
      "relative_dp": "+1",
      "match": "11"
    },
    {
-     "accession": "G00176HZ",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G49369WH",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G99078IR",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G21246OH",
+     "accession": "G93279TH",
      "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G29112GC",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G00536FZ",
-     "relative_dp": "+1",
      "match": "11"
    },
    {
@@ -762,13 +767,8 @@
      "match": "10"
    },
    {
-     "accession": "G53230JC",
+     "accession": "G99078IR",
      "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G93279TH",
-     "relative_dp": "+0",
      "match": "11"
    }
   ]

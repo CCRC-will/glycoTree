@@ -581,13 +581,8 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G45187EI",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G71451NN",
-     "relative_dp": "+1",
+     "accession": "G08161JQ",
+     "relative_dp": "+0",
      "match": "10"
    },
    {
@@ -596,7 +591,62 @@
      "match": "10"
    },
    {
+     "accession": "G27919IH",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G29024OJ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G45187EI",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G45997JW",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G52663AD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G58517TJ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G67066JI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G70059SD",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G71451NN",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G71679MX",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G72533FB",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G80393PG",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -611,64 +661,14 @@
      "match": "9"
    },
    {
-     "accession": "G70059SD",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G71679MX",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G67066JI",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G58517TJ",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G45997JW",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G80393PG",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G72533FB",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G27919IH",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G08161JQ",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
-     "accession": "G92320PF",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
      "accession": "G87695KR",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G52663AD",
-     "relative_dp": "-1",
-     "match": "9"
+     "accession": "G92320PF",
+     "relative_dp": "+1",
+     "match": "10"
    }
   ]
 }

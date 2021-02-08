@@ -430,12 +430,12 @@
   "dp":  "11",
   "related_glycans": [ 
    {
-     "accession": "G28615QI",
+     "accession": "G09064IP",
      "relative_dp": "+0",
      "match": "11"
    },
    {
-     "accession": "G09064IP",
+     "accession": "G28615QI",
      "relative_dp": "+0",
      "match": "11"
    },

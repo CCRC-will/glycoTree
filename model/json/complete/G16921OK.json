@@ -1002,12 +1002,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G16921OK",
+     "accession": "G06594DV",
      "relative_dp": "+0",
      "match": "15"
    },
    {
-     "accession": "G06594DV",
+     "accession": "G16921OK",
      "relative_dp": "+0",
      "match": "15"
    }

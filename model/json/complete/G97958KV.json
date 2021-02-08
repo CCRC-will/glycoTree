@@ -743,12 +743,17 @@
      "match": "11"
    },
    {
+     "accession": "G06969ZX",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G45365RV",
      "relative_dp": "-1",
      "match": "10"
    },
    {
-     "accession": "G06969ZX",
+     "accession": "G49580XQ",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -756,11 +761,6 @@
      "accession": "G53096UD",
      "relative_dp": "+1",
      "match": "11"
-   },
-   {
-     "accession": "G49580XQ",
-     "relative_dp": "-1",
-     "match": "10"
    },
    {
      "accession": "G73402RN",

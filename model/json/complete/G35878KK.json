@@ -553,12 +553,12 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G19532EC",
+     "accession": "G09782JM",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G95081VM",
+     "accession": "G19532EC",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -573,7 +573,7 @@
      "match": "10"
    },
    {
-     "accession": "G09782JM",
+     "accession": "G95081VM",
      "relative_dp": "-1",
      "match": "9"
    }

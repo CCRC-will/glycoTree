@@ -3,14 +3,14 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G93088EE",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G76907BP",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G93088EE",
+     "relative_dp": "-1",
+     "match": "11"
    }
   ]
 }

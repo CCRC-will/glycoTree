@@ -704,17 +704,17 @@
      "match": "11"
    },
    {
+     "accession": "G14068WV",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
      "accession": "G23416CI",
      "relative_dp": "-1",
      "match": "11"
    },
    {
      "accession": "G35675LO",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G14068WV",
      "relative_dp": "+0",
      "match": "12"
    }

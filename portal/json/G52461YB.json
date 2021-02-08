@@ -424,22 +424,12 @@
   "dp":  "9",
   "related_glycans": [ 
    {
-     "accession": "G45325UV",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G61846BY",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G20174ZL",
      "relative_dp": "-1",
      "match": "8"
    },
    {
-     "accession": "G57484FV",
+     "accession": "G45325UV",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -447,6 +437,16 @@
      "accession": "G52461YB",
      "relative_dp": "+0",
      "match": "9"
+   },
+   {
+     "accession": "G57484FV",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G61846BY",
+     "relative_dp": "-1",
+     "match": "8"
    }
   ]
 }

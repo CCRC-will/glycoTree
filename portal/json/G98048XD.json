@@ -548,42 +548,12 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G22467XI",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
      "accession": "G18516QW",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G49383JW",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G33030OB",
-     "relative_dp": "+0",
-     "match": "13"
-   },
-   {
-     "accession": "G75896QL",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G38029ML",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G49961MS",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G29290EB",
+     "accession": "G22467XI",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -593,9 +563,9 @@
      "match": "12"
    },
    {
-     "accession": "G89253ZV",
-     "relative_dp": "+1",
-     "match": "13"
+     "accession": "G29290EB",
+     "relative_dp": "-1",
+     "match": "12"
    },
    {
      "accession": "G30505TQ",
@@ -603,8 +573,28 @@
      "match": "12"
    },
    {
-     "accession": "G98048XD",
+     "accession": "G33030OB",
      "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G33066WV",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G38029ML",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G49383JW",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G49961MS",
+     "relative_dp": "+1",
      "match": "13"
    },
    {
@@ -613,13 +603,23 @@
      "match": "13"
    },
    {
+     "accession": "G75896QL",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G84764CL",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G33066WV",
+     "accession": "G89253ZV",
      "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G98048XD",
+     "relative_dp": "+0",
      "match": "13"
    }
   ]

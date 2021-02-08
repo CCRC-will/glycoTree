@@ -581,12 +581,17 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G78681QL",
+     "accession": "G03681UF",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G05382JE",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G03681UF",
+     "accession": "G06215DG",
      "relative_dp": "+1",
      "match": "10"
    },
@@ -596,27 +601,12 @@
      "match": "9"
    },
    {
-     "accession": "G39298RF",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
      "accession": "G33742YO",
      "relative_dp": "-1",
      "match": "9"
    },
    {
-     "accession": "G72369ZI",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
-     "accession": "G71690HK",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
-     "accession": "G06215DG",
+     "accession": "G39298RF",
      "relative_dp": "+1",
      "match": "10"
    },
@@ -631,7 +621,17 @@
      "match": "9"
    },
    {
-     "accession": "G05382JE",
+     "accession": "G71690HK",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G72369ZI",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G78681QL",
      "relative_dp": "-1",
      "match": "9"
    }

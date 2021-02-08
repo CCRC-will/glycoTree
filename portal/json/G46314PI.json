@@ -687,9 +687,9 @@
      "match": "10"
    },
    {
-     "accession": "G46314PI",
-     "relative_dp": "+0",
-     "match": "11"
+     "accession": "G03764XL",
+     "relative_dp": "-1",
+     "match": "10"
    },
    {
      "accession": "G13267ZY",
@@ -707,9 +707,9 @@
      "match": "10"
    },
    {
-     "accession": "G03764XL",
-     "relative_dp": "-1",
-     "match": "10"
+     "accession": "G46314PI",
+     "relative_dp": "+0",
+     "match": "11"
    }
   ]
 }

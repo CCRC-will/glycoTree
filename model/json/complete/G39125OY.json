@@ -1117,22 +1117,22 @@
   "dp":  "16",
   "related_glycans": [ 
    {
-     "accession": "G39125OY",
-     "relative_dp": "+0",
-     "match": "16"
-   },
-   {
      "accession": "G11551UU",
      "relative_dp": "+1",
      "match": "16"
    },
    {
-     "accession": "G67358EC",
+     "accession": "G39125OY",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G59081JJ",
      "relative_dp": "-1",
      "match": "15"
    },
    {
-     "accession": "G59081JJ",
+     "accession": "G67358EC",
      "relative_dp": "-1",
      "match": "15"
    },

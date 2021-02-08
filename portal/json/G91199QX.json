@@ -844,14 +844,14 @@
      "match": "14"
    },
    {
-     "accession": "G98453VS",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G91199QX",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G98453VS",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

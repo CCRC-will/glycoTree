@@ -637,7 +637,7 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G88884NJ",
+     "accession": "G00986YT",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -652,7 +652,7 @@
      "match": "9"
    },
    {
-     "accession": "G00986YT",
+     "accession": "G88884NJ",
      "relative_dp": "-1",
      "match": "9"
    }

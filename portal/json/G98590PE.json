@@ -814,12 +814,12 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G30007CD",
+     "accession": "G21380FF",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G68946DB",
+     "accession": "G30007CD",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -829,14 +829,14 @@
      "match": "12"
    },
    {
+     "accession": "G68946DB",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G98590PE",
      "relative_dp": "+0",
      "match": "13"
-   },
-   {
-     "accession": "G21380FF",
-     "relative_dp": "-1",
-     "match": "12"
    }
   ]
 }

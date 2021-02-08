@@ -587,14 +587,14 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G09826WW",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G07098TP",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G09826WW",
+     "relative_dp": "-1",
+     "match": "11"
    },
    {
      "accession": "G21627CA",

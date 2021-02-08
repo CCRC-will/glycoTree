@@ -3,17 +3,17 @@
   "dp":  "12",
   "related_glycans": [ 
    {
+     "accession": "G24346JZ",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
      "accession": "G38121JC",
      "relative_dp": "-1",
      "match": "11"
    },
    {
      "accession": "G57675TR",
-     "relative_dp": "+0",
-     "match": "12"
-   },
-   {
-     "accession": "G24346JZ",
      "relative_dp": "+0",
      "match": "12"
    }

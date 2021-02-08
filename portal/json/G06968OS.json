@@ -1119,17 +1119,12 @@
      "match": "15"
    },
    {
-     "accession": "G91386RN",
-     "relative_dp": "+1",
-     "match": "15"
-   },
-   {
-     "accession": "G26877LE",
+     "accession": "G20018DL",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G20018DL",
+     "accession": "G26877LE",
      "relative_dp": "-1",
      "match": "14"
    },
@@ -1139,12 +1134,17 @@
      "match": "14"
    },
    {
+     "accession": "G60610NA",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
      "accession": "G71333BH",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G60610NA",
+     "accession": "G91386RN",
      "relative_dp": "+1",
      "match": "15"
    }

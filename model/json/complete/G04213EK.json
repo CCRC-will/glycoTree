@@ -631,12 +631,7 @@
      "match": "11"
    },
    {
-     "accession": "G79609RF",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G64538ZR",
+     "accession": "G35096EN",
      "relative_dp": "-1",
      "match": "10"
    },
@@ -646,7 +641,12 @@
      "match": "10"
    },
    {
-     "accession": "G35096EN",
+     "accession": "G64538ZR",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G79609RF",
      "relative_dp": "-1",
      "match": "10"
    }

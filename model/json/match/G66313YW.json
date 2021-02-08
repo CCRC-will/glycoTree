@@ -3,47 +3,12 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G82811EP",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G70490JW",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G09322OS",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G45108QT",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G91832SW",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
      "accession": "G01923XE",
      "relative_dp": "+1",
      "match": "13"
    },
    {
-     "accession": "G71923IX",
-     "relative_dp": "+1",
-     "match": "13"
-   },
-   {
-     "accession": "G74645FT",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G71914DZ",
+     "accession": "G09322OS",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -53,12 +18,52 @@
      "match": "13"
    },
    {
+     "accession": "G28659UB",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G45108QT",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
      "accession": "G55600PH",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G28659UB",
+     "accession": "G66313YW",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G70490JW",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G71914DZ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G71923IX",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G73302KW",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G74645FT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G82811EP",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -68,13 +73,8 @@
      "match": "12"
    },
    {
-     "accession": "G73302KW",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G66313YW",
-     "relative_dp": "+0",
+     "accession": "G91832SW",
+     "relative_dp": "+1",
      "match": "13"
    }
   ]

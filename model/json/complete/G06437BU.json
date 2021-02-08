@@ -1353,12 +1353,12 @@
   "dp":  "20",
   "related_glycans": [ 
    {
-     "accession": "G21050RT",
+     "accession": "G06437BU",
      "relative_dp": "+0",
      "match": "20"
    },
    {
-     "accession": "G06437BU",
+     "accession": "G21050RT",
      "relative_dp": "+0",
      "match": "20"
    }

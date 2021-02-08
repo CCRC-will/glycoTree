@@ -469,14 +469,14 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G37135JQ",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
      "accession": "G20212GT",
      "relative_dp": "+0",
      "match": "10"
+   },
+   {
+     "accession": "G37135JQ",
+     "relative_dp": "-1",
+     "match": "9"
    },
    {
      "accession": "G83600PQ",

@@ -777,17 +777,12 @@
      "match": "13"
    },
    {
-     "accession": "G22571UF",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
      "accession": "G14854WL",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G95201NS",
+     "accession": "G22571UF",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -797,12 +792,17 @@
      "match": "12"
    },
    {
+     "accession": "G50779LX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G83594ZB",
      "relative_dp": "-1",
      "match": "12"
    },
    {
-     "accession": "G50779LX",
+     "accession": "G95201NS",
      "relative_dp": "-1",
      "match": "12"
    }

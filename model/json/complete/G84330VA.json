@@ -1622,12 +1622,12 @@
   "dp":  "21",
   "related_glycans": [ 
    {
-     "accession": "G84330VA",
+     "accession": "G62836JK",
      "relative_dp": "+0",
      "match": "21"
    },
    {
-     "accession": "G62836JK",
+     "accession": "G84330VA",
      "relative_dp": "+0",
      "match": "21"
    }

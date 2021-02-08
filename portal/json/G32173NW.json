@@ -913,12 +913,12 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G32173NW",
+     "accession": "G15527QL",
      "relative_dp": "+0",
      "match": "18"
    },
    {
-     "accession": "G15527QL",
+     "accession": "G32173NW",
      "relative_dp": "+0",
      "match": "18"
    }

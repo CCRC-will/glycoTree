@@ -485,14 +485,14 @@
      "match": "8"
    },
    {
-     "accession": "G45832UN",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
      "accession": "G39829HV",
      "relative_dp": "-1",
      "match": "8"
+   },
+   {
+     "accession": "G45832UN",
+     "relative_dp": "+1",
+     "match": "9"
    },
    {
      "accession": "G90833YY",

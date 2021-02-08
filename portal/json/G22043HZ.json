@@ -957,14 +957,14 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G22043HZ",
-     "relative_dp": "+0",
-     "match": "14"
-   },
-   {
      "accession": "G04855ZO",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G14077SN",
+     "relative_dp": "+1",
+     "match": "14"
    },
    {
      "accession": "G16967GJ",
@@ -972,8 +972,8 @@
      "match": "13"
    },
    {
-     "accession": "G14077SN",
-     "relative_dp": "+1",
+     "accession": "G22043HZ",
+     "relative_dp": "+0",
      "match": "14"
    },
    {

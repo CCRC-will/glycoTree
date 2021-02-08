@@ -727,22 +727,22 @@
   "dp":  "12",
   "related_glycans": [ 
    {
-     "accession": "G69758TR",
-     "relative_dp": "+1",
-     "match": "12"
-   },
-   {
      "accession": "G22946YB",
      "relative_dp": "-1",
      "match": "11"
    },
    {
-     "accession": "G93107BF",
+     "accession": "G55974RB",
      "relative_dp": "-1",
      "match": "11"
    },
    {
-     "accession": "G55974RB",
+     "accession": "G69758TR",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G93107BF",
      "relative_dp": "-1",
      "match": "11"
    },

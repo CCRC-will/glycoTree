@@ -660,12 +660,12 @@
   "dp":  "13",
   "related_glycans": [ 
    {
-     "accession": "G58331OS",
+     "accession": "G31637BB",
      "relative_dp": "+0",
      "match": "13"
    },
    {
-     "accession": "G31637BB",
+     "accession": "G58331OS",
      "relative_dp": "+0",
      "match": "13"
    }

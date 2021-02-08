@@ -1058,6 +1058,11 @@
   "dp":  "15",
   "related_glycans": [ 
    {
+     "accession": "G12254MW",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
      "accession": "G21072IJ",
      "relative_dp": "-1",
      "match": "14"
@@ -1068,17 +1073,12 @@
      "match": "15"
    },
    {
-     "accession": "G63665MU",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G59746QC",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G12254MW",
+     "accession": "G63665MU",
      "relative_dp": "-1",
      "match": "14"
    }

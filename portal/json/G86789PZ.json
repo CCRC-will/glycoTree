@@ -553,14 +553,14 @@
   "dp":  "10",
   "related_glycans": [ 
    {
-     "accession": "G86789PZ",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
      "accession": "G01265XZ",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G86789PZ",
+     "relative_dp": "+0",
+     "match": "10"
    }
   ]
 }

@@ -508,6 +508,11 @@
   "dp":  "9",
   "related_glycans": [ 
    {
+     "accession": "G22254MF",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
      "accession": "G39829HV",
      "relative_dp": "-1",
      "match": "8"
@@ -515,11 +520,6 @@
    {
      "accession": "G52783KP",
      "relative_dp": "+0",
-     "match": "9"
-   },
-   {
-     "accession": "G22254MF",
-     "relative_dp": "+1",
      "match": "9"
    },
    {

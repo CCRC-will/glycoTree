@@ -1072,12 +1072,12 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G27316ME",
+     "accession": "G17437BX",
      "relative_dp": "-1",
      "match": "14"
    },
    {
-     "accession": "G17437BX",
+     "accession": "G27316ME",
      "relative_dp": "-1",
      "match": "14"
    },

@@ -3,22 +3,22 @@
   "dp":  "24",
   "related_glycans": [ 
    {
-     "accession": "G62145FH",
-     "relative_dp": "+0",
-     "match": "24"
-   },
-   {
      "accession": "G48109OV",
      "relative_dp": "+0",
      "match": "24"
    },
    {
-     "accession": "G93802RY",
+     "accession": "G62145FH",
      "relative_dp": "+0",
      "match": "24"
    },
    {
      "accession": "G70342DW",
+     "relative_dp": "+0",
+     "match": "24"
+   },
+   {
+     "accession": "G93802RY",
      "relative_dp": "+0",
      "match": "24"
    }

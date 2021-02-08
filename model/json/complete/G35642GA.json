@@ -844,11 +844,6 @@
      "match": "12"
    },
    {
-     "accession": "G64850DY",
-     "relative_dp": "+1",
-     "match": "12"
-   },
-   {
      "accession": "G06648CG",
      "relative_dp": "-1",
      "match": "11"
@@ -862,6 +857,11 @@
      "accession": "G37772CO",
      "relative_dp": "-1",
      "match": "11"
+   },
+   {
+     "accession": "G64850DY",
+     "relative_dp": "+1",
+     "match": "12"
    }
   ]
 }

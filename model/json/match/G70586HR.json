@@ -8,22 +8,22 @@
      "match": "10"
    },
    {
-     "accession": "G70586HR",
-     "relative_dp": "+0",
-     "match": "10"
-   },
-   {
-     "accession": "G82868SO",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
      "accession": "G64343WH",
      "relative_dp": "+1",
      "match": "10"
    },
    {
      "accession": "G68175NA",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G70586HR",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G82868SO",
      "relative_dp": "+1",
      "match": "10"
    }

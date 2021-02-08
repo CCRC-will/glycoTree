@@ -1389,6 +1389,11 @@
   "dp":  "18",
   "related_glycans": [ 
    {
+     "accession": "G13744OG",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G24155DW",
      "relative_dp": "+1",
      "match": "18"
@@ -1402,11 +1407,6 @@
      "accession": "G52216BO",
      "relative_dp": "+1",
      "match": "18"
-   },
-   {
-     "accession": "G13744OG",
-     "relative_dp": "-1",
-     "match": "17"
    },
    {
      "accession": "G80647PR",

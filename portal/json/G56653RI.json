@@ -435,42 +435,12 @@
   "dp":  "8",
   "related_glycans": [ 
    {
-     "accession": "G29197GH",
+     "accession": "G01265XZ",
      "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G56653RI",
-     "relative_dp": "+0",
-     "match": "8"
-   },
-   {
-     "accession": "G40735XY",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G70859XP",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G10219AA",
-     "relative_dp": "+0",
      "match": "8"
    },
    {
      "accession": "G02422RD",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G87309GS",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G16523AO",
      "relative_dp": "+1",
      "match": "8"
    },
@@ -480,67 +450,22 @@
      "match": "7"
    },
    {
-     "accession": "G90950UC",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G67066JI",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G60149QJ",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
-     "accession": "G84678BK",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
-     "accession": "G80393PG",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G40900UQ",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
-     "accession": "G72533FB",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G81253FL",
+     "accession": "G10219AA",
      "relative_dp": "+0",
      "match": "8"
    },
    {
-     "accession": "G01265XZ",
+     "accession": "G16523AO",
      "relative_dp": "+1",
      "match": "8"
    },
    {
-     "accession": "G83717YJ",
+     "accession": "G20030CU",
      "relative_dp": "+1",
      "match": "8"
    },
    {
-     "accession": "G88876JQ",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
-     "accession": "G87695KR",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G52663AD",
+     "accession": "G29197GH",
      "relative_dp": "+1",
      "match": "8"
    },
@@ -550,9 +475,14 @@
      "match": "7"
    },
    {
-     "accession": "G79198BK",
+     "accession": "G40735XY",
      "relative_dp": "+1",
      "match": "8"
+   },
+   {
+     "accession": "G40900UQ",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G44046WQ",
@@ -560,7 +490,32 @@
      "match": "7"
    },
    {
-     "accession": "G86606NT",
+     "accession": "G52663AD",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G56653RI",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G60149QJ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G67066JI",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G70859XP",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G72533FB",
      "relative_dp": "+1",
      "match": "8"
    },
@@ -570,12 +525,57 @@
      "match": "7"
    },
    {
-     "accession": "G91247WI",
+     "accession": "G79198BK",
      "relative_dp": "+1",
      "match": "8"
    },
    {
-     "accession": "G20030CU",
+     "accession": "G80393PG",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G81253FL",
+     "relative_dp": "+0",
+     "match": "8"
+   },
+   {
+     "accession": "G83717YJ",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G84678BK",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G86606NT",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G87309GS",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G87695KR",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G88876JQ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G90950UC",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G91247WI",
      "relative_dp": "+1",
      "match": "8"
    }

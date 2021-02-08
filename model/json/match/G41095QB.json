@@ -3,8 +3,13 @@
   "dp":  "15",
   "related_glycans": [ 
    {
-     "accession": "G65419YA",
+     "accession": "G06404ZJ",
      "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G41095QB",
+     "relative_dp": "+0",
      "match": "15"
    },
    {
@@ -13,12 +18,7 @@
      "match": "14"
    },
    {
-     "accession": "G41095QB",
-     "relative_dp": "+0",
-     "match": "15"
-   },
-   {
-     "accession": "G06404ZJ",
+     "accession": "G65419YA",
      "relative_dp": "+1",
      "match": "15"
    },

@@ -3,12 +3,12 @@
   "dp":  "14",
   "related_glycans": [ 
    {
-     "accession": "G58547FH",
+     "accession": "G05188BU",
      "relative_dp": "-1",
      "match": "13"
    },
    {
-     "accession": "G05188BU",
+     "accession": "G58547FH",
      "relative_dp": "-1",
      "match": "13"
    },

@@ -351,12 +351,12 @@
   "dp":  "8",
   "related_glycans": [ 
    {
-     "accession": "G97309BN",
+     "accession": "G74388OG",
      "relative_dp": "+0",
      "match": "8"
    },
    {
-     "accession": "G74388OG",
+     "accession": "G97309BN",
      "relative_dp": "+0",
      "match": "8"
    }

@@ -3,6 +3,11 @@
   "dp":  "12",
   "related_glycans": [ 
    {
+     "accession": "G71156OO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G79369FE",
      "relative_dp": "-1",
      "match": "11"
@@ -11,11 +16,6 @@
      "accession": "G80202YF",
      "relative_dp": "+0",
      "match": "12"
-   },
-   {
-     "accession": "G71156OO",
-     "relative_dp": "-1",
-     "match": "11"
    }
   ]
 }
