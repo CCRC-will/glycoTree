@@ -3,9 +3,19 @@
   "dp":  "17",
   "related_glycans": [ 
    {
+     "accession": "G02174FQ",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
      "accession": "G02193CV",
      "relative_dp": "-1",
      "match": "16"
+   },
+   {
+     "accession": "G06059DJ",
+     "relative_dp": "+1",
+     "match": "17"
    },
    {
      "accession": "G10578GY",

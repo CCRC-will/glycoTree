@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G09538AR",
+  "dp":  "12",
+  "related_glycans": [ 
+   {
+     "accession": "G09538AR",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G16441MS",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G25407RZ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G40569DS",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G58827HR",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G73683LQ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G87690VK",
+     "relative_dp": "-1",
+     "match": "11"
+   }
+  ]
+}

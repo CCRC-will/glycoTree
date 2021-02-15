@@ -28,6 +28,11 @@
      "match": "10"
    },
    {
+     "accession": "G33970VN",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G34175ZP",
      "relative_dp": "+0",
      "match": "10"
@@ -64,6 +69,16 @@
    },
    {
      "accession": "G89375LQ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G90698PW",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G91159AV",
      "relative_dp": "+1",
      "match": "10"
    },

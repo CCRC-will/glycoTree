@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G21470TX",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G03529DJ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G10770RR",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G21470TX",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G58111YY",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G64936OS",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G82033VN",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G97185IQ",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

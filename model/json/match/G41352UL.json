@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G41352UL",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G01308XT",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G41352UL",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G73517CY",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

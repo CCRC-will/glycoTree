@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G05253EZ",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G05253EZ",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G40069AV",
+     "relative_dp": "+1",
+     "match": "17"
+   }
+  ]
+}

@@ -18,6 +18,11 @@
      "match": "10"
    },
    {
+     "accession": "G31692TJ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G44079HZ",
      "relative_dp": "+1",
      "match": "11"

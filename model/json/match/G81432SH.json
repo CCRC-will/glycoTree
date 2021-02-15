@@ -23,6 +23,11 @@
      "match": "12"
    },
    {
+     "accession": "G30035MO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G32303JY",
      "relative_dp": "+1",
      "match": "12"

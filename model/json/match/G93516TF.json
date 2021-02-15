@@ -8,6 +8,11 @@
      "match": "7"
    },
    {
+     "accession": "G11058EJ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G13614FV",
      "relative_dp": "-1",
      "match": "7"
@@ -21,6 +26,16 @@
      "accession": "G44974AB",
      "relative_dp": "+0",
      "match": "8"
+   },
+   {
+     "accession": "G51771NH",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G82350PP",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G93516TF",

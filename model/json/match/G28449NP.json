@@ -28,6 +28,21 @@
      "match": "14"
    },
    {
+     "accession": "G44325XR",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G45358WU",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G46491JP",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G69964CA",
      "relative_dp": "-1",
      "match": "13"

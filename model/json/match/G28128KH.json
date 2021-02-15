@@ -28,6 +28,11 @@
      "match": "11"
    },
    {
+     "accession": "G55070AA",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G60103QI",
      "relative_dp": "+0",
      "match": "12"
@@ -49,6 +54,16 @@
    },
    {
      "accession": "G84674JQ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G95528UC",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G96168ED",
      "relative_dp": "-1",
      "match": "11"
    }

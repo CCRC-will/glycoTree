@@ -8,7 +8,17 @@
      "match": "10"
    },
    {
+     "accession": "G00504PZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G17029IU",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G19894RH",
      "relative_dp": "-1",
      "match": "9"
    },
@@ -25,6 +35,11 @@
    {
      "accession": "G27123NH",
      "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G35912PE",
+     "relative_dp": "+1",
      "match": "10"
    },
    {

@@ -8,6 +8,11 @@
      "match": "17"
    },
    {
+     "accession": "G02174FQ",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
      "accession": "G10470SE",
      "relative_dp": "-1",
      "match": "17"
@@ -86,6 +91,11 @@
      "accession": "G72131JM",
      "relative_dp": "+0",
      "match": "18"
+   },
+   {
+     "accession": "G73111YU",
+     "relative_dp": "-1",
+     "match": "17"
    },
    {
      "accession": "G80552MJ",

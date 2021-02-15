@@ -8,6 +8,11 @@
      "match": "17"
    },
    {
+     "accession": "G46260CP",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G46767VX",
      "relative_dp": "+0",
      "match": "18"
@@ -21,6 +26,11 @@
      "accession": "G55867TY",
      "relative_dp": "-1",
      "match": "17"
+   },
+   {
+     "accession": "G99956MJ",
+     "relative_dp": "+0",
+     "match": "18"
    }
   ]
 }

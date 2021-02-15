@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G78894EE",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G15972DM",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G16956YO",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G39601JQ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G45573QR",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G53527OK",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G78894EE",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G82699NN",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

@@ -26,6 +26,11 @@
      "accession": "G83423JP",
      "relative_dp": "+0",
      "match": "16"
+   },
+   {
+     "accession": "G93816OI",
+     "relative_dp": "-1",
+     "match": "15"
    }
   ]
 }

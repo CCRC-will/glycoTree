@@ -8,6 +8,11 @@
      "match": "11"
    },
    {
+     "accession": "G37841WI",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
      "accession": "G52112MC",
      "relative_dp": "+1",
      "match": "11"
@@ -34,6 +39,11 @@
    },
    {
      "accession": "G71835BN",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G84440YT",
      "relative_dp": "-1",
      "match": "10"
    },

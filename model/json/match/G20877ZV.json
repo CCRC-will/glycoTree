@@ -13,7 +13,17 @@
      "match": "18"
    },
    {
+     "accession": "G33309GL",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
      "accession": "G48040FY",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G77687SU",
      "relative_dp": "-1",
      "match": "17"
    },

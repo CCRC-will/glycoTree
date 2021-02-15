@@ -8,9 +8,19 @@
      "match": "9"
    },
    {
+     "accession": "G03818JD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G17264LS",
      "relative_dp": "+1",
      "match": "9"
+   },
+   {
+     "accession": "G18506AD",
+     "relative_dp": "-1",
+     "match": "8"
    },
    {
      "accession": "G24888ZY",

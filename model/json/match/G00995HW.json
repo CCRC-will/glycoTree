@@ -18,6 +18,11 @@
      "match": "12"
    },
    {
+     "accession": "G17540MV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G20692QU",
      "relative_dp": "+1",
      "match": "13"

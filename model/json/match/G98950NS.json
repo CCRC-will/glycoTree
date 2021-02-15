@@ -23,6 +23,11 @@
      "match": "12"
    },
    {
+     "accession": "G80180SI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G98950NS",
      "relative_dp": "+0",
      "match": "13"

@@ -8,6 +8,16 @@
      "match": "9"
    },
    {
+     "accession": "G06550JR",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G07147QM",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
      "accession": "G10197JO",
      "relative_dp": "-1",
      "match": "8"
@@ -49,6 +59,11 @@
    },
    {
      "accession": "G50474FI",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G77670FL",
      "relative_dp": "+1",
      "match": "9"
    },

@@ -18,6 +18,16 @@
      "match": "8"
    },
    {
+     "accession": "G31531YC",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G33192XL",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G45889JQ",
      "relative_dp": "-1",
      "match": "7"

@@ -8,7 +8,17 @@
      "match": "15"
    },
    {
+     "accession": "G14373ZY",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G43660IT",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G54073XZ",
      "relative_dp": "-1",
      "match": "14"
    },

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G89206JP",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G28327SH",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G60413OP",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G89206JP",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

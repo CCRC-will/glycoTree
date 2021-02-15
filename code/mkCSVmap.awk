@@ -6,7 +6,6 @@ BEGIN {
   FS = ",";
   count = 0;
   file_rank = 0;
-  printf("glytoucan_ac,residue_name,residue_id,uniprot,gene_name,gene_id,parent_residue_id,type,species\n");
 }
 
 FNR == 1 {

@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G46355PL",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G31637BB",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G46355PL",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G58331OS",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

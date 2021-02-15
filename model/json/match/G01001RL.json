@@ -8,7 +8,17 @@
      "match": "18"
    },
    {
+     "accession": "G10920IN",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G30060ZO",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G57040DY",
      "relative_dp": "-1",
      "match": "17"
    }

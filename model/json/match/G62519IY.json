@@ -28,12 +28,27 @@
      "match": "11"
    },
    {
+     "accession": "G60485RX",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
      "accession": "G62519IY",
      "relative_dp": "+0",
      "match": "11"
    },
    {
+     "accession": "G83864PP",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
      "accession": "G97765TT",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G98419CX",
      "relative_dp": "+1",
      "match": "11"
    }

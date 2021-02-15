@@ -18,7 +18,17 @@
      "match": "10"
    },
    {
+     "accession": "G23765TI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G23805AC",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G25757VW",
      "relative_dp": "-1",
      "match": "9"
    },

@@ -18,7 +18,17 @@
      "match": "13"
    },
    {
+     "accession": "G16293AI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G28659UB",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G43301PF",
      "relative_dp": "-1",
      "match": "12"
    },

@@ -68,6 +68,16 @@
      "match": "13"
    },
    {
+     "accession": "G43301PF",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G44327JQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G45720CA",
      "relative_dp": "+1",
      "match": "13"

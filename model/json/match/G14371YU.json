@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G14371YU",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G14371YU",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G42095CU",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G98537XO",
+     "relative_dp": "+1",
+     "match": "11"
+   }
+  ]
+}

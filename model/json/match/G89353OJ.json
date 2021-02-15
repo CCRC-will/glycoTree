@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G89353OJ",
+  "dp":  "8",
+  "related_glycans": [ 
+   {
+     "accession": "G00028MO",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G03652TR",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G13974DV",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G51771NH",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G55220VL",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G58214IQ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G81060WW",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G89353OJ",
+     "relative_dp": "+0",
+     "match": "8"
+   }
+  ]
+}

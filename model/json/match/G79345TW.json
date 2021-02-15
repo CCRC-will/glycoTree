@@ -23,6 +23,11 @@
      "match": "15"
    },
    {
+     "accession": "G44325XR",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G50432VO",
      "relative_dp": "+1",
      "match": "16"

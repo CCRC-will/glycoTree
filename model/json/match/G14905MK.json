@@ -43,7 +43,22 @@
      "match": "9"
    },
    {
+     "accession": "G31943KG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G32371XG",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G36108GD",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G37210VL",
      "relative_dp": "+1",
      "match": "10"
    },

@@ -43,6 +43,11 @@
      "match": "6"
    },
    {
+     "accession": "G52080EW",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
      "accession": "G63699VG",
      "relative_dp": "+0",
      "match": "7"
@@ -61,6 +66,11 @@
      "accession": "G77479VH",
      "relative_dp": "+0",
      "match": "7"
+   },
+   {
+     "accession": "G77712UR",
+     "relative_dp": "-1",
+     "match": "6"
    },
    {
      "accession": "G82348BZ",

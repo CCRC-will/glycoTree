@@ -13,7 +13,17 @@
      "match": "14"
    },
    {
+     "accession": "G06022SA",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
      "accession": "G12352RJ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G48205IY",
      "relative_dp": "+0",
      "match": "15"
    },

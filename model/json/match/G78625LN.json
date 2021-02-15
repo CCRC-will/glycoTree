@@ -23,12 +23,27 @@
      "match": "10"
    },
    {
+     "accession": "G12762FV",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G18803CK",
      "relative_dp": "-1",
      "match": "10"
    },
    {
+     "accession": "G20168MP",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G25787HL",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G36816DT",
      "relative_dp": "-1",
      "match": "10"
    },

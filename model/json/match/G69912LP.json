@@ -63,7 +63,17 @@
      "match": "9"
    },
    {
+     "accession": "G79044TC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G80858MF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G84053BQ",
      "relative_dp": "-1",
      "match": "8"
    },

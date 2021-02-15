@@ -33,6 +33,11 @@
      "match": "9"
    },
    {
+     "accession": "G30917DM",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
      "accession": "G45187EI",
      "relative_dp": "+1",
      "match": "10"
@@ -44,6 +49,11 @@
    },
    {
      "accession": "G58517TJ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G59024DC",
      "relative_dp": "+1",
      "match": "10"
    }

@@ -8,6 +8,11 @@
      "match": "9"
    },
    {
+     "accession": "G05840XL",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G24668UI",
      "relative_dp": "-1",
      "match": "9"
@@ -29,6 +34,11 @@
    },
    {
      "accession": "G39062YR",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G49096WS",
      "relative_dp": "-1",
      "match": "9"
    },

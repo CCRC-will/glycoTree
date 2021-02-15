@@ -23,6 +23,11 @@
      "match": "9"
    },
    {
+     "accession": "G32915BP",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G38271CW",
      "relative_dp": "-1",
      "match": "9"
@@ -36,6 +41,11 @@
      "accession": "G47925EV",
      "relative_dp": "+1",
      "match": "10"
+   },
+   {
+     "accession": "G49096WS",
+     "relative_dp": "-1",
+     "match": "9"
    },
    {
      "accession": "G53582JE",

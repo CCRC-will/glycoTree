@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G04598XU",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G04598XU",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G19687OL",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G44043ZX",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G57338PU",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G71094TJ",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G90130AG",
+     "relative_dp": "+1",
+     "match": "17"
+   }
+  ]
+}

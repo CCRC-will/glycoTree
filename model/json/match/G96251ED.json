@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G96251ED",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G64271PC",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G89325VN",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G96251ED",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

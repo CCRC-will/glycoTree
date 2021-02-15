@@ -23,6 +23,11 @@
      "match": "5"
    },
    {
+     "accession": "G35459KZ",
+     "relative_dp": "+1",
+     "match": "6"
+   },
+   {
      "accession": "G41125AS",
      "relative_dp": "+1",
      "match": "6"
@@ -43,9 +48,19 @@
      "match": "6"
    },
    {
+     "accession": "G62167DK",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
      "accession": "G64965ZH",
      "relative_dp": "+1",
      "match": "6"
+   },
+   {
+     "accession": "G66875SM",
+     "relative_dp": "-1",
+     "match": "5"
    },
    {
      "accession": "G80650PW",

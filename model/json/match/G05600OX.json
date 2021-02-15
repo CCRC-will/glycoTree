@@ -18,14 +18,29 @@
      "match": "14"
    },
    {
+     "accession": "G06022SA",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
      "accession": "G12352RJ",
      "relative_dp": "+1",
      "match": "14"
    },
    {
+     "accession": "G15696PP",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G24552KE",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G48205IY",
+     "relative_dp": "+1",
+     "match": "14"
    },
    {
      "accession": "G98790NR",

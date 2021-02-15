@@ -23,6 +23,11 @@
      "match": "12"
    },
    {
+     "accession": "G32758HZ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G55818EE",
      "relative_dp": "-1",
      "match": "12"
@@ -34,6 +39,11 @@
    },
    {
      "accession": "G69725KG",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G74026TS",
      "relative_dp": "-1",
      "match": "12"
    },

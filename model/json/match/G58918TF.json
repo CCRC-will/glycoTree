@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G58918TF",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G03230AX",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G20711NK",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G22949KX",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G30880RA",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G58918TF",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G87124HX",
+     "relative_dp": "+0",
+     "match": "18"
+   }
+  ]
+}

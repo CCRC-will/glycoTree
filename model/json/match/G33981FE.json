@@ -38,7 +38,27 @@
      "match": "12"
    },
    {
+     "accession": "G55327VV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G83864PP",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G94232LU",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
      "accession": "G97765TT",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G98419CX",
      "relative_dp": "-1",
      "match": "12"
    }

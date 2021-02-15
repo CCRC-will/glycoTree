@@ -8,6 +8,11 @@
      "match": "18"
    },
    {
+     "accession": "G17029BL",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
      "accession": "G20636FS",
      "relative_dp": "-1",
      "match": "17"
@@ -24,6 +29,11 @@
    },
    {
      "accession": "G81711SM",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G85953MG",
      "relative_dp": "-1",
      "match": "17"
    },

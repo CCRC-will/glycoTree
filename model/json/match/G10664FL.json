@@ -56,6 +56,16 @@
      "accession": "G69175BJ",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G69533GA",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G77791EJ",
+     "relative_dp": "-1",
+     "match": "9"
    }
   ]
 }

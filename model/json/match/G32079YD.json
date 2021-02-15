@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G32079YD",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G02470WS",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G12757LB",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G14428PM",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G29764SO",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G32079YD",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G80474MG",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G89143RS",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

@@ -58,6 +58,11 @@
      "match": "11"
    },
    {
+     "accession": "G81422ZI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G87106NZ",
      "relative_dp": "+1",
      "match": "11"

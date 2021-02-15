@@ -8,6 +8,11 @@
      "match": "8"
    },
    {
+     "accession": "G16276IK",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G17977UE",
      "relative_dp": "+0",
      "match": "9"
@@ -20,6 +25,11 @@
    {
      "accession": "G27293OK",
      "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G31531YC",
+     "relative_dp": "+0",
      "match": "9"
    },
    {

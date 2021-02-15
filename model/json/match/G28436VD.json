@@ -28,12 +28,22 @@
      "match": "13"
    },
    {
+     "accession": "G44327JQ",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G47007PV",
      "relative_dp": "-1",
      "match": "12"
    },
    {
      "accession": "G53098FA",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G54073XZ",
      "relative_dp": "+1",
      "match": "13"
    },

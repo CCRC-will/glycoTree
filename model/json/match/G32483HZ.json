@@ -16,6 +16,11 @@
      "accession": "G32483HZ",
      "relative_dp": "+0",
      "match": "18"
+   },
+   {
+     "accession": "G74018VM",
+     "relative_dp": "-1",
+     "match": "17"
    }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G06804FL",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G06804FL",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G25406HP",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G53272SL",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G80211PE",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

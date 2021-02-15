@@ -68,9 +68,29 @@
      "match": "12"
    },
    {
+     "accession": "G84052CD",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
      "accession": "G84712FF",
      "relative_dp": "-1",
      "match": "12"
+   },
+   {
+     "accession": "G85974HF",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G93602DI",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G93638TT",
+     "relative_dp": "+1",
+     "match": "13"
    },
    {
      "accession": "G95186HE",

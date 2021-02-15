@@ -36,6 +36,11 @@
      "accession": "G87136DV",
      "relative_dp": "+1",
      "match": "13"
+   },
+   {
+     "accession": "G93602DI",
+     "relative_dp": "-1",
+     "match": "12"
    }
   ]
 }

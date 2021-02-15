@@ -13,7 +13,17 @@
      "match": "8"
    },
    {
+     "accession": "G10805TH",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G13687TQ",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G14838TI",
      "relative_dp": "+1",
      "match": "8"
    },
@@ -31,6 +41,11 @@
      "accession": "G32611KT",
      "relative_dp": "+0",
      "match": "8"
+   },
+   {
+     "accession": "G38426SE",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G39213VZ",

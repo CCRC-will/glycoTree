@@ -18,6 +18,11 @@
      "match": "11"
    },
    {
+     "accession": "G27421EI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G29056SI",
      "relative_dp": "+1",
      "match": "11"
@@ -79,6 +84,11 @@
    },
    {
      "accession": "G78280YO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G84170WO",
      "relative_dp": "-1",
      "match": "10"
    },

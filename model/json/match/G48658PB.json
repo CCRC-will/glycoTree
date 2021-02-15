@@ -8,6 +8,11 @@
      "match": "11"
    },
    {
+     "accession": "G07669FN",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G08205LJ",
      "relative_dp": "+1",
      "match": "12"
@@ -44,6 +49,11 @@
    },
    {
      "accession": "G42400JK",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G42830YF",
      "relative_dp": "+1",
      "match": "12"
    },

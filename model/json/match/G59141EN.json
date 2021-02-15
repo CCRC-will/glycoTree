@@ -13,6 +13,11 @@
      "match": "10"
    },
    {
+     "accession": "G16520OZ",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G19430NR",
      "relative_dp": "+1",
      "match": "11"
@@ -66,6 +71,11 @@
      "accession": "G76422GC",
      "relative_dp": "+1",
      "match": "11"
+   },
+   {
+     "accession": "G79446WY",
+     "relative_dp": "-1",
+     "match": "10"
    },
    {
      "accession": "G91365ZQ",

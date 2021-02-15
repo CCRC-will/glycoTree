@@ -8,9 +8,24 @@
      "match": "12"
    },
    {
+     "accession": "G31679YU",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G33970VN",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G41576FY",
      "relative_dp": "-1",
      "match": "11"
+   },
+   {
+     "accession": "G45358WU",
+     "relative_dp": "+1",
+     "match": "12"
    },
    {
      "accession": "G50078RT",

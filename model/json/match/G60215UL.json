@@ -28,6 +28,16 @@
      "match": "12"
    },
    {
+     "accession": "G61539GW",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G75197HN",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G84901UD",
      "relative_dp": "-1",
      "match": "11"

@@ -18,6 +18,11 @@
      "match": "6"
    },
    {
+     "accession": "G19083SI",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
      "accession": "G23117SI",
      "relative_dp": "+1",
      "match": "7"

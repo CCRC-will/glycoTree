@@ -13,6 +13,21 @@
      "match": "12"
    },
    {
+     "accession": "G10694XU",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
+     "accession": "G14675SI",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G23667XV",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G26347KH",
      "relative_dp": "+1",
      "match": "12"

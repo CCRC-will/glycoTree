@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G27385LP",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G27385LP",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G33608TH",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G42504VW",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G48527XN",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G67608DN",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G74264KM",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G86018QV",
+     "relative_dp": "-1",
+     "match": "13"
+   }
+  ]
+}

@@ -43,7 +43,17 @@
      "match": "9"
    },
    {
+     "accession": "G58995TS",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G61846BY",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G97353GO",
      "relative_dp": "-1",
      "match": "8"
    },

@@ -33,6 +33,11 @@
      "match": "16"
    },
    {
+     "accession": "G50997KD",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
      "accession": "G53234IR",
      "relative_dp": "+1",
      "match": "16"
@@ -44,6 +49,11 @@
    },
    {
      "accession": "G56963QZ",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G73111YU",
      "relative_dp": "+1",
      "match": "16"
    },

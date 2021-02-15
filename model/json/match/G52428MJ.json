@@ -8,7 +8,17 @@
      "match": "10"
    },
    {
+     "accession": "G06301TU",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
      "accession": "G13583BZ",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G32371XG",
      "relative_dp": "+1",
      "match": "10"
    },
@@ -36,6 +46,11 @@
      "accession": "G52428MJ",
      "relative_dp": "+0",
      "match": "10"
+   },
+   {
+     "accession": "G57580SM",
+     "relative_dp": "-1",
+     "match": "9"
    },
    {
      "accession": "G63170HT",

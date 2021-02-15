@@ -18,7 +18,17 @@
      "match": "18"
    },
    {
+     "accession": "G63078AB",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G75824WJ",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G77147RP",
      "relative_dp": "+0",
      "match": "18"
    },

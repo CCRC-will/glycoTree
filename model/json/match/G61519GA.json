@@ -33,6 +33,16 @@
      "match": "10"
    },
    {
+     "accession": "G84456HG",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G95375WT",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
      "accession": "G95617FJ",
      "relative_dp": "+1",
      "match": "11"

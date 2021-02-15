@@ -36,6 +36,11 @@
      "accession": "G93211HX",
      "relative_dp": "+0",
      "match": "8"
+   },
+   {
+     "accession": "G96570OI",
+     "relative_dp": "-1",
+     "match": "7"
    }
   ]
 }

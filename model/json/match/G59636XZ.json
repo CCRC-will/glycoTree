@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G59636XZ",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G15355KC",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G41087ZA",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G54300AX",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G59636XZ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G70947EQ",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G92506EC",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

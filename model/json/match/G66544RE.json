@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G66544RE",
+  "dp":  "10",
+  "related_glycans": [ 
+   {
+     "accession": "G04109RU",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G21109OS",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G23897ET",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G30514JJ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G44962ZM",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G62389NM",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G66544RE",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G78980OK",
+     "relative_dp": "+0",
+     "match": "10"
+   }
+  ]
+}

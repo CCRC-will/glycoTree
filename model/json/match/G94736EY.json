@@ -23,6 +23,11 @@
      "match": "10"
    },
    {
+     "accession": "G10179FS",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G10627KR",
      "relative_dp": "+1",
      "match": "10"
@@ -68,12 +73,22 @@
      "match": "10"
    },
    {
+     "accession": "G75197HN",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G81085EP",
      "relative_dp": "+1",
      "match": "10"
    },
    {
      "accession": "G84901UD",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G86414FL",
      "relative_dp": "+1",
      "match": "10"
    },

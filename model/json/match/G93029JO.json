@@ -8,6 +8,16 @@
      "match": "14"
    },
    {
+     "accession": "G11721NX",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
+     "accession": "G13055JW",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
      "accession": "G14938IR",
      "relative_dp": "+1",
      "match": "14"
@@ -26,6 +36,11 @@
      "accession": "G43558RC",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G65299LG",
+     "relative_dp": "+0",
+     "match": "14"
    },
    {
      "accession": "G93029JO",

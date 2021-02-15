@@ -13,6 +13,11 @@
      "match": "14"
    },
    {
+     "accession": "G27149SR",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
      "accession": "G27516AE",
      "relative_dp": "-1",
      "match": "13"
@@ -51,6 +56,11 @@
      "accession": "G59003TR",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G70192AL",
+     "relative_dp": "+1",
+     "match": "14"
    },
    {
      "accession": "G75082OS",

@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G25224QY",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G18584GW",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G19104OH",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G21756MV",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G25224QY",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G51168MK",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G90790SM",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G95333ZG",
+     "relative_dp": "-1",
+     "match": "14"
+   }
+  ]
+}

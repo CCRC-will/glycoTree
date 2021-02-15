@@ -33,6 +33,11 @@
      "match": "9"
    },
    {
+     "accession": "G30996QM",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G32149KV",
      "relative_dp": "+1",
      "match": "9"
@@ -46,6 +51,11 @@
      "accession": "G44865OQ",
      "relative_dp": "-1",
      "match": "8"
+   },
+   {
+     "accession": "G48616UI",
+     "relative_dp": "+1",
+     "match": "9"
    },
    {
      "accession": "G49440XK",

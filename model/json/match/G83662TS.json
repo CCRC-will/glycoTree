@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G83662TS",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G62326NX",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G83662TS",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G94809SW",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

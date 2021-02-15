@@ -33,6 +33,16 @@
      "match": "15"
    },
    {
+     "accession": "G66964CR",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G77638EE",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G78161IO",
      "relative_dp": "-1",
      "match": "14"

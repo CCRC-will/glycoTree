@@ -36,6 +36,11 @@
      "accession": "G77498XG",
      "relative_dp": "+1",
      "match": "11"
+   },
+   {
+     "accession": "G84456HG",
+     "relative_dp": "-1",
+     "match": "10"
    }
   ]
 }

@@ -168,6 +168,11 @@
      "match": "9"
    },
    {
+     "accession": "G65117HG",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
      "accession": "G67045LB",
      "relative_dp": "-1",
      "match": "8"
@@ -219,6 +224,11 @@
    },
    {
      "accession": "G89285QP",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G89911NQ",
      "relative_dp": "+1",
      "match": "9"
    },

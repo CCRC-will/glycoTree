@@ -113,12 +113,22 @@
      "match": "9"
    },
    {
+     "accession": "G69749VJ",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
      "accession": "G78341DP",
      "relative_dp": "-1",
      "match": "8"
    },
    {
      "accession": "G85891FA",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G88329BN",
      "relative_dp": "-1",
      "match": "8"
    },

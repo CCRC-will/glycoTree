@@ -1,0 +1,31 @@
+{
+  "probe_acc": "G76464YC",
+  "dp":  "7",
+  "related_glycans": [ 
+   {
+     "accession": "G09724ZC",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G34220DL",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G40915GX",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G41510DX",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
+     "accession": "G76464YC",
+     "relative_dp": "+0",
+     "match": "7"
+   }
+  ]
+}

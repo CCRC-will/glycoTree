@@ -18,6 +18,21 @@
      "match": "11"
    },
    {
+     "accession": "G16293AI",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G19267AT",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G21969LH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G28659UB",
      "relative_dp": "+1",
      "match": "11"

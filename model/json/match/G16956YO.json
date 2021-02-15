@@ -23,9 +23,24 @@
      "match": "14"
    },
    {
+     "accession": "G45573QR",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G53527OK",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G62606MC",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G78894EE",
+     "relative_dp": "-1",
+     "match": "14"
    },
    {
      "accession": "G80952QT",

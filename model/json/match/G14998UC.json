@@ -23,7 +23,17 @@
      "match": "11"
    },
    {
+     "accession": "G31668AP",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G52971DE",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G53989JC",
      "relative_dp": "-1",
      "match": "11"
    },
@@ -41,6 +51,11 @@
      "accession": "G62781GE",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G68572OG",
+     "relative_dp": "-1",
+     "match": "11"
    },
    {
      "accession": "G72356JA",

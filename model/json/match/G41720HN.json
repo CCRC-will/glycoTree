@@ -28,6 +28,11 @@
      "match": "7"
    },
    {
+     "accession": "G27314YB",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G29948BS",
      "relative_dp": "+1",
      "match": "8"
@@ -46,6 +51,11 @@
      "accession": "G36004BS",
      "relative_dp": "+1",
      "match": "8"
+   },
+   {
+     "accession": "G38966ID",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G39089YD",

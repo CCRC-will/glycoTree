@@ -68,6 +68,11 @@
      "match": "9"
    },
    {
+     "accession": "G44992KB",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G56748EO",
      "relative_dp": "+1",
      "match": "9"
@@ -104,6 +109,11 @@
    },
    {
      "accession": "G85530IT",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G88329BN",
      "relative_dp": "-1",
      "match": "8"
    },

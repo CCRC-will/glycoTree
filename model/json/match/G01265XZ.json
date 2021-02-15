@@ -48,12 +48,22 @@
      "match": "8"
    },
    {
+     "accession": "G68803QA",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G78803YD",
      "relative_dp": "+1",
      "match": "9"
    },
    {
      "accession": "G81253FL",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G85843WY",
      "relative_dp": "-1",
      "match": "8"
    },

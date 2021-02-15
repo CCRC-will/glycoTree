@@ -8,6 +8,11 @@
      "match": "15"
    },
    {
+     "accession": "G07352BK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G36362BK",
      "relative_dp": "+1",
      "match": "15"
@@ -20,6 +25,11 @@
    {
      "accession": "G61705AR",
      "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G75475RA",
+     "relative_dp": "+1",
      "match": "15"
    },
    {

@@ -8,6 +8,11 @@
      "match": "9"
    },
    {
+     "accession": "G18506AD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G19242QH",
      "relative_dp": "+1",
      "match": "9"
@@ -44,6 +49,11 @@
    },
    {
      "accession": "G64330NA",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G66544RE",
      "relative_dp": "+1",
      "match": "9"
    },

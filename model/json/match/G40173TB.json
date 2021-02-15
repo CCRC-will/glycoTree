@@ -23,12 +23,22 @@
      "match": "12"
    },
    {
+     "accession": "G35482NV",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G40173TB",
      "relative_dp": "+0",
      "match": "13"
    },
    {
      "accession": "G46503KK",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G89615SV",
      "relative_dp": "-1",
      "match": "12"
    }

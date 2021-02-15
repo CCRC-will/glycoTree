@@ -8,9 +8,19 @@
      "match": "17"
    },
    {
+     "accession": "G46103YX",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
      "accession": "G50364FV",
      "relative_dp": "+0",
      "match": "18"
+   },
+   {
+     "accession": "G73161ZQ",
+     "relative_dp": "-1",
+     "match": "17"
    },
    {
      "accession": "G73439VG",

@@ -93,13 +93,13 @@ ls -F $here/model/json/match/
 
 echo
 echo "Removing json files from $here/portal/json"
-find $here/model/portal/json/ -name "G*.json" -print -maxdepth 1 | xargs -I % rm %
+find $here/portal/json/ -name "G*.json" -print -maxdepth 1 | xargs -I % rm %
 echo "### Files in directory $here/portal/json ###"
 ls -F $here/portal/json/
 
 echo
 echo "Removing svg files from $here/portal/svg"
-find $here/model/portal/svg/ -name "G*.svg" -print -maxdepth 1 | xargs -I % rm %
+find $here/portal/svg/ -name "G*.svg" -print -maxdepth 1 | xargs -I % rm %
 echo "### Files in directory $here/portal/svg ###"
 ls -F $here/portal/svg
 

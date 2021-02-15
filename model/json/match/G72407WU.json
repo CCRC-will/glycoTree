@@ -8,6 +8,11 @@
      "match": "13"
    },
    {
+     "accession": "G64389UN",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
      "accession": "G64693IG",
      "relative_dp": "-1",
      "match": "12"
@@ -29,6 +34,11 @@
    },
    {
      "accession": "G74369SL",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G92506EC",
      "relative_dp": "+1",
      "match": "13"
    }

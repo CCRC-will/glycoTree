@@ -13,6 +13,11 @@
      "match": "7"
    },
    {
+     "accession": "G09452ED",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G10106TL",
      "relative_dp": "-1",
      "match": "7"
@@ -61,6 +66,11 @@
      "accession": "G72533FB",
      "relative_dp": "+1",
      "match": "8"
+   },
+   {
+     "accession": "G83131MU",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G85460ZG",

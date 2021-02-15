@@ -43,6 +43,16 @@
      "match": "9"
    },
    {
+     "accession": "G55041IW",
+     "relative_dp": "+0",
+     "match": "10"
+   },
+   {
+     "accession": "G63240YA",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G77889NO",
      "relative_dp": "-1",
      "match": "9"
@@ -76,6 +86,11 @@
      "accession": "G85180ML",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G87656FV",
+     "relative_dp": "+1",
+     "match": "10"
    },
    {
      "accession": "G93746CY",

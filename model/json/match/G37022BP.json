@@ -46,6 +46,11 @@
      "accession": "G78003VE",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G97553BW",
+     "relative_dp": "-1",
+     "match": "11"
    }
   ]
 }

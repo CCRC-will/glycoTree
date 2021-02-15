@@ -13,6 +13,11 @@
      "match": "12"
    },
    {
+     "accession": "G18731YM",
+     "relative_dp": "+0",
+     "match": "12"
+   },
+   {
      "accession": "G19429IT",
      "relative_dp": "+1",
      "match": "12"
@@ -54,6 +59,16 @@
    },
    {
      "accession": "G57970NA",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G58350LJ",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G59594CP",
      "relative_dp": "+1",
      "match": "12"
    },

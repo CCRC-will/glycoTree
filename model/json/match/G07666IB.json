@@ -23,6 +23,11 @@
      "match": "9"
    },
    {
+     "accession": "G21251LN",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G25429RR",
      "relative_dp": "-1",
      "match": "8"
@@ -36,6 +41,11 @@
      "accession": "G32611KT",
      "relative_dp": "-1",
      "match": "8"
+   },
+   {
+     "accession": "G36816DT",
+     "relative_dp": "+1",
+     "match": "9"
    },
    {
      "accession": "G37140SO",

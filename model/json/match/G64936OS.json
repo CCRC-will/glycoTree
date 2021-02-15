@@ -8,6 +8,11 @@
      "match": "14"
    },
    {
+     "accession": "G21470TX",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
      "accession": "G27516AE",
      "relative_dp": "-1",
      "match": "13"
@@ -39,6 +44,11 @@
    },
    {
      "accession": "G70076VV",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G78519ZX",
      "relative_dp": "+1",
      "match": "14"
    },

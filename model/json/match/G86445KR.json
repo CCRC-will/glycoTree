@@ -8,6 +8,11 @@
      "match": "10"
    },
    {
+     "accession": "G10270EI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G59942FB",
      "relative_dp": "+1",
      "match": "10"

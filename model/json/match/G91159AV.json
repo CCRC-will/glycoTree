@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G91159AV",
+  "dp":  "11",
+  "related_glycans": [ 
+   {
+     "accession": "G12643KN",
+     "relative_dp": "+0",
+     "match": "11"
+   },
+   {
+     "accession": "G34175ZP",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G91159AV",
+     "relative_dp": "+0",
+     "match": "11"
+   }
+  ]
+}

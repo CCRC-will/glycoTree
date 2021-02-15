@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G52793JJ",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G52793JJ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G93148GC",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G94838KN",
+     "relative_dp": "+0",
+     "match": "14"
+   }
+  ]
+}

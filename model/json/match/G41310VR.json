@@ -23,6 +23,11 @@
      "match": "11"
    },
    {
+     "accession": "G31196DF",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G33070IY",
      "relative_dp": "-1",
      "match": "10"
@@ -46,6 +51,16 @@
      "accession": "G50880EE",
      "relative_dp": "-1",
      "match": "10"
+   },
+   {
+     "accession": "G69533GA",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G76195PM",
+     "relative_dp": "+1",
+     "match": "11"
    }
   ]
 }

@@ -8,6 +8,11 @@
      "match": "13"
    },
    {
+     "accession": "G33052SB",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
      "accession": "G35484EX",
      "relative_dp": "+1",
      "match": "13"
@@ -26,6 +31,11 @@
      "accession": "G75049FP",
      "relative_dp": "-1",
      "match": "12"
+   },
+   {
+     "accession": "G81128IY",
+     "relative_dp": "+1",
+     "match": "13"
    },
    {
      "accession": "G82572FN",

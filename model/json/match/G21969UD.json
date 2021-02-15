@@ -8,6 +8,11 @@
      "match": "12"
    },
    {
+     "accession": "G21421NG",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
      "accession": "G21969UD",
      "relative_dp": "+0",
      "match": "13"
@@ -26,6 +31,16 @@
      "accession": "G43040IL",
      "relative_dp": "+0",
      "match": "13"
+   },
+   {
+     "accession": "G44030BX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G50013XL",
+     "relative_dp": "-1",
+     "match": "12"
    },
    {
      "accession": "G99502WP",

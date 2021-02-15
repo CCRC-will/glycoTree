@@ -26,6 +26,11 @@
      "accession": "G70081SZ",
      "relative_dp": "+0",
      "match": "15"
+   },
+   {
+     "accession": "G73567NI",
+     "relative_dp": "-1",
+     "match": "14"
    }
   ]
 }

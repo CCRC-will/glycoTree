@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G23914JN",
+  "dp":  "13",
+  "related_glycans": [ 
+   {
+     "accession": "G12788PX",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G23914JN",
+     "relative_dp": "+0",
+     "match": "13"
+   }
+  ]
+}

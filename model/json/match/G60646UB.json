@@ -28,6 +28,11 @@
      "match": "10"
    },
    {
+     "accession": "G39976KS",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G48630BP",
      "relative_dp": "-1",
      "match": "9"

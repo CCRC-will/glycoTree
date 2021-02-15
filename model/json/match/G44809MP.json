@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G44809MP",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G21251LN",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G44809MP",
+     "relative_dp": "+0",
+     "match": "9"
+   },
+   {
+     "accession": "G59451NL",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G59471TH",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G66348MF",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G76241TN",
+     "relative_dp": "-1",
+     "match": "8"
+   }
+  ]
+}

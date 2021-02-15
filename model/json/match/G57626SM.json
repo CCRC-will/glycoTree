@@ -23,6 +23,11 @@
      "match": "8"
    },
    {
+     "accession": "G47179RN",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G49923GC",
      "relative_dp": "+1",
      "match": "8"
@@ -56,6 +61,11 @@
      "accession": "G72233LJ",
      "relative_dp": "+0",
      "match": "8"
+   },
+   {
+     "accession": "G74459BD",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G76807JB",

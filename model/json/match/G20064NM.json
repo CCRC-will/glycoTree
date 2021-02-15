@@ -33,6 +33,11 @@
      "match": "6"
    },
    {
+     "accession": "G77712UR",
+     "relative_dp": "-1",
+     "match": "6"
+   },
+   {
      "accession": "G82348BZ",
      "relative_dp": "-1",
      "match": "6"
@@ -41,6 +46,11 @@
      "accession": "G97023FS",
      "relative_dp": "-1",
      "match": "6"
+   },
+   {
+     "accession": "G99801SM",
+     "relative_dp": "+0",
+     "match": "7"
    }
   ]
 }

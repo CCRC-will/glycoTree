@@ -1,0 +1,16 @@
+{
+  "probe_acc": "G34603JX",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G34603JX",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G67943IR",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
+}

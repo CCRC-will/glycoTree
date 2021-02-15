@@ -53,6 +53,16 @@
      "match": "11"
    },
    {
+     "accession": "G83433HW",
+     "relative_dp": "+1",
+     "match": "12"
+   },
+   {
+     "accession": "G84316BO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G89181JW",
      "relative_dp": "-1",
      "match": "11"

@@ -28,6 +28,11 @@
      "match": "11"
    },
    {
+     "accession": "G55258MY",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G59256VO",
      "relative_dp": "-1",
      "match": "11"
@@ -61,6 +66,11 @@
      "accession": "G81121OC",
      "relative_dp": "-1",
      "match": "11"
+   },
+   {
+     "accession": "G81912AC",
+     "relative_dp": "+0",
+     "match": "12"
    },
    {
      "accession": "G89808TP",

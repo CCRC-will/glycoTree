@@ -18,6 +18,11 @@
      "match": "18"
    },
    {
+     "accession": "G32358YV",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
      "accession": "G36211GH",
      "relative_dp": "-1",
      "match": "17"
@@ -31,6 +36,11 @@
      "accession": "G44414DH",
      "relative_dp": "-1",
      "match": "17"
+   },
+   {
+     "accession": "G45581BY",
+     "relative_dp": "+0",
+     "match": "18"
    },
    {
      "accession": "G70830AN",

@@ -21,6 +21,16 @@
      "accession": "G29764SO",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G32079YD",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G80474MG",
+     "relative_dp": "+0",
+     "match": "15"
    }
   ]
 }

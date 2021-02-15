@@ -38,6 +38,11 @@
      "match": "11"
    },
    {
+     "accession": "G18082CO",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
      "accession": "G19053XS",
      "relative_dp": "+1",
      "match": "12"
@@ -59,6 +64,11 @@
    },
    {
      "accession": "G45598BE",
+     "relative_dp": "-1",
+     "match": "11"
+   },
+   {
+     "accession": "G46031NV",
      "relative_dp": "-1",
      "match": "11"
    },

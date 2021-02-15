@@ -33,13 +33,28 @@
      "match": "13"
    },
    {
+     "accession": "G24355OK",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
      "accession": "G32746QI",
      "relative_dp": "+0",
      "match": "14"
    },
    {
+     "accession": "G42830YF",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G47171PW",
      "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G86157UQ",
+     "relative_dp": "+0",
      "match": "14"
    },
    {

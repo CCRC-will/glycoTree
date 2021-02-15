@@ -28,6 +28,11 @@
      "match": "9"
    },
    {
+     "accession": "G60875XB",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G65890UA",
      "relative_dp": "+0",
      "match": "10"

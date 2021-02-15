@@ -18,7 +18,17 @@
      "match": "13"
    },
    {
+     "accession": "G29519AS",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
      "accession": "G29764SO",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G29849KU",
      "relative_dp": "+1",
      "match": "13"
    },
@@ -26,6 +36,11 @@
      "accession": "G32065BG",
      "relative_dp": "-1",
      "match": "12"
+   },
+   {
+     "accession": "G32079YD",
+     "relative_dp": "+1",
+     "match": "13"
    },
    {
      "accession": "G76931AL",

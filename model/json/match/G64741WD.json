@@ -13,7 +13,17 @@
      "match": "10"
    },
    {
+     "accession": "G35442CG",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G50507PS",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G52882GL",
      "relative_dp": "-1",
      "match": "9"
    },

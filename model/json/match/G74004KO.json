@@ -13,6 +13,11 @@
      "match": "11"
    },
    {
+     "accession": "G27421EI",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G29290EB",
      "relative_dp": "+1",
      "match": "11"

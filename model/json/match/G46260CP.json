@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G46260CP",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G25471TG",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G46260CP",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G46767VX",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G54513OG",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G55867TY",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G99956MJ",
+     "relative_dp": "+1",
+     "match": "17"
+   }
+  ]
+}

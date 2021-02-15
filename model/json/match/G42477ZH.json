@@ -13,6 +13,11 @@
      "match": "9"
    },
    {
+     "accession": "G05840XL",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G37291PT",
      "relative_dp": "+1",
      "match": "10"

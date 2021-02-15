@@ -1,0 +1,46 @@
+{
+  "probe_acc": "G12715RL",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G01613KN",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G12715RL",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G31991IV",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G41596PV",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G77244ZA",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G82773SI",
+     "relative_dp": "+1",
+     "match": "15"
+   },
+   {
+     "accession": "G84712FX",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G99165YY",
+     "relative_dp": "+1",
+     "match": "15"
+   }
+  ]
+}

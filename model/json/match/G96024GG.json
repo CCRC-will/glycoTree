@@ -23,6 +23,11 @@
      "match": "11"
    },
    {
+     "accession": "G84170WO",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G85200FA",
      "relative_dp": "+1",
      "match": "11"

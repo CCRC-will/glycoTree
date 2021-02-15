@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G35708JV",
+  "dp":  "14",
+  "related_glycans": [ 
+   {
+     "accession": "G17348SA",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G20885BK",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G35708JV",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G45104SZ",
+     "relative_dp": "+0",
+     "match": "14"
+   },
+   {
+     "accession": "G72112RK",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G93816OI",
+     "relative_dp": "+1",
+     "match": "14"
+   }
+  ]
+}

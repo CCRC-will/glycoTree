@@ -13,6 +13,11 @@
      "match": "5"
    },
    {
+     "accession": "G04562GJ",
+     "relative_dp": "+1",
+     "match": "5"
+   },
+   {
      "accession": "G06920GM",
      "relative_dp": "+1",
      "match": "5"
@@ -24,6 +29,11 @@
    },
    {
      "accession": "G08096ND",
+     "relative_dp": "+1",
+     "match": "5"
+   },
+   {
+     "accession": "G09362PR",
      "relative_dp": "+1",
      "match": "5"
    },
@@ -48,6 +58,11 @@
      "match": "5"
    },
    {
+     "accession": "G19083SI",
+     "relative_dp": "+1",
+     "match": "5"
+   },
+   {
      "accession": "G19886LH",
      "relative_dp": "+1",
      "match": "5"
@@ -55,6 +70,11 @@
    {
      "accession": "G20624LQ",
      "relative_dp": "+0",
+     "match": "5"
+   },
+   {
+     "accession": "G22387ST",
+     "relative_dp": "+1",
      "match": "5"
    },
    {
@@ -158,6 +178,11 @@
      "match": "5"
    },
    {
+     "accession": "G43526DV",
+     "relative_dp": "+1",
+     "match": "5"
+   },
+   {
      "accession": "G43547MI",
      "relative_dp": "+0",
      "match": "5"
@@ -188,9 +213,9 @@
      "match": "5"
    },
    {
-     "accession": "G53394BX",
-     "relative_dp": "-1",
-     "match": "4"
+     "accession": "G52080EW",
+     "relative_dp": "+1",
+     "match": "5"
    },
    {
      "accession": "G54162CJ",
@@ -218,6 +243,11 @@
      "match": "5"
    },
    {
+     "accession": "G62167DK",
+     "relative_dp": "+0",
+     "match": "5"
+   },
+   {
      "accession": "G63411NB",
      "relative_dp": "+1",
      "match": "5"
@@ -233,6 +263,11 @@
      "match": "5"
    },
    {
+     "accession": "G66875SM",
+     "relative_dp": "+0",
+     "match": "5"
+   },
+   {
      "accession": "G67806KQ",
      "relative_dp": "+1",
      "match": "5"
@@ -244,6 +279,16 @@
    },
    {
      "accession": "G70073SG",
+     "relative_dp": "+1",
+     "match": "5"
+   },
+   {
+     "accession": "G72587UU",
+     "relative_dp": "+1",
+     "match": "5"
+   },
+   {
+     "accession": "G77712UR",
      "relative_dp": "+1",
      "match": "5"
    },

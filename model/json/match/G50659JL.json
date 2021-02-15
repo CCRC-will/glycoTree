@@ -8,12 +8,22 @@
      "match": "9"
    },
    {
+     "accession": "G06301TU",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
      "accession": "G14905MK",
      "relative_dp": "+1",
      "match": "9"
    },
    {
      "accession": "G18160VJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G19553VJ",
      "relative_dp": "-1",
      "match": "8"
    },

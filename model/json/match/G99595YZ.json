@@ -1,0 +1,21 @@
+{
+  "probe_acc": "G99595YZ",
+  "dp":  "15",
+  "related_glycans": [ 
+   {
+     "accession": "G17207FU",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G46449AK",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
+     "accession": "G99595YZ",
+     "relative_dp": "+0",
+     "match": "15"
+   }
+  ]
+}

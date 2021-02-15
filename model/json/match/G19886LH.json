@@ -33,6 +33,16 @@
      "match": "5"
    },
    {
+     "accession": "G62167DK",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
+     "accession": "G66875SM",
+     "relative_dp": "-1",
+     "match": "5"
+   },
+   {
      "accession": "G92303LR",
      "relative_dp": "+1",
      "match": "6"

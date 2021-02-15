@@ -13,12 +13,22 @@
      "match": "10"
    },
    {
+     "accession": "G14354BD",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G26320VO",
      "relative_dp": "+0",
      "match": "10"
    },
    {
      "accession": "G32704TW",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G32915BP",
      "relative_dp": "-1",
      "match": "9"
    },

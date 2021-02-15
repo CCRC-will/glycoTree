@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G86118KP",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G10108GZ",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G22188XM",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G44005DK",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G70927FR",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G86118KP",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G89285HT",
+     "relative_dp": "+0",
+     "match": "17"
+   }
+  ]
+}

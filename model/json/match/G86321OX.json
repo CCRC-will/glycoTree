@@ -13,12 +13,22 @@
      "match": "14"
    },
    {
+     "accession": "G43761IQ",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G86321OX",
      "relative_dp": "+0",
      "match": "15"
    },
    {
      "accession": "G87807PF",
+     "relative_dp": "-1",
+     "match": "14"
+   },
+   {
+     "accession": "G95619PX",
      "relative_dp": "-1",
      "match": "14"
    }

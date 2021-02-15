@@ -33,6 +33,11 @@
      "match": "8"
    },
    {
+     "accession": "G25162JS",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G27946NT",
      "relative_dp": "+1",
      "match": "8"
@@ -58,9 +63,19 @@
      "match": "8"
    },
    {
+     "accession": "G57580SM",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
      "accession": "G63170HT",
      "relative_dp": "+1",
      "match": "8"
+   },
+   {
+     "accession": "G67715OS",
+     "relative_dp": "-1",
+     "match": "7"
    },
    {
      "accession": "G69411IG",

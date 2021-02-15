@@ -13,6 +13,11 @@
      "match": "10"
    },
    {
+     "accession": "G03021WA",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G07982BU",
      "relative_dp": "+0",
      "match": "10"
@@ -73,12 +78,22 @@
      "match": "10"
    },
    {
+     "accession": "G72018SI",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G72082VM",
      "relative_dp": "-1",
      "match": "9"
    },
    {
      "accession": "G73271AZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G74683SL",
      "relative_dp": "-1",
      "match": "9"
    },

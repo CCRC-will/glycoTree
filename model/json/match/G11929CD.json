@@ -38,6 +38,11 @@
      "match": "10"
    },
    {
+     "accession": "G27170NH",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G36218DJ",
      "relative_dp": "-1",
      "match": "9"

@@ -28,7 +28,17 @@
      "match": "9"
    },
    {
+     "accession": "G17140UR",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G20956ZK",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G23647WB",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -71,6 +81,11 @@
      "accession": "G69044AJ",
      "relative_dp": "-1",
      "match": "8"
+   },
+   {
+     "accession": "G69749VJ",
+     "relative_dp": "+1",
+     "match": "9"
    },
    {
      "accession": "G75359HS",

@@ -1,0 +1,36 @@
+{
+  "probe_acc": "G91704EI",
+  "dp":  "18",
+  "related_glycans": [ 
+   {
+     "accession": "G05441GN",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G30437YI",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G53800MQ",
+     "relative_dp": "-1",
+     "match": "17"
+   },
+   {
+     "accession": "G68801RI",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G91704EI",
+     "relative_dp": "+0",
+     "match": "18"
+   },
+   {
+     "accession": "G93698KA",
+     "relative_dp": "-1",
+     "match": "17"
+   }
+  ]
+}

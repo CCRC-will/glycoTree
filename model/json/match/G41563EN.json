@@ -6,6 +6,11 @@
      "accession": "G41563EN",
      "relative_dp": "+0",
      "match": "12"
+   },
+   {
+     "accession": "G97159KS",
+     "relative_dp": "-1",
+     "match": "11"
    }
   ]
 }

@@ -8,6 +8,16 @@
      "match": "16"
    },
    {
+     "accession": "G10920IN",
+     "relative_dp": "+1",
+     "match": "16"
+   },
+   {
+     "accession": "G12715RL",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G30060ZO",
      "relative_dp": "+1",
      "match": "16"
@@ -24,6 +34,11 @@
    },
    {
      "accession": "G77244ZA",
+     "relative_dp": "+0",
+     "match": "16"
+   },
+   {
+     "accession": "G82773SI",
      "relative_dp": "+0",
      "match": "16"
    },

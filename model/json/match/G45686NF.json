@@ -28,6 +28,11 @@
      "match": "10"
    },
    {
+     "accession": "G50205RT",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G53000RQ",
      "relative_dp": "+1",
      "match": "10"

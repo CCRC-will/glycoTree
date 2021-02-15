@@ -38,6 +38,11 @@
      "match": "8"
    },
    {
+     "accession": "G68803QA",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
      "accession": "G80443OV",
      "relative_dp": "+1",
      "match": "9"

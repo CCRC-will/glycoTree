@@ -8,7 +8,17 @@
      "match": "17"
    },
    {
+     "accession": "G36303CE",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
      "accession": "G45776ET",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G57220BY",
      "relative_dp": "+0",
      "match": "17"
    },

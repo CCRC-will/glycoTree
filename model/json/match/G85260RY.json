@@ -13,6 +13,11 @@
      "match": "15"
    },
    {
+     "accession": "G55360MM",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G57075OH",
      "relative_dp": "-1",
      "match": "15"
@@ -54,6 +59,11 @@
    },
    {
      "accession": "G94277TH",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
+     "accession": "G96045AL",
      "relative_dp": "-1",
      "match": "15"
    }

@@ -8,6 +8,11 @@
      "match": "13"
    },
    {
+     "accession": "G18286BM",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
      "accession": "G23546LY",
      "relative_dp": "-1",
      "match": "12"
@@ -16,6 +21,11 @@
      "accession": "G29695SR",
      "relative_dp": "+0",
      "match": "13"
+   },
+   {
+     "accession": "G50013XL",
+     "relative_dp": "-1",
+     "match": "12"
    },
    {
      "accession": "G53567BY",

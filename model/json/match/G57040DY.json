@@ -1,0 +1,26 @@
+{
+  "probe_acc": "G57040DY",
+  "dp":  "17",
+  "related_glycans": [ 
+   {
+     "accession": "G01001RL",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G07865ET",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
+     "accession": "G57040DY",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G99165YY",
+     "relative_dp": "-1",
+     "match": "16"
+   }
+  ]
+}

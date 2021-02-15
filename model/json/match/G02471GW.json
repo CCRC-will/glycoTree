@@ -51,6 +51,11 @@
      "accession": "G64098MP",
      "relative_dp": "+1",
      "match": "11"
+   },
+   {
+     "accession": "G72601EC",
+     "relative_dp": "-1",
+     "match": "10"
    }
   ]
 }

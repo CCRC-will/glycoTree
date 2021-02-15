@@ -43,6 +43,16 @@
      "match": "10"
    },
    {
+     "accession": "G55828KH",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
+     "accession": "G62048AU",
+     "relative_dp": "-1",
+     "match": "10"
+   },
+   {
      "accession": "G62517DC",
      "relative_dp": "-1",
      "match": "10"
@@ -64,6 +74,11 @@
    },
    {
      "accession": "G75185NU",
+     "relative_dp": "+1",
+     "match": "11"
+   },
+   {
+     "accession": "G77576VI",
      "relative_dp": "+1",
      "match": "11"
    },

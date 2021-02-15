@@ -13,6 +13,16 @@
      "match": "13"
    },
    {
+     "accession": "G06022SA",
+     "relative_dp": "+1",
+     "match": "13"
+   },
+   {
+     "accession": "G15696PP",
+     "relative_dp": "+0",
+     "match": "13"
+   },
+   {
      "accession": "G23782KP",
      "relative_dp": "+1",
      "match": "13"
@@ -20,6 +30,16 @@
    {
      "accession": "G24552KE",
      "relative_dp": "+0",
+     "match": "13"
+   },
+   {
+     "accession": "G29519AS",
+     "relative_dp": "-1",
+     "match": "12"
+   },
+   {
+     "accession": "G29849KU",
+     "relative_dp": "+1",
      "match": "13"
    },
    {

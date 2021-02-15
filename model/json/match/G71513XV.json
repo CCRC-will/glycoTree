@@ -1,0 +1,41 @@
+{
+  "probe_acc": "G71513XV",
+  "dp":  "9",
+  "related_glycans": [ 
+   {
+     "accession": "G18160VJ",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G33734YD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G43657WC",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G45250VC",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G46123YD",
+     "relative_dp": "-1",
+     "match": "8"
+   },
+   {
+     "accession": "G47273WV",
+     "relative_dp": "+1",
+     "match": "9"
+   },
+   {
+     "accession": "G71513XV",
+     "relative_dp": "+0",
+     "match": "9"
+   }
+  ]
+}

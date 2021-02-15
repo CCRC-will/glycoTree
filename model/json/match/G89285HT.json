@@ -8,12 +8,22 @@
      "match": "17"
    },
    {
+     "accession": "G22188XM",
+     "relative_dp": "+1",
+     "match": "17"
+   },
+   {
      "accession": "G44005DK",
      "relative_dp": "+1",
      "match": "17"
    },
    {
      "accession": "G70927FR",
+     "relative_dp": "+0",
+     "match": "17"
+   },
+   {
+     "accession": "G86118KP",
      "relative_dp": "+0",
      "match": "17"
    },

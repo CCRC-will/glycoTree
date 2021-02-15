@@ -13,6 +13,16 @@
      "match": "7"
    },
    {
+     "accession": "G35459KZ",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
+     "accession": "G36749ZK",
+     "relative_dp": "-1",
+     "match": "7"
+   },
+   {
      "accession": "G41125AS",
      "relative_dp": "-1",
      "match": "7"
@@ -31,6 +41,11 @@
      "accession": "G56977BH",
      "relative_dp": "-1",
      "match": "7"
+   },
+   {
+     "accession": "G71513XV",
+     "relative_dp": "+1",
+     "match": "8"
    },
    {
      "accession": "G79771YZ",
