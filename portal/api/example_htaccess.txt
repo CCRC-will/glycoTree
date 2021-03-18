@@ -1,0 +1,12 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+
+# Rewrite, for example, index.php?type=json&ac=accession
+#  should work for 'GET'
+RewriteRule ^glycan/([a-z]+)/([0-9a-zA-Z_-]+)$ index.php?type=$1&ac=$2 [NC,L]
+
+
+# more info:
+
+# https://stackoverflow.com/questions/7670561/how-to-get-htaccess-to-work-on-mamp
+

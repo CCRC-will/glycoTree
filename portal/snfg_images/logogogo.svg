@@ -1,0 +1,36 @@
+<svg viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<style type="text/css" >
+		<![CDATA[
+			.logo_class {
+			  transform-origin: 50% 50% 0px;
+			  animation-name: animlogo;
+			  animation-duration: 6s;
+			  animation-timing-function: linear;
+			  animation-iteration-count: infinite;
+			}
+
+			@keyframes animlogo {
+			  50% {
+				transform: rotate3d(0, 0, 1, 180deg);
+			  }
+			  100% {
+				transform: rotate3d(0, 0, 1, 360deg);
+			  }
+			}
+		]]>
+	</style>
+	
+	<!-- ## you can remove this rect - it's just here to orient the developere ## -->
+	<rect style="stroke:rgb(200,200,200); fill:rgb(255,255,255);" x="0" y="0" width="180" height="180"></rect>
+
+	<!-- ## you can scale this (e.g., divide all numbers by 3) but you will have to scale the viewbox by the same factor ## -->
+	<g fill="none" stroke="#2F78B7" stroke-width="7.5" stroke-linecap="round"   class="logo_class">
+		<polyline points="63 65 139 87 164 58" id="top_line" >
+		</polyline>
+		<polyline points="17 122 41 92 117 115" id="bottom_line" >
+		</polyline>
+		<polyline points="128 101 52 79" id="middle_line"   >			
+		</polyline>
+	</g>
+</svg>

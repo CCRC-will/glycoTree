@@ -8,13 +8,13 @@
 
 start=$(date)
 echo $start
-
-for i in "$@"; do
+ for i in "$@"; do
+  ## identify svg_source_directory, as it contains the character '/'
   if grep -q "\/" <<< $i ; then
     echo svg directory is $i
     svg_dir=$i
   fi
-
+  ## the key word 'clear' is in the argument list
   if [ $i = 'clear' ]; then
     echo "Clearing old glycoTree data files (.txt, csv, .lst, .gTree.svg, .GlycoCT.svg, etc)"
     ./2_clear_data.sh
@@ -61,7 +61,7 @@ java -jar ./code/GenerateCSV.jar ./data/gct/files.lst list 1 &> ./log/csv.log
 echo
 if grep -q "[A-Za-z]" <<< $svg_dir ; then
   echo Fetching svg files from $svg_dir
-  ./fetchSVG.sh ./data/gct/csv/ $svg_dir ./data/svg/ > ./log/noSVG.lst
+  ./code/fetchSVG.sh ./data/gct/csv/ $svg_dir ./data/svg/ > ./log/noSVG.lst
   echo "Accessions lacking SVG support are listed in file ./model/glycansLackingSVG.lst"
   sed 's/[.]svg//g' ./log/noSVG.lst | sort > ./model/glycansLackingSVG.lst
 fi
@@ -74,7 +74,7 @@ find ./data/gct/csv -name "G*.csv" -print -maxdepth 1 | sort > ./data/gct/csv/fi
 echo
 echo Fetching current model files
 
-node_file=`ls ./model/N-nodes*.csv`
+node_file=`ls ./model/N-nodes-v4.2.y.csv`
 echo using node file $node_file
 
 sugar_file=`ls ./model/sugars*.csv`
@@ -82,6 +82,9 @@ echo using sugar file $sugar_file
 
 enzyme_file=`ls ./model/enzyme-mappings*.csv`
 echo using enzyme file $enzyme_file
+
+echo formatting node file
+sed -i.bak 's///g' $node_file
 
 echo
 echo Mapping residues in csv files to canonical tree 
@@ -91,9 +94,10 @@ echo
 echo Sorting mapped residues
 ./code/sortCSV.sh ./data/gct/csv/mapped 1 > ./log/sort.log
 
-echo
-echo Adding PubChem IDs
-find ./data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | xargs -I % awk -v out="./data/gct/csv/mapped/sorted/pc_annotated/" -f ./code/addPCids.awk ./model/pc_sugars.csv % 
+## pubchem IDs deprecated - pubchem has its own mapping
+## echo
+## echo Adding PubChem IDs
+## find ./data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | xargs -I % awk -v out="./data/gct/csv/mapped/sorted/pc_annotated/" -f ./code/addPCids.awk ./model/pc_sugars.csv % 
 
 echo
 echo "Generating list of unassigned residues into file ./model/unassigned.csv"
@@ -108,7 +112,7 @@ sort -k1.1,1.1r -k1.2,1 -k3,3n -k3.2,3n -k4,4g -t, model/temp_annotated_glycans.
 rm model/temp_annotated_glycans.csv
 
 echo
-echo "Generating a list of mapped csv files into file ./data/gct/csv/mapped/files.lst"
+echo "Generating file containing a list of mapped csv files:   ./data/gct/csv/mapped/files.lst"
 find ./data/gct/csv/mapped -name "G*.csv" -print -maxdepth 1  | sort > ./data/gct/csv/mapped/files.lst
 echo "Generating a list of svg files that may match the csv files into file ./data/svg/hope.lst"
 sed 's/[.]csv/.svg/g' ./data/gct/csv/files.lst > ./data/svg/temp.lst
@@ -133,11 +137,11 @@ awk -f ./code/hashem.awk ./model/map_gTree.csv ./model/map_GlycoCT.csv > ./model
 
 echo
 echo "Annotating residues with biosynthetic enzymes - for each structure, results are in a separate json file: ./model/json/[accession].json" 
-find ./data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | sort | xargs -I % awk -f ./code/mkJSONmanyMaps.awk $enzyme_file %
+find ./data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | sort | xargs -I % awk -f ./code/generateJSON.awk $enzyme_file %
 
 echo
 echo "Calculating common canonical residues in all accession pairs and writing json encoding of related glycan data in ./model/json/match"
-java -jar ./code/CorrelateGlycans.jar -v 2 -l ./data/gct/csv/mapped/files.lst -c 512 -j ./model/json/match &> ./log/correlate.log
+java -jar ./code/CorrelateGlycans.jar -v 2 -l ./data/gct/csv/mapped/files.lst -c 512 -j ./model/json/match -0 ./SQL/match.csv &> ./log/correlate.log
 
 echo
 echo "Appending initial json files with related glycan data"
@@ -149,8 +153,8 @@ find ./model/gTree_SVG -name "G*.svg"  -print -maxdepth 1 | xargs -I % cp % ./po
 find ./model/json/complete -name "G*.json"  -print -maxdepth 1 | xargs -I % cp % ./portal/json
 
 echo
-echo "Generating list of accessions associated with svg files into file ./svg.lst"
-find ./portal/svg -maxdepth 1 -name "G*.svg" -print | sort | cut -d \/ -f 4 | awk 'BEGIN {FS=".";} {printf("%s\n", $1);}' > svg.lst
+echo "Generating list of accessions associated with svg files into file ./model/svg.lst"
+find ./portal/svg -maxdepth 1 -name "G*.svg" -print | sort | cut -d \/ -f 4 | awk 'BEGIN {FS=".";} {printf("%s\n", $1);}' > ./model/svg.lst
 
 echo
 echo "Generating a list of accessions currently supported by GlycoTree into file ./accessions.lst"
@@ -158,7 +162,7 @@ find ./data/gct/csv/mapped -maxdepth 1 -name "G*.csv" -print | cut -d \/ -f 6 | 
 
 echo
 echo "Generating the home page for the portal as file ./portal/index.html"
-awk -f pIndex.awk pTemplate.txt  accessions.lst > ./portal/index.html
+awk -f ./code/pIndex.awk ./code/pTemplate.txt  accessions.lst > ./portal/index.html
 
 echo Done
 echo

@@ -19,10 +19,17 @@ BEGIN {
 }
 
 FNR == 1 {
+  ## keep track of which file is being processed
   file_rank++;
 }
 
 file_rank == 1 {
+  ## <enzyme_csv_file> is being processed
+  ## This file contains only enzyme information, NO other curator annotations 
+  #### This could be much more elegant and flexible
+  ####   ... get json keys from header of <enzyme_csv_file> file 
+  ####  requires dynamic naming of arrays
+  ####    maybe 2D array with 0th subarray holding key strings and subsequent subarrays holding values
   count++;
   id[count] = $2;
   type[count] = $3;
@@ -41,7 +48,9 @@ file_rank == 1 {
 }
 
 file_rank > 1 && FNR == 2 {
+  ## one of the glycan_csv_files is being processed
   if (file_rank > 2) {
+    ## files with rank > 1 generate a new output file, which must be closed before processing subsequent file with rank > 2
     ## close the previous glycan record
     printf("\n   ]") >> outFile;
     printf("\n}\n") >> outFile;
@@ -54,7 +63,10 @@ file_rank > 1 && FNR == 2 {
 }
 
 
-file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
+file_rank > 1 && FNR > 1 { 
+  ## add structural and curated annotations for the current residue
+  #### this could be much more elegant  and flexible
+  ####  ... get json keys from the current file - see line 29
   if (FNR > 2) printf(",") >> outFile;
   printf("\n    {") >> outFile;
   printf("\n      \"canonical_name\": \"%s\",", $2) >> outFile;
@@ -68,9 +80,15 @@ file_rank > 1 && FNR > 1 { ## printf("FNR is %s", FNR);
   printf("\n      \"site\": \"%s\",", $9) >> outFile;
   printf("\n      \"limited_to\": \"%s\",", $12) >> outFile;
   printf("\n      \"not_found_in\": \"%s\",", $13) >> outFile;
-  printf("\n      \"notes\": \"%s\",", $14) >> outFile;
-  printf("\n      \"evidence\": \"%s\",", $15) >> outFile;
+  printf("\n      \"requires_residue\": \"%s\",", $14) >> outFile;
+  printf("\n      \"blocked_by_residue\": \"%s\",", $15) >> outFile;
+  printf("\n      \"heed\": \"%s\",", $16) >> outFile;
+  printf("\n      \"notes\": \"%s\",", $17) >> outFile;
+  printf("\n      \"evidence\": \"%s\",", $18) >> outFile;
 
+  ## add enzyme information for the current residue
+  #### this could also be more elegant  and flexible
+  ####  ... get json keys from the header of the <enzyme_csv_file> - see line 29
   printf("\n      \"enzymes\": [") >> outFile;
   enz_count = 0;
   for (i = 1; i <= count; i++) {

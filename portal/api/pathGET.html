@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<TITLE>GlycoTree Pathway API Test</TITLE>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	
+	
+function getData(end_ac, start_ac) {
+	// Do not make a separate 'glycan' directory
+	// Put php files for API here and use .htaccess to redirect from fake directories
+	$.get("getpath.php",
+	{
+		end: end_ac,
+		start: start_ac
+	},
+	function(result){
+		$("#result_div").html("<h3>end is " + end_ac + "; start is " +
+		   start_ac + "</h3><pre>" + result + "</pre>");
+	})
+	.done(function() {
+		// alert( "yes, success" );
+	})
+	.fail(function() {
+		alert( "error retrieving data for " +  accession);
+	})
+	.always(function() {
+		// alert( "finished" );
+	});
+}
+	
+
+$(document).ready(function(){
+	
+	$("#get_path").click(function() {
+		var end = $("#end").val();
+		var start = $("#start").val();
+		getData(end, start);
+	});
+	
+});	
+
+	
+</script>
+	
+</head>
+<body>
+<h2>Test glycotree Pathway API</h2>
+<!-- don't use html form -->
+<label for="end">End Accession: </label>
+<input type="text" id="end" name="end" value="G99533GU">
+<label for="start">Start Accession: </label>
+<input type="text" id="start" name="start" value="G61751GZ">
+<button id="get_path">Get Pathway</button>
+	
+<h3>Requested Data</h3>
+<div id="result_div"></div>
+	
+</body>
+</html>

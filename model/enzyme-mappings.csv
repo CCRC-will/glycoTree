@@ -1,4 +1,4 @@
-residue_name,residue_ID,reaction_type,orthology_group,Uniprot,Protein RefSeq,DNA RefSeq,gene name,gene id,species,required_residue(s),blocking_residue(s),Notes,Branch site specificity 
+residue_name,residue_id,type,orthology_group,uniprot,protein_refseq,dna_refseq,gene_name,gene_id,species,required_residues,blocking_residues,notes,branch_site_specificity
 N-glycan_core_b-D-GlcpNAc_B,NB,GT,Alg14,Q9D081,NP_077140,NM_024178,Alg14,66789,mouse,,,,
 N-glycan_core_b-D-GlcpNAc_B,NB,GT,Alg14,Q96F25,NP_659425,NM_144988,ALG14,199857,human,,,,
 N-glycan_core_b-D-GlcpNAc_B,NB,GT,Alg13,Q9D8C3,NP_080523,NM_026247,Alg13,67574,mouse,,,,

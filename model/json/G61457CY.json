@@ -1,726 +1,737 @@
 {
-  "accession": "G61457CY", 
+  "glytoucan_ac": "G61457CY", 
   "residues": [
     {
-      "canonical_name": "N-glycan_core_D-GlcNAc_A",
+      "residue_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
-      "glycoct_index": "1",
-      "sugar_name": "GlcNAc",
+      "name": "GlcNAc",
       "anomer": "x",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "0",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "0",
       "site": "0",
+      "form_name": "GlcpNAc",
+      "glycoct_index": "1",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165210",
       "enzymes": [
-        {
-          "uniprot": "P42867",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Dpagt1",
+          "uniprot": "P42867",
           "protein_refseq": "NP_031901",
           "dna_refseq": "NM_007875",
           "gene_name": "Dpagt1",
           "gene_id": "13478",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9H3H5",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Dpagt1",
+          "uniprot": "Q9H3H5",
           "protein_refseq": "NP_001373",
           "dna_refseq": "NM_001382",
           "gene_name": "DPAGT1",
           "gene_id": "1798",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_core_b-D-GlcpNAc_B",
+      "residue_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
-      "glycoct_index": "3",
-      "sugar_name": "GlcNAc",
+      "name": "GlcNAc",
       "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "NA",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "NA",
       "site": "4",
+      "form_name": "GlcpNAc",
+      "glycoct_index": "3",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165211",
       "enzymes": [
-        {
-          "uniprot": "Q9D081",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Alg14",
+          "uniprot": "Q9D081",
           "protein_refseq": "NP_077140",
           "dna_refseq": "NM_024178",
           "gene_name": "Alg14",
           "gene_id": "66789",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q96F25",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Alg14",
+          "uniprot": "Q96F25",
           "protein_refseq": "NP_659425",
           "dna_refseq": "NM_144988",
           "gene_name": "ALG14",
           "gene_id": "199857",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9D8C3",
-          "species": "mouse",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Alg13",
+          "uniprot": "Q9D8C3",
           "protein_refseq": "NP_080523",
           "dna_refseq": "NM_026247",
           "gene_name": "Alg13",
           "gene_id": "67574",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9NP73",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Alg13",
+          "uniprot": "Q9NP73",
           "protein_refseq": "NP_060936",
           "dna_refseq": "NM_018466",
           "gene_name": "ALG13",
           "gene_id": "79868",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q8BML3",
-          "species": "mouse",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Glt28d2",
+          "uniprot": "Q8BML3",
           "protein_refseq": "NP_796104",
           "dna_refseq": "NM_177130",
           "gene_name": "Glt28d2",
           "gene_id": "320302",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "not in human",
-          "branch_site_specificity": ""
-        }
+          "notes": "not in human"
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_core_b-D-Manp_C",
+      "residue_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
-      "glycoct_index": "5",
-      "sugar_name": "Man",
+      "name": "Man",
       "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "NB",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "NB",
       "site": "4",
+      "form_name": "Manp",
+      "glycoct_index": "5",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165212",
       "enzymes": [
-        {
-          "uniprot": "Q921Q3",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Alg1",
+          "uniprot": "Q921Q3",
           "protein_refseq": "NP_663337",
           "dna_refseq": "NM_145362",
           "gene_name": "Alg1",
           "gene_id": "208211",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9BT22",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Alg1",
+          "uniprot": "Q9BT22",
           "protein_refseq": "NP_061982",
           "dna_refseq": "NM_019109",
           "gene_name": "ALG1",
           "gene_id": "56052",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_a-D-Manp_1",
+      "residue_name": "N-glycan_a-D-Manp_1",
       "residue_id": "N1",
-      "glycoct_index": "6",
-      "sugar_name": "Man",
+      "name": "Man",
       "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "NC",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "NC",
       "site": "3",
+      "form_name": "Manp",
+      "glycoct_index": "6",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165068",
       "enzymes": [
-        {
-          "uniprot": "Q9DBE8",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Alg2",
+          "uniprot": "Q9DBE8",
           "protein_refseq": "NP_064382",
           "dna_refseq": "NM_019998",
           "gene_name": "Alg2",
           "gene_id": "56737",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9H553",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Alg2",
+          "uniprot": "Q9H553",
           "protein_refseq": "NP_149078",
           "dna_refseq": "NM_033087",
           "gene_name": "ALG2",
           "gene_id": "85365",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_b-D-GlcpNAc_2",
+      "residue_name": "N-glycan_b-D-GlcpNAc_2",
       "residue_id": "N2",
-      "glycoct_index": "7",
-      "sugar_name": "GlcNAc",
+      "name": "GlcNAc",
       "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N1",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "N1",
       "site": "2",
+      "form_name": "GlcpNAc",
+      "glycoct_index": "7",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165130",
       "enzymes": [
-        {
-          "uniprot": "P27808",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Mgat1",
+          "uniprot": "P27808",
           "protein_refseq": "NP_034924",
           "dna_refseq": "NM_010794",
           "gene_name": "Mgat1",
           "gene_id": "17308",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "P26572",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Mgat1",
+          "uniprot": "P26572",
           "protein_refseq": "NP_001108090",
           "dna_refseq": "NM_001114618",
           "gene_name": "MGAT1",
           "gene_id": "4245",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_b-D-Galp_3",
+      "residue_name": "N-glycan_b-D-Galp_3",
       "residue_id": "N3",
-      "glycoct_index": "9",
-      "sugar_name": "Gal",
+      "name": "Gal",
       "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N2",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "N2",
       "site": "4",
+      "form_name": "Galp",
+      "glycoct_index": "9",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165141",
       "enzymes": [
-        {
-          "uniprot": "P15535",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "B4galt1",
+          "uniprot": "P15535",
           "protein_refseq": "NP_071641",
           "dna_refseq": "NM_022305",
           "gene_name": "B4galt1",
           "gene_id": "14595",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "P15291",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt1",
+          "uniprot": "P15291",
           "protein_refseq": "NP_001488",
           "dna_refseq": "NM_001497",
           "gene_name": "B4GALT1",
           "gene_id": "2683",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9Z2Y2",
-          "species": "mouse",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt2",
+          "uniprot": "Q9Z2Y2",
           "protein_refseq": "NP_059073",
           "dna_refseq": "NM_017377",
           "gene_name": "B4galt2",
           "gene_id": "53418",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "O60909",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt2",
+          "uniprot": "O60909",
           "protein_refseq": "NP_085076",
           "dna_refseq": "NM_030587",
           "gene_name": "B4GALT2",
           "gene_id": "8704",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q91YY2",
-          "species": "mouse",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt3",
+          "uniprot": "Q91YY2",
           "protein_refseq": "NP_065604",
           "dna_refseq": "NM_020579",
           "gene_name": "B4galt3",
           "gene_id": "57370",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "O60512",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt3",
+          "uniprot": "O60512",
           "protein_refseq": "NP_003770",
           "dna_refseq": "NM_003779",
           "gene_name": "B4GALT3",
           "gene_id": "8703",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_a-D-Manp_4",
+      "residue_name": "N-glycan_a-D-Manp_4",
       "residue_id": "N4",
-      "glycoct_index": "12",
-      "sugar_name": "Man",
+      "name": "Man",
       "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "NC",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "NC",
       "site": "6",
+      "form_name": "Manp",
+      "glycoct_index": "12",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165152",
       "enzymes": [
-        {
-          "uniprot": "Q9DBE8",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Alg2",
+          "uniprot": "Q9DBE8",
           "protein_refseq": "NP_064382",
           "dna_refseq": "NM_019998",
           "gene_name": "Alg2",
           "gene_id": "56737",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9H553",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Alg2",
+          "uniprot": "Q9H553",
           "protein_refseq": "NP_149078",
           "dna_refseq": "NM_033087",
           "gene_name": "ALG2",
           "gene_id": "85365",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_b-D-GlcpNAc_5",
+      "residue_name": "N-glycan_b-D-GlcpNAc_5",
       "residue_id": "N5",
-      "glycoct_index": "13",
-      "sugar_name": "GlcNAc",
+      "name": "GlcNAc",
       "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N4",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "N4",
       "site": "2",
+      "form_name": "GlcpNAc",
+      "glycoct_index": "13",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165163",
       "enzymes": [
-        {
-          "uniprot": "Q921V5",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Mgat2",
+          "uniprot": "Q921V5",
           "protein_refseq": "NP_666147",
           "dna_refseq": "NM_146035",
           "gene_name": "Mgat2",
           "gene_id": "217664",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q10469",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Mgat2",
+          "uniprot": "Q10469",
           "protein_refseq": "NP_002399",
           "dna_refseq": "NM_002408",
           "gene_name": "MGAT2",
           "gene_id": "4247",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_b-D-Galp_6",
+      "residue_name": "N-glycan_b-D-Galp_6",
       "residue_id": "N6",
-      "glycoct_index": "15",
-      "sugar_name": "Gal",
+      "name": "Gal",
       "anomer": "b",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N5",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "N5",
       "site": "4",
+      "form_name": "Galp",
+      "glycoct_index": "15",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165174",
       "enzymes": [
-        {
-          "uniprot": "P15535",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "B4galt1",
+          "uniprot": "P15535",
           "protein_refseq": "NP_071641",
           "dna_refseq": "NM_022305",
           "gene_name": "B4galt1",
           "gene_id": "14595",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "P15291",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt1",
+          "uniprot": "P15291",
           "protein_refseq": "NP_001488",
           "dna_refseq": "NM_001497",
           "gene_name": "B4GALT1",
           "gene_id": "2683",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9Z2Y2",
-          "species": "mouse",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt2",
+          "uniprot": "Q9Z2Y2",
           "protein_refseq": "NP_059073",
           "dna_refseq": "NM_017377",
           "gene_name": "B4galt2",
           "gene_id": "53418",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "O60909",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt2",
+          "uniprot": "O60909",
           "protein_refseq": "NP_085076",
           "dna_refseq": "NM_030587",
           "gene_name": "B4GALT2",
           "gene_id": "8704",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q91YY2",
-          "species": "mouse",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt3",
+          "uniprot": "Q91YY2",
           "protein_refseq": "NP_065604",
           "dna_refseq": "NM_020579",
           "gene_name": "B4galt3",
           "gene_id": "57370",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "O60512",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "B4galt3",
+          "uniprot": "O60512",
           "protein_refseq": "NP_003770",
           "dna_refseq": "NM_003779",
           "gene_name": "B4GALT3",
           "gene_id": "8703",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_a-L-Fucp_15",
+      "residue_name": "N-glycan_a-L-Fucp_15",
       "residue_id": "N15",
-      "glycoct_index": "17",
-      "sugar_name": "Fuc",
+      "name": "Fuc",
       "anomer": "a",
-      "absolute_configuration": "L",
-      "ring_form": "p",
-      "parent": "NA",
+      "absolute": "L",
+      "ring": "p",
+      "parent_id": "NA",
       "site": "6",
+      "form_name": "Fucp",
+      "glycoct_index": "17",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165122",
       "enzymes": [
-        {
-          "uniprot": "Q9WTS2",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Fut8",
+          "uniprot": "Q9WTS2",
           "protein_refseq": "NP_058589",
           "dna_refseq": "NM_016893",
           "gene_name": "Fut8",
           "gene_id": "53618",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q9BYC5",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "Fut8",
+          "uniprot": "Q9BYC5",
           "protein_refseq": "NP_835368",
           "dna_refseq": "NM_178155",
           "gene_name": "FUT8",
           "gene_id": "2530",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_a-D-NeupNGc_47",
+      "residue_name": "N-glycan_a-D-NeupNGc_47",
       "residue_id": "N47",
-      "glycoct_index": "10",
-      "sugar_name": "NeuNGc",
+      "name": "NeuNGc",
       "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N3",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "N3",
       "site": "6",
+      "form_name": "NeupNGc",
+      "glycoct_index": "10",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165160",
       "enzymes": [
-        {
-          "uniprot": "Q64685",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "St6gal1",
+          "uniprot": "Q64685",
           "protein_refseq": "NP_666045",
           "dna_refseq": "NM_145933",
           "gene_name": "St6gal1",
           "gene_id": "20440",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) - unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "P15907",
-          "species": "human",
+          "notes": "Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) - unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources"
+         },
+         {
           "type": "GT",
           "orthology_group": "St6gal1",
+          "uniprot": "P15907",
           "protein_refseq": "NP_775323",
           "dna_refseq": "NM_173216",
           "gene_name": "ST6GAL1",
           "gene_id": "6480",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) - unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "Q76K27",
-          "species": "mouse",
+          "notes": "Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) - unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources"
+         },
+         {
           "type": "GT",
           "orthology_group": "St6gal2",
+          "uniprot": "Q76K27",
           "protein_refseq": "NP_766417",
           "dna_refseq": "NM_172829",
           "gene_name": "St6gal2",
           "gene_id": "240119",
+          "species": "mouse",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": "Branch site specificity unknown"
-        },
-        {
-          "uniprot": "Q96JF0",
-          "species": "human",
+          "notes": ""
+         },
+         {
           "type": "GT",
           "orthology_group": "St6gal2",
+          "uniprot": "Q96JF0",
           "protein_refseq": "NP_115917",
           "dna_refseq": "NM_032528",
           "gene_name": "ST6GAL2",
           "gene_id": "84620",
+          "species": "human",
           "required_residues": "",
           "blocking_residues": "",
-          "notes": "",
-          "branch_site_specificity": ""
-        }
+          "notes": ""
+         }
       ]
     },
     {
-      "canonical_name": "N-glycan_a-D-Galp_50",
+      "residue_name": "N-glycan_a-D-Galp_50",
       "residue_id": "N50",
-      "glycoct_index": "16",
-      "sugar_name": "Gal",
+      "name": "Gal",
       "anomer": "a",
-      "absolute_configuration": "D",
-      "ring_form": "p",
-      "parent": "N6",
+      "absolute": "D",
+      "ring": "p",
+      "parent_id": "N6",
       "site": "3",
+      "form_name": "Galp",
+      "glycoct_index": "16",
       "limited_to": "",
       "not_found_in": "",
+      "requires_residue": "",
+      "blocked_by_residue": "",
+      "warning": "",
       "notes": "validated by Qrator",
       "evidence": "PMID: 25165164",
       "enzymes": [
-        {
-          "uniprot": "P38649",
-          "species": "mouse",
+         {
           "type": "GT",
           "orthology_group": "Abo",
+          "uniprot": "P38649",
           "protein_refseq": "NP_109643",
           "dna_refseq": "NM_030718",
           "gene_name": "Abo",
           "gene_id": "80908",
+          "species": "mouse",
           "required_residues": "N54",
           "blocking_residues": "",
-          "notes": "The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N50 but missing a-Fuc N54 are potentially catabolic products",
-          "branch_site_specificity": ""
-        },
-        {
-          "uniprot": "P16442",
-          "species": "human",
+          "notes": "The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N50 but missing a-Fuc N54 are potentially catabolic products"
+         },
+         {
           "type": "GT",
           "orthology_group": "Abo",
+          "uniprot": "P16442",
           "protein_refseq": "NP_065202",
           "dna_refseq": "NM_020469",
           "gene_name": "ABO",
           "gene_id": "28",
+          "species": "human",
           "required_residues": "N54",
           "blocking_residues": "",
-          "notes": "The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N50 but missing a-Fuc N54 are potentially catabolic products",
-          "branch_site_specificity": ""
-        }
+          "notes": "The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N50 but missing a-Fuc N54 are potentially catabolic products"
+         }
       ]
     }
   ]

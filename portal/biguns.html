@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>GlyGen Sandbox</title>
+	
+<link rel="icon" href="../model/gTree_svg/sbSmall.svg" type="image/icon type">
+<link rel="stylesheet" type="text/css" href="css/explore.css">
+	
+<script src="js/sbheader.js"></script>
+	
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<style>
+
+#imgDiv {
+	position: fixed;
+	z-index: 88;
+	right: 20px;
+	top: 60px;
+	width: 70%;
+	border-style: none;
+	text-align: center;
+}
+		
+#iframe0 {
+	position: relative;
+	z-index: 88;
+	top: 20px;
+	width: 100%;
+	height: 350px;
+	border-style: none;
+	text-align: center;
+}
+
+#listDiv {
+	position: absolute;
+	z-index: 88;
+	left: 20px;
+	top: 60px;
+	width: 25%;
+	border-style: none;
+	text-align: center;
+}
+
+</style>	
+	
+<script>
+	var tCount = 0;
+
+	function initialize() {
+		console.log("##### Initializing #####");
+		setupAnimation('logo_svg', 'header');
+		var ifr = $("#iframe0");
+	} // end of function initialize()
+	
+	function showImage(access) {
+		var frm = document.getElementById('iframe0');
+		//var frm = $('#iframe0');
+		frm.src = 'svg/' + access + '.gTree.svg'; 
+		document.getElementById('accession').value = access;		
+		document.getElementById('glycan_info').innerHTML = "<h1>" + access + "</h1>";		
+	}
+</script>
+		
+</head>
+
+<body onLoad=initialize();>
+	
+<div id="header" width=100%>
+<span id="header_1">GlyGen</span>
+<object id="logo_svg" type="image/svg+xml" data="../model/gTree_svg/sbLogo.svg" class="logo"></object>
+<span id="header_2">Sand Box</span>
+</div>
+
+
+<div id="imgDiv">
+	<h3>GlycoTree: Explore Gycan Structure</h3>
+	<form action="explore.html" method="get" target="_blank">
+	  <label for="fname">GlyTouCan Accession:</label>
+	  <input type="text" id="accession" name="accession">
+	  <input type="submit" value="Explore">
+	</form>
+	<p id="glycan_info">Glycan Info</p>
+	<iframe id="iframe0">
+	</iframe>
+</div>
+
+	
+	
+<div id="listDiv">
+	<h4>Can't find the canonical residue you're looking for? </h4>
+	<h4>Choose a glycan from the list below </h4>
+	<table>
+	  <tr>
+	    <td>G98906WL</td>
+	    <td><a href="explore.html?G98906WL" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G98906WL');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G50508SG</td>
+	    <td><a href="explore.html?G50508SG" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G50508SG');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G48109OV</td>
+	    <td><a href="explore.html?G48109OV" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G48109OV');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G23166NU</td>
+	    <td><a href="explore.html?G23166NU" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G23166NU');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G72079JG</td>
+	    <td><a href="explore.html?G72079JG" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G72079JG');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G41107EH</td>
+	    <td><a href="explore.html?G41107EH" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G41107EH');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G11165BC</td>
+	    <td><a href="explore.html?G11165BC" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G11165BC');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G54158IT</td>
+	    <td><a href="explore.html?G54158IT" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G54158IT');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G68203DZ</td>
+	    <td><a href="explore.html?G68203DZ" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G68203DZ');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G92140GK</td>
+	    <td><a href="explore.html?G92140GK" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G92140GK');">View</a></td>
+	  </tr>
+	  <tr>
+	    <td>G09576QH</td>
+	    <td><a href="explore.html?G09576QH" target="_blank">Explore</a></td></td>
+	    <td><a href="javascript:showImage('G09576QH');">View</a></td>
+	  </tr>
+	</table>
+</div>
+</body>
+</html>
