@@ -14,3 +14,7 @@ data/svg/
 data/bak/
 model/bak/
 model/nodes/
+portal/wtf.php
+portal/api/paths/getpath.php
+portal/api/paths/getpathD3.php
+

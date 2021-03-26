@@ -1,0 +1,33 @@
+<svg height="180" width="180" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<style type="text/css" >
+		<![CDATA[
+			.logo_class {
+			  transform-origin: 50% 50% 0px;
+			  animation-name: animlogo;
+			  animation-duration: 3s;
+			  animation-timing-function: linear;
+			  animation-iteration-count: infinite;
+			}
+
+			@keyframes animlogo {
+			  50% {
+				transform: scale(-1, 1);
+			  }
+			  100% {
+				transform: scale(1, 1);
+			  }
+			}
+		]]>
+	</style>
+
+	<!-- ## you can scale this (e.g., divide all numbers by 3) but you will have to scale the viewbox by the same factor ## -->
+	<g fill="none" stroke="#2F78B7" stroke-width="2.5" stroke-linecap="round"   class="logo_class">
+		<polyline points="21.0 21.7 46.3 29.0 54.7 19.3" id="top_line" >
+		</polyline>
+		<polyline points="5.7 40.7 13.7 30.7 39.0 38.3" id="bottom_line" >
+		</polyline>
+		<polyline points="42.7 33.7 17.3 26.3" id="middle_line"   >			
+		</polyline>
+	</g>
+</svg>

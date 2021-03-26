@@ -1,9 +1,5 @@
 <?php
-
-$servername = "localhost";
-$username = "gt_user";
-$password = "gobbledygoo";
-$dbname = "glycotree";
+include '../config.php';
 
 
 function sortCustom($arr, $column, $cmp) {
