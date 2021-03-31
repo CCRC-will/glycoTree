@@ -1,22 +1,10 @@
 
 <?php
-/* Improvements:
--	keep an associative array counts = {[accession] => [count]} to do the following
-	.	when a link is made to a novel accession, the count for that accession is put into the array - the count is the sum of counts returned from its 'ancestors'
-	.	this simplifies "node exists" queries - if (counts['accession'] > 0), then accession exists
-	.	when called from $end, if count of aglycone ($newEnd > 0), then
-	$newEnd exists;
-	. the link to $newEnd cannot yet exist because of the way the traversal is structured
-	. all links from $newEnd must already exist and be totaled in counts[$newEnd]
-	.	if ($newEnd > 0), then make a new link ($end to $newEnd) and add counts[$newEnd] to local count for #end - when done, the local count for $end is returned to calling iteration of function
-	.	upon completion, $end does two things:
-			+ set the value of counts[$end] to local count
-			+ return this value to calling iteration - these are summed for each 'parent'
-	.	grand total of returned values is the number of possible paths
-*/
 
 include '../../config.php';
-	
+$servername = getenv('MYSQL_SERVER_NAME');
+$password = getenv('MYSQL_PASSWORD');
+
 function getDP($accession, $connection) {
 	$sql = "SELECT COUNT(*) AS num FROM compositions WHERE glytoucan_ac=? ";
 	$stmt = $connection->prepare($sql);
@@ -62,43 +50,12 @@ function getPrecursors($accession, $connection) {
 	return $precursors;
 }
 
-/*
-function edgeExists($data, $child_node, $parent_node) {
-	// echo " ...edgeExists?... checking $child_node and $parent_node\n";
-	// $data is an array of arrays
-	$nds = $data['nodes'];
-	//     links are specified using indices of nodes
-	$cIndex = nodeExists($data, $child_node);
-	$pIndex = nodeExists($data, $parent_node);
-
-	// echo "   ...edgeExists?... checked node indices $cIndex and $pIndex\n";
-	$lnks = $data['links'];
-	// for all edges, the source is always $parent_node and
-	//     the target is always $child_node
-	foreach ($lnks as $value) {
-		if (($value['target'] == $cIndex) && ($value['source'] == $pIndex)) {
-			// echo "   ...edgeExists?... FOUND edge\n";
-			return 1;
-		}
-	}
-	// echo "   ...edgeExists?... DID NOT FIND edge\n";
-
-	return 0;
-} // end of function edgeExists()
-*/
-
 function nodeExists($data, $the_node) {
-	// echo " ---nodeExists?--- $the_node\n";
+	// returns the 'id' of the_node, or '0' if the node does not exist
 	$nds = $data['nodes'];
-	//     links are specified using indices of nodes
 	$nIndex = 0;
 	foreach($nds as $value) {
 		if ($value["name"] == $the_node) $nIndex = $value["id"];
-	}
-	if (($nIndex) > 0) {
-		// echo " ---nodeExists?--- FOUND\n";
-	} else {
-		// echo " ---nodeExists?--- NOT FOUND\n";
 	}
 	return $nIndex;
 }
@@ -111,7 +68,7 @@ function addNode(&$data, $the_node, $connection) {
 	$nds = $data['nodes'];
 	$count = sizeof($nds) + 1;
 	$newNode = [];
-	$newNode["id"] = $count;
+	$newNode["id"] = $the_node;
 	$newNode["name"] = $the_node;
 	$newNode["dp"] = getDP($the_node, $connection);
 	$nds[] = $newNode;
@@ -139,23 +96,19 @@ function sortColumn($arr, $column) {
 
 
 function addEdge(&$data, $child_node, $parent_node, $connection) {
-	// echo "---addEdge--- $child_node - $parent_node\n";
 	// add nodes to $data if they have not yet been added
 	// nodeExists returns nodeIndex, or zero if non-existent
 	$cIndex = nodeExists($data, $child_node);
 	if ($cIndex === 0) {
-		// echo " ---addEdge--- adding node $child_node, which does not yet exist\n";
+		// $child_node does not yet exist
 		// addNode returns new (non-zero) nodeIndex
 		$cIndex = addNode($data, $child_node, $connection);
-		// echo " ---addEdge--- ADDED node with id $cIndex\n";
 	}
 	
-	// nodeExists returns nodeIndex, or zero if non-existent
 	$pIndex = nodeExists($data, $parent_node);
 	if ($pIndex === 0) {
-		// echo " ---addEdge--- adding node $parent_node, which does not yet exist\n";
+		// node $parent_node does not yet exist
 		$pIndex = addNode($data, $parent_node, $connection);
-		// echo " ---addEdge--- ADDED node with id $pIndex\n";
 	}
 	$nds = $data['nodes'];
 	
@@ -202,14 +155,12 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 		"residue_added" => $ra,
 		"enzymes" => $enzymes
 	);
+	// get copy ($lnks) of $data['links']
 	$lnks = $data['links'];
-	// echo "   adding edge($child_node - $parent_node), here is the data before:\n %%% ";
-	// var_dump($data);
+	// add a new link to $lnks
 	$lnks[] = $edge;
+	// replace $data['links'] with updated $lnks
 	$data['links'] = $lnks;
-	// echo "--- addEdge--- ($child_node - $parent_node) result;\n";
-	// echo "\nDATA\n";
-	// echo json_encode($data, JSON_PRETTY_PRINT);
 }
 
 // recursive traversal ($end to $start) of multiple pathways

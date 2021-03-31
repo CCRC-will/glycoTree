@@ -2,7 +2,7 @@
   "glytoucan_ac": "G71323UV", 
   "residues": [
     {
-      "residue_name": "N-glycan_core_D-GlcNAc_A",
+      "﻿residue_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "name": "GlcNAc",
       "anomer": "x",
@@ -16,8 +16,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165210",
       "enzymes": [
          {
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_core_b-D-GlcpNAc_B",
+      "﻿residue_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
       "name": "GlcNAc",
       "anomer": "b",
@@ -63,8 +63,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165211",
       "enzymes": [
          {
@@ -135,7 +135,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_core_b-D-Manp_C",
+      "﻿residue_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
       "name": "Man",
       "anomer": "b",
@@ -149,8 +149,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165212",
       "enzymes": [
          {
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_a-D-Manp_1",
+      "﻿residue_name": "N-glycan_a-D-Manp_1",
       "residue_id": "N1",
       "name": "Man",
       "anomer": "a",
@@ -196,8 +196,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165068",
       "enzymes": [
          {
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_b-D-GlcpNAc_2",
+      "﻿residue_name": "N-glycan_b-D-GlcpNAc_2",
       "residue_id": "N2",
       "name": "GlcNAc",
       "anomer": "b",
@@ -243,8 +243,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165130",
       "enzymes": [
          {
@@ -276,7 +276,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_b-D-Galp_3",
+      "﻿residue_name": "N-glycan_b-D-Galp_3",
       "residue_id": "N3",
       "name": "Gal",
       "anomer": "b",
@@ -290,8 +290,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165141",
       "enzymes": [
          {
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_a-D-Manp_4",
+      "﻿residue_name": "N-glycan_a-D-Manp_4",
       "residue_id": "N4",
       "name": "Man",
       "anomer": "a",
@@ -389,8 +389,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165152",
       "enzymes": [
          {
@@ -422,7 +422,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_a-D-NeupNAc_12",
+      "﻿residue_name": "N-glycan_a-D-NeupNAc_12",
       "residue_id": "N12",
       "name": "NeuNAc",
       "anomer": "a",
@@ -436,8 +436,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165091",
       "enzymes": [
          {
@@ -495,7 +495,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_b-D-GlcpNAc_31",
+      "﻿residue_name": "N-glycan_b-D-GlcpNAc_31",
       "residue_id": "N31",
       "name": "GlcNAc",
       "anomer": "b",
@@ -509,8 +509,8 @@
       "not_found_in": "",
       "requires_residue": "N9",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165143",
       "comment": "PMID: 2525556 by MT.  GNT6 only makes penta-antennary; i.e. requires previous GlcNAc addition to 6-position of 6-linked Man (by GNT5).  Activity not yet detected in mammals.  Activity reported in chicken oviduct.  But even in chicken the triantennary glycan (4-substitution without 6-substititutioni) is not allowed",
       "enzymes": [
@@ -543,7 +543,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_b-D-Galp_32",
+      "﻿residue_name": "N-glycan_b-D-Galp_32",
       "residue_id": "N32",
       "name": "Gal",
       "anomer": "b",
@@ -557,8 +557,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165144",
       "enzymes": [
          {
@@ -642,7 +642,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_a-D-NeupNAc_46",
+      "﻿residue_name": "N-glycan_a-D-NeupNAc_46",
       "residue_id": "N46",
       "name": "NeuNAc",
       "anomer": "a",
@@ -656,8 +656,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165159",
       "enzymes": [
          {
@@ -741,7 +741,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_a-D-GlcpNAc_316",
+      "﻿residue_name": "N-glycan_a-D-GlcpNAc_316",
       "residue_id": "N316",
       "name": "GlcNAc",
       "anomer": "a",
@@ -755,13 +755,12 @@
       "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
-      "notes": "in an abiotic configuration",
+      "notes": "abiotic configuration",
       "enzymes": [
       ]
     },
     {
-      "residue_name": "N-glycan_b-D-Galp_370",
+      "﻿residue_name": "N-glycan_b-D-Galp_370",
       "residue_id": "N370",
       "name": "Gal",
       "anomer": "b",
@@ -775,13 +774,12 @@
       "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
-      "notes": "in an abiotic context",
+      "notes": "subtree of N316",
       "enzymes": [
       ]
     },
     {
-      "residue_name": "N-glycan_a-D-NeupNAc_437",
+      "﻿residue_name": "N-glycan_a-D-NeupNAc_437",
       "residue_id": "N437",
       "name": "NeuNAc",
       "anomer": "a",
@@ -795,7 +793,6 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "not validated",
       "enzymes": [
       ]

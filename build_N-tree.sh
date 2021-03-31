@@ -74,7 +74,8 @@ find ./data/gct/csv -name "G*.csv" -print -maxdepth 1 | sort > ./data/gct/csv/fi
 echo
 echo Fetching current model files
 
-node_file=`ls ./model/N-nodes-v4.2.y.csv`
+## There should be only one file in ./model/ that matches 'N-nodes-*.csv'
+node_file=`ls ./model/N-nodes-*.csv`
 echo using node file $node_file
 
 sugar_file=`ls ./model/sugars*.csv`
@@ -85,6 +86,7 @@ echo using enzyme file $enzyme_file
 
 echo formatting node file
 sed -i.bak 's///g' $node_file
+mv N-nodes-*.bak bak/
 
 echo
 echo Mapping residues in csv files to canonical tree 
@@ -141,7 +143,7 @@ find ./data/gct/csv/mapped/sorted/ -name "G*.csv" -print -maxdepth 1 | sort | xa
 
 echo
 echo "Calculating common canonical residues in all accession pairs and writing json encoding of related glycan data in ./model/json/match"
-java -jar ./code/CorrelateGlycans.jar -v 2 -l ./data/gct/csv/mapped/files.lst -c 512 -j ./model/json/match -0 ./SQL/match.csv &> ./log/correlate.log
+java -jar ./code/CorrelateGlycans.jar -v 2 -l ./data/gct/csv/mapped/files.lst -c 512 -j ./model/json/match -o ./SQL/match.csv &> ./log/correlate.log
 
 echo
 echo "Appending initial json files with related glycan data"

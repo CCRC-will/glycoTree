@@ -2,7 +2,7 @@
   "glytoucan_ac": "G04251SC", 
   "residues": [
     {
-      "residue_name": "N-glycan_core_D-GlcNAc_A",
+      "﻿residue_name": "N-glycan_core_D-GlcNAc_A",
       "residue_id": "NA",
       "name": "GlcNAc",
       "anomer": "x",
@@ -16,8 +16,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165210",
       "enzymes": [
          {
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_core_b-D-GlcpNAc_B",
+      "﻿residue_name": "N-glycan_core_b-D-GlcpNAc_B",
       "residue_id": "NB",
       "name": "GlcNAc",
       "anomer": "b",
@@ -63,8 +63,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165211",
       "enzymes": [
          {
@@ -135,7 +135,7 @@
       ]
     },
     {
-      "residue_name": "N-glycan_core_b-D-Manp_C",
+      "﻿residue_name": "N-glycan_core_b-D-Manp_C",
       "residue_id": "NC",
       "name": "Man",
       "anomer": "b",
@@ -149,8 +149,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "warning": "",
       "notes": "validated by Qrator",
+      "who": "",
       "evidence": "PMID: 25165212",
       "enzymes": [
          {
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "residue_name": "unassigned",
+      "﻿residue_name": "unassigned",
       "residue_id": "6",
       "name": "Man",
       "anomer": "a",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "residue_name": "unassigned",
+      "﻿residue_name": "unassigned",
       "residue_id": "7",
       "name": "Man",
       "anomer": "a",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "residue_name": "unassigned",
+      "﻿residue_name": "unassigned",
       "residue_id": "8",
       "name": "Man",
       "anomer": "a",
@@ -224,7 +224,7 @@
       ]
     },
     {
-      "residue_name": "unassigned",
+      "﻿residue_name": "unassigned",
       "residue_id": "9",
       "name": "Man",
       "anomer": "a",
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "residue_name": "unassigned",
+      "﻿residue_name": "unassigned",
       "residue_id": "10",
       "name": "Man",
       "anomer": "a",

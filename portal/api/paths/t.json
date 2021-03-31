@@ -1,0 +1,768 @@
+{
+    "nodes": [
+        {
+            "id": "G61751GZ",
+            "name": "G61751GZ",
+            "dp": 6
+        },
+        {
+            "id": "G39213VZ",
+            "name": "G39213VZ",
+            "dp": 7
+        },
+        {
+            "id": "G74090KZ",
+            "name": "G74090KZ",
+            "dp": 7
+        },
+        {
+            "id": "G92024SL",
+            "name": "G92024SL",
+            "dp": 7
+        },
+        {
+            "id": "G07483YN",
+            "name": "G07483YN",
+            "dp": 7
+        },
+        {
+            "id": "G10219AA",
+            "name": "G10219AA",
+            "dp": 8
+        },
+        {
+            "id": "G29011JC",
+            "name": "G29011JC",
+            "dp": 8
+        },
+        {
+            "id": "G50222RE",
+            "name": "G50222RE",
+            "dp": 8
+        },
+        {
+            "id": "G26182BM",
+            "name": "G26182BM",
+            "dp": 8
+        },
+        {
+            "id": "G80858MF",
+            "name": "G80858MF",
+            "dp": 8
+        },
+        {
+            "id": "G31604HF",
+            "name": "G31604HF",
+            "dp": 8
+        },
+        {
+            "id": "G20030CU",
+            "name": "G20030CU",
+            "dp": 9
+        },
+        {
+            "id": "G61207RZ",
+            "name": "G61207RZ",
+            "dp": 9
+        },
+        {
+            "id": "G80393PG",
+            "name": "G80393PG",
+            "dp": 9
+        },
+        {
+            "id": "G00176HZ",
+            "name": "G00176HZ",
+            "dp": 10
+        }
+    ],
+    "links": [
+        {
+            "target": "G61751GZ",
+            "source": "G39213VZ",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G39213VZ",
+            "source": "G10219AA",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G61751GZ",
+            "source": "G74090KZ",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G74090KZ",
+            "source": "G10219AA",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G10219AA",
+            "source": "G20030CU",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        },
+        {
+            "target": "G39213VZ",
+            "source": "G29011JC",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        },
+        {
+            "target": "G61751GZ",
+            "source": "G92024SL",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        },
+        {
+            "target": "G92024SL",
+            "source": "G29011JC",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G29011JC",
+            "source": "G20030CU",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G74090KZ",
+            "source": "G50222RE",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        },
+        {
+            "target": "G92024SL",
+            "source": "G50222RE",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G50222RE",
+            "source": "G20030CU",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G20030CU",
+            "source": "G00176HZ",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G61751GZ",
+            "source": "G07483YN",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G07483YN",
+            "source": "G26182BM",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        },
+        {
+            "target": "G92024SL",
+            "source": "G26182BM",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G26182BM",
+            "source": "G61207RZ",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G29011JC",
+            "source": "G61207RZ",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G07483YN",
+            "source": "G80858MF",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G39213VZ",
+            "source": "G80858MF",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G80858MF",
+            "source": "G61207RZ",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        },
+        {
+            "target": "G61207RZ",
+            "source": "G00176HZ",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G10219AA",
+            "source": "G80393PG",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G07483YN",
+            "source": "G31604HF",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G74090KZ",
+            "source": "G31604HF",
+            "residue_added": "N15",
+            "enzymes": [
+                {
+                    "gene_name": "FUT8",
+                    "uniprot": "Q9BYC5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Fut8",
+                    "uniprot": "Q9WTS2",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G31604HF",
+            "source": "G80393PG",
+            "residue_added": "N5",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT2",
+                    "uniprot": "Q10469",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat2",
+                    "uniprot": "Q921V5",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G80858MF",
+            "source": "G80393PG",
+            "residue_added": "N9",
+            "enzymes": [
+                {
+                    "gene_name": "MGAT5",
+                    "uniprot": "Q09328",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT5B",
+                    "uniprot": "Q3V5L5",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "Mgat5b",
+                    "uniprot": "Q765H6",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat5",
+                    "uniprot": "Q8R4G6",
+                    "species": "mouse"
+                }
+            ]
+        },
+        {
+            "target": "G80393PG",
+            "source": "G00176HZ",
+            "residue_added": "N7",
+            "enzymes": [
+                {
+                    "gene_name": "Mgat4b",
+                    "uniprot": "Q812F8",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4a",
+                    "uniprot": "Q812G0",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "Mgat4c",
+                    "uniprot": "Q9D306",
+                    "species": "mouse"
+                },
+                {
+                    "gene_name": "MGAT4C",
+                    "uniprot": "Q9UBM8",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4A",
+                    "uniprot": "Q9UM21",
+                    "species": "human"
+                },
+                {
+                    "gene_name": "MGAT4B",
+                    "uniprot": "Q9UQ53",
+                    "species": "human"
+                }
+            ]
+        }
+    ],
+    "path_count": 18
+}

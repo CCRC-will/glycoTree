@@ -528,7 +528,7 @@ function getInfoText(accession, resID) {
 			txt += " residue " + resID + "</p> \n";
 			if (rd.limited_to.length > 0) txt += "This residue has been found <b>only</b> in " + rd.limited_to + "<br>";
 			if (rd.not_found_in.length > 0) txt += "This residue has <b>not</b> been found in " + rd.not_found_in + "<br>";
-			if (rd.notes.length > 0) txt += "This canonical residue is " + rd.notes + "<br>";
+			if (rd.notes.length > 0) txt += "Reason: " + rd.notes + "<br>";
 			if (rd.requires_residue.length > 0) txt += "Enzymatic transfer of this canonical residue occurs only when residue " + rd.requires_residue + "  is present<br>";
 			if (rd.blocked_by_residue.length > 0) txt += "Enzymatic transfer of this canonical residue is blocked by residue " + rd.blocked_by_residue + "<br>";
 	

@@ -1,5 +1,7 @@
 <?php
 include '../config.php';
+$servername = getenv('MYSQL_SERVER_NAME');
+$password = getenv('MYSQL_PASSWORD');
 
 
 function sortCustom($arr, $column, $cmp) {
