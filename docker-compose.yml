@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+    web:
+        build:
+           context: .
+           dockerfile: Dockerfile
+        volumes:
+           - $PWD/portal:/var/www/html
+        ports:
+           - 8080:80
+        links:
+           - mysql
+    mysql:
+        image: mysql
+        restart: always
+        environment:
+           - MYSQL_DATABASE=glycotree
+           - MYSQL_USER=gt_user
+           - MYSQL_PASSWORD
+           - MYSQL_ROOT_PASSWORD
+        ports:
+            - 3306:3306
+        volumes:
+           - $PWD/SQL:/docker-entrypoint-initdb.d
