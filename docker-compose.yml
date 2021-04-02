@@ -5,6 +5,8 @@ services:
         build:
            context: .
            dockerfile: Dockerfile
+        environment:
+           - MYSQL_PASSWORD=${MYSQL_PASSWORD}
         volumes:
            - $PWD/portal:/var/www/html
         ports:
@@ -15,10 +17,11 @@ services:
         image: mysql
         restart: always
         environment:
+           - MYSQL_SERVER_NAME=mysql
            - MYSQL_DATABASE=glycotree
            - MYSQL_USER=gt_user
-           - MYSQL_PASSWORD
-           - MYSQL_ROOT_PASSWORD
+           - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+           - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
         ports:
             - 3306:3306
         volumes:
