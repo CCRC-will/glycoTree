@@ -526,11 +526,21 @@ function getInfoText(accession, resID) {
 		if (resID.match(/S/) == null) {
 			if (rd.canonical_name == "unassigned") txt += " (unassigned)";
 			txt += " residue " + resID + "</p> \n";
-			if (rd.limited_to.length > 0) txt += "This residue has been found <b>only</b> in " + rd.limited_to + "<br>";
-			if (rd.not_found_in.length > 0) txt += "This residue has <b>not</b> been found in " + rd.not_found_in + "<br>";
-			if (rd.notes.length > 0) txt += "Status: " + rd.notes + "<br>";
-			if (rd.requires_residue.length > 0) txt += "Enzymatic transfer of this canonical residue occurs only when residue " + rd.requires_residue + "  is present<br>";
-			if (rd.blocked_by_residue.length > 0) txt += "Enzymatic transfer of this canonical residue is blocked by residue " + rd.blocked_by_residue + "<br>";
+			if (typeof rd.limited_to != "undefined")
+				if (rd.limited_to.length > 0) 
+					txt += "This residue has been found <b>only</b> in " + rd.limited_to + "<br>";
+			if (typeof rd.not_found_in != "undefined")
+				if (rd.not_found_in.length > 0)
+					txt += "This residue has <b>not</b> been found in " + rd.not_found_in + "<br>";
+			if (typeof rd.notes != "undefined")
+				if (rd.notes.length > 0)
+					txt += "Status: " + rd.notes + "<br>";
+			if (typeof rd.requires_residue != "undefined")
+				if (rd.requires_residue.length > 0)
+					txt += "Enzymatic transfer of this canonical residue occurs only when residue " + rd.requires_residue + "  is present<br>";
+			if (typeof rd.blocked_by_residue != "undefined")
+				if (rd.blocked_by_residue.length > 0)
+					txt += "Enzymatic transfer of this canonical residue is blocked by residue " + rd.blocked_by_residue + "<br>";
 	
 			var svgName = rd.name.split("-")[0];
 			

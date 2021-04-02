@@ -1,0 +1,61 @@
+.details {
+	position: fixed;
+	top: 90px;
+	left : 0px;
+	border: none;
+	background: #fff;
+	padding: 5px 5px 5px;
+	width: 500px;
+	height: auto;
+	text-align: left;
+}
+	
+.arcGraph {
+	position: absolute;
+	top: 90px;
+	left : 500px;
+	border: none;
+	background: #fff;
+	padding: 5px 5px 5px;
+	width: 400px;
+	text-align: left;
+}
+	
+.header {
+	font-family: monospace, monospace;
+	text-anchor: middle;
+	alignment-baseline: top;
+	stroke: #000;
+	fill: #000;
+}
+
+.labelDefault {
+	font-family: monospace, monospace;
+	text-anchor: middle;
+	alignment-baseline: bottom;
+	stroke: none;
+	fill: #000;
+	cursor: pointer;
+}
+
+.labelHot {
+	fill: #3366CC;
+	stroke: #3366CC;
+}
+
+.arcDefault {
+	fill: none;
+	stroke: black;
+	stroke-width: 1;
+	cursor: pointer;
+}
+
+.arcHot {
+	fill: none;
+	stroke: #2F78B7;
+	stroke-width: 4;
+}
+
+.nodeDefault {
+	cursor: pointer;
+}
