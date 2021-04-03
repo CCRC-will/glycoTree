@@ -50,6 +50,24 @@
 	cursor: pointer;
 }
 
+.logo {
+	fill: none;
+	stroke: #2F78B7;
+	stroke-width: 1.5;
+	cursor: pointer;
+}
+
+.linkbox {
+	stroke: none;
+	cursor: pointer;
+}
+
+.arcPale {
+	fill: none;
+	stroke: #bcd;
+	stroke-width: 0.5;
+}
+
 .arcHot {
 	fill: none;
 	stroke: #2F78B7;
