@@ -35,12 +35,14 @@
 	alignment-baseline: bottom;
 	stroke: none;
 	fill: #000;
+	font-size: 14px;
 	cursor: pointer;
 }
 
 .labelHot {
 	fill: #3366CC;
 	stroke: #3366CC;
+	font-size: 18px;
 }
 
 .arcDefault {
