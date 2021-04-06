@@ -5,6 +5,7 @@ function initialize() {
 	var a = arg.split("&");
 	var theURL = dataPath + "?start=" + a[1] + "&end=" +a[0];
 	var globalData;
+	var focalPoint = "none";
 
 	var images = [];
 
@@ -34,14 +35,9 @@ function initialize() {
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	
-	function showNode(d) {
-		var txt = "You clicked node " + d.name;
-		$("#results").html(txt);
-	}
 
 	function conciseReaction(d) {
-		var txt = "<center><h2>Click now to open a new page showing biosynthetic details for the reaction you selected</h2>";
+		var txt = "<center><h4>Click now to open a new page showing biosynthetic details for the reaction you selected</h4>";
 		txt += images[d.source] + "<br>" + d.source + "<br>";
 		txt += "<span class='rxnArrow'>&darr;</span><br>";
 		txt += images[d.target] + "<br>" + d.target + "<br></center>";
@@ -67,16 +63,34 @@ function initialize() {
 		rxnWindow.document.write(txt);
 		rxnWindow.focus();
 	}
-
+	
+		
 	function showGlycan(d) {
 		// implemented outside of D3, no direct access to 'data'
 		//   data is in arrays 'globalData' and 'images'
 		var rs = $("#results");
-		rs.html("<center><h1>Glycan: " + d.name + "</h1></center><br>" + images[d.name]);
+		rs.html("<center>" + images[d.name] + "<h1>" + d.name + "</h1></center>");
 	}
+
+ // USE D3 to process data from API 
+ d3.json(theURL, function( data) {		
+		function focusNode(d) {
+			var txt = "";
+			if (focalPoint === d.name) {
+				focalPoint = "none";
+				txt += "<center><b>Focus is not set<br>Click any accession to focus on it</b></center>";
+			} else {
+				focalPoint = d.name;
+				nodeOver(d);
+				txt += "<center><b>Focus is now on " + focalPoint + "<br>Click " + focalPoint + " again to clear the focus, or click another accession to focus on it</b></center>";
+				txt += "<center>" + images[focalPoint] + "<br><h1>" + focalPoint + "</h1></center>";	
+			}
+			$("#results").html(txt);
+			console.log("Focal Point is " + focalPoint);
+		}
+
 	
-	// USE D3 to process data from API 
-	d3.json(theURL, function( data) {
+
 		// provide access to data to functions outside of D3
 		globalData = data;
 		
@@ -127,33 +141,43 @@ function initialize() {
 		function nodeOver(d) {
 			showGlycan(d);
 			// Highlight the connections to/from the node
-			links
-				.classed('arcHot', function (link_d) {
-				  return link_d.source === d.id || link_d.target === d.id ? true : false;					
-				})
-				.classed('arcPale', function (link_d) {
-				  return link_d.source !== d.id && link_d.target !== d.id ? true : false;					
-				})
+			if ((focalPoint == "none") || (focalPoint == d.name)) {
+				links
+					.classed('arcHot', function (link_d) {
+					  return link_d.source === d.id || link_d.target === d.id ? true : false;					
+					})
+					.classed('arcPale', function (link_d) {
+					  return link_d.source !== d.id && link_d.target !== d.id ? true : false;					
+					})
 
-			labels
-				.classed('labelHot', function (label_d) {
-					return label_d.id === d.id ? true : false;
-				})
-			dpLabels
-				.classed('labelHot', function (label_d) {
-					return label_d.id === d.id ? true : false;
-				})
+				labels
+					.classed('labelHot', function (label_d) {
+						return label_d.id === d.id ? true : false;
+					})
+				dpLabels
+					.classed('labelHot', function (label_d) {
+						return label_d.id === d.id ? true : false;
+					})
+			}
 		}
 		
-		function nodeOut(d) {
+	   function linkOut(d) {
 			$("#results").html("");
 			links
-				.classed('arcHot', false)
-				.classed('arcPale', false);
-			labels
-				.classed('labelHot', false);
-			dpLabels
-				.classed('labelHot', false);
+				.classed('arcVeryHot', false);
+	   }
+	 
+		function nodeOut(d) {
+			$("#results").html("");
+			if (focalPoint == "none") {
+				links
+					.classed('arcHot', false)
+					.classed('arcPale', false);
+				labels
+					.classed('labelHot', false);
+				dpLabels
+					.classed('labelHot', false);
+			}
 		}
 		
 		
@@ -210,18 +234,19 @@ function initialize() {
 			})
 			.classed('arcDefault', true)
 			.on('mouseover', function (d) {
-				conciseReaction(d);
-				links
-					.classed('arcHot', function (link_d) {
-					return link_d.source === d.source && link_d.target === d.target ? true : false;					
-				})	
-				.classed('arcPale', function (link_d) {
-				  return link_d.source !== d.id && link_d.target !== d.id ? true : false;					
-				})				
+				// check whether the arc is 'greyed out'; if not, show reaction
+				var cli = d3.select(this).attr("class").indexOf("arcPale");
+				if (cli < 1) {
+					conciseReaction(d);
+					links
+						.classed('arcVeryHot', function (link_d) {
+						return link_d.source === d.source && link_d.target === d.target ? true : false;					
+					})	
+				}
 			})
 			.on('mouseout', function (d) {
 				$("#results").html("");
-				nodeOut(d);
+				linkOut(d);
 			})
 			.on("click", function(d) {
 				showReaction(d);
@@ -241,15 +266,8 @@ function initialize() {
 			.style("fill", function(d){ return(d.cc)})
 			.on("click", function(d) {
 				d.isSelected = 1;
-				showNode(d);
+				focusNode(d);
 			})
-			.on('mouseover', function (d) {
-				nodeOver(d);
-			})
-			.on('mouseout', function (d) {
-				nodeOut(d);
-			})
-		
 		
 		// label dps	
 		var dpLabels = svg
@@ -280,7 +298,7 @@ function initialize() {
 			})
 			.on("click", function(d) {
 				d.isSelected = 1;
-				showNode(d);
+				focusNode(d);
 			})	
 
 		var sandboxes = svg
