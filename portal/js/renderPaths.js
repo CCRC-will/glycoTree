@@ -1,12 +1,12 @@
 function initialize() { 
-	// TODO: convert all d3 style attributes to css
 	
-	var globalData;
 	var dataPath = "api/paths/getpathD3v3.php";
 	var arg = window.location.search.substring(1);
 	var a = arg.split("&");
 	var theURL = dataPath + "?start=" + a[1] + "&end=" +a[0];
-	// alert(theURL);
+	var globalData;
+
+	var images = [];
 
 	var vSpacing = 20;
 	
@@ -41,15 +41,10 @@ function initialize() {
 	}
 
 	function conciseReaction(d) {
-		var txt = "<h2>Click now to open a new page containing more details about the reaction shown below</h2>";
-		txt += "<p>" + d.source + " &rarr; " + d.target + "</p>";
-		txt += "<p>" + d.residue_added + " is added or removed</p>";
-		txt += "<p>" + d.enzymes.length + " (GT or GH) enzymes (listed below) catalyze this reaction, </p>";
-		txt += " <ul>";
-		d.enzymes.forEach(function (enz) {
-			txt += "<li>" + enz.gene_name + "</li>";
-		});
-		txt += "</ul>";
+		var txt = "<center><h2>Click now to open a new page showing biosynthetic details for the reaction you selected</h2>";
+		txt += images[d.source] + "<br>" + d.source + "<br>";
+		txt += "<span class='rxnArrow'>&darr;</span><br>";
+		txt += images[d.target] + "<br>" + d.target + "<br></center>";
 		$("#results").html(txt);
 	}
 
@@ -57,12 +52,16 @@ function initialize() {
 		// build html for visualizing a reaction and related data and links
 		// maybe good to separate content (txt) and destination (rxnWindow)
 		//    less advantageous: add destination as an argument
-		var txt = "<center><h3>Reaction Details Page</h3></center>";
-		txt += "<p>This page will contain a graphical representation of extensive details for the reaction <br> " + d.source + " &rarr;  " + d.target + "</p>";
-		txt += "<p>This will include svg images of the glycans along with information about the " + d.enzymes.length + " (GT or GH) enzymes that directly affect <b>residue " + d.residue_added + "</b>, which is added or removed during the reaction.</p><p>This requires additional queries to the database API.</p>";
-		txt += "<p>Here are the enzymes</p>  <ul>";
+		var txt = "<!DOCTYPE html><htm><head><meta charset='utf-8'>"
+		txt += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body>" 
+		txt += "<center><h3>Reaction Details</h3>";
+		txt += images[d.source] + "<br>" + d.source + "<br>";
+		txt += "<span class='rxnArrow'>&darr;</span><br>";
+		txt += images[d.target] + "<br>" + d.target + "<br></center>";
+		txt += "<p>" + d.enzymes.length + " GT enzymes catalyze the reaction, which adds <b>residue " + d.residue_added + "</b> to the glycan.</p>";
+		txt += "<ul>";
 		d.enzymes.forEach(function (enz) {
-			txt += "<li>" + enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")</li>";
+			txt += "<li>" + enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")</li></body>";
 		});
 		var rxnWindow = window.open("", "_new");
 		rxnWindow.document.write(txt);
@@ -70,14 +69,10 @@ function initialize() {
 	}
 
 	function showGlycan(d) {
-		// implemented outside of D3, no direct access to 'data', us globalData
-		// alert(globalData.path_count);
+		// implemented outside of D3, no direct access to 'data'
+		//   data is in arrays 'globalData' and 'images'
 		var rs = $("#results");
-		$.get("svg/" + d.name + ".gTree.svg", function( response ) {
-			// TODO: save all these as subelements of data upon loading to reduce latency
-			var result = (new XMLSerializer()).serializeToString(response);
-			rs.html("<center><h1>Glycan " + d.name + "</h1></center><br>" + result);
-		});
+		rs.html("<center><h1>Glycan: " + d.name + "</h1></center><br>" + images[d.name]);
 	}
 	
 	// USE D3 to process data from API 
@@ -96,11 +91,16 @@ function initialize() {
 		// path_count value
 		var pc = data.path_count;
 
-		// add drawing variables to each node in data.nodes
+		// add drawing variables and data to each node in data.nodes
 		var cc;
 		var sh;
 		var nodeCount = 0;
 		data.nodes.forEach(function( d, i ) {
+			// fetch all the svg images
+			$.get("svg/" + d.name + ".gTree.svg", function( response ) {
+				var result = (new XMLSerializer()).serializeToString(response);
+				images[d.name] = result;
+			});
 			nodeCount++;
 			d.cc = pal[d.dp]; // color of the node, depends on dp
 			d.sh = shading[nodeCount % 2]; // shading of the node's 'strip'
@@ -108,6 +108,7 @@ function initialize() {
 			d.url = "https://www.glygen.org/glycan/" + d.name;
 			d.isSelected = 0;
 		});
+		
 
 		// add drawing parameters for arcs
 		var edgeCount = 0;
