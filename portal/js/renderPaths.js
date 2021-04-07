@@ -1,6 +1,7 @@
 function initialize() { 
 	
-	var dataPath = "api/paths/getpathD3v3.php";
+	// should put this variable in the html file ...
+	var dataPath = "api/paths/getpathD3v4.php";
 	var arg = window.location.search.substring(1);
 	var a = arg.split("&");
 	var theURL = dataPath + "?start=" + a[1] + "&end=" +a[0];
@@ -14,7 +15,15 @@ function initialize() {
 	var shading = ['#FFFFFF', '#EAF0FA'];
 	var mouse_hl = '#25c';
 	
-	var helpMessage = "<p>Mouse Over or Click on a Graphical Element</p>";
+	var helpMessage = "<p>Mouse Over or Click on a Graphical Element</p><ul>" +
+		 "<li>See a structure: mouse over its accession</li>" +
+		 "<li>See a reaction: mouse over an arc</li>" +
+		 "<li>Focus on a structure: click its accession</li>" +
+		 "<li>Unset focus: click the accession that is in focus</li>" +
+		 "<li>See reaction details: click an arc</li>" +
+		 "<li>Get more information about a structure: click an icon</li>" +
+		 "<ul>";
+	 
 	var subURL = "https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus";
 	// as arcScale increases, horizontal size of arc dereases
 	var arcScale = 10;
@@ -44,22 +53,35 @@ function initialize() {
 		$("#results").html(txt);
 	}
 
-	function showReaction(d) {
+	function reactionDetails(d) {
 		// build html for visualizing a reaction and related data and links
 		// maybe good to separate content (txt) and destination (rxnWindow)
 		//    less advantageous: add destination as an argument
+		var anomer = d.residue_affected.anomer;
+		var anomerStr = "";
+		if (anomer === "a") {
+			anomerStr = "&#945;"
+		} else {
+			anomerStr = "&#946;"
+		}
+		var absolute = d.residue_affected.absolute;
+		var formName = d.residue_affected.form_name;
+		var fullName = anomerStr + "-" + absolute + "-" + formName;
+		
 		var txt = "<!DOCTYPE html><htm><head><meta charset='utf-8'>"
 		txt += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body>" 
 		txt += "<center><h3>Reaction Details</h3>";
-		txt += images[d.source] + "<br>" + d.source + "<br>";
+		txt += images[d.source] + "<br>" + d.source + "<br>+ " + fullName + "<br>";
+		txt += "<span><ul>";
+		d.enzymes.forEach(function (enz) {
+			var eStr = enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")";
+			txt += "<li><a href='https://www.glygen.org/protein/" + enz.uniprot +   "' target='_blank'>" + eStr + "</a></li>";
+		});
+		txt += "</span></ul>";
 		txt += "<span class='rxnArrow'>&darr;</span><br>";
 		txt += images[d.target] + "<br>" + d.target + "<br></center>";
-		txt += "<p>" + d.enzymes.length + " GT enzymes catalyze the reaction, which adds <b>residue " + d.residue_added + "</b> to the glycan.</p>";
-		txt += "<ul>";
-		d.enzymes.forEach(function (enz) {
-			txt += "<li>" + enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")</li></body>";
-		});
-		var rxnWindow = window.open("", "_new");
+		txt += "</body>";
+		var rxnWindow = window.open("", "_blank");
 		rxnWindow.document.write(txt);
 		rxnWindow.focus();
 	}
@@ -69,18 +91,18 @@ function initialize() {
 		// implemented outside of D3, no direct access to 'data'
 		//   data is in arrays 'globalData' and 'images'
 		var rs = $("#results");
-		rs.html("<center>" + images[d.name] + "<h1>" + d.name + "</h1></center>");
+		rs.html("<center>" + images[d.id] + "<h1>" + d.id + "</h1></center>");
 	}
 
  // USE D3 to process data from API 
  d3.json(theURL, function( data) {		
 		function focusNode(d) {
 			var txt = "";
-			if (focalPoint === d.name) {
+			if (focalPoint === d.id) {
 				focalPoint = "none";
 				txt += "<center><b>Focus is not set<br>Click any accession to focus on it</b></center>";
 			} else {
-				focalPoint = d.name;
+				focalPoint = d.id;
 				nodeOver(d);
 				txt += "<center><b>Focus is now on " + focalPoint + "<br>Click " + focalPoint + " again to clear the focus, or click another accession to focus on it</b></center>";
 				txt += "<center>" + images[focalPoint] + "<br><h1>" + focalPoint + "</h1></center>";	
@@ -111,15 +133,15 @@ function initialize() {
 		var nodeCount = 0;
 		data.nodes.forEach(function( d, i ) {
 			// fetch all the svg images
-			$.get("svg/" + d.name + ".gTree.svg", function( response ) {
+			$.get("svg/" + d.id + ".gTree.svg", function( response ) {
 				var result = (new XMLSerializer()).serializeToString(response);
-				images[d.name] = result;
+				images[d.id] = result;
 			});
 			nodeCount++;
 			d.cc = pal[d.dp]; // color of the node, depends on dp
 			d.sh = shading[nodeCount % 2]; // shading of the node's 'strip'
 			d.y = vSpacing * nodeCount; // vertical spacing of nodes
-			d.url = "https://www.glygen.org/glycan/" + d.name;
+			d.url = "https://www.glygen.org/glycan/" + d.id;
 			d.isSelected = 0;
 		});
 		
@@ -141,7 +163,7 @@ function initialize() {
 		function nodeOver(d) {
 			showGlycan(d);
 			// Highlight the connections to/from the node
-			if ((focalPoint == "none") || (focalPoint == d.name)) {
+			if ((focalPoint == "none") || (focalPoint == d.id)) {
 				links
 					.classed('arcHot', function (link_d) {
 					  return link_d.source === d.id || link_d.target === d.id ? true : false;					
@@ -162,13 +184,13 @@ function initialize() {
 		}
 		
 	   function linkOut(d) {
-			$("#results").html("");
+			$("#results").html(helpMessage);
 			links
 				.classed('arcVeryHot', false);
 	   }
 	 
 		function nodeOut(d) {
-			$("#results").html("");
+			$("#results").html(helpMessage);
 			if (focalPoint == "none") {
 				links
 					.classed('arcHot', false)
@@ -245,11 +267,11 @@ function initialize() {
 				}
 			})
 			.on('mouseout', function (d) {
-				$("#results").html("");
+				$("#results").html(helpMessage);
 				linkOut(d);
 			})
 			.on("click", function(d) {
-				showReaction(d);
+				reactionDetails(d);
 			});
 
 		// draw nodes
@@ -289,7 +311,7 @@ function initialize() {
 			.attr("x", label_x)
 			.attr("y", function(d){ return(d.y+5)})
 			.classed('labelDefault', true)
-			.text(function(d){ return(d.name)})
+			.text(function(d){ return(d.id)})
 			.on('mouseover', function (d) {
 				nodeOver(d);
 			})
@@ -307,7 +329,7 @@ function initialize() {
 			.enter()
 			.append('g')
 			.on("click", function(d) { 
-				window.open("explore.html?" + d.name); 
+				window.open("explore.html?" + d.id); 
 			})
 		
 		// separately append graphic elements to 'sandboxes'
@@ -339,7 +361,7 @@ function initialize() {
 			.enter()
 			.append("g")
 			.on("click", function(d) {
-				window.open("https://www.glygen.org/glycan/" + d.name);
+				window.open("https://www.glygen.org/glycan/" + d.id);
 			})
 		
 		logos.append('rect')
@@ -369,7 +391,7 @@ function initialize() {
 			.enter()
 			.append("g")
 			.on("click", function(d) {
-				window.open(subURL + "=" + d.name);
+				window.open(subURL + "=" + d.id);
 			})
 
 		

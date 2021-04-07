@@ -1,5 +1,6 @@
 .DS_Store
 notes
+glycotree_accessions.tsv
 prepare_N-tree.sh
 log/*.txt
 log/*.log
