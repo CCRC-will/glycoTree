@@ -115,7 +115,7 @@ function dblclickNode() {
 	var a = parts["accession"];
 	if ( (parts["type"] === "C") && (a !== acc[0]) ) {
 		// double-clicked node must be a canvas, but not the canvas of the reference glycan
-		var url = "exploreBETA.html?" + a;
+		var url = "explore.html?" + a;
 		window.open(url,'_self',false);
 	}
 }
@@ -247,17 +247,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 	var nRes = data[acc[0]].residues.length;
 
 	var table = $('#'+tableName).DataTable( {
-/* 
-// The following (commented) lines work, but the button is rendered in a very strange way 
-// I invite anyone who wants to make this work to do so!!
-// This will require including extra js and css files from cdn.datatables.net (see exploreBETA.html <head>)
-		dom: 'Bfrtip',
-		buttons: [{
-				extend: "csv",
-				text: '<span style="color:black; font-size:28px; text-align:left;">Save as CSV</span>'
-			}
-		],
-*/
+
 		data: tableData,
 		order: [[ 3, "asc" ]],
 		paging: false,
@@ -270,7 +260,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 				"data": "homolog",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="exploreBETA.html?' 
+						data = '<a href="explore.html?' 
 							+ data + '" target="_blank">' + data + '</a>';
 					}
 					return data;
