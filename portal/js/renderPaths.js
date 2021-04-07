@@ -67,8 +67,10 @@ function initialize() {
 		var absolute = d.residue_affected.absolute;
 		var formName = d.residue_affected.form_name;
 		var fullName = anomerStr + "-" + absolute + "-" + formName;
-		
-		var txt = "<!DOCTYPE html><htm><head><meta charset='utf-8'>"
+		var winName = "Details: " + d.source + "&rarr;" + d.target;
+
+		var txt = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
+		txt += "<title>" + winName + "</title>";
 		txt += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body>" 
 		txt += "<center><h3>Reaction Details</h3>";
 		txt += images[d.source] + "<br>" + d.source + "<br>+ " + fullName + "<br>";
@@ -81,7 +83,7 @@ function initialize() {
 		txt += "<span class='rxnArrow'>&darr;</span><br>";
 		txt += images[d.target] + "<br>" + d.target + "<br></center>";
 		txt += "</body>";
-		var rxnWindow = window.open("", "_blank");
+		var rxnWindow = window.open("", "");
 		rxnWindow.document.write(txt);
 		rxnWindow.focus();
 	}
