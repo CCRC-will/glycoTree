@@ -30,11 +30,12 @@ function initialize() {
 	var margin = {top: 20, right: 20, bottom: 20, left: 20};
 	var width = 600 - margin.left - margin.right;
 	var height = 3000 - margin.top - margin.bottom;
+	var check_x = 8;
+	var label_x = 70;
+	var logo_x = 130;
+	var sand_x = 155;
+	var sub_x = 195;
 	var node_x = 300;
-	var label_x = 50;
-	var logo_x = 110;
-	var sand_x = 135;
-	var sub_x = 175;
 
 	// append the svg object to the body of the page
 	var svg = d3.select("#pathgraph")
@@ -67,7 +68,7 @@ function initialize() {
 		var absolute = d.residue_affected.absolute;
 		var formName = d.residue_affected.form_name;
 		var fullName = anomerStr + "-" + absolute + "-" + formName;
-		var winName = "Details: " + d.source + "&rarr;" + d.target;
+		var winName = d.source + " &rarr; " + d.target;
 
 		var txt = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
 		txt += "<title>" + winName + "</title>";
@@ -144,7 +145,7 @@ function initialize() {
 			d.sh = shading[nodeCount % 2]; // shading of the node's 'strip'
 			d.y = vSpacing * nodeCount; // vertical spacing of nodes
 			d.url = "https://www.glygen.org/glycan/" + d.id;
-			d.isSelected = 0;
+			d.isSelected = false;
 		});
 		
 
@@ -227,21 +228,21 @@ function initialize() {
 			.enter()
 			.append('path')
 			.attr('d', function (d) {
-				start = id_to_node[d.source].y 
-				end = id_to_node[d.target].y
+				arcStart = id_to_node[d.source].y 
+				arcEnd = id_to_node[d.target].y
 				return [
 					'M',
-					// the x-coordinate for start of each arc is static (node_x)
+					// the x-coordinate for arcStart of each arc is static (node_x)
 					node_x,
 					// the arc starts (y-coordinate) at the starting node
-					start,    
+					arcStart,    
 					'A', 
 					// nodes that are far apart are connected by 'tall' arcs
 					//  arc size is controlled by arcScale
 					// radius x (rx)
-					arcScale * (start - end),     
+					arcScale * (arcStart - arcEnd),     
 					// radius y (ry)
-					(start - end),
+					(arcStart - arcEnd),
 					// no x-axis-rotation
 					0,
 					// no large-arc-flag
@@ -252,7 +253,7 @@ function initialize() {
 					1, 
 					// x- and y-coordinates of arc end
 					node_x,
-					end
+					arcEnd
 				]
 				.join(' ');
 			})
@@ -289,7 +290,6 @@ function initialize() {
 			// cannot use css for fill, as (d.cc) depends on the dp
 			.style("fill", function(d){ return(d.cc)})
 			.on("click", function(d) {
-				d.isSelected = 1;
 				focusNode(d);
 			})
 		
@@ -321,10 +321,46 @@ function initialize() {
 				nodeOut(d);
 			})
 			.on("click", function(d) {
-				d.isSelected = 1;
 				focusNode(d);
 			})	
 
+		// d3.svg implementation of check boxes
+		var checks = svg
+			.selectAll()
+			.data(data.nodes)
+			.enter()
+			.append('g')
+			.on("click", function(d) {
+				d.isSelected = d.isSelected === true ? false : true;
+				console.log(d.id + " isSelected: " + d.isSelected);
+				// if isSelected, box is checked, class is "checkT" - transparent
+				// if !isSelected, default class is "checkX" - opaque
+				//  checkX is default class
+				d3.selectAll("rect.checkX")
+					.classed('checkT', function(box_d) {
+						return (box_d.isSelected);	
+					})
+			})
+		// append the "X" in the box, initially hidden by white rectangle
+	   checks.append('path')
+			.attr('d', function (d) {
+				check_y = d.y-6
+				return [
+					'M',check_x,check_y,'l',12,12,'m',0,-12,
+					'l',-12,12
+				]
+				.join(' ')
+			})
+			.classed("checkX", true)
+		// append a rectangle, initially white to hide the "X"
+		checks.append('rect')
+	 		.attr("x", check_x)
+			.attr("y", function(d){ return(d.y-6)})
+			.attr("width", 12)
+			.attr("height", 12)
+			.classed("checkX", true) 
+
+	 
 		var sandboxes = svg
 			.selectAll()
 			.data(data.nodes)
@@ -333,7 +369,6 @@ function initialize() {
 			.on("click", function(d) { 
 				window.open("explore.html?" + d.id); 
 			})
-		
 		// separately append graphic elements to 'sandboxes'
 		sandboxes.append('rect')
 			.attr("x", sand_x)
@@ -342,12 +377,11 @@ function initialize() {
 			.attr("height", 18)
 			.style("fill", function(d){ return(d.sh)})
 			.classed('linkbox', true)
-
 		sandboxes.append('path')
 			.attr('d', function (d) {
-				start = d.y
+				sand_y = d.y
 				return [
-					'M',sand_x,start,'l',15.20,4.40,'l',4.00,-5.60,
+					'M',sand_x,sand_y,'l',15.20,4.40,'l',4.00,-5.60,
 					'm',-19.20,1.20,'l',4.40,-5.60,'l',14.80,4.40,
 					'm',-4.00,8.40,'l',-15.20,-4.40
 				]
@@ -376,9 +410,9 @@ function initialize() {
 		
 		logos.append('path')
 			.attr('d', function (d) {
-				start = d.y - 4
+				logo_y = d.y - 4
 				return [
-					'M',logo_x,start,'l',12.65,3.65,'l',4.2,-4.85,	
+					'M',logo_x,logo_y,'l',12.65,3.65,'l',4.2,-4.85,	
 					'm',-24.5,10.35,'l',4,-4.65,'l',12.6,3.8,
 					'm',1.85,-2.3,'l',-12.7,-3.7
 				]
@@ -407,9 +441,9 @@ function initialize() {
 		
 		subbrows.append('path')
 			.attr('d', function (d) {
-				start = d.y - 7.5
+				sub_y = d.y - 7.5
 				return [
-					'M',sub_x,start,'a',1.8,1.8,1,1,0,0.001,0,
+					'M',sub_x,sub_y,'a',1.8,1.8,1,1,0,0.001,0,
 					'm',0,3.6,'l',0,2.7,
 					'a',1.8,1.8,1,1,0,0.001,0,
 					'm',1.35,2.700,'l',2.7,2.7,

@@ -52,6 +52,20 @@
 	cursor: pointer;
 }
 
+.checkX {
+	fill: white;
+	stroke: black;
+	stroke-width: 2;
+	cursor: pointer;
+}
+
+.checkT {
+	fill: none;
+	stroke: black;
+	stroke-width: 3;
+	cursor: pointer;
+}
+
 .logo {
 	fill: none;
 	stroke: #2F78B7;
