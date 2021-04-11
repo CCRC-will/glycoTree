@@ -1,23 +1,76 @@
+
+#headerDiv {
+	position: fixed;
+	top: 0px;
+	left : 0px;
+	top: 0px;
+	z-index: 99;
+	border: none;
+	background: #2F78B7;
+	padding: 5px 5px 5px;
+	outline: 0;
+	width: 100%;
+	height: 36px;
+	text-align: left;
+}
+
+#progressDiv {
+	position: fixed;
+	z-index: 95;
+	height: 70px;
+	width: 70px;
+	left: 720px;
+	top: 120px;
+	background-color: #FFFFFF;
+	opacity: 0.8;
+}
+
+.header_1 {
+	height: 36px;
+	display: inline-block;
+	vertical-align: top;
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.header_1:link    {color:white;}
+.header_1:visited {color:white;}
+.header_1:hover   {color:whitesmoke;}
+.header_1:active  {color:white;}
+
+.header_2 {
+	height: 36px;
+	font-style: italic;
+	display: inline-block;
+	vertical-align: top;
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.headPath {
+	height: 36px;
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 24px;
+}
+
 .details {
 	position: fixed;
-	top: 90px;
+	top: 50px;
 	left : 0px;
 	border: none;
 	background: #fff;
 	padding: 5px 5px 5px;
 	width: 500px;
 	height: auto;
-	text-align: left;
-}
-	
-.arcGraph {
-	position: absolute;
-	top: 90px;
-	left : 500px;
-	border: none;
-	background: #fff;
-	padding: 5px 5px 5px;
-	width: 400px;
 	text-align: left;
 }
 	
@@ -40,9 +93,14 @@
 }
 
 .labelHot {
-	fill: #3366CC;
-	stroke: #3366CC;
+	fill: #C30;
+	stroke: #C30;
 	font-size: 18px;
+}
+
+.labelLinked  {
+	fill: #2F78B7;
+	font-size: 16px;
 }
 
 .arcDefault {
@@ -52,17 +110,16 @@
 	cursor: pointer;
 }
 
-.checkX {
+.checkV {
+	visibility: visible;
 	fill: white;
 	stroke: black;
 	stroke-width: 2;
 	cursor: pointer;
 }
 
-.checkT {
-	fill: none;
-	stroke: black;
-	stroke-width: 3;
+.checkI {
+	visibility: hidden;
 	cursor: pointer;
 }
 
@@ -101,4 +158,30 @@
 
 .rxnArrow {
 	font-size: 48px;
+}
+
+li {
+	  text-align: left;
+}
+
+td {
+	  text-align: center;
+}
+
+.arcGraph {
+   display: inline-block;
+	position: absolute;
+	top: 50px;
+	left : 500px;
+	width: auto;
+	border: none;
+	background: #fff;
+	padding: 5px 5px 5px;
+	text-align: left;
+}
+
+.svgGraph {
+  display: inline-block;
+  position: absolute;
+  vertical-align: top;
 }

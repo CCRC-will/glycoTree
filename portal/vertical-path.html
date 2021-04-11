@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 
 <!-- load js -->
+<link rel="icon" href="svg/sbSmall.svg" type="image/icon type">
+<script src="js/sbheader.js"></script>
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/renderPaths.js"></script>
@@ -11,24 +13,60 @@
 <script src="js/palette-1.js"></script>
 <link rel="stylesheet" type="text/css" href="css/paths.css">
 
-
+<script>
+var dataPath = "api/paths/getpathD3v4.php";
+var subURL = "https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus";
+var glygenURL = "https://www.glygen.org/glycan/";
+var exploreURL = "explore.html?"
+	
+var helpMessage = "<center>" +
+	 "<h3>Click or Hover Over Data</h3>" +
+	 "</center><ul>" +
+	 "<li>See a structure: <i>mouse over its accession</i></li>" +
+	 "<li>See a reaction: <i>mouse over an arc</i></li>" +
+	 "<li>Focus on a structure: <i>click its accession</i></li>" +
+	 "<li>Unset focus: <i>click the accession that is in focus</i></li>" +
+	 "<li>See reaction details: <i>click an arc</i></li>" +
+	 "<li>Get more information about a structure: <i>click an icon</i></li>" +
+	 "<li>Force the path to go through specific structures: <i>click checkboxes</i><br>For each DP, only one structure can be checked<br>(NOT YET FULLY IMPLEMENTED)</li>" +
+	 "<ul>";
+var rowShading = ['#FFFFFF', '#EAF0FA'];
+var nodeShading = ['#A30', '#083'];
+</script>
+	
 </head>
 
  <body onload="initialize()"> 
 	 
- <!-- Create a div where the graph will take place -->
-<div id="headerDiv">
+ <div id="progressDiv">
 	<center>
 		<img id="spinner" src="svg/logogogo3.svg" height="100px">
-		<br>Please Wait
 	</center>
+ </div>
+	 
+ <div id="headerDiv">
+	 <a href="https://glygen.org" target="_blank">
+	  <span class='header_1'>GlyGen</span>
+	 </a>
+   <object id="logo_svg" type="image/svg+xml" data="svg/sbLogo.svg" class="headLogo"></object>
+	<span class='header_2'>SandBox Pathway</span>
+	<button type='button' id="toggleHelp" style="position:absolute; right: 165px; top: 20px;">
+		Toggle Help
+	</button>
+	<button type='button' onclick='showStats()' style="position:absolute; right: 85px; top: 20px;">
+		Statistics
+	</button>
+	<button type='button' id="pathButton" style="position:absolute; right: 30px; top: 20px;">
+		Path
+	</button>
+
 </div>
 	
 <div id="pathgraph"  class="arcGraph">
 </div>
 
 <div class="details" id="results">
-	<center><h3>Move the mouse over the pathway graph</h3></center>
+	<center><h3>Move the mouse over the data</h3></center>
 </div>
 	
 </body>

@@ -37,12 +37,23 @@ div span {
 	color: white;
 	font-size: 36px;
 	font-weight: bold;
-	margin-left: 24px;
+	margin-left: 10px;
 }
 	
-#header_1 {
-	margin-right: 20px;
+.header_1 {
+	height: 36px;
+	display: inline-block;
+	vertical-align: top;
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 5px;
 }
+.header_1:link    {color:white;}
+.header_1:visited {color:white;}
+.header_1:hover   {color:whitesmoke;}
+.header_1:active  {color:white;}
 
 #header_2 {
 	font-style: italic;
