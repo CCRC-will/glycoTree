@@ -3,7 +3,8 @@
 var nodeCount = 0;
 var statStr = "not";
 var helpOn = false;
-
+var pathArray = new Array();
+var stepsInPath = 0;
 function showStats() {
 	$("#results").html(statStr);		
 }
@@ -37,6 +38,8 @@ function showGlycan(d) {
 
 
 function	reactionTop(d) {
+	// console.log(d);
+	// d is data for a reaction
 	// initialize html that shows reaction(s) - add first reactant
 	var anomer = d.residue_affected.anomer;
 	var anomerStr = "";
@@ -56,13 +59,14 @@ function	reactionTop(d) {
 	tStr += "<center><h3>Reaction Details</h3>";
 
 	tStr += "<table>";
+	tStr += "<tr><td colspan='3'>" + images[d.source] + "<br>" + d.source + "</td></tr>";
 	return tStr;
 } // end function reactionTop()
 
 function	reactionAppend(d) {
+	// d is data for a reaction
 	// add the arrow, enzymes, and product
-	var tStr = "<tr><td colspan='3'>" + images[d.source] + "<br>" + d.source + "</td></tr>";
-	tStr += "<tr>";
+	var tStr = "<tr>";
 	tStr += "	 <td width='35%'> --- </td>";
 	tStr += "	 <td width='10%'>";
 	tStr += "    <span class='rxnArrow'>&darr;</span><br>";
@@ -79,17 +83,19 @@ function	reactionAppend(d) {
 	tStr += "<tr><td colspan='3'>";
 	tStr += images[d.target] + "<br>" + d.target;
 	tStr += "</td></tr>"
-	tStr += "</table></center>";
 	return tStr;
 } // end function reactionAppend()
 
+
+
 function reactionDetails(d) {
+	// ### d is data for a REACTION ###
 	// build html for visualizing reaction(s) and related data and links
 	// initialize - add first reactant
 	var txt = reactionTop(d);
 	// add the arrow, enzymes and product
 	txt += reactionAppend(d);
-	// for reaction pathway, additional reactions could be added here
+	txt += "</table></center>";
 	txt += "</body>";
 	var rxnWindow = window.open("", "");
 	rxnWindow.document.write(txt);
@@ -103,10 +109,7 @@ function initialize() {
 	var theURL = dataPath + "?start=" + a[1] + "&end=" +a[0];
 	var focalPoint = "none";
 
-
-	var vSpacing = 20;
-	
-
+	var vSpacing = 20;	
 	// as arcScale increases, horizontal size of arc dereases
 	var arcScale = 10;
 	var topMargin = 40;
@@ -222,16 +225,17 @@ function initialize() {
 	 
 	/**** respond to html events ****/
 	 
-	var pathArray = new Array();
-	function traverseUnique(nodeID) {
-		console.log("### recursion: traversing path at " + nodeID);
-		// node having nodeID must have isSelected = true
+	function traverseUnique(node) {
+		// console.log("### recursion: traversing path at " + node.id);
+		// node having node.id must have isSelected = true
 		data.links.every(function (d) {
-			console.log("** testing link " + d.source + " to " + d.target);
-			if ( (d.source === nodeID) && (id_to_node[d.target].isSelected) ) {
-				console.log("  !!! success: " + d.source + " to " + d.target);
-				pathArray[nodeID] = d.target;
-				traverseUnique(d.target);
+			// console.log("** testing link " + d.source + " to " + d.target);
+			var targetNode = id_to_node[d.target];
+			if ( (d.source === node.id) && (targetNode.isSelected) ) {
+				// console.log("  !!! success: " + d.source + " to " + d.target);
+				pathArray[stepsInPath] = d;
+				stepsInPath++;
+				traverseUnique(targetNode);
 				return false;
 			}
 			return true;
@@ -239,25 +243,47 @@ function initialize() {
 	}
 
 	 
+	function pathwayDetails(d) {
+		// ### d is data for the first REACTION ###
+		// build html for visualizing a pathway and related data and links
+		// initialize - add first reactant
+		var txt = reactionTop(d);
+		// add the arrow, enzymes and product
+		for (var i = 0; i < stepsInPath; i++) {
+			txt += reactionAppend(pathArray[i]);
+		}
+		txt += "</table></center>";
+		txt += "</body>";
+		// console.log("Generated Code:\n" + txt);
+		var rxnWindow = window.open("", "");
+		rxnWindow.document.write(txt);
+		rxnWindow.focus();
+	} // end function pathwayDetails()
+	 
 	d3.select("#pathButton").on("click", function() {
 		pathArray = new Array();
+		stepsInPath = 0;
 		var firstNode = "";
 		data.nodes.every(function (d) {
 			if (d.isSelected) {
-				firstNode = d.id;
+				firstNode = d;
 				return false;
 			}
 			return true;
 		})
+		
 		traverseUnique(firstNode);
 		
 		var pathStr = "<ul>";
-		for( var key in pathArray ) {
-  			pathStr += "<li>" + key + " &rarr; " + pathArray[key] + "</li>";
+		for( var i = 0; i < stepsInPath; i++ ) {
+			var from = pathArray[i].source;
+			var to = pathArray[i].target;
+  			pathStr += "<li>" + from + " &rarr; " + to + "</li>";
 		}
-		pathStr += "</ul><i>You must select structures that are 'linked' to each other; pathway is trucncated at any selected structure that is not linked to the next selected structure.</i><br>Pathways start with first selected structure, so you must select all structures you want in the path.<br>Pathways will be drawn on a new page.";
+		pathStr += "</ul><i>You must select structures that are 'linked' to each other; pathway is truncated at any selected structure that is not linked to the next selected structure.</i><br>Pathways start with first selected structure, so you must select all structures you want in the path.<br>Pathways will be drawn on a new page.<br>'Smart' structure selection will be implemented to automatically select structures that best fit biochemical rules.  The user can manually override these automatic selections.";
 		
 		$("#results").html("<b>Reactions involving selected structures will be included in path</b><br>" + pathStr);
+		pathwayDetails(pathArray[0]);
 	});
 	 
 	d3.select("#toggleHelp").on("click", function() {
