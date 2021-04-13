@@ -275,26 +275,32 @@ function initialize() {
 		traverseUnique(firstNode);
 		
 		var pathStr = "<ul>";
+		pathStr += "<li><i>You must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</i></li>";
+		pathStr += "<li>Pathways start with first selected structure, so you must select all structures you want in the path.</li>";
+		pathStr += "<li>Pathways are drawn on a new page.</li>";
+		pathStr += "<li>In future vesions, '<i>smart pathway selection</i>' will be implemented to automatically select structures that best fit biochemical rules.  The user will be able to manually override these automatic selections using the checkboxes.";
+		pathStr += "</ul><b>Currently selected reactions</b><ul>";
+		
 		for( var i = 0; i < stepsInPath; i++ ) {
 			var from = pathArray[i].source;
 			var to = pathArray[i].target;
   			pathStr += "<li>" + from + " &rarr; " + to + "</li>";
 		}
-		pathStr += "</ul><i>You must select structures that are 'linked' to each other; pathway is truncated at any selected structure that is not linked to the next selected structure.</i><br>Pathways start with first selected structure, so you must select all structures you want in the path.<br>Pathways will be drawn on a new page.<br>'Smart' structure selection will be implemented to automatically select structures that best fit biochemical rules.  The user can manually override these automatic selections.";
+		pathStr += "</ul>";
 		
 		$("#results").html("<b>Reactions involving selected structures will be included in path</b><br>" + pathStr);
 		pathwayDetails(pathArray[0]);
 	});
 	 
 	d3.select("#toggleHelp").on("click", function() {
-		var hStr = "<center><h4>";
+		var hStr = "<center><h3>";
 		helpOn = (helpOn) ? false: true;
 		if (helpOn) {
-			hStr += "Help is now on. Click the help button again to turn help off";
+			hStr += "Help is now on.";
 		} else {
-			hStr += "Help is now off. Click the help button again again to turn help on";
+			hStr += "Help is now off.";
 	   }
-		hStr += "</h4></center>";
+		hStr += "</h3></center>";
 		hStr += helpMessage;
 		$("#results").html(hStr);
 	});
@@ -453,7 +459,7 @@ function initialize() {
 		.append("text")
 		.attr("x", width)
 		.attr("y", function(d){ return(d.y+5)})
-		.classed('labelDefault', true)
+		.classed('dp', true)
 		.style("stroke", function(d){ return(d.cc)})
 		.text(function(d){ return(d.dp)})
 
@@ -618,16 +624,16 @@ function initialize() {
 	// Headers
 	svg
 		.append("text")
-		.attr("x", 50)
+		.attr("x", label_x)
 		.attr("y", 0)
-		.classed('header', true)
+		.classed('tableHeader', true)
 		.html("Accession")
 	
 	svg
 		.append("text")
 		.attr("x", width)
 		.attr("y", 0)
-		.classed('header', true)
+		.classed('tableHeader', true)
 		.html("DP")
 	
 } // end function initialize()
