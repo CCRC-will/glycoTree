@@ -95,32 +95,28 @@ function sortColumn($arr, $column) {
 
 
 function addEdge(&$data, $child_node, $parent_node, $connection) {
+	$clean = true;
 	// add nodes to $data if they have not yet been added
 	// nodeExists returns nodeIndex, or zero if non-existent
 	$cIndex = nodeExists($data, $child_node);
-	if ($cIndex === 0) {
-		// $child_node does not yet exist
-		// addNode returns new (non-zero) nodeIndex
-		$cIndex = addNode($data, $child_node, $connection);
-	}
-	
 	$pIndex = nodeExists($data, $parent_node);
-	if ($pIndex === 0) {
-		// node $parent_node does not yet exist
-		$pIndex = addNode($data, $parent_node, $connection);
-	}
+
 	$nds = $data['nodes'];
 	
 	// get the residue_id (i.e., $diff) of the residue that is 
 	//     present in the $child_node but not in the $parent_node
 	$child_residues = [];
-	$sql = "select residue_id from compositions where glytoucan_ac=?";
+	$sql = "select residue_id,name from compositions where glytoucan_ac=?";
 	$stmt = $connection->prepare($sql);
 	$acc = $child_node;
 	$stmt->bind_param("s", $acc);
 	$stmt->execute(); 
 	$result = $stmt->get_result();
 	while ($row = $result->fetch_assoc()) {
+		if (strpos($row["name"], '-') !== false) {
+			//echo $child_node . " - FOUND SUBSTITUENT: " . $row["name"] . " in " . $row["residue_id"] . "<br>";
+			$clean = false;
+		}
 		$child_residues[] = $row["residue_id"];
 	}
 	// echo "\nchild is " . $child_node . "\n  num residues is " . sizeof($child_residues) . "\n";
@@ -130,50 +126,71 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 	$stmt->execute(); 
 	$result = $stmt->get_result();
 	while ($row = $result->fetch_assoc()) {
+		if (strpos($row["name"], '-') !== false) {
+			// echo $parent_node . " - FOUND SUBSTITUENT: " . $row["name"] . " in " . $row["residue_id"] . "<br>";
+			$clean = false;
+		}		
 		$parent_residues[] = $row["residue_id"];
 	}
 	// echo "\nparent is " . $parent_node . "\n  num residues is " . sizeof($parent_residues) . "\n";
-
-	$diff = array_diff($child_residues, $parent_residues);
-	foreach($diff as $value) $ra = $value;
-
-	$enzymes = [];
-	$sql = "select gene_name,uniprot,type,species from enzyme_mappings where residue_id=?";
-	$stmt = $connection->prepare($sql);
-	$stmt->bind_param("s", $ra);
-	$stmt->execute(); 
-	$result = $stmt->get_result();
-	while ($row = $result->fetch_assoc()) {
-		$enzymes[] = $row;
-	}
 	
-	$residue_affected = [];
-	$sql = "select name,anomer,absolute,form_name from canonical_residues where residue_id=?";
-	$stmt = $connection->prepare($sql);
-	$stmt->bind_param("s", $ra);
-	$stmt->execute(); 
-	$result = $stmt->get_result();
-	while ($row = $result->fetch_assoc()) {
-		$residue_affected["residue_id"] = $ra;
-		$residue_affected["pubchem_name"] = $row["name"];
-		$residue_affected["anomer"] = $row["anomer"];
-		$residue_affected["absolute"] = $row["absolute"];
-		$residue_affected["form_name"] = $row["form_name"];
+	if ($clean === true) {
+		// echo "Adding link: " . $child_node . " - " . $parent_node . "<br>";
+		if ($cIndex === 0) {
+			// $child_node does not yet exist
+			// addNode returns new (non-zero) nodeIndex
+			$cIndex = addNode($data, $child_node, $connection);
+		}
+
+		if ($pIndex === 0) {
+			// node $parent_node does not yet exist
+			$pIndex = addNode($data, $parent_node, $connection);
+		}
+		$diff = array_diff($child_residues, $parent_residues);
+		foreach($diff as $value) $ra = $value;
+
+		$enzymes = [];
+		$sql = "select gene_name,uniprot,type,species from enzyme_mappings where residue_id=?";
+		$stmt = $connection->prepare($sql);
+		$stmt->bind_param("s", $ra);
+		$stmt->execute(); 
+		$result = $stmt->get_result();
+		while ($row = $result->fetch_assoc()) {
+			$enzymes[] = $row;
+		}
+
+		$residue_affected = [];
+		$sql = "select name,anomer,absolute,form_name from canonical_residues where residue_id=?";
+		$stmt = $connection->prepare($sql);
+		$stmt->bind_param("s", $ra);
+		$stmt->execute(); 
+		$result = $stmt->get_result();
+		while ($row = $result->fetch_assoc()) {
+			$residue_affected["residue_id"] = $ra;
+			$residue_affected["pubchem_name"] = $row["name"];
+			$residue_affected["anomer"] = $row["anomer"];
+			$residue_affected["absolute"] = $row["absolute"];
+			$residue_affected["form_name"] = $row["form_name"];
+		}
+
+		$edge = array(
+			"target" => $cIndex,
+			"source" => $pIndex,
+			"residue_affected" => $residue_affected,
+			"enzymes" => $enzymes
+		);
+		// get copy ($lnks) of $data['links']
+		$lnks = $data['links'];
+		// add a new link to $lnks
+		$lnks[] = $edge;
+		// replace $data['links'] with updated $lnks
+		$data['links'] = $lnks;
+		return true;
 	}
-	
-	$edge = array(
-	 	"target" => $cIndex,
-	 	"source" => $pIndex,
-		"residue_affected" => $residue_affected,
-		"enzymes" => $enzymes
-	);
-	// get copy ($lnks) of $data['links']
-	$lnks = $data['links'];
-	// add a new link to $lnks
-	$lnks[] = $edge;
-	// replace $data['links'] with updated $lnks
-	$data['links'] = $lnks;
-}
+	return false;
+} // end of function addEdge()
+
+
 
 // recursive traversal ($end to $start) of multiple pathways
 //   traversal direction is opposite that of pathway direction
@@ -217,24 +234,26 @@ function pathDAG($end, $start, $globalRE, $startDP, $rid, &$data, $connection, &
 	$precursors = getPrecursors($end, $connection);
 	foreach ($precursors as $key => $value) {
 		$new_end = $precursors[$key];
+		// $outcome is the number of paths returned by a recursion of pathDAG
 		if (!array_key_exists($new_end, $pc) ) {
-			// if $new_end exists, no need for recursion
+			// if !$new_end exists (it's not a key in $pc), execute recursion
 			// echo "---pathDAG--- recursion\n";
 			$outcome = pathDAG($new_end, $start, $globalRE, $startDP, $rid, $data, $connection, $pc);
 		} else {
+			// do not execute recursion, but
 			// get the outcome that would result if recursion occurred
 			$outcome = $pc[$new_end];
 		}
 		if ($outcome > 0) {
-			// $new_end has traversed to $start, sp process the results 
+			// $new_end has traversed to $start, s0 process the results 
 			//    $outcome is the number of paths taken
 			// echo "@@@ pathDAG @@@ COMPLETED TRAVERSAL FROM $new_edge TO $start: NUMBER OF PATHS TAKEN IS $outcome\n";
 			// add $new_end to $pc (path-count) - if it's not there already
 			 $pc[$new_end] = $outcome;
-			// add $end-$new_end edge to $data
+			// add $end to $new_end edge to $data
 			//  addEdge also adds nodes themselves, it they're not there already
-			addEdge($data, $end, $new_end, $connection); 
-			$paths += $outcome;
+			// if addEdge fails, do NOT increase value of $paths
+			if (addEdge($data, $end, $new_end, $connection)) $paths += $outcome;
 		}
 	}
 

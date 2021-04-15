@@ -92,6 +92,24 @@
 	font-size: 14px;
 }
 
+.tips {
+	font-family: monospace, monospace;
+	text-anchor: left;
+	alignment-baseline: bottom;
+	stroke: none;
+	fill: #444;
+	font-size: 13px;
+}
+
+.tipBox {
+	fill: #eee;
+}
+
+
+.tipsHidden {
+	visibility: hidden;
+}
+
 .labelDefault {
 	font-family: monospace, monospace;
 	text-anchor: middle;
@@ -185,7 +203,7 @@ td {
 	left : 500px;
 	width: auto;
 	border: none;
-	background: #fff;
+	background: #FFF;
 	padding: 5px 5px 5px;
 	text-align: left;
 }

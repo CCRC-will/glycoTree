@@ -529,8 +529,17 @@ function initialize() {
 		.data(data.nodes)
 		.enter()
 		.append('g')
-		.on("click", function(d) { 
+		.on("click", function(d) {
+			sandtips.classed('tipsHidden', true);
 			window.open(exploreURL + d.id); 
+		})
+		.on("mouseover", function(d) {
+			 sandtips.classed('tipsHidden', function (tip_d) {
+				 return tip_d.id === d.id ? false : true;
+			 })
+		})
+		.on("mouseout", function(d) {
+			 sandtips.classed('tipsHidden', true)
 		})
 	// separately append graphic elements to 'sandboxes'
 	sandboxes.append('rect')
@@ -540,6 +549,7 @@ function initialize() {
 		.attr("height", 18)
 		.style("fill", function(d){ return(d.sh)})
 		.classed('linkbox', true)
+	 
 	sandboxes.append('path')
 		.attr('d', function (d) {
 			sand_y = d.y
@@ -560,9 +570,18 @@ function initialize() {
 		.enter()
 		.append("g")
 		.on("click", function(d) {
+			logotips.classed('tipsHidden', true);
 			window.open(glygenURL + d.id);
 		})
-		
+		.on("mouseover", function(d) {
+			 logotips.classed('tipsHidden', function (tip_d) {
+				 return tip_d.id === d.id ? false : true;
+			 })
+		})
+		.on("mouseout", function(d) {
+			 logotips.classed('tipsHidden', true)
+		})
+	
 	logos.append('rect')
 		.attr("x", logo_x - 7)
 		.attr("y", function(d){ return(d.y-9)})
@@ -581,18 +600,29 @@ function initialize() {
 			]
 			.join(' ')
 		})
-		.classed('logo', true)
+		.classed('logo', true)	
+		 
 
-		
+	 
 	var subbrows = svg
 		.selectAll()
 		.data(data.nodes)
 		.enter()
 		.append("g")
 		.on("click", function(d) {
+			subtips.classed('tipsHidden', true);
 			window.open(subURL + "=" + d.id);
 		})
+		.on("mouseover", function(d) {
+			 subtips.classed('tipsHidden', function (tip_d) {
+				 return tip_d.id === d.id ? false : true;
+			 })
+		})
+		.on("mouseout", function(d) {
+			 subtips.classed('tipsHidden', true)
+		})
 		
+	 
 	subbrows.append('rect')
 		.attr("x", sub_x - 10)
 		.attr("y", function(d){ return(d.y-9)})
@@ -618,6 +648,71 @@ function initialize() {
 			.join(' ')
 		})
 		.classed('logo', true)
+
+	 	
+	var logotips = svg
+		.selectAll()
+		.data(data.nodes)
+		.enter()
+		.append("g")
+		.classed('tips', true)
+		.classed('tipsHidden' , true)
+	 
+	logotips.append('rect')
+		.attr("x", logo_x + 20)
+		.attr("y", function(d){ return(d.y-16)})
+	 	.attr("rx", 5)
+		.attr("width", 190)
+		.attr("height", 24)
+		.classed("tipBox", true)
+	
+	logotips.append('text')
+		.attr('x', logo_x + 26)
+		.attr('y', function(d){ return(d.y)})
+		.text(function(d){ return('View ' + d.id + ' in GlyGen')});
+	 
+	var sandtips = svg
+		.selectAll()
+		.data(data.nodes)
+		.enter()
+		.append("g")
+		.classed('tips', true)
+		.classed('tipsHidden' , true)
+	 
+	sandtips.append('rect')
+		.attr("x", sand_x + 22)
+		.attr("y", function(d){ return(d.y-16)})
+		.attr("width", 200)
+		.attr("height", 24)
+		.attr("rx", 5)
+		.classed("tipBox", true)
+	
+	sandtips.append('text')
+		.attr('x', sand_x + 28)
+		.attr('y', function(d){ return(d.y)})
+		.text(function(d){ return('View ' + d.id + ' in Sandbox')});
+	 
+	var subtips = svg
+		.selectAll()
+		.data(data.nodes)
+		.enter()
+		.append("g")
+		.classed('tips', true)
+		.classed('tipsHidden' , true)
+	 
+	subtips.append('rect')
+		.attr("x", sub_x + 14)
+		.attr("y", function(d){ return(d.y-16)})
+		.attr("width", 250)
+		.attr("height", 24)
+	 	.attr("rx", 5)
+		.classed("tipBox", true)
+	
+	subtips.append('text')
+		.attr('x', sub_x + 20)
+		.attr('y', function(d){ return(d.y)})
+		.text(function(d){ return('View ' + d.id + ' in GNOme Browser')});
+	 
 
 	}) // end function d3.json
 	
