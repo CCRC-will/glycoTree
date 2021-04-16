@@ -5,6 +5,7 @@ var statStr = "not";
 var helpOn = false;
 var pathArray = new Array();
 var stepsInPath = 0;
+var startGlycan = "";
 function showStats() {
 	$("#results").html(statStr);		
 }
@@ -33,7 +34,11 @@ function conciseReaction(d) {
 		
 function showGlycan(d) {
 	var rs = $("#results");
-	rs.html("<center>" + images[d.id] + "<h1>" + d.id + "</h1></center>");
+	var gStr = "<center>" + images[d.id];
+	gStr += "<h1>" + d.id + "</h1>";
+	gStr += "Number of paths to " + startGlycan + ": " + d.path_count + "</center>";
+	
+	rs.html(gStr);
 } // end function showGlycan()
 
 
@@ -41,6 +46,7 @@ function	reactionTop(d) {
 	// console.log(d);
 	// d is data for a reaction
 	// initialize html that shows reaction(s) - add first reactant
+	/*
 	var anomer = d.residue_affected.anomer;
 	var anomerStr = "";
 	if (anomer === "a") {
@@ -51,6 +57,7 @@ function	reactionTop(d) {
 	var absolute = d.residue_affected.absolute;
 	var formName = d.residue_affected.form_name;
 	var fullName = anomerStr + "-" + absolute + "-" + formName;
+	*/
 	var winName = d.source + " &rarr; " + d.target;
 
 	var tStr = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
@@ -66,8 +73,18 @@ function	reactionTop(d) {
 function	reactionAppend(d) {
 	// d is data for a reaction
 	// add the arrow, enzymes, and product
+	var anomer = d.residue_affected.anomer;
+	var anomerStr = "";
+	if (anomer === "a") {
+		anomerStr = "&#945;"
+	} else {
+		anomerStr = "&#946;"
+	}
+	var absolute = d.residue_affected.absolute;
+	var formName = d.residue_affected.form_name;
+	var fullName = anomerStr + "-" + absolute + "-" + formName;
 	var tStr = "<tr>";
-	tStr += "	 <td width='35%'> --- </td>";
+	tStr += "	 <td width='35%'>Adds " + fullName + "</td>";
 	tStr += "	 <td width='10%'>";
 	tStr += "    <span class='rxnArrow'>&darr;</span><br>";
 	tStr += "  </td>"
@@ -106,7 +123,8 @@ function initialize() {
 	setupAnimation('logo_svg', 'headerDiv');
 	var arg = window.location.search.substring(1);
 	var a = arg.split("&");
-	var theURL = dataPath + "?start=" + a[1] + "&end=" +a[0];
+	var theURL = dataPath + "?start=" + a[1] + "&end=" + a[0];
+	startGlycan = a[1];
 	var focalPoint = "none";
 
 	var vSpacing = 20;	
@@ -310,7 +328,7 @@ function initialize() {
 	var headerStr = "<span class='headPath'>" + a[1] + " &rarr; &rarr; &rarr; " + a[0] + "</span>";
 
 	$("#headerDiv").append(headerStr); 
-
+	$("#results").html(helpMessage)
 
 	// map each node to its id so given link source or target, node can be retrieved
 	var id_to_node = {};
@@ -355,12 +373,19 @@ function initialize() {
 		arcScale = Math.min(20, 1800 / maxSpan);
 	});
 
-	statStr = "<center><h3>Statistics for pathway: " +
-		a[1] + " &rarr; &rarr; &rarr; " + a[0] + "</h3></center>";
-	statStr += "<ul><li>Number of nodes: " +  nodeCount + "</li>";
-	statStr += "<li>Number of links: " +  edgeCount + "</li>";
-	statStr += "<li>Number of unique paths: " + pc + "</li></ul>";
-
+	statStr = "<center><h3>Pathway Statistics<br>" +
+		a[1] + " &rarr; &rarr; &rarr; " + a[0] + "</h3>";
+	statStr += "<ul><li>Number of unique pathways: " + pc + "</li>";
+	statStr += "<li>Number of structures: " +  nodeCount + "</li>";
+	statStr += "<li>Number of reactions: " +  edgeCount + "</li></ul>";
+	statStr += "<b>Size Distribution for Structures:</b>"
+	statStr += "<table><tr><th>DP</th><th>Count</th></tr>";
+	// for (var i = 9; i < 14; i++) {
+	for (var i in data.dp_distribution) {
+		statStr += "<tr><td>" + i + "</td><td> " + 
+			data.dp_distribution[i] + "</td></tr>";
+	}
+	statStr += "</table></center>";
 	$("#progressDiv").hide();
 	 
 	 
@@ -661,7 +686,7 @@ function initialize() {
 	logotips.append('rect')
 		.attr("x", logo_x + 20)
 		.attr("y", function(d){ return(d.y-16)})
-	 	.attr("rx", 5)
+		.attr("rx", 4)
 		.attr("width", 190)
 		.attr("height", 24)
 		.classed("tipBox", true)
@@ -682,9 +707,9 @@ function initialize() {
 	sandtips.append('rect')
 		.attr("x", sand_x + 22)
 		.attr("y", function(d){ return(d.y-16)})
+		.attr("rx", 4)
 		.attr("width", 200)
 		.attr("height", 24)
-		.attr("rx", 5)
 		.classed("tipBox", true)
 	
 	sandtips.append('text')
@@ -703,9 +728,9 @@ function initialize() {
 	subtips.append('rect')
 		.attr("x", sub_x + 14)
 		.attr("y", function(d){ return(d.y-16)})
+		.attr("rx", 4)
 		.attr("width", 250)
 		.attr("height", 24)
-	 	.attr("rx", 5)
 		.classed("tipBox", true)
 	
 	subtips.append('text')

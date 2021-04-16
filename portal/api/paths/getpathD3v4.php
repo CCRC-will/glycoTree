@@ -66,7 +66,7 @@ function addNode(&$data, $the_node, $connection) {
 	// echo "   ...addNode... $the_node\n";
 	// copy $data['nodes']
 	$nds = $data['nodes'];
-	$count = sizeof($nds) + 1;
+	// $count = sizeof($nds) + 1;
 	$newNode = [];
 	$newNode["id"] = $the_node;
 	$newNode["dp"] = getDP($the_node, $connection);
@@ -265,7 +265,7 @@ try {
 	$end = $_GET['end'];
 	$start = $_GET['start'];
 	$data = [];
-	$pc = [];
+	$pc = [];  // the path count for each node
 	$data['nodes'] = []; 
 	$data['links'] = []; 
 	// echo "initial data:\n";
@@ -295,12 +295,23 @@ try {
 		die ("Start DP is greater than end DP - cannot yet generate a biosynthetic pathway from large to small\n");
 	}	
 	
-	
+	// traverse glycotree to find all paths
 	$totalPaths = pathDAG($end, $start, $reEnd, $startDP, $rid, $data, $connection, $pc);
 	
+	$dpDistribution = [];
+	for ($i = $startDP; $i <= $endDP; $i++) {
+		$dpDistribution[$i] = 0;
+	}
+	
 	$nodeArray = $data['nodes'];
+	foreach ($nodeArray as $key => $value) {
+		$nodeArray[$key]['path_count'] = $pc[$value['id']];
+		if ($value['id'] === $end) $nodeArray[$key]['path_count'] = $totalPaths;
+		$dpDistribution[$value['dp']]++;
+	}
 	$sortedNodes = sortColumn($nodeArray, 'dp');
 	$data['nodes'] = $sortedNodes;
+	$data['dp_distribution'] = $dpDistribution;
 	
 	$data['path_count'] = $totalPaths;
 
