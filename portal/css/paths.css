@@ -97,7 +97,7 @@
 	text-anchor: left;
 	alignment-baseline: bottom;
 	stroke: none;
-	fill: #444;
+	fill: #555;
 	font-size: 13px;
 }
 
@@ -209,8 +209,11 @@ td {
 	text-align: left;
 }
 
-.svgGraph {
-  display: inline-block;
-  position: absolute;
-  vertical-align: top;
-}
+.bargraph1 {
+	width: 300px;
+	height: 250px;
+	margin: 32px;
+	fill: #2F78B7;
+	stroke: #00538B;
+	font-size: 16px;
+};

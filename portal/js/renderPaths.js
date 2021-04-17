@@ -6,6 +6,7 @@ var helpOn = false;
 var pathArray = new Array();
 var stepsInPath = 0;
 var startGlycan = "";
+var endGlycan = "";
 function showStats() {
 	$("#results").html(statStr);		
 }
@@ -24,7 +25,7 @@ var tCount = 0;
 var images = [];
 
 function conciseReaction(d) {
-	var txt = "<center><h4>Click now to open a new page showing biosynthetic details for the reaction you selected</h4>";
+	var txt = "<center><h4>Click now to open a new page showing<br>biosynthetic details for the reaction you selected</h4>";
 	txt += images[d.source] + "<br>" + d.source + "<br>";
 	txt += "<span class='rxnArrow'>&darr;</span><br>";
 	txt += images[d.target] + "<br>" + d.target + "<br></center>";
@@ -42,33 +43,23 @@ function showGlycan(d) {
 } // end function showGlycan()
 
 
-function	reactionTop(d) {
+function	reactionHTMLtop(d, fromGlycan, toGlycan, multiple) {
 	// console.log(d);
 	// d is data for a reaction
 	// initialize html that shows reaction(s) - add first reactant
-	/*
-	var anomer = d.residue_affected.anomer;
-	var anomerStr = "";
-	if (anomer === "a") {
-		anomerStr = "&#945;"
-	} else {
-		anomerStr = "&#946;"
-	}
-	var absolute = d.residue_affected.absolute;
-	var formName = d.residue_affected.form_name;
-	var fullName = anomerStr + "-" + absolute + "-" + formName;
-	*/
-	var winName = d.source + " &rarr; " + d.target;
+	var arrow = " &rarr; ";
+	if (multiple) arrow = arrow + arrow + arrow;
+	var winName = fromGlycan + arrow + toGlycan;
 
 	var tStr = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
 	tStr += "<title>" + winName + "</title>";
-	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body>" 
+	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body>";
 	tStr += "<center><h3>Reaction Details</h3>";
 
 	tStr += "<table>";
 	tStr += "<tr><td colspan='3'>" + images[d.source] + "<br>" + d.source + "</td></tr>";
 	return tStr;
-} // end function reactionTop()
+} // end function reactionHTMLtop()
 
 function	reactionAppend(d) {
 	// d is data for a reaction
@@ -109,7 +100,7 @@ function reactionDetails(d) {
 	// ### d is data for a REACTION ###
 	// build html for visualizing reaction(s) and related data and links
 	// initialize - add first reactant
-	var txt = reactionTop(d);
+	var txt = reactionHTMLtop(d, d.source, d.target);
 	// add the arrow, enzymes and product
 	txt += reactionAppend(d);
 	txt += "</table></center>";
@@ -119,12 +110,70 @@ function reactionDetails(d) {
 	rxnWindow.focus();
 } // end function reactionDetails()
 	
+
+function barGraph(dArray, c) {
+	// dArray is an array of integers, c is the graph's class name
+	// this function is general and can be used in diverse contexts
+	
+	// activate the class 'c' in the DOM so it can be accessed
+	var dummy = "<div class='" + c + "' id='dummy'></div>";
+	$(document.body).append(dummy);
+	
+	var svgStr = "<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' \ 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'> \
+<svg xmlns:xlink='http://www.w3.org/1999/xlink' \ xmlns='http://www.w3.org/2000/svg' class='" + c + "'>";
+	svgStr += "\n  <g text-anchor='middle'>";
+	var w = parseInt($(".bargraph1").css("width"));
+	var h = parseInt($(".bargraph1").css("height"));
+	var tMargin = parseInt($(".bargraph1").css("margin-top"));
+	var bMargin = parseInt($(".bargraph1").css("margin-bottom"));
+	var lMargin = parseInt($(".bargraph1").css("margin-left"));	
+	var rMargin = parseInt($(".bargraph1").css("margin-right"));
+	var barWidth = (w - lMargin - rMargin) / Object.keys(dArray).length;
+	var textY = h - bMargin / 2;
+	var maxCount = 1;
+	var minDP = 10000;
+	for (var i in dArray) {
+		maxCount = Math.max(maxCount, dArray[i]);
+		minDP = Math.min(minDP, i);
+	}
+	var barScaleY = (h - tMargin - bMargin) / maxCount;
+	// for each element of data array, draw and label a bar
+	for (var i in dArray) {
+		// range of i does not necessarily start with 0 or 1
+		var barHeight = barScaleY * dArray[i];
+		var j = i - minDP;
+		var barX = lMargin + barWidth * j;
+		var barY = h - barHeight - tMargin;
+		// draw the bar
+		svgStr += "\n    <rect height='" + barHeight.toFixed(2) +
+			"' width='" + barWidth.toFixed(2) +
+			"' x='" + barX.toFixed(2) +
+			"' y='" + barY.toFixed(2) + "'/>";
+		// label the category (i in this case)
+		var textX = barX + barWidth / 2;
+		svgStr += "\n    <text x='" + textX.toFixed(2) +
+			"' y='" + textY.toFixed(4) + "' stroke='none'>" +
+			i + "</text>";
+		// label the value
+		var labelY = barY - 5;
+		svgStr += "\n    <text x='" + textX.toFixed(2) +
+			"' y='" + labelY.toFixed(2) + "' stroke='none'>" +
+			dArray[i] + "</text>";
+	}
+	svgStr += "\n  </g>\n</svg>\n</center>";
+	// no longer any need to activate class c
+	$( "#dummy" ).remove();
+	return svgStr;
+} // end of function barGraph()
+
+
 function initialize() { 
 	setupAnimation('logo_svg', 'headerDiv');
 	var arg = window.location.search.substring(1);
 	var a = arg.split("&");
-	var theURL = dataPath + "?start=" + a[1] + "&end=" + a[0];
 	startGlycan = a[1];
+	endGlycan = a[0];
+	var theURL = dataPath + "?start=" + startGlycan + "&end=" + endGlycan;
 	var focalPoint = "none";
 
 	var vSpacing = 20;	
@@ -265,7 +314,9 @@ function initialize() {
 		// ### d is data for the first REACTION ###
 		// build html for visualizing a pathway and related data and links
 		// initialize - add first reactant
-		var txt = reactionTop(d);
+		var pathStart = pathArray[0].source;
+		var pathEnd = pathArray[stepsInPath - 1].target;
+		var txt = reactionHTMLtop(d, pathStart, pathEnd, true);
 		// add the arrow, enzymes and product
 		for (var i = 0; i < stepsInPath; i++) {
 			txt += reactionAppend(pathArray[i]);
@@ -306,7 +357,7 @@ function initialize() {
 		}
 		pathStr += "</ul>";
 		
-		$("#results").html("<b>Reactions involving selected structures will be included in path</b><br>" + pathStr);
+		$("#results").html("<center><b>Reactions involving selected structures <br>are combined to generate a unique pathway</b></center><br>" + pathStr);
 		pathwayDetails(pathArray[0]);
 	});
 	 
@@ -322,6 +373,7 @@ function initialize() {
 		hStr += helpMessage;
 		$("#results").html(hStr);
 	});
+	 
 	 
 	/**** begin processing data ****/
 	 
@@ -378,14 +430,11 @@ function initialize() {
 	statStr += "<ul><li>Number of unique pathways: " + pc + "</li>";
 	statStr += "<li>Number of structures: " +  nodeCount + "</li>";
 	statStr += "<li>Number of reactions: " +  edgeCount + "</li></ul>";
-	statStr += "<b>Size Distribution for Structures:</b>"
-	statStr += "<table><tr><th>DP</th><th>Count</th></tr>";
-	// for (var i = 9; i < 14; i++) {
-	for (var i in data.dp_distribution) {
-		statStr += "<tr><td>" + i + "</td><td> " + 
-			data.dp_distribution[i] + "</td></tr>";
-	}
-	statStr += "</table></center>";
+	statStr += "<b>Size Distribution for Structures in the Pathways</b>"
+	// barGraph takes an array of integers and a css class name
+	statStr += barGraph(data.dp_distribution, "bargraph1");
+
+	 
 	$("#progressDiv").hide();
 	 
 	 
@@ -729,14 +778,14 @@ function initialize() {
 		.attr("x", sub_x + 14)
 		.attr("y", function(d){ return(d.y-16)})
 		.attr("rx", 4)
-		.attr("width", 250)
+		.attr("width", 265)
 		.attr("height", 24)
 		.classed("tipBox", true)
 	
 	subtips.append('text')
 		.attr('x', sub_x + 20)
 		.attr('y', function(d){ return(d.y)})
-		.text(function(d){ return('View ' + d.id + ' in GNOme Browser')});
+		.text(function(d){ return('View ' + d.id + ' in GNOme Navigator')});
 	 
 
 	}) // end function d3.json
