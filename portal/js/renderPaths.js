@@ -218,6 +218,37 @@ function initialize() {
 		// console.log("Focal Point is " + focalPoint);
 	} // end function focusNode()
 	 
+	 
+	function maxEnt(d, activeNode) {
+		//alert("WTF? " + d.links + "\n active is " + activeNode.id);
+		// d is the data object, containing nodes and edges
+		//  activeNode is node that is processed by current recursion
+		//  select the activeNode
+		activeNode.isSelected = true;
+		console.log("\n## Node " + activeNode.id + " is selected ##\n");
+		// find next node with most entropy
+		var maxCount = 0;
+		var maxEntSource = null;
+		d.links.forEach(function (link_d) {
+			// subset of links that have activeNode as target
+			if (link_d.target === activeNode.id) {
+				var testNode = id_to_node[link_d.source];
+				if (testNode['path_count'] > maxCount) {
+					// better way to evaluate 'ties'?
+					maxCount = testNode['path_count'];
+					maxEntSource = testNode;
+				}
+			}
+		})
+
+		// recursion
+		if (maxEntSource !== null){ 
+			maxEnt(d, maxEntSource);
+		}
+
+	} // end of function maxEnt()
+	 
+	 
 	function nodeOver(d) {
 		showGlycan(d);
 		// set all nodes inactive
@@ -347,7 +378,7 @@ function initialize() {
 		pathStr += "<li><i>You must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</i></li>";
 		pathStr += "<li>Pathways start with first selected structure, so you must select all structures you want in the path.</li>";
 		pathStr += "<li>Pathways are drawn on a new page.</li>";
-		pathStr += "<li>In future vesions, '<i>smart pathway selection</i>' will be implemented to automatically select structures that best fit biochemical rules.  The user will be able to manually override these automatic selections using the checkboxes.";
+		pathStr += "<li>In this version, '<i>smart pathway selection</i>' automatically selects structures that have the highest 'pathway entropy'.  You can  manually override these automatic selections using the checkboxes.";
 		pathStr += "</ul><b>Currently selected reactions</b><ul>";
 		
 		for( var i = 0; i < stepsInPath; i++ ) {
@@ -392,11 +423,12 @@ function initialize() {
 	var pc = data.path_count;
 
 	// add drawing variables and data to each node in data.nodes
+	//  and fetch all the svg images
+
 	var cc;
 	var sh;
-
+	
 	data.nodes.forEach(function( d, i ) {
-		// fetch all the svg images
 		$.get("svg/" + d.id + ".gTree.svg", function( response ) {
 			var result = (new XMLSerializer()).serializeToString(response);
 			images[d.id] = result;
@@ -408,7 +440,7 @@ function initialize() {
 		d.y = vSpacing * nodeCount; // vertical spacing of nodes
 		d.url = "https://www.glygen.org/glycan/" + d.id;
 	});
-	
+	 	 
 	// resize graph to fit data
 	 var graphHeight = 3 * topMargin + nodeCount * vSpacing;
 	 d3.select("#pathgraph").select("svg").attr("height", graphHeight);
@@ -436,9 +468,7 @@ function initialize() {
 
 	 
 	$("#progressDiv").hide();
-	 
-	 
-	 
+ 
 	// draw alternate shading first (background)
 	var shade = svg
 		.selectAll()
@@ -558,6 +588,18 @@ function initialize() {
 		})	
 
 	// d3.svg implementation of check boxes
+	
+	function showChecks() {
+		d3.selectAll("path.checkI")
+			.classed('checkV', function(box_d) {
+				return (box_d.isSelected);	
+			})
+		d3.selectAll("path.checkV")
+			.classed('checkI', function(box_d) {
+				return (!box_d.isSelected);	
+			})
+	}
+	 
 	var checks = svg
 		.selectAll()
 		.data(data.nodes)
@@ -569,6 +611,8 @@ function initialize() {
 				if (n.dp === d.dp) n.isSelected = false;
 			})
 			d.isSelected = toggle;
+			showChecks();
+/*
 			d3.selectAll("path.checkI")
 				.classed('checkV', function(box_d) {
 					return (box_d.isSelected);	
@@ -577,6 +621,7 @@ function initialize() {
 				.classed('checkI', function(box_d) {
 					return (!box_d.isSelected);	
 				})
+*/
 		})
 	// append a rectangle, visible (class checkV) to be clickable
 	checks.append('rect')
@@ -786,7 +831,12 @@ function initialize() {
 		.attr('x', sub_x + 20)
 		.attr('y', function(d){ return(d.y)})
 		.text(function(d){ return('View ' + d.id + ' in GNOme Navigator')});
-	 
+
+	// calculate maximum entropy path, setting isSelected values
+	//  this will include other information as it becomes available
+	maxEnt(data, id_to_node[endGlycan]);
+	showChecks();
+	traverseUnique(startGlycan); 
 
 	}) // end function d3.json
 	
@@ -804,5 +854,5 @@ function initialize() {
 		.attr("y", 0)
 		.classed('tableHeader', true)
 		.html("DP")
-	
+
 } // end function initialize()
