@@ -4,9 +4,14 @@ $servername = getenv('MYSQL_SERVER_NAME');
 $password = getenv('MYSQL_PASSWORD');
 // $caveats = [];
 	
-function generateCaveats($resList, $accession) {
+function generateCaveats($resList, $accession, $connection) {
 	// generate caveat objects and put into array $caveats
 	$caveats = [];
+	// get the residue_name of a required canonical residue
+	$required = "";
+	$required_query = "SELECT residue_name FROM canonical_residues WHERE residue_id=?"; 
+	$required_stmt = $connection->prepare($required_query);
+	$required_stmt->bind_param("s", $required);
 	// find residue annotations that require caveats
 	foreach ($resList as $value)  {
 		$resID = $value['residue_id'];
@@ -176,7 +181,6 @@ function gtree_comparator($a, $b) {
 try {
 	$accession = $_GET['ac'];
 	$type = $_GET['type'];
-	
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -224,12 +228,6 @@ try {
 		$match_stmt = $connection->prepare($match_query);
 		$match_stmt->bind_param("s", $accession);
 		
-		// get the residue_name of a required canonical residue
-		$required = "";
-		$required_query = "SELECT residue_name FROM canonical_residues WHERE residue_id=?"; 
-		$required_stmt = $connection->prepare($required_query);
-		$required_stmt->bind_param("s", $required);
-		
 		$residues = [];
 		while ($row = $comp_result->fetch_assoc()) {
 			$enzymes = [];
@@ -263,7 +261,7 @@ try {
 			}
 		}
 
-		$caveats = generateCaveats($residues, $accession);
+		$caveats = generateCaveats($residues, $accession, $connection);
 
 		// array sort by column value using custom comparator
 		// $sorted = $residues;
@@ -271,7 +269,6 @@ try {
 		$glycan["residues"] = $sorted;
 		$glycan["related_glycans"] = $homologs;
 		$glycan["caveats"] = $caveats;
-
 		echo json_encode($glycan, JSON_PRETTY_PRINT);
 	}
 
