@@ -580,11 +580,12 @@
       "glycoct_index": "11",
       "limited_to": "",
       "not_found_in": "",
-      "requires_residue": "",
+      "requires_residue": "N2",
       "blocked_by_residue": "",
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165185",
+      "comment": "Not a valid node",
       "enzymes": [
          {
           "type": "GT",
@@ -821,6 +822,9 @@
       "requires_residue": "",
       "blocked_by_residue": "",
       "notes": "not validated",
+      "who": "MT",
+      "evidence": "PMID: 7430154",
+      "comment": "Galb3Gal?  Based on b-galactosidase digestion from biological source; check this out; PMID: 7430154",
       "enzymes": [
       ]
     }

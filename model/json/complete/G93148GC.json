@@ -772,10 +772,13 @@
       "form_name": "Galp",
       "glycoct_index": "14",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
+      "evidence": "https://doi.org/10.1016/S0008-6215(00)90370-7",
+      "comment": "glycan structure not present in evidence; mis-interpretation of IUPAC nomenclature?",
       "enzymes": [
       ]
     },
@@ -791,10 +794,11 @@
       "form_name": "NeupNAc",
       "glycoct_index": "15",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
       "enzymes": [
       ]
     }

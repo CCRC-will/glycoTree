@@ -1,14 +1,175 @@
 <?xml version="1.0"?>
-
 <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
-<svg xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns="http://www.w3.org/2000/svg" id="G48434LT_svg" height="120" width="400" >
+<!-- ## svg encoding translated from file G48434LT.svg ## -->
+<svg xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns="http://www.w3.org/2000/svg" id="G48434LT_svg" height="238" width="560"  style="fill-opacity:1; color-rendering:auto; color-interpolation:auto; text-rendering:auto; stroke:black; stroke-linecap:square; stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:'Dialog'; font-style:normal; stroke-linejoin:miter; font-size:12px; stroke-dashoffset:0; image-rendering:auto;" >
   <g>
-    <!-- ## Potentially clickable, semantically annotated canvas## -->
-    <g style="text-rendering:optimizeSpeed;" id="C-G48434LT:0" >
-      <rect height="120" width="400" x="0" y="0" style="fill:rgb(251,251,255); stroke:none;" />
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="C-G48434LT:0" >
+      <rect height="238" width="560" x="0" y="0" style="fill:rgb(255,255,255); stroke:none;" />
     </g>
-    <g style="text-rendering:optimizeSpeed;" >
-     <text style="fill:black; stroke:none;  font-size:14px; font-family:'Helvetica'; font-weight:bold;" x="200" y="60" text-anchor="middle">No image is available for G48434LT</text>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S2">
+      <polygon  points=" 519 119 467 119" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S3">
+      <polygon  points=" 467 119 415 119" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S4">
+      <polygon  points=" 415 119 363 171" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S5">
+      <polygon  points=" 415 119 363 67" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S6">
+      <polygon  points=" 363 171 311 197" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S7">
+      <polygon  points=" 363 171 311 145" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S8">
+      <polygon  points=" 311 197 259 197" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S9">
+      <polygon  points=" 259 197 207 197" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S10">
+      <polygon  points=" 207 197 155 197" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S11">
+      <polygon  points=" 311 145 259 145" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S12">
+      <polygon  points=" 363 67 311 93" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S13">
+      <polygon  points=" 363 67 311 41" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S14">
+      <polygon  points=" 311 93 259 93" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S15">
+      <polygon  points=" 311 41 259 41" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;">
+      <path d="M135.2 30 C130.8 38.9 135.2 110.1 130.8 119 M135.2 208 C130.8 199.1 135.2 127.9 130.8 119" style="fill:none;"/>
+    </g>
+    <g style="text-rendering:optimizeSpeed;" id="L-G48434LT:S17">
+      <polygon  points=" 111 119 59 119" style="fill:none;"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S1">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="508" y="108"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S2">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="456" y="108"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S3">
+      <circle style="stroke:black; fill:rgb(0,166,81);"  cx="415" cy="119" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S4">
+      <circle style="stroke:black; fill:rgb(0,166,81);"  cx="363" cy="171" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S6">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="300" y="186"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S8">
+      <circle style="stroke:black; fill:rgb(255,212,0);"  cx="259" cy="197" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S9">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="196" y="186"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S10">
+      <circle style="stroke:black; fill:rgb(255,212,0);"  cx="155" cy="197" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S7">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="300" y="134"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S11">
+      <circle style="stroke:black; fill:rgb(255,212,0);"  cx="259" cy="145" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S5">
+      <circle style="stroke:black; fill:rgb(0,166,81);"  cx="363" cy="67" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S12">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="300" y="82"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S14">
+      <circle style="stroke:black; fill:rgb(255,212,0);"  cx="259" cy="93" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S13">
+      <rect style="stroke:black; fill:rgb(0,144,188);"  height="22" width="22" x="300" y="30"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S15">
+      <circle style="stroke:black; fill:rgb(255,212,0);"  cx="259" cy="41" r="11"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; stroke:white;" id="R-G48434LT:S17">
+      <polygon style="stroke:black; fill:rgb(165,67,153);"  points=" 59 108 70 119 59 130 48 119"/>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S10">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="188.1" y="210.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="174.1" y="210.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S9">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="240.1" y="210.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="226.1" y="210.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S8">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="292.1" y="210.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="278.1" y="210.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S11">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="292.1" y="158.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="278.1" y="158.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S6">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="348.1" y="192.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="332.1" y="200.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S7">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="341.1" y="174.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="325.1" y="166.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S14">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="292.1" y="106.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="278.1" y="106.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S15">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="292.1" y="54.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="278.1" y="54.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S12">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="348.1" y="88.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="332.1" y="96.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S13">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="341.1" y="70.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="325.1" y="62.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S4">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="404.1" y="146.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="385.1" y="165.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S5">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="392.1" y="113.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="374.1" y="94.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S3">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="448.1" y="132.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="434.1" y="132.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S2">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="500.1" y="132.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="486.1" y="132.4" text-anchor="middle">?</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed; font-family:'Serif'; stroke:white;" id="LI-G48434LT:S17">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="92.1" y="132.4" text-anchor="middle">?</text>
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Baskerville';" x="78.1" y="132.4" text-anchor="middle">?</text>
+    </g>
+    <g style="font-family:'SansSerif'; font-size:14px; text-rendering:optimizeSpeed;">
+      <text style="fill:black; stroke:none;  font-size:14px; font-family:'Helvetica';" x="36.5" y="123.8" text-anchor="middle">5x</text>
+    </g>
+    <g style="fill:white; text-rendering:optimizeSpeed;">
+      <text style="fill:black; stroke:none;  font-size:12px; font-family:'Serif';" x="538.0" y="123.0" text-anchor="middle"></text>
     </g>
   </g>
 </svg>
+<!-- ## End of svg encoding ##-->
+
+

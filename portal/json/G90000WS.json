@@ -453,11 +453,14 @@
       "site": "4",
       "form_name": "Galp",
       "glycoct_index": "12",
-      "limited_to": "",
-      "not_found_in": "",
+      "limited_to": ""nematode",
+      "not_found_in": " mollusc"",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "",
+      "who": "manually validated",
+      "evidence": "MT",
+      "comment": "https://doi.org/10.1017/S0031182019000398",
       "enzymes": [
       ]
     }

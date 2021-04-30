@@ -551,7 +551,9 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "manually validated",
+      "who": "MT",
+      "evidence": "PMID: 6853476",
       "enzymes": [
       ]
     },
@@ -567,10 +569,11 @@
       "form_name": "NeupNAc",
       "glycoct_index": "18",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic linkage",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -586,10 +589,11 @@
       "form_name": "NeupNAc",
       "glycoct_index": "10",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic linkage",
+      "who": "MT",
       "enzymes": [
       ]
     }

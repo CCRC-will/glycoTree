@@ -434,11 +434,12 @@
       "glycoct_index": "10",
       "limited_to": "",
       "not_found_in": "",
-      "requires_residue": "",
+      "requires_residue": "N2",
       "blocked_by_residue": "",
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165185",
+      "comment": "Not a valid node",
       "enzymes": [
          {
           "type": "GT",

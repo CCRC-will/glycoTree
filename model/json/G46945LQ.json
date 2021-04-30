@@ -650,7 +650,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "Manually validated",
+      "who": "MT",
       "enzymes": [
       ]
     }

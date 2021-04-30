@@ -4,7 +4,7 @@
 	top: 0px;
 	left : 0px;
 	top: 0px;
-	z-index: 99;
+	/*z-index: 99;*/
 	border: none;
 	background: #2F78B7;
 	padding: 5px 5px 5px;
@@ -12,17 +12,21 @@
 	width: 100%;
 	height: 36px;
 	text-align: left;
+	z-index: 90;
 }
 
 #progressDiv {
 	position: fixed;
+	padding-left: 50px;
+	padding-right: 50px;
 	z-index: 95;
-	height: 70px;
-	width: 70px;
-	left: 720px;
-	top: 120px;
-	background-color: #FFFFFF;
-	opacity: 0.8;
+	height: 90%;
+	width: 90%;
+	left: 0px;
+	top: 50px;
+	background-color: #FFF;
+	opacity: 1.0;
+	font-family: Helvetica, sans-serif;
 }
 
 .header_1 {
@@ -37,7 +41,7 @@
 }
 .header_1:link    {color:white;}
 .header_1:visited {color:white;}
-.header_1:hover   {color:whitesmoke;}
+.header_1:hover   {color:#ace;}
 .header_1:active  {color:white;}
 
 .header_2 {
@@ -62,6 +66,10 @@
 	margin-left: 24px;
 }
 
+.navLi {
+	
+}
+
 .details {
 	position: fixed;
 	top: 50px;
@@ -72,8 +80,14 @@
 	width: 450px;
 	height: auto;
 	text-align: left;
+	font-family: Helvetica, sans-serif;
 }
 	
+.pathPage {
+	font-family: Helvetica, sans-serif;
+}
+
+
 .tableHeader {
 	font-family: monospace, monospace;
 	text-anchor: middle;
@@ -93,7 +107,7 @@
 }
 
 .tips {
-	font-family: monospace, monospace;
+	font-family: Helvetica, sans-serif;
 	text-anchor: left;
 	alignment-baseline: bottom;
 	stroke: none;
@@ -189,9 +203,6 @@
 	font-size: 48px;
 }
 
-li {
-	  text-align: left;
-}
 
 td {
 	  text-align: center;
@@ -216,4 +227,61 @@ td {
 	fill: #2F78B7;
 	stroke: #00538B;
 	font-size: 16px;
-};
+	font-family: Helvetica, sans-serif;
+}
+
+
+ul { 
+	text-align: left; 
+}
+
+
+#navDiv {
+	position: fixed;
+	display: inline-flex;
+	top:0px;
+	right : 10px;
+	border: none;
+	padding-top: 10px;
+	font-family: Helvetica, sans-serif;	
+	/* background: rgba(255, 165, 0, 0.0); */
+	color: #fff;
+	cursor: pointer;
+	pointer-events: none;
+	z-index: 95;
+}
+
+.navSpan {
+	padding-left: 30px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	pointer-events: auto;
+}
+
+.navSpan:hover , .navContent:hover {
+  color: #ace;
+}
+
+.navContent {
+	visibility: hidden; 
+	height: 0px;
+ 	list-style-type: none;
+	display: block;
+	margin: 0px;
+}
+
+.navDown {
+	font-size: 20px;
+	color: #fff;
+	text-align: left;
+}
+
+.navDown:hover .navContent {
+	padding: 20px;
+	visibility: visible;
+	background: #2F78B7;
+	color: #ace;
+	height: auto;
+}

@@ -403,10 +403,11 @@
       "form_name": "Galp",
       "glycoct_index": "13",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic linkage",
+      "who": "MT",
       "enzymes": [
       ]
     }

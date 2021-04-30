@@ -401,10 +401,11 @@
       "form_name": "GalpNAc",
       "glycoct_index": "14",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic linkage",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -419,11 +420,12 @@
       "site": "4",
       "form_name": "GalpNAc",
       "glycoct_index": "11",
-      "limited_to": "",
+      "limited_to": "nematode",
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "manually validated",
+      "who": "MT",
       "enzymes": [
       ]
     }

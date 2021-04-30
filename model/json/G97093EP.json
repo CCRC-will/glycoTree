@@ -580,11 +580,12 @@
       "glycoct_index": "10",
       "limited_to": "",
       "not_found_in": "",
-      "requires_residue": "",
+      "requires_residue": "N2",
       "blocked_by_residue": "",
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165185",
+      "comment": "Not a valid node",
       "enzymes": [
          {
           "type": "GT",
@@ -728,7 +729,7 @@
       "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
       "who": "",
       "evidence": "https://www.glygen.org/motif/GGM.000069",
       "comment": "Gala4Gal on glycolipids only; Gala3Gal OK",

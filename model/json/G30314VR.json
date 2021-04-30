@@ -380,11 +380,12 @@
       "site": "6",
       "form_name": "Manp",
       "glycoct_index": "10",
-      "limited_to": "",
+      "limited_to": "fungi",
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "N-mannans",
+      "who": "MT",
       "enzymes": [
       ]
     }

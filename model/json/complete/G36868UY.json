@@ -779,7 +779,7 @@
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165158",
-      "comment": "Galb3Gal?  Based on b-galactosidase digestion from biological source; check this out",
+      "comment": "Galb3Gal?  Based on b-galactosidase digestion from biological source; check this out; PMID: 7430154",
       "enzymes": [
       ]
     },
@@ -862,6 +862,9 @@
       "requires_residue": "",
       "blocked_by_residue": "",
       "notes": "not validated",
+      "who": "MT",
+      "evidence": "PMID: 7430154",
+      "comment": "Galb3Gal?  Based on b-galactosidase digestion from biological source; check this out; PMID: 7430154",
       "enzymes": [
       ]
     },
@@ -877,10 +880,11 @@
       "form_name": "Galp",
       "glycoct_index": "14",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N206",
+      "who": "MT",
       "enzymes": [
       ]
     }

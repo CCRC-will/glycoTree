@@ -670,6 +670,9 @@
       "requires_residue": "",
       "blocked_by_residue": "",
       "notes": "not validated",
+      "who": "",
+      "evidence": "",
+      "comment": "Gala3 extension on an N-linked globo terminus?",
       "enzymes": [
       ]
     },
@@ -689,6 +692,9 @@
       "requires_residue": "",
       "blocked_by_residue": "",
       "notes": "not validated",
+      "who": "",
+      "evidence": "",
+      "comment": "Gala3 extension on an N-linked globo terminus?",
       "enzymes": [
       ]
     }

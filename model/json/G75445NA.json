@@ -405,7 +405,9 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "manually validated",
+      "who": "MT",
+      "evidence": "PMID: 6853476",
       "enzymes": [
       ]
     }

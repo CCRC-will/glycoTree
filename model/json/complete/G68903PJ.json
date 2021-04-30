@@ -382,11 +382,12 @@
       "glycoct_index": "11",
       "limited_to": "",
       "not_found_in": "",
-      "requires_residue": "",
+      "requires_residue": "N2",
       "blocked_by_residue": "",
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165185",
+      "comment": "Not a valid node",
       "enzymes": [
          {
           "type": "GT",
@@ -699,10 +700,13 @@
       "form_name": "Galp",
       "glycoct_index": "19",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
+      "evidence": "",
+      "comment": "Gala4Gal on glycolipids only; Gala3Gal OK",
       "enzymes": [
       ]
     },
@@ -718,10 +722,13 @@
       "form_name": "Galp",
       "glycoct_index": "10",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
+      "evidence": "",
+      "comment": "Gala4Gal on glycolipids only; Gala3Gal OK",
       "enzymes": [
       ]
     },
@@ -740,7 +747,10 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
+      "evidence": "",
+      "comment": "Gala4Gal on glycolipids only; Gala3Gal OK",
       "enzymes": [
       ]
     }

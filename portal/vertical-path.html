@@ -20,35 +20,32 @@ var subURL = "https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.ht
 var glygenURL = "https://www.glygen.org/glycan/";
 var exploreURL = "explore.html?"
 	
+// Specify text for messages
 var helpMessage = "<center>" +
-	 "<h3>Click or Hover Over Data</h3>" +
-	 "</center><ul>" +
-	 "<li>Toggle this help text: <i>click the 'Toggle Help' button</i></li>" +
-	 "<li>View path statistics: <i>click the 'Statistics' button</i></li>" +
-	 "<li>See a structure: <i>mouse over its accession</i></li>" +
-	 "<li>Focus on a structure: <i>click its accession</i></li>" +
-	 "<li>Unset focus: <i>click the accession that is in focus</i></li>" +
-	 "<li>Get more information about a structure: <i>click an icon</i></li>" +
-	 "<li>See a reaction: <i>mouse over an arc</i></li>" +
-	 "<li>See reaction details: <i>click an arc</i></li>" +
-	 "<li>Force the path to go through specific structures: <i>select structures using checkboxes</i><br>For each (color-coded) DP, only one structure can be checked</li>" +
-	 "<li>Visualize the path through selected structures: <i>click the 'Path' button</i></li>" +
-	 "<ul>";
+	"<h3>Click or Hover Over Data</h3>" +
+	"</center><ul>" +
+	"<li>Toggle this help text: <i>click the 'Toggle Help' button</i></li>" +
+	"<li>View path statistics: <i>click the 'Statistics' button</i></li>" +
+	"<li>See a structure: <i>mouse over its accession</i></li>" +
+	"<li>Focus on a structure: <i>click its accession</i></li>" +
+	"<li>Unset focus: <i>click the accession that is in focus</i></li>" +
+	"<li>Get more information about a structure: <i>click an icon</i></li>" +
+	"<li>See a reaction: <i>mouse over an arc</i></li>" +
+	"<li>See reaction details: <i>click an arc</i></li>" +
+	"<li>Force the path to go through specific structures: <i>select structures using checkboxes</i><br>For each (color-coded) DP, only one structure can be checked</li>" +
+	"<li>Visualize the path through selected structures: <i>click the 'Path' button</i></li>" +
+	"<ul>";
+	
+var pathMsg = "<center><b>Reactions involving selected structures <br>are combined to generate a unique pathway</b></center><ul>";
+	pathMsg += "<li><i>You must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</i></li>";
+	pathMsg += "<li>Pathways start with first selected structure - all structures you want to see in the path must be selected.</li>";
+	pathMsg += "<li>Full pathways are drawn on a new page.</li>";
+	pathMsg += "<li>In this version, '<i>smart pathway selection</i>' automatically selects structures that have the highest 'pathway entropy'.  You can  manually override these automatic selections using the checkboxes.</li>";
+	pathMsg += "</ul><b>Currently selected reactions</b>";
+	
 var rowShading = ['#FAFAFA', '#EAF0FA'];
 var nodeShading = ['#2F78B7', '#B76E2F'];
 	
-// the following is css-like, but NOT css
-	// TODO: change barGraph() to fetch and use css class variables
-	/*
-var barParams = {
-	w: 400,
-	h: 200,
-	margin: 32,
-	fill: "#2F78B7",
-	stroke: "#00538B",
-	font_size: 16
-};
-	*/
 </script>
 	
 </head>
@@ -57,9 +54,11 @@ var barParams = {
 	 
  <div id="progressDiv">
 	<center>
-		<img id="spinner" src="svg/logogogo3.svg" height="100px">
+		<img id="spinner" src="svg/logogogo3.svg">
 	</center>
  </div>
+	 
+
 	 
  <div id="headerDiv">
 	 <a href="https://glygen.org" target="_blank">
@@ -67,6 +66,39 @@ var barParams = {
 	 </a>
    <object id="logo_svg" type="image/svg+xml" data="svg/sbLogo.svg" class="headLogo"></object>
 	<span class='header_2'>SandBox Pathway</span>
+
+ <!--
+	 <ul class='navTop'>
+		<li class='navLi'><a href="javascript:showStats();">Statistics</a></li>
+		<li class='navLi'><a href="#news">Toggle Help</a></li>
+		<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Pathway</a>
+		<div class="dropdown-content">
+			<a href="#">ab initio</a>
+			<a href="#">clear</a>
+			<a href="#">disable assist</a>
+		</div>
+		</li>
+	 </ul>
+-->
+ </div>
+<!--
+ <ul >  
+	<li ><a href="javascript:showStats();">Statistics</a></li>
+	<li ><a href="#news">Toggle Help</a></li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Pathway</a>
+		<div class="dropdown-content">
+			<a href="#">ab initio</a>
+			<a href="#">clear</a>
+			<a href="#">disable assist</a>
+		</div>
+	</li>
+</ul>
+-->
+
+<!--
+   
 	<button type='button' id="toggleHelp" style="position:absolute; right: 165px; top: 20px;">
 		Toggle Help
 	</button>
@@ -76,8 +108,7 @@ var barParams = {
 	<button type='button' id="pathButton" style="position:absolute; right: 30px; top: 20px;">
 		Path
 	</button>
-
-</div>
+-->
 	
 <div id="pathgraph"  class="arcGraph">
 </div>
@@ -85,7 +116,21 @@ var barParams = {
 <div class="details" id="results">
 	<center><h3>Move the mouse over the data</h3></center>
 </div>
-	
+
+ <div id="navDiv">
+	 <span class="navSpan" id="statsButton">Statistics</span>
+	 <span class="navSpan" id="toggleHelpButton">Toggle Help</span>
+	 <div class="navSpan navDown"> Pathways
+		 <ul class="navContent">
+			<li id="pathButton">Render Path</li>
+			<li id="showPathwayMessage">Show Path</li>
+			<li id="abinitButton">Most Likely</li>
+			<li id="clearButton">Clear Selections</li>
+			<li id="toggleAssistButton">Disable Auto-Select</li>
+		 </ul>
+	 </div>
+ </div>
+	 
 </body>
 	
 </html>

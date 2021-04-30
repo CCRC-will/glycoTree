@@ -428,10 +428,11 @@
       "form_name": "Glcp",
       "glycoct_index": "15",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic linkage",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -447,10 +448,11 @@
       "form_name": "Glcp",
       "glycoct_index": "9",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic linkage",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -466,10 +468,11 @@
       "form_name": "NeupNAc",
       "glycoct_index": "10",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N306",
+      "who": "MT",
       "enzymes": [
       ]
     }

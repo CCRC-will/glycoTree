@@ -1213,10 +1213,11 @@
       "form_name": "GlcpNAc",
       "glycoct_index": "16",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N206",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -1235,7 +1236,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -1251,10 +1253,11 @@
       "form_name": "Galp",
       "glycoct_index": "18",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N206",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -1270,10 +1273,11 @@
       "form_name": "Galp",
       "glycoct_index": "31",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N31",
+      "who": "MT",
       "enzymes": [
       ]
     }

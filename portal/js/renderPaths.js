@@ -7,9 +7,7 @@ var pathArray = new Array();
 var stepsInPath = 0;
 var startGlycan = "";
 var endGlycan = "";
-function showStats() {
-	$("#results").html(statStr);		
-}
+var assist = true;
 
 function showHelp() {
 	if (helpOn) {
@@ -53,7 +51,7 @@ function	reactionHTMLtop(d, fromGlycan, toGlycan, multiple) {
 
 	var tStr = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
 	tStr += "<title>" + winName + "</title>";
-	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body>";
+	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body style='font-family: Helvetica, sans-serif;' >";
 	tStr += "<center><h3>Reaction Details</h3>";
 
 	tStr += "<table>";
@@ -202,6 +200,13 @@ function initialize() {
 
  d3.json(theURL, function( data) {
 
+	 // show error message
+	 if (data.links.length < 1)  {
+		 errMsg = "<center><h2>" + data.message + "</h2></center>";
+		 $('#progressDiv').html(errMsg);
+		 return; // bail out of  call-back function
+	 } //
+	 
 	 // The following functions require access to D3 variables
 	 function focusNode(d) {
 		var txt = "";
@@ -219,34 +224,75 @@ function initialize() {
 	} // end function focusNode()
 	 
 	 
-	function maxEnt(d, activeNode) {
-		//alert("WTF? " + d.links + "\n active is " + activeNode.id);
+	function mostLikely(d, activeNode, terminalNode, direction) {
 		// d is the data object, containing nodes and edges
 		//  activeNode is node that is processed by current recursion
-		//  select the activeNode
+		//  terminalNode is node at which processing stops
+		//  direction is +1 or -1 (increasing or decreasing DP)
+		//  if appropriate, the activeNode isSelected
+// The code following the next line may be required to replace
+//  the next line
 		activeNode.isSelected = true;
-		console.log("\n## Node " + activeNode.id + " is selected ##\n");
+/*	
+		var selectIt = false;
+		switch(direction) {
+			case -1:
+				if (activeNode.dp >= terminalNode.dp) selectIt = true;
+				break;
+			case 1:
+				if (activeNode.dp <= terminalNode.dp) selectIt = true;
+				break;
+			default:
+				break;
+		}
+		
+		if (selectIt) {
+			console.log("### Node " + activeNode.id + " is selected ###");
+			activeNode.isSelected = true;
+		} else {
+			return;
+		}
+		
+		if (activeNode.dp === terminalNode.dp) {
+			// terminal node DP has been reached
+			return;
+		}
+*/		
 		// find next node with most entropy
 		var maxCount = 0;
-		var maxEntSource = null;
+		var nextNode = null;  // the next node to process
+		var testNode = null;
 		d.links.forEach(function (link_d) {
-			// subset of links that have activeNode as target
-			if (link_d.target === activeNode.id) {
-				var testNode = id_to_node[link_d.source];
-				if (testNode['path_count'] > maxCount) {
-					// better way to evaluate 'ties'?
-					maxCount = testNode['path_count'];
-					maxEntSource = testNode;
-				}
+			/* go either way - build up or break down  */
+			switch(direction) {
+				case -1:
+					// subset of links that have activeNode as target
+					if (link_d.target === activeNode.id) {
+						testNode = id_to_node[link_d.source];
+					}
+					break;
+				case 1:
+					// subset of links that have activeNode as source
+					if (link_d.source === activeNode.id){ 
+						testNode = id_to_node[link_d.target];
+					}
+					break;
+				default:
+					break;
+			}
+			if (testNode !== null) if (testNode['path_count'] > maxCount) {
+				// Is there a better way to evaluate 'ties'?
+				maxCount = testNode['path_count'];
+				nextNode = testNode;
 			}
 		})
 
 		// recursion
-		if (maxEntSource !== null){ 
-			maxEnt(d, maxEntSource);
+		if (nextNode !== null) { 
+			mostLikely(d, nextNode, terminalNode, direction);
 		}
 
-	} // end of function maxEnt()
+	} // end of function mostLikely()
 	 
 	 
 	function nodeOver(d) {
@@ -345,22 +391,27 @@ function initialize() {
 		// ### d is data for the first REACTION ###
 		// build html for visualizing a pathway and related data and links
 		// initialize - add first reactant
-		var pathStart = pathArray[0].source;
-		var pathEnd = pathArray[stepsInPath - 1].target;
-		var txt = reactionHTMLtop(d, pathStart, pathEnd, true);
-		// add the arrow, enzymes and product
-		for (var i = 0; i < stepsInPath; i++) {
-			txt += reactionAppend(pathArray[i]);
+		if (pathArray.length > 0) {
+			var pathStart = pathArray[0].source;
+			var pathEnd = pathArray[stepsInPath - 1].target;
+			var txt = reactionHTMLtop(d, pathStart, pathEnd, true);
+			// add the arrow, enzymes and product
+			for (var i = 0; i < stepsInPath; i++) {
+				txt += reactionAppend(pathArray[i]);
+			}
+			txt += "</table></center>";
+			txt += "</body>";
+			// console.log("Generated Code:\n" + txt);
+			var rxnWindow = window.open("", "");
+			rxnWindow.document.write(txt);
+			if (window.focus) {
+				rxnWindow.focus();
+			}
 		}
-		txt += "</table></center>";
-		txt += "</body>";
-		// console.log("Generated Code:\n" + txt);
-		var rxnWindow = window.open("", "");
-		rxnWindow.document.write(txt);
-		rxnWindow.focus();
 	} // end function pathwayDetails()
 	 
-	d3.select("#pathButton").on("click", function() {
+	 
+	function pathMessage() { 
 		pathArray = new Array();
 		stepsInPath = 0;
 		var firstNode = "";
@@ -373,14 +424,7 @@ function initialize() {
 		})
 		
 		traverseUnique(firstNode);
-		
-		var pathStr = "<ul>";
-		pathStr += "<li><i>You must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</i></li>";
-		pathStr += "<li>Pathways start with first selected structure, so you must select all structures you want in the path.</li>";
-		pathStr += "<li>Pathways are drawn on a new page.</li>";
-		pathStr += "<li>In this version, '<i>smart pathway selection</i>' automatically selects structures that have the highest 'pathway entropy'.  You can  manually override these automatic selections using the checkboxes.";
-		pathStr += "</ul><b>Currently selected reactions</b><ul>";
-		
+		var pathStr = pathMsg  + "<ul>";
 		for( var i = 0; i < stepsInPath; i++ ) {
 			var from = pathArray[i].source;
 			var to = pathArray[i].target;
@@ -388,17 +432,57 @@ function initialize() {
 		}
 		pathStr += "</ul>";
 		
-		$("#results").html("<center><b>Reactions involving selected structures <br>are combined to generate a unique pathway</b></center><br>" + pathStr);
+		$("#results").html(pathStr);
+	}
+	 
+	d3.select("#showPathwayMessage").on("click", function() {	 
+		pathMessage();
+	});
+	 
+	 
+	d3.select("#pathButton").on("click", function() {
+		pathMessage(pathArray,)
 		pathwayDetails(pathArray[0]);
 	});
 	 
-	d3.select("#toggleHelp").on("click", function() {
+	 
+	d3.select("#statsButton").on("click", function() {
+		$("#results").html(statStr);		
+	});
+	
+	d3.select("#clearButton").on("click", function() {
+		data.nodes.forEach(function (n) {	
+			n.isSelected = false;
+		})
+		showChecks();
+	});
+	 
+	d3.select("#abinitButton").on("click", function() {
+		// clear all selections
+		data.nodes.forEach(function (n) {	
+			n.isSelected = false;
+		})
+		// recalulate mpst likey path
+	 	mostLikely(data, id_to_node[startGlycan], id_to_node[endGlycan], 1);
+		showChecks();
+	});
+	 
+	d3.select("#toggleAssistButton").on("click", function() {		
+		assist = (assist) ? false: true;
+		if (assist) {
+			d3.select("#toggleAssistButton").text('Disable Auto-Select');
+		} else {
+			d3.select("#toggleAssistButton").text('Enable Auto-Select');		
+		}		
+	});
+	 
+	d3.select("#toggleHelpButton").on("click", function() {
 		var hStr = "<center><h3>";
 		helpOn = (helpOn) ? false: true;
 		if (helpOn) {
-			hStr += "Help is now on.";
+			hStr += "<h1>Help is now ON</h1>";
 		} else {
-			hStr += "Help is now off.";
+			hStr += "<h1>Help is now OFF</h1>";
 	   }
 		hStr += "</h3></center>";
 		hStr += helpMessage;
@@ -611,17 +695,17 @@ function initialize() {
 				if (n.dp === d.dp) n.isSelected = false;
 			})
 			d.isSelected = toggle;
+			if ( (d.isSelected) && (assist === true) ) {
+				// auto-select other nodes compatible with selecting this
+				// clear all selections except the one that is clicked
+				data.nodes.forEach(function (n) {	
+					n.isSelected = false;
+				})
+				d.isSelected = true;
+				mostLikely(data, d, id_to_node[startGlycan], -1);
+				mostLikely(data, d, id_to_node[endGlycan], 1);
+			}
 			showChecks();
-/*
-			d3.selectAll("path.checkI")
-				.classed('checkV', function(box_d) {
-					return (box_d.isSelected);	
-				})
-			d3.selectAll("path.checkV")
-				.classed('checkI', function(box_d) {
-					return (!box_d.isSelected);	
-				})
-*/
 		})
 	// append a rectangle, visible (class checkV) to be clickable
 	checks.append('rect')
@@ -834,7 +918,10 @@ function initialize() {
 
 	// calculate maximum entropy path, setting isSelected values
 	//  this will include other information as it becomes available
-	maxEnt(data, id_to_node[endGlycan]);
+
+	//  mostLikely can process nodes in either direction (+1 or -1)
+	mostLikely(data, id_to_node[startGlycan], id_to_node[endGlycan], 1);
+	// mostLikely(data, id_to_node[endGlycan], id_to_node[startGlycan], -1);
 	showChecks();
 	traverseUnique(startGlycan); 
 

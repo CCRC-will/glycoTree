@@ -17,20 +17,19 @@ function getDP($accession, $connection) {
 }
 
 function getRE($accession, $residue_id, $connection) {
-  // generate a string representing the reducing end structure of the glycan
-  //   for a particular type of glycan, the reducing-end residue will have a 
-  //     specific $residue_id; e.g., for N-glycans, $residue_id is 'NA'
-  $reducing_end_structure = "";
-  $sql = "SELECT anomer, absolute, name, ring from compositions WHERE glytoucan_ac=?  AND residue_id=?";
+	// generate a string representing the reducing end of the glycan
+	//   for a particular type of glycan, the reducing-end residue will have 
+	//    a specific $residue_id; e.g., for N-glycans, $residue_id is 'NA'
+	$reducing_end_structure = "";
+	$sql = "SELECT anomer, absolute, name, ring from compositions WHERE glytoucan_ac=?  AND residue_id=?";
 	$stmt = $connection->prepare($sql);
 	$stmt->bind_param("ss", $accession, $residue_id);
 	$stmt->execute(); 
 	$result = $stmt->get_result();
   $row = $result->fetch_assoc();
-	$sep = "";
   foreach ($row as $value) {
-	  $reducing_end_structure = $reducing_end_structure . $sep . $value;
-	  $sep = "-";
+	  $reducing_end_structure = $row["anomer"] . "-" . $row["absolute"] .
+		  "-" . $row["name"] . "-" . $row["ring"];
   }
   return $reducing_end_structure;
 }
@@ -276,48 +275,62 @@ try {
 
 	// Check connection
 	if ($connection->connect_error) {
-		die("<br>Connection failed: " . $connection->connect_error);
+		$data['message'] = "<br>Connection to data base failed: " .
+			$connection->connect_error;
+		$OKtoGO = false;
 	}
 
+	$OKtoGO = true;
 	$rid = "NA";
 	$reEnd = getRE($end, $rid, $connection);
 	$reStart = getRE($start, $rid, $connection);
 
+	$data['message'] = "";
 	if ($reEnd != $reStart) {
-		echo 
-		die ("Reducing ends do not match, so no pathway can be traversed\n");
+		$data['message'] = "The reducing end (" . $reStart .
+			") of " . $start .
+			" at the start of the path does not match the reducing end (" .
+			$reEnd . ") of " .
+			$end ." at the end of the path";
+		$OKtoGO = false;
 	}
 	
 	$endDP = getDP($end, $connection);
 	$startDP = getDP($start, $connection);
 	if ($startDP > $endDP) {
-		echo 
-		die ("Start DP is greater than end DP - cannot yet generate a biosynthetic pathway from large to small\n");
+		$data['message'] = "The DP (" . $startDP . ") of " .
+			$start . " at the start of the path is greater than the DP (" .
+			$endDP . ") of " . $end ."  at the end of the path";
+		$OKtoGO = false;
 	}	
 	
-	// traverse glycotree to find all paths
-	$totalPaths = pathDAG($end, $start, $reEnd, $startDP, $rid, $data, $connection, $pc);
-	
-	$dpDistribution = [];
-	for ($i = $startDP; $i <= $endDP; $i++) {
-		$dpDistribution[$i] = 0;
-	}
-	
-	$nodeArray = $data['nodes'];
-	foreach ($nodeArray as $key => $value) {
-		$nodeArray[$key]['path_count'] = $pc[$value['id']];
-		if ($value['id'] === $end) $nodeArray[$key]['path_count'] = $totalPaths;
-		$dpDistribution[$value['dp']]++;
-	}
-	$sortedNodes = sortColumn($nodeArray, 'dp');
-	$data['nodes'] = $sortedNodes;
-	$data['dp_distribution'] = $dpDistribution;
-	
-	$data['path_count'] = $totalPaths;
+	// echo "OKtoGO is " . $OKtoGO . "\n";
+	if ($OKtoGO) {
+		// traverse glycotree to find all paths
+		$totalPaths = pathDAG($end, $start, $reEnd, $startDP, $rid, $data, $connection, $pc);
 
+		$dpDistribution = [];
+		for ($i = $startDP; $i <= $endDP; $i++) {
+			$dpDistribution[$i] = 0;
+		}
+
+		$nodeArray = $data['nodes'];
+		foreach ($nodeArray as $key => $value) {
+			$nodeArray[$key]['path_count'] = $pc[$value['id']];
+			if ($value['id'] === $end) $nodeArray[$key]['path_count'] = $totalPaths;
+			$dpDistribution[$value['dp']]++;
+		}
+		$sortedNodes = sortColumn($nodeArray, 'dp');
+		$data['nodes'] = $sortedNodes;
+		$data['dp_distribution'] = $dpDistribution;
+
+		$data['path_count'] = $totalPaths;
+	}
 	// echo "Total number of complete paths is $totalPaths";
 	// echo "\nDATA\n";
 	
+	if (count($data['nodes']) < 1)
+		$data['message'] = $data['message'] . " - no pathways were generated";
 	echo json_encode($data, JSON_PRETTY_PRINT);
 	
 } catch (mysqli_sql_exception $e) { 

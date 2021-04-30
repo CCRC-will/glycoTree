@@ -434,11 +434,12 @@
       "glycoct_index": "18",
       "limited_to": "",
       "not_found_in": "",
-      "requires_residue": "",
+      "requires_residue": "N2",
       "blocked_by_residue": "",
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165185",
+      "comment": "Not a valid node",
       "enzymes": [
          {
           "type": "GT",
@@ -1760,6 +1761,7 @@
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165203",
+      "comment": "Not a valid node",
       "enzymes": [
       ]
     },
@@ -1861,7 +1863,10 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "",
+      "who": "MT",
+      "evidence": "",
+      "comment": "no response from sandbox/nodes; removed?",
       "enzymes": [
       ]
     },
@@ -1880,7 +1885,10 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "",
+      "who": "",
+      "evidence": "",
+      "comment": "no response from sandbox/nodes; removed?",
       "enzymes": [
       ]
     },
@@ -1899,7 +1907,10 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "",
+      "who": "",
+      "evidence": "",
+      "comment": "no response from sandbox/nodes; removed?",
       "enzymes": [
       ]
     },
@@ -1918,7 +1929,10 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "",
+      "who": "",
+      "evidence": "",
+      "comment": "no response from sandbox/nodes; removed?",
       "enzymes": [
       ]
     },
@@ -1937,7 +1951,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "manually validated",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -1956,7 +1971,8 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "manually validated",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -1976,6 +1992,9 @@
       "requires_residue": "",
       "blocked_by_residue": "",
       "notes": "not validated",
+      "who": "",
+      "evidence": "",
+      "comment": "no response from Sandbox",
       "enzymes": [
       ]
     },

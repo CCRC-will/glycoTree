@@ -288,11 +288,12 @@
       "glycoct_index": "7",
       "limited_to": "",
       "not_found_in": "",
-      "requires_residue": "",
+      "requires_residue": "N2",
       "blocked_by_residue": "",
       "notes": "validated by Qrator",
       "who": "",
       "evidence": "PMID: 25165185",
+      "comment": "Not a valid node",
       "enzymes": [
          {
           "type": "GT",
@@ -653,10 +654,11 @@
       "form_name": "Galp",
       "glycoct_index": "17",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N31",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -672,10 +674,14 @@
       "form_name": "NeupNAc",
       "glycoct_index": "12",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N7",
+      "who": "MT",
+      "evidence": "PMID: 2477057",
+      "comment": ""not supported by evidence; disialylated Gal found on GlcNAcT4 arm",
+      "": " but only after GlcNAcT1 adds b2 GlcNAc arm"",
       "enzymes": [
       ]
     },
@@ -691,10 +697,13 @@
       "form_name": "NeupNAc",
       "glycoct_index": "18",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N31",
+      "who": "MT",
+      "evidence": "PMID: 2477057",
+      "comment": "not supported by evidence; disialylated Gal found only on GlcNAcT4 arm",
       "enzymes": [
       ]
     },
@@ -710,10 +719,13 @@
       "form_name": "NeupNAc",
       "glycoct_index": "20",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "subtree of N31",
+      "who": "MT",
+      "evidence": "PMID: 2477057",
+      "comment": "not supported by evidence; disialylated Gal found only on GlcNAcT4 arm",
       "enzymes": [
       ]
     }

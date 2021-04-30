@@ -525,7 +525,7 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "in N-mannans",
+      "notes": "N-mannans",
       "who": "",
       "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
@@ -546,7 +546,7 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "in N-mannans",
+      "notes": "N-mannans",
       "who": "",
       "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
@@ -563,11 +563,12 @@
       "site": "6",
       "form_name": "Manp",
       "glycoct_index": "15",
-      "limited_to": "",
+      "limited_to": "fungi",
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "N-mannans",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -583,10 +584,11 @@
       "form_name": "Manp",
       "glycoct_index": "16",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
       "enzymes": [
       ]
     }

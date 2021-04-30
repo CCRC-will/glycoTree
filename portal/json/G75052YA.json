@@ -436,7 +436,7 @@
       "not_found_in": "",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "in N-mannans",
+      "notes": "N-mannans",
       "who": "",
       "evidence": "https://pubmed.ncbi.nlm.nih.gov/8505334/",
       "enzymes": [
@@ -454,10 +454,11 @@
       "form_name": "GlcpNAc",
       "glycoct_index": "8",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
       "enzymes": [
       ]
     },
@@ -473,10 +474,11 @@
       "form_name": "Galp",
       "glycoct_index": "10",
       "limited_to": "",
-      "not_found_in": "",
+      "not_found_in": "any organism",
       "requires_residue": "",
       "blocked_by_residue": "",
-      "notes": "not validated",
+      "notes": "abiotic context",
+      "who": "MT",
       "enzymes": [
       ]
     },
