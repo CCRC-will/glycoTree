@@ -13,7 +13,7 @@
 <script src="js/sbheader.js"></script>
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/renderPaths.js"></script>
+<script src="js/renderPaths-v1.2.js"></script>
 <!-- load a color palette for rendering the nodes -->
 <script src="js/palette-1.js"></script>
 <link rel="stylesheet" type="text/css" href="css/paths.css">
@@ -28,16 +28,16 @@ var exploreURL = "explore.html?"
 var helpMessage = "<center>" +
 	"<h3>Click or Hover Over Data</h3>" +
 	"</center><ul>" +
-	"<li>Toggle this help text: <i>click the 'Toggle Help' button</i></li>" +
-	"<li>View path statistics: <i>click the 'Statistics' button</i></li>" +
+	"<li>Toggle this help text: <i>click the 'Help'</i></li>" +
+	"<li>View path statistics: <i>click 'Statistics'</i></li>" +
 	"<li>See a structure: <i>mouse over its accession</i></li>" +
 	"<li>Focus on a structure: <i>click its accession</i></li>" +
-	"<li>Unset focus: <i>click the accession that is in focus</i></li>" +
-	"<li>Get more information about a structure: <i>click an icon</i></li>" +
+	"<li>Unset focus: <i>click the accession that is in focus or click 'Drop Focus'</i></li>" +
+	"<li>Get more information about a structure: <i>click an icon to the right of its accession</i></li>" +
 	"<li>See a reaction: <i>mouse over an arc</i></li>" +
-	"<li>See reaction details: <i>click an arc</i></li>" +
-	"<li>Force the path to go through specific structures: <i>select structures using checkboxes</i><br>For each (color-coded) DP, only one structure can be checked</li>" +
-	"<li>Visualize the path through selected structures: <i>click the 'Path' button</i></li>" +
+	"<li>See reaction details in a new tab: <i>click an arc</i></li>" +
+	"<li>Force the path to go through a specific structure: <i>select the structure using checkboxes</i><br>For each (color-coded) DP, only one structure can be checked</li>" +
+	"<li>Visualize the path through selected structures: <i>click 'Pathways -> Render Selected Path'</i></li>" +
 	"<ul>";
 	
 var pathMsg = "<center><b>Reactions involving selected structures <br>are combined to generate a unique pathway</b></center><ul>";
@@ -92,6 +92,7 @@ var nodeShading = ['#2F78B7', '#B76E2F'];
 			<li id="abinitButton">Most Likely</li>
 			<li id="clearButton">Clear Path Selections</li>
 			<li id="toggleAssistButton">Disable Auto-Select</li>
+			<li id="speciesButton">Choose Species</li>
 		 </ul>
 	 </div>
  </div>

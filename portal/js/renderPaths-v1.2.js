@@ -214,6 +214,7 @@ function initialize() {
 			focalPoint = "none";
 			txt += "<center><b>Focus is not set<br>Click any accession to focus on it</b></center>";
 			d3.select("#defocusButton").classed('inactive', true);
+			nodeOut();
 		} else {
 			focalPoint = d.id;
 			nodeOver(d);
@@ -366,6 +367,7 @@ function initialize() {
 				.classed('arcHot', false)
 				.classed('arcPale', false);
 			labels
+				.classed('labelLinked', false)
 				.classed('labelHot', false);
 			dpLabels
 				.classed('labelHot', false);
@@ -408,6 +410,7 @@ function initialize() {
 			txt += "</body>";
 			// console.log("Generated Code:\n" + txt);
 			var rxnWindow = window.open("", "");
+			console.log(txt);
 			rxnWindow.document.write(txt);
 			if (window.focus) {
 				rxnWindow.focus();
@@ -503,7 +506,9 @@ function initialize() {
 		$("#results").html(hStr);
 	});
 	 
-	 
+	d3.select("#speciesButton").on("click", function() {
+		alert("Soon you will be able to choose pathways for mouse or human");
+	});
 	/**** begin processing data ****/
 	 
 	d3.select("#defocusButton").classed('inactive', true);

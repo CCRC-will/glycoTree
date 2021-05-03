@@ -325,11 +325,15 @@ try {
 		$data['dp_distribution'] = $dpDistribution;
 
 		$data['path_count'] = $totalPaths;
+		
+		if ($data['nodes'] === null) {
+			$data['nodes'] = [];
+		}
 	}
 	// echo "Total number of complete paths is $totalPaths";
 	// echo "\nDATA\n";
 	
-	if (count($data['nodes']) < 1)
+	 if (count($data['nodes']) < 1)
 		$data['message'] = $data['message'] . " No pathways from " . $start .
 			" to " . $end . " could be generated";
 	echo json_encode($data, JSON_PRETTY_PRINT);
