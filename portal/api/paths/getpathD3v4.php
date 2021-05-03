@@ -330,7 +330,8 @@ try {
 	// echo "\nDATA\n";
 	
 	if (count($data['nodes']) < 1)
-		$data['message'] = $data['message'] . " - no pathways were generated";
+		$data['message'] = $data['message'] . " No pathways from " . $start .
+			" to " . $end . " could be generated";
 	echo json_encode($data, JSON_PRETTY_PRINT);
 	
 } catch (mysqli_sql_exception $e) { 

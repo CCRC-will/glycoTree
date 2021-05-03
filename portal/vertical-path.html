@@ -2,6 +2,10 @@
 <html xmlns:xlink="http://www.w3.org/1999/xlink">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+	
 <title>GlycoTree Sandbox Pathway</title>
 
 <!-- load js -->
@@ -37,11 +41,14 @@ var helpMessage = "<center>" +
 	"<ul>";
 	
 var pathMsg = "<center><b>Reactions involving selected structures <br>are combined to generate a unique pathway</b></center><ul>";
-	pathMsg += "<li><i>You must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</i></li>";
-	pathMsg += "<li>Pathways start with first selected structure - all structures you want to see in the path must be selected.</li>";
-	pathMsg += "<li>Full pathways are drawn on a new page.</li>";
-	pathMsg += "<li>In this version, '<i>smart pathway selection</i>' automatically selects structures that have the highest 'pathway entropy'.  You can  manually override these automatic selections using the checkboxes.</li>";
-	pathMsg += "</ul><b>Currently selected reactions</b>";
+	pathMsg += "<li>Initially,  the most likely intermediates are automatically selected to generate the unique path.</li>";
+	pathMsg += "<li>You can  manually override these automatic selections using the checkboxes.</li>";
+	pathMsg += "<li>If 'Pathways -> Auto Select' is enabled, the highest likelihood pathway that still passes through the intermediate you have checked will be automatically selected.</li>";
+	pathMsg += "<li>If 'Pathways -> Auto Select' is disabled, <i>all structures</i> you want to see in the unique path must be selected.</li>";
+	pathMsg += "<li>If 'Pathways -> Auto Select' is disabled, you must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</li>";
+	pathMsg += "<li>When you click 'Pathways -> Render Selected Path', biochemical details for the unique pathway is drawn on a new page.</li>";
+
+	pathMsg += "</ul><b>Currently selected reactions:</b>";
 	
 var rowShading = ['#FAFAFA', '#EAF0FA'];
 var nodeShading = ['#2F78B7', '#B76E2F'];
@@ -66,49 +73,7 @@ var nodeShading = ['#2F78B7', '#B76E2F'];
 	 </a>
    <object id="logo_svg" type="image/svg+xml" data="svg/sbLogo.svg" class="headLogo"></object>
 	<span class='header_2'>SandBox Pathway</span>
-
- <!--
-	 <ul class='navTop'>
-		<li class='navLi'><a href="javascript:showStats();">Statistics</a></li>
-		<li class='navLi'><a href="#news">Toggle Help</a></li>
-		<li class="dropdown">
-		<a href="javascript:void(0)" class="dropbtn">Pathway</a>
-		<div class="dropdown-content">
-			<a href="#">ab initio</a>
-			<a href="#">clear</a>
-			<a href="#">disable assist</a>
-		</div>
-		</li>
-	 </ul>
--->
  </div>
-<!--
- <ul >  
-	<li ><a href="javascript:showStats();">Statistics</a></li>
-	<li ><a href="#news">Toggle Help</a></li>
-	<li class="dropdown">
-		<a href="javascript:void(0)" class="dropbtn">Pathway</a>
-		<div class="dropdown-content">
-			<a href="#">ab initio</a>
-			<a href="#">clear</a>
-			<a href="#">disable assist</a>
-		</div>
-	</li>
-</ul>
--->
-
-<!--
-   
-	<button type='button' id="toggleHelp" style="position:absolute; right: 165px; top: 20px;">
-		Toggle Help
-	</button>
-	<button type='button' onclick='showStats()' style="position:absolute; right: 85px; top: 20px;">
-		Statistics
-	</button>
-	<button type='button' id="pathButton" style="position:absolute; right: 30px; top: 20px;">
-		Path
-	</button>
--->
 	
 <div id="pathgraph"  class="arcGraph">
 </div>
@@ -119,13 +84,13 @@ var nodeShading = ['#2F78B7', '#B76E2F'];
 
  <div id="navDiv">
 	 <span class="navSpan" id="statsButton">Statistics</span>
-	 <span class="navSpan" id="toggleHelpButton">Toggle Help</span>
-	 <div class="navSpan navDown"> Pathways
-		 <ul class="navContent">
-			<li id="pathButton">Render Path</li>
-			<li id="showPathwayMessage">Show Path</li>
+	 <span class="navSpan" id="defocusButton">Drop Focus</span>
+	 <span class="navSpan" id="toggleHelpButton">Help</span>
+	 <div class="navSpan navDown">Pathways<ul class="navContent">
+			<li id="pathButton">Render Selected Path</li>
+			<li id="showPathwayMessage">Show Path Parameters</li>
 			<li id="abinitButton">Most Likely</li>
-			<li id="clearButton">Clear Selections</li>
+			<li id="clearButton">Clear Path Selections</li>
 			<li id="toggleAssistButton">Disable Auto-Select</li>
 		 </ul>
 	 </div>

@@ -213,18 +213,23 @@ function initialize() {
 		if (focalPoint === d.id) {
 			focalPoint = "none";
 			txt += "<center><b>Focus is not set<br>Click any accession to focus on it</b></center>";
+			d3.select("#defocusButton").classed('inactive', true);
 		} else {
 			focalPoint = d.id;
 			nodeOver(d);
-			txt += "<center><b>Focus is now on " + focalPoint + "<br>Click " + focalPoint + " again to clear the focus, or click another accession to focus on it</b></center>";
-			txt += "<center>" + images[focalPoint] + "<br><h1>" + focalPoint + "</h1></center>";	
+			txt += "<center><b>Focus is now on " + focalPoint + 
+				"<br>Click the 'Drop Focus' Button or click " + focalPoint +
+				" again to clear the focus, or click another accession to focus on it</b></center>";
+			txt += "<center>" + images[focalPoint] + "<br><h1>" +
+				focalPoint + "</h1></center>";
+			d3.select("#defocusButton").classed('inactive', false);
 		}
 		$("#results").html(txt);
 		// console.log("Focal Point is " + focalPoint);
 	} // end function focusNode()
 	 
-	 
-	function mostLikely(d, activeNode, terminalNode, direction) {
+
+ function mostLikely(d, activeNode, terminalNode, direction) {
 		// d is the data object, containing nodes and edges
 		//  activeNode is node that is processed by current recursion
 		//  terminalNode is node at which processing stops
@@ -354,7 +359,7 @@ function initialize() {
 			.classed('arcVeryHot', false);
 	} // end function linkOut()
 	 
-	function nodeOut(d) {
+	function nodeOut() {
 		showHelp();
 		if (focalPoint == "none") {
 			links
@@ -435,6 +440,13 @@ function initialize() {
 		$("#results").html(pathStr);
 	}
 	 
+	d3.select("#defocusButton").on("click", function() {
+		focusNode(id_to_node[focalPoint]);
+		d3.select("#defocusButton").classed('inactive', true);
+		nodeOut();
+	});
+	 
+											 
 	d3.select("#showPathwayMessage").on("click", function() {	 
 		pathMessage();
 	});
@@ -455,6 +467,7 @@ function initialize() {
 			n.isSelected = false;
 		})
 		showChecks();
+		pathMessage();
 	});
 	 
 	d3.select("#abinitButton").on("click", function() {
@@ -465,6 +478,7 @@ function initialize() {
 		// recalulate mpst likey path
 	 	mostLikely(data, id_to_node[startGlycan], id_to_node[endGlycan], 1);
 		showChecks();
+		pathMessage();
 	});
 	 
 	d3.select("#toggleAssistButton").on("click", function() {		
@@ -491,6 +505,9 @@ function initialize() {
 	 
 	 
 	/**** begin processing data ****/
+	 
+	d3.select("#defocusButton").classed('inactive', true);
+
 	 
 	var headerStr = "<span class='headPath'>" + a[1] + " &rarr; &rarr; &rarr; " + a[0] + "</span>";
 
@@ -635,9 +652,6 @@ function initialize() {
 		.classed('nodeDefault', true)
 		// cannot use css for fill, as (d.cc) depends on the dp
 		.style("fill", function(d){ return(d.cc)})
-		.on("click", function(d) {
-			focusNode(d);
-		})
 		
 	// label dps	
 	var dpLabels = svg
@@ -665,9 +679,10 @@ function initialize() {
 			nodeOver(d);
 		})
 		.on('mouseout', function (d) {
-			nodeOut(d);
+			nodeOut();
 		})
 		.on("click", function(d) {
+			nodeOut();
 			focusNode(d);
 		})	
 
@@ -704,6 +719,7 @@ function initialize() {
 				d.isSelected = true;
 				mostLikely(data, d, id_to_node[startGlycan], -1);
 				mostLikely(data, d, id_to_node[endGlycan], 1);
+				pathMessage();
 			}
 			showChecks();
 		})

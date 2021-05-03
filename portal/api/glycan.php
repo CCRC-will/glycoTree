@@ -4,7 +4,7 @@ $servername = getenv('MYSQL_SERVER_NAME');
 $password = getenv('MYSQL_PASSWORD');
 // $caveats = [];
 	
-function generateCaveats($resList, $accession, $connection) {
+function getFeatures($resList, $accession, $connection) {
 	// generate caveat objects and put into array $caveats
 	$caveats = [];
 	// get the residue_name of a required canonical residue
@@ -13,15 +13,36 @@ function generateCaveats($resList, $accession, $connection) {
 	$required_stmt = $connection->prepare($required_query);
 	$required_stmt->bind_param("s", $required);
 	// find residue annotations that require caveats
+	$N2 = false;
+	$N19 = false;
+	$N20 = false;
+	$fullyDefined = true;
+	$matchRE = false;
 	foreach ($resList as $value)  {
 		$resID = $value['residue_id'];
+		if ($resID === 'N2') $N2 = true;
+		if ($resID === 'N19') $N19 = true;
+		if ($resID === 'N20') $N20 = true;
+		// temporarily check to make sure reducing end is b-D-...p (N-glycan)
+		//   more exte3nsive and general logic to be added later
+		if ($resID === 'NA') {
+			if ( ($value['anomer'] === "b")  && ($value['absolute'] === "D") &&
+				($value['ring'] === "p") ) $matchRE = true;
+		}
+		
 		$resName = $value['residue_name'];
 		// make sure variables are not inappropriately set
 		$limitedTo = "";
 		$required = "";
 		$notIn = "";
 
-		// echo "<br>" . $resName . " (" . $resID . ")"; 
+		// echo $resName . " (" . $resID . ")<br>";
+		
+		if (!isset($resName)) {
+			$fullyDefined = false;
+		  // echo "Variable 'resName' is not set.<br>";
+		}
+		
 		// check for required residues and generate caveats
 		$newCaveat = [];
 		if (!empty($value['requires_residue'])) {
@@ -74,7 +95,7 @@ function generateCaveats($resList, $accession, $connection) {
 			$msg = $accession . " contains residue " . $resID .
 				" (" . $resName . "), which has an " . $notes .
 				". Therefore, " . $accession .
-				" is itself abiotic (e.g., chemically synthesized).";
+				" is itself abiotic (e.g., chemically synthesized or mis-characterized).";
 			$newCaveat['msg'] = $msg;
 			$caveats[] = $newCaveat;
 		}
@@ -90,7 +111,7 @@ function generateCaveats($resList, $accession, $connection) {
 			$msg = $accession . " contains residue " . $resID .
 				" (" . $resName . "), which is " . $notes .
 				". Therefore, " . $accession . " is itself " .
-				$notes . ".";
+				$notes . " (likely mis-characterized).";
 			$newCaveat['msg'] = $msg;
 			$caveats[] = $newCaveat;
 		}
@@ -117,8 +138,32 @@ function generateCaveats($resList, $accession, $connection) {
 		// echo "<br> caveats has " . count($caveats) . " elements";
 	}
 	// echo "<br><br>";
-	return $caveats;
-}  // end of function generateCaveats
+	$features['caveats'] = $caveats;
+	
+	$pathStart = "none";
+	if (!$matchRE) {
+		$pathStart = "look";
+	} else {
+		if ($fullyDefined && $N2) {
+			if (!($N19) && !($N20)) { // complex glycan, neither N19 nor N20
+				$pathStart = "G61751GZ";
+			} else {
+				if ($N19 && $N20) { // hybrid with both N19 and N20
+					$pathStart = "G08520NM";
+				} else { // hybrid with either N19 or N20
+					if ($N19) { // hybrid with only N19
+						$pathStart = "G53168IY";
+					} else { // hybrid with only N20
+						$pathStart = "G75896PD";
+					}
+				}
+			}
+		}
+	}
+	$features['path_start'] = $pathStart;
+	
+	return $features;
+}  // end of function getFeatures()
 
 
 function sortCustom($arr, $column, $cmp) {
@@ -261,19 +306,20 @@ try {
 			}
 		}
 
-		$caveats = generateCaveats($residues, $accession, $connection);
+		$features = getFeatures($residues, $accession, $connection);
 
 		// array sort by column value using custom comparator
 		// $sorted = $residues;
 		$sorted = sortCustom($residues, 'residue_id', 'gtree_comparator');
 		$glycan["residues"] = $sorted;
 		$glycan["related_glycans"] = $homologs;
-		$glycan["caveats"] = $caveats;
+		$glycan["caveats"] = $features['caveats'];
+		$glycan["path_start"] = $features['path_start'];
 		echo json_encode($glycan, JSON_PRETTY_PRINT);
 	}
 
 } catch (mysqli_sql_exception $e) { 
-	echo "MySQLi Error Code: " . $e->getCode() . "<br />";
+	echo "MySQLi Error Code: " . $e->get Code() . "<br />";
 	echo "Exception Msg: " . $e->getMessage();
 	exit();
 }

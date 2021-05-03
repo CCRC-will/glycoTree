@@ -252,7 +252,7 @@ ul {
 }
 
 .navSpan {
-	padding-left: 30px;
+	padding-left: 15px;
 	font-size: 20px;
 	text-align: center;
 	text-decoration: none;
@@ -262,6 +262,11 @@ ul {
 
 .navSpan:hover , .navContent:hover {
   color: #ace;
+}
+
+.inactive {
+	opacity: 20%;
+	pointer-events: none;
 }
 
 .navContent {
