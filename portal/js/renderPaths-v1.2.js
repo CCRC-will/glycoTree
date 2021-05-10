@@ -81,7 +81,13 @@ function	reactionAppend(d) {
 	tStr += "    <ul>";
 	d.enzymes.forEach(function (enz) {
 		var eStr = enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")";
-		tStr += "      <li><a href='https://www.glygen.org/protein/" + enz.uniprot +   "' target='_blank'>" + eStr + "</a></li>";
+		if (enz.uniprot === "abiotic")  {
+			// reaction is abiotic
+			tStr += "      <li>" + enz.gene_name + " (no enzyme)</li>";
+		} else {
+			tStr += "      <li><a href='https://www.glygen.org/protein/" +
+				enz.uniprot +   "' target='_blank'>" + eStr + "</a></li>";
+		}	
 	});
 	tStr += "    </ul>";
 	tStr += "  </td>"

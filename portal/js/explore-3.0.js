@@ -33,6 +33,7 @@ var glycanSelector = "all";
 var probeEnd = "";
 var probeSubCount = "0";
 var pathStart = "none";
+var alternate = null;
 
 document.onkeydown = keySet;
 
@@ -47,16 +48,22 @@ function keySet(e) {
 }
 
 function showPathway() {
+	var pathEnd = acc[0];
 	if (pathStart == "look") {
-		alert("The reducing end of " + acc[0] + 
-				" is not consistent with that of an N-glycan (beta-D-pyranose).  To show the relevant pathway, it is necessary to find the N-glycan that is homologous to " + acc[0] +
-				", but with a beta-D-pyranose residue at the reducing end. Choose 'Modified Substituent(s) and/or Reducing End' from the 'Related Glycans' drop-down menu and double-click on the homologous glycan to open a new Sandbox focusing on this glycan.  \nThis step will soon be automated.");
+		alert("Cannot yet generate full pathways for " + acc[0]);
 		return;
 	} else  {
 		if (pathStart == "none") {
-			alert("Cannot generate pathways for " + acc[0]);
+			alert("Cannot generate full pathways to " + acc[0] +
+					" - starting point cannot be determined");
 		} else {
-			var url = "vertical-path.html?" + acc[0] + "&" + pathStart;
+			if (alternate !== null) {
+				alert("The reducing end of " + acc[0] + 
+				" is not consistent with that of an N-glycan (beta-D-pyranose).  To show the relevant pathways, it is necessary to use the N-glycan that is homologous to " + acc[0] +
+				", but with a beta-D-pyranose residue at the reducing end.  Therefore, pathways for the fully-defined homolog " + alternate + " will be shown.");
+				pathEnd = alternate;				
+			}
+			var url = "vertical-path.html?" + pathEnd + "&" + pathStart;
 			window.open(url,'_blank');
 		}
 	}
@@ -1275,6 +1282,7 @@ function processFiles() {
 		setResidueKeys();  // convert json 'residues' to associative array
 		var related = data[acc[0]].related_glycans;
 		pathStart = data[acc[0]].path_start;
+		alternate = data[acc[0]].alternate;
 		relatedDataExists = (typeof related != "undefined");
 		if ( allDataRequested && relatedDataExists ) 
 			setRelatedParams(acc[0]);
