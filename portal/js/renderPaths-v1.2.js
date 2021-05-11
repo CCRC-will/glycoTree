@@ -51,9 +51,30 @@ function	reactionHTMLtop(d, fromGlycan, toGlycan, multiple) {
 
 	var tStr = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
 	tStr += "<title>" + winName + "</title>";
-	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'></head><body style='font-family: Helvetica, sans-serif;' >";
+	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'>";
+	
+	// function speciate() could go into a separate js file
+	tStr += "<script>\n\
+	function speciate() {\n\
+		var s = document.getElementById('species').value;\n\
+		var ss = document.getElementsByClassName('species'); \n\
+		if (s === 'all') {\n\
+			for (var i=0; i<ss.length; i++) ss[i].style.visibility = 'visible';\n\
+		}  else {\n\
+			for (var i=0; i<ss.length; i++) ss[i].style.visibility = 'hidden';\n\
+			var sss = document.getElementsByClassName(s);\n\
+			for (var i=0; i<sss.length; i++) sss[i].style.visibility = 'visible';\n\
+		}\n\
+	}\n\
+	</script>\n";
+	
+	tStr += "</head><body style='font-family: Helvetica, sans-serif;' >";
 	tStr += "<center><h3>Reaction Details</h3>";
-
+	tStr += "Species: <select onchange=\"speciate();\" id='species'>\
+	  <option value='human'>human</option>\
+	  <option value='mouse'>mouse</option>\
+	  <option value='all' selected>all</option>\
+	</select>";
 	tStr += "<table>";
 	tStr += "<tr><td colspan='3'>" + images[d.source] + "<br>" + d.source + "</td></tr>";
 	return tStr;
@@ -85,7 +106,8 @@ function	reactionAppend(d) {
 			// reaction is abiotic
 			tStr += "      <li>" + enz.gene_name + " (no enzyme)</li>";
 		} else {
-			tStr += "      <li><a href='https://www.glygen.org/protein/" +
+			tStr += "      <li class='species " + enz.species + "'>" +
+				"<a href='https://www.glygen.org/protein/" +
 				enz.uniprot +   "' target='_blank'>" + eStr + "</a></li>";
 		}	
 	});

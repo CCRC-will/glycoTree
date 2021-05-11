@@ -35,6 +35,7 @@ var probeSubCount = "0";
 var pathStart = "none";
 var alternate = null;
 
+
 document.onkeydown = keySet;
 
 function keySet(e) {
@@ -175,18 +176,23 @@ function clickResponse(node) {
 		setupTabs();
 		// set up residue table and related glycan table
 		//var rg = data[accession]["related_glycans"];
-		setupRelatedGlycanTable("relatedTable", selectedData);
 		setupResidueTable("residueTable", rd);
 		// add event listener for the select element
 		$('#glycanSelect').val(glycanSelector);
 		$('#glycanSelect').change(function() {
 			glycanSelector = $(this).val();
-			processFiles();
+			// redraw and enable the panel containing glycan structures
+			displayGlycans();
+			setupFrames();
+			addSVGevents();
+			setupCSSiframe(ifr, iframeCSS);
+			// processFiles();
 		});
 		// set up ALL enzymes table
 		var allEnzymes = getAllEnzymes(rd);
 		if (v > 4) console.log("  total number of enzymes is " + allEnzymes.length);
 		setupEnzymeTable('enzymeTable', allEnzymes);
+		setupRelatedGlycanTable("relatedTable", selectedData);
 	}
 } // end of function clickNode()
 
@@ -486,15 +492,36 @@ function getInfoText(accession, resID) {
 		// START OF TABS DIV
 		txt += "<div id='tabbox' style='top: " + tTop +"px'> \n\
 <ul id='tabs'> \n\
-	<li><a href='#glycan_table_div'>Related Glycans</a></li> \n\
 	<li><a href='#residue_table_div'>Residues</a></li> \n\
 	<li><a href='#enzyme_table_div'>Enzymes</a></li> \n\
+	<li><a href='#glycan_table_div'>Related Glycans</a></li> \n\
 	</ul> \n\
 </div> \n";
 		// END OF TABS DIV
 		
 		// START OF CONTENT BOX
 		txt += "<div id='contentbox' style='top: " + cTop +"px'> \n";
+	
+		// START OF RESIDUE TABLE SECTION
+		txt += "<div class='tableHolder' id='residue_table_div'> \n\
+  <b>Residues in " + accession + "</b> \n\
+  <table id='residueTable' class='display' width='100%'></table> \n\
+</div> \n";
+		// END OF RESIDUE TABLE SECTION
+		
+		
+		// START OF ENZYME TABLE SECTION
+		txt += "<div class='tableHolder' id='enzyme_table_div'> \n\
+	<b>" + mStr["enzAll"] + 
+	"<a href=\"javascript: document.getElementById('table_end').scrollIntoView();\" class='no_und'> \
+	<sup>&#135;</sup></a></b></p> \n\
+	<table id='enzymeTable' class='display' width='100%'></table> \n\
+	<p id='table_end'> \n\
+		<sup>&#135;</sup>" + dStr["tableEnd"] +
+	"</p> \n\
+</div> \n";
+		// END OF ENZYME TABLE SECTION
+		
 		
 		// START OF GLYCAN TABLE SECTION
 		txt += "<div class='tableHolder' id='glycan_table_div'> \n"
@@ -525,24 +552,7 @@ function getInfoText(accession, resID) {
 		txt += "</div> \n"
 		// END OF GLYCAN TABLE SECTION
 		
-		// START OF RESIDUE TABLE SECTION
-		txt += "<div class='tableHolder' id='residue_table_div'> \n\
-  <b>Residues in " + accession + "</b> \n\
-  <table id='residueTable' class='display' width='100%'></table> \n\
-</div> \n";
-		// END OF RESIDUE TABLE SECTION
-		
-		// START OF ENZYME TABLE SECTION
-		txt += "<div class='tableHolder' id='enzyme_table_div'> \n\
-	<b>" + mStr["enzAll"] + 
-	"<a href=\"javascript: document.getElementById('table_end').scrollIntoView();\" class='no_und'> \
-	<sup>&#135;</sup></a></b></p> \n\
-	<table id='enzymeTable' class='display' width='100%'></table> \n\
-	<p id='table_end'> \n\
-		<sup>&#135;</sup>" + dStr["tableEnd"] +
-	"</p> \n\
-</div> \n";
-		// END OF RESIDUE TABLE SECTION
+
 		
 		// END OF CONTENT BOX
 		txt += "</div>\ \n";
@@ -1276,19 +1286,10 @@ function getSelectedData(selector) {
 } // end of function getSelectedData()
 
 
-function processFiles() {
-	if (v > 0) console.log("### Processing Data From Files ###");
-
-		setResidueKeys();  // convert json 'residues' to associative array
-		var related = data[acc[0]].related_glycans;
-		pathStart = data[acc[0]].path_start;
-		alternate = data[acc[0]].alternate;
-		relatedDataExists = (typeof related != "undefined");
-		if ( allDataRequested && relatedDataExists ) 
-			setRelatedParams(acc[0]);
-		if (v > 3) console.log("probe is " +acc[0]);
+function displayGlycans() {
 		var fd = document.getElementById(ifr).contentWindow.document;
 		// render the probe structure - write html as text then add to iframe
+
 		var htmlEncoding = "&emsp; <br><center><h3>" + dStr["imgHead"] + "</h3></center>";
 		htmlEncoding += "<p>" + svgEncoding[acc[0]] + "&emsp; <br></p><hr>";
 		htmlEncoding += "<center><b>" + mStr["listHead"] + "<br>" + selectStrings[glycanSelector] + "</b></center>";
@@ -1317,7 +1318,26 @@ function processFiles() {
 		var b = $('#' + ifr).contents().find('body');
 		var s = b.find("svg"); // all <svg> elements in iframe body
 		// s.css("opacity", "0.6");
-		s.addClass("zoomer"); 
+		s.addClass("zoomer");
+}
+
+
+
+function processFiles() {
+	if (v > 0) console.log("### Processing Data From Files ###");
+
+		setResidueKeys();  // convert json 'residues' to associative array
+		var related = data[acc[0]].related_glycans;
+		pathStart = data[acc[0]].path_start;
+		alternate = data[acc[0]].alternate;
+		relatedDataExists = (typeof related != "undefined");
+		if ( allDataRequested && relatedDataExists ) 
+			setRelatedParams(acc[0]);
+		if (v > 3) console.log("probe is " +acc[0]);
+ 
+	/* */
+		displayGlycans();
+	
 		// fd.close();
 		// set up graphics and data
 		setupFrames();  // calculate required <element> sizes and locations

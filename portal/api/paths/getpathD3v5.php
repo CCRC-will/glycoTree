@@ -173,8 +173,8 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 			$row["type"] = "";
 			$row["species"] = "no known organism";
 			$enzymes[] = $row;
-		} else{
-			$sql = "select gene_name,uniprot,type,species from enzyme_mappings where residue_id=?";
+		} else {
+			$sql = "SELECT gene_name,uniprot,type,species FROM enzyme_mappings WHERE residue_id=? ORDER BY species";
 			$stmt = $connection->prepare($sql);
 			$stmt->bind_param("s", $ra);
 			$stmt->execute(); 

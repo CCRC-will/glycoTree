@@ -41,12 +41,12 @@ var helpMessage = "<center>" +
 	"<ul>";
 	
 var pathMsg = "<center><b>Reactions involving selected structures <br>are combined to generate a unique pathway</b></center><ul>";
-	pathMsg += "<li>Initially,  the most likely intermediates are automatically selected to generate the unique path.</li>";
+	pathMsg += "<li>Initially,  the most likely intermediates are automatically selected (and checked); these are combined to generate a unique path.</li>";
 	pathMsg += "<li>You can  manually override these automatic selections using the checkboxes.</li>";
 	pathMsg += "<li>If 'Pathways -> Auto Select' is enabled, the highest likelihood pathway that still passes through the intermediate you have checked will be automatically selected.</li>";
-	pathMsg += "<li>If 'Pathways -> Auto Select' is disabled, <i>all structures</i> you want to see in the unique path must be selected.</li>";
+	pathMsg += "<li>If 'Pathways -> Auto Select' is disabled, <i>all structures</i> you want to see in the unique path must be <i>manually</i> selected.</li>";
 	pathMsg += "<li>If 'Pathways -> Auto Select' is disabled, you must select structures that are 'linked' to each other; the pathway is truncated at any selected structure that is not linked to the next selected structure.</li>";
-	pathMsg += "<li>When you click 'Pathways -> Render Selected Path', biochemical details for the unique pathway is drawn on a new page.</li>";
+	pathMsg += "<li>Clicking 'Pathways -> Render Selected Path', generates a new page that contains the biochemical details for the unique pathway.</li>";
 
 	pathMsg += "</ul><b>Currently selected reactions:</b>";
 	
@@ -86,13 +86,13 @@ var nodeShading = ['#2F78B7', '#B76E2F'];
 	 <span class="navSpan" id="statsButton">Statistics</span>
 	 <span class="navSpan" id="defocusButton">Drop Focus</span>
 	 <span class="navSpan" id="toggleHelpButton">Help</span>
-	 <div class="navSpan navDown">Pathways<ul class="navContent">
-			<li id="pathButton">Render Selected Path</li>
-			<li id="showPathwayMessage">Show Path Parameters</li>
-			<li id="abinitButton">Most Likely</li>
-			<li id="clearButton">Clear Path Selections</li>
-			<li id="toggleAssistButton">Disable Auto-Select</li>
-			<li id="speciesButton">Choose Species</li>
+	 <div class="navSpan navDown">Pathways
+		 <ul class="navContent">
+			<li id="pathButton" class="contentElement">Render Selected Path</li>
+			<li id="showPathwayMessage" class="contentElement">Show Path Parameters</li>
+			<li id="abinitButton" class="contentElement">Most Likely</li>
+			<li id="clearButton" class="contentElement">Clear Path Selections</li>
+			<li id="toggleAssistButton" class="contentElement">Disable Auto-Select</li>
 		 </ul>
 	 </div>
  </div>
