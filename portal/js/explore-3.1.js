@@ -12,13 +12,11 @@
 */
 
 // constants
-var v = 2; // verbosity of console.log
+var v = 4; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic'};
 // data variables
 var acc = [];
-var svgPath = [];
-var jsonPath = [];
 var svgEncoding = [];
 var data = [];
 var selectedData = [];
@@ -34,6 +32,9 @@ var allDataRequested = false;
 var glycanSelector = "all";
 var probeEnd = "";
 var probeSubCount = "0";
+var pathStart = "none";
+var alternate = null;
+
 
 document.onkeydown = keySet;
 
@@ -47,15 +48,32 @@ function keySet(e) {
 	}
 }
 
+function showPathway() {
+	var pathEnd = acc[0];
+	if (pathStart == "look") {
+		alert("Cannot yet generate full pathways for " + acc[0]);
+		return;
+	} else  {
+		if (pathStart == "none") {
+			alert("Cannot generate full pathways to " + acc[0] +
+					" - starting point cannot be determined");
+		} else {
+			if (alternate !== null) {
+				alert("The reducing end of " + acc[0] + 
+				" is not consistent with that of an N-glycan (beta-D-pyranose).  To show the relevant pathways, it is necessary to use the N-glycan that is homologous to " + acc[0] +
+				", but with a beta-D-pyranose residue at the reducing end.  Therefore, pathways for the fully-defined homolog " + alternate + " will be shown.");
+				pathEnd = alternate;				
+			}
+			var url = "vertical-path.html?" + pathEnd + "&" + pathStart;
+			window.open(url,'_blank');
+		}
+	}
+}
+
 
 function populateInput(p) {
 	if (v > 3) console.log("## Populating arrays for " + p + "##"); // vvv
-	acc.push(p);
-	// svgPath.push('svg/' + p + '.gTree.svg');
-	//  The following paths are hard-coded temporarily to facilitate provisioning
-	//     using GitHub/GitHack
-	svgPath.push('svg/' + p + '.gTree.svg');
-	jsonPath.push('json/' + p + '.json');
+	acc.push(p);	
 }
 
 	
@@ -158,21 +176,44 @@ function clickResponse(node) {
 		setupTabs();
 		// set up residue table and related glycan table
 		//var rg = data[accession]["related_glycans"];
-		setupRelatedGlycanTable("relatedTable", selectedData);
 		setupResidueTable("residueTable", rd);
 		// add event listener for the select element
 		$('#glycanSelect').val(glycanSelector);
 		$('#glycanSelect').change(function() {
 			glycanSelector = $(this).val();
+			// redraw and enable the panel containing glycan structures
 			processFiles();
+			var xxx = $("#"+iDiv).find(".gtd");
+			xxx.click()
+			// fakeClick(event, xxx);
+			// all of the following fail!!
+			//xxx.scrollIntoView();
+			//window.location.assign(xxx);
+			//xxx.goTo();
+			// $('#glycan_table_div').goTo();
 		});
 		// set up ALL enzymes table
 		var allEnzymes = getAllEnzymes(rd);
 		if (v > 4) console.log("  total number of enzymes is " + allEnzymes.length);
 		setupEnzymeTable('enzymeTable', allEnzymes);
+		setupRelatedGlycanTable("relatedTable", selectedData);
 	}
 } // end of function clickNode()
 
+// this function to simulate click was completely stolen from stackoverflow
+//   this may not be necessary and will ot be used unless it's necessary
+function fakeClick(event, anchorObj) {
+  if (anchorObj.click) {
+    anchorObj.click()
+  } else if (document.createEvent) {
+    if(event.target !== anchorObj) {
+      var evt = document.createEvent("MouseEvents"); 
+      evt.initMouseEvent("click", true, true, window, 
+          0, 0, 0, 0, 0, false, false, false, false, 0, null); 
+      var allowDefault = anchorObj.dispatchEvent(evt);
+    }
+  }
+}
 
 function getAllEnzymes(residueArray) {
 	// generate an array of enzyme objects associated with residueArray
@@ -254,17 +295,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 	var nRes = data[acc[0]].residues.length;
 
 	var table = $('#'+tableName).DataTable( {
-/* 
-// The following (commented) lines work, but the button is rendered in a very strange way 
-// I invite anyone who wants to make this work to do so!!
-// This will require including extra js and css files from cdn.datatables.net (see explore.html <head>)
-		dom: 'Bfrtip',
-		buttons: [{
-				extend: "csv",
-				text: '<span style="color:black; font-size:28px; text-align:left;">Save as CSV</span>'
-			}
-		],
-*/
+
 		data: tableData,
 		order: [[ 3, "asc" ]],
 		paging: false,
@@ -273,40 +304,37 @@ function setupRelatedGlycanTable(tableName, tableData) {
 		],
 		columns: [
 			{ 
-				"title": "New Sandbox",
-				"data": "accession",
+				"title": "Related Glycan",
+				"data": "homolog",
+				"render": function(data, type, row, meta){
+					return data;
+				}
+			},
+			
+			{ 
+				"title": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Links&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+				"data": "homolog",
 				"render": function(data, type, row, meta){
 					if(type === 'display'){
-						data = '<a href="explore.html?' 
-							+ data + '" target="_blank">' + data + '</a>';
+						data = "<div class='ttip'><a href='explore.html?" +
+							data + "' target='_blank'>" +    
+							"<img src='svg/sandLogo.svg' height=35 width=35></a>" +
+							"<span class='ttiptext'>Explore " + data + 
+							"<br>in New Sandbox</span></div>" +
+							"<div class='ttip'><a href='" + URLs["glygen_glycan"] +
+							data + "' target='glygen'>" +
+							"<img src='svg/glygenLogo.svg' height=35 width=35></a>" +
+							"<span class='ttiptext'>Explore " + data + 
+							"<br>in GlyGen</span></div>&nbsp;&nbsp;" +
+							"<div class='ttip'><a href='" + URLs["gnome"] +
+							data + "' target='gnome'>" +
+							"<img src='svg/subsumLogo.svg' height=35 width=35></a>" +
+							"<span class='ttiptext'>Explore " + data + 
+							"<br>in Structure Browser</span></div>";
 					}
 					return data;
 				}
 			},	
-			
-			{ 
-				"title": "GNOme",
-				"data": "accession",
-				"render": function(data, type, row, meta){
-					if(type === 'display'){
-						data = '<a href="' + URLs["gnome"] + data +   
-							'" target="gnome">' + data + '</a>';
-					}
-					return data;
-				}
-			},
-			
-			{ 
-				"title": "GlyGen",
-				"data": "accession",
-				"render": function(data, type, row, meta){
-					if(type === 'display'){
-						data = '<a href="' + URLs["glygen_glycan"] + data +  
-							'" target="glygen">' + data + '</a>';
-					}
-					return data;
-				}
-			},
 			
 			{ 
 				"title": "DP",
@@ -321,7 +349,7 @@ function setupRelatedGlycanTable(tableName, tableData) {
 			
 			{ 
 				"title": "Match",
-				"data": "match"
+				"data": "shared"
 			},
 			
 			{ 
@@ -461,26 +489,60 @@ function getInfoText(accession, resID) {
 		var thisSubCount = countElements(getSubstituents(accession));
 		txt += " - " + data[accession].residues.length + " residues, " +
 			thisSubCount + " substituent(s)</p> \n";
+		
 		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>\n";
 		
+		var caveats = data[accession].caveats;
+		var cLen = caveats.length;
+		var tTop = 100 + 60 * cLen;
+		var cTop = tTop + 80;
+		if (cLen > 0) {
+			for (var i = 0; i < cLen; i++) {
+				txt += "<p><b>Caveat " + (1 + i) + ":</b> " +
+					data[accession].caveats[i]['msg'] + "</p>";
+			}
+
+		}
+
 		// START OF TABS DIV
-		txt += "<div id='tabbox'> \n\
+		txt += "<div id='tabbox' style='top: " + tTop +"px'> \n\
 <ul id='tabs'> \n\
-	<li><a href='#glycan_table_div'>Related Glycans</a></li> \n\
 	<li><a href='#residue_table_div'>Residues</a></li> \n\
 	<li><a href='#enzyme_table_div'>Enzymes</a></li> \n\
+	<li><a href='#glycan_table_div' class='gtd'>Related Glycans</a></li> \n\
 	</ul> \n\
 </div> \n";
 		// END OF TABS DIV
 		
 		// START OF CONTENT BOX
-		txt += "<div id='contentbox'> \n";
+		txt += "<div id='contentbox' style='top: " + cTop +"px'> \n";
+	
+		// START OF RESIDUE TABLE SECTION
+		txt += "<div class='tableHolder' id='residue_table_div'> \n\
+  <b>Residues in " + accession + "</b> \n\
+  <table id='residueTable' class='display' width='100%'></table> \n\
+</div> \n";
+		// END OF RESIDUE TABLE SECTION
+		
+		
+		// START OF ENZYME TABLE SECTION
+		txt += "<div class='tableHolder' id='enzyme_table_div'> \n\
+	<b>" + mStr["enzAll"] + 
+	"<a href=\"javascript: document.getElementById('table_end').scrollIntoView();\" class='no_und'> \
+	<sup>&#135;</sup></a></b></p> \n\
+	<table id='enzymeTable' class='display' width='100%'></table> \n\
+	<p id='table_end'> \n\
+		<sup>&#135;</sup>" + dStr["tableEnd"] +
+	"</p> \n\
+</div> \n";
+		// END OF ENZYME TABLE SECTION
+		
 		
 		// START OF GLYCAN TABLE SECTION
 		txt += "<div class='tableHolder' id='glycan_table_div'> \n"
 		// rg <- glycans related to THIS ACCESSION
 		var rg = data[accession]["related_glycans"];
-		if  (typeof rg != "undefined")  {
+		if  ((typeof rg != "undefined") && (rg.length > 0) ) {
 			if (accession == acc[0] ) {
 				// create related glycan table object
 				txt += "<p><b>" + mStr["listHead"] + "</b> \n";
@@ -505,24 +567,7 @@ function getInfoText(accession, resID) {
 		txt += "</div> \n"
 		// END OF GLYCAN TABLE SECTION
 		
-		// START OF RESIDUE TABLE SECTION
-		txt += "<div class='tableHolder' id='residue_table_div'> \n\
-  <b>Residues in " + accession + "</b> \n\
-  <table id='residueTable' class='display' width='100%'></table> \n\
-</div> \n";
-		// END OF RESIDUE TABLE SECTION
-		
-		// START OF ENZYME TABLE SECTION
-		txt += "<div class='tableHolder' id='enzyme_table_div'> \n\
-	<b>" + mStr["enzAll"] + 
-	"<a href=\"javascript: document.getElementById('table_end').scrollIntoView();\" class='no_und'> \
-	<sup>&#135;</sup></a></b></p> \n\
-	<table id='enzymeTable' class='display' width='100%'></table> \n\
-	<p id='table_end'> \n\
-		<sup>&#135;</sup>" + dStr["tableEnd"] +
-	"</p> \n\
-</div> \n";
-		// END OF RESIDUE TABLE SECTION
+
 		
 		// END OF CONTENT BOX
 		txt += "</div>\ \n";
@@ -533,11 +578,21 @@ function getInfoText(accession, resID) {
 		if (resID.match(/S/) == null) {
 			if (rd.canonical_name == "unassigned") txt += " (unassigned)";
 			txt += " residue " + resID + "</p> \n";
-			if (rd.limited_to.length > 0) txt += "This residue has been found <b>only</b> in " + rd.limited_to + "<br>";
-			if (rd.not_found_in.length > 0) txt += "This residue has <b>not</b> been found in " + rd.not_found_in + "<br>";
-			if (rd.notes.length > 0) txt += "This canonical residue is " + rd.notes + "<br>";
-			if (rd.requires_residue.length > 0) txt += "Enzymatic transfer of this canonical residue occurs only when residue " + rd.requires_residue + "  is present<br>";
-			if (rd.blocked_by_residue.length > 0) txt += "Enzymatic transfer of this canonical residue is blocked by residue " + rd.blocked_by_residue + "<br>";
+			if (typeof rd.limited_to != "undefined")
+				if (rd.limited_to.length > 0) 
+					txt += "This residue has been found <b>only</b> in " + rd.limited_to + "<br>";
+			if (typeof rd.not_found_in != "undefined")
+				if (rd.not_found_in.length > 0)
+					txt += "This residue has <b>not</b> been found in " + rd.not_found_in + "<br>";
+			if (typeof rd.notes != "undefined")
+				if (rd.notes.length > 0)
+					txt += "Status: " + rd.notes + "<br>";
+			if (typeof rd.requires_residue != "undefined")
+				if (rd.requires_residue.length > 0)
+					txt += "Enzymatic transfer of this canonical residue occurs only when residue " + rd.requires_residue + "  is present<br>";
+			if (typeof rd.blocked_by_residue != "undefined")
+				if (rd.blocked_by_residue.length > 0)
+					txt += "Enzymatic transfer of this canonical residue is blocked by residue " + rd.blocked_by_residue + "<br>";
 	
 			var svgName = rd.name.split("-")[0];
 			
@@ -584,8 +639,8 @@ function getRelatedAccessions() {
 	if ( (dataAvailable == true) && (typeof rg != "undefined") ) {
 		if (v > 2) console.log("  adding " + rg.length + " glycans related to " + probe);
 		var rgCopy = rg.slice();
-
 		// sort rgCopy by relative_dp -> same order as sorted table
+
 		rgCopy.sort(function(a, b) {
 			var nameA = a.relative_dp;
 			var nameB = b.relative_dp;
@@ -600,8 +655,9 @@ function getRelatedAccessions() {
 		});
 
 		for (var i = 0; i < rgCopy.length; i++) {
-			var newAccession = rgCopy[i].accession;
-			// false -> wait until all input variables are populated before fetching data
+			var newAccession = rgCopy[i].homolog;
+			if (v > 2) console.log("*** next accession: " + newAccession + " ***");
+	// false -> wait until all input variables are populated before fetching data
 			addGlycan(newAccession);
 		}
 		allDataRequested = true;
@@ -1040,7 +1096,7 @@ function setRelatedParams(probe) {
 	for (var i in related) {
 		// for each related_glycan [i]
 		// get the accession of the related glycan
-		var key = related[i].accession;
+		var key = related[i].homolog;
 		related[i].reducing_end = getReducingEndStructure(key);
 		related[i].substituents = getSubstituents(key);
 		related[i].sub_count = countElements(related[i].substituents);
@@ -1114,46 +1170,42 @@ function setupCSSiframe(ifrID, cssSrc) {
 } // end of function setupCSSiframe()
 		
 	
-function fetchData(theURL, accession, dest, isJSON) {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			if (isJSON) {
-				dest[accession] = JSON.parse(this.responseText);
-			} else {
-				dest[accession] = this.responseText;
-			}
-			if (v > 2) console.log(" ... Retrieved a file for " + accession);
+function fetchData(theURL, type, accession, dest) {
+	if (v > 3) console.log("About to fetch data for URL: " + theURL + "; type: " +
+		   type + "; accession: " + accession + "; destination length: " +
+			   dest.length);
+	// converted to jquery.get()
+	$.get(theURL,
+	{
+		ac: accession,
+		type: type
+	},
+	function(result){
+		if (v > 3) console.log("## Length of result: " + result.length + 
+		   " ##");
+		if (type === 'json') {
+			dest[accession] = JSON.parse(result);
+		} else {
+			dest[accession] = result;
 		}
-		if (this.readyState == 4 && this.status == 404) {
-			if (isJSON) {
-				unavailable.push("JSON data for " + accession);
-			} else {
-				unavailable.push("SVG Encoding for " + accession);
-			}
-			if (v > 0) console.log("File " + theURL + " not found" + dest);
-			dataAvailable = false;
+	})			
+	.done(function() {
+		// alert( "yes, success" );
+	})
+	.fail(function() {
+		if (type === 'json') {
+			unavailable.push("JSON data for " + accession);
+		} else {
+			unavailable.push("SVG Encoding for " + accession);
 		}
-	};
-	xhttp.onerror = function() {
-		alert("File request failed: " + theURL);
-	};
-	xhttp.open("GET", theURL, true);
-	xhttp.send();
-} // end of function fetchData()
+		if (v > 0) console.log("File " + theURL + " not found" + dest);
+		dataAvailable = false;
+	})
+	.always(function() {
+		// alert( "finished" );
+	});
 	
-		
-function getNextSVG(c) {
-	while ((c < svgPath.length) && (dataOK == true) ){
-		getSVG(svgPath[c], c, acc[c]);
-		if (v > 2) {
-			console.log("getting next SVG: " + svgPath[c]);
-			console.log("getting next json: " + jsonPath[c]);
-		}
-		getJSON(jsonPath[c], c, acc[c]);
-		c++;
-	} 
-} // end of function getNextSVG()
+} // end of function fetchData()
 
 
 function simXOR(x, y) {
@@ -1169,7 +1221,7 @@ function getSelectedData(selector) {
 	var rg = probeData["related_glycans"];
 
 	for (i in rg) {
-		if (rg[i].accession == acc[0]) {
+		if (rg[i].homolog == acc[0]) {
 			probeEnd = rg[i].reducing_end;
 			probeSubCount = rg[i].sub_count;
 		}
@@ -1182,7 +1234,7 @@ function getSelectedData(selector) {
 	switch(selector) {
 		case "all":
 			for (i in rg) {
-				if (rg[i].accession != acc[0]) {
+				if (rg[i].homolog != acc[0]) {
 					rgEdited.push(rg[i]);
 				}
 			}
@@ -1217,15 +1269,15 @@ function getSelectedData(selector) {
 			break;
 		case "match":
 			for (i in rg) {
-				if ((rg[i].accession != acc[0]) && (rg[i].reducing_end == probeEnd) ) {
+				if ((rg[i].homolog != acc[0]) && (rg[i].reducing_end == probeEnd) ) {
 					rgEdited.push(rg[i]);
 				}
 			}
 			break;
 		case "specified":
 			for (i in rg) {
-				//if (rg[i].accession != acc[0]) {
-				if ((rg[i].accession != acc[0]) && (rg[i].reducing_end.includes("?") == false) ) {
+				//if (rg[i].homolog != acc[0]) {
+				if ((rg[i].homolog != acc[0]) && (rg[i].reducing_end.includes("?") == false) ) {
 					rgEdited.push(rg[i]);
 				}
 			}
@@ -1249,16 +1301,10 @@ function getSelectedData(selector) {
 } // end of function getSelectedData()
 
 
-function processFiles() {
-	if (v > 0) console.log("### Processing Data From Files ###");
-
-		setResidueKeys();  // convert json 'residues' to associative array
-		var related = data[acc[0]].related_glycans;
-		relatedDataExists = (typeof related != "undefined");
-		if ( allDataRequested && relatedDataExists ) 
-			setRelatedParams(acc[0]);
+function displayGlycans() {
 		var fd = document.getElementById(ifr).contentWindow.document;
 		// render the probe structure - write html as text then add to iframe
+
 		var htmlEncoding = "&emsp; <br><center><h3>" + dStr["imgHead"] + "</h3></center>";
 		htmlEncoding += "<p>" + svgEncoding[acc[0]] + "&emsp; <br></p><hr>";
 		htmlEncoding += "<center><b>" + mStr["listHead"] + "<br>" + selectStrings[glycanSelector] + "</b></center>";
@@ -1269,8 +1315,13 @@ function processFiles() {
 			console.log("selectedData is ");
 			console.log(selectedData);
 			var sep = "";
+			if (v > 3) console.log("selectedData.length is " +
+					   selectedData.length);
 			for (i = 0; i < selectedData.length; i++) {
-				var key = selectedData[i].accession;
+				var key = selectedData[i].homolog;
+				if (v > 3) {
+					console.log("*** key is " + key + " ***");
+				}
 				htmlEncoding += sep + "<p>" + svgEncoding[key];
 				sep = "&emsp; <br>";
 			}
@@ -1282,7 +1333,26 @@ function processFiles() {
 		var b = $('#' + ifr).contents().find('body');
 		var s = b.find("svg"); // all <svg> elements in iframe body
 		// s.css("opacity", "0.6");
-		s.addClass("zoomer"); 
+		s.addClass("zoomer");
+}
+
+
+
+function processFiles() {
+	if (v > 0) console.log("### Processing Data From Files ###");
+
+		setResidueKeys();  // convert json 'residues' to associative array
+		var related = data[acc[0]].related_glycans;
+		pathStart = data[acc[0]].path_start;
+		alternate = data[acc[0]].alternate;
+		relatedDataExists = (typeof related != "undefined");
+		if ( allDataRequested && relatedDataExists ) 
+			setRelatedParams(acc[0]);
+		if (v > 3) console.log("probe is " +acc[0]);
+ 
+	/* */
+		displayGlycans();
+	
 		// fd.close();
 		// set up graphics and data
 		setupFrames();  // calculate required <element> sizes and locations
@@ -1300,9 +1370,11 @@ function processFiles() {
 
 
 function getFiles(i) {
-	fetchData(svgPath[i], acc[i], svgEncoding, false);
-	fetchData(jsonPath[i], acc[i], data, true);
-} // end of function getData()
+	console.log("getFiles index: " + i + "; accession: " + acc[i]);
+	// fetchData arguments are: (URL, type, accession, destination_array)
+	fetchData(apiPath, 'svg', acc[i], svgEncoding);
+	fetchData(apiPath, 'json', acc[i], data);
+} // end of function getFiles()
 
 
 function countElements(object) {

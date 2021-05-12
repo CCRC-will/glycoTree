@@ -104,7 +104,8 @@ function	reactionAppend(d) {
 		var eStr = enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")";
 		if (enz.uniprot === "abiotic")  {
 			// reaction is abiotic
-			tStr += "      <li>" + enz.gene_name + " (no enzyme)</li>";
+			tStr += "      <li>abiotic (no enzyme)" +
+				"<img src='svg/warn.svg' width='50' height='50'></li>";
 		} else {
 			tStr += "      <li class='species " + enz.species + "'>" +
 				"<a href='https://www.glygen.org/protein/" +
