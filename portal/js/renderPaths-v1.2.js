@@ -52,30 +52,17 @@ function	reactionHTMLtop(d, fromGlycan, toGlycan, multiple) {
 	var tStr = "<!DOCTYPE html><htm><head><meta charset='utf-8'>";
 	tStr += "<title>" + winName + "</title>";
 	tStr += "<link rel='stylesheet' type='text/css' href='css/paths.css'>";
+	tStr += "<script src='js/speciate.js'></script>";
 	
-	// function speciate() could go into a separate js file
-	tStr += "<script>\n\
-	function speciate() {\n\
-		var s = document.getElementById('species').value;\n\
-		var ss = document.getElementsByClassName('species'); \n\
-		if (s === 'all') {\n\
-			for (var i=0; i<ss.length; i++) ss[i].style.visibility = 'visible';\n\
-		}  else {\n\
-			for (var i=0; i<ss.length; i++) ss[i].style.visibility = 'hidden';\n\
-			var sss = document.getElementsByClassName(s);\n\
-			for (var i=0; i<sss.length; i++) sss[i].style.visibility = 'visible';\n\
-		}\n\
-	}\n\
-	</script>\n";
-	
-	tStr += "</head><body style='font-family: Helvetica, sans-serif;' >";
+	tStr += "</head>";
+	tStr += "<body style='font-family: Helvetica, sans-serif;' >";
 	tStr += "<center><h3>Reaction Details</h3>";
 	tStr += "Species: <select onchange=\"speciate();\" id='species'>\
 	  <option value='human'>human</option>\
 	  <option value='mouse'>mouse</option>\
 	  <option value='all' selected>all</option>\
 	</select>";
-	tStr += "<table>";
+	tStr += "<table width='640px'>";
 	tStr += "<tr><td colspan='3'>" + images[d.source] + "<br>" + d.source + "</td></tr>";
 	return tStr;
 } // end function reactionHTMLtop()
@@ -104,8 +91,9 @@ function	reactionAppend(d) {
 		var eStr = enz.gene_name + " (" + enz.species + " " + enz.uniprot + ")";
 		if (enz.uniprot === "abiotic")  {
 			// reaction is abiotic
-			tStr += "      <li>abiotic (no enzyme)" +
-				"<img src='svg/warn.svg' width='50' height='50'></li>";
+			tStr += "      <li><img src='svg/warn.svg' style='vertical-align: -5px' width='25' height='25'>" +
+				"&nbsp;abiotic (no enzyme)&nbsp;" +
+				"<img src='svg/warn.svg' style='vertical-align: -5px' width='25' height='25'></li>";
 		} else {
 			tStr += "      <li class='species " + enz.species + "'>" +
 				"<a href='https://www.glygen.org/protein/" +
