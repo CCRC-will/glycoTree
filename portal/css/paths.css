@@ -239,7 +239,7 @@ ul {
 #navDiv {
 	position: fixed;
 	display: inline-flex;
-	top:0px;
+	top: 0px;
 	right : 0px;
 	border: none;
 	padding-top: 10px;
@@ -275,10 +275,11 @@ ul {
 	display: block;
 	margin: 0px;
 	background: #2F78B7;
-	height: auto;
+	height: 0px;
 	padding: 20px;
 	color: #fff;
 	pointer-events: auto;
+	cursor: pointer;
 }
 
 .navDown {
@@ -289,9 +290,6 @@ ul {
 }
 
 .navDown:hover .navContent {
-	/* padding: 20px; */
 	visibility: visible;
-	/* background: #2F78B7; */
-	/* color: #ace; */
-	/* height: auto; */
+	height: auto;
 }
