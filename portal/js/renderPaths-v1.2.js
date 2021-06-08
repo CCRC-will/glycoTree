@@ -585,7 +585,7 @@ function initialize() {
 	statStr += "<ul><li>Number of unique pathways: " + pc + "</li>";
 	statStr += "<li>Number of structures: " +  nodeCount + "</li>";
 	statStr += "<li>Number of reactions: " +  edgeCount + "</li></ul>";
-	statStr += "<b>Size Distribution for Structures in the Pathways</b>"
+	statStr += "<b>Size Distribution for All Pathway Intermediates<br>(Count as a function of DP)</b>"
 	// barGraph takes an array of integers and a css class name
 	statStr += barGraph(data.dp_distribution, "bargraph1");
 
