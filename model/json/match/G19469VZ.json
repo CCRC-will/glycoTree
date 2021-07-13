@@ -43,6 +43,11 @@
      "match": "17"
    },
    {
+     "accession": "G32287FD",
+     "relative_dp": "-1",
+     "match": "16"
+   },
+   {
      "accession": "G32829EU",
      "relative_dp": "-1",
      "match": "16"
@@ -81,6 +86,11 @@
      "accession": "G80552MJ",
      "relative_dp": "+1",
      "match": "17"
+   },
+   {
+     "accession": "G82579AX",
+     "relative_dp": "-1",
+     "match": "16"
    },
    {
      "accession": "G86782KC",

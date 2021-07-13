@@ -2,12 +2,16 @@
 notes
 glycotree_accessions.tsv
 prepare_N-tree.sh
+old_build_N-tree.sh
 log/*.txt
 log/*.log
+log/*.lst
 export/
 data/*.lst
 data/*.zip
 data/fully_determined/
+data/input_gct
+data/input_svg
 data/def/
 data/und/
 data/gct/
@@ -16,6 +20,9 @@ data/bak/
 model/bak/
 model/nodes/
 model/json/
+model/json/match/
+model/json/complete/
+model/commands.txt
 portal/wtf.php
 portal/api/paths/getpath.php
 portal/api/paths/getpathD3.php
@@ -27,4 +34,5 @@ portal/bak
 portal/js/bak
 SQL/scrape/
 SQL/bak/
-
+SQL/mysql*
+SQL/match*

@@ -88,6 +88,16 @@
      "match": "10"
    },
    {
+     "accession": "G79588PU",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
+     "accession": "G82127HP",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G88948CY",
      "relative_dp": "+1",
      "match": "10"

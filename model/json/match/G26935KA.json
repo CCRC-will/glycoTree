@@ -68,6 +68,11 @@
      "match": "16"
    },
    {
+     "accession": "G76842ZR",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G86696LV",
      "relative_dp": "+1",
      "match": "16"

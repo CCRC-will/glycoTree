@@ -63,6 +63,11 @@
      "match": "14"
    },
    {
+     "accession": "G72578SV",
+     "relative_dp": "-1",
+     "match": "13"
+   },
+   {
      "accession": "G75082OS",
      "relative_dp": "-1",
      "match": "13"
@@ -76,6 +81,11 @@
      "accession": "G91905FJ",
      "relative_dp": "+0",
      "match": "14"
+   },
+   {
+     "accession": "G93582HM",
+     "relative_dp": "-1",
+     "match": "13"
    },
    {
      "accession": "G95109CV",

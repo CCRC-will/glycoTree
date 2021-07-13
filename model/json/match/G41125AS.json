@@ -38,6 +38,11 @@
      "match": "7"
    },
    {
+     "accession": "G64652EG",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
      "accession": "G72587UU",
      "relative_dp": "-1",
      "match": "6"

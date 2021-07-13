@@ -123,11 +123,6 @@
      "match": "8"
    },
    {
-     "accession": "G38426SE",
-     "relative_dp": "-1",
-     "match": "7"
-   },
-   {
      "accession": "G39213VZ",
      "relative_dp": "-1",
      "match": "7"
@@ -234,6 +229,11 @@
    },
    {
      "accession": "G77889NO",
+     "relative_dp": "+1",
+     "match": "8"
+   },
+   {
+     "accession": "G78741RD",
      "relative_dp": "+1",
      "match": "8"
    },

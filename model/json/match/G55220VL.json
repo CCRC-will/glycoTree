@@ -168,6 +168,11 @@
      "match": "7"
    },
    {
+     "accession": "G51175PR",
+     "relative_dp": "+1",
+     "match": "7"
+   },
+   {
      "accession": "G52034SY",
      "relative_dp": "+1",
      "match": "7"
@@ -240,11 +245,6 @@
    {
      "accession": "G80966KZ",
      "relative_dp": "+1",
-     "match": "7"
-   },
-   {
-     "accession": "G81060WW",
-     "relative_dp": "+0",
      "match": "7"
    },
    {

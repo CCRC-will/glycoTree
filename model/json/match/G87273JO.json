@@ -28,6 +28,11 @@
      "match": "16"
    },
    {
+     "accession": "G78797VK",
+     "relative_dp": "-1",
+     "match": "15"
+   },
+   {
      "accession": "G81711SM",
      "relative_dp": "+1",
      "match": "16"

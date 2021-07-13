@@ -29,6 +29,8 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	$fullyDefined = true;
 	$matchRE = false;
 	foreach ($resList as $value)  {
+		// reinitialize eCaveats for each residue;
+		$eCaveats = [];
 		$resID = $value['residue_id'];
 		if ($resID === 'N2') $N2 = true;
 		if ($resID === 'N19') $N19 = true;
@@ -54,40 +56,62 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 		
 		// check for required residues and generate caveats
 		$newCaveat = [];
-		if (!empty($value['requires_residue'])) {
-			$required = $value['requires_residue'];
-			$satisfied = false;
-			// echo " requires residue " . $required;
-			foreach ($resList as $present)  {
-				// echo " - test " . $present['residue_id'];
-				if ($present['residue_id'] == $required) {
-					$satisfied = true;
+		$e = $value['enzymes'];
+		// echo("resid " . $resID . " has " . sizeOf($e) . " enzymes<br>");
+		$consensus = true;
+		foreach ($e as $eVal)  {
+			$g = $eVal['gene_name'];
+			//echo("   uniprot: " . $u . "; requires " . $eVal['requires_residue'] . "<br>");
+			
+			if (!empty($eVal['requires_residue'])) {
+				$required = $eVal['requires_residue'];
+				$satisfied = false;
+				// echo " requires residue " . $required;
+				foreach ($resList as $present)  {
+					// echo " - test " . $present['residue_id'];
+					if ($present['residue_id'] == $required) {
+						$satisfied = true;
+					}
 				}
-			}
-			if (!$satisfied) {
-				$required_stmt->execute(); 
-				$required_result = $required_stmt->get_result();
-				while ($reqRow = $required_result->fetch_assoc()) {
-					$reqResName = $reqRow['residue_name'];
+				if ($satisfied) {
+					$consensus = false;
+				} else {
+					$required_stmt->execute(); 
+					$required_result = $required_stmt->get_result();
+					while ($reqRow = $required_result->fetch_assoc()) {
+						$reqResName = $reqRow['residue_name'];
+					}
+					// echo ", which is absent with name " . $reqResName;
+					$newCaveat['type'] = "required_residue_missing";
+					$newCaveat['gene_name'] = $g;
+					$newCaveat['residue_id'] = $resID;
+					$newCaveat['residue_name'] = $resName;
+					$newCaveat['required_id'] = $required;
+					$newCaveat['required_residue_name'] = $reqResName;
+					$msg = $accession . " contains residue " . $resID .
+						" (" . $resName .
+						"), which cannot be enzymatically transferred by enzyme " . $g . " unless residue " .
+						$required . " (" . $reqResName .
+						") has been previously added. " .
+						$accession . " does not contain " . $required .
+						", so this glycan is either abiotic (e.g., chemically synthesized), synthesized by a pathway that does not require " . $g . ", or generated from another glycan by hydrolysis of " .
+						$required . ".";
+					$newCaveat['msg'] = $msg;
+					// echo($msg . "<br>");
+					// the following line does NOT account for enzyme consensus
+					$caveats[] = $newCaveat;					
+					// add enzyme caveat only if there is consensus among enzymes for the residue
+					// $eCaveats[] = $newCaveat;
 				}
-				// echo ", which is absent with name " . $reqResName;
-				$newCaveat['type'] = "required_residue_missing";
-				$newCaveat['residue_id'] = $resID;
-				$newCaveat['residue_name'] = $resName;
-				$newCaveat['required_id'] = $required;
-				$newCaveat['required_residue_name'] = $reqResName;
-				$msg = $accession . " contains residue " . $resID .
-					" (" . $resName .
-					"), which cannot be enzymatically transferred unless residue " .
-					$required . " (" . $reqResName .
-					") has been previously added. " .
-					$accession . " does not contain " . $required .
-					", so it is either abiotic (e.g., chemically synthesized) or generated from another glycan by hydrolysis of " .
-					$required . ".";
-				$newCaveat['msg'] = $msg;
-				$caveats[] = $newCaveat;
 			}
 		}
+		/* code for consensus of enzyme requirements
+		if ($consensus) {
+			$tempCaveats = array_merge($caveats, $eCaveats);
+			$caveats = $tempCaveats;
+		}
+		*/
+		
 		// check for abiotic residues and generate caveats
 		$newCaveat = [];
 		$notes = $value['notes'];
@@ -149,9 +173,10 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	// echo "<br><br>";
 	$features['caveats'] = $caveats;
 	
+	
 	$pathStart = "none";
 	if (!$matchRE) {
-		// look for a homolog wth matching reducing end
+		// look for a homolog with matching reducing end
 		$pathStart = "look";
 		// get reducing end residue info from compositions
 		$re_query = "SELECT name,anomer,absolute,ring FROM compositions WHERE residue_id='NA' AND glytoucan_ac=?";
@@ -272,6 +297,7 @@ function gtree_comparator($a, $b) {
 try {
 	$accession = $_GET['ac'];
 	$type = $_GET['type'];
+	// echo $type . " " . $accession;
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -290,6 +316,7 @@ try {
 		// generate an associative array 'glycan' that holds the hierarchical data
 		//    for the glycan with a specific glytoucan_ac value
 		$glycan = [];
+		$resid = "";
 		$glycan["glytoucan_ac"] = $accession;
 
 		
@@ -305,12 +332,12 @@ try {
 		$comp_result = $comp_stmt->get_result();
 
 		// get cannonical residue annotations from canonical_residues
-		$canon_query = "SELECT residue_name,limited_to,not_found_in,requires_residue,blocked_by_residue,notes,evidence,comment FROM canonical_residues WHERE residue_id=?";
+		$canon_query = "SELECT residue_name,limited_to,not_found_in,notes,evidence,comment FROM canonical_residues WHERE residue_id=?";
 		$canon_stmt = $connection->prepare($canon_query);
 		$canon_stmt->bind_param("s", $resid);
 
 		// get enzyme information for residues from enzyme_mappings
-		$map_query = "SELECT type,orthology_group,uniprot,protein_refseq,dna_refseq,gene_name,gene_id,species,required_residues,blocking_residues,notes,branch_site_specificity FROM enzyme_mappings WHERE residue_id=?";
+		$map_query = "SELECT enzyme_mappings.type,enzyme_mappings.uniprot,enzyme_mappings.requires_residue,enzyme_mappings.blocked_by_residue,enzyme_mappings.notes,enzymes.protein_refseq,enzymes.dna_refseq,enzymes.gene_name,enzymes.gene_id,enzymes.species,enzymes.branch_site_specificity,enzymes.orthology_group FROM enzyme_mappings,enzymes WHERE enzyme_mappings.uniprot=enzymes.uniprot AND residue_id=?";
 		$map_stmt = $connection->prepare($map_query);
 		$map_stmt->bind_param("s", $resid);
 
@@ -325,7 +352,6 @@ try {
 			$homologs = [];
 			$resid = $row["residue_id"];
 			$fullrow = $row;
-
 			// query canonical_residues using the current residue_id
 			$canon_stmt->execute(); 
 			$canon_result = $canon_stmt->get_result();

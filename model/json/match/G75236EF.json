@@ -128,9 +128,24 @@
      "match": "14"
    },
    {
+     "accession": "G76842ZR",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G78797VK",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
      "accession": "G84153KU",
      "relative_dp": "-1",
      "match": "13"
+   },
+   {
+     "accession": "G84560PS",
+     "relative_dp": "+1",
+     "match": "14"
    },
    {
      "accession": "G88800UV",

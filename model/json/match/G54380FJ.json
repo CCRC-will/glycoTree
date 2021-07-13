@@ -18,6 +18,11 @@
      "match": "9"
    },
    {
+     "accession": "G30723RE",
+     "relative_dp": "+1",
+     "match": "10"
+   },
+   {
      "accession": "G32915BP",
      "relative_dp": "-1",
      "match": "9"
@@ -116,6 +121,11 @@
      "accession": "G96122UB",
      "relative_dp": "-1",
      "match": "9"
+   },
+   {
+     "accession": "G98218PF",
+     "relative_dp": "+1",
+     "match": "10"
    }
   ]
 }

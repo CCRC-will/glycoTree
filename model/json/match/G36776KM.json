@@ -6,6 +6,11 @@
      "accession": "G36776KM",
      "relative_dp": "+0",
      "match": "13"
+   },
+   {
+     "accession": "G54775DO",
+     "relative_dp": "-1",
+     "match": "12"
    }
   ]
 }

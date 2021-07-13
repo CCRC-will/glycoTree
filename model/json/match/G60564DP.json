@@ -43,6 +43,16 @@
      "match": "13"
    },
    {
+     "accession": "G74324QB",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
+     "accession": "G84560PS",
+     "relative_dp": "+1",
+     "match": "14"
+   },
+   {
      "accession": "G86202BL",
      "relative_dp": "-1",
      "match": "13"

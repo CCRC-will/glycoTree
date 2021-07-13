@@ -61,6 +61,11 @@
      "accession": "G79771YZ",
      "relative_dp": "-1",
      "match": "7"
+   },
+   {
+     "accession": "G82127HP",
+     "relative_dp": "+1",
+     "match": "8"
    }
   ]
 }

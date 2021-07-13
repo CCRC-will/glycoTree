@@ -12,7 +12,7 @@
 */
 
 // constants
-var v = 4; // verbosity of console.log
+var v = 9; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic'};
 // data variables
@@ -494,7 +494,7 @@ function getInfoText(accession, resID) {
 		
 		var caveats = data[accession].caveats;
 		var cLen = caveats.length;
-		var tTop = 100 + 60 * cLen;
+		var tTop = 100 + 90 * cLen;
 		var cTop = tTop + 80;
 		if (cLen > 0) {
 			for (var i = 0; i < cLen; i++) {
@@ -1070,9 +1070,11 @@ function setResidueKeys() {
 	if (v > 1) console.log("##### Assigning Keys to Residues #####");
 	for (var key in data) {
 		var glycan = "glycan[" + key + "]";
+		console.log("Working on " + glycan);
 		var residues = data[key].residues;
+		if (v > 4) console.log("There are " + residues.length + " residues in " + key)
 		for (var j = 0; j < residues.length; j++ ) {
-			//console.log("j is " + j);
+			if (v > 4) console.log("j is " + j);
 			// FAILS WHEN resID == j - so need prefix "#"
 			var key2 = "#" + residues[j].residue_id;
 			residues[key2] = residues[j];
@@ -1312,8 +1314,10 @@ function displayGlycans() {
 		if (acc.length > 1) {
 			// selected data does NOT include the reference structure - only related structures
 			selectedData = getSelectedData(glycanSelector);
-			console.log("selectedData is ");
-			console.log(selectedData);
+			if (v > 2) {
+				console.log("selectedData is ");
+				console.log(selectedData);
+			}
 			var sep = "";
 			if (v > 3) console.log("selectedData.length is " +
 					   selectedData.length);

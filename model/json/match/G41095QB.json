@@ -23,9 +23,19 @@
      "match": "15"
    },
    {
+     "accession": "G66290TX",
+     "relative_dp": "+0",
+     "match": "15"
+   },
+   {
      "accession": "G82393PY",
      "relative_dp": "-1",
      "match": "14"
+   },
+   {
+     "accession": "G83216FM",
+     "relative_dp": "+1",
+     "match": "15"
    }
   ]
 }

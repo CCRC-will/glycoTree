@@ -98,6 +98,11 @@
      "match": "10"
    },
    {
+     "accession": "G44792ZH",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
      "accession": "G45058LS",
      "relative_dp": "+1",
      "match": "10"
@@ -139,6 +144,11 @@
    },
    {
      "accession": "G61207RZ",
+     "relative_dp": "-1",
+     "match": "9"
+   },
+   {
+     "accession": "G63681JP",
      "relative_dp": "-1",
      "match": "9"
    },

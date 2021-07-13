@@ -133,11 +133,6 @@
      "match": "6"
    },
    {
-     "accession": "G38426SE",
-     "relative_dp": "+1",
-     "match": "6"
-   },
-   {
      "accession": "G38966ID",
      "relative_dp": "+1",
      "match": "6"
@@ -216,11 +211,6 @@
      "accession": "G63411NB",
      "relative_dp": "+0",
      "match": "6"
-   },
-   {
-     "accession": "G66875SM",
-     "relative_dp": "-1",
-     "match": "5"
    },
    {
      "accession": "G67715OS",

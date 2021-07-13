@@ -1,0 +1,350 @@
+residue_name,residue_id,type,uniprot,requires_residue,blocked_by_residue,notes
+N-glycan_core_b-D-GlcpNAc_B,NB,GT,Q9D081,,,
+N-glycan_core_b-D-GlcpNAc_B,NB,GT,Q96F25,,,
+N-glycan_core_b-D-GlcpNAc_B,NB,GT,Q9D8C3,,,
+N-glycan_core_b-D-GlcpNAc_B,NB,GT,Q9NP73,,,
+N-glycan_core_b-D-GlcpNAc_B,NB,GT,Q8BML3,,,not in human
+N-glycan_core_b-D-Manp,NC,GT,Q921Q3,,,
+N-glycan_core_b-D-Manp,NC,GT,Q9BT22,,,
+N-glycan_a-D-Manp_4,N4,GT,Q9DBE8,,,
+N-glycan_a-D-Manp_4,N4,GT,Q9H553,,,
+N-glycan_a-D-Manp_1,N1,GT,Q9DBE8,,,
+N-glycan_a-D-Manp_1,N1,GT,Q9H553,,,
+N-glycan_a-D-Manp_21,N21,GT,Q3TZM9,,,
+N-glycan_a-D-Manp_21,N21,GT,Q2TAA5,,,
+N-glycan_a-D-Manp_22,N22,GT,Q3TZM9,,,
+N-glycan_a-D-Manp_22,N22,GT,Q2TAA5,,,
+N-glycan_a-D-Manp_19,N19,GT,Q8K2A8,,,
+N-glycan_a-D-Manp_19,N19,GT,Q92685,,,
+N-glycan_a-D-Manp_24,N24,GT,Q8VDI9,,,
+N-glycan_a-D-Manp_24,N24,GT,Q9H6U8,,,
+N-glycan_a-D-Manp_20,N20,GT,Q8K2A8,,,
+N-glycan_a-D-Manp_20,N20,GT,Q92685,,,
+N-glycan_a-D-Manp_23,N23,GT,Q8VDB2,,,
+N-glycan_a-D-Manp_23,N23,GT,Q9BV10,,,
+N-glycan_a-D-Glcp_25,N25,GT,Q3TAE8,,,
+N-glycan_a-D-Glcp_25,N25,GT,Q9Y672,,,
+N-glycan_a-D-Glcp_26,N26,GT,Q6P8H8,,,
+N-glycan_a-D-Glcp_26,N26,GT,Q9BVK2,,,
+N-glycan_a-D-Glcp_27,N27,GT,Q3UGP8,,,
+N-glycan_a-D-Glcp_27,N27,GT,Q5BKT4,,,
+N-glycan_b-D-GlcpNAc_2,N2,GT,P27808,,,
+N-glycan_b-D-GlcpNAc_2,N2,GT,P26572,,,
+N-glycan_a-L-Fucp_15,N15,GT,Q9WTS2,,,
+N-glycan_a-L-Fucp_15,N15,GT,Q9BYC5,,,
+N-glycan_b-D-GlcpNAc_5,N5,GT,Q921V5,,,
+N-glycan_b-D-GlcpNAc_5,N5,GT,Q10469,,,
+N-glycan_b-D-Galp_3,N3,GT,P15535,,,
+N-glycan_b-D-Galp_3,N3,GT,P15291,,,
+N-glycan_b-D-Galp_3,N3,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_3,N3,GT,O60909,,,
+N-glycan_b-D-Galp_3,N3,GT,Q91YY2,,,
+N-glycan_b-D-Galp_3,N3,GT,O60512,,,
+N-glycan_b-D-GlcpNAc_7,N7,GT,Q812G0,N2,,
+N-glycan_b-D-GlcpNAc_7,N7,GT,Q9UM21,N2,,
+N-glycan_b-D-GlcpNAc_7,N7,GT,Q812F8,N2,,
+N-glycan_b-D-GlcpNAc_7,N7,GT,Q9UQ53,N2,,
+N-glycan_b-D-GlcpNAc_7,N7,GT,Q9D306,N2,,
+N-glycan_b-D-GlcpNAc_7,N7,GT,Q9UBM8,N2,,
+N-glycan_b-D-Galp_6,N6,GT,P15535,,,
+N-glycan_b-D-Galp_6,N6,GT,P15291,,,
+N-glycan_b-D-Galp_6,N6,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_6,N6,GT,O60909,,,
+N-glycan_b-D-Galp_6,N6,GT,Q91YY2,,,
+N-glycan_b-D-Galp_6,N6,GT,O60512,,,
+N-glycan_b-D-Galp_28,N28,GT,O54905,,,
+N-glycan_b-D-Galp_28,N28,GT,O43825,,,
+N-glycan_b-D-Galp_28,N28,GT,Q9JI67,,,
+N-glycan_b-D-Galp_28,N28,GT,Q9Y2C3,,,
+N-glycan_a-D-NeupNAc_12,N12,GT,Q64685,,,major
+N-glycan_a-D-NeupNAc_12,N12,GT,P15907,,,major
+N-glycan_a-D-NeupNAc_12,N12,GT,Q76K27,,,minor
+N-glycan_a-D-NeupNAc_12,N12,GT,Q96JF0,,,minor
+N-glycan_a-D-NeupNAc_13,N13,GT,Q64685,,,major
+N-glycan_a-D-NeupNAc_13,N13,GT,P15907,,,major
+N-glycan_a-D-NeupNAc_13,N13,GT,Q76K27,,,minor
+N-glycan_a-D-NeupNAc_13,N13,GT,Q96JF0,,,minor
+N-glycan_a-D-NeupNAc_33,N33,GT,P97325,,,major
+N-glycan_a-D-NeupNAc_33,N33,GT,Q11203,,,major
+N-glycan_a-D-NeupNAc_33,N33,GT,Q91Y74,,,minor
+N-glycan_a-D-NeupNAc_33,N33,GT,Q11206,,,minor
+N-glycan_a-D-NeupNAc_33,N33,GT,Q8VIB3,,,minor
+N-glycan_a-D-NeupNAc_33,N33,GT,Q9Y274,,,minor
+N-glycan_b-D-Galp_8,N8,GT,P15535,,,
+N-glycan_b-D-Galp_8,N8,GT,P15291,,,
+N-glycan_b-D-Galp_8,N8,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_8,N8,GT,O60909,,,
+N-glycan_b-D-Galp_8,N8,GT,Q91YY2,,,
+N-glycan_b-D-Galp_8,N8,GT,O60512,,,
+N-glycan_a-D-NeupNAc_14,N14,GT,Q64685,,,major
+N-glycan_a-D-NeupNAc_14,N14,GT,P15907,,,major
+N-glycan_a-D-NeupNAc_14,N14,GT,Q76K27,,,minor
+N-glycan_a-D-NeupNAc_14,N14,GT,Q96JF0,,,minor
+N-glycan_b-D-GlcpNAc_9,N9,GT,Q8R4G6,,,major
+N-glycan_b-D-GlcpNAc_9,N9,GT,Q09328,,,major
+N-glycan_b-D-GlcpNAc_9,N9,GT,Q765H6,,,minor?
+N-glycan_b-D-GlcpNAc_9,N9,GT,Q3V5L5,,,minor?
+N-glycan_b-D-Galp_10,N10,GT,P15535,,,
+N-glycan_b-D-Galp_10,N10,GT,P15291,,,
+N-glycan_b-D-Galp_10,N10,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_10,N10,GT,O60909,,,
+N-glycan_b-D-Galp_10,N10,GT,Q91YY2,,,
+N-glycan_b-D-Galp_10,N10,GT,O60512,,,
+N-glycan_b-D-GlcpNAc_36,N36,GT,Q9Z222,,,major
+N-glycan_b-D-GlcpNAc_36,N36,GT,Q9NY97,,,major
+N-glycan_b-D-GlcpNAc_36,N36,GT,Q1RLK6,,,minor
+N-glycan_b-D-GlcpNAc_36,N36,GT,Q9C0J1,,,minor
+N-glycan_b-D-GlcpNAc_36,N36,GT,Q8R3I9,,,
+N-glycan_b-D-GlcpNAc_36,N36,GT,Q7Z7M8,,,
+N-glycan_b-D-GlcpNAc_59,N59,GT,Q9Z222,,,major
+N-glycan_b-D-GlcpNAc_59,N59,GT,Q9NY97,,,major
+N-glycan_b-D-GlcpNAc_59,N59,GT,Q1RLK6,,,minor
+N-glycan_b-D-GlcpNAc_59,N59,GT,Q9C0J1,,,minor
+N-glycan_b-D-GlcpNAc_59,N59,GT,Q8R3I9,,,
+N-glycan_b-D-GlcpNAc_59,N59,GT,Q7Z7M8,,,
+N-glycan_b-D-GlcpNAc_62,N62,GT,Q9Z222,,,major
+N-glycan_b-D-GlcpNAc_62,N62,GT,Q9NY97,,,major
+N-glycan_b-D-GlcpNAc_62,N62,GT,Q1RLK6,,,minor
+N-glycan_b-D-GlcpNAc_62,N62,GT,Q9C0J1,,,minor
+N-glycan_b-D-GlcpNAc_62,N62,GT,Q8R3I9,,,
+N-glycan_b-D-GlcpNAc_62,N62,GT,Q7Z7M8,,,
+N-glycan_b-D-GlcpNAc_75,N75,GT,Q9Z222,,,major
+N-glycan_b-D-GlcpNAc_75,N75,GT,Q9NY97,,,major
+N-glycan_b-D-GlcpNAc_75,N75,GT,Q1RLK6,,,minor
+N-glycan_b-D-GlcpNAc_75,N75,GT,Q9C0J1,,,minor
+N-glycan_b-D-GlcpNAc_75,N75,GT,Q8R3I9,,,
+N-glycan_b-D-GlcpNAc_75,N75,GT,Q7Z7M8,,,
+N-glycan_b-D-Galp_37,N37,GT,P15535,,,
+N-glycan_b-D-Galp_37,N37,GT,P15291,,,
+N-glycan_b-D-Galp_37,N37,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_37,N37,GT,O60909,,,
+N-glycan_b-D-Galp_37,N37,GT,Q91YY2,,,
+N-glycan_b-D-Galp_37,N37,GT,O60512,,,
+N-glycan_b-D-Galp_60,N60,GT,P15535,,,
+N-glycan_b-D-Galp_60,N60,GT,P15291,,,
+N-glycan_b-D-Galp_60,N60,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_60,N60,GT,O60909,,,
+N-glycan_b-D-Galp_60,N60,GT,Q91YY2,,,
+N-glycan_b-D-Galp_60,N60,GT,O60512,,,
+N-glycan_b-D-Galp_80,N80,GT,P15535,,,
+N-glycan_b-D-Galp_80,N80,GT,P15291,,,
+N-glycan_b-D-Galp_80,N80,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_80,N80,GT,O60909,,,
+N-glycan_b-D-Galp_80,N80,GT,Q91YY2,,,
+N-glycan_b-D-Galp_80,N80,GT,O60512,,,
+N-glycan_a-D-NeupNAc_17,N17,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_17,N17,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_17,N17,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_17,N17,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_17,N17,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_17,N17,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNAc_34,N34,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_34,N34,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_34,N34,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_34,N34,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_34,N34,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_34,N34,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNAc_38,N38,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_38,N38,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_38,N38,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_38,N38,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_38,N38,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_38,N38,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNAc_16,N16,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_16,N16,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_16,N16,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_16,N16,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_16,N16,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_16,N16,GT,Q9Y274,,,type 2
+N-glycan_a-L-Fucp_18,N18,GT,P21217,,,Not in mouse
+N-glycan_a-L-Fucp_18,N18,GT,Q11127,,,
+N-glycan_a-L-Fucp_18,N18,GT,P22083,,,
+N-glycan_a-L-Fucp_18,N18,GT,Q11128,,,Not in mouse
+N-glycan_a-L-Fucp_18,N18,GT,P51993,,,Not in mouse
+N-glycan_a-L-Fucp_18,N18,GT,O88819,,,
+N-glycan_a-L-Fucp_18,N18,GT,Q9Y231,,,
+N-glycan_a-L-Fucp_41,N41,GT,Q5F2L2,,,??? May GT to GlcNAc with out attached B4Gal residue
+N-glycan_a-L-Fucp_41,N41,GT,Q6P4F1,,,??? May GT to GlcNAc with out attached B4Gal residue
+N-glycan_a-L-Fucp_41,N41,GT,Q8BHC9,,,???
+N-glycan_a-L-Fucp_41,N41,GT,Q495W5,,,???
+N-glycan_a-D-NeupNAc_35,N35,GT,Q64685,,,Prefers a3 manose arm over a6
+N-glycan_a-D-NeupNAc_35,N35,GT,P15907,,,Prefers a3 manose arm over a6
+N-glycan_a-D-NeupNAc_35,N35,GT,Q76K27,,,
+N-glycan_a-D-NeupNAc_35,N35,GT,Q96JF0,,,
+N-glycan_b-D-GlcpNAc_11,N11,GT,Q10470,,,
+N-glycan_b-D-GlcpNAc_11,N11,GT,Q09327,,,
+N-glycan_a-D-NeupNGc_47,N47,GT,Q64685,,,Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) - unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources
+N-glycan_a-D-NeupNGc_47,N47,GT,P15907,,,Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) - unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources
+N-glycan_a-D-NeupNGc_47,N47,GT,Q76K27,,,
+N-glycan_a-D-NeupNGc_47,N47,GT,Q96JF0,,,
+N-glycan_a-D-NeupNGc_48,N48,GT,Q64685,,,Prefers a3 mannose arm over a6-  mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources
+N-glycan_a-D-NeupNGc_48,N48,GT,P15907,,,Prefers a3 mannose arm over a6-  mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources
+N-glycan_a-D-NeupNGc_48,N48,GT,Q76K27,,,
+N-glycan_a-D-NeupNGc_48,N48,GT,Q96JF0,,,
+N-glycan_a-D-NeupNGc_49,N49,GT,Q64685,,,Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources
+N-glycan_a-D-NeupNGc_49,N49,GT,P15907,,,Prefers a3 mannose arm over a6 - mouse enzyme utilized CMP-NeuGc 7x faster and CMP-NeuAc in vitro (Hamamoto et al 1995) unknown preference by human enzyme - low amt of NeuGc in Human glycans as it can't be synthesized by comes from external sources
+N-glycan_a-D-NeupNGc_49,N49,GT,Q76K27,,,
+N-glycan_a-D-NeupNGc_49,N49,GT,Q96JF0,,,
+N-glycan_a-D-Galp_50,N50,GT,P38649,N54,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N50 but missing a-Fuc N54 are potentially catabolic products
+N-glycan_a-D-Galp_50,N50,GT,P16442,N54,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N50 but missing a-Fuc N54 are potentially catabolic products
+N-glycan_b-D-GlcpNAc_31,N31,GT,Q9D306,,,putative acivity
+N-glycan_b-D-GlcpNAc_31,N31,GT,Q9UBM8,,,putative acivity
+N-glycan_a-D-Galp_39,N39,GT,P38649,N71,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N39 but missing a-Fuc N71 are potentially catabolic products
+N-glycan_a-D-Galp_39,N39,GT,P16442,N71,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N39 but missing a-Fuc N71 are potentially catabolic products
+N-glycan_a-D-Galp_51,N51,GT,P38649,N152,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N51 but missing a-Fuc N152 are potentially catabolic products
+N-glycan_a-D-Galp_51,N51,GT,P16442,N152,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N51 but missing a-Fuc N152 are potentially catabolic products
+N-glycan_b-D-Galp_32,N32,GT,P15535,,,These enzymes will GT to B1-4 linked GlcNAc on the a3 arm mannose but b4 GlcNAc on the a6 arm (#31) is putative
+N-glycan_b-D-Galp_32,N32,GT,P15291,,,These enzymes will GT to B1-4 linked GlcNAc on the a3 arm mannose but b4 GlcNAc on the a6 arm (#31) is putative
+N-glycan_b-D-Galp_32,N32,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_32,N32,GT,O60909,,,
+N-glycan_b-D-Galp_32,N32,GT,Q91YY2,,,
+N-glycan_b-D-Galp_32,N32,GT,O60512,,,
+N-glycan_a-L-Fucp_42,N42,GT,O88819,,,Prefers Non-SO4 & Non-SA - little to no act on 3O SO4 or SA
+N-glycan_a-L-Fucp_42,N42,GT,Q9Y231,,,Prefers Non-SO4 & Non-SA - little to no act on 3O SO4 or SA
+N-glycan_a-L-Fucp_42,N42,GT,Q11127,,,Equal preference` for 3O sulf and Non-SO4 and Non-SA Type 1 and 2 - Little act on Sial
+N-glycan_a-L-Fucp_42,N42,GT,P22083,,,Equal preference` for 3O sulf and Non-SO4 and Non-SA Type 1 and 2 - Little act on Sial
+N-glycan_a-L-Fucp_42,N42,GT,P21217,,,Pref 3O sulf Type I and 2> Non-SO4 & Non-SA> Sial Type 1 & 2
+N-glycan_a-L-Fucp_42,N42,GT,Q11128,,,Pref 3O sulf Type I and 2> Sial Type 1&2>Non-SO4 & Non-SA
+N-glycan_a-L-Fucp_42,N42,GT,P51993,,,Pref 3O sulf Type I and 2> Sial Type 1&2>Non-SO4 & Non-SA
+N-glycan_a-L-Fucp_43,N43,GT,O88819,,,Prefers Non-SO4 & Non-SA - little to no act on 3O SO4 or SA
+N-glycan_a-L-Fucp_43,N43,GT,Q9Y231,,,Prefers Non-SO4 & Non-SA - little to no act on 3O SO4 or SA
+N-glycan_a-L-Fucp_43,N43,GT,Q11127,,,Equal preference for 3O sulf and Non-SO4 and Non-SA Type 1 and 2 - Little act on Sial
+N-glycan_a-L-Fucp_43,N43,GT,P22083,,,Equal preference for 3O sulf and Non-SO4 and Non-SA Type 1 and 2 - Little act on Sial
+N-glycan_a-L-Fucp_43,N43,GT,P21217,,,Pref 3O sulf Type I and 2> Non-SO4 & Non-SA> Sial Type 1 & 2
+N-glycan_a-L-Fucp_43,N43,GT,Q11128,,,Pref 3O sulf Type I and 2> Sial Type 1&2>Non-SO4 & Non-SA
+N-glycan_a-L-Fucp_43,N43,GT,P51993,,,Pref 3O sulf Type I and 2> Sial Type 1&2>Non-SO4 & Non-SA
+N-glycan_b-D-Galp_44,N44,GT,O54905,,,
+N-glycan_b-D-Galp_44,N44,GT,O43825,,,
+N-glycan_b-D-Galp_44,N44,GT,Q9JI67,,,
+N-glycan_b-D-Galp_44,N44,GT,Q9Y2C3,,,
+N-glycan_a-D-NeupNAc_46,N46,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_46,N46,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_46,N46,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_46,N46,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_46,N46,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_46,N46,GT,Q9Y274,,,type 2
+N-glycan_a-D-Galp_52,N52,GT,P38649,N53,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N52 but missing a-Fuc N53 are potentially catabolic products
+N-glycan_a-D-Galp_52,N52,GT,P16442,N53,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N52 but missing a-Fuc N53 are potentially catabolic products
+N-glycan_a-L-Fucp_53,N53,GT,O09160,,,
+N-glycan_a-L-Fucp_53,N53,GT,P19526,,,
+N-glycan_a-L-Fucp_53,N53,GT,Q9JL27,,,
+N-glycan_a-L-Fucp_53,N53,GT,Q10981,,,
+N-glycan_a-L-Fucp_53,N53,GT,P97353,,,not in human
+N-glycan_a-L-Fucp_54,N54,GT,O09160,,,
+N-glycan_a-L-Fucp_54,N54,GT,P19526,,,
+N-glycan_a-L-Fucp_54,N54,GT,Q9JL27,,,
+N-glycan_a-L-Fucp_54,N54,GT,Q10981,,,
+N-glycan_a-L-Fucp_54,N54,GT,P97353,,,not in human
+N-glycan_a-D-NeupNGc_55,N55,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNGc_55,N55,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNGc_55,N55,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNGc_55,N55,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNGc_55,N55,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNGc_55,N55,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNGc_56,N56,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNGc_56,N56,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNGc_56,N56,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNGc_56,N56,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNGc_56,N56,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNGc_56,N56,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNGc_57,N57,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNGc_57,N57,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNGc_57,N57,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNGc_57,N57,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNGc_57,N57,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNGc_57,N57,GT,Q9Y274,,,type 2
+N-glycan_b-D-Galp_63,N63,GT,P15535,,,
+N-glycan_b-D-Galp_63,N63,GT,P15291,,,
+N-glycan_b-D-Galp_63,N63,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_63,N63,GT,O60909,,,
+N-glycan_b-D-Galp_63,N63,GT,Q91YY2,,,
+N-glycan_b-D-Galp_63,N63,GT,O60512,,,
+N-glycan_a-D-NeupNAc_58,N58,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_58,N58,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_58,N58,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_58,N58,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_58,N58,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_58,N58,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNAc_61,N61,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_61,N61,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_61,N61,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_61,N61,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_61,N61,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_61,N61,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNAc_64,N64,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_64,N64,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_64,N64,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_64,N64,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_64,N64,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_64,N64,GT,Q9Y274,,,type 2
+N-glycan_b-D-GalpNAc_29,N29,GT,A0A1D5RMF7,,,
+N-glycan_b-D-GalpNAc_29,N29,GT,Q6L9W6,,,
+N-glycan_b-D-GalpNAc_29,N29,GT,Q766D5,,,
+N-glycan_b-D-GalpNAc_29,N29,GT,Q76KP1,,,
+N-glycan_b-D-GalpNAc_30,N30,GT,A0A1D5RMF7,,,
+N-glycan_b-D-GalpNAc_30,N30,GT,Q6L9W6,,,
+N-glycan_b-D-GalpNAc_30,N30,GT,Q766D5,,,
+N-glycan_b-D-GalpNAc_30,N30,GT,Q76KP1,,,
+N-glycan_a-D-NeupNAc_73,N73,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_73,N73,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_73,N73,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_73,N73,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_73,N73,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_73,N73,GT,Q9Y274,,,type 2
+N-glycan_a-D-NeupNAc_101,N101,GT,P97325,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_101,N101,GT,Q11203,,,minor (type 1> type2)
+N-glycan_a-D-NeupNAc_101,N101,GT,Q91Y74,,,type 2> type1
+N-glycan_a-D-NeupNAc_101,N101,GT,Q11206,,,type 2> type1
+N-glycan_a-D-NeupNAc_101,N101,GT,Q8VIB3,,,type 2
+N-glycan_a-D-NeupNAc_101,N101,GT,Q9Y274,,,type 2
+N-glycan_b-D-Galp_86,N86,GT,O54905,,,
+N-glycan_b-D-Galp_86,N86,GT,O43825,,,
+N-glycan_b-D-Galp_86,N86,GT,Q9JI67,,,
+N-glycan_b-D-Galp_86,N86,GT,Q9Y2C3,,,
+N-glycan_core_D-GlcNAc_A,NA,GT,P42867,,,
+N-glycan_core_D-GlcNAc_A,NA,GT,Q9H3H5,,,
+N-glycan_a-L-Fucp_71,N71,GT,O09160,,,
+N-glycan_a-L-Fucp_71,N71,GT,P19526,,,
+N-glycan_a-L-Fucp_71,N71,GT,Q9JL27,,,
+N-glycan_a-L-Fucp_71,N71,GT,Q10981,,,
+N-glycan_a-L-Fucp_71,N71,GT,P97353,,,not in human
+N-glycan_b-D-GlcpNAc_65,N65,GT,Q9Z222,,,major
+N-glycan_b-D-GlcpNAc_65,N65,GT,Q9NY97,,,major
+N-glycan_b-D-GlcpNAc_65,N65,GT,Q1RLK6,,,minor
+N-glycan_b-D-GlcpNAc_65,N65,GT,Q9C0J1,,,minor
+N-glycan_b-D-GlcpNAc_65,N65,GT,Q8R3I9,,,
+N-glycan_b-D-GlcpNAc_65,N65,GT,Q7Z7M8,,,
+N-glycan_b-D-Galp_66,N66,GT,P15535,,,
+N-glycan_b-D-Galp_66,N66,GT,P15291,,,
+N-glycan_b-D-Galp_66,N66,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_66,N66,GT,O60909,,,
+N-glycan_b-D-Galp_66,N66,GT,Q91YY2,,,
+N-glycan_b-D-Galp_66,N66,GT,O60512,,,
+N-glycan_b-D-GlcpNAc_67,N67,GT,Q9Z222,,,major
+N-glycan_b-D-GlcpNAc_67,N67,GT,Q9NY97,,,major
+N-glycan_b-D-GlcpNAc_67,N67,GT,Q1RLK6,,,minor
+N-glycan_b-D-GlcpNAc_67,N67,GT,Q9C0J1,,,minor
+N-glycan_b-D-GlcpNAc_67,N67,GT,Q8R3I9,,,
+N-glycan_b-D-GlcpNAc_67,N67,GT,Q7Z7M8,,,
+N-glycan_b-D-Galp_68,N68,GT,P15535,,,
+N-glycan_b-D-Galp_68,N68,GT,P15291,,,
+N-glycan_b-D-Galp_68,N68,GT,Q9Z2Y2,,,
+N-glycan_b-D-Galp_68,N68,GT,O60909,,,
+N-glycan_b-D-Galp_68,N68,GT,Q91YY2,,,
+N-glycan_b-D-Galp_68,N68,GT,O60512,,,
+N-glycan_a-D-NeupNAc_69,N69,GT,Q64685,,,major
+N-glycan_a-D-NeupNAc_69,N69,GT,P15907,,,major
+N-glycan_a-D-NeupNAc_69,N69,GT,Q76K27,,,minor
+N-glycan_a-D-NeupNAc_69,N69,GT,Q96JF0,,,minor
+N-glycan_a-D-NeupNAc_70,N70,GT,Q64685,,,major
+N-glycan_a-D-NeupNAc_70,N70,GT,P15907,,,major
+N-glycan_a-D-NeupNAc_70,N70,GT,Q76K27,,,minor
+N-glycan_a-D-NeupNAc_70,N70,GT,Q96JF0,,,minor
+N-glycan_b-D-GalpNAc_72,N72,GT,A0A1D5RMF7,,,
+N-glycan_b-D-GalpNAc_72,N72,GT,Q6L9W6,,,
+N-glycan_b-D-GalpNAc_72,N72,GT,Q766D5,,,
+N-glycan_b-D-GalpNAc_72,N72,GT,Q76KP1,,,
+N-glycan_b-D-GalpNAc_74,N74,GT,A0A1D5RMF7,,,
+N-glycan_b-D-GalpNAc_74,N74,GT,Q6L9W6,,,
+N-glycan_b-D-GalpNAc_74,N74,GT,Q766D5,,,
+N-glycan_b-D-GalpNAc_74,N74,GT,Q76KP1,,,
