@@ -1120,7 +1120,7 @@ function getSubstituents(accession) {
 			var sugarName = residues[j].name;
 			if (sugarName.includes("-")) {
 				if (v > 4) console.log(i + "," + j + ": found substituent " + sugarName +
-					 " in " + key );
+					 " in " + accession );
 				var sugarParts = sugarName.split("-");
 				var id = residues[j].residue_id;
 				thisSubstituent[id] = sugarParts[1];
