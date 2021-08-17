@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>JSON to SVG Test</title>
+	
+<script src="js/json2svg_v1.2.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script>
+// temporarily hardcode a bit of data
+theURL = "api/glycan.php";
+var data = new Array();
+var trees = new Array();
+var defaultCanvasColor = "whitesmoke";
+var highlightColor = "#EAEFF3";
+
+function initialize() {
+	// fetch json data using jquery
+	$("#generate_svg").click(function() {
+		accession = $("#accession").val();
+		fetchNprocess(theURL, "json", accession, data);
+	});
+		
+	$("#list_nodes").click(function() {
+		var  nodeSet = $("[id^=R-]");
+		var setStr = "Nodes in all drawn structures:";
+		nodeSet.each(function( index ) {
+			setStr += "<br>" + index + ": " + $( this).attr('id');
+		});
+		// obviously, one could do many different things here ...
+		$("#infoDiv").html(setStr);
+	});
+}
+
+	
+function parseID(id) {
+	if (v > 5) console.log("  ## Parsing " + id);
+	var parts = new Array();
+	var dashSplit = id.split("-");
+	parts["type"] = dashSplit[0];
+	var colonSplit = dashSplit[1].split(":");
+	parts["accession"] = colonSplit[0];
+	parts["nodeID"] = colonSplit[1];
+	return(parts);
+}  // end of function parseID()
+	
+
+function resetAllBackground(backgroundColor) {
+	// globally select elements with class ending with "_mask" 
+	nodeSet = $("[class$=_mask]").children();
+	nodeSet.css('stroke', backgroundColor);
+	nodeSet.css('fill', backgroundColor);
+} // end of function resetAllBackground()
+	
+	
+function getClickableSet(acc) {
+	//  initially, globally select all clickable elements selected by class 
+	//     of enclosing <g> - the class names end with '_node' or '_edge'
+	//    children of <g> elements with class ending in '_node'
+	var  clickableSet = $('[class$=_node]').children();
+	//    children of <g> elements with class ending in '_edge'
+	var  edgeSet = $('[class$=_edge]').children();
+	var canvasSet = $("[id^=C-]").children();
+
+	// if accession was passed, select subsets using semantic id
+	if (typeof acc !== 'undefined') {
+		clickableSet = $('.' + acc + '_node').children();
+		edgeSet = $('.' + acc + '_edge').children();
+		//var idStr = "C-" +  acc;
+		canvasSet = $("[id^=C-" + acc + "]");
+		if (v > 8) console.log(" acc is defined! " + acc +
+				"\ncanvasSet: " + canvasSet.toString());
+	} else {
+		if (v > 8) console.log(" acc is undefined! " +
+				"\ncanvasSet: " + canvasSet.toString());
+	}
+	if (v > 8) console.log(canvasSet + ": detected " + canvasSet.length +
+			" canvases for structure " + acc);
+	$.merge(clickableSet, edgeSet);
+	$.merge(clickableSet, canvasSet);
+	if (v > 8) console.log("clickableSet.length " +
+			clickableSet.length + " - last element: " + 
+			clickableSet[clickableSet.length-1].toString());
+	return(clickableSet);
+} // end of getClickableSet()
+	
+	
+function prepare_clicks(acc) {
+	// !!! DO THIS ONLY ONCE FOR EACH ENCODING THAT WAS GENERATED
+	//  passing acc to getClickableSet() restricts set to elements
+	//     of a single tree associated with that accession
+	getClickableSet(acc).each(function( index ) {
+		if (v > 5) console.log("  ## Setting click event for element, id: " +
+				$(this).attr('id'));
+		var idParts = parseID($(this).attr('id'));
+		var acc = idParts['accession'];
+
+		
+		$(this).click(function() {
+			// reset all svg elements to their default state
+			resetSVG();
+
+			var thisCanvas = null;
+			if (idParts['type'] == "C") {
+				// get canvas of image in clicked tree
+				thisCanvas = $(this);
+			} else {
+				thisCanvas = $("[id^=C-" + acc + "]");
+				// grey out all nodes and edges in the clicked tree
+				greyOut(acc); 			
+			}
+			// hightlight thisCanvas
+			thisCanvas.css('fill', highlightColor);
+						
+			// reset clicked element's opacity to 1.0
+			$(this).css('opacity', 1.0);
+			// obviously, one could do many different things here ...
+			$("#infoDiv").html("You clicked an element with id " + $( this ).attr('id'));
+		});
+	});
+}
+
+	
+	
+function greyOut(acc) {
+	if (v > 8) console.log("  greying out elements of " + acc);
+	var nodeSet = $('.' + acc + '_node').children();
+	nodeSet.css('opacity', 0.3);
+	var edgeSet = $('.' + acc + '_edge').children();
+	edgeSet.css('opacity', 0.3);
+}
+	
+	
+function resetSVG() {
+	// set all svg objects to their default values
+	if (v > 8) console.log("Setting Defaults");
+	resetAllBackground(defaultCanvasColor);
+	getClickableSet().each(function( index ) {
+		$(this).css('opacity', 1.0);
+	});
+} // end of function resetSVG()
+	
+	
+	
+/*  The code below retrieves JSON structure encodings from the server
+	and translates them to javascript objects that can be consumed by
+	json2svg
+*/
+	
+// plantTree() returns an data object suitable for processing by json2svg
+// THIS FUNCTION SHOULD BE REWRITTEN in the context of the json file 
+//   that is initially consumed
+//  treeData is a javascript data object produced when JSON.parse()
+// 	is applied to the input JSON data
+function plantTree(treeData) {
+	//  extract information and populate the object 'tree'
+	// tree is the data object consumed by json2svg
+	var tree = new Array();
+	tree['accession'] = treeData.glytoucan_ac;
+	tree['nodes'] = new Array();
+	// treeData is original data from json file 
+	//   for this example, the nodes are called 'residues' in the original
+	var residues = treeData.residues; // residues is the local name of the array
+	for (var i=0; i < residues.length; i++) {
+		var node = new Array(); // this array will be an element of object 'tree'
+		var nameParts = residues[i].name.split("-");
+		node["node_id"] = residues[i].residue_id;
+		node["name"] = nameParts[0];
+		node["substituent"] = "";
+		if (nameParts.length > 1) { // the residue has a substituent
+			node["substituent"] = nameParts[1];
+		}
+		node["parent_id"] = residues[i].parent_id;
+		node["anomer"] = residues[i].anomer;
+		node["absolute"] = residues[i].absolute;
+		node["ring"] = residues[i].ring;
+		node["site"] = residues[i].site;
+		node['touched'] = false;
+		tree['nodes'].push(node);
+	}
+	return (tree);
+}
+	
+function fetchNprocess(theURL, type, accession, data) {
+	//console.clear();
+	if (v > 3) console.log("### Fetching data using URL: " + theURL +
+		  "\n type: " + type + "\n accession: " + accession + " ###");
+	$.get(theURL,
+	{
+		ac: accession,
+		type: type
+	},
+	function(result){
+		if (v > 5) {
+			console.log("@@ JSON data set[" +
+				(Object.keys(data).length) + "] @@\n" + result);
+		}
+		data[accession] = JSON.parse(result);
+		trees[accession] = plantTree(data[accession]);
+		// logTree is a json2svg debugging function
+		if (v > 5) console.log("Initial tree data for " + accession +
+				" parsed and passed to svg generator");
+		logTree(trees[accession]);
+		var svgStr1 = layout(trees[accession]); // modifies trees object
+		$('#svgDiv').append(svgStr1);
+		prepare_clicks(accession); // call only after svg is added to DOM
+	})			
+	.done(function() {
+		// alert( "yes, success" );
+	})
+	.fail(function() {
+		unavailable.push("JSON data for " + accession);
+		alert("File " + theURL + " not found");
+		dataAvailable = false;
+	})
+	.always(function() {
+		// alert( "finished" );
+	});
+	
+} // end of function fetchNprocess()
+	
+</script>
+
+<style>
+#infoDiv {
+	color: royalblue;
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body onLoad=initialize();>
+
+<center>
+<h1>Code-Generated SVG</h1>
+</center>
+
+<label for="accession">Accession: </label>
+<input type="text" id="accession" name="accession" value="G00026MO">
+
+<br>
+Click a node or one of these buttons:
+<ul>
+	<li><button id="generate_svg">Generate and append SVG for the accession</button></li>
+	<li><button id="list_nodes">List all nodes</button></li>
+</ul>
+	
+<div id='infoDiv'>Infomation goes here</div>
+
+<div id="svgDiv"><center><h3>SVG images</h3></center></div>
+
+</body>
+
+</html>
