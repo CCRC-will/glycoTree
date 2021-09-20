@@ -11,7 +11,7 @@
 */
 
 // constants
-var v = 1; // verbosity of console.log
+var v = 6; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic'};
 // data variables
