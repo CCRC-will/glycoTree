@@ -40,7 +40,7 @@ function initialize() {
 
 	
 function parseID(id) {
-	if (v > 5) console.log("  ## Parsing " + id);
+	if (v > 5) console.log("   # Parsing " + id);
 	var parts = new Array();
 	var dashSplit = id.split("-");
 	parts["type"] = dashSplit[0];
@@ -96,7 +96,7 @@ function prepare_clicks(acc) {
 	//  passing acc to getClickableSet() restricts set to elements
 	//     of a single tree associated with that accession
 	getClickableSet(acc).each(function( index ) {
-		if (v > 5) console.log("  ## Setting click event for element, id: " +
+		if (v > 5) console.log("   # Setting click event for element, id: " +
 				$(this).attr('id'));
 		var idParts = parseID($(this).attr('id'));
 		var acc = idParts['accession'];
@@ -106,9 +106,9 @@ function prepare_clicks(acc) {
 			// reset all svg elements to their default state
 			resetSVG();
 
+			// set thisCanvas to canvas of the clicked tree
 			var thisCanvas = null;
 			if (idParts['type'] == "C") {
-				// get canvas of image in clicked tree
 				thisCanvas = $(this);
 			} else {
 				thisCanvas = $("[id^=C-" + acc + "]");
@@ -242,7 +242,7 @@ function fetchNprocess(theURL, type, accession, data) {
 </center>
 
 <label for="accession">Accession: </label>
-<input type="text" id="accession" name="accession" value="G00026MO">
+<input type="text" id="accession" name="accession" value="G00012RZ">
 
 <br>
 Click a node or one of these buttons:

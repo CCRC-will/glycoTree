@@ -12,11 +12,11 @@
 */
 
 // constants
-var v = 1; // verbosity of console.log
+var v = 9; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic'};
 // data variables
-var acc = [];
+var acc = []; // an array of GlyTouCan accessions
 var svgEncoding = [];
 var data = [];
 var selectedData = [];
@@ -34,12 +34,99 @@ var probeEnd = "";
 var probeSubCount = "0";
 var pathStart = "none";
 var alternate = null;
-
+var trees = new Array();
 
 document.onkeydown = keySet;
 
+function highlight(localAcc, type, id) {
+	console.log("highlighting type " + type + 
+				  "; localAcc is " + localAcc +
+				  "; id is " + id);
+	resetSVG();
+	var b = $('#' + ifr).contents().find('body');
+
+	var c = "[id^=C" + localAcc + "]";
+	alert(c);
+	var thisCanvas = b.find(c);
+	alert("canvas is " + thisCanvas);
+	thisCanvas.css('fill', highlightColor);
+
+	// node.setAttribute('fill', highlightColor); 
+
+
+	if ( (type == "R") || (type == "L") || (type == "LI")) {
+		greyOut(localAcc);
+		// node.setAttribute('opacity', 1.0);
+	}
+} // end of function highlight()
+
+
+function resetSVG() {
+	// set all svg objects to their default values
+	if (v > 8) console.log("Setting Defaults");
+	resetAllBackground(defaultCanvasColor);
+	getClickableSet().each(function( index ) {
+		$(this).css('opacity', 1.0);
+	});
+} // end of function resetSVG()
+
+
+function greyOut(acc) {
+	if (v > 8) console.log("  greying out elements of " + acc);
+	var b = $('#' + ifr).contents().find('body');
+	var nodeSet = b.find('.' + acc + '_node').children();
+	nodeSet.css('opacity', 0.3);
+	var edgeSet = b.find('.' + acc + '_edge').children();
+	edgeSet.css('opacity', 0.3);
+}
+
+function getClickableSet(acc) {
+	//  initially, globally select all clickable elements 
+	//     selected by class of enclosing <g>
+	//		   - i.e., the class names end with '_node' or '_edge'
+	//    children of <g> elements with class ending in '_node'
+	//     that are in the body of ifr
+	var b = $('#' + ifr).contents().find('body');
+	var  clickableSet = b.find('[class$=_node]').children();
+	//    children of <g> elements with class ending in '_edge'
+	var  edgeSet = b.find('[class$=_edge]').children();
+	//    canvases
+	var canvasSet = b.find("[id^=C-]");
+
+	// if accession was passed, select subsets using semantic id
+	if (typeof acc !== 'undefined') {
+		clickableSet = b.find('.' + acc + '_node').children();
+		edgeSet = b.find('.' + acc + '_edge').children();
+		//var idStr = "C-" +  acc;
+		canvasSet = b.find("[id^=C-" + acc + "]");
+		if (v > 8) console.log(" acc is defined! " + acc +
+				"\ncanvasSet: " + canvasSet);
+	} else {
+		if (v > 8) console.log(" no accession passed to getClickableSet() " +
+				"\ncanvasSet: " + canvasSet);
+	}
+	if (v > 8) console.log(canvasSet + ": detected " +
+					canvasSet.length + " canvases for structure " + acc);
+	$.merge(clickableSet, edgeSet);
+	$.merge(clickableSet, canvasSet);
+	if (v > 8) console.log("clickableSet.length " +
+			clickableSet.length + " - last element: " + 
+			clickableSet[clickableSet.length-1].toString());
+	return(clickableSet);
+} // end of getClickableSet()
+
+function resetAllBackground(backgroundColor) {
+	// globally select elements in ifr with class ending with "_mask" 
+	var b = $('#' + ifr).contents().find('body');
+
+	nodeSet = b.find("[class$=_mask]").children();
+	nodeSet.css('stroke', backgroundColor);
+	nodeSet.css('fill', backgroundColor);
+} // end of function resetAllBackground()
+
+
 function keySet(e) {
-	// implement response to keystrokes
+	// implements response to keystrokes
 	var c = e.keyCode;
 	var lc = String.fromCharCode(c).toLowerCase();
 	if (/[0-9]/.test(lc) == true) { 
@@ -72,7 +159,7 @@ function showPathway() {
 
 
 function populateInput(p) {
-	if (v > 3) console.log("## Populating arrays for " + p + "##"); // vvv
+	if (v > 3) console.log("## Adding " + p + " to accession array ##");
 	acc.push(p);	
 }
 
@@ -110,27 +197,33 @@ function gNodeLog(gNode) {
 function enterNode() {
 	if (this.style) this.style.cursor = "pointer";
 	var id = this.getAttribute("id");
-	var parts = parseID(id);
-	var t = ', ' + nodeType[parts['type']] + ' ';
-	var rid = parts['resID'];
-	var txt = "<br>&nbsp; Click now to explore glycan ";
-	if (rid == 0) { // mouse over svg canvas
-		rid = '';
-		t = '';
+	if (id.match("^svg")) {
+		console.log("entered svg");
+	} else {
+		var parts = parseID(id);
+		var t = ', ' + nodeType[parts['type']] + ' ';
+		var rid = parts['resID'];
+		var txt = "<br>&nbsp; Click now to explore glycan ";
+		if (rid == 0) { // mouse over svg canvas
+			rid = '';
+			t = '';
+		}
+		txt +=  parts['accession'] + t + rid;
+		$('#'+hDiv).html(txt); 
+		if (v > 6) gNodeLog(this);
 	}
-	txt +=  parts['accession'] + t + rid;
-	$('#'+hDiv).html(txt); 
-	if (v > 6) gNodeLog(this);
-
 } // end of function enterNode() 
 	
 	
 function exitNode() { 
 	$('#'+hDiv).html("<br>Click a structure or residue");
 	var id = this.getAttribute("id");
-	var parts = parseID(id);
-	if (v > 5) console.log("exited node, overNode is " + overNode);
-
+	if (id.match("^svg")) {
+		console.log("exited svg");
+	} else {
+		var parts = parseID(id);
+		if (v > 5) console.log("exited node, overNode is " + overNode);
+	}
 } // end of function exitNode()
 	
 function dblclickNode() {
@@ -147,22 +240,24 @@ function dblclickNode() {
 
 
 function clickNode() {
-	// this function does not take any arguments - 'this' is the source of an event
+	// this function does not take any arguments
+	//   'this' is the source of an event
 	clickResponse(this);
 }
 
 function clickResponse(node) {
-	// this function takes a node as its argument - no 'this' reference
+	// this function takes a node as its argument - it has no 'this' reference
 	//   so it can be called without a click event
 	var id = node.getAttribute("id");
 	var parts = parseID(id);
 	var type = parts["type"];
-	var accession = parts["accession"];
-	var rd = data[accession].residues;
-	
-	highlight(accession, node, type);
+	var localAcc = parts["accession"];
+	var rd = data[localAcc].residues;
+	if (v > 5) console.log("clicked " + type + " in image of " + localAcc +
+			" (" + id + ")");
+	highlight(localAcc, type, id);
 	var resID = parts["resID"];
-	var txt = getInfoText(accession, resID);
+	var txt = getInfoText(localAcc, resID);
 	if (v > 5) console.log("##### Info Box content #####\n" + txt + "\n#####");
 	$("#"+iDiv).html(txt);
 	if ((resID != '0') && (resID.match(/S/) == null) ) { 
@@ -185,12 +280,6 @@ function clickResponse(node) {
 			processFiles();
 			var xxx = $("#"+iDiv).find(".gtd");
 			xxx.click()
-			// fakeClick(event, xxx);
-			// all of the following fail!!
-			//xxx.scrollIntoView();
-			//window.location.assign(xxx);
-			//xxx.goTo();
-			// $('#glycan_table_div').goTo();
 		});
 		// set up ALL enzymes table
 		var allEnzymes = getAllEnzymes(rd);
@@ -200,20 +289,6 @@ function clickResponse(node) {
 	}
 } // end of function clickNode()
 
-// this function to simulate click was completely stolen from stackoverflow
-//   this may not be necessary and will ot be used unless it's necessary
-function fakeClick(event, anchorObj) {
-  if (anchorObj.click) {
-    anchorObj.click()
-  } else if (document.createEvent) {
-    if(event.target !== anchorObj) {
-      var evt = document.createEvent("MouseEvents"); 
-      evt.initMouseEvent("click", true, true, window, 
-          0, 0, 0, 0, 0, false, false, false, false, 0, null); 
-      var allowDefault = anchorObj.dispatchEvent(evt);
-    }
-  }
-}
 
 function getAllEnzymes(residueArray) {
 	// generate an array of enzyme objects associated with residueArray
@@ -624,9 +699,10 @@ function addGlycan(accession) {
 	if (!acc.includes(accession)) {
 		// do not do any of the following unless the glycan is absent from array 'acc'
 		 // $("#progressDiv").css("visibility","visible");
-		if (v > 2) console.log("adding " + accession);	
 		populateInput(accession);
-		if (v > 2) console.log("accession list now has " + acc.length + " structures");
+		if (v > 2) {
+			console.log("  accession array now has " + acc.length + " structures");
+		}
 	}
 } // end of function addGlycan()
 
@@ -699,88 +775,11 @@ function htmlFormatName(residueData) {
 			return(cName);
 } // end or function htmlFormatName()
 
-
-function highlight(accession, clickedNode, type) {
-	// clickedNode is the <g> element whose child was clicked
 	
-	// revert all drawn elements to their original colors
-	var drawn = getDrawnElements("all");
-	recolorElements(drawn, "revert");
-	// remove css class "boxHighlight" from all drawn elements
-	drawn.removeClass(["boxHighlight"]);
-
-	// highlight the <rect> serving as the svg canvas that surrounds the clicked node
-	// var g holds the <g> element holding other <g> elements in the clicked svg image
-	// when node inside of g is clicked ...
-	var g = $(clickedNode).parentsUntil('svg');  // NOT INCLUSIVE OF 'svg'!!!! stops at <g>]
-	// clicked text annotation is  is NOT inside of g
-	//   must traverse all the way to <body> (not inclusive) then get <g> from ancestor <svg>
-	if (type == "A") {
-		var s = $(clickedNode).parentsUntil('body'); 
-		g = s.children();
-	}
-		
-	// the zeroth element of g is the <g> element holding other <g> elements
-	var g0 = g[0];
-	// WEIRD - must use mixed jquery and vanilla javascript 
-	//   jquery 'children()' returns an array of vanilla javascript elements, 
-	//      whose children are fetched by 'children'  (NO parentheses)
-	var c = $(g0).children()[0].children[0]; // the <rect> serving as canvas
-	// console.log("g0 is " + g0.nodeName + "    c is " + c);
-	
-	var cj = $(c); // convert to jquery object
-	cj.style = "";
-	cj.addClass("boxHighlight");
-	var thefill = $(cj).css('fill');
-	svgCanvasColor = thefill; // global scope - used by recolorElements
-	
-	// fade the contents of the svg canvas containing the clicked clickedNode
-	drawn = getDrawnElements(accession);
-	// if the svg canvas is clicked, do not fade its contents
-	if (type != "C") recolorElements(drawn, "fade");
-	// reset canvas style (overwritten by next line)
-	c.style = "";
-
-	// revert the clicked clickedNode to its original color(s)
-	// inside <svg> - must retrieve children of clickable <g> element 
-	//   (which has an id) as DOM object then convert to jquery object
-	//     also remove any DOM class attributes from these children
-	var drawnDOM = clickedNode.children; // DOM object
-	drawn = $(drawnDOM); // drawn -> jquery object
-	// reset fill and stroke of clicked object
-	recolorElements(drawn, "revert"); 
-	// if svg canvas is clicked, invoke class boxHighlight
-	if (type == "C") {
-		// !!! to effectuate css class, first remove style from the canvas !!!
-		drawn[0].style = "";
-		drawn.addClass("boxHighlight");
-	}
-}
-	
-	
-function fadeColor(cStr, bg, fp) {
-	// returns a String!!!
-	// bg is canvas background color (RGB)
-	// cStr is current color-style of object (e.g., fill="rgb(255,255,0))
-	var rgb = cStr.split(/[\\(\\)]/)[1]; // regex parentheses start/end
-	if (cStr.localeCompare("black") == 0) rgb = "0,0,0";
-	if (cStr.localeCompare("white") == 0) rgb = "255,255,255";
-	if (!cStr.includes(",")) rgb = "0,0,0";
-	var rgbC = rgb.split(",");
-	// reuse rgb variable
-	rgb = bg.split(/[\\(\\)]/)[1]; // regular expression
-	var rgbB = rgb.split(",");
-	var faded = ["255", "255", "255"];  // default white
-	for (var i = 0; i < 3; i++){
-		faded[i] = Math.round((fp * rgbB[i]) + ((1 - fp) * rgbC[i]));
-	}
-	var result = "rgb(" + faded.toString() + ")";
-	if (v > 5) console.log("      calculated color: " + result);
-	return(result);
-}  // end of function fade()
 	
 
 function parseID(id) {
+	if (v > 5) console.log("   parsing " + id);
 	var parts = new Array();
 	var dashSplit = id.split("-");
 	parts["type"] = dashSplit[0];
@@ -805,7 +804,7 @@ function setupFrames() {
 	for (var i = 0; i < s.length; i++) {
 		var w = 1.0 * s[i].getAttribute('width');
 		var h = 1.0 * s[i].getAttribute('height');
-		var accession = s[i].getAttribute('id').split('_')[0];
+		var accession = s[i].getAttribute('id').split('-')[1];
 		if (v > 4) console.log("  svg[" + i + "] height: " + h + "; width: " + w );
 		canvasH +=  40 + h;
 		canvasW = Math.max(canvasW, w + 120);
@@ -869,10 +868,10 @@ function annotateResidues() {
 	var s = b.find("svg"); // all <svg> elements in iframe body
 
 	for (var i = 0 ; i < s.length; i++) { // for each svg image
-		var accession = s[i].id.split("_")[0];
-		if (v > 3) console.log("##### annotating glycan " + accession + " #####");
+		var localAcc = s[i].id.split("_")[1];
+		if (v > 3) console.log("##### annotating glycan " + localAcc + " #####");
 
-		var ss = $(s[i]);//.removeClass(); // svg image to jquery object
+		var ss = $(s[i]); // svg image to jquery object
 		var g = ss.find('g[id]');  // <g> elements with 'id' attribute
 
 		g.each(function( index2 ) { // each descendant <g> element having 'id'
@@ -920,7 +919,7 @@ function annotateResidues() {
 						if (v > 4) console.log("         <polygon> at " + x + "," + y);
 						break;
 				}
-				var elemID = "A-" + accession + ":" + resID;
+				var elemID = "A-" + localAcc + ":" + resID;
 				var element = formTextElement(x, y, 'annotationShown', elemID, resID);
 				s[i].appendChild(element);
 			}
@@ -944,105 +943,7 @@ function formTextElement(x, y, c, id, t) {
 	te. appendChild(txt);
 	return(te);
 } // end of function formTextElement()
-
-
-// write function getGelements(accession) to get elements with semantic IDs, can then just set/unset
-//    css opacity property
-function getDrawnElements(accession) {
-	var b = $('#' + ifr).contents().find('body');
-	var select = "#" + accession + "_svg";
-	if (accession.localeCompare("all") == 0) select = "svg";
-	var s = b.find(select);
-
-	// get the  drawing-element great- grandchildren of the image
-	// child is <g>; grandchildren are also <g>; great-grandchildren are <circle>, <rect> etc
-	var g = s.find('g');
-	var drawnElements = g.children().not('g');
-	if (v > 5) {
-		console.log("Retrieved " + s.length + " svg image(s) selected as " + select);
-		console.log("  " + g.length + " child <g> elements");
-		console.log("    " + drawnElements.length + " child drawn elements");
-	}
-	return(drawnElements);
-}
-	
-	
-function recolorElements(drawn, mode) {
-	// mode 'revert' reverts back to original colors; 'fade' fades colors
-	// the following two variables have global scope - these should be changed globally
-	//   svgCanvasColor is set dynamically, e.g., by fetching the fill color of a canvas
-	var fp = fadePercent;
-	var bg = svgCanvasColor; 
-	if (v > 2) console.log("### Recoloring " + drawn.length + " Element(s) ###");
-	drawn.each(function( index ) {
-		if (v > 4) {
-			// could get parent <g> node id and display it as well, but ...
-			//   var id = this.parent().attr('id');
-			console.log( index + ": <" + this.nodeName + "> recolor mode " + mode);
-		}
-		// change fill of element
 		
-		if (this.hasAttribute("origFill")) {
-			var fill = this.getAttribute("origFill");
-			// change fill only if it has an actual original value
-			if (fill.localeCompare("none") != 0) {
-				if (mode.localeCompare("revert") == 0) {
-					this.style.fill = fill;
-				} else {
-					var faded = fadeColor(fill, bg, fp);
-					this.style.fill = faded;
-				}
-				if (v > 5) console.log("      fill changed to " + this.style.fill);
-			} 
-		}
-		
-	
-		// change stroke of element
-		if (this.hasAttribute("origStroke")) {
-		// var stroke = window.getComputedStyle(this, null).getPropertyValue("stroke");
-			var stroke = this.getAttribute("origStroke");
-			if ( (stroke != null) && (stroke.localeCompare("none") != 0) ) {
-				if (mode.localeCompare("revert") == 0) {
-					this.style.stroke = stroke;
-				} else {
-					faded = fadeColor(stroke, bg, fp);
-					this.style.stroke = faded;
-				}
-				if (v > 5) console.log("      stroke changed to " + this.style.stroke);
-			}
-		}
-		
-	});
-}  // end of function recolorElements()
-	
-	
-function saveColors() {
-	// saves original 'fill' and 'stroke' values of svg <elements>
-	if (v > 2) {
-		console.log("##### Saving SVG Colors #####");
-	}
-	var drawn = getDrawnElements("all"); 
-	var fill = "";
-	var stroke = "";
-	for (var j = 0; j < drawn.length; j++) {
-		fill = drawn[j].style.fill;
-		stroke = drawn[j].style.stroke;
-		// elements drawn with no specified stroke use black stroke
-		if (stroke.localeCompare("") == 0) stroke = "black"; 
-		
-		// do NOT reset origiFill and origStroke to CURRENT values
-		if (drawn[j].hasAttribute("origFill") == false)
-			drawn[j].setAttribute("origFill", fill);
-		if (drawn[j].hasAttribute("origStroke") == false)
-			drawn[j].setAttribute("origStroke", stroke);
-		if (v > 4) {
-			console.log("  " + j + ": <" + drawn[j].nodeName +
-				"> fill: " + drawn[j].getAttribute('origFill') +
-				";  stroke: " + drawn[j].getAttribute('origStroke'));
-		}
-	}
-} // end of function saveColors()
-
 
 function addSVGevents() {
 	// adds event listeners to svg objects and saves their original 'fill' and 'stroke' values
@@ -1051,17 +952,19 @@ function addSVGevents() {
 	}
 
 	var b = $('#' + ifr).contents().find('body');
-	var g = b.find('g[id], text[id]');
-
+	// select all <g> elements in b with an id attribute
+	var g = b.find("g[id]");
+	var elStr = " $$$ found " + g.length + " clickable SVG elements: $$$\n";
 	for (var i = 0; i < g.length; i++) {
-
-		// USE VANILLA JAVASCRIPT for attributes
+		// USE VANILLA JAVASCRIPT for attributes (.attr fails - why?)
+		elStr += g[i].getAttribute("id") + "  ";
 		// add event listeners for objects that have an id
 		g[i].addEventListener("mouseout", exitNode);
 		g[i].addEventListener("mouseover", enterNode);
 		g[i].addEventListener("click", clickNode);
 		g[i].addEventListener("dblclick", dblclickNode);
 	}
+	if (v > 6) console.log(elStr);
 
 } // end of function addSVGevents()
 
@@ -1172,42 +1075,50 @@ function setupCSSiframe(ifrID, cssSrc) {
 } // end of function setupCSSiframe()
 		
 	
-function fetchData(theURL, type, accession, dest) {
-	if (v > 3) console.log("About to fetch data for URL: " + theURL + "; type: " +
-		   type + "; accession: " + accession + "; destination length: " +
-			   dest.length);
-	// converted to jquery.get()
+function fetchConfiguration(theURL) {
+	$.get(theURL, function(result){
+		if (v > 5) {
+			console.log("  fetched sugar configuration data from " +
+							theURL + ":\n  " + result);
+		}
+		if (theURL.includes(".json")) {
+			// jquery automatically parses files with extension '.json'
+			conf = result;
+		} else {
+			// JSON.parse is not automatically invoked
+			conf = JSON.parse(result);
+		}
+	});
+	
+} // end of function fetchConfiguration()
+
+
+function fetchGlycanData(theURL, type, accession) {
+	// dest is an array that stores parsed json data
 	$.get(theURL,
 	{
 		ac: accession,
 		type: type
 	},
 	function(result){
-		if (v > 3) console.log("## Length of result: " + result.length + 
-		   " ##");
+		if (v > 5) {
+			console.log("  for " + accession + ", " + theURL + 
+				" returned this data:\n  " + result.toString());
+		}
+
 		if (type === 'json') {
-			dest[accession] = JSON.parse(result);
-		} else {
-			dest[accession] = result;
+			// 'data' is a global Object containing glycan data
+			data[accession] = JSON.parse(result);
+			generateSVG(accession);
 		}
 	})			
-	.done(function() {
-		// alert( "yes, success" );
-	})
 	.fail(function() {
-		if (type === 'json') {
-			unavailable.push("JSON data for " + accession);
-		} else {
-			unavailable.push("SVG Encoding for " + accession);
-		}
-		if (v > 0) console.log("File " + theURL + " not found" + dest);
+		unavailable.push("JSON data for " + accession);
+		if (v > 0) console.log("File " + theURL + " not found");
 		dataAvailable = false;
-	})
-	.always(function() {
-		// alert( "finished" );
 	});
 	
-} // end of function fetchData()
+} // end of function fetchGlycanData()
 
 
 function simXOR(x, y) {
@@ -1336,7 +1247,6 @@ function displayGlycans() {
 		fd.write(htmlEncoding);
 		var b = $('#' + ifr).contents().find('body');
 		var s = b.find("svg"); // all <svg> elements in iframe body
-		// s.css("opacity", "0.6");
 		s.addClass("zoomer");
 }
 
@@ -1360,7 +1270,6 @@ function processFiles() {
 		// fd.close();
 		// set up graphics and data
 		setupFrames();  // calculate required <element> sizes and locations
-		saveColors(); // saves original colors in svg <elements>
 		addSVGevents();
 		setupCSSiframe(ifr, iframeCSS);
 		if (v > 2) console.log("##### Finished Setup #####");
@@ -1373,11 +1282,19 @@ function processFiles() {
 }
 
 
+function generateSVG(ac) {
+	trees[ac] = plantTree(data[ac]);
+	accession = ac;
+	svgEncoding[ac] = layout(trees[ac]); // modifies trees object
+	// alert(ac + "\n" + svgEncoding[ac])
+} // end of function generateSVG()
+	
 function getFiles(i) {
-	console.log("getFiles index: " + i + "; accession: " + acc[i]);
-	// fetchData arguments are: (URL, type, accession, destination_array)
-	fetchData(apiPath, 'svg', acc[i], svgEncoding);
-	fetchData(apiPath, 'json', acc[i], data);
+	console.log("##  getting glycan data file - index: " + i +
+					"; accession: " + acc[i] + " ##");
+	// fetchGlycanData arguments are: (URL, type, accession)
+	fetchGlycanData(glycanPath, 'json', acc[i]);
+	// svg strings are generated from glycan data, and are not fetched
 } // end of function getFiles()
 
 
@@ -1391,23 +1308,27 @@ function countElements(object) {
 
 
 function dataReady() {
+	// returns true iff:
+	//    the number of accessions in the 'data' object is > 0
+	//    and equals the number of accesions in the 'acc' array
 	var n1 = acc.length;
-	var n2 = countElements(svgEncoding);
 	var n3 = countElements(data);
-	var ready = ((n1 > 0) && (n2 === n1) && (n3 === n2))
-	return(ready);
+	return((n1 > 0) && (n3 === n1));
 } // end of function dataReady()
 
 
 function wait2add() {
 	if (dataReady() == false) {
-		if (v > 2) console.log("  ready is " + dataReady() + " - waiting to add accessions");
+		if (v > 3) console.log("  'reference glycan data loaded' is " +
+				  dataReady() + " - waiting to add related accessions");
 		if (dataAvailable) {
 			window.setTimeout(wait2add, 200); 
 		} else {
 			terminate("Reference Glycan");
 		}
     } else {
+		if (v > 2) console.log("  'reference glycan data loaded' is " +
+							  dataReady() + " - adding accessions");
 		getRelatedAccessions();
 		if (allDataRequested)
 			for (i = 1; i < acc.length; i++) {
@@ -1419,22 +1340,67 @@ function wait2add() {
 			processFiles();
 		}
 	}
-}
+} // end of function wait2add()
 
 
 function wait2process () {
 	if (dataReady() == false) {
-		if (v > 2) console.log("  ready is " + dataReady() + " - waiting to process accessions");
+		if (v > 2) console.log("  'all glycan data loaded' is " +
+				  dataReady() + " - waiting to process");
 		if (dataAvailable) {
 			window.setTimeout(wait2process, 200); 
 		} else {
 			terminate("Related Glycan");
 		}
     } else {
-		if (v > 4) console.log("... ready to process data ");
+		if (v > 4) console.log("... ready to process glycan data ");
+		if (v > 8) {
+			// check fetchConfiguration
+			console.log("   SVG images of the following sugars are supported:");
+			var sugars = conf.sugars;
+			for (i in sugars) {
+				console.log("   " + i + ": " + sugars[i].name);
+			}
+	   }
 		processFiles();
 	}
 }
+
+
+// plantTree() returns a JS data object containing only those elements 
+//   required for encoding the SVG image of the glycan
+//  treeData is a JS data object directly produced when JSON.parse()
+// 	is applied to the input JSON data
+function plantTree(treeData) {
+	if (v > 5) console.log("@@@ planting tree\n" + treeData['glytoucan_ac']);
+	//  extract information and populate the object 'tree'
+	// tree is the data object consumed by json2svg
+	var tree = new Array();
+	tree['accession'] = treeData.glytoucan_ac;
+	tree['nodes'] = new Array();
+	// treeData is original data from json file 
+	//   for this example, the nodes are called 'residues' in the original
+	var residues = treeData.residues; // residues is the local name of the array
+	for (var i=0; i < residues.length; i++) {
+		var node = new Array(); // this array will be an element of object 'tree'
+		var nameParts = residues[i].name.split("-");
+		node["node_id"] = residues[i].residue_id;
+		node["name"] = nameParts[0];
+		node["substituent"] = "";
+		if (nameParts.length > 1) { // the residue has a substituent
+			node["substituent"] = nameParts[1];
+		}
+		node["parent_id"] = residues[i].parent_id;
+		node["anomer"] = residues[i].anomer;
+		node["absolute"] = residues[i].absolute;
+		node["ring"] = residues[i].ring;
+		node["site"] = residues[i].site;
+		node['touched'] = false;
+		tree['nodes'].push(node);
+	}
+	return (tree);
+} // end of function plantTree()
+
 
 
 function terminate(which) {
@@ -1460,6 +1426,10 @@ function initialize() {
 	a = a[a.length - 1];
 	populateInput(a);	
 	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, a);
+
+	// fetch configuration data
+	fetchConfiguration(configPath);
+
 	// fetch and process the images and data
 	getFiles(0);
 	wait2add();

@@ -68,14 +68,17 @@ div span {
 	left: 20px;
 	top: 45px;
 	background-color: rgb(255,255,255);
+	color: #4376B2;
+	font-weight: bolder;
+	font-size: 20px;
 }
 	
 
-#iframe1 {
+.svgDiv {
 	height: 200px;
 	width: 10px;
 	position: absolute;
-	top: 80px;
+	top: 70px;
 	left : 20px;
 	background-color: rgb(255,255,255);
 	text-align: right;
@@ -220,4 +223,47 @@ div span {
 
 .ttip:hover .ttiptext {
   visibility: visible;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.boxHighlight {
+	fill: rgb(233,239,244);
+	stroke: rgb(47,120,183);
+	stroke-width: 3;
+}
+
+.svgText {
+	font-size:18px;
+	stroke: none;
+}
+
+.annotationShown {
+	font-size: 8px;
+	stroke: none;
+	text-anchor: middle;
+	dominant-baseline: middle;
+	fill: rgb(0, 0, 63);
+	stroke: none;
+	visibility: visible;
+	pointer-events: none;
+}
+
+.annotationHidden {
+	visibility: hidden;
+}
+
+body {
+	margin-right: 60px;
+}
+
+.zoomer {
+	transform: scale(1);
+	transition: all 300ms;
+}
+
+.zoomer:hover {
+  transform: scale(1.2);
 }
