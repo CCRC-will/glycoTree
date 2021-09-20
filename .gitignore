@@ -19,7 +19,6 @@ data/svg/
 data/bak/
 model/bak/
 model/nodes/
-model/json/
 model/json/match/
 model/json/complete/
 model/commands.txt
@@ -29,7 +28,6 @@ portal/api/paths/getpathD3.php
 portal/api/.htaccess
 portal/force-layout.html
 portal/force-layout-v4.html
-portal/json
 portal/bak
 portal/js/bak
 SQL/scrape/

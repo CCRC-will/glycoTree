@@ -1,0 +1,66 @@
+{
+	"sugars": [
+		{
+			"name": "GlcNAc",
+			"shape": "square",
+			"color": "#0090BC",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},
+		{
+			"name": "Glc",
+			"shape": "circle",
+			"color": "#0090BC",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},		{
+			"name": "Man",
+			"shape": "circle",
+			"color": "#00A651",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},
+		{
+			"name": "Gal",
+			"shape": "circle",
+			"color": "#FFD400",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		}, 
+		{
+			"name": "Fuc",
+			"shape": "triangle",
+			"color": "#ED1C24",
+			"stdAbsolute": "L",
+			"stdRing": "p"
+		}, 
+		{
+			"name": "NeuNAc",
+			"shape": "diamond",
+			"color": "#A54399",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		}, 
+		{
+			"name": "NeuNGc",
+			"shape": "diamond",
+			"color": "#8FCCE9",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},	
+		{
+			"name": "GalNAc",
+			"shape": "square",
+			"color": "#FFD400",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},	
+		{
+			"name": "Xyl",
+			"shape": "star",
+			"color": "#F47920",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		}	
+	]
+}
