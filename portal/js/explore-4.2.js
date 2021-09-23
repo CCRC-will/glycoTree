@@ -11,7 +11,7 @@
 */
 
 // constants
-var v = 6; // verbosity of console.log
+var v = 1; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic'};
 // data variables
@@ -38,7 +38,8 @@ var trees = new Array();
 document.onkeydown = keySet;
 
 function highlight(node) {
-	console.log("highlighting node " + $(node).attr("id"));
+	if (v > 3) console.log("  highlighting node " +
+							$(node).attr("id"));
 	resetSVG();
 	var idParts = parseID($(node).attr('id'));
 	var localAcc = idParts['accession'];
@@ -59,13 +60,14 @@ function highlight(node) {
 	// highlight thisCanvas
 	thisCanvas.css('fill', highlightColor);
 	
-	console.log('highlighted canvas has id: ' + thisCanvas.attr('id'));
+	if (v > 5) console.log('highlighted canvas has id: ' +
+								thisCanvas.attr('id'));
 } // end of function highlight()
 
 
 function resetSVG() {
 	// set all svg objects to their default values
-	if (v > 8) console.log("Setting Defaults");
+	if (v > 5) console.log("Setting Defaults");
 	resetAllBackground(defaultCanvasColor);
 	getClickableSet().each(function( index ) {
 		$(this).css('opacity', 1.0);
@@ -74,7 +76,7 @@ function resetSVG() {
 
 
 function greyOut(acc) {
-	if (v > 8) console.log("  greying out elements of " + acc);
+	if (v > 5) console.log("  greying out elements of " + acc);
 	var sd = $('#' + sDiv);
 	var nodeSet = sd.find('.' + acc + '_node').children();
 	nodeSet.css('opacity', 0.3);
@@ -198,7 +200,7 @@ function enterNode() {
 	if (this.style) this.style.cursor = "pointer";
 	var id = $(this).attr("id");
 	if (id.match("^svg")) {
-		console.log("entered svg");
+		if (v > 8) console.log("entered svg");
 	} else {
 		var parts = parseID(id);
 		var t = ', ' + nodeType[parts['type']] + ' ';
@@ -219,7 +221,7 @@ function exitNode() {
 	$('#'+hDiv).html("<br>Click a structure or residue");
 	var id = $(this).attr("id");
 	if (id.match("^svg")) {
-		console.log("exited svg");
+		if (v > 8) console.log("exited svg");
 	} else {
 		var parts = parseID(id);
 		if (v > 5) console.log("exited node, overNode is " + overNode);
@@ -717,15 +719,15 @@ function addGlycan(accession) {
 		// do not do any of the following unless the glycan is absent from array 'acc'
 		 // $("#progressDiv").css("visibility","visible");
 		populateInput(accession);
-		if (v > 2) {
-			console.log("  accession array now has " + acc.length + " structures");
-		}
+		if (v > 2) console.log("  accession array now has " +
+									  acc.length + " structures");
 	}
 } // end of function addGlycan()
 
 function getRelatedAccessions() {
 	// add data for all related glycans
-	console.log("### Adding Data for All Related Glycans ### ");
+	if (v > 1)
+		console.log("### Adding Data for All Related Glycans ### ");
 	var probe = acc[0];
 
 	var rg = data[probe]["related_glycans"];
@@ -749,7 +751,8 @@ function getRelatedAccessions() {
 
 		for (var i = 0; i < rgCopy.length; i++) {
 			var newAccession = rgCopy[i].homolog;
-			if (v > 2) console.log("*** next accession: " + newAccession + " ***");
+			if (v > 2) console.log("*** next accession: " +
+										  newAccession + " ***");
 	// false -> wait until all input variables are populated before fetching data
 			addGlycan(newAccession);
 		}
@@ -849,8 +852,10 @@ function setupFrames() {
 	$('#' + iDiv).css('left', newLeft + 'px');
 	
 	if (v > 4) {
-		console.log("  canvas -> height: " + canvasH + "; width: " + canvasW );
-		console.log("  div2 -> left: " + newLeft + "; height: " + canvasH );
+		console.log("  canvas -> height: " + canvasH + "; width: " +
+						canvasW );
+		console.log("  div2 -> left: " + newLeft + "; height: " +
+						canvasH );
 	}
 	
 	annotateResidues();
@@ -884,7 +889,7 @@ function annotateResidues() {
 
 	for (var i = 0 ; i < s.length; i++) { // for each svg image
 		var localAcc = s[i].id.split("_")[1];
-		if (v > 3) console.log("##### annotating glycan " +
+		if (v > 3) console.log("##### Annotating glycan " +
 									  localAcc + " #####");
 
 		// svg image to jquery object
@@ -903,7 +908,8 @@ function annotateResidues() {
 				var y = 0;
 				// first child of the <g> element having 'id'
 				var d = this.children[0];
-				if (v > 4) console.log("    annotating node " + index2 + ": type " + type + "; id " + resID);
+				if (v > 4) console.log("    annotating node " +
+							index2 + ": type " + type + "; id " + resID);
 				var nn = d.nodeName;
 				switch(nn) {
 					case "circle":
@@ -917,7 +923,8 @@ function annotateResidues() {
 						x = 1 * $(d).attr('x') + h/2;
 						var w = 1 * $(d).attr('width')
 						y = 1 * $(d).attr('y') + w/2;
-						if (v > 4) console.log("         <rect> at " + x + "," + y);
+						if (v > 4) console.log("         <rect> at " + x +
+													  "," + y);
 						break;
 					case "polygon":
 						var p = $(d).attr("points").trim();
@@ -937,7 +944,8 @@ function annotateResidues() {
 						}
 						y = (minOdd + maxOdd) / 2;
 						x = (minEven + maxEven) / 2;
-						if (v > 4) console.log("         <polygon> at " + x + "," + y);
+						if (v > 4) console.log("         <polygon> at " +
+													  x + "," + y);
 						break;
 				}
 				var elemID = "A-" + localAcc + ":" + resID;
@@ -995,9 +1003,10 @@ function setResidueKeys() {
 	if (v > 1) console.log("##### Assigning Keys to Residues #####");
 	for (var key in data) {
 		var glycan = "glycan[" + key + "]";
-		console.log("Working on " + glycan);
+		if (v > 4) console.log("   Working on " + glycan);
 		var residues = data[key].residues;
-		if (v > 4) console.log("There are " + residues.length + " residues in " + key)
+		if (v > 4) console.log("There are " + residues.length +
+									  " residues in " + key)
 		for (var j = 0; j < residues.length; j++ ) {
 			if (v > 4) console.log("j is " + j);
 			// FAILS WHEN resID == j - so need prefix "#"
@@ -1006,10 +1015,11 @@ function setResidueKeys() {
 			var htmlName = htmlFormatName(residues[key2]);
 			residues[key2].html_name = htmlName;
 			if (v > 4) {
-				console.log("   object key generated for " + glycan + ".residues[" 
-							+ j + "]  -> '" + key2 + "'");
-				console.log("   data['" + key + "'].residues['" + key2 + "']: html name is '" + 
-							residues[key2].html_name +  "'");
+				console.log("   object key generated for " + glycan +
+								".residues[" + j + "]  -> '" + key2 + "'");
+				console.log("   data['" + key + "'].residues['" +
+						key2 + "']: html name is '" + 
+						residues[key2].html_name +  "'");
 			}
 		}
 	}
@@ -1030,7 +1040,8 @@ function setRelatedParams(probe) {
 		if (v > 3) {
 			console.log("  Set reducing end for " + key +
 				" (" + data[key].residues.length + " residues): " + related[i].reducing_end);
-			console.log("  Set number of substituents in " + key + ": " + related[i].sub_count);
+			console.log("  Set number of substituents in " + key +
+							": " + related[i].sub_count);
 		}
 	}
 } // end of function setRelatedParams()
@@ -1044,7 +1055,8 @@ function getSubstituents(accession) {
 			var thisSubstituent = {};
 			var sugarName = residues[j].name;
 			if (sugarName.includes("-")) {
-				if (v > 4) console.log(i + "," + j + ": found substituent " + sugarName +
+				if (v > 4) console.log(i + "," + j +
+					": found substituent " + sugarName +
 					 " in " + accession );
 				var sugarParts = sugarName.split("-");
 				var id = residues[j].residue_id;
@@ -1088,7 +1100,7 @@ function showData() {
 	
 function fetchConfiguration(theURL) {
 	$.get(theURL, function(result){
-		if (v > 5) {
+		if (v > 3) {
 			console.log("  fetched sugar configuration data from " +
 							theURL + ":\n  " + result);
 		}
@@ -1125,7 +1137,7 @@ function fetchGlycanData(theURL, type, accession) {
 	})			
 	.fail(function() {
 		unavailable.push("JSON data for " + accession);
-		if (v > 0) console.log("File " + theURL + " not found");
+		console.log("File " + theURL + " not found");
 		dataAvailable = false;
 	});
 	
@@ -1139,7 +1151,7 @@ function simXOR(x, y) {
 
 
 function getSelectedData(selector) {
-	console.log("glycan selector is " + selector);
+	if (v > 3) console.log("glycan selector is " + selector);
 	// returns an edited array of related_glycans objects for rendering and listing
 	var probeData = data[acc[0]];
 	var rg = probeData["related_glycans"];
@@ -1150,7 +1162,7 @@ function getSelectedData(selector) {
 			probeSubCount = rg[i].sub_count;
 		}
 	}
-	if (v > 2) {
+	if (v > 3) {
 		console.log("   probe is " + acc[0]);
 		console.log("   probeEnd is " + probeEnd);
 	}
@@ -1239,9 +1251,8 @@ function displayGlycans() {
 	if (acc.length > 1) {
 		// selected data does NOT include the reference structure - only related structures
 		selectedData = getSelectedData(glycanSelector);
-		if (v > 2) {
-			console.log("selectedData is:\n");
-			console.log(selectedData);
+		if (v > 3) {
+			console.log("  selectedData is:\n" + selectedData);
 		}
 		var sep = "";
 		if (v > 3) console.log("selectedData.length is " +
@@ -1274,7 +1285,7 @@ function processFiles() {
 		relatedDataExists = (typeof related != "undefined");
 		if ( allDataRequested && relatedDataExists ) 
 			setRelatedParams(acc[0]);
-		if (v > 3) console.log("probe is " +acc[0]);
+		if (v > 3) console.log("probe is " + acc[0]);
  
 		displayGlycans();
 	
@@ -1299,8 +1310,8 @@ function generateSVG(ac) {
 } // end of function generateSVG()
 	
 function getFiles(i) {
-	console.log("##  getting glycan data file - index: " + i +
-					"; accession: " + acc[i] + " ##");
+	if (v > 1) console.log("##  getting glycan data file - index: " +
+							i + "; accession: " + acc[i] + " ##");
 	// fetchGlycanData arguments are: (URL, type, accession)
 	fetchGlycanData(glycanPath, 'json', acc[i]);
 	// svg strings are generated from glycan data, and are not fetched
@@ -1336,7 +1347,7 @@ function wait2add() {
 			terminate("Reference Glycan");
 		}
     } else {
-		if (v > 2) console.log("  'reference glycan data loaded' is " +
+		if (v > 3) console.log("  'reference glycan data loaded' is " +
 							  dataReady() + " - adding accessions");
 		getRelatedAccessions();
 		if (allDataRequested)
@@ -1381,7 +1392,8 @@ function wait2process () {
 //  treeData is a JS data object directly produced when JSON.parse()
 // 	is applied to the input JSON data
 function plantTree(treeData) {
-	if (v > 5) console.log("@@@ planting tree\n" + treeData['glytoucan_ac']);
+	if (v > 5) console.log("@@@ planting tree\n" +
+									  treeData['glytoucan_ac']);
 	//  extract information and populate the object 'tree'
 	// tree is the data object consumed by json2svg
 	var tree = new Array();
@@ -1426,7 +1438,7 @@ function terminate(which) {
 
 function initialize() {
 	$("#progressDiv").css("visibility","visible");
-	if (v > 1) console.log("##### Initializing #####");
+	if (v > 0) console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
 	var arg = window.location.search.substring(1).split("&")[0];
 	// setup arrays with input parameters

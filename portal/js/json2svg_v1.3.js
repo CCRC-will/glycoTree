@@ -82,7 +82,7 @@ function drawSVG() {
 	svgStr += drawAllNodes("visible"); // draw the nodes
 	if (outerSpace['exists']) svgStr += drawBracket();
 	svgStr += svgTail;
-	console.log(svgStr);
+	if (v > 3) console.log(svgStr);
 	return(svgStr);
 } // end of function drawSVG()
 
@@ -422,7 +422,8 @@ function drawSubstituent(x, y, name, baseline) {
 
 
 function annotateNode(x, y, annotation) {
-	console.log("   found non-standard annotation: " + annotation);
+	if (v > 3) console.log("   found non-standard annotation: " +
+								 annotation);
 	
 	var annotationStr = "\n    <text  " + "x='" + x + "' y='" + y +
 		 "' text-anchor='middle' dominant-baseline='middle' font-size='" + (fontSize - 2) + "' >" +
@@ -529,7 +530,7 @@ function logTree(tree) {
 }	
 
 function layout(tree) {
-	console.log("### Processing data - verbacity is " + v + " ###");
+	console.log("### Generating SVG - verbacity is " + v + " ###");
 	var svgStr = "This is the svg string returned from layout()!"
 
 	nodes = tree.nodes;
@@ -595,7 +596,7 @@ function layout(tree) {
 		traverseToBranch(leaves[i]);
 	}
 	
-	if (v > 3){ 
+	if (v > 3) { 
 		var rootsStr = "@@ All roots and pseudo-roots are set: @@\n";
 		for (i in roots) rootsStr += "\n  " + i + ": " +
 		showObject(roots[i]);
@@ -976,8 +977,9 @@ function fixClashes(pNode) {
 
 
 function moveNode(node, shift) {
-	if (v > 4) console.log("      moving node " + node.node_id + " from " +
-		node.relative_y + " to " + (node.relative_y + shift) );
+	if (v > 4) console.log("      moving node " + node.node_id +
+			" from " + node.relative_y + " to " +
+					(node.relative_y + shift) );
 	node.relative_y += shift;
 } // end of function moveNode()
 
@@ -994,7 +996,7 @@ function setDistTable() {
 			var dist = 1024 * spacer; // distance between first and second branch
 			for (var k = 1; k < xOverlap; k++) { // x in branch (x >= 1)
 				var d = rangeTable[i][k]['minY'] - rangeTable[j][k]['maxY'];
-				if (v > 9) console.log("   distance at x=" + k + ":   " + d);
+				if (v > 8) console.log("   distance at x=" + k + ":   " + d);
 				dist = Math.min(d, dist);
 			}
 			if (v > 5) console.log("distance [" + i + ", " + j + "]: " + dist);
@@ -1032,9 +1034,11 @@ function showDistTable(pNode) {
 function showRangeTable(pNode) {
 	var pID = pNode.node_id;
 	var pNFC = pNode['non_fucose_children'];
-	console.log("rangeTable for " + pID + " describes " +
-		rangeTable.length + " subtree(s):\n");
-	console.log("root   x     min    max");
+	if (v > 3) {
+		console.log("rangeTable for " + pID + " describes " +
+			rangeTable.length + " subtree(s):");
+		console.log("root   x     min    max");
+	}
 	for (var i = 0; i < rangeTable.length; i++) {
 		var rangeRow = rangeTable[i];
 		var rowNodeID = nodes[pNFC[i]]['node_id'];
@@ -1043,7 +1047,7 @@ function showRangeTable(pNode) {
 			rowStr += rowNodeID + "     " + j + "    " + rangeRow[j]['minY'] +
 				"      " + rangeRow[j]['maxY'] + "\n";
 		}
-		console.log(rowStr);
+		if (v > 3) console.log(rowStr);
 	}
 } // end of function showRangeTable()
 
@@ -1194,13 +1198,14 @@ function setChildren(thisNode) {
 		console.log("     " + nID + " has " +
 				children.length + " children:");
 		for (var j = 0; j < children.length; j++) 
-			console.log("       " + nodes[children[j]].node_id + " at site " + nodes[children[j]].site);
+			console.log("       " + nodes[children[j]].node_id +
+					" at site " + nodes[children[j]].site);
 		
 		console.log("     " + nID + " has " +
 				nfc.length + " non-fucose children:");
 		for (var j = 0; j < nfc.length; j++) 
-			console.log("       " + nodes[nfc[j]].node_id + " at site " +
-				nodes[nfc[j]].site);
+			console.log("       " + nodes[nfc[j]].node_id +
+					" at site " + nodes[nfc[j]].site);
 		
 		console.log("     " + nID + " has " +
 				fc.length + " fucose children:");

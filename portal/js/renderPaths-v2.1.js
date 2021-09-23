@@ -45,7 +45,6 @@ function showGlycan(d) {
 
 
 function	reactionHTMLtop(d, fromGlycan, toGlycan, multiple) {
-	// console.log(d);
 	// d is data for a reaction
 	// initialize html that shows reaction(s) - add first reactant
 	var arrow = " &rarr; ";
@@ -284,7 +283,6 @@ function plantTree(treeData) {
 			d3.select("#defocusButton").classed('inactive', false);
 		}
 		$("#results").html(txt);
-		// console.log("Focal Point is " + focalPoint);
 	} // end function focusNode()
 	 
 
@@ -367,14 +365,10 @@ function plantTree(treeData) {
 		})
 		// Highlight the connections to/from the node
 		if ((focalPoint == "none") || (focalPoint == d.id)) {
-			// console.log("focal Point: " + d.id);
 			data.links.forEach(function (link_d) {
-				//console.log(" - Testing link " + link_d.source + " -> " + link_d.target);
 				link_d["active"] = ((link_d.source === d.id) || (link_d.target === d.id)) ? true: false;
 				if (link_d.active) {
-					// console.log("## ACTIVE LINK ## " + link_d.source + " -> " + link_d.target);
 					data.nodes.forEach(function (node_d) {
-						// console.log(" - Testing node " + node_d.id);				
 						// do not unset node active inappropriately
 						node_d["active"] = ( (link_d.source === node_d.id) ||
 						  (link_d.target === node_d.id) ||
@@ -468,7 +462,7 @@ function plantTree(treeData) {
 			txt += "</body>";
 			// console.log("Generated Code:\n" + txt);
 			var rxnWindow = window.open("", "");
-			console.log(txt);
+			if (v > 5) console.log(txt);
 			rxnWindow.document.write(txt);
 			if (window.focus) {
 				rxnWindow.focus();

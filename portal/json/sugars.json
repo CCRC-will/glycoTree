@@ -8,12 +8,27 @@
 			"stdRing": "p"
 		},
 		{
+			"name": "HexNAc",
+			"shape": "square",
+			"color": "#FFFFFF",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},
+		{
 			"name": "Glc",
 			"shape": "circle",
 			"color": "#0090BC",
 			"stdAbsolute": "D",
 			"stdRing": "p"
-		},		{
+		},
+		{
+			"name": "Hex",
+			"shape": "circle",
+			"color": "#FFFFFF",
+			"stdAbsolute": "D",
+			"stdRing": "p"
+		},
+		{
 			"name": "Man",
 			"shape": "circle",
 			"color": "#00A651",
