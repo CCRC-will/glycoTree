@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>GlyGen Sandbox</title>
+	
+<link rel="icon" href="svg/sbSmall.svg" type="image/icon type">
+<link rel="stylesheet" type="text/css" href="css/explore.css">
+	
+<script src="js/sbheader.js"></script>
+	
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/json2svg_v1.3.js"></script>
+
+<style>
+
+#imgDiv {
+	position: fixed;
+	z-index: 88;
+	right: 20px;
+	top: 60px;
+	width: 70%;
+	border-style: none;
+	text-align: center;
+}
+		
+#iDiv {
+	position: relative;
+	z-index: 88;
+	top: 20px;
+	width: 100%;
+	height: 500px;
+	border-style: none;
+	text-align: center;
+}
+
+#listDiv {
+	position: absolute;
+	z-index: 88;
+	left: 20px;
+	top: 60px;
+	width: 25%;
+	border-style: none;
+	text-align: center;
+}
+
+</style>	
+	
+<script>
+var tCount = 0;
+
+function initialize() {
+	console.log("##### Initializing #####");
+	setupAnimation('logo_svg', 'header');
+	fetchConfiguration(configPath);
+} // end of function initialize()
+
+	
+// additional stuff
+// global vars	
+var glycanPath = "api/glycan-v2.php";
+var configPath = "json/sugars.json";
+var v =  1;
+var svgEncoding = "";
+	
+	
+function downloadSVG(a) {
+	var s = document.createElement("a");
+	// svgEncoding is a global variable
+	s.href = 'data:text/svg,' + encodeURIComponent(svgEncoding);
+	s.download = a + ".svg";
+	s.click();
+} // end of function downloadSVG()
+	
+	
+function showImage(accession) {
+	$.get(glycanPath,
+	{
+		ac: accession,
+		type: 'json'
+	},
+	function(result){
+		if (v > 5) {
+			console.log(" the URL " + glycanPath + 
+				" returned this json data for " + accession + "\n  " + result.toString());
+		}
+
+		var jsonResult = JSON.parse(result);
+		if (v > 5) console.log(result);
+		// svgEncoding is a global variable
+		svgEncoding = generateOneSVG(accession, jsonResult);
+		
+		var sd = $("#iDiv");
+		// clear iDiv content
+		sd.html(svgEncoding);
+		var bStr = "<br><input type='button' value='Dowload SVG Image'" +
+			 "onClick=\"downloadSVG('" + accession + "')\">"
+		sd.append(bStr);
+		
+		// TODO change the following lines to jquery code
+		//document.getElementById("focus").value = accession;		
+		//document.getElementById('glycan_info').innerHTML = "<h1>" + accession + "</h1>";
+		$("#focus").val(accession);
+		$("#glycan_info").html("<h1>" + accession + "</h1>");
+	})			
+	.fail(function() {
+		unavailable.push("JSON data for " + accession);
+		console.log("File " + glycanPath + " not found");
+		dataAvailable = false;
+	});
+	
+} // end of function fetchData()	
+
+
+function fetchConfiguration(theURL) {
+	$.get(theURL, function(result){
+		if (v > 3) {
+			console.log("  fetched sugar configuration data from " +
+							theURL + ":\n  " + result);
+		}
+		if (theURL.includes(".json")) {
+			// jquery automatically parses files with extension '.json'
+			conf = result;
+		} else {
+			// JSON.parse is not automatically invoked
+			conf = JSON.parse(result);
+		}
+	});
+	
+} // end of function fetchConfiguration()
+	
+	
+function generateOneSVG(ac, jsonResult) {
+	theTree = plantTree(jsonResult);
+	accession = ac;
+	svgEncoding = layout(theTree); // modifies trees object
+	return svgEncoding;
+} // end of function generateOneSVG()
+
+	
+// plantTree() returns a JS data object containing only those elements 
+//   required for encoding the SVG image of the glycan
+//  treeData is a JS data object directly produced when JSON.parse()
+// 	is applied to the input JSON data
+function plantTree(treeData) {
+	if (v > 5) console.log("@@@ planting tree\n" +
+									  treeData['glytoucan_ac']);
+	//  extract information and populate the object 'tree'
+	// tree is the data object consumed by json2svg
+	var tree = new Array();
+	tree['accession'] = treeData.glytoucan_ac;
+	tree['nodes'] = new Array();
+	// treeData is original data from json file 
+	//   for this example, the nodes are called 'residues' in the original
+	var residues = treeData.residues; // residues is the local name of the array
+	for (var i=0; i < residues.length; i++) {
+		var node = new Array(); // this array will be an element of object 'tree'
+		var nameParts = residues[i].name.split("-");
+		node["node_id"] = residues[i].residue_id;
+		node["name"] = nameParts[0];
+		node["substituent"] = "";
+		if (nameParts.length > 1) { // the residue has a substituent
+			node["substituent"] = nameParts[1];
+		}
+		node["parent_id"] = residues[i].parent_id;
+		node["anomer"] = residues[i].anomer;
+		node["absolute"] = residues[i].absolute;
+		node["ring"] = residues[i].ring;
+		node["site"] = residues[i].site;
+		node['touched'] = false;
+		tree['nodes'].push(node);
+	}
+	return (tree);
+} // end of function plantTree()
+	
+</script>
+		
+</head>
+
+<body onLoad=initialize();>
+	
+<div id="header" width=100%>
+<span id="header_1">GlyGen</span>
+<object id="logo_svg" type="image/svg+xml" data="svg/sbLogo.svg" class="logo"></object>
+<span id="header_2">Sand Box</span>
+</div>
+
+
+<div id="imgDiv">
+	<h3>GlycoTree: Explore Gycan Structure</h3>
+	<form action="explore.html" method="get" target="_blank">
+	  <label for="fname">GlyTouCan Accession:</label>
+	  <input type="text" id="focus" name="focus">
+	  <input type="submit" value="Explore">
+	</form>
+	<p id="glycan_info">Glycan Info</p>
+	<div id="iDiv">images go here</div>
+</div>
+	
+		
+<div id="listDiv">
+	<h4>Choose a glycan from the list below </h4>
+	<table>
