@@ -23,22 +23,12 @@
      "match": "15"
    },
    {
-     "accession": "G70116BN",
-     "relative_dp": "+1",
-     "match": "15"
-   },
-   {
      "accession": "G73775WR",
      "relative_dp": "-1",
      "match": "14"
    },
    {
      "accession": "G75237SS",
-     "relative_dp": "+1",
-     "match": "15"
-   },
-   {
-     "accession": "G80319WU",
      "relative_dp": "+1",
      "match": "15"
    },

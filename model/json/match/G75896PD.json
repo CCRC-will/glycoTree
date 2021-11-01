@@ -43,11 +43,6 @@
      "match": "7"
    },
    {
-     "accession": "G34394KR",
-     "relative_dp": "+1",
-     "match": "7"
-   },
-   {
      "accession": "G34442SS",
      "relative_dp": "-1",
      "match": "6"
@@ -89,11 +84,6 @@
    },
    {
      "accession": "G85530IT",
-     "relative_dp": "+1",
-     "match": "7"
-   },
-   {
-     "accession": "G85891FA",
      "relative_dp": "+1",
      "match": "7"
    },

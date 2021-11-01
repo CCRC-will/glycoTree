@@ -21,6 +21,13 @@
 			"stdAbsolute": "D",
 			"stdRing": "p"
 		},
+                {
+                        "name": "GlcA",
+                        "shape": "splitdiamond",
+                        "color": "#0090BC",
+                        "stdAbsolute": "D",
+                        "stdRing": "p"
+                },
 		{
 			"name": "Hex",
 			"shape": "circle",
@@ -76,6 +83,22 @@
 			"color": "#F47920",
 			"stdAbsolute": "D",
 			"stdRing": "p"
+		},	
+		{
+			"name": "sulfate",
+			"shape": "text",
+			"color": "#000000",
+			"stdAbsolute": "n",
+			"stdRing": "n",
+			"text": "S"
+		},
+		{
+			"name": "phosphate",
+			"shape": "text",
+			"color": "#000000",
+			"stdAbsolute": "n",
+			"stdRing": "n",
+			"text": "P"
 		}	
 	]
 }

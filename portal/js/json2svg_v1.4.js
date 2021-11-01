@@ -13,6 +13,7 @@
 *   - puts svgString into a div for visualization                      *
 ************************************************************************/
 
+// TODO: do not draw edges for substituents
 // global variables
 var leaves = new Array();
 var rootNode = null;
@@ -167,7 +168,10 @@ function drawAllEdges(type) {
 		var pNode = getParentNode(node);
 		var c1 = getCoords(node);
 		var c2 = new Array();
+		
 		var OKtoDraw  = true;
+		// substituents are nodes to which no edges are drawn 
+		if (node.anomer == "n") OKtoDraw = false;
 		if (pNode === null) {
 			if ((node['anomer'] == "") || (node['site'] == "") ||
 				 (node.anomer == "o") || (node.ring == "ol")) {
@@ -347,7 +351,7 @@ function drawAllNodes(type) {
 			if (nodeConfig == null) {
 				msgTop = "    Could not retrieve  "
 			}
-				console.log(msgTop + "sugar configuration for " +
+			console.log(msgTop + "sugar configuration for " +
 				node.node_id + " (" + node.name + ")");
 		}
 		var fill = nodeConfig.color;
@@ -357,7 +361,6 @@ function drawAllNodes(type) {
 			" id='R-" + accession + ":" + nodeID +  "' ";
 		var gStr = "\n  <g" + idStr + " fill='" +
 			fill + "' stroke='" + stroke +  "' >";
-		var nodeShape = nodeConfig.shape;
 
 		if (type == 'mask') {
 			fill = defaultCanvasColor;
@@ -368,8 +371,12 @@ function drawAllNodes(type) {
 		// put enclosing <g> outside of node
 		AllNodeStr += gStr;
 
+		var nodeShape = nodeConfig.shape;
+		var nodeText = nodeConfig.text;
 		// drawNode places image CENTER at c.x, c.y
-		AllNodeStr += drawNode(c.x, c.y, nodeID, nodeShape, site);
+		var bothColors = true;
+		if (type === 'mask') bothColors = false;
+		AllNodeStr += drawNode(c.x, c.y, nodeShape, site, node, nodeText, bothColors);
 		
 		var stdAbsolute = nodeConfig['stdAbsolute'];
 		var absolute = node['absolute'];
@@ -434,10 +441,10 @@ function annotateNode(x, y, annotation) {
 
 
 
-function drawNode(x, y, nodeID, shape, site) {
+function drawNode(x, y, shape, site, node, text, bothColors) {
 	//  simply draws the node 
 	//   the node's colors and id are specified in enclosing <g>
-
+	//     nodeRadius is a global drawing variable
 	var nodeStr = "";
 	switch(shape) {
 	 case "circle":
@@ -471,6 +478,27 @@ function drawNode(x, y, nodeID, shape, site) {
 			  "' />";
 		  break;
 			
+		case "splitdiamond":
+			var x1 = x,
+			y1 = y - nodeRadius;
+			x2 = x1 + nodeRadius;
+			y2 = y1 + nodeRadius;
+			x3 = x1;
+			y3 = y1 + (2 * nodeRadius);
+			x4 = x1 - nodeRadius;
+			y4 = y1 + nodeRadius;
+			nodeStr = "\n    <polygon points='" + x1 + " "  + y1 +
+				" "  + x2 + " "  + y2 + " "  + x3 + " " + 
+				y3 + " " + x4 + " " + y4 + "' />";
+			// mask for multi-colored residues is just one color, but node is both
+			if (bothColors) 
+				nodeStr += "\n    <polygon points='"  +
+					x3 + " " + y3 + " " +
+					x2 + " " + y2 + " " +
+					x4 + " " + y4 + " " +
+					"' stroke='black' fill='white'/>";
+			break;
+			
 		case "diamond":
 			var x1 = x,
 			y1 = y - nodeRadius;
@@ -497,16 +525,31 @@ function drawNode(x, y, nodeID, shape, site) {
 			y4 = y + 0.81 * nodeRadius;
 			x5 = x - 0.95 * nodeRadius;
 			y5 = y - 0.31 * nodeRadius;
-			nodeStr = "<polygon points='" +
+			nodeStr = "\n    <polygon points='" +
 				x1 + "," + y1 + " " + x3 + "," + y3 + " " +
 				x5 + "," + y5 + " " + x2 + "," + y2 + " " +
 				x4 + "," + y4 + "' />";
+			nodeStr += "\n    <polygon points='" +
+				x1 + "," + y1 + " " + x3 + "," + y3 + " " +
+				x5 + "," + y5 + " " + x2 + "," + y2 + " " +
+				x4 + "," + y4 + "' stroke='none'/>";
+			break;
+			
+		case "text":
+			var subSite = (site == "x") ? "?" : site;
+			var subText = subSite + text;
+			console.log("      writing text for: " + node.name + 
+						  "(" + subText + ")");
+			var baseline = "text-top";
+			if ((site > 3) || (site == "x")) baseline = "hanging";
+			nodeStr = drawSubstituent(x, y, subText, baseline);
 			break;
 			
 		default:
 			console.log("shape (" + shape + ") not supported");
-			nodeStr = "\n  <circle stroke='" + 'red' + "' r='" + nodeRadius +
-				"' cx='" + x + "' cy='" + y + "' fill='red' />";
+			nodeStr = "\n    <circle r='" +
+				nodeRadius/2 + "' cx='" + x +
+				"' cy='" + y + "' />";
 			break;
 	}
 	return(nodeStr);
@@ -766,8 +809,8 @@ function traverseToBranch(node) {
 			  pNode['all_children'].length + " element(s)");
 		// various classes of the parent node's children
 		var pAC = pNode['all_children'];
-		var pNFC = pNode['non_fucose_children'];
-		var pFC = pNode['fucose_children'];
+		var pNXC = pNode['non_exceptional_children'];
+		var pXC = pNode['exceptional_children'];
 		
 		// place Fuc node above or below its parent node
 		//  initial relative x,y of fucose (child of pNode)
@@ -780,6 +823,19 @@ function traverseToBranch(node) {
 			}
 			if (v > 5) console.log("Set relative coords for Fuc " +
 					node.node_id + " (" + node['relative_x'] + ", " +
+					node['relative_y'] + ")");
+		}
+		
+		if (node.anomer == "n") {
+			node['relative_x'] = 0;
+			if ( (node.site > 3) || (node.site === "x") ) {
+				node['relative_y'] = -spacer/2;
+			} else {
+				node['relative_y'] = spacer/2;					
+			}
+			if (v > 5) 
+				console.log("Set relative coords for substituent " +
+					node.name + " (" + node['relative_x'] + ", " +
 					node['relative_y'] + ")");
 		}
 		
@@ -800,13 +856,15 @@ function traverseToBranch(node) {
 		if (pAC.length == 1) {
 			// the parent of this node has only one child - that is, this node
 			//   continue traversal by recursion
-			if (node.name != "Fuc") {
-				// relative coordinates of Fuc nodes already set above
+			if ((node.name != "Fuc") && (node.anomer != "n") ) {
+				// relative coordinates of Fuc  and substituent nodes
+				//    already set above
 				node['relative_x'] = -1;
 				// y of parent = y of this node
 				node['relative_y'] = 0; 
 			}
-			if (v > 3) console.log("traversal recursion: unbranched node " +
+			if (v > 3)
+				console.log("traversal recursion: unbranched node " +
 										  pID);
 			traverseToBranch(pNode);
 		} else {
@@ -835,17 +893,24 @@ function traverseToBranch(node) {
 							
 				//  initial relative x,y  of fucose children already assigned
 				//  assign initial relative x,y of non-fucose children of pNode
-				var startY = (spacer / 2) * (pNFC.length - 1);
-				for (var i = 0; i < pNFC.length; i++) {
-					nodes[pNFC[i]]['relative_x'] = -1;
-					nodes[pNFC[i]]['relative_y'] = startY - spacer * i;
-					if (v > 5) console.log("@@  placed branch root " +
-							nodes[pNFC[i]].node_id + " @@" +
-							"\n    startY: " + startY +
-							";   spacer: " + spacer +
-							";   i: " + i +
-							";   relative_y: " + nodes[pNFC[i]]['relative_y']);
-				}	 
+				var startY = (spacer / 2) * (pNXC.length - 1);
+				for (var i = 0; i < pNXC.length; i++) {
+					if (nodes[pNXC[i]]['anomer'] != "n") {
+						//  initial relative x,y  of substituents already assigned 
+						nodes[pNXC[i]]['relative_x'] = -1;
+						nodes[pNXC[i]]['relative_y'] = startY - spacer * i;
+						if (v > 5) console.log("@@  placed branch root " +
+								nodes[pNXC[i]].node_id + " @@" +
+								"\n    startY: " + startY +
+								";   spacer: " + spacer +
+								";   i: " + i +
+								";   relative_y: " + nodes[pNXC[i]]['relative_y']);
+					} else {
+						if (v > 5) 
+							console.log("@@  relative coordinates for " +
+								nodes[pNXC[i]]['name'] + " already set");
+					}	 
+				}
 				
 				// put pNode at the origin
 				pNode.x = 0;
@@ -867,8 +932,8 @@ function traverseToBranch(node) {
 					rangeTable = new Array();
 					// c is an array of indices of children of pNode
 
-					for (var i = 0; i < pNFC.length; i++) { // explicit order for i
-						var child = nodes[pNFC[i]];
+					for (var i = 0; i < pNXC.length; i++) { // explicit order for i
+						var child = nodes[pNXC[i]];
 						var rangeArray = new Array();  // a new row in rangeTable;
 						if (v > 3) 
 							console.log("   New row in rangeTable for " +
@@ -933,14 +998,14 @@ function setBoundaries(node, key, isRoot) {
 function fixClashes(pNode) {  
 	// adjusts relative y values of root nodes of branches to avoid clashes
 	var pID = pNode.node_id;
-	var pNFC = pNode['non_fucose_children']; // indices map to distTable indices
+	var pNXC = pNode['non_exceptional_children']; // indices map to distTable indices
 	var clashes = false;
 	for (var i = 0; i < distTable.length; i++) {
 		var distance = distTable[i];
-		var nodeI = nodes[pNFC[i]];
+		var nodeI = nodes[pNXC[i]];
 		var idI = nodeI.node_id;
 		for (var j = (i+1); j < distTable[i].length; j++) {
-			var nodeJ = nodes[pNFC[j]];
+			var nodeJ = nodes[pNXC[j]];
 			var idJ = nodeJ.node_id;
 			if (v > 4) console.log("  ## checking " + idI +
 				"[" + i + "] and " + idJ + "[" + j + "] for clash: " +
@@ -1010,16 +1075,16 @@ function setDistTable() {
 
 function showDistTable(pNode) {
 	var pID = pNode.node_id;
-	var pNFC = pNode['non_fucose_children'];
-	if (pNFC.length > 1) {
+	var pNXC = pNode['non_exceptional_children'];
+	if (pNXC.length > 1) {
 		if (v > 3) console.log("\n$$$ Distance Table for descendants of " + pID + " $$$");
 		for (var i in distTable) {
 			var row = distTable[i];
-			var nodeI = nodes[pNFC[i]].node_id;
+			var nodeI = nodes[pNXC[i]].node_id;
 			rowStr = "";
 			var sep = "    ";
 			for (var j in row) {
-				var nodeJ = nodes[pNFC[j]].node_id;
+				var nodeJ = nodes[pNXC[j]].node_id;
 				rowStr += sep + "(" + nodeI + "[" + i + "], " + nodeJ +
 					"[" + j + "]): " + row[j]
 				sep = ";    ";
@@ -1033,7 +1098,7 @@ function showDistTable(pNode) {
 
 function showRangeTable(pNode) {
 	var pID = pNode.node_id;
-	var pNFC = pNode['non_fucose_children'];
+	var pNXC = pNode['non_exceptional_children'];
 	if (v > 3) {
 		console.log("rangeTable for " + pID + " describes " +
 			rangeTable.length + " subtree(s):");
@@ -1041,7 +1106,7 @@ function showRangeTable(pNode) {
 	}
 	for (var i = 0; i < rangeTable.length; i++) {
 		var rangeRow = rangeTable[i];
-		var rowNodeID = nodes[pNFC[i]]['node_id'];
+		var rowNodeID = nodes[pNXC[i]]['node_id'];
 		var rowStr = "";
 		for (j in rangeRow) {
 			rowStr += rowNodeID + "     " + j + "    " + rangeRow[j]['minY'] +
@@ -1148,8 +1213,8 @@ function setChildren(thisNode) {
 	var nID = thisNode.node_id;
 	if (v > 3) console.log("  # setChildren(" + nID + ") #");
 	var children = new Array(); // all children
-	var nfc = new Array(); // non-fucose children
-	var fc = new Array(); // fucose children
+	var nxc = new Array(); // non-exceptional children
+	var xc = new Array(); // exceptional children
 	
 	// depth-first traversal
 	for (i in nodes) {
@@ -1159,12 +1224,13 @@ function setChildren(thisNode) {
 			if (v > 5) console.log("    node[" + cID +
 					  "] is child of node " + nID);
 			children.push(i);
-			if (nodes[i].name == "Fuc") {
-				if (v > 5) console.log("      " + cID + " is a Fuc child");
-				fc.push(i);
+			if ( (nodes[i].name === "Fuc") || (nodes[i].anomer === "n") ) {
+				// fucose and substituents (with no anomeric configuration) are 'exceptional')
+				if (v > 5) console.log("      " + cID + " is an exceptional child");
+				xc.push(i);
 			} else {
-				if (v > 5) console.log("      " + cID + " is a non-Fuc child");
-				nfc.push(i);
+				if (v > 5) console.log("      " + cID + " is a non-exceptional child");
+				nxc.push(i);
 			}
 			setChildren(nodes[i]);
 		}
@@ -1175,10 +1241,10 @@ function setChildren(thisNode) {
 	children.sort(function(a, b) {
 		return (nodes[b].node_id - nodes[a].node_id);
 	});
-	nfc.sort(function(a, b) {
+	nxc.sort(function(a, b) {
 		return (nodes[b].node_id - nodes[a].node_id);
 	});
-	fc.sort(function(a, b) {
+	xc.sort(function(a, b) {
 		return (nodes[b].node_id - nodes[a].node_id);
 	});
 	
@@ -1187,31 +1253,31 @@ function setChildren(thisNode) {
 	children.sort(function(a, b) {
 		return (nodes[a].site.charAt(0) - nodes[b].site.charAt(0));
 	});
-	nfc.sort(function(a, b) {
+	nxc.sort(function(a, b) {
 		return (nodes[a].site.charAt(0) - nodes[b].site.charAt(0));
 	});
-	fc.sort(function(a, b) {
+	xc.sort(function(a, b) {
 		return (nodes[a].site.charAt(0) - nodes[b].site.charAt(0));
 	});
 	
 	if (v > 3) {
 		console.log("     " + nID + " has " +
-				children.length + " children:");
+				children.length + " child(ren):");
 		for (var j = 0; j < children.length; j++) 
 			console.log("       " + nodes[children[j]].node_id +
 					" at site " + nodes[children[j]].site);
 		
 		console.log("     " + nID + " has " +
-				nfc.length + " non-fucose children:");
-		for (var j = 0; j < nfc.length; j++) 
-			console.log("       " + nodes[nfc[j]].node_id +
-					" at site " + nodes[nfc[j]].site);
+				nxc.length + " non-exceptional child(ren):");
+		for (var j = 0; j < nxc.length; j++) 
+			console.log("       " + nodes[nxc[j]].node_id +
+					" at site " + nodes[nxc[j]].site);
 		
 		console.log("     " + nID + " has " +
-				fc.length + " fucose children:");
-		for (var j = 0; j < fc.length; j++) 
-			console.log("       " + nodes[fc[j]].node_id + " at site " +
-				nodes[fc[j]].site);
+				xc.length + " exceptional child(ren):");
+		for (var j = 0; j < xc.length; j++) 
+			console.log("       " + nodes[xc[j]].node_id + " at site " +
+				nodes[xc[j]].site);
 	}
 	
 	if (children.length == 0) {
@@ -1225,6 +1291,6 @@ function setChildren(thisNode) {
 	// add child annotations to thisNode - 3 types
 	//   these hold indices, not nodes
 	thisNode['all_children'] = children;
-	thisNode['non_fucose_children'] = nfc;
-	thisNode['fucose_children'] = fc;
+	thisNode['non_exceptional_children'] = nxc;
+	thisNode['exceptional_children'] = xc;
 } // end of function setChildren()

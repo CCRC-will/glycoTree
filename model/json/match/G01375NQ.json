@@ -8,11 +8,6 @@
      "match": "12"
    },
    {
-     "accession": "G17540HT",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G30460NZ",
      "relative_dp": "-1",
      "match": "11"
@@ -23,17 +18,7 @@
      "match": "12"
    },
    {
-     "accession": "G38249IZ",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
      "accession": "G70382WT",
-     "relative_dp": "-1",
-     "match": "11"
-   },
-   {
-     "accession": "G73825BL",
      "relative_dp": "-1",
      "match": "11"
    },

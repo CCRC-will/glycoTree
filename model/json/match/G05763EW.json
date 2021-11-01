@@ -13,11 +13,6 @@
      "match": "9"
    },
    {
-     "accession": "G06100NA",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
      "accession": "G06729UK",
      "relative_dp": "+1",
      "match": "9"
@@ -38,28 +33,8 @@
      "match": "9"
    },
    {
-     "accession": "G16122GW",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
-     "accession": "G17107VB",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
-     "accession": "G19517HH",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G20173ZW",
      "relative_dp": "+0",
-     "match": "9"
-   },
-   {
-     "accession": "G26315ZA",
-     "relative_dp": "+1",
      "match": "9"
    },
    {
@@ -68,22 +43,7 @@
      "match": "9"
    },
    {
-     "accession": "G34394KR",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G38297TU",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G47407FC",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G56364PT",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -93,37 +53,12 @@
      "match": "8"
    },
    {
-     "accession": "G60631GY",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
      "accession": "G62955ZH",
      "relative_dp": "+1",
      "match": "9"
    },
    {
-     "accession": "G64186MJ",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G67887EF",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
-     "accession": "G69749VJ",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
      "accession": "G78341DP",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G85891FA",
      "relative_dp": "-1",
      "match": "8"
    },
@@ -134,16 +69,6 @@
    },
    {
      "accession": "G94166QX",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
-     "accession": "G98117HW",
-     "relative_dp": "-1",
-     "match": "8"
-   },
-   {
-     "accession": "G99935CU",
      "relative_dp": "+1",
      "match": "9"
    },

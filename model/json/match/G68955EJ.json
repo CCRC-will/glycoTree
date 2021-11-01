@@ -1,51 +1,31 @@
 {
   "probe_acc": "G68955EJ",
-  "dp":  "10",
+  "dp":  "11",
   "related_glycans": [ 
    {
      "accession": "G00582VL",
      "relative_dp": "+0",
-     "match": "10"
+     "match": "11"
    },
    {
      "accession": "G17344FG",
      "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G45048TZ",
-     "relative_dp": "-1",
-     "match": "9"
+     "match": "10"
    },
    {
      "accession": "G49168NM",
      "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G55953GF",
-     "relative_dp": "-1",
-     "match": "9"
+     "match": "10"
    },
    {
      "accession": "G68955EJ",
      "relative_dp": "+0",
-     "match": "10"
-   },
-   {
-     "accession": "G77198CF",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G89398CR",
-     "relative_dp": "-1",
-     "match": "9"
+     "match": "11"
    },
    {
      "accession": "G94490EL",
      "relative_dp": "-1",
-     "match": "9"
+     "match": "10"
    }
   ]
 }

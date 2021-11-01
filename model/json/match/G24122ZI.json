@@ -1,36 +1,36 @@
 {
   "probe_acc": "G24122ZI",
-  "dp":  "18",
+  "dp":  "20",
   "related_glycans": [ 
    {
      "accession": "G24122ZI",
      "relative_dp": "+0",
-     "match": "18"
+     "match": "20"
    },
    {
      "accession": "G26068PU",
      "relative_dp": "-1",
-     "match": "17"
+     "match": "19"
    },
    {
      "accession": "G60227QI",
      "relative_dp": "+0",
-     "match": "18"
+     "match": "20"
    },
    {
      "accession": "G67413BG",
      "relative_dp": "-1",
-     "match": "17"
+     "match": "19"
    },
    {
      "accession": "G71906BW",
      "relative_dp": "-1",
-     "match": "17"
+     "match": "19"
    },
    {
      "accession": "G94876HV",
      "relative_dp": "-1",
-     "match": "17"
+     "match": "19"
    }
   ]
 }

@@ -63,11 +63,6 @@
      "match": "10"
    },
    {
-     "accession": "G46185ND",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
      "accession": "G47816DI",
      "relative_dp": "+1",
      "match": "10"
@@ -134,16 +129,6 @@
    },
    {
      "accession": "G77252PU",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G79368CP",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G83022ZQ",
      "relative_dp": "+1",
      "match": "10"
    },

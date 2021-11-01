@@ -13,16 +13,6 @@
      "match": "13"
    },
    {
-     "accession": "G19140RD",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G28747XN",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
      "accession": "G32758HZ",
      "relative_dp": "-1",
      "match": "12"
@@ -59,11 +49,6 @@
    },
    {
      "accession": "G69725KG",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G76713YY",
      "relative_dp": "-1",
      "match": "12"
    },

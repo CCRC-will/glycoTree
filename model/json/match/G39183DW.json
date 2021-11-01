@@ -18,11 +18,6 @@
      "match": "15"
    },
    {
-     "accession": "G32829EU",
-     "relative_dp": "+1",
-     "match": "15"
-   },
-   {
      "accession": "G39183DW",
      "relative_dp": "+0",
      "match": "15"
@@ -39,11 +34,6 @@
    },
    {
      "accession": "G90284FM",
-     "relative_dp": "+1",
-     "match": "15"
-   },
-   {
-     "accession": "G92681HQ",
      "relative_dp": "+1",
      "match": "15"
    },

@@ -13,11 +13,6 @@
      "match": "14"
    },
    {
-     "accession": "G27067YD",
-     "relative_dp": "-1",
-     "match": "14"
-   },
-   {
      "accession": "G31341PC",
      "relative_dp": "-1",
      "match": "14"
@@ -51,11 +46,6 @@
      "accession": "G70194YY",
      "relative_dp": "+1",
      "match": "15"
-   },
-   {
-     "accession": "G76294TY",
-     "relative_dp": "-1",
-     "match": "14"
    },
    {
      "accession": "G79852UE",

@@ -1,66 +1,36 @@
 {
   "probe_acc": "G18306LO",
-  "dp":  "11",
+  "dp":  "12",
   "related_glycans": [ 
-   {
-     "accession": "G03275SD",
-     "relative_dp": "-1",
-     "match": "10"
-   },
    {
      "accession": "G05808PZ",
      "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G11637WL",
-     "relative_dp": "-1",
-     "match": "10"
+     "match": "11"
    },
    {
      "accession": "G18306LO",
      "relative_dp": "+0",
-     "match": "11"
-   },
-   {
-     "accession": "G31993QW",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G46308WD",
-     "relative_dp": "-1",
-     "match": "10"
+     "match": "12"
    },
    {
      "accession": "G50782HI",
-     "relative_dp": "+0",
+     "relative_dp": "-1",
      "match": "11"
    },
    {
      "accession": "G54183MZ",
      "relative_dp": "-1",
-     "match": "10"
+     "match": "11"
    },
    {
      "accession": "G59575FI",
      "relative_dp": "+0",
-     "match": "11"
+     "match": "12"
    },
    {
      "accession": "G66129DI",
-     "relative_dp": "+0",
+     "relative_dp": "-1",
      "match": "11"
-   },
-   {
-     "accession": "G74248TD",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G81422ZI",
-     "relative_dp": "-1",
-     "match": "10"
    }
   ]
 }

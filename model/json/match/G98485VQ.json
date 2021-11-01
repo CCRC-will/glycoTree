@@ -44,7 +44,7 @@
    },
    {
      "accession": "G41389FB",
-     "relative_dp": "+0",
+     "relative_dp": "+1",
      "match": "10"
    },
    {
@@ -81,11 +81,6 @@
      "accession": "G66741YQ",
      "relative_dp": "-1",
      "match": "9"
-   },
-   {
-     "accession": "G67226SQ",
-     "relative_dp": "+0",
-     "match": "10"
    },
    {
      "accession": "G73683LQ",

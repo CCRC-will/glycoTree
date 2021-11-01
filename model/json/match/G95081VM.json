@@ -33,11 +33,6 @@
      "match": "9"
    },
    {
-     "accession": "G41389FB",
-     "relative_dp": "+1",
-     "match": "9"
-   },
-   {
      "accession": "G41847IM",
      "relative_dp": "-1",
      "match": "8"
@@ -61,11 +56,6 @@
      "accession": "G66937TJ",
      "relative_dp": "-1",
      "match": "8"
-   },
-   {
-     "accession": "G67226SQ",
-     "relative_dp": "+1",
-     "match": "9"
    },
    {
      "accession": "G85843WY",

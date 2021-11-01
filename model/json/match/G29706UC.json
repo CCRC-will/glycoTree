@@ -4,7 +4,7 @@
   "related_glycans": [ 
    {
      "accession": "G07829JQ",
-     "relative_dp": "+0",
+     "relative_dp": "+1",
      "match": "10"
    },
    {
@@ -39,7 +39,7 @@
    },
    {
      "accession": "G88468EP",
-     "relative_dp": "+0",
+     "relative_dp": "+1",
      "match": "10"
    }
   ]

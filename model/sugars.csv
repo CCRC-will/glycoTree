@@ -5,6 +5,7 @@ HexolNAc,square,#FFFFFF,HexNAcol,Hexol2NAc,HexNAc
 GlcolNAc,square,#0090BC,GlcNAcol,Glcol2NAc,GlcNAc
 Hex,circle,#0090BC,Hex,Hex,Hexol
 Glc,circle,#0090BC,Glc,Glc,Glcol
+GlcA,splitdiamond,#0090BC,GlcA,GlcA,GlcAol
 Hexol,circle,#0090BC,noPC,Hexol,Hex
 Glcol,circle,#0090BC,noPC,Glcol,Glc
 GalNAc,square,#FFD400,GalNAc,Gal2NAc,GalolNAc
@@ -22,3 +23,5 @@ NeuNGc,diamond,#8FCCE9,Neu5Gc,NeuNGc,NeuolNGc
 KDN,diamond,#00A651,Kdn,KDN,KDNol
 Xyl,star,#F47920,Xyl,Xyl,Xylol
 Xylol,star,#F47920,noPC,Xylol,Xyl
+sulfate,text,#000000,noPX,sulfate,sulfate
+phosphate,text,#000000,noPX,phosphate,phosphate

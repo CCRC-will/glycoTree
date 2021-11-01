@@ -23,11 +23,6 @@
      "match": "9"
    },
    {
-     "accession": "G18306LO",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
      "accession": "G19841IT",
      "relative_dp": "-1",
      "match": "9"
@@ -69,11 +64,6 @@
    },
    {
      "accession": "G50782HI",
-     "relative_dp": "+1",
-     "match": "10"
-   },
-   {
-     "accession": "G59575FI",
      "relative_dp": "+1",
      "match": "10"
    },

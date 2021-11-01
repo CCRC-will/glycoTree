@@ -93,11 +93,6 @@
      "match": "10"
    },
    {
-     "accession": "G72125QI",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
      "accession": "G73907HE",
      "relative_dp": "+1",
      "match": "11"
@@ -136,16 +131,6 @@
      "accession": "G93204KY",
      "relative_dp": "+1",
      "match": "11"
-   },
-   {
-     "accession": "G94047VH",
-     "relative_dp": "-1",
-     "match": "10"
-   },
-   {
-     "accession": "G96175KT",
-     "relative_dp": "-1",
-     "match": "10"
    },
    {
      "accession": "G98212GQ",

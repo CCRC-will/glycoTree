@@ -3,19 +3,9 @@
   "dp":  "18",
   "related_glycans": [ 
    {
-     "accession": "G00231WL",
-     "relative_dp": "-1",
-     "match": "17"
-   },
-   {
      "accession": "G19294RF",
      "relative_dp": "+0",
      "match": "18"
-   },
-   {
-     "accession": "G19469VZ",
-     "relative_dp": "-1",
-     "match": "17"
    },
    {
      "accession": "G31037WG",

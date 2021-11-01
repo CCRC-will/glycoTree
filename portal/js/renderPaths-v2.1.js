@@ -75,13 +75,17 @@ function	reactionAppend(d) {
 	var anomer = d.residue_affected.anomer;
 	var anomerStr = "";
 	if (anomer === "a") {
-		anomerStr = "&#945;"
+		anomerStr = "&#945;-";
 	} else {
-		anomerStr = "&#946;"
+		anomerStr = "&#946;-";
 	}
-	var absolute = d.residue_affected.absolute;
+	var absolute = d.residue_affected.absolute + "-";
+	if (anomer === "n") {
+		anomerStr = "";
+		absolute = "";
+	}
 	var formName = d.residue_affected.form_name;
-	var fullName = anomerStr + "-" + absolute + "-" + formName;
+	var fullName = anomerStr + absolute + formName;
 	var tStr = "<tr>";
 	tStr += "	 <td width='35%'>Adds " + fullName + "</td>";
 	tStr += "	 <td width='10%'>";

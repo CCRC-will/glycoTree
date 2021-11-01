@@ -1,105 +1,30 @@
 {
   "probe_acc": "G80319WU",
-  "dp":  "16",
+  "dp":  "17",
   "related_glycans": [ 
-   {
-     "accession": "G04023GJ",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G19607EP",
-     "relative_dp": "+1",
-     "match": "16"
-   },
    {
      "accession": "G24816DA",
      "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G37990ZT",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G42380GI",
-     "relative_dp": "+1",
-     "match": "16"
+     "match": "17"
    },
    {
      "accession": "G49305IN",
      "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G50462VS",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G54018RP",
-     "relative_dp": "-1",
-     "match": "15"
-   },
-   {
-     "accession": "G56318NV",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G56963QZ",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G60439QY",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G70072FZ",
-     "relative_dp": "+1",
-     "match": "16"
+     "match": "17"
    },
    {
      "accession": "G70116BN",
      "relative_dp": "+0",
-     "match": "16"
-   },
-   {
-     "accession": "G73111YU",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G76408CE",
-     "relative_dp": "+1",
-     "match": "16"
+     "match": "17"
    },
    {
      "accession": "G80319WU",
      "relative_dp": "+0",
-     "match": "16"
-   },
-   {
-     "accession": "G86696LV",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G88227HW",
-     "relative_dp": "+1",
-     "match": "16"
-   },
-   {
-     "accession": "G99568AR",
-     "relative_dp": "+1",
-     "match": "16"
+     "match": "17"
    },
    {
      "accession": "G99891PR",
-     "relative_dp": "+0",
+     "relative_dp": "-1",
      "match": "16"
    }
   ]

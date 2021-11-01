@@ -3,26 +3,6 @@
   "dp":  "8",
   "related_glycans": [ 
    {
-     "accession": "G04699RP",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G05187WH",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G06216UH",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G06673TD",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
      "accession": "G09482NW",
      "relative_dp": "+1",
      "match": "8"
@@ -38,32 +18,12 @@
      "match": "8"
    },
    {
-     "accession": "G13785QH",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G13968YX",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
      "accession": "G19868AX",
      "relative_dp": "+0",
      "match": "8"
    },
    {
-     "accession": "G21586RO",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
      "accession": "G34612DX",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G38867AF",
      "relative_dp": "+1",
      "match": "8"
    },
@@ -73,18 +33,8 @@
      "match": "7"
    },
    {
-     "accession": "G40786FB",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G42525DE",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
      "accession": "G42841BX",
-     "relative_dp": "+0",
+     "relative_dp": "+1",
      "match": "8"
    },
    {
@@ -93,27 +43,7 @@
      "match": "8"
    },
    {
-     "accession": "G49743VF",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
      "accession": "G53479GY",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G62848AR",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G67385FR",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G72687PY",
      "relative_dp": "+1",
      "match": "8"
    },
@@ -141,16 +71,6 @@
      "accession": "G88876JQ",
      "relative_dp": "-1",
      "match": "7"
-   },
-   {
-     "accession": "G92918FJ",
-     "relative_dp": "+1",
-     "match": "8"
-   },
-   {
-     "accession": "G95940WS",
-     "relative_dp": "+1",
-     "match": "8"
    },
    {
      "accession": "G98855LF",

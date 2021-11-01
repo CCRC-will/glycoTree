@@ -1,46 +1,21 @@
 {
   "probe_acc": "G07829JQ",
-  "dp":  "10",
+  "dp":  "11",
   "related_glycans": [ 
    {
      "accession": "G07829JQ",
      "relative_dp": "+0",
-     "match": "10"
+     "match": "11"
    },
    {
      "accession": "G29706UC",
-     "relative_dp": "+0",
+     "relative_dp": "-1",
      "match": "10"
-   },
-   {
-     "accession": "G32915BP",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G53582JE",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G58667NI",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G73560HZ",
-     "relative_dp": "-1",
-     "match": "9"
-   },
-   {
-     "accession": "G74837KH",
-     "relative_dp": "-1",
-     "match": "9"
    },
    {
      "accession": "G88468EP",
      "relative_dp": "+0",
-     "match": "10"
+     "match": "11"
    }
   ]
 }

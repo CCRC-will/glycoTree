@@ -43,16 +43,6 @@
      "match": "11"
    },
    {
-     "accession": "G55600PH",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
-     "accession": "G70490JW",
-     "relative_dp": "+1",
-     "match": "11"
-   },
-   {
      "accession": "G71914DZ",
      "relative_dp": "+1",
      "match": "11"
@@ -61,11 +51,6 @@
      "accession": "G73402RN",
      "relative_dp": "-1",
      "match": "10"
-   },
-   {
-     "accession": "G82811EP",
-     "relative_dp": "+1",
-     "match": "11"
    },
    {
      "accession": "G84376FR",

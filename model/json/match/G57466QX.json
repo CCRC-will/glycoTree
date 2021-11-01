@@ -23,17 +23,7 @@
      "match": "13"
    },
    {
-     "accession": "G37938RD",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
      "accession": "G44327JQ",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G47007PV",
      "relative_dp": "-1",
      "match": "12"
    },
@@ -58,16 +48,6 @@
      "match": "13"
    },
    {
-     "accession": "G77915NM",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G80612BO",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
      "accession": "G83737UD",
      "relative_dp": "-1",
      "match": "12"
@@ -89,11 +69,6 @@
    },
    {
      "accession": "G87921DA",
-     "relative_dp": "-1",
-     "match": "12"
-   },
-   {
-     "accession": "G99808VS",
      "relative_dp": "-1",
      "match": "12"
    }

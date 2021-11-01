@@ -33,11 +33,6 @@
      "match": "14"
    },
    {
-     "accession": "G51098AA",
-     "relative_dp": "-1",
-     "match": "13"
-   },
-   {
      "accession": "G53812BX",
      "relative_dp": "-1",
      "match": "13"
@@ -61,11 +56,6 @@
      "accession": "G58571IP",
      "relative_dp": "+0",
      "match": "14"
-   },
-   {
-     "accession": "G58931VV",
-     "relative_dp": "-1",
-     "match": "13"
    },
    {
      "accession": "G60660BN",
