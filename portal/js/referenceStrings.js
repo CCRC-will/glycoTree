@@ -12,9 +12,9 @@ var selectStrings = {
 
 // template strings modified during runtime
 var templates = {
-	"infoHead": "Exploring glycan <a href='@GLYGEN@ACCESSION' target='glygen_frame'>@ACCESSION</a>",
+	"infoHead": "Exploring glycan @ACCESSION (<a href='@GLYGEN@ACCESSION' target='glygen_frame'>GlyGen Data</a>)",
 	"listHead": "Glycans Biosynthetically Related to @ACCESSION",
-	"gnomeLink": "Explore accessions related to <a href='@GNOME@ACCESSION' target='_blank'>@ACCESSION</a> using the <i>GNOme Subsumption Browser</i>",
+	"gnomeLink": "Explore accessions related to @ACCESSION using the <a href='@GNOME@ACCESSION' target='_blank'><i>GNOme Subsumption Navigator</i></a>",
 	"sandLink": "<a href='explore.html?@ACCESSION' target='_blank'>Click here to open a <i>new Sandbox Window</i></a> to explore glycans biosynthetically related to @ACCESSION<br><br>Alternatively, you can double click on any glycan's canvas to fully explore it in <i>this window</i><br>This will allow you to navigate from sandbox to sandbox using the back and forward buttons on your browser ",
 	"enzHead": "Enzymes that directly impact residue @RESID during biosynthesis of @ACCESSION",
 	"enzAll": "Enzymes that directly impact residues in @ACCESSION during its biosynthesis"

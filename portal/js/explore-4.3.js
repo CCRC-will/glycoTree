@@ -1151,16 +1151,30 @@ function fetchGlycanData(theURL, type, accession) {
 		if (type === 'json') {
 			// 'data' is a global Object containing glycan data
 			data[accession] = JSON.parse(result);
-			generateSVG(accession);
+			
+			if (data[accession].residues === null) {
+				noData(accession, theURL);
+			} else {
+				generateSVG(accession);
+			}
 		}
 	})			
 	.fail(function() {
 		unavailable.push("JSON data for " + accession);
 		console.log("File " + theURL + " not found");
-		dataAvailable = false;
+		noData(accession, theURL);
 	});
 	
 } // end of function fetchGlycanData()
+
+
+function noData(a, u) {
+	dataAvailable = false;
+	$("#progressDiv").html("<h3>No data available for " + a + "</h3>");
+	$("#helpDiv").html("");
+	$("#infoDiv").html("");
+	console.log("!!! " + u + " DID NOT RETURN MEANINGFUL DATA !!!");
+} // end of function noData()
 
 
 function simXOR(x, y) {
