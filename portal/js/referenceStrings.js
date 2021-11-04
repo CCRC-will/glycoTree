@@ -5,7 +5,7 @@ var selectStrings = {
 	"all": "All Biosynthetically Related Glycans",
 	"precursors": "Possible Precursors",
 	"products": "Possible Products",
-	"anomers": "Modified Substituent(s) and/or Reducing End",
+	"anomers": "Modified Reducing End",
 	"match": "Matching Reducing End",
 	"specified": "Fully Specified Reducing End"
 };

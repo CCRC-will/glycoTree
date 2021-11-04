@@ -11,7 +11,7 @@
 */
 
 // constants
-var v = 1; // verbosity of console.log
+var v = 9; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic', 'n': ""};
 // data variables
@@ -566,15 +566,26 @@ function downloadSVG(a) {
 	s.click();
 } // end of function downloadSVG()
 
+function countResidues(residueData) {
+	var counts = {resCount:0, subCount:0};
+	for (var i = 0; i < residueData.length; i++) 
+		if (residueData[i].anomer === "n") {
+			counts.subCount++;
+		} else {
+			counts.resCount++;
+		}
+	return(counts);
+} // end of function countResidues()
 
 function getInfoText(accession, resID) {
 	customStrings(accession, resID);
 	var txt = "<p class='head1'>" + mStr["infoHead"]; 
 	if (resID == '0') {
 		// the background canvas was clicked
-		var thisSubCount = countElements(getSubstituents(accession));
-		txt += " - " + data[accession].residues.length + " residues, " +
-			thisSubCount + " substituent(s)";
+		var counts = countResidues(data[accession].residues);
+		// var thisSubCount = countElements(getSubstituents(accession));
+		txt += " - " + counts.resCount + " residues, " +
+			counts.subCount + " substituent(s)";
 		
 		// anchor tag to download svg
 		txt += "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"data:text/svg," +
@@ -583,23 +594,23 @@ function getInfoText(accession, resID) {
 			".svg\">Download SVG Image</a></p> \n";
 
 		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>\n";
+		
+		// show caveats
 		var caveats = data[accession].caveats;
-		var cLen = caveats.length;
-		var tTop = 100 + 80 * cLen;
-		var cTop = tTop + 60;
-		if (cLen > 0) {
-			for (var i = 0; i < cLen; i++) {
-				if (v > 7) console.log("caveat length " +
-				 	data[accession].caveats[i]['msg'].length +
-					" characters");
-				txt += "<p><b>Caveat " + (1 + i) + ":</b> " +
-					data[accession].caveats[i]['msg'] + "</p>";
-			}
-
+		var cHeight = 100;
+		
+		for (var i in caveats) {
+			var msg = caveats[i]['msg'];
+			cHeight += 30 + msg.length / 8;
+			if (v > 7) console.log("caveat has " + msg.length + 
+				" characters; caveat space is now " + cHeight + " pixels high");
+			txt += "<p><b>Caveat:</b> " +
+				msg + "</p>";
 		}
-
+		var cTop = cHeight + 60;
+		
 		// START OF TABS DIV
-		txt += "<div id='tabbox' style='top: " + tTop +"px'> \n\
+		txt += "<div id='tabbox' style='top: " + cHeight +"px'> \n\
 <ul id='tabs'> \n\
 	<li><a href='#residue_table_div'>Residues</a></li> \n\
 	<li><a href='#enzyme_table_div'>Enzymes</a></li> \n\
@@ -1206,7 +1217,7 @@ function getSelectedData(selector) {
 		case "anomers":
 			for (i in rg) {
 				if ((rg[i].relative_dp == 0) && 
-					( (rg[i].reducing_end != probeEnd) || (rg[i].sub_count != probeSubCount) ) ) {
+					( (rg[i].reducing_end != probeEnd)) ) {
 						rgEdited.push(rg[i]);
 				}
 			}
