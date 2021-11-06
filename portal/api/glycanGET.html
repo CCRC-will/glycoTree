@@ -7,12 +7,9 @@
 	
 	
 function getData(type, accession) {
-	// Do not make a separate 'glycan' directory
-	// Put php files for API here and use .htaccess to redirect from fake directories
-	$.get("glycan-v2.php",
+	$.get("glycan-v3.php",
 	{
-		ac: accession,
-		type: type
+		ac: accession
 	},
 	function(result){
 		$("#result_div").html("<h3>type is " + type + "; accession is " +
@@ -37,11 +34,6 @@ $(document).ready(function(){
 		getData("json", accession);
 	});
 	
-	$("#get_svg").click(function() {
-		var accession = $("#acc").val();
-		getData("svg", accession);
-	});
-	
 });	
 
 	
@@ -54,7 +46,6 @@ $(document).ready(function(){
 <label for="acc">GlyTouCan Accession: </label>
 <input type="text" id="acc" name="acc" value="G99533GU">
 <button id="get_json">Get JSON</button>
-<button id="get_svg">Get SVG</button>
 	
 <h3>Requested Data</h3>
 <div id="result_div"></div>

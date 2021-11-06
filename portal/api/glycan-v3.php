@@ -198,9 +198,12 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 		$re_stmt = $connection->prepare($re_query);
 		$m = "";
 		$re_stmt->bind_param("s", $m);
-
-		$c = count($homologs);
-		for ($i = 0; $i <= $c; $i++) {
+		
+		$c = 0;
+		if (is_countable($homologs)) {
+			$c = count($homologs);
+		}
+		for ($i = 0; $i < $c; $i++) {
 			$h = $homologs[$i];
 			if ($h['relative_dp'] === 0) {
 				$m = $h['homolog'];
@@ -311,8 +314,7 @@ function gtree_comparator($a, $b) {
 
 try {
 	$accession = $_GET['ac'];
-	$type = $_GET['type'];
-	// echo $type . " " . $accession;
+	// echo  $accession;
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -321,90 +323,85 @@ try {
 		die("<br>Connection failed: " . $connection->connect_error);
 	}	
 	
-	if (strcmp($type, "svg") == 0) {
-		$filePath = '../svg/' . $accession . '.gTree.svg';
-		$svgData = file_get_contents($filePath);
-		echo $svgData;
-	}
+
 	
-	if (strcmp($type, "json") == 0) {
-		// generate an associative array 'glycan' that holds the hierarchical data
-		//    for the glycan with a specific glytoucan_ac value
-		$glycan = [];
-		$resid = "";
-		$glycan["glytoucan_ac"] = $accession;
+	// generate an associative array 'glycan' that holds the hierarchical data
+	//    for the glycan with a specific glytoucan_ac value
+	$glycan = [];
+	$resid = "";
+	$glycan["glytoucan_ac"] = $accession;
 
-		
-		// although the following is relatively succinct, 
-		//    it ignores rows in compositions where residue_id is not canonical
-		// $sql = "SELECT compositions.residue_id,compositions.name,compositions.anomer,compositions.absolute,compositions.ring,compositions.parent_id,compositions.site,compositions.form_name,compositions.glycoct_index,canonical_residues.residue_name,limited_to,not_found_in,requires_residue,blocked_by_residue,notes,evidence,comment FROM compositions,canonical_residues WHERE glytoucan_ac=? AND compositions.residue_id=canonical_residues.residue_id ORDER BY residue_id";
 
-		// get canonical residue info from compositions
-		$comp_query = "SELECT residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index FROM compositions WHERE glytoucan_ac=?";
-		$comp_stmt = $connection->prepare($comp_query);	
-		$comp_stmt->bind_param("s", $accession);
-		$comp_stmt->execute(); 
-		$comp_result = $comp_stmt->get_result();
+	// although the following is relatively succinct, 
+	//    it ignores rows in compositions where residue_id is not canonical
+	// $sql = "SELECT compositions.residue_id,compositions.name,compositions.anomer,compositions.absolute,compositions.ring,compositions.parent_id,compositions.site,compositions.form_name,compositions.glycoct_index,canonical_residues.residue_name,limited_to,not_found_in,requires_residue,blocked_by_residue,notes,evidence,comment FROM compositions,canonical_residues WHERE glytoucan_ac=? AND compositions.residue_id=canonical_residues.residue_id ORDER BY residue_id";
 
-		// get cannonical residue annotations from canonical_residues
-		$canon_query = "SELECT residue_name,limited_to,not_found_in,notes,evidence,comment FROM canonical_residues WHERE residue_id=?";
-		$canon_stmt = $connection->prepare($canon_query);
-		$canon_stmt->bind_param("s", $resid);
+	// get canonical residue info from compositions
+	$comp_query = "SELECT residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index FROM compositions WHERE glytoucan_ac=?";
+	$comp_stmt = $connection->prepare($comp_query);	
+	$comp_stmt->bind_param("s", $accession);
+	$comp_stmt->execute(); 
+	$comp_result = $comp_stmt->get_result();
 
-		// get enzyme information for residues from enzyme_mappings
-		$map_query = "SELECT enzyme_mappings.type,enzyme_mappings.uniprot,enzyme_mappings.requires_residue,enzyme_mappings.blocked_by_residue,enzyme_mappings.notes,enzymes.protein_refseq,enzymes.dna_refseq,enzymes.gene_name,enzymes.gene_id,enzymes.species,enzymes.branch_site_specificity,enzymes.orthology_group FROM enzyme_mappings,enzymes WHERE enzyme_mappings.uniprot=enzymes.uniprot AND residue_id=?";
-		$map_stmt = $connection->prepare($map_query);
-		$map_stmt->bind_param("s", $resid);
+	// get cannonical residue annotations from canonical_residues
+	$canon_query = "SELECT residue_name,limited_to,not_found_in,notes,evidence,comment FROM canonical_residues WHERE residue_id=?";
+	$canon_stmt = $connection->prepare($canon_query);
+	$canon_stmt->bind_param("s", $resid);
 
-		// get biosynthetically related glycans from correlation
-		$match_query = "SELECT homolog,relative_dp,shared FROM correlation WHERE glytoucan_ac=?";
-		$match_stmt = $connection->prepare($match_query);
-		$match_stmt->bind_param("s", $accession);
-		
-		$residues = [];
-		while ($row = $comp_result->fetch_assoc()) {
-			$enzymes = [];
-			$homologs = [];
-			$resid = $row["residue_id"];
-			$fullrow = $row;
-			// query canonical_residues using the current residue_id
-			$canon_stmt->execute(); 
-			$canon_result = $canon_stmt->get_result();
-			if ( ($canon_result->num_rows) > 0) {
-				$canon_row = $canon_result->fetch_assoc();
-				$fullrow = array_merge($row, $canon_row);
-			}
+	// get enzyme information for residues from enzyme_mappings
+	$map_query = "SELECT enzyme_mappings.type,enzyme_mappings.uniprot,enzyme_mappings.requires_residue,enzyme_mappings.blocked_by_residue,enzyme_mappings.notes,enzymes.protein_refseq,enzymes.dna_refseq,enzymes.gene_name,enzymes.gene_id,enzymes.species,enzymes.branch_site_specificity,enzymes.orthology_group FROM enzyme_mappings,enzymes WHERE enzyme_mappings.uniprot=enzymes.uniprot AND residue_id=?";
+	$map_stmt = $connection->prepare($map_query);
+	$map_stmt->bind_param("s", $resid);
 
-			// query enzyme_mappings using the current residue_id
-			$map_stmt->execute(); 
-			$map_result = $map_stmt->get_result();
-			while ($map_row = $map_result->fetch_assoc()) {
-				array_push($enzymes, $map_row);
-			}
-			$fullrow["enzymes"] = $enzymes;
+	// get biosynthetically related glycans from correlation
+	$match_query = "SELECT homolog,relative_dp,shared FROM correlation WHERE glytoucan_ac=?";
+	$match_stmt = $connection->prepare($match_query);
+	$match_stmt->bind_param("s", $accession);
 
-			array_push($residues, $fullrow);
-
-			// query correlations using the glytoucan_ac
-			$match_stmt->execute(); 
-			$match_result = $match_stmt->get_result();
-			while ($match_row = $match_result->fetch_assoc()) {
-				array_push($homologs, $match_row);
-			}
+	$residues = [];
+	while ($row = $comp_result->fetch_assoc()) {
+		$enzymes = [];
+		$homologs = [];
+		$resid = $row["residue_id"];
+		$fullrow = $row;
+		// query canonical_residues using the current residue_id
+		$canon_stmt->execute(); 
+		$canon_result = $canon_stmt->get_result();
+		if ( ($canon_result->num_rows) > 0) {
+			$canon_row = $canon_result->fetch_assoc();
+			$fullrow = array_merge($row, $canon_row);
 		}
 
-		$features = getFeatures($residues, $accession, $homologs, $connection);
+		// query enzyme_mappings using the current residue_id
+		$map_stmt->execute(); 
+		$map_result = $map_stmt->get_result();
+		while ($map_row = $map_result->fetch_assoc()) {
+			array_push($enzymes, $map_row);
+		}
+		$fullrow["enzymes"] = $enzymes;
 
-		// array sort by column value using custom comparator
-		// $sorted = $residues;
-		$sorted = sortCustom($residues, 'residue_id', 'gtree_comparator');
-		$glycan["residues"] = $sorted;
-		$glycan["related_glycans"] = $homologs;
-		$glycan["caveats"] = $features['caveats'];
-		$glycan["path_start"] = $features['path_start'];
-		$glycan["alternate"] = $features['alternate'];
-		echo json_encode($glycan, JSON_PRETTY_PRINT);
+		array_push($residues, $fullrow);
+
+		// query correlations using the glytoucan_ac
+		$match_stmt->execute(); 
+		$match_result = $match_stmt->get_result();
+		while ($match_row = $match_result->fetch_assoc()) {
+			array_push($homologs, $match_row);
+		}
 	}
+
+	$features = getFeatures($residues, $accession, $homologs, $connection);
+
+	// array sort by column value using custom comparator
+	// $sorted = $residues;
+	$sorted = sortCustom($residues, 'residue_id', 'gtree_comparator');
+	$glycan["residues"] = $sorted;
+	$glycan["related_glycans"] = $homologs;
+	$glycan["caveats"] = $features['caveats'];
+	$glycan["path_start"] = $features['path_start'];
+	$glycan["alternate"] = $features['alternate'];
+	echo json_encode($glycan, JSON_PRETTY_PRINT);
+
 
 } catch (mysqli_sql_exception $e) { 
 	echo "MySQLi Error Code: " . $e->get Code() . "<br />";
