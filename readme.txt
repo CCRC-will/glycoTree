@@ -19,7 +19,7 @@ The glycoTree project includes several different software packages, including:
 - GenerateCSV - a java class that takes GlycoCT files as input and generated csv files in "glycoTree" format
 - TreeBuilder -a java class that semantially annotates the glycoTree files by mapping the sugar residues they specify to residues in the canonical glycoTree
 - several awk and shell scripts that collect files, invoke the java classes, and make inferential assertions, which are saved in other files
-- SVGflatten (DEPRECATED)  - a java class that transforms svg encodings of glycan structure images by removing unnecessary layers, incorporating semantic id attributes to the svg drawing elements, and adding an image element showing the anomeric configuration of the reducing residue (which is missing in the original svg files).  The semantic id's specify an image element type (residue, link, or link annotation), the GlyTouCan accession of the rendered glycan, and the canonical index of each residue in the structure, like this: "R-G40194MN:NC".
+- SVGflatten (DEPRECATED)  - a java class that transforms svg encodings of glycan structure images by removing unnecessary layers, incorporating semantic id attributes to the svg drawing elements, and adding an image element showing the anomeric configuration of the reducing residue (which is missing in the original svg files).  
 
 The  glycoTree model has been initially developed for N-glycans, and its extension to include O-glycans is in progress. The model is implemeted using mySQL as the data repository.
 
