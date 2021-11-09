@@ -28,6 +28,6 @@ Preparation of the N-glycan canonical tree data is partially automated using the
 
 N-glycan structures can be downloaded from GlyGen:
 	GlyGen.org > Explore > Glycans > Advanced Search > Glycan Type 
-
+	Then select, e.g., "N-glycans"
 
 Please examine these scripts (especially build_N-tree.sh) and read the javadocs or comment lines in the programs they invoke for more insight regarding the usage of these programs in other contexts.
