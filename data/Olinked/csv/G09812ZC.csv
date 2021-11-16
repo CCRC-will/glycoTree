@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G09812ZC,unassigned,11,NeuNAc,x,D,x,x,x,NeuNAc
+G09812ZC,unassigned,22,Gal,x,D,x,x,x,Gal
+G09812ZC,unassigned,23,Gal,x,D,x,x,x,Gal
+G09812ZC,unassigned,13,NeuNAc,x,D,x,x,x,NeuNAc
+G09812ZC,unassigned,24,Gal,x,D,x,x,x,Gal
+G09812ZC,unassigned,25,GalNAc,o,D,ol,x,x,GalolNAc
+G09812ZC,unassigned,15,NeuNAc,x,D,x,x,x,NeuNAc
+G09812ZC,unassigned,17,NeuNAc,x,D,x,x,x,NeuNAc
+G09812ZC,unassigned,19,NeuNAc,x,D,x,x,x,NeuNAc
+G09812ZC,unassigned,1,GlcNAc,x,D,x,0,0,GlcNAc
+G09812ZC,unassigned,3,GlcNAc,x,D,x,x,x,GlcNAc
+G09812ZC,unassigned,5,GlcNAc,x,D,x,x,x,GlcNAc
+G09812ZC,unassigned,7,GlcNAc,x,D,x,x,x,GlcNAc
+G09812ZC,unassigned,9,GlcNAc,x,D,x,x,x,GlcNAc
+G09812ZC,unassigned,21,Gal,x,D,x,x,x,Gal

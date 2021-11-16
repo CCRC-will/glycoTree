@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G33312WH,unassigned,1,HexNAc,o,x,x,0,0,HexNAc
+G33312WH,unassigned,3,Hex,x,x,x,x,x,Hex
+G33312WH,unassigned,4,NGc,x,x,x,x,x,NGc

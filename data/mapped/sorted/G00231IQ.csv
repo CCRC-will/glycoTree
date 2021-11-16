@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G00231IQ,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G00231IQ,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G00231IQ,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G00231IQ,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,18,,,validated by Qrator,,PMID: 25165122
+G00231IQ,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G00231IQ,unassigned,7,Man,x,D,p,6,x,Manp,7
+G00231IQ,unassigned,8,Man,a,D,p,NC,x,Manp,8
+G00231IQ,unassigned,9,GlcNAc,x,D,p,8,x,GlcpNAc,9
+G00231IQ,unassigned,11,GlcNAc,x,D,p,8,x,GlcpNAc,11
+G00231IQ,unassigned,13,GalNAc,b,D,p,11,4,GalpNAc,13
+G00231IQ,unassigned,15,Gal,b,D,p,13,3,Galp,15
+G00231IQ,unassigned,16,NeuNAc,a,D,p,15,6,NeupNAc,16

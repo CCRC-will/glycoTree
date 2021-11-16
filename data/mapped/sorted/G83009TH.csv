@@ -1,0 +1,19 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G83009TH,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G83009TH,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G83009TH,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G83009TH,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G83009TH,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,17,,,validated by Qrator,,PMID: 25165152
+G83009TH,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
+G83009TH,unassigned,8,Gal,x,D,p,7,x,Galp,8
+G83009TH,unassigned,9,NeuNAc,x,D,p,8,x,NeupNAc,9
+G83009TH,unassigned,12,GlcNAc,x,D,p,N1,x,GlcpNAc,12
+G83009TH,unassigned,13,Gal,x,D,p,12,x,Galp,13
+G83009TH,unassigned,14,NeuNAc,x,D,p,13,x,NeupNAc,14
+G83009TH,unassigned,18,GlcNAc,x,D,p,N4,x,GlcpNAc,18
+G83009TH,unassigned,19,Gal,x,D,p,18,x,Galp,19
+G83009TH,unassigned,20,NeuNAc,x,D,p,19,x,NeupNAc,20
+G83009TH,unassigned,23,GlcNAc,x,D,p,N4,x,GlcpNAc,23
+G83009TH,unassigned,24,Gal,x,D,p,23,x,Galp,24
+G83009TH,unassigned,25,NeuNAc,x,D,p,24,x,NeupNAc,25
+G83009TH,unassigned,28,Fuc,x,L,p,x,x,Fucp,28

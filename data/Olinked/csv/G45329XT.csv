@@ -1,0 +1,9 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G45329XT,unassigned,11,sulfate,n,n,n,x,x,sulfate
+G45329XT,unassigned,1,Hex,x,x,x,0,0,Hex
+G45329XT,unassigned,2,Hex,x,x,x,x,x,Hex
+G45329XT,unassigned,3,Hex,x,x,x,x,x,Hex
+G45329XT,unassigned,4,Hex,x,x,x,x,x,Hex
+G45329XT,unassigned,5,NAc,x,x,x,x,x,NAc
+G45329XT,unassigned,7,HexNAc,x,x,x,x,x,HexNAc
+G45329XT,unassigned,9,HexNAc,o,x,ol,x,x,HexolNAc

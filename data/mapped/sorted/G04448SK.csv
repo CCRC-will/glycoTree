@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G04448SK,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G04448SK,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G04448SK,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G04448SK,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
+G04448SK,unassigned,7,Man,a,D,p,NC,x,Manp,7
+G04448SK,unassigned,8,GlcNAc,b,D,p,7,2,GlcpNAc,8
+G04448SK,unassigned,9,Gal,b,D,p,8,x,Galp,9
+G04448SK,unassigned,11,GlcNAc,b,D,p,7,4,GlcpNAc,11
+G04448SK,unassigned,12,Gal,b,D,p,11,x,Galp,12
+G04448SK,unassigned,14,Man,a,D,p,NC,x,Manp,14
+G04448SK,unassigned,15,GlcNAc,b,D,p,14,x,GlcpNAc,15
+G04448SK,unassigned,16,Gal,b,D,p,15,x,Galp,16

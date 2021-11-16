@@ -1,0 +1,18 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G74518AV,unassigned,11,GlcNAc,b,D,p,10,2,GlcpNAc,11
+G74518AV,unassigned,22,Gal,b,D,p,20,4,Galp,22
+G74518AV,unassigned,23,GlcNAc,b,D,p,x,x,GlcpNAc,23
+G74518AV,unassigned,13,Gal,b,D,p,11,4,Galp,13
+G74518AV,unassigned,14,GlcNAc,b,D,p,10,4,GlcpNAc,14
+G74518AV,unassigned,25,Gal,b,D,p,23,3,Galp,25
+G74518AV,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G74518AV,unassigned,17,GlcNAc,b,D,p,x,x,GlcpNAc,17
+G74518AV,unassigned,19,Gal,b,D,p,17,4,Galp,19
+G74518AV,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G74518AV,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G74518AV,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G74518AV,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G74518AV,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G74518AV,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G74518AV,unassigned,20,GlcNAc,b,D,p,x,x,GlcpNAc,20
+G74518AV,unassigned,10,Man,a,D,p,NC,x,Manp,10

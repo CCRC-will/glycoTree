@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G49644CL,unassigned,1,NeuNAc,x,D,p,0,0,NeupNAc
+G49644CL,unassigned,3,Hex,x,x,p,x,x,Hexp
+G49644CL,unassigned,4,Hex,x,x,p,x,x,Hexp
+G49644CL,unassigned,5,HexNAc,x,x,p,x,x,HexpNAc

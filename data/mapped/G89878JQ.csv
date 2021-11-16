@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G89878JQ,unassigned,13,Man,a,D,p,NC,x,Manp,13
+G89878JQ,unassigned,14,HexNAc,x,x,p,13,x,HexpNAc,14
+G89878JQ,unassigned,15,Hex,x,x,p,14,x,Hexp,15
+G89878JQ,unassigned,16,NeuNAc,x,D,p,15,x,NeupNAc,16
+G89878JQ,unassigned,19,HexNAc,x,x,p,13,x,HexpNAc,19
+G89878JQ,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G89878JQ,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
+G89878JQ,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G89878JQ,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G89878JQ,unassigned,7,Man,a,D,p,NC,x,Manp,7
+G89878JQ,unassigned,8,HexNAc,x,x,p,7,x,HexpNAc,8
+G89878JQ,unassigned,9,Hex,x,x,p,8,x,Hexp,9
+G89878JQ,unassigned,20,Hex,x,x,p,19,x,Hexp,20
+G89878JQ,unassigned,10,NeuNAc,x,D,p,9,x,NeupNAc,10
+G89878JQ,unassigned,21,NeuNAc,x,D,p,20,x,NeupNAc,21

@@ -1,0 +1,16 @@
+RES
+1b:x-dgal-HEX-x:x
+2s:n-acetyl
+3b:x-dgal-HEX-x:x
+4b:x-dgal-HEX-x:x
+5b:x-dglc-HEX-x:x
+6s:n-acetyl
+7b:x-dglc-HEX-x:x
+8s:n-acetyl
+9b:x-lgal-HEX-x:x|6:d
+10b:x-lgal-HEX-x:x|6:d
+11b:x-lgal-HEX-x:x|6:d
+LIN
+1:1d(2+1)2n
+2:5d(2+1)6n
+3:7d(2+1)8n

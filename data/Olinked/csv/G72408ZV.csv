@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G72408ZV,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G72408ZV,unassigned,3,HexNAc,o,x,ol,x,x,HexolNAc
+G72408ZV,unassigned,5,NGc,x,x,x,x,x,NGc
+G72408ZV,unassigned,7,Hex,x,x,x,x,x,Hex

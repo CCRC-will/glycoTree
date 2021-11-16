@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G35975NI,unassigned,11,GlcNAc,x,D,p,10,x,GlcpNAc,11
+G35975NI,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G35975NI,unassigned,13,Gal,b,D,p,11,4,Galp,13
+G35975NI,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G35975NI,unassigned,14,GlcNAc,x,D,p,10,x,GlcpNAc,14
+G35975NI,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G35975NI,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G35975NI,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G35975NI,unassigned,17,Fuc,x,L,p,x,x,Fucp,17
+G35975NI,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
+G35975NI,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G35975NI,unassigned,10,Man,a,D,p,NC,x,Manp,10

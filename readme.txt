@@ -21,13 +21,16 @@ The glycoTree project includes several different software packages, including:
 - several awk and shell scripts that collect files, invoke the java classes, and make inferential assertions, which are saved in other files
 - SVGflatten (DEPRECATED)  - a java class that transforms svg encodings of glycan structure images by removing unnecessary layers, incorporating semantic id attributes to the svg drawing elements, and adding an image element showing the anomeric configuration of the reducing residue (which is missing in the original svg files).  
 
-The  glycoTree model has been initially developed for N-glycans, and its extension to include O-glycans is in progress. The model is implemeted using mySQL as the data repository.
+The  glycoTree model has been initially developed for N-glycans, and its extension to include O-glycans is well underway. The model is implemented using mySQL as the data repository.
 
-Preparation of the N-glycan canonical tree data is partially automated using the bash script "build_N-tree.sh" 
+Preparation of the N-glycan and O-glycan canonical trees data is automated using the bash script "build_all.sh" 
    A collection of GlycoCT files is required as a prerequisites for the automation.
+The database must be populated using the results of "build_all.sh".  This is accomplished by the script 
+   ./sql/populateDB.sh
+This script requires an active mySQL server in order to be executed on the computer.
 
-N-glycan structures can be downloaded from GlyGen:
+N- and/or O-glycan structures to be used as input can be downloaded from GlyGen:
 	GlyGen.org > Explore > Glycans > Advanced Search > Glycan Type 
-	Then select, e.g., "N-glycans"
+	Then select, e.g., "N-glycans" or "O-glycans"
 
-Please examine these scripts (especially build_N-tree.sh) and read the javadocs or comment lines in the programs they invoke for more insight regarding the usage of these programs in other contexts.
+Please examine these scripts (especially build_all.sh and populateDB.sh) and read the javadocs or comment lines in the programs they invoke for more insight regarding the usage of these programs in various contexts.

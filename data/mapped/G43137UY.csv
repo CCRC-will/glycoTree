@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G43137UY,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G43137UY,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PMID: 25165152
+G43137UY,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
+G43137UY,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G43137UY,unassigned,14,GalNAc,x,D,p,13,x,GalpNAc,14
+G43137UY,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G43137UY,unassigned,16,sulfate,n,n,n,14,4,sulfate,16
+G43137UY,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G43137UY,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
+G43137UY,unassigned,8,GalNAc,x,D,p,7,x,GalpNAc,8
+G43137UY,unassigned,10,sulfate,n,n,n,8,4,sulfate,10

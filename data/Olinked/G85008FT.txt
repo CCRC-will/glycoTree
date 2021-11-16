@@ -1,0 +1,15 @@
+RES
+1b:o-dgal-HEX-0:0|1:aldi
+2s:n-acetyl
+3b:x-dglc-HEX-x:x
+4s:n-acetyl
+5s:sulfate
+6b:x-dglc-HEX-x:x
+7s:n-acetyl
+8b:x-dgal-HEX-x:x
+9b:x-dgal-HEX-x:x
+LIN
+1:1d(2+1)2n
+2:3d(2+1)4n
+3:3o(6+1)5n
+4:6d(2+1)7n

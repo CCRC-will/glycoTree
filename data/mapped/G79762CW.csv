@@ -1,0 +1,23 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G79762CW,unassigned,11,GalNAc,a,D,p,9,3,GalpNAc,11
+G79762CW,unassigned,23,Gal,b,D,p,21,4,Galp,23
+G79762CW,unassigned,24,Fuc,a,L,p,23,2,Fucp,24
+G79762CW,unassigned,14,GlcNAc,b,D,p,7,6,GlcpNAc,14
+G79762CW,unassigned,25,GalNAc,a,D,p,23,3,GalpNAc,25
+G79762CW,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G79762CW,unassigned,17,Fuc,a,L,p,16,2,Fucp,17
+G79762CW,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,28,,,validated by Qrator
+G79762CW,unassigned,18,GalNAc,a,D,p,16,3,GalpNAc,18
+G79762CW,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G79762CW,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G79762CW,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
+G79762CW,unassigned,5,Gal,b,D,p,4,x,Galp,5
+G79762CW,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
+G79762CW,unassigned,7,Gal,b,D,p,6,x,Galp,7
+G79762CW,unassigned,8,GlcNAc,b,D,p,7,3,GlcpNAc,8
+G79762CW,unassigned,9,Gal,b,D,p,8,x,Galp,9
+G79762CW,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,30,,,validated by Qrator
+G79762CW,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,31,,,validated by Qrator
+G79762CW,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G79762CW,unassigned,21,GlcNAc,b,D,p,5,6,GlcpNAc,21
+G79762CW,O-glycan_a-D-GalpNAc_166,O166,GalNAc,a,D,p,O158,3,GalpNAc,32,,,validated by Qrator

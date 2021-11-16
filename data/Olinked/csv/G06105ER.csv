@@ -1,0 +1,3 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G06105ER,unassigned,1,GalNAc,x,x,p,0,0,GalpNAc
+G06105ER,unassigned,3,Gal,x,D,p,1,x,Galp

@@ -1,0 +1,14 @@
+RES
+1b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+2s:n-acetyl
+3b:x-HEX-1:5
+4b:x-HEX-1:5
+5b:x-HEX-1:5
+6b:x-HEX-1:5
+7s:n-acetyl
+8b:x-HEX-1:5
+9s:n-acetyl
+LIN
+1:1d(5+1)2n
+2:6d(2+1)7n
+3:8d(2+1)9n

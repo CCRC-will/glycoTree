@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G53516DW,unassigned,1,NeuNAc,x,D,x,0,0,NeuNAc
+G53516DW,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
+G53516DW,unassigned,5,Hex,x,x,x,x,x,Hex
+G53516DW,unassigned,6,GalNAc,o,D,ol,x,x,GalolNAc
+G53516DW,unassigned,8,Fuc,x,x,x,x,x,Fuc

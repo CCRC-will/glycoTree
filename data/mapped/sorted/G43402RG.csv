@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G43402RG,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G43402RG,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G43402RG,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G43402RG,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G43402RG,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G43402RG,unassigned,9,Fuc,a,L,p,7,3,Fucp,9
+G43402RG,unassigned,10,Gal,b,D,p,7,4,Galp,10
+G43402RG,unassigned,11,Man,a,D,p,NC,x,Manp,11
+G43402RG,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
+G43402RG,unassigned,14,Fuc,a,L,p,12,3,Fucp,14
+G43402RG,unassigned,15,Gal,b,D,p,12,4,Galp,15
+G43402RG,unassigned,16,NeuNAc,a,D,p,15,3,NeupNAc,16

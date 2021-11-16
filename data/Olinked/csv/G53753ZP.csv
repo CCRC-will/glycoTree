@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G53753ZP,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G53753ZP,unassigned,3,Hex,x,x,x,1,x,Hex
+G53753ZP,unassigned,4,NeuNAc,x,D,p,1,x,NeupNAc

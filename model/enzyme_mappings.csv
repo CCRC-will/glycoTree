@@ -191,8 +191,8 @@ N-glycan_b-D-GlcpNAc_31,N31,GT,Q9D306,,,putative acivity
 N-glycan_b-D-GlcpNAc_31,N31,GT,Q9UBM8,,,putative acivity
 N-glycan_a-D-Galp_39,N39,GT,P38649,N71,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N39 but missing a-Fuc N71 are potentially catabolic products
 N-glycan_a-D-Galp_39,N39,GT,P16442,N71,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N39 but missing a-Fuc N71 are potentially catabolic products
-N-glycan_a-D-Galp_51,N51,GT,P38649,N152,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N51 but missing a-Fuc N152 are potentially catabolic products
-N-glycan_a-D-Galp_51,N51,GT,P16442,N152,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N51 but missing a-Fuc N152 are potentially catabolic products
+N-glycan_a-D-Galp_51,N51,GT,P38649,N200,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N51 but missing a-Fuc N200 are potentially catabolic products
+N-glycan_a-D-Galp_51,N51,GT,P16442,N200,,The minimal acceptor for ABO is an H-disaccharide (aFuc1-2bGal) so stuctures containing a-Gal N51 but missing a-Fuc N200 are potentially catabolic products
 N-glycan_b-D-Galp_32,N32,GT,P15535,,,These enzymes will GT to B1-4 linked GlcNAc on the a3 arm mannose but b4 GlcNAc on the a6 arm (#31) is putative
 N-glycan_b-D-Galp_32,N32,GT,P15291,,,These enzymes will GT to B1-4 linked GlcNAc on the a3 arm mannose but b4 GlcNAc on the a6 arm (#31) is putative
 N-glycan_b-D-Galp_32,N32,GT,Q9Z2Y2,,,

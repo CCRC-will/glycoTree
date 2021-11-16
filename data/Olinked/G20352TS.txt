@@ -1,0 +1,17 @@
+RES
+1b:x-HEX-1:x
+2s:n-acetyl
+3b:x-HEX-1:x
+4b:x-HEX-1:x|6:d
+5b:x-HEX-1:x
+6s:n-acetyl
+7b:x-HEX-1:x
+8s:n-acetyl
+LIN
+1:1d(2+1)2n
+2:1o(-1+1)3d
+3:3o(-1+1)4d
+4:3o(-1+1)5d
+5:5d(2+1)6n
+6:1o(-1+1)7d
+7:7d(2+1)8n

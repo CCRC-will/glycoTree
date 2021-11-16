@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G42614NV,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,x,0,0,GlcNAc,1,,,validated by Qrator,,PMID: 25165210
+G42614NV,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G42614NV,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G42614NV,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,23,,,validated by Qrator,,PMID: 25165122
+G42614NV,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
+G42614NV,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G42614NV,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G42614NV,unassigned,10,NeuNAc,a,D,p,9,6,NeupNAc,10
+G42614NV,unassigned,12,GlcNAc,b,D,p,6,4,GlcpNAc,12
+G42614NV,unassigned,14,Gal,b,D,p,12,4,Galp,14
+G42614NV,unassigned,15,NeuNAc,a,D,p,14,6,NeupNAc,15
+G42614NV,unassigned,17,Man,a,D,p,NC,3|6,Manp,17
+G42614NV,unassigned,18,GlcNAc,b,D,p,17,2,GlcpNAc,18
+G42614NV,unassigned,20,Gal,b,D,p,18,4,Galp,20
+G42614NV,unassigned,21,NeuNAc,a,D,p,20,6,NeupNAc,21

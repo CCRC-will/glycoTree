@@ -1,0 +1,8 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G87806PB,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G87806PB,unassigned,3,HexNAc,x,x,x,1,x,HexNAc
+G87806PB,unassigned,5,Hex,x,x,x,3,x,Hex
+G87806PB,unassigned,6,Hex,x,x,x,3,x,Hex
+G87806PB,unassigned,7,HexNAc,x,x,x,1,x,HexNAc
+G87806PB,unassigned,9,Hex,x,x,x,7,x,Hex
+G87806PB,unassigned,10,sulfate,n,n,n,9,3,sulfate

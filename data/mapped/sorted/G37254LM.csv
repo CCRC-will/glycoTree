@@ -1,0 +1,21 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G37254LM,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G37254LM,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G37254LM,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G37254LM,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,31,,,validated by Qrator,,PMID: 25165122
+G37254LM,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G37254LM,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
+G37254LM,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G37254LM,unassigned,10,GlcNAc,b,D,p,9,3,GlcpNAc,10
+G37254LM,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G37254LM,unassigned,13,NeuNAc,a,D,p,12,3,NeupNAc,13
+G37254LM,unassigned,15,GlcNAc,b,D,p,6,x,GlcpNAc,15
+G37254LM,unassigned,17,Gal,b,D,p,15,4,Galp,17
+G37254LM,unassigned,18,NeuNAc,a,D,p,17,3,NeupNAc,18
+G37254LM,unassigned,20,Man,a,D,p,NC,x,Manp,20
+G37254LM,unassigned,21,GlcNAc,b,D,p,20,x,GlcpNAc,21
+G37254LM,unassigned,23,Gal,b,D,p,21,4,Galp,23
+G37254LM,unassigned,24,NeuNAc,a,D,p,23,3,NeupNAc,24
+G37254LM,unassigned,26,GlcNAc,b,D,p,20,2,GlcpNAc,26
+G37254LM,unassigned,28,Gal,b,D,p,26,4,Galp,28
+G37254LM,unassigned,29,NeuNAc,a,D,p,28,3,NeupNAc,29

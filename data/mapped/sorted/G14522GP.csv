@@ -1,0 +1,15 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G14522GP,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G14522GP,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G14522GP,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G14522GP,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G14522GP,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,13,,,validated by Qrator,,PMID: 25165152
+G14522GP,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
+G14522GP,unassigned,8,Gal,b,D,p,7,x,Galp,8
+G14522GP,unassigned,10,GlcNAc,b,D,p,N1,x,GlcpNAc,10
+G14522GP,unassigned,11,Gal,b,D,p,10,x,Galp,11
+G14522GP,unassigned,14,GlcNAc,b,D,p,N4,x,GlcpNAc,14
+G14522GP,unassigned,15,Gal,b,D,p,14,x,Galp,15
+G14522GP,unassigned,17,GlcNAc,b,D,p,N4,x,GlcpNAc,17
+G14522GP,unassigned,18,Gal,b,D,p,17,x,Galp,18
+G14522GP,unassigned,20,Fuc,x,L,p,x,x,Fucp,20

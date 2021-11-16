@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G55677NY,unassigned,1,Man,x,D,x,0,0,Man
+G55677NY,unassigned,2,Gal,x,D,x,x,x,Gal
+G55677NY,unassigned,3,NeuNAc,x,D,x,x,x,NeuNAc
+G55677NY,unassigned,5,GlcNAc,x,D,x,x,x,GlcNAc

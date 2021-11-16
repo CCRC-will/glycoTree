@@ -1,0 +1,8 @@
+RES
+1b:x-HEX-1:5
+2b:x-HEX-1:5
+3b:x-HEX-1:5
+4b:x-HEX-1:5
+5s:n-acetyl
+LIN
+1:4d(2+1)5n

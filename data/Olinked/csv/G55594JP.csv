@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G55594JP,unassigned,1,Hex,x,x,x,0,0,Hex
+G55594JP,unassigned,2,Hex,x,x,x,x,x,Hex
+G55594JP,unassigned,3,HexNAc,o,x,x,x,x,HexNAc
+G55594JP,unassigned,5,Hex,x,x,x,x,x,Hex
+G55594JP,unassigned,6,HexNAc,x,x,x,x,x,HexNAc

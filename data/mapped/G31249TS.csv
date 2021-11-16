@@ -1,0 +1,21 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G31249TS,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G31249TS,unassigned,23,Gal,b,D,p,21,4,Galp,23
+G31249TS,unassigned,13,NeuNAc,a,D,p,12,3,NeupNAc,13
+G31249TS,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,24,,,validated by Qrator,,PMID: 25165122
+G31249TS,unassigned,25,GlcNAc,x,D,p,x,x,GlcpNAc,25
+G31249TS,unassigned,15,Man,a,D,p,NC,x,Manp,15
+G31249TS,unassigned,16,GlcNAc,b,D,p,15,x,GlcpNAc,16
+G31249TS,unassigned,27,Gal,x,D,p,25,4,Galp,27
+G31249TS,unassigned,28,NeuNAc,a,D,p,x,x,NeupNAc,28
+G31249TS,unassigned,18,Gal,b,D,p,16,4,Galp,18
+G31249TS,unassigned,19,NeuNAc,a,D,p,18,3,NeupNAc,19
+G31249TS,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G31249TS,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G31249TS,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G31249TS,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G31249TS,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
+G31249TS,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G31249TS,unassigned,30,NeuNAc,a,D,p,x,x,NeupNAc,30
+G31249TS,unassigned,10,GlcNAc,b,D,p,6,x,GlcpNAc,10
+G31249TS,unassigned,21,GlcNAc,b,D,p,15,x,GlcpNAc,21

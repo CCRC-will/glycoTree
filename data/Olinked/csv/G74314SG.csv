@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G74314SG,unassigned,1,GalNAc,x,D,x,0,0,GalNAc
+G74314SG,unassigned,3,GalNAc,o,x,ol,x,x,GalolNAc
+G74314SG,unassigned,5,Gal,x,D,x,x,x,Gal

@@ -1,0 +1,37 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G67612NO,N-glycan_b-D-GlcpNAc_75,N75,GlcNAc,b,D,p,N8,3,GlcpNAc,22,,,validated by Qrator,,PMID: 25165191
+G67612NO,N-glycan_b-D-Galp_37,N37,Gal,b,D,p,N36,4,Galp,45,,,validated by Qrator,,PMID: 25165149
+G67612NO,N-glycan_a-L-Fucp_231,N231,Fuc,a,L,p,N75,3,Fucp,24,,,manually validated,MT
+G67612NO,N-glycan_b-D-GlcpNAc_232,N232,GlcNAc,b,D,p,N37,3,GlcpNAc,46,,,manually validated,MT
+G67612NO,N-glycan_b-D-Galp_80,N80,Gal,b,D,p,N75,4,Galp,25,,,validated by Qrator,,PMID: 25165196
+G67612NO,N-glycan_b-D-GlcpNAc_234,N234,GlcNAc,b,D,p,N80,3,GlcpNAc,26,,,no images available,,,in very large glycans with no svg image
+G67612NO,N-glycan_a-L-Fucp_277,N277,Fuc,a,L,p,N232,3,Fucp,48,,,,MT,,no response from sandbox/nodes; removed?
+G67612NO,N-glycan_b-D-Galp_281,N281,Gal,b,D,p,N232,4,Galp,49,,,manually validated,MT
+G67612NO,N-glycan_a-L-Fucp_279,N279,Fuc,a,L,p,N234,3,Fucp,28,,,,,,no response from sandbox/nodes; removed?
+G67612NO,N-glycan_b-D-Galp_280,N280,Gal,b,D,p,N234,4,Galp,29,,,,,,no response from sandbox/nodes; removed?
+G67612NO,N-glycan_a-D-NeupNAc_401,N401,NeuNAc,a,D,p,N281,3,NeupNAc,50,,,manually validated,MT
+G67612NO,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,30,,,validated by Qrator,,PMID: 25165152
+G67612NO,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,52,,,validated by Qrator,,PMID: 25165122
+G67612NO,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,31,,,validated by Qrator,,PMID: 25165163
+G67612NO,N-glycan_b-D-GlcpNAc_278,N278,GlcNAc,b,D,p,N88,3,GlcpNAc,10,,,,,,no response from sandbox/nodes; removed?
+G67612NO,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,33,,,validated by Qrator,,PMID: 25165174
+G67612NO,N-glycan_b-D-Galp_433,N433,Gal,b,D,p,N278,4,Galp,12,,,not validated,,,no response from Sandbox
+G67612NO,N-glycan_b-D-GlcpNAc_59,N59,GlcNAc,b,D,p,N6,3,GlcpNAc,34,,,validated by Qrator,,PMID: 25165173
+G67612NO,N-glycan_b-D-GlcpNAc_486,N486,GlcNAc,b,D,p,N433,3,GlcpNAc,13,
+G67612NO,N-glycan_b-D-Galp_60,N60,Gal,b,D,p,N59,4,Galp,36,,,validated by Qrator,,PMID: 25165175
+G67612NO,N-glycan_b-D-Galp_508,N508,Gal,b,D,p,N486,4,Galp,15,
+G67612NO,N-glycan_b-D-GlcpNAc_65,N65,GlcNAc,b,D,p,N60,3,GlcpNAc,37,,,validated by Qrator,,PMID: 25165180
+G67612NO,N-glycan_a-D-NeupNAc_519,N519,NeuNAc,a,D,p,N508,6,NeupNAc,16,
+G67612NO,N-glycan_b-D-Galp_66,N66,Gal,b,D,p,N65,4,Galp,39,,,validated by Qrator,,PMID: 25165181
+G67612NO,N-glycan_b-D-GlcpNAc_7,N7,GlcNAc,b,D,p,N1,4,GlcpNAc,18,,,validated by Qrator,,PMID: 25165185,Not a valid node
+G67612NO,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G67612NO,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G67612NO,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G67612NO,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G67612NO,N-glycan_b-D-GlcpNAc_87,N87,GlcNAc,b,D,p,N1,3,GlcpNAc,7,,any organism,abiotic context,MT,PMID: 25165203,Not a valid node
+G67612NO,N-glycan_b-D-Galp_88,N88,Gal,b,D,p,N87,4,Galp,9,,,validated by Qrator,,PMID: 25165204
+G67612NO,N-glycan_b-D-GlcpNAc_9,N9,GlcNAc,b,D,p,N4,6,GlcpNAc,40,,,validated by Qrator,,PMID: 25165205
+G67612NO,N-glycan_a-L-Fucp_18,N18,Fuc,a,L,p,N7,3,Fucp,20,,,validated by Qrator,,PMID: 25165128
+G67612NO,N-glycan_b-D-Galp_10,N10,Gal,b,D,p,N9,4,Galp,42,,,validated by Qrator,,PMID: 25165069
+G67612NO,N-glycan_b-D-Galp_8,N8,Gal,b,D,p,N7,4,Galp,21,,,validated by Qrator,,PMID: 25165195
+G67612NO,N-glycan_b-D-GlcpNAc_36,N36,GlcNAc,b,D,p,N10,3,GlcpNAc,43,,,validated by Qrator,,PMID: 25165148

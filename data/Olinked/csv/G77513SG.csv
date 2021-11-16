@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G77513SG,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G77513SG,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
+G77513SG,unassigned,5,NeuNAc,x,D,x,x,x,NeuNAc
+G77513SG,unassigned,7,Hex,x,x,x,x,x,Hex
+G77513SG,unassigned,8,Hex,x,x,x,x,x,Hex

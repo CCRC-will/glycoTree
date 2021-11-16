@@ -1,0 +1,18 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G81575FZ,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,o,D,ol,0,0,GlcolNAc,1,,,validated by Qrator,,PMID: 25165210
+G81575FZ,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G81575FZ,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G81575FZ,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G81575FZ,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
+G81575FZ,N-glycan_b-D-Galp_3,N3,Gal,b,D,p,N2,4,Galp,9,,,validated by Qrator,,PMID: 25165141
+G81575FZ,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,17,,,validated by Qrator,,PMID: 25165152
+G81575FZ,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,18,,,validated by Qrator,,PMID: 25165163
+G81575FZ,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,20,,,validated by Qrator,,PMID: 25165174
+G81575FZ,N-glycan_a-D-NeupNAc_12,N12,NeuNAc,a,D,p,N3,6,NeupNAc,10,,,validated by Qrator,,PMID: 25165091
+G81575FZ,N-glycan_a-D-NeupNAc_13,N13,NeuNAc,a,D,p,N6,6,NeupNAc,21,,,validated by Qrator,,PMID: 25165102
+G81575FZ,N-glycan_b-D-GlcpNAc_31,N31,GlcNAc,b,D,p,N4,4,GlcpNAc,23,,,validated by Qrator,,PMID: 25165143,PMID: 2525556 by MT.  GNT6 only makes penta-antennary; i.e. requires previous GlcNAc addition to 6-position of 6-linked Man (by GNT5).  Activity not yet detected in mammals.  Activity reported in chicken oviduct.  But even in chicken the triantennary glycan (4-substitution without 6-substititutioni) is not allowed
+G81575FZ,N-glycan_b-D-Galp_32,N32,Gal,b,D,p,N31,4,Galp,25,,,validated by Qrator,,PMID: 25165144
+G81575FZ,N-glycan_a-D-NeupNAc_46,N46,NeuNAc,a,D,p,N32,3,NeupNAc,26,,,validated by Qrator,,PMID: 25165159
+G81575FZ,N-glycan_b-D-GlcpNAc_206,N206,GlcNAc,b,D,p,N1,6,GlcpNAc,12,,any organism,abiotic linkage,MT,https://www.jstage.jst.go.jp/article/biochemistry1922/91/1/91_1_233/_pdf/-char/en,Reference refutes residue 
+G81575FZ,N-glycan_b-D-Galp_209,N209,Gal,b,D,p,N206,4,Galp,14,,,,,,Poisoned by linkage to N206
+G81575FZ,N-glycan_a-D-NeupNAc_284,N284,NeuNAc,a,D,p,N209,6,NeupNAc,15,,,,MT

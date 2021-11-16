@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G32111OJ,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G32111OJ,unassigned,3,HexNAc,x,x,x,1,x,HexNAc
+G32111OJ,unassigned,5,Hex,x,x,x,3,x,Hex
+G32111OJ,unassigned,6,Hex,x,x,x,3,x,Hex
+G32111OJ,unassigned,7,Hex,x,x,x,1,x,Hex

@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G74913FT,unassigned,1,Man,x,D,x,0,0,Man
+G74913FT,unassigned,2,GlcNAc,b,D,p,1,x,GlcpNAc
+G74913FT,unassigned,3,Gal,b,D,p,2,x,Galp

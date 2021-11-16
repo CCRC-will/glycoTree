@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G54616ZM,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G54616ZM,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G54616ZM,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G54616ZM,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G54616ZM,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
+G54616ZM,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G54616ZM,unassigned,10,GlcNAc,x,D,p,6,x,GlcpNAc,10
+G54616ZM,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G54616ZM,unassigned,13,Man,a,D,p,NC,x,Manp,13
+G54616ZM,unassigned,14,GlcNAc,x,D,p,13,x,GlcpNAc,14
+G54616ZM,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G54616ZM,unassigned,17,GlcNAc,x,D,p,x,x,GlcpNAc,17
+G54616ZM,unassigned,19,Gal,b,D,p,17,4,Galp,19
+G54616ZM,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
+G54616ZM,unassigned,22,NeuNGc,a,D,p,x,x,NeupNGc,22

@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G12121CY,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G12121CY,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
+G12121CY,unassigned,5,Gal,b,D,p,O156,4,Galp,5
+G12121CY,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
+G12121CY,unassigned,8,Gal,b,D,p,6,4,Galp,8
+G12121CY,unassigned,9,GlcNAc,b,D,p,8,3,GlcpNAc,9
+G12121CY,unassigned,11,Gal,b,D,p,9,4,Galp,11
+G12121CY,unassigned,12,GlcNAc,b,D,p,11,3,GlcpNAc,12
+G12121CY,unassigned,14,NeuNAc,a,D,p,12,4,NeupNAc,14
+G12121CY,unassigned,16,NeuNAc,a,D,p,11,6,NeupNAc,16
+G12121CY,unassigned,18,NeuNAc,a,D,p,8,6,NeupNAc,18
+G12121CY,unassigned,20,NeuNAc,a,D,p,5,6,NeupNAc,20
+G12121CY,unassigned,22,NeuNAc,a,D,p,OC,6,NeupNAc,22

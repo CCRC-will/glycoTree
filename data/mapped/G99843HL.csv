@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G99843HL,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G99843HL,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PMID: 25165152
+G99843HL,unassigned,13,HexNAc,x,x,x,N4,x,HexNAc,13
+G99843HL,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G99843HL,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G99843HL,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G99843HL,unassigned,16,NeuNAc,a,D,p,15,3,NeupNAc,16
+G99843HL,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G99843HL,unassigned,7,HexNAc,x,x,x,N1,x,HexNAc,7
+G99843HL,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G99843HL,unassigned,10,NeuNAc,a,D,p,9,3,NeupNAc,10

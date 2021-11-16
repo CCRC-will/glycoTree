@@ -1,0 +1,11 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G50757KG,unassigned,11,HexNAc,x,x,p,x,x,HexpNAc
+G50757KG,unassigned,1,HexNAc,x,x,p,0,0,HexpNAc
+G50757KG,unassigned,13,Hex,x,x,p,x,x,Hexp
+G50757KG,unassigned,3,HexNAc,x,x,p,x,x,HexpNAc
+G50757KG,unassigned,14,Hex,x,x,p,x,x,Hexp
+G50757KG,unassigned,15,Hex,x,x,p,x,x,Hexp
+G50757KG,unassigned,5,HexNAc,x,x,p,x,x,HexpNAc
+G50757KG,unassigned,16,Hex,x,x,p,x,x,Hexp
+G50757KG,unassigned,7,HexNAc,x,x,p,x,x,HexpNAc
+G50757KG,unassigned,9,HexNAc,x,x,p,x,x,HexpNAc

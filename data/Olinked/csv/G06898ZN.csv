@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G06898ZN,unassigned,1,Man,a,D,p,0,0,Manp
+G06898ZN,unassigned,2,GlcNAc,b,D,p,1,2,GlcpNAc
+G06898ZN,unassigned,4,Gal,b,D,p,2,4,Galp
+G06898ZN,unassigned,5,GlcA,b,D,p,4,3,GlcAp
+G06898ZN,unassigned,6,sulfate,n,n,n,5,3,sulfate

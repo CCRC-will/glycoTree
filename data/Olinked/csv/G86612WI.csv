@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G86612WI,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G86612WI,unassigned,3,HexNAc,x,x,x,1,x,HexNAc
+G86612WI,unassigned,5,Hex,x,x,x,1,x,Hex
+G86612WI,unassigned,6,sulfate,n,n,n,5,3,sulfate

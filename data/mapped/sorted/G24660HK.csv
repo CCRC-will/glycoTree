@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G24660HK,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G24660HK,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G24660HK,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G24660HK,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,8,,,validated by Qrator,,PMID: 25165068
+G24660HK,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PMID: 25165152
+G24660HK,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,16,,,validated by Qrator,,PMID: 25165122
+G24660HK,unassigned,6,GlcNAc,x,D,p,NC,x,GlcpNAc,6
+G24660HK,unassigned,9,GlcNAc,x,D,p,N1,x,GlcpNAc,9
+G24660HK,unassigned,10,Gal,x,D,p,9,x,Galp,10
+G24660HK,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
+G24660HK,unassigned,14,Gal,x,D,p,13,x,Galp,14

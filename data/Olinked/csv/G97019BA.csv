@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G97019BA,unassigned,1,Hex,x,x,x,0,0,Hex
+G97019BA,unassigned,2,HexNAc,x,x,x,1,x,HexNAc
+G97019BA,unassigned,4,Hex,x,x,x,2,x,Hex
+G97019BA,unassigned,5,Hex,x,x,x,2,x,Hex

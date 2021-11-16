@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G72060BE,unassigned,1,Man,x,D,p,0,0,Manp
+G72060BE,unassigned,2,GlcNAc,b,D,p,1,2,GlcpNAc
+G72060BE,unassigned,4,Fuc,a,L,p,2,3,Fucp
+G72060BE,unassigned,5,Gal,b,D,p,2,4,Galp

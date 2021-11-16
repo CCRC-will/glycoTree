@@ -1,0 +1,7 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G27102FE,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G27102FE,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
+G27102FE,unassigned,5,Hex,x,x,x,x,x,Hex
+G27102FE,unassigned,6,Hex,x,x,x,x,x,Hex
+G27102FE,unassigned,7,NeuNAc,x,D,x,x,x,NeuNAc
+G27102FE,unassigned,9,sulfate,n,n,n,x,x,sulfate

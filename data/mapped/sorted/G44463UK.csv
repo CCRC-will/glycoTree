@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G44463UK,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G44463UK,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G44463UK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,19,,,validated by Qrator
+G44463UK,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,21,,,validated by Qrator
+G44463UK,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,22,,,validated by Qrator
+G44463UK,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
+G44463UK,unassigned,6,Gal,b,D,p,4,4,Galp,6
+G44463UK,unassigned,7,GlcNAc,b,D,p,6,3,GlcpNAc,7
+G44463UK,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G44463UK,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G44463UK,unassigned,11,GalNAc,a,D,p,9,3,GalpNAc,11
+G44463UK,unassigned,13,GlcNAc,b,D,p,6,6,GlcpNAc,13
+G44463UK,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G44463UK,unassigned,16,Fuc,a,L,p,15,2,Fucp,16
+G44463UK,unassigned,17,GalNAc,a,D,p,15,3,GalpNAc,17

@@ -1,0 +1,17 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G67474DW,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G67474DW,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G67474DW,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G67474DW,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,23,,,validated by Qrator,,PMID: 25165122
+G67474DW,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G67474DW,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
+G67474DW,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G67474DW,unassigned,10,GlcNAc,b,D,p,9,3,GlcpNAc,10
+G67474DW,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G67474DW,unassigned,13,GlcNAc,b,D,p,6,x,GlcpNAc,13
+G67474DW,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G67474DW,unassigned,16,Man,a,D,p,NC,x,Manp,16
+G67474DW,unassigned,17,GlcNAc,b,D,p,16,x,GlcpNAc,17
+G67474DW,unassigned,19,Gal,b,D,p,17,4,Galp,19
+G67474DW,unassigned,20,GlcNAc,b,D,p,16,2,GlcpNAc,20
+G67474DW,unassigned,22,Gal,b,D,p,20,4,Galp,22

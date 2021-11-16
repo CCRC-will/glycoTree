@@ -1,0 +1,10 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G54177WI,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G54177WI,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G54177WI,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G54177WI,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,7,,,validated by Qrator,,PMID: 25165068
+G54177WI,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,8,,,validated by Qrator,,PMID: 25165130
+G54177WI,N-glycan_b-D-Galp_3,N3,Gal,b,D,p,N2,4,Galp,10,,,validated by Qrator,,PMID: 25165141
+G54177WI,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PMID: 25165152
+G54177WI,N-glycan_a-D-Fucp_256,N256,Fuc,a,D,p,NA,3,Fucp,3,,any organism,abiotic configuration
+G54177WI,N-glycan_a-D-Fucp_400,N400,Fuc,a,D,p,N2,6,Fucp,11,,any organism,abiotic configuration,MT

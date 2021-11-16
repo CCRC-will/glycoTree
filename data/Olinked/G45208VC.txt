@@ -1,0 +1,14 @@
+RES
+1b:x-HEX-x:x
+2s:sulfate
+3s:n-acetyl
+4b:x-HEX-x:x|6:d
+5b:x-HEX-x:x|6:d
+6b:x-HEX-x:x
+7b:x-HEX-x:x
+8b:o-HEX-0:0|1:aldi
+9s:n-acetyl
+LIN
+1:1o(6+1)2n
+2:1d(2+1)3n
+3:8d(2+1)9n

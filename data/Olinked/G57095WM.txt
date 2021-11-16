@@ -1,0 +1,16 @@
+RES
+1b:x-dman-HEX-x:x
+2b:x-dman-HEX-x:x
+3b:x-dglc-HEX-x:x
+4b:x-dgal-HEX-x:x
+5s:n-acetyl
+6b:x-lgal-HEX-x:x|6:d
+7b:x-dgal-HEX-x:x
+8b:x-dgro-dgal-NON-x:x|1:a|2:keto|3:d
+9s:n-acetyl
+10b:x-dglc-HEX-x:x
+11s:n-acetyl
+LIN
+1:4d(2+1)5n
+2:8d(5+1)9n
+3:10d(2+1)11n

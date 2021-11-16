@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G60605ZN,unassigned,1,Fuc,a,L,p,0,0,Fucp
+G60605ZN,unassigned,2,GlcNAc,b,D,p,1,3,GlcpNAc
+G60605ZN,unassigned,4,Gal,b,D,p,2,4,Galp

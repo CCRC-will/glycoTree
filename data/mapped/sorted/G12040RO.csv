@@ -1,0 +1,7 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G12040RO,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
+G12040RO,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,7,,,validated by Qrator
+G12040RO,unassigned,2,GlcNAc,b,D,p,OC,x,GlcpNAc,2
+G12040RO,unassigned,3,Fuc,a,L,p,2,x,Fucp,3
+G12040RO,unassigned,4,Gal,b,D,p,2,x,Galp,4
+G12040RO,unassigned,8,Fuc,a,L,p,O152,x,Fucp,8

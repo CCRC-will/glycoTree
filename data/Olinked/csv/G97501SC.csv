@@ -1,0 +1,3 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G97501SC,unassigned,1,Fuc,x,L,x,0,0,Fuc
+G97501SC,unassigned,2,Glc,b,D,p,1,3,Glcp

@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G23299ZA,unassigned,1,Hex,x,x,x,0,0,Hex
+G23299ZA,unassigned,2,sulfate,n,n,n,1,6,sulfate
+G23299ZA,unassigned,3,Hex,x,x,x,x,x,Hex
+G23299ZA,unassigned,4,HexNAc,x,x,x,x,x,HexNAc
+G23299ZA,unassigned,6,HexNAc,o,x,x,x,x,HexNAc

@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G55779ES,unassigned,11,Gal,x,D,p,10,x,Galp,11
+G55779ES,unassigned,13,Man,a,D,p,NC,x,Manp,13
+G55779ES,unassigned,14,GlcNAc,x,D,p,13,x,GlcpNAc,14
+G55779ES,unassigned,15,Gal,x,D,p,14,x,Galp,15
+G55779ES,unassigned,17,Fuc,x,L,p,NA,6,Fucp,17
+G55779ES,unassigned,18,Fuc,x,L,p,x,x,Fucp,18
+G55779ES,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G55779ES,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G55779ES,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G55779ES,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G55779ES,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
+G55779ES,unassigned,8,Gal,x,D,p,7,x,Galp,8
+G55779ES,unassigned,10,GlcNAc,x,D,p,6,x,GlcpNAc,10

@@ -1,0 +1,8 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G36400RA,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G36400RA,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G36400RA,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G36400RA,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,7,,,validated by Qrator,,PMID: 25165068
+G36400RA,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,9,,,validated by Qrator,,PMID: 25165152
+G36400RA,N-glycan_a-D-Manp_21,N21,Man,a,D,p,N1,2,Manp,8,,,validated by Qrator,,PMID: 25165132
+G36400RA,N-glycan_a-D-Fucp_256,N256,Fuc,a,D,p,NA,3,Fucp,3,,any organism,abiotic configuration

@@ -1,0 +1,9 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G59875NJ,N-glycan_b-D-Xylf_477,N477,Xyl,b,D,f,NC,2,Xylf,11,
+G59875NJ,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G59875NJ,N-glycan_a-L-Fucp_40,N40,Fuc,a,L,p,NA,3,Fucp,3,,,validated by Qrator,,PMID: 25165153
+G59875NJ,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G59875NJ,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G59875NJ,unassigned,7,Man,a,D,p,NC,x,Manp,7
+G59875NJ,unassigned,8,GlcNAc,x,D,p,7,x,GlcpNAc,8
+G59875NJ,unassigned,10,Man,a,D,p,NC,x,Manp,10

@@ -1,0 +1,11 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G76679QH,unassigned,11,Man,a,D,p,NC,3|6,Manp,11
+G76679QH,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,x,0,0,GlcNAc,1,,,validated by Qrator,,PMID: 25165210
+G76679QH,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
+G76679QH,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G76679QH,unassigned,14,Gal,b,D,p,12,4,Galp,14
+G76679QH,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G76679QH,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
+G76679QH,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G76679QH,unassigned,8,Fuc,a,L,p,7,x,Fucp,8
+G76679QH,unassigned,10,Gal,b,D,p,7,4,Galp,10

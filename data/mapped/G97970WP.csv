@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G97970WP,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,11,,,validated by Qrator,,PMID: 25165163
+G97970WP,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,a,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G97970WP,N-glycan_a-D-Galp_322,N322,Gal,a,D,p,N5,4,Galp,13,,any organism,abiotic linkage,MT
+G97970WP,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G97970WP,N-glycan_b-D-GlcpNAc_31,N31,GlcNAc,b,D,p,N4,4,GlcpNAc,14,,,validated by Qrator,,PMID: 25165143,PMID: 2525556 by MT.  GNT6 only makes penta-antennary; i.e. requires previous GlcNAc addition to 6-position of 6-linked Man (by GNT5).  Activity not yet detected in mammals.  Activity reported in chicken oviduct.  But even in chicken the triantennary glycan (4-substitution without 6-substititutioni) is not allowed
+G97970WP,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G97970WP,N-glycan_a-D-Galp_420,N420,Gal,a,D,p,N31,4,Galp,16,,any organism,abiotic linkage,MT
+G97970WP,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G97970WP,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,17,,,validated by Qrator,,PMID: 25165122
+G97970WP,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
+G97970WP,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G97970WP,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,10,,,validated by Qrator,,PMID: 25165152

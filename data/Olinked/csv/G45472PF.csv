@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G45472PF,unassigned,1,Man,a,D,p,0,0,Manp
+G45472PF,unassigned,2,GlcNAc,b,D,p,1,2,GlcpNAc
+G45472PF,unassigned,4,Gal,b,D,p,2,4,Galp
+G45472PF,unassigned,5,GlcNAc,b,D,p,1,4,GlcpNAc
+G45472PF,unassigned,7,Gal,b,D,p,5,4,Galp

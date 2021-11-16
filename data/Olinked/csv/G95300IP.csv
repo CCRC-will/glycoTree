@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G95300IP,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G95300IP,unassigned,2,Hex,x,x,x,1,x,Hex
+G95300IP,unassigned,3,NeuNAc,x,D,p,2,x,NeupNAc
+G95300IP,unassigned,5,NeuNAc,x,D,p,1,x,NeupNAc

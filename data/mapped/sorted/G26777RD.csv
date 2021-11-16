@@ -1,0 +1,24 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G26777RD,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G26777RD,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G26777RD,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G26777RD,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G26777RD,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,15,,,validated by Qrator,,PMID: 25165152
+G26777RD,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
+G26777RD,unassigned,8,Gal,x,D,p,7,x,Galp,8
+G26777RD,unassigned,10,GlcNAc,x,D,p,N1,x,GlcpNAc,10
+G26777RD,unassigned,11,Gal,x,D,p,10,x,Galp,11
+G26777RD,unassigned,13,GlcNAc,x,D,p,NC,4,GlcpNAc,13
+G26777RD,unassigned,16,GlcNAc,x,D,p,N4,x,GlcpNAc,16
+G26777RD,unassigned,17,Gal,x,D,p,16,x,Galp,17
+G26777RD,unassigned,19,GlcNAc,x,D,p,N4,x,GlcpNAc,19
+G26777RD,unassigned,20,Gal,x,D,p,19,x,Galp,20
+G26777RD,unassigned,22,Fuc,x,L,p,NA,6,Fucp,22
+G26777RD,unassigned,23,GlcNAc,x,D,p,x,x,GlcpNAc,23
+G26777RD,unassigned,24,Gal,x,D,p,23,x,Galp,24
+G26777RD,unassigned,26,GlcNAc,x,D,p,x,x,GlcpNAc,26
+G26777RD,unassigned,27,Gal,x,D,p,26,x,Galp,27
+G26777RD,unassigned,29,GlcNAc,x,D,p,x,x,GlcpNAc,29
+G26777RD,unassigned,30,Gal,x,D,p,29,x,Galp,30
+G26777RD,unassigned,32,GlcNAc,x,D,p,x,x,GlcpNAc,32
+G26777RD,unassigned,33,Gal,x,D,p,32,x,Galp,33

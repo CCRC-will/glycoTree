@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G80778DH,unassigned,1,NeuNAc,x,D,x,0,0,NeuNAc
+G80778DH,unassigned,3,GlcNAc,x,D,x,x,x,GlcNAc
+G80778DH,unassigned,4,sulfate,n,n,n,3,x,sulfate
+G80778DH,unassigned,6,Gal,x,D,x,x,x,Gal
+G80778DH,unassigned,7,GalNAc,x,D,x,x,x,GalNAc

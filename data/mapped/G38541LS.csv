@@ -1,0 +1,15 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G38541LS,unassigned,11,HexNAc,x,x,p,7,x,HexpNAc,11
+G38541LS,unassigned,12,Hex,x,x,p,11,x,Hexp,12
+G38541LS,unassigned,14,Man,a,D,p,NC,x,Manp,14
+G38541LS,unassigned,15,HexNAc,x,x,p,14,x,HexpNAc,15
+G38541LS,unassigned,16,Hex,x,x,p,15,x,Hexp,16
+G38541LS,unassigned,18,NeuNAc,x,D,p,x,x,NeupNAc,18
+G38541LS,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G38541LS,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
+G38541LS,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G38541LS,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G38541LS,unassigned,7,Man,a,D,p,NC,x,Manp,7
+G38541LS,unassigned,8,HexNAc,x,x,p,7,x,HexpNAc,8
+G38541LS,unassigned,9,Hex,x,x,p,8,x,Hexp,9
+G38541LS,unassigned,20,NeuNAc,x,D,p,x,x,NeupNAc,20

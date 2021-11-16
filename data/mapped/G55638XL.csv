@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G55638XL,unassigned,11,Gal,b,D,p,8,4,Galp,11
+G55638XL,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G55638XL,unassigned,12,GlcNAc,b,D,p,11,3,GlcpNAc,12
+G55638XL,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G55638XL,unassigned,14,Fuc,a,L,p,12,3,Fucp,14
+G55638XL,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
+G55638XL,unassigned,15,Gal,b,D,p,12,4,Galp,15
+G55638XL,unassigned,16,NeuNAc,a,D,p,15,3,NeupNAc,16
+G55638XL,unassigned,6,Fuc,a,L,p,O157,3,Fucp,6
+G55638XL,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
+G55638XL,unassigned,8,GlcNAc,b,D,p,O158,3,GlcpNAc,8
+G55638XL,unassigned,10,Fuc,a,L,p,8,3,Fucp,10

@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G09781FH,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G09781FH,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G09781FH,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
+G09781FH,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,12,,,validated by Qrator
+G09781FH,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,15,,,validated by Qrator
+G09781FH,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,16,,,validated by Qrator
+G09781FH,unassigned,6,Fuc,a,L,p,O153,3,Fucp,6
+G09781FH,unassigned,7,Gal,b,D,p,O153,4,Galp,7
+G09781FH,unassigned,8,GlcNAc,b,D,p,7,3,GlcpNAc,8
+G09781FH,unassigned,10,Gal,b,D,p,8,4,Galp,10
+G09781FH,unassigned,11,Fuc,a,L,p,10,2,Fucp,11
+G09781FH,unassigned,14,Fuc,a,L,p,O157,3,Fucp,14

@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G12371GV,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G12371GV,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G12371GV,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G12371GV,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G12371GV,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G12371GV,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G12371GV,unassigned,10,NeuNAc,a,D,p,9,3,NeupNAc,10
+G12371GV,unassigned,12,Man,a,D,p,NC,x,Manp,12
+G12371GV,unassigned,13,GlcNAc,b,D,p,12,2,GlcpNAc,13
+G12371GV,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G12371GV,unassigned,16,NeuNGc,a,D,p,15,3,NeupNGc,16
+G12371GV,unassigned,18,Fuc,x,L,p,NA,6,Fucp,18

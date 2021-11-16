@@ -1,0 +1,15 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G27996AZ,unassigned,11,Man,a,D,p,NC,x,Manp,11
+G27996AZ,unassigned,12,HexNAc,x,x,p,11,x,HexpNAc,12
+G27996AZ,unassigned,13,Hex,x,x,p,12,x,Hexp,13
+G27996AZ,unassigned,15,HexNAc,x,x,p,11,x,HexpNAc,15
+G27996AZ,unassigned,16,Hex,x,x,p,15,x,Hexp,16
+G27996AZ,unassigned,18,HexNAc,x,x,p,x,x,HexpNAc,18
+G27996AZ,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G27996AZ,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
+G27996AZ,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G27996AZ,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G27996AZ,unassigned,7,Man,a,D,p,NC,x,Manp,7
+G27996AZ,unassigned,8,HexNAc,x,x,p,7,x,HexpNAc,8
+G27996AZ,unassigned,9,Hex,x,x,p,8,x,Hexp,9
+G27996AZ,unassigned,20,NeuNAc,x,D,p,x,x,NeupNAc,20

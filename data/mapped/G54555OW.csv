@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G54555OW,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,11,,,validated by Qrator,,PMID: 25165163
+G54555OW,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G54555OW,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,13,,,validated by Qrator,,PMID: 25165174
+G54555OW,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G54555OW,unassigned,14,NeuNAc,a,D,p,x,x,NeupNAc,14
+G54555OW,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G54555OW,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
+G54555OW,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G54555OW,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
+G54555OW,N-glycan_b-D-Galp_3,N3,Gal,b,D,p,N2,4,Galp,9,,,validated by Qrator,,PMID: 25165141
+G54555OW,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,10,,,validated by Qrator,,PMID: 25165152

@@ -1,0 +1,18 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G91948CG,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G91948CG,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G91948CG,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G91948CG,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G91948CG,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
+G91948CG,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G91948CG,unassigned,10,GlcNAc,x,D,p,6,x,GlcpNAc,10
+G91948CG,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G91948CG,unassigned,13,Man,a,D,p,NC,x,Manp,13
+G91948CG,unassigned,14,GlcNAc,x,D,p,13,x,GlcpNAc,14
+G91948CG,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G91948CG,unassigned,17,GlcNAc,x,D,p,x,x,GlcpNAc,17
+G91948CG,unassigned,19,Gal,b,D,p,17,4,Galp,19
+G91948CG,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
+G91948CG,unassigned,22,NeuNAc,a,D,p,x,x,NeupNAc,22
+G91948CG,unassigned,24,NeuNAc,a,D,p,x,x,NeupNAc,24
+G91948CG,unassigned,26,NeuNAc,a,D,p,x,x,NeupNAc,26

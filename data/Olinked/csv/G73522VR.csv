@@ -1,0 +1,7 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G73522VR,unassigned,1,NeuNAc,x,D,x,0,0,NeuNAc
+G73522VR,unassigned,3,NeuNAc,x,D,x,x,x,NeuNAc
+G73522VR,unassigned,5,GalNAc,x,D,x,x,x,GalNAc
+G73522VR,unassigned,7,GlcNAc,x,D,x,x,x,GlcNAc
+G73522VR,unassigned,8,sulfate,n,n,n,7,x,sulfate
+G73522VR,unassigned,10,Gal,x,D,x,x,x,Gal

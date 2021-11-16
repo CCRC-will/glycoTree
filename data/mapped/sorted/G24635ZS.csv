@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G24635ZS,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G24635ZS,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G24635ZS,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G24635ZS,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G24635ZS,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
+G24635ZS,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,14,,,validated by Qrator,,PMID: 25165152
+G24635ZS,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,15,,,validated by Qrator,,PMID: 25165163
+G24635ZS,N-glycan_b-D-Galp_44,N44,Gal,b,D,p,N2,3,Galp,9,,,validated by Qrator,,PMID: 25165157
+G24635ZS,N-glycan_b-D-Galp_86,N86,Gal,b,D,p,N5,3,Galp,17,,,validated by Qrator,,PMID: 25165202
+G24635ZS,N-glycan_a-D-NeupNAc_203,N203,NeuNAc,a,D,p,N2,6,NeupNAc,12,,,manually validated,MT,https://glytoucan.org/Structures/Glycans/G41912CL
+G24635ZS,N-glycan_a-D-NeupNAc_285,N285,NeuNAc,a,D,p,N5,6,NeupNAc,20,,,manually validated,MT,PMID: 6853476
+G24635ZS,N-glycan_a-D-NeupNAc_347,N347,NeuNAc,a,D,p,N86,4,NeupNAc,18,,any organism,abiotic linkage,MT
+G24635ZS,N-glycan_a-D-NeupNAc_348,N348,NeuNAc,a,D,p,N44,4,NeupNAc,10,,any organism,abiotic linkage,MT

@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G31112LT,unassigned,1,Fuc,x,L,x,0,0,Fuc
+G31112LT,unassigned,2,GalNAc,x,x,x,x,x,GalNAc
+G31112LT,unassigned,4,Gal,x,D,x,x,x,Gal

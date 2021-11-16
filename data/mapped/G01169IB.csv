@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G01169IB,unassigned,12,GlcNAc,b,D,p,6,x,GlcpNAc,12
+G01169IB,unassigned,13,Gal,b,D,p,12,x,Galp,13
+G01169IB,unassigned,14,NeuNAc,a,D,p,13,3,NeupNAc,14
+G01169IB,unassigned,17,Man,a,D,p,NC,x,Manp,17
+G01169IB,unassigned,18,Man,a,D,p,17,x,Manp,18
+G01169IB,unassigned,19,Man,a,D,p,17,x,Manp,19
+G01169IB,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G01169IB,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G01169IB,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G01169IB,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G01169IB,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
+G01169IB,unassigned,8,Gal,b,D,p,7,x,Galp,8
+G01169IB,unassigned,9,NeuNAc,a,D,p,8,3,NeupNAc,9

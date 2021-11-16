@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G08180WU,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G08180WU,unassigned,3,Gal,x,x,x,x,x,Gal
+G08180WU,unassigned,4,GalNAc,o,D,ol,x,x,GalolNAc

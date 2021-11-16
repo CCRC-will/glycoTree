@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G77809CS,unassigned,11,sulfate,n,n,n,9,4,sulfate,11
+G77809CS,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G77809CS,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
+G77809CS,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,13,,,validated by Qrator,,PMID: 25165152
+G77809CS,unassigned,14,GlcNAc,x,D,p,N4,x,GlcpNAc,14
+G77809CS,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,4,,,validated by Qrator,,PMID: 25165211
+G77809CS,unassigned,15,GalNAc,x,D,p,14,x,GalpNAc,15
+G77809CS,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,6,,,validated by Qrator,,PMID: 25165212
+G77809CS,unassigned,17,sulfate,n,n,n,15,4,sulfate,17
+G77809CS,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,7,,,validated by Qrator,,PMID: 25165068
+G77809CS,unassigned,8,GlcNAc,x,D,p,N1,x,GlcpNAc,8
+G77809CS,unassigned,9,GalNAc,x,D,p,8,x,GalpNAc,9

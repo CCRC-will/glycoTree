@@ -1,0 +1,10 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G74071YP,unassigned,11,GlcNAc,x,D,x,x,x,GlcNAc
+G74071YP,unassigned,1,Gal,x,D,x,0,0,Gal
+G74071YP,unassigned,2,Gal,x,D,x,x,x,Gal
+G74071YP,unassigned,13,Gal,x,D,x,x,x,Gal
+G74071YP,unassigned,3,NeuNAc,x,D,x,x,x,NeuNAc
+G74071YP,unassigned,14,sulfate,n,n,n,13,6,sulfate
+G74071YP,unassigned,5,NeuNAc,x,D,x,x,x,NeuNAc
+G74071YP,unassigned,7,GalNAc,o,D,x,x,x,GalNAc
+G74071YP,unassigned,9,GlcNAc,x,D,x,x,x,GlcNAc

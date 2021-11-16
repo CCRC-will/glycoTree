@@ -1,0 +1,8 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G70907KR,unassigned,11,sulfate,n,n,n,x,x,sulfate
+G70907KR,unassigned,1,GlcNAc,x,D,x,0,0,GlcNAc
+G70907KR,unassigned,3,GlcNAc,x,D,x,x,x,GlcNAc
+G70907KR,unassigned,5,NeuNAc,x,D,x,x,x,NeuNAc
+G70907KR,unassigned,7,Gal,x,D,x,x,x,Gal
+G70907KR,unassigned,8,Fuc,x,L,x,x,x,Fuc
+G70907KR,unassigned,9,GalNAc,x,D,x,x,x,GalNAc

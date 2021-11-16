@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G20212SZ,unassigned,11,NeuNAc,x,D,x,x,x,NeuNAc
+G20212SZ,unassigned,1,GlcNAc,x,D,x,0,0,GlcNAc
+G20212SZ,unassigned,13,NeuNAc,x,D,x,x,x,NeuNAc
+G20212SZ,unassigned,3,GlcNAc,x,D,x,x,x,GlcNAc
+G20212SZ,unassigned,15,GalNAc,x,D,x,x,x,GalNAc
+G20212SZ,unassigned,5,GlcNAc,x,D,x,x,x,GlcNAc
+G20212SZ,unassigned,17,GalNAc,o,D,ol,x,x,GalolNAc
+G20212SZ,unassigned,7,Fuc,x,L,x,x,x,Fuc
+G20212SZ,unassigned,8,Gal,x,D,x,x,x,Gal
+G20212SZ,unassigned,9,Gal,x,D,x,x,x,Gal
+G20212SZ,unassigned,10,Gal,x,D,x,x,x,Gal

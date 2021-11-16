@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G71502QP,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G71502QP,unassigned,3,NeuNAc,x,D,x,x,x,NeuNAc
+G71502QP,unassigned,5,Hex,x,x,x,x,x,Hex
+G71502QP,unassigned,6,sulfate,n,n,n,x,x,sulfate

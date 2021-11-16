@@ -1,0 +1,10 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G70589IM,unassigned,11,Gal,x,D,x,x,x,Gal
+G70589IM,unassigned,1,NeuNAc,x,D,x,0,0,NeuNAc
+G70589IM,unassigned,12,Fuc,x,L,x,x,x,Fuc
+G70589IM,unassigned,13,Fuc,x,L,x,x,x,Fuc
+G70589IM,unassigned,3,GlcNAc,x,D,x,x,x,GlcNAc
+G70589IM,unassigned,5,GlcNAc,x,D,x,x,x,GlcNAc
+G70589IM,unassigned,7,GalNAc,x,D,x,x,x,GalNAc
+G70589IM,unassigned,9,Gal,x,D,x,x,x,Gal
+G70589IM,unassigned,10,Gal,x,D,x,x,x,Gal

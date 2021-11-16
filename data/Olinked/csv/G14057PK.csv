@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G14057PK,unassigned,1,NeuNGc,x,D,x,0,0,NeuNGc
+G14057PK,unassigned,3,Man,x,D,x,x,x,Man
+G14057PK,unassigned,4,GlcNAc,x,D,x,x,x,GlcNAc
+G14057PK,unassigned,6,Gal,x,D,x,x,x,Gal

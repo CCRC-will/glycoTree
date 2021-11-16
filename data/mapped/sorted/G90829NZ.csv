@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G90829NZ,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G90829NZ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G90829NZ,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,15,,,validated by Qrator
+G90829NZ,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,17,,,validated by Qrator
+G90829NZ,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,18,,,validated by Qrator
+G90829NZ,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
+G90829NZ,unassigned,6,Gal,b,D,p,4,4,Galp,6
+G90829NZ,unassigned,7,GlcNAc,b,D,p,6,3,GlcpNAc,7
+G90829NZ,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G90829NZ,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G90829NZ,unassigned,11,GlcNAc,b,D,p,6,6,GlcpNAc,11
+G90829NZ,unassigned,13,Gal,b,D,p,11,4,Galp,13
+G90829NZ,unassigned,14,Fuc,a,L,p,13,2,Fucp,14

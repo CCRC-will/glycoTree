@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G66713JJ,unassigned,1,GlcNAc,x,D,x,0,0,GlcNAc
+G66713JJ,unassigned,3,GlcNAc,x,D,x,x,x,GlcNAc
+G66713JJ,unassigned,5,GalNAc,o,D,x,x,x,GalNAc

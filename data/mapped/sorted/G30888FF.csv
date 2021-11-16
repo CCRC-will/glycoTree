@@ -1,0 +1,11 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G30888FF,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,x,0,0,GlcNAc,1,,,validated by Qrator,,PMID: 25165210
+G30888FF,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G30888FF,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G30888FF,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G30888FF,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PMID: 25165152
+G30888FF,N-glycan_a-D-Manp_21,N21,Man,a,D,p,N1,2,Manp,7,,,validated by Qrator,,PMID: 25165132
+G30888FF,N-glycan_a-D-Manp_22,N22,Man,a,D,p,N21,2,Manp,8,,,validated by Qrator,,PMID: 25165133
+G30888FF,unassigned,9,Glc,x,D,p,N22,3,Glcp,9
+G30888FF,unassigned,10,Glc,x,D,p,9,3,Glcp,10
+G30888FF,unassigned,11,Glc,x,D,p,10,2,Glcp,11

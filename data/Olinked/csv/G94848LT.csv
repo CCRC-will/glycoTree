@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G94848LT,unassigned,1,Gal,x,D,x,0,0,Gal
+G94848LT,unassigned,2,GlcNAc,x,D,x,x,x,GlcNAc
+G94848LT,unassigned,4,Man,x,D,x,x,x,Man
+G94848LT,unassigned,5,sulfate,n,n,n,x,x,sulfate

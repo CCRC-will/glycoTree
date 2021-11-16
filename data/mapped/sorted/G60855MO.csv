@@ -1,0 +1,15 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G60855MO,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,o,D,ol,0,0,GlcolNAc,1,,,validated by Qrator,,PMID: 25165210
+G60855MO,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G60855MO,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G60855MO,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G60855MO,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
+G60855MO,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G60855MO,unassigned,10,NeuNAc,a,D,p,9,6,NeupNAc,10
+G60855MO,unassigned,12,Man,a,D,p,NC,x,Manp,12
+G60855MO,unassigned,13,GlcNAc,b,D,p,12,x,GlcpNAc,13
+G60855MO,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G60855MO,unassigned,16,NeuNAc,a,D,p,15,3,NeupNAc,16
+G60855MO,unassigned,18,GlcNAc,b,D,p,12,x,GlcpNAc,18
+G60855MO,unassigned,20,Gal,b,D,p,18,4,Galp,20
+G60855MO,unassigned,21,NeuNAc,a,D,p,20,x,NeupNAc,21

@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G42400JK,N-glycan_b-D-Galp_8,N8,Gal,b,D,p,N7,4,Galp,11,,,validated by Qrator,,PMID: 25165195
+G42400JK,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PMID: 25165152
+G42400JK,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,13,,,validated by Qrator,,PMID: 25165163
+G42400JK,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,15,,,validated by Qrator,,PMID: 25165174
+G42400JK,N-glycan_b-D-GlcpNAc_9,N9,GlcNAc,b,D,p,N4,6,GlcpNAc,16,,,validated by Qrator,,PMID: 25165205
+G42400JK,N-glycan_b-D-Galp_10,N10,Gal,b,D,p,N9,4,Galp,18,,,validated by Qrator,,PMID: 25165069
+G42400JK,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,19,,,validated by Qrator,,PMID: 25165122
+G42400JK,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G42400JK,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G42400JK,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G42400JK,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G42400JK,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
+G42400JK,N-glycan_b-D-GlcpNAc_7,N7,GlcNAc,b,D,p,N1,4,GlcpNAc,9,,,validated by Qrator,,PMID: 25165185,Not a valid node

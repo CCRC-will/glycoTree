@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G40740AD,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G40740AD,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
+G40740AD,unassigned,5,HexNAc,x,x,x,x,x,HexNAc

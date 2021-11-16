@@ -1,0 +1,13 @@
+RES
+1b:x-lgal-HEX-x:x|6:d
+2b:x-dglc-HEX-x:x
+3s:n-acetyl
+4s:sulfate
+5b:x-dgal-HEX-x:x
+6s:n-acetyl
+7b:x-dgal-HEX-x:x
+8b:x-dgal-HEX-x:x
+LIN
+1:2d(2+1)3n
+2:2o(6+1)4n
+3:5d(2+1)6n

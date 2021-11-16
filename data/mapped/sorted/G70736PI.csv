@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G70736PI,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G70736PI,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G70736PI,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G70736PI,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G70736PI,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,11,,,validated by Qrator,,PMID: 25165152
+G70736PI,N-glycan_a-D-Manp_21,N21,Man,a,D,p,N1,2,Manp,7,,,validated by Qrator,,PMID: 25165132
+G70736PI,N-glycan_a-D-Manp_22,N22,Man,a,D,p,N21,2,Manp,8,,,validated by Qrator,,PMID: 25165133
+G70736PI,N-glycan_a-D-Manp_204,N204,Man,a,D,p,N4,2,Manp,12,fungi,,N-mannans,,https://pubmed.ncbi.nlm.nih.gov/8505334/
+G70736PI,N-glycan_a-D-Manp_218,N218,Man,a,D,p,N22,2,Manp,9,fungi,,N-mannans,,https://pubmed.ncbi.nlm.nih.gov/8505334/
+G70736PI,N-glycan_a-D-Manp_219,N219,Man,a,D,p,N204,2,Manp,13,fungi,,N-mannans,,https://pubmed.ncbi.nlm.nih.gov/8505334/
+G70736PI,N-glycan_a-D-Manp_283,N283,Man,a,D,p,N218,2,Manp,10,fungi,,N-mannans

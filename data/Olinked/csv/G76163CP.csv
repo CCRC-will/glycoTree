@@ -1,0 +1,4 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G76163CP,unassigned,1,HexNAc,x,x,p,0,0,HexpNAc
+G76163CP,unassigned,3,Hex,x,x,p,x,x,Hexp
+G76163CP,unassigned,4,Hex,x,x,p,x,x,Hexp

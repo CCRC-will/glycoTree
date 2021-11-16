@@ -1,0 +1,7 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G26105XA,unassigned,1,HexNAc,x,x,x,0,0,HexNAc
+G26105XA,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
+G26105XA,unassigned,5,Fuc,x,L,x,x,x,Fuc
+G26105XA,unassigned,6,Fuc,x,L,x,x,x,Fuc
+G26105XA,unassigned,7,Hex,x,x,x,x,x,Hex
+G26105XA,unassigned,8,Hex,x,x,x,x,x,Hex

@@ -11,7 +11,8 @@
 start=$(date)
 echo $start
 
-cp ../model/canonical_residues.csv ./canonical_residues.csv
+cp ../model/N_canonical_residues.csv ./canonical_residues.csv
+awk 'NR > 1 {print($0);}' ../model/O_canonical_residues.csv >> ./canonical_residues.csv
 cp ../model/enzymes.csv ./enzymes.csv
 cp ../model/enzyme_mappings.csv ./enzyme_mappings.csv
 	
@@ -29,17 +30,17 @@ for (( i=1; i<=$#; i++)); do
 
   if [ ${!i} = '-u' ]; then
     user=${!j}
-    echo "user name found on command line"
+    echo "user name $user found on command line"
   fi
 
   if [ ${!i} = '-p' ]; then
     pw=${!j}
-    echo "password found on command line"
+    echo "password ****** found on command line"
   fi
 
   if [ ${!i} = '-d' ]; then
     dir=${!j}
-    echo "mysql bin directory found on command line"
+    echo "mysql bin directory $dir found on command line"
   fi
 done
 

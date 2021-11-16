@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G14090IF,unassigned,1,NAc,x,x,x,0,0,NAc
+G14090IF,unassigned,3,Hex,x,x,x,x,x,Hex
+G14090IF,unassigned,4,Hex,x,x,x,x,x,Hex
+G14090IF,unassigned,5,Hex,x,x,x,x,x,Hex
+G14090IF,unassigned,6,HexNAc,x,x,x,x,x,HexNAc

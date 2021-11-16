@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G70422GF,unassigned,11,Hex,x,x,p,x,x,Hexp
+G70422GF,unassigned,12,Hex,x,x,p,x,x,Hexp
+G70422GF,unassigned,23,HexNAc,x,x,p,x,x,HexpNAc
+G70422GF,unassigned,13,Hex,x,x,p,x,x,Hexp
+G70422GF,unassigned,14,Hex,x,x,p,x,x,Hexp
+G70422GF,unassigned,25,HexNAc,x,x,p,x,x,HexpNAc
+G70422GF,unassigned,15,HexNAc,x,x,p,x,x,HexpNAc
+G70422GF,unassigned,17,HexNAc,x,x,p,x,x,HexpNAc
+G70422GF,unassigned,19,HexNAc,x,x,p,x,x,HexpNAc
+G70422GF,unassigned,1,NeuNAc,x,D,p,0,0,NeupNAc
+G70422GF,unassigned,3,NeuNAc,x,D,p,x,x,NeupNAc
+G70422GF,unassigned,5,NeuNAc,x,D,p,x,x,NeupNAc
+G70422GF,unassigned,7,NeuNAc,x,D,p,x,x,NeupNAc
+G70422GF,unassigned,9,NeuNAc,x,D,p,x,x,NeupNAc
+G70422GF,unassigned,21,HexNAc,x,x,p,x,x,HexpNAc

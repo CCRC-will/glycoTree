@@ -1,0 +1,16 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G39100MY,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G39100MY,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
+G39100MY,unassigned,5,Gal,b,D,p,O156,4,Galp,5
+G39100MY,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
+G39100MY,unassigned,8,Gal,b,D,p,6,4,Galp,8
+G39100MY,unassigned,9,GlcNAc,b,D,p,8,3,GlcpNAc,9
+G39100MY,unassigned,11,Gal,b,D,p,9,4,Galp,11
+G39100MY,unassigned,12,GlcNAc,b,D,p,11,3,GlcpNAc,12
+G39100MY,unassigned,14,Gal,b,D,p,12,4,Galp,14
+G39100MY,unassigned,15,GlcNAc,b,D,p,14,3,GlcpNAc,15
+G39100MY,unassigned,17,NeuNAc,a,D,p,14,6,NeupNAc,17
+G39100MY,unassigned,19,NeuNAc,a,D,p,11,6,NeupNAc,19
+G39100MY,unassigned,21,NeuNAc,a,D,p,8,6,NeupNAc,21
+G39100MY,unassigned,23,NeuNAc,a,D,p,5,6,NeupNAc,23
+G39100MY,unassigned,25,NeuNAc,a,D,p,OC,6,NeupNAc,25

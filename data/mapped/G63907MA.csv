@@ -1,0 +1,12 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G63907MA,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G63907MA,unassigned,12,Man,a,D,p,NC,3|6,Manp,12
+G63907MA,unassigned,13,GlcNAc,b,D,p,12,2,GlcpNAc,13
+G63907MA,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G63907MA,unassigned,15,GalNAc,b,D,p,13,4,GalpNAc,15
+G63907MA,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G63907MA,unassigned,16,sulfate,n,n,n,15,x,sulfate,16
+G63907MA,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
+G63907MA,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G63907MA,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G63907MA,unassigned,10,NeuNAc,a,D,p,9,3,NeupNAc,10

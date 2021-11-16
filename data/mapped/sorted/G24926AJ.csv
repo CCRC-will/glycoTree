@@ -1,0 +1,15 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G24926AJ,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G24926AJ,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G24926AJ,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G24926AJ,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G24926AJ,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G24926AJ,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G24926AJ,unassigned,10,GlcNAc,b,D,p,6,4,GlcpNAc,10
+G24926AJ,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G24926AJ,unassigned,13,Man,a,D,p,NC,x,Manp,13
+G24926AJ,unassigned,14,GlcNAc,b,D,p,13,2,GlcpNAc,14
+G24926AJ,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G24926AJ,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
+G24926AJ,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G24926AJ,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21

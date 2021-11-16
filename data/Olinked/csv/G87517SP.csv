@@ -1,0 +1,5 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
+G87517SP,unassigned,1,Hex,o,x,x,0,0,Hex
+G87517SP,unassigned,2,GlcNAc,x,D,p,1,x,GlcpNAc
+G87517SP,unassigned,4,Fuc,x,L,p,2,x,Fucp
+G87517SP,unassigned,5,Gal,x,D,p,2,x,Galp
