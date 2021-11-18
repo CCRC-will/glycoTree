@@ -107,7 +107,7 @@ echo using enzyme file:\n    $enzyme_file
 
 echo formatting node file
 sed -i.bak 's///g' $node_file
-mv $modelDir/canonical_residues*.csv.bak $modelDir/bak/
+mv $modelDir/N_canonical_residues*.csv.bak $modelDir/bak/
 
 echo
 echo Mapping residues in N-glycan csv files to canonical tree 
@@ -168,8 +168,7 @@ echo "Generating a list of accessions currently supported by GlycoTree into file
 find $mappedDir -maxdepth 1 -name "G*.csv" -print | cut -d \/ -f 7 | sort | cut -d . -f 1 > $here/accessions.lst
 
 echo
-echo "Generating the home page for the portal as file:$NL     $portalDir/index.html"
-awk -f $codeDir/pIndex.awk $codeDir/pTemplate.html  $here/accessions.lst > $portalDir/index.html
+echo "The home page for the portal:$NL     $portalDir/index.html$NL is no longer automatically generated"
 
 echo Done
 echo

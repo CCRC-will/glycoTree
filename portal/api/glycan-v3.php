@@ -297,6 +297,9 @@ function gtree_comparator($a, $b) {
 		// reset $bn only if $b contains a numeric substring
 		preg_match('/[0-9]/', $b, $matches, PREG_OFFSET_CAPTURE);
 		if (!is_null($matches[0][1])) $bn = (int) substr($b, $bp+1);
+		// TODO: fix the above line, which causes php to log a 'Notice'
+		//    Undefined offset   or 
+		//    Trying to access array offset on value of type null
 	}
 	
 	// exactly one of the two is numeric

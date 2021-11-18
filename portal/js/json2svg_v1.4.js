@@ -418,7 +418,7 @@ function drawAllNodes(type) {
 
 
 function drawSubstituent(x, y, name, baseline) {
-	console.log(" draw substituent: x=" + x + " y=" + y + " text=" + name);
+	if (v > 4) console.log(" draw substituent: x=" + x + " y=" + y + " text=" + name);
 
 	var subStr = "\n    <text  " + "x='" + x + "' y='" + y +
 		 "' text-anchor='middle' dominant-baseline='" +
@@ -538,7 +538,7 @@ function drawNode(x, y, shape, site, node, text, bothColors) {
 		case "text":
 			var subSite = (site == "x") ? "?" : site;
 			var subText = subSite + text;
-			console.log("      writing text for: " + node.name + 
+			if (v > 4) console.log("      writing text for: " + node.name + 
 						  "(" + subText + ")");
 			var baseline = "text-top";
 			if ((site > 3) || (site == "x")) baseline = "hanging";
