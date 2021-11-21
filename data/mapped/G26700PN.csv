@@ -4,7 +4,7 @@ G26700PN,unassigned,12,Fuc,a,L,p,10,3,Fucp,12
 G26700PN,unassigned,13,Gal,b,D,p,10,4,Galp,13
 G26700PN,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G26700PN,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
-G26700PN,unassigned,6,Gal,b,D,p,O157,4,Galp,6
-G26700PN,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
+G26700PN,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,6,,,validated by Qrator
+G26700PN,unassigned,7,GlcNAc,b,D,p,O158,x,GlcpNAc,7
 G26700PN,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G26700PN,unassigned,10,GlcNAc,b,D,p,9,x,GlcpNAc,10

@@ -4,4 +4,4 @@ G03304QB,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G03304QB,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G03304QB,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
 G03304QB,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
-G03304QB,unassigned,7,Fuc,a,L,p,O157,3,Fucp,7
+G03304QB,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,7,,,not validated

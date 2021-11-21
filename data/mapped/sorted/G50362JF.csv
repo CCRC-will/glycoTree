@@ -6,5 +6,5 @@ G50362JF,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated b
 G50362JF,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,11,,,validated by Qrator
 G50362JF,O-glycan_a-L-Fucp_161,O161,Fuc,a,L,p,O153,4,Fucp,7,,,validated by Qrator
 G50362JF,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,12,,,validated by Qrator
-G50362JF,unassigned,6,Gal,b,D,p,O153,3,Galp,6
-G50362JF,unassigned,10,Fuc,a,L,p,O157,3,Fucp,10
+G50362JF,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,10,,,not validated
+G50362JF,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated

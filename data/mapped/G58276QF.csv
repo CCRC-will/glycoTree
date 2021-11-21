@@ -2,7 +2,7 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G58276QF,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G58276QF,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G58276QF,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
-G58276QF,unassigned,6,Gal,b,D,p,O157,4,Galp,6
-G58276QF,unassigned,7,GlcNAc,b,D,p,6,3,GlcpNAc,7
-G58276QF,unassigned,9,Gal,b,D,p,7,3,Galp,9
-G58276QF,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G58276QF,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,6,,,validated by Qrator
+G58276QF,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,7,,,not validated
+G58276QF,O-glycan_b-D-Galp_664,O664,Gal,b,D,p,O582,3,Galp,9,,,not validated
+G58276QF,O-glycan_a-L-Fucp_735,O735,Fuc,a,L,p,O664,2,Fucp,10,,,not validated

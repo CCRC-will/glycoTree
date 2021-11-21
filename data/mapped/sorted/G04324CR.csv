@@ -4,7 +4,7 @@ G04324CR,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G04324CR,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G04324CR,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G04324CR,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
-G04324CR,unassigned,6,Gal,b,D,p,O153,4,Galp,6
-G04324CR,unassigned,10,GlcNAc,b,D,p,O158,3,GlcpNAc,10
-G04324CR,unassigned,12,Gal,b,D,p,10,4,Galp,12
-G04324CR,unassigned,13,NeuNAc,a,D,p,12,3,NeupNAc,13
+G04324CR,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated
+G04324CR,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,10,,,not validated
+G04324CR,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,12,,,not validated
+G04324CR,O-glycan_a-D-NeupNAc_704,O704,NeuNAc,a,D,p,O663,3,NeupNAc,13,,,not validated

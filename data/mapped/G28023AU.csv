@@ -5,4 +5,4 @@ G28023AU,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated
 G28023AU,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
 G28023AU,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G28023AU,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
-G28023AU,unassigned,10,Gal,b,D,p,O157,3,Galp,10
+G28023AU,O-glycan_b-D-Galp_540,O540,Gal,b,D,p,O157,3,Galp,10,,,not validated

@@ -2,5 +2,5 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G03438WE,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,b,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G03438WE,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G03438WE,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
-G03438WE,unassigned,4,NeuNAc,a,D,p,O152,6,NeupNAc,4
-G03438WE,unassigned,8,sulfate,n,n,n,O157,6,sulfate,8
+G03438WE,O-glycan_a-D-NeupNAc_542,O542,NeuNAc,a,D,p,O152,6,NeupNAc,4,,,not validated
+G03438WE,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,8,,,not validated

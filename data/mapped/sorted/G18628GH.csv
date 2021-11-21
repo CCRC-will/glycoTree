@@ -1,4 +1,4 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G18628GH,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G18628GH,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
-G18628GH,unassigned,3,sulfate,n,n,n,OC,3,sulfate,3
+G18628GH,O-glycan_sulfate_553,O553,sulfate,n,n,n,OC,3,sulfate,3,,,not validated

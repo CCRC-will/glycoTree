@@ -1,8 +1,8 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G67046QM,unassigned,11,Gal,b,D,p,9,3,Galp,11
+G67046QM,O-glycan_b-D-Galp_674,O674,Gal,b,D,p,O645,3,Galp,11,,,not validated
 G67046QM,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G67046QM,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G67046QM,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G67046QM,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
-G67046QM,unassigned,8,Gal,b,D,p,6,3,Galp,8
-G67046QM,unassigned,9,GlcNAc,b,D,p,5,6,GlcpNAc,9
+G67046QM,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G67046QM,O-glycan_b-D-GlcpNAc_577,O577,GlcNAc,b,D,p,O539,3,GlcpNAc,6,,,not validated
+G67046QM,O-glycan_b-D-Galp_648,O648,Gal,b,D,p,O577,3,Galp,8,,,not validated
+G67046QM,O-glycan_b-D-GlcpNAc_645,O645,GlcNAc,b,D,p,O539,6,GlcpNAc,9,,,not validated

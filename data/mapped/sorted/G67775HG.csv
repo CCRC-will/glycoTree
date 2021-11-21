@@ -4,9 +4,9 @@ G67775HG,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G67775HG,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G67775HG,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
 G67775HG,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,11,,,validated by Qrator
-G67775HG,unassigned,6,Gal,b,D,p,O153,4,Galp,6
-G67775HG,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
-G67775HG,unassigned,10,Fuc,a,L,p,O157,3,Fucp,10
-G67775HG,unassigned,12,GlcNAc,b,D,p,O158,3,GlcpNAc,12
-G67775HG,unassigned,14,Gal,b,D,p,12,4,Galp,14
-G67775HG,unassigned,15,NeuNAc,a,D,p,14,3,NeupNAc,15
+G67775HG,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,10,,,not validated
+G67775HG,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated
+G67775HG,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,12,,,not validated
+G67775HG,O-glycan_a-L-Fucp_660,O660,Fuc,a,L,p,O555,2,Fucp,7,,,not validated
+G67775HG,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,14,,,not validated
+G67775HG,O-glycan_a-D-NeupNAc_704,O704,NeuNAc,a,D,p,O663,3,NeupNAc,15,,,not validated

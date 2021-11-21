@@ -4,4 +4,4 @@ G01445XB,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated b
 G01445XB,unassigned,4,Fuc,a,L,p,O156,x,Fucp,4
 G01445XB,unassigned,5,Gal,b,D,p,O156,x,Galp,5
 G01445XB,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
-G01445XB,unassigned,8,NeuNAc,a,D,p,OC,6,NeupNAc,8
+G01445XB,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,8,,,not validated

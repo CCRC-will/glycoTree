@@ -4,4 +4,4 @@ G33018IJ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G33018IJ,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
 G33018IJ,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,6,,,validated by Qrator
 G33018IJ,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,7,,,validated by Qrator
-G33018IJ,unassigned,8,sulfate,n,n,n,O157,6,sulfate,8
+G33018IJ,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,8,,,not validated

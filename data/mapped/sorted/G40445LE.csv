@@ -4,4 +4,4 @@ G40445LE,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G40445LE,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
 G40445LE,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,6,,,validated by Qrator
 G40445LE,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,7,,,validated by Qrator
-G40445LE,unassigned,9,sulfate,n,n,n,O157,6,sulfate,9
+G40445LE,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,9,,,not validated

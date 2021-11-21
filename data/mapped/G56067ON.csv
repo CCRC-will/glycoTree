@@ -1,9 +1,9 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G56067ON,unassigned,11,NeuNAc,a,D,p,10,3,NeupNAc,11
+G56067ON,O-glycan_a-D-NeupNAc_686,O686,NeuNAc,a,D,p,O571,3,NeupNAc,11,,,not validated
 G56067ON,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
 G56067ON,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G56067ON,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
-G56067ON,unassigned,6,Gal,b,D,p,4,3,Galp,6
-G56067ON,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
-G56067ON,unassigned,8,GlcNAc,b,D,p,O152,6,GlcpNAc,8
-G56067ON,unassigned,10,Gal,b,D,p,8,4,Galp,10
+G56067ON,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
+G56067ON,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated
+G56067ON,O-glycan_a-L-Fucp_659,O659,Fuc,a,L,p,O567,2,Fucp,7,,,not validated
+G56067ON,O-glycan_b-D-GlcpNAc_538,O538,GlcNAc,b,D,p,O152,6,GlcpNAc,8,,,not validated
+G56067ON,O-glycan_b-D-Galp_571,O571,Gal,b,D,p,O538,4,Galp,10,,,not validated

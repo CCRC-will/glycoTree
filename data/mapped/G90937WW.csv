@@ -1,11 +1,11 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G90937WW,unassigned,11,Gal,b,D,p,9,4,Galp,11
+G90937WW,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,11,,,not validated
 G90937WW,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G90937WW,unassigned,12,GlcNAc,b,D,p,11,3,GlcpNAc,12
+G90937WW,O-glycan_b-D-GlcpNAc_699,O699,GlcNAc,b,D,p,O663,3,GlcpNAc,12,,,not validated
 G90937WW,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G90937WW,unassigned,14,Fuc,a,D,p,12,3,Fucp,14
+G90937WW,O-glycan_a-D-Fucp_702,O702,Fuc,a,D,p,O699,3,Fucp,14,,,not validated
 G90937WW,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G90937WW,unassigned,15,Gal,b,D,p,12,4,Galp,15
+G90937WW,O-glycan_b-D-Galp_700,O700,Gal,b,D,p,O699,4,Galp,15,,,not validated
 G90937WW,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
-G90937WW,unassigned,8,Gal,b,D,p,O157,4,Galp,8
-G90937WW,unassigned,9,GlcNAc,b,D,p,8,3,GlcpNAc,9
+G90937WW,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
+G90937WW,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,9,,,not validated

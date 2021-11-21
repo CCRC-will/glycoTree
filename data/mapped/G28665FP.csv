@@ -6,4 +6,4 @@ G28665FP,unassigned,4,GlcNAc,b,D,p,O152,3|6,GlcpNAc,4
 G28665FP,unassigned,6,Gal,b,D,p,4,4,Galp,6
 G28665FP,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
 G28665FP,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
-G28665FP,unassigned,10,Fuc,a,L,p,O157,3,Fucp,10
+G28665FP,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,10,,,not validated

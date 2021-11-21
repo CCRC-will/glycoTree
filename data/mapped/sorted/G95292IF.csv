@@ -5,4 +5,4 @@ G95292IF,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated b
 G95292IF,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
 G95292IF,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,9,,,validated by Qrator
 G95292IF,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G95292IF,unassigned,10,sulfate,n,n,n,O157,6,sulfate,10
+G95292IF,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,10,,,not validated

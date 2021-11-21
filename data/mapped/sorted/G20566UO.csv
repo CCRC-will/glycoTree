@@ -5,5 +5,5 @@ G20566UO,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrato
 G20566UO,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G20566UO,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G20566UO,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,10,,,validated by Qrator
-G20566UO,unassigned,5,GlcNAc,a,D,p,O152,4,GlcpNAc,5
-G20566UO,unassigned,11,GlcNAc,a,D,p,O158,4,GlcpNAc,11
+G20566UO,O-glycan_a-D-GlcpNAc_537,O537,GlcNAc,a,D,p,O152,4,GlcpNAc,5,,,not validated
+G20566UO,O-glycan_a-D-GlcpNAc_613,O613,GlcNAc,a,D,p,O158,4,GlcpNAc,11,,,not validated

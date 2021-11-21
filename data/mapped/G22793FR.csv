@@ -2,8 +2,8 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G22793FR,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G22793FR,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,12,,,validated by Qrator
 G22793FR,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G22793FR,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
-G22793FR,unassigned,6,Gal,b,D,p,4,4,Galp,6
-G22793FR,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
-G22793FR,unassigned,8,GalNAc,a,D,p,6,3,GalpNAc,8
+G22793FR,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
+G22793FR,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated
+G22793FR,O-glycan_a-L-Fucp_660,O660,Fuc,a,L,p,O555,2,Fucp,7,,,not validated
+G22793FR,O-glycan_a-D-GalpNAc_687,O687,GalNAc,a,D,p,O555,3,GalpNAc,8,,,not validated
 G22793FR,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,10,,,validated by Qrator

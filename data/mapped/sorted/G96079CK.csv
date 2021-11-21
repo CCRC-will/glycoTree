@@ -5,7 +5,7 @@ G96079CK,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated
 G96079CK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,10,,,validated by Qrator
 G96079CK,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,13,,,validated by Qrator
 G96079CK,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,14,,,validated by Qrator
-G96079CK,unassigned,6,Fuc,a,L,p,O153,3,Fucp,6
-G96079CK,unassigned,7,Gal,b,D,p,O153,4,Galp,7
-G96079CK,unassigned,8,NeuNAc,a,D,p,7,3,NeupNAc,8
-G96079CK,unassigned,12,Fuc,a,L,p,O157,3,Fucp,12
+G96079CK,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,12,,,not validated
+G96079CK,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,7,,,not validated
+G96079CK,O-glycan_a-L-Fucp_572,O572,Fuc,a,L,p,O153,3,Fucp,6,,,not validated
+G96079CK,O-glycan_a-D-NeupNAc_647,O647,NeuNAc,a,D,p,O555,3,NeupNAc,8,,,not validated

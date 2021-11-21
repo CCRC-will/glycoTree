@@ -5,4 +5,4 @@ G61780GR,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrato
 G61780GR,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
 G61780GR,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
 G61780GR,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,8,,,validated by Qrator
-G61780GR,unassigned,10,sulfate,n,n,n,O157,6,sulfate,10
+G61780GR,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,10,,,not validated

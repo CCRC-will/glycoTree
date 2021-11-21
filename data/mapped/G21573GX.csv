@@ -5,4 +5,4 @@ G21573GX,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated
 G21573GX,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
 G21573GX,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G21573GX,unassigned,7,Gal,a,D,p,5,3,Galp,7
-G21573GX,unassigned,9,NeuNAc,a,D,p,OC,6,NeupNAc,9
+G21573GX,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,9,,,not validated

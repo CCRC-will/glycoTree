@@ -2,5 +2,5 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G25571LJ,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G25571LJ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G25571LJ,O-glycan_a-D-GalpNAc_164,O164,GalNAc,a,D,p,O152,4,GalpNAc,4,,,validated by Qrator
-G25571LJ,unassigned,6,Gal,b,D,p,O164,3,Galp,6
-G25571LJ,unassigned,7,NeuNAc,a,D,p,OC,6,NeupNAc,7
+G25571LJ,O-glycan_b-D-Galp_618,O618,Gal,b,D,p,O164,3,Galp,6,,,not validated
+G25571LJ,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,7,,,not validated

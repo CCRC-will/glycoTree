@@ -4,5 +4,5 @@ G22385OT,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated b
 G22385OT,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G22385OT,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G22385OT,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,10,,,validated by Qrator
-G22385OT,unassigned,5,Gal,b,D,p,O156,3,Galp,5
-G22385OT,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G22385OT,O-glycan_b-D-Galp_544,O544,Gal,b,D,p,O156,3,Galp,5,,,not validated
+G22385OT,O-glycan_a-L-Fucp_566,O566,Fuc,a,L,p,O544,2,Fucp,6,,,not validated

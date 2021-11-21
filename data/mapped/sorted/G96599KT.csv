@@ -5,4 +5,4 @@ G96599KT,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrato
 G96599KT,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
 G96599KT,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
 G96599KT,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,9,,,validated by Qrator
-G96599KT,unassigned,5,Gal,a,D,p,O152,3,Galp,5
+G96599KT,O-glycan_a-D-Galp_532,O532,Gal,a,D,p,O152,3,Galp,5,,,not validated

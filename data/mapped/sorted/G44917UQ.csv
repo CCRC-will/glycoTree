@@ -3,6 +3,6 @@ G44917UQ,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated b
 G44917UQ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G44917UQ,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
 G44917UQ,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
-G44917UQ,unassigned,6,Fuc,a,L,p,O157,3,Fucp,6
-G44917UQ,unassigned,8,GlcNAc,b,D,p,O158,3,GlcpNAc,8
-G44917UQ,unassigned,10,Gal,b,D,p,8,3,Galp,10
+G44917UQ,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,6,,,not validated
+G44917UQ,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,8,,,not validated
+G44917UQ,O-glycan_b-D-Galp_664,O664,Gal,b,D,p,O582,3,Galp,10,,,not validated

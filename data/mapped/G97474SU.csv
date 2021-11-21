@@ -1,12 +1,12 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G97474SU,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,11,,,validated by Qrator
 G97474SU,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G97474SU,unassigned,13,Gal,b,D,p,O157,4,Galp,13
+G97474SU,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,13,,,validated by Qrator
 G97474SU,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G97474SU,unassigned,14,GlcNAc,b,D,p,13,3,GlcpNAc,14
-G97474SU,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G97474SU,unassigned,16,Gal,b,D,p,14,4,Galp,16
-G97474SU,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
-G97474SU,unassigned,17,NeuNAc,a,D,p,16,3,NeupNAc,17
-G97474SU,unassigned,8,Gal,b,D,p,6,4,Galp,8
-G97474SU,unassigned,9,NeuNAc,a,D,p,8,3,NeupNAc,9
+G97474SU,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,14,,,not validated
+G97474SU,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G97474SU,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,16,,,not validated
+G97474SU,O-glycan_b-D-GlcpNAc_577,O577,GlcNAc,b,D,p,O539,3,GlcpNAc,6,,,not validated
+G97474SU,O-glycan_a-D-NeupNAc_704,O704,NeuNAc,a,D,p,O663,3,NeupNAc,17,,,not validated
+G97474SU,O-glycan_b-D-Galp_644,O644,Gal,b,D,p,O577,4,Galp,8,,,not validated
+G97474SU,O-glycan_a-D-NeupNAc_727,O727,NeuNAc,a,D,p,O644,3,NeupNAc,9,,,not validated

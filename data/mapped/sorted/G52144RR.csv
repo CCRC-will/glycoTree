@@ -2,4 +2,4 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G52144RR,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G52144RR,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G52144RR,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
-G52144RR,unassigned,6,GalNAc,b,D,p,O157,4,GalpNAc,6
+G52144RR,O-glycan_b-D-GalpNAc_581,O581,GalNAc,b,D,p,O157,4,GalpNAc,6,,,not validated

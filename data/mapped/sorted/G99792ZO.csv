@@ -4,5 +4,5 @@ G99792ZO,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated b
 G99792ZO,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G99792ZO,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G99792ZO,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,10,,,validated by Qrator
-G99792ZO,unassigned,5,sulfate,n,n,n,O156,6,sulfate,5
-G99792ZO,unassigned,6,Gal,b,D,p,O156,4,Galp,6
+G99792ZO,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,6,,,not validated
+G99792ZO,O-glycan_sulfate_676,O676,sulfate,n,n,n,O156,6,sulfate,5,,,not validated

@@ -1,5 +1,5 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G12340JM,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
 G12340JM,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G12340JM,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G12340JM,unassigned,6,sulfate,n,n,n,5,6,sulfate,6
+G12340JM,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G12340JM,O-glycan_sulfate_597,O597,sulfate,n,n,n,O539,6,sulfate,6,,,not validated

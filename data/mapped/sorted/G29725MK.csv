@@ -4,4 +4,4 @@ G29725MK,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G29725MK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
 G29725MK,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G29725MK,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G29725MK,unassigned,8,Fuc,a,L,p,O157,3,Fucp,8
+G29725MK,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,8,,,not validated

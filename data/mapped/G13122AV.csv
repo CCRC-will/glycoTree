@@ -1,11 +1,11 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G13122AV,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G13122AV,unassigned,12,Gal,b,D,p,10,3,Galp,12
-G13122AV,unassigned,13,sulfate,n,n,n,12,3,sulfate,13
+G13122AV,O-glycan_b-D-Galp_664,O664,Gal,b,D,p,O582,3,Galp,12,,,not validated
+G13122AV,O-glycan_sulfate_706,O706,sulfate,n,n,n,O664,3,sulfate,13,,,not validated
 G13122AV,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G13122AV,unassigned,14,Fuc,a,L,p,10,4,Fucp,14
-G13122AV,unassigned,5,Gal,b,D,p,O156,3,Galp,5
-G13122AV,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G13122AV,O-glycan_a-L-Fucp_665,O665,Fuc,a,L,p,O582,4,Fucp,14,,,not validated
+G13122AV,O-glycan_b-D-Galp_544,O544,Gal,b,D,p,O156,3,Galp,5,,,not validated
+G13122AV,O-glycan_a-L-Fucp_566,O566,Fuc,a,L,p,O544,2,Fucp,6,,,not validated
 G13122AV,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G13122AV,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
-G13122AV,unassigned,10,GlcNAc,b,D,p,O158,3,GlcpNAc,10
+G13122AV,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,10,,,not validated

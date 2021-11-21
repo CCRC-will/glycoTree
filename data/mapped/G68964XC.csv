@@ -1,5 +1,5 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G68964XC,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G68964XC,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G68964XC,unassigned,4,NeuNAc,a,D,p,OC,6,NeupNAc,4
-G68964XC,unassigned,6,NeuNAc,a,D,p,4,8,NeupNAc,6
+G68964XC,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,4,,,not validated
+G68964XC,O-glycan_a-D-NeupNAc_576,O576,NeuNAc,a,D,p,O535,8,NeupNAc,6,,,not validated

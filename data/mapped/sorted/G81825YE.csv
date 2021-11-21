@@ -5,4 +5,4 @@ G81825YE,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated
 G81825YE,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G81825YE,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G81825YE,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,10,,,validated by Qrator
-G81825YE,unassigned,6,Gal,b,D,p,O153,4,Galp,6
+G81825YE,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated

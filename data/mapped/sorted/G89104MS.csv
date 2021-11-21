@@ -2,4 +2,4 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G89104MS,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G89104MS,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G89104MS,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G89104MS,unassigned,6,Fuc,a,L,p,OC,4,Fucp,6
+G89104MS,O-glycan_a-L-Fucp_561,O561,Fuc,a,L,p,OC,4,Fucp,6,,,not validated

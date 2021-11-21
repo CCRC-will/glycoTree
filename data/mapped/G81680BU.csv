@@ -1,12 +1,12 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G81680BU,unassigned,11,GlcNAc,a,D,p,10,4,GlcpNAc,11
+G81680BU,O-glycan_a-D-GlcpNAc_696,O696,GlcNAc,a,D,p,O571,4,GlcpNAc,11,,,not validated
 G81680BU,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G81680BU,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,13,,,validated by Qrator
 G81680BU,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G81680BU,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
+G81680BU,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G81680BU,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,15,,,validated by Qrator
 G81680BU,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,16,,,validated by Qrator
-G81680BU,unassigned,6,Gal,b,D,p,4,4,Galp,6
-G81680BU,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
-G81680BU,unassigned,8,GlcNAc,b,D,p,O152,6,GlcpNAc,8
-G81680BU,unassigned,10,Gal,b,D,p,8,4,Galp,10
+G81680BU,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated
+G81680BU,O-glycan_a-L-Fucp_660,O660,Fuc,a,L,p,O555,2,Fucp,7,,,not validated
+G81680BU,O-glycan_b-D-GlcpNAc_538,O538,GlcNAc,b,D,p,O152,6,GlcpNAc,8,,,not validated
+G81680BU,O-glycan_b-D-Galp_571,O571,Gal,b,D,p,O538,4,Galp,10,,,not validated

@@ -5,4 +5,4 @@ G51678TA,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated b
 G51678TA,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
 G51678TA,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,9,,,validated by Qrator
 G51678TA,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G51678TA,unassigned,11,sulfate,n,n,n,O158,6,sulfate,11
+G51678TA,O-glycan_sulfate_625,O625,sulfate,n,n,n,O158,6,sulfate,11,,,not validated

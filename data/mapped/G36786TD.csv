@@ -1,7 +1,7 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G36786TD,unassigned,11,Gal,b,D,p,9,4,Galp,11
+G36786TD,O-glycan_b-D-Galp_571,O571,Gal,b,D,p,O538,4,Galp,11,,,not validated
 G36786TD,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
-G36786TD,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
+G36786TD,O-glycan_a-L-Fucp_683,O683,Fuc,a,L,p,O571,2,Fucp,12,,,not validated
 G36786TD,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,13,,,validated by Qrator
 G36786TD,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G36786TD,unassigned,14,Gal,b,D,p,O157,x,Galp,14
@@ -9,4 +9,4 @@ G36786TD,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated
 G36786TD,unassigned,5,Gal,b,D,p,O153,x,Galp,5
 G36786TD,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G36786TD,unassigned,7,Fuc,x,L,p,O153,x,Fucp,7
-G36786TD,unassigned,9,GlcNAc,b,D,p,O152,6,GlcpNAc,9
+G36786TD,O-glycan_b-D-GlcpNAc_538,O538,GlcNAc,b,D,p,O152,6,GlcpNAc,9,,,not validated

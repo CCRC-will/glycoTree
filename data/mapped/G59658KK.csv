@@ -1,13 +1,13 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G59658KK,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G59658KK,unassigned,12,Gal,b,D,p,10,3,Galp,12
-G59658KK,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
+G59658KK,O-glycan_b-D-Galp_664,O664,Gal,b,D,p,O582,3,Galp,12,,,not validated
+G59658KK,O-glycan_a-L-Fucp_735,O735,Fuc,a,L,p,O664,2,Fucp,13,,,not validated
 G59658KK,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G59658KK,unassigned,14,Fuc,a,L,p,10,4,Fucp,14
+G59658KK,O-glycan_a-L-Fucp_665,O665,Fuc,a,L,p,O582,4,Fucp,14,,,not validated
 G59658KK,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G59658KK,unassigned,15,GlcNAc,b,D,p,O158,6,GlcpNAc,15
+G59658KK,O-glycan_b-D-GlcpNAc_619,O619,GlcNAc,b,D,p,O158,6,GlcpNAc,15,,,not validated
 G59658KK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
-G59658KK,unassigned,17,Gal,b,D,p,15,4,Galp,17
-G59658KK,unassigned,8,Fuc,a,L,p,O157,3,Fucp,8
+G59658KK,O-glycan_b-D-Galp_670,O670,Gal,b,D,p,O619,4,Galp,17,,,not validated
+G59658KK,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,8,,,not validated
 G59658KK,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
-G59658KK,unassigned,10,GlcNAc,b,D,p,O158,3,GlcpNAc,10
+G59658KK,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,10,,,not validated

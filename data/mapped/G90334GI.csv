@@ -3,4 +3,4 @@ G90334GI,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,x,0,0,GalNAc,1,,,validated by
 G90334GI,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G90334GI,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
 G90334GI,O-glycan_a-D-GalpNAc_164,O164,GalNAc,a,D,p,O152,4,GalpNAc,6,,,validated by Qrator
-G90334GI,unassigned,8,NeuNAc,a,D,p,OC,6,NeupNAc,8
+G90334GI,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,8,,,not validated

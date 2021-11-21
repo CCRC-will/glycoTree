@@ -5,5 +5,5 @@ G28116PK,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated
 G28116PK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,9,,,validated by Qrator
 G28116PK,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,11,,,validated by Qrator
 G28116PK,O-glycan_a-L-Fucp_161,O161,Fuc,a,L,p,O153,4,Fucp,8,,,validated by Qrator
-G28116PK,unassigned,6,Gal,b,D,p,O153,3,Galp,6
-G28116PK,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
+G28116PK,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated
+G28116PK,O-glycan_a-L-Fucp_659,O659,Fuc,a,L,p,O567,2,Fucp,7,,,not validated

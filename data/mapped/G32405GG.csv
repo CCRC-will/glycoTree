@@ -1,10 +1,10 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G32405GG,unassigned,11,GlcNAc,b,D,p,5,6,GlcpNAc,11
+G32405GG,O-glycan_b-D-GlcpNAc_645,O645,GlcNAc,b,D,p,O539,6,GlcpNAc,11,,,not validated
 G32405GG,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G32405GG,unassigned,13,Gal,b,D,p,11,4,Galp,13
+G32405GG,O-glycan_b-D-Galp_675,O675,Gal,b,D,p,O645,4,Galp,13,,,not validated
 G32405GG,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G32405GG,unassigned,14,GalNAc,a,D,p,13,3,GalpNAc,14
-G32405GG,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G32405GG,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
-G32405GG,unassigned,8,Gal,b,D,p,6,4,Galp,8
-G32405GG,unassigned,9,GalNAc,a,D,p,8,3,GalpNAc,9
+G32405GG,O-glycan_a-D-GalpNAc_710,O710,GalNAc,a,D,p,O675,3,GalpNAc,14,,,not validated
+G32405GG,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G32405GG,O-glycan_b-D-GlcpNAc_577,O577,GlcNAc,b,D,p,O539,3,GlcpNAc,6,,,not validated
+G32405GG,O-glycan_b-D-Galp_644,O644,Gal,b,D,p,O577,4,Galp,8,,,not validated
+G32405GG,O-glycan_a-D-GalpNAc_708,O708,GalNAc,a,D,p,O644,3,GalpNAc,9,,,not validated

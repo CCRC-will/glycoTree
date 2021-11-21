@@ -4,5 +4,5 @@ G74241QD,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G74241QD,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
 G74241QD,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
 G74241QD,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,8,,,validated by Qrator
-G74241QD,unassigned,6,Fuc,a,L,p,O157,3,Fucp,6
-G74241QD,unassigned,10,Gal,b,D,p,O158,4,Galp,10
+G74241QD,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,6,,,not validated
+G74241QD,O-glycan_b-D-Galp_630,O630,Gal,b,D,p,O158,4,Galp,10,,,not validated

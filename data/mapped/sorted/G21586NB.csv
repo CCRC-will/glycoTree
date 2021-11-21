@@ -3,4 +3,4 @@ G21586NB,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated
 G21586NB,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G21586NB,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G21586NB,O-glycan_a-D-GalpNAc_162,O162,GalNAc,a,D,p,O152,3,GalpNAc,5,,,validated by Qrator
-G21586NB,unassigned,7,GlcNAc,a,D,p,O162,3,GlcpNAc,7
+G21586NB,O-glycan_a-D-GlcpNAc_617,O617,GlcNAc,a,D,p,O162,3,GlcpNAc,7,,,not validated

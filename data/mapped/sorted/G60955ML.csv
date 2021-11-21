@@ -1,10 +1,10 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G60955ML,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G60955ML,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G60955ML,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G60955ML,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
-G60955ML,unassigned,7,Gal,b,D,p,6,3|4,Galp,7
+G60955ML,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,14,,,not validated
+G60955ML,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G60955ML,O-glycan_b-D-GlcpNAc_577,O577,GlcNAc,b,D,p,O539,3,GlcpNAc,6,,,not validated
+G60955ML,O-glycan_a-D-NeupNAc_580,O580,NeuNAc,a,D,p,O539,6,NeupNAc,12,,,not validated
+G60955ML,unassigned,7,Gal,b,D,p,O577,3|4,Galp,7
 G60955ML,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
 G60955ML,unassigned,9,GalNAc,a,D,p,7,3,GalpNAc,9
-G60955ML,unassigned,12,NeuNAc,a,D,p,5,6,NeupNAc,12
-G60955ML,unassigned,14,NeuNAc,a,D,p,OC,6,NeupNAc,14

@@ -4,5 +4,5 @@ G69876CC,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G69876CC,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G69876CC,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
 G69876CC,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
-G69876CC,unassigned,7,Fuc,a,L,p,O157,3,Fucp,7
-G69876CC,unassigned,9,sulfate,n,n,n,O158,3,sulfate,9
+G69876CC,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,7,,,not validated
+G69876CC,O-glycan_sulfate_596,O596,sulfate,n,n,n,O158,3,sulfate,9,,,not validated

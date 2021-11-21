@@ -3,7 +3,7 @@ G00729SA,O-glycan_a-D-GalpNAc_166,O166,GalNAc,a,D,p,O158,3,GalpNAc,11,,,validate
 G00729SA,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G00729SA,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G00729SA,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
-G00729SA,unassigned,5,GlcNAc,a,D,p,O152,3,GlcpNAc,5
+G00729SA,O-glycan_a-D-GlcpNAc_546,O546,GlcNAc,a,D,p,O152,3,GlcpNAc,5,,,not validated
 G00729SA,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G00729SA,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G00729SA,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,10,,,validated by Qrator

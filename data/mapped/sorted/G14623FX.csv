@@ -4,5 +4,5 @@ G14623FX,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G14623FX,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
 G14623FX,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
 G14623FX,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,9,,,validated by Qrator
-G14623FX,unassigned,4,GlcNAc,a,D,p,O152,4,GlcpNAc,4
-G14623FX,unassigned,10,Gal,a,D,p,O158,3,Galp,10
+G14623FX,O-glycan_a-D-GlcpNAc_537,O537,GlcNAc,a,D,p,O152,4,GlcpNAc,4,,,not validated
+G14623FX,O-glycan_a-D-Galp_557,O557,Gal,a,D,p,O158,3,Galp,10,,,not validated

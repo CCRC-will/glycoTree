@@ -3,4 +3,4 @@ G30647NK,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,b,D,p,0,0,GalpNAc,1,,,validated b
 G30647NK,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G30647NK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
 G30647NK,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G30647NK,unassigned,8,sulfate,n,n,n,O157,6,sulfate,8
+G30647NK,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,8,,,not validated

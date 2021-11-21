@@ -6,5 +6,5 @@ G64563CQ,unassigned,13,NeuNAc,a,D,p,12,6,NeupNAc,13
 G64563CQ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G64563CQ,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
 G64563CQ,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
-G64563CQ,unassigned,8,Gal,b,D,p,O157,4,Galp,8
-G64563CQ,unassigned,9,GlcNAc,b,D,p,8,x,GlcpNAc,9
+G64563CQ,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
+G64563CQ,unassigned,9,GlcNAc,b,D,p,O158,x,GlcpNAc,9

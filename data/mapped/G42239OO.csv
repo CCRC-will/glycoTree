@@ -4,4 +4,4 @@ G42239OO,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G42239OO,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G42239OO,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
 G42239OO,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
-G42239OO,unassigned,8,sulfate,n,n,n,O158,3,sulfate,8
+G42239OO,O-glycan_sulfate_596,O596,sulfate,n,n,n,O158,3,sulfate,8,,,not validated

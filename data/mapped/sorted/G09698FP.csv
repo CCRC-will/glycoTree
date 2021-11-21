@@ -3,6 +3,6 @@ G09698FP,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated b
 G09698FP,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
 G09698FP,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G09698FP,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
-G09698FP,unassigned,5,Gal,b,D,p,O156,3,Galp,5
-G09698FP,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
-G09698FP,unassigned,10,sulfate,n,n,n,O157,6,sulfate,10
+G09698FP,O-glycan_b-D-Galp_544,O544,Gal,b,D,p,O156,3,Galp,5,,,not validated
+G09698FP,O-glycan_a-L-Fucp_566,O566,Fuc,a,L,p,O544,2,Fucp,6,,,not validated
+G09698FP,O-glycan_sulfate_599,O599,sulfate,n,n,n,O157,6,sulfate,10,,,not validated

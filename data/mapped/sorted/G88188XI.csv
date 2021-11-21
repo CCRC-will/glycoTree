@@ -5,4 +5,4 @@ G88188XI,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated b
 G88188XI,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G88188XI,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,10,,,validated by Qrator
 G88188XI,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G88188XI,unassigned,6,sulfate,n,n,n,O152,6,sulfate,6
+G88188XI,O-glycan_sulfate_601,O601,sulfate,n,n,n,O152,6,sulfate,6,,,not validated

@@ -4,4 +4,4 @@ G30976UY,unassigned,2,GlcNAc,x,D,p,OC,x,GlcpNAc,2
 G30976UY,unassigned,4,Gal,b,D,p,2,3,Galp,4
 G30976UY,unassigned,5,Fuc,a,L,p,4,2,Fucp,5
 G30976UY,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
-G30976UY,unassigned,9,Gal,b,D,p,O157,3,Galp,9
+G30976UY,O-glycan_b-D-Galp_540,O540,Gal,b,D,p,O157,3,Galp,9,,,not validated

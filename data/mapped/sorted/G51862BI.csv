@@ -4,6 +4,6 @@ G51862BI,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated b
 G51862BI,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G51862BI,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,10,,,validated by Qrator
 G51862BI,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,11,,,validated by Qrator
-G51862BI,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G51862BI,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
-G51862BI,unassigned,9,Fuc,a,L,p,O157,3,Fucp,9
+G51862BI,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G51862BI,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,9,,,not validated
+G51862BI,O-glycan_a-L-Fucp_556,O556,Fuc,a,L,p,O539,2,Fucp,6,,,not validated

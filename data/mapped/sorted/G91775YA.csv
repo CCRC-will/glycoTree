@@ -2,6 +2,6 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G91775YA,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G91775YA,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G91775YA,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
-G91775YA,unassigned,6,Fuc,a,L,p,O153,3,Fucp,6
-G91775YA,unassigned,7,Gal,b,D,p,O153,4,Galp,7
-G91775YA,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G91775YA,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,7,,,not validated
+G91775YA,O-glycan_a-L-Fucp_572,O572,Fuc,a,L,p,O153,3,Fucp,6,,,not validated
+G91775YA,O-glycan_a-L-Fucp_660,O660,Fuc,a,L,p,O555,2,Fucp,8,,,not validated

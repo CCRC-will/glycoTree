@@ -5,4 +5,4 @@ G74782FR,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrato
 G74782FR,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
 G74782FR,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
 G74782FR,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,8,,,validated by Qrator
-G74782FR,unassigned,9,Gal,a,D,p,O158,3,Galp,9
+G74782FR,O-glycan_a-D-Galp_557,O557,Gal,a,D,p,O158,3,Galp,9,,,not validated

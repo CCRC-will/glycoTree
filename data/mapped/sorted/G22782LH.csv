@@ -3,6 +3,6 @@ G22782LH,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,x,0,0,GalNAc,1,,,validated by
 G22782LH,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G22782LH,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G22782LH,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,10,,,validated by Qrator
+G22782LH,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,9,,,not validated
 G22782LH,unassigned,4,GlcNAc,b,D,p,O152,3|6,GlcpNAc,4
 G22782LH,unassigned,6,Gal,b,D,p,4,3,Galp,6
-G22782LH,unassigned,9,Fuc,a,L,p,O157,3,Fucp,9

@@ -1,6 +1,6 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G53922OR,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,b,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G53922OR,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G53922OR,unassigned,4,Glc,b,D,p,O152,3,Glcp,4
-G53922OR,unassigned,5,Gal,b,D,p,4,6,Galp,5
-G53922OR,unassigned,6,NeuNAc,a,D,p,5,6,NeupNAc,6
+G53922OR,O-glycan_b-D-Glcp_528,O528,Glc,b,D,p,O152,3,Glcp,4,,,not validated
+G53922OR,O-glycan_b-D-Galp_554,O554,Gal,b,D,p,O528,6,Galp,5,,,not validated
+G53922OR,unassigned,6,NeuNAc,a,D,p,O554,6,NeupNAc,6

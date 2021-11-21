@@ -1,13 +1,13 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G68615TX,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G68615TX,unassigned,12,Gal,b,D,p,10,4,Galp,12
-G68615TX,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
+G68615TX,O-glycan_b-D-Galp_571,O571,Gal,b,D,p,O538,4,Galp,12,,,not validated
+G68615TX,O-glycan_a-L-Fucp_683,O683,Fuc,a,L,p,O571,2,Fucp,13,,,not validated
 G68615TX,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G68615TX,unassigned,14,GalNAc,a,D,p,12,3,GalpNAc,14
+G68615TX,O-glycan_a-D-GalpNAc_729,O729,GalNAc,a,D,p,O571,3,GalpNAc,14,,,not validated
 G68615TX,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
-G68615TX,unassigned,5,Gal,b,D,p,O152,3,Galp,5
-G68615TX,unassigned,16,Gal,a,D,p,14,3,Galp,16
-G68615TX,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
-G68615TX,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
-G68615TX,unassigned,9,Gal,a,D,p,7,3,Galp,9
-G68615TX,unassigned,10,GlcNAc,b,D,p,O152,6,GlcpNAc,10
+G68615TX,O-glycan_b-D-Galp_529,O529,Gal,b,D,p,O152,3,Galp,5,,,not validated
+G68615TX,O-glycan_a-D-Galp_730,O730,Gal,a,D,p,O729,3,Galp,16,,,not validated
+G68615TX,O-glycan_a-L-Fucp_605,O605,Fuc,a,L,p,O529,2,Fucp,6,,,not validated
+G68615TX,O-glycan_a-D-GalpNAc_661,O661,GalNAc,a,D,p,O529,3,GalpNAc,7,,,not validated
+G68615TX,O-glycan_a-D-Galp_662,O662,Gal,a,D,p,O661,3,Galp,9,,,not validated
+G68615TX,O-glycan_b-D-GlcpNAc_538,O538,GlcNAc,b,D,p,O152,6,GlcpNAc,10,,,not validated

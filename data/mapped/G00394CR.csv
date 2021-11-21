@@ -3,7 +3,7 @@ G00394CR,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated b
 G00394CR,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G00394CR,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G00394CR,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
-G00394CR,unassigned,7,Gal,b,D,p,O157,4,Galp,7
-G00394CR,unassigned,8,Gal,a,D,p,7,4,Galp,8
-G00394CR,unassigned,9,Gal,a,D,p,8,3,Galp,9
-G00394CR,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G00394CR,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
+G00394CR,O-glycan_a-D-Galp_559,O559,Gal,a,D,p,O158,4,Galp,8,,,not validated
+G00394CR,O-glycan_a-D-Galp_658,O658,Gal,a,D,p,O559,3,Galp,9,,,not validated
+G00394CR,unassigned,10,Fuc,a,L,p,O658,2,Fucp,10

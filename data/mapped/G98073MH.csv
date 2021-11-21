@@ -1,13 +1,13 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G98073MH,unassigned,11,Gal,b,D,p,9,3,Galp,11
+G98073MH,O-glycan_b-D-Galp_664,O664,Gal,b,D,p,O582,3,Galp,11,,,not validated
 G98073MH,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G98073MH,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
-G98073MH,unassigned,13,Fuc,a,L,p,9,4,Fucp,13
+G98073MH,O-glycan_a-L-Fucp_735,O735,Fuc,a,L,p,O664,2,Fucp,12,,,not validated
+G98073MH,O-glycan_a-L-Fucp_665,O665,Fuc,a,L,p,O582,4,Fucp,13,,,not validated
 G98073MH,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G98073MH,unassigned,14,GlcNAc,b,D,p,8,6,GlcpNAc,14
+G98073MH,O-glycan_b-D-GlcpNAc_619,O619,GlcNAc,b,D,p,O158,6,GlcpNAc,14,,,not validated
 G98073MH,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G98073MH,unassigned,16,Fuc,a,L,p,14,3,Fucp,16
+G98073MH,O-glycan_a-L-Fucp_669,O669,Fuc,a,L,p,O619,3,Fucp,16,,,not validated
 G98073MH,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
-G98073MH,unassigned,17,Gal,b,D,p,14,4,Galp,17
-G98073MH,unassigned,8,Gal,b,D,p,O157,4,Galp,8
-G98073MH,unassigned,9,GlcNAc,b,D,p,8,3,GlcpNAc,9
+G98073MH,O-glycan_b-D-Galp_670,O670,Gal,b,D,p,O619,4,Galp,17,,,not validated
+G98073MH,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
+G98073MH,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,9,,,not validated

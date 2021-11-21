@@ -3,14 +3,14 @@ G57385MA,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated b
 G57385MA,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G57385MA,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,18,,,validated by Qrator
 G57385MA,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,20,,,validated by Qrator
-G57385MA,unassigned,4,Gal,b,D,p,O152,3,Galp,4
-G57385MA,unassigned,5,GlcNAc,b,D,p,4,3,GlcpNAc,5
-G57385MA,unassigned,7,Gal,b,D,p,5,4,Galp,7
-G57385MA,unassigned,8,GlcNAc,b,D,p,7,3,GlcpNAc,8
-G57385MA,unassigned,9,Gal,b,D,p,8,x,Galp,9
+G57385MA,O-glycan_b-D-Galp_529,O529,Gal,b,D,p,O152,3,Galp,4,,,not validated
+G57385MA,O-glycan_b-D-GlcpNAc_643,O643,GlcNAc,b,D,p,O529,3,GlcpNAc,5,,,not validated
+G57385MA,O-glycan_b-D-Galp_753,O753,Gal,b,D,p,O643,4,Galp,7,,,not validated
+G57385MA,O-glycan_b-D-GlcpNAc_754,O754,GlcNAc,b,D,p,O753,3,GlcpNAc,8,,,not validated
+G57385MA,O-glycan_b-D-GlcpNAc_755,O755,GlcNAc,b,D,p,O753,6,GlcpNAc,13,,,not validated
+G57385MA,unassigned,9,Gal,b,D,p,O754,x,Galp,9
 G57385MA,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
 G57385MA,unassigned,11,Gal,a,D,p,9,3,Galp,11
-G57385MA,unassigned,13,GlcNAc,b,D,p,7,6,GlcpNAc,13
-G57385MA,unassigned,14,Gal,b,D,p,13,x,Galp,14
+G57385MA,unassigned,14,Gal,b,D,p,O755,x,Galp,14
 G57385MA,unassigned,15,Fuc,a,L,p,14,2,Fucp,15
 G57385MA,unassigned,16,Gal,a,D,p,14,3,Galp,16

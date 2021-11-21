@@ -3,4 +3,4 @@ G41330YY,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated b
 G41330YY,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G41330YY,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G41330YY,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
-G41330YY,unassigned,5,Gal,b,D,p,O152,4,Galp,5
+G41330YY,O-glycan_b-D-Galp_527,O527,Gal,b,D,p,O152,4,Galp,5,,,not validated

@@ -5,4 +5,4 @@ G43059PA,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated b
 G43059PA,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G43059PA,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,10,,,validated by Qrator
 G43059PA,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G43059PA,unassigned,8,Fuc,a,L,p,O157,3,Fucp,8
+G43059PA,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,8,,,not validated

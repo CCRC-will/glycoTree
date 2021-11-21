@@ -4,4 +4,4 @@ G05848DX,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G05848DX,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G05848DX,O-glycan_a-L-Fucp_161,O161,Fuc,a,L,p,O153,4,Fucp,6,,,validated by Qrator
 G05848DX,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
-G05848DX,unassigned,9,Fuc,a,L,p,O157,4,Fucp,9
+G05848DX,O-glycan_a-L-Fucp_558,O558,Fuc,a,L,p,O157,4,Fucp,9,,,not validated

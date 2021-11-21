@@ -4,5 +4,5 @@ G06676BQ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G06676BQ,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G06676BQ,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
 G06676BQ,O-glycan_a-L-Fucp_161,O161,Fuc,a,L,p,O153,4,Fucp,7,,,validated by Qrator
-G06676BQ,unassigned,6,Gal,b,D,p,O153,3,Galp,6
-G06676BQ,unassigned,10,Gal,b,D,p,O157,3,Galp,10
+G06676BQ,O-glycan_b-D-Galp_540,O540,Gal,b,D,p,O157,3,Galp,10,,,not validated
+G06676BQ,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated

@@ -4,5 +4,5 @@ G36404TW,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated b
 G36404TW,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G36404TW,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
 G36404TW,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,10,,,validated by Qrator
-G36404TW,unassigned,5,Gal,b,D,p,O156,3,Galp,5
-G36404TW,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G36404TW,O-glycan_b-D-Galp_544,O544,Gal,b,D,p,O156,3,Galp,5,,,not validated
+G36404TW,O-glycan_a-L-Fucp_566,O566,Fuc,a,L,p,O544,2,Fucp,6,,,not validated

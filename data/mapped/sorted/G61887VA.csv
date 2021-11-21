@@ -1,13 +1,13 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G61887VA,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G61887VA,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G61887VA,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G61887VA,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,14,,,validated by Qrator
 G61887VA,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,16,,,validated by Qrator
 G61887VA,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,17,,,validated by Qrator
-G61887VA,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
-G61887VA,unassigned,6,Gal,b,D,p,4,4,Galp,6
-G61887VA,unassigned,7,GlcNAc,b,D,p,6,3,GlcpNAc,7
-G61887VA,unassigned,9,Gal,b,D,p,7,4,Galp,9
-G61887VA,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
-G61887VA,unassigned,11,Gal,a,D,p,9,3,Galp,11
-G61887VA,unassigned,12,GlcNAc,b,D,p,6,6,GlcpNAc,12
+G61887VA,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated
+G61887VA,O-glycan_b-D-GlcpNAc_672,O672,GlcNAc,b,D,p,O555,3,GlcpNAc,7,,,not validated
+G61887VA,O-glycan_b-D-GlcpNAc_673,O673,GlcNAc,b,D,p,O555,6,GlcpNAc,12,,,not validated
+G61887VA,O-glycan_b-D-Galp_731,O731,Gal,b,D,p,O672,4,Galp,9,,,not validated
+G61887VA,O-glycan_a-D-Galp_733,O733,Gal,a,D,p,O731,3,Galp,11,,,not validated
+G61887VA,O-glycan_a-L-Fucp_734,O734,Fuc,a,L,p,O731,2,Fucp,10,,,not validated

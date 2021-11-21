@@ -2,6 +2,6 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G07610JY,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,b,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G07610JY,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G07610JY,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
-G07610JY,unassigned,6,Gal,b,D,p,O157,4,Galp,6
-G07610JY,unassigned,7,GlcNAc,b,D,p,6,6,GlcpNAc,7
-G07610JY,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G07610JY,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,6,,,validated by Qrator
+G07610JY,O-glycan_b-D-GlcpNAc_619,O619,GlcNAc,b,D,p,O158,6,GlcpNAc,7,,,not validated
+G07610JY,O-glycan_b-D-Galp_670,O670,Gal,b,D,p,O619,4,Galp,9,,,not validated

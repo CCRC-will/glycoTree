@@ -1,9 +1,9 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G00653TI,unassigned,11,Gal,b,D,p,9,4,Galp,11
+G00653TI,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,11,,,not validated
 G00653TI,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
-G00653TI,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
+G00653TI,unassigned,12,Fuc,a,L,p,O663,2,Fucp,12
 G00653TI,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G00653TI,unassigned,4,GlcNAc,a,D,p,O152,4,GlcpNAc,4
+G00653TI,O-glycan_a-D-GlcpNAc_537,O537,GlcNAc,a,D,p,O152,4,GlcpNAc,4,,,not validated
 G00653TI,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
 G00653TI,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
-G00653TI,unassigned,9,GlcNAc,b,D,p,O158,3,GlcpNAc,9
+G00653TI,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,9,,,not validated

@@ -2,5 +2,5 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G85002XD,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G85002XD,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G85002XD,O-glycan_a-D-NeupNAc_168,O168,NeuNAc,a,D,p,O152,3,NeupNAc,4,,,validated by Qrator
-G85002XD,unassigned,6,NeuNAc,a,D,p,O168,8,NeupNAc,6
-G85002XD,unassigned,8,NeuNAc,a,D,p,OC,6,NeupNAc,8
+G85002XD,O-glycan_a-D-NeupNAc_535,O535,NeuNAc,a,D,p,OC,6,NeupNAc,8,,,not validated
+G85002XD,O-glycan_a-D-NeupNAc_579,O579,NeuNAc,a,D,p,O168,8,NeupNAc,6,,,not validated

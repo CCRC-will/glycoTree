@@ -1,0 +1,3 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G00040MO,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,x,0,0,GalNAc,1,,,validated by Qrator
+G00040MO,O-glycan_a-D-GalpNAc_552,O552,GalNAc,a,D,p,OC,3,GalpNAc,3,,,not validated

@@ -3,6 +3,6 @@ G82054AK,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated b
 G82054AK,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G82054AK,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrator
 G82054AK,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
-G82054AK,unassigned,7,GlcNAc,b,D,p,O157,3,GlcpNAc,7
-G82054AK,unassigned,9,Fuc,a,L,p,7,3,Fucp,9
-G82054AK,unassigned,10,Gal,b,D,p,7,4,Galp,10
+G82054AK,O-glycan_b-D-GlcpNAc_550,O550,GlcNAc,b,D,p,O157,3,GlcpNAc,7,,,not validated
+G82054AK,O-glycan_a-L-Fucp_666,O666,Fuc,a,L,p,O550,3,Fucp,9,,,not validated
+G82054AK,O-glycan_b-D-Galp_667,O667,Gal,b,D,p,O550,4,Galp,10,,,not validated

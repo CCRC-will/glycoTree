@@ -1,10 +1,10 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G60977LC,unassigned,11,Fuc,a,L,p,10,2,Fucp,11
+G60977LC,O-glycan_a-L-Fucp_607,O607,Fuc,a,L,p,O540,2,Fucp,11,,,not validated
 G60977LC,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G60977LC,unassigned,12,Fuc,a,L,p,O157,4,Fucp,12
+G60977LC,O-glycan_a-L-Fucp_558,O558,Fuc,a,L,p,O157,4,Fucp,12,,,not validated
 G60977LC,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G60977LC,unassigned,5,Gal,b,D,p,O156,3,Galp,5
-G60977LC,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
-G60977LC,unassigned,7,Fuc,a,L,p,O156,4,Fucp,7
+G60977LC,O-glycan_b-D-Galp_544,O544,Gal,b,D,p,O156,3,Galp,5,,,not validated
+G60977LC,O-glycan_a-L-Fucp_566,O566,Fuc,a,L,p,O544,2,Fucp,6,,,not validated
+G60977LC,O-glycan_a-L-Fucp_565,O565,Fuc,a,L,p,O156,4,Fucp,7,,,not validated
 G60977LC,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
-G60977LC,unassigned,10,Gal,b,D,p,O157,3,Galp,10
+G60977LC,O-glycan_b-D-Galp_540,O540,Gal,b,D,p,O157,3,Galp,10,,,not validated

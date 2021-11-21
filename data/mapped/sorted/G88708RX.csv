@@ -3,5 +3,5 @@ G88708RX,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated b
 G88708RX,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G88708RX,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,5,,,validated by Qrator
 G88708RX,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,8,,,validated by Qrator
-G88708RX,unassigned,4,sulfate,n,n,n,O152,6,sulfate,4
-G88708RX,unassigned,7,Fuc,a,L,p,O157,3,Fucp,7
+G88708RX,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,7,,,not validated
+G88708RX,O-glycan_sulfate_601,O601,sulfate,n,n,n,O152,6,sulfate,4,,,not validated

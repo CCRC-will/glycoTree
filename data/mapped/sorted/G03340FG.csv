@@ -3,5 +3,5 @@ G03340FG,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated b
 G03340FG,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
 G03340FG,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,6,,,validated by Qrator
 G03340FG,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
-G03340FG,unassigned,5,Gal,b,D,p,O156,4,Galp,5
-G03340FG,unassigned,8,Fuc,a,L,p,O157,3,Fucp,8
+G03340FG,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,5,,,not validated
+G03340FG,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,8,,,not validated

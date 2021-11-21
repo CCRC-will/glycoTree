@@ -2,8 +2,8 @@ glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,fo
 G21696DT,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,11,,,validated by Qrator
 G21696DT,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G21696DT,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G21696DT,unassigned,4,Gal,b,D,p,O152,3,Galp,4
-G21696DT,unassigned,5,GlcNAc,b,D,p,O152,6,GlcpNAc,5
-G21696DT,unassigned,7,Fuc,a,L,p,5,3,Fucp,7
+G21696DT,O-glycan_b-D-Galp_529,O529,Gal,b,D,p,O152,3,Galp,4,,,not validated
+G21696DT,O-glycan_b-D-GlcpNAc_538,O538,GlcNAc,b,D,p,O152,6,GlcpNAc,5,,,not validated
+G21696DT,O-glycan_a-L-Fucp_609,O609,Fuc,a,L,p,O538,3,Fucp,7,,,not validated
 G21696DT,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
-G21696DT,unassigned,10,Fuc,a,L,p,O157,3,Fucp,10
+G21696DT,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,10,,,not validated

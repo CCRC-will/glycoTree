@@ -3,10 +3,10 @@ G76082SD,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated
 G76082SD,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G76082SD,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G76082SD,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,12,,,validated by Qrator
+G76082SD,O-glycan_b-D-GlcpNAc_538,O538,GlcNAc,b,D,p,O152,6,GlcpNAc,8,,,not validated
 G76082SD,unassigned,5,Gal,x,D,p,O153,x,Galp,5
 G76082SD,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
-G76082SD,unassigned,8,GlcNAc,b,D,p,O152,6,GlcpNAc,8
-G76082SD,unassigned,9,Gal,x,D,p,8,x,Galp,9
+G76082SD,unassigned,9,Gal,x,D,p,O538,x,Galp,9
 G76082SD,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
 G76082SD,unassigned,13,Gal,x,D,p,O157,x,Galp,13
 G76082SD,unassigned,14,Fuc,x,L,p,O157,x,Fucp,14

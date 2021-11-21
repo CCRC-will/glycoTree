@@ -1,8 +1,8 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G37597VQ,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G37597VQ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G37597VQ,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G37597VQ,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
 G37597VQ,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,10,,,validated by Qrator
-G37597VQ,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
-G37597VQ,unassigned,6,Gal,b,D,p,4,3,Galp,6
-G37597VQ,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
+G37597VQ,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated
+G37597VQ,O-glycan_a-L-Fucp_659,O659,Fuc,a,L,p,O567,2,Fucp,7,,,not validated

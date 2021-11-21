@@ -10,8 +10,8 @@ G98977CH,O-glycan_a-D-GalpNAc_166,O166,GalNAc,a,D,p,O158,3,GalpNAc,28,,,validate
 G98977CH,unassigned,19,Gal,b,D,p,17,4,Galp,19
 G98977CH,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G98977CH,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G98977CH,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
-G98977CH,unassigned,5,Gal,b,D,p,4,x,Galp,5
+G98977CH,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
+G98977CH,unassigned,5,Gal,b,D,p,O153,x,Galp,5
 G98977CH,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
 G98977CH,unassigned,7,Gal,b,D,p,6,x,Galp,7
 G98977CH,unassigned,8,GlcNAc,b,D,p,7,3,GlcpNAc,8

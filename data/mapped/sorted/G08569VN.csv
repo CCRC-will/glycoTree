@@ -4,6 +4,6 @@ G08569VN,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G08569VN,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
 G08569VN,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,10,,,validated by Qrator
 G08569VN,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,11,,,validated by Qrator
-G08569VN,unassigned,4,Gal,b,D,p,O152,3,Galp,4
-G08569VN,unassigned,5,NeuNAc,a,D,p,4,3,NeupNAc,5
-G08569VN,unassigned,7,sulfate,n,n,n,4,6,sulfate,7
+G08569VN,O-glycan_b-D-Galp_529,O529,Gal,b,D,p,O152,3,Galp,4,,,not validated
+G08569VN,O-glycan_a-D-NeupNAc_689,O689,NeuNAc,a,D,p,O529,3,NeupNAc,5,,,not validated
+G08569VN,O-glycan_sulfate_690,O690,sulfate,n,n,n,O529,6,sulfate,7,,,not validated

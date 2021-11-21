@@ -3,11 +3,11 @@ G60615ZD,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated b
 G60615ZD,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G60615ZD,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
 G60615ZD,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,7,,,validated by Qrator
-G60615ZD,unassigned,6,Fuc,a,L,p,O157,3,Fucp,6
-G60615ZD,unassigned,8,GlcNAc,b,D,p,O158,3,GlcpNAc,8
-G60615ZD,unassigned,10,Fuc,a,L,p,8,3,Fucp,10
-G60615ZD,unassigned,11,Gal,b,D,p,8,4,Galp,11
-G60615ZD,unassigned,12,GlcNAc,b,D,p,11,3,GlcpNAc,12
-G60615ZD,unassigned,14,Fuc,a,L,p,12,3,Fucp,14
-G60615ZD,unassigned,15,Gal,b,D,p,12,4,Galp,15
-G60615ZD,unassigned,16,NeuNAc,a,D,p,15,2,NeupNAc,16
+G60615ZD,O-glycan_a-L-Fucp_548,O548,Fuc,a,L,p,O157,3,Fucp,6,,,not validated
+G60615ZD,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,8,,,not validated
+G60615ZD,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,11,,,not validated
+G60615ZD,O-glycan_a-L-Fucp_671,O671,Fuc,a,L,p,O582,3,Fucp,10,,,not validated
+G60615ZD,O-glycan_b-D-GlcpNAc_699,O699,GlcNAc,b,D,p,O663,3,GlcpNAc,12,,,not validated
+G60615ZD,O-glycan_b-D-Galp_700,O700,Gal,b,D,p,O699,4,Galp,15,,,not validated
+G60615ZD,O-glycan_a-L-Fucp_705,O705,Fuc,a,L,p,O699,3,Fucp,14,,,not validated
+G60615ZD,O-glycan_a-D-NeupNAc_736,O736,NeuNAc,a,D,p,O700,2,NeupNAc,16,,,not validated

@@ -1,10 +1,10 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G75594JP,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
-G75594JP,unassigned,12,Gal,b,D,p,10,4,Galp,12
-G75594JP,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
+G75594JP,O-glycan_b-D-Galp_663,O663,Gal,b,D,p,O582,4,Galp,12,,,not validated
+G75594JP,unassigned,13,Fuc,a,L,p,O663,2,Fucp,13
 G75594JP,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G75594JP,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
-G75594JP,unassigned,6,Gal,b,D,p,O153,4,Galp,6
+G75594JP,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated
 G75594JP,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,7,,,validated by Qrator
 G75594JP,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,9,,,validated by Qrator
-G75594JP,unassigned,10,GlcNAc,b,D,p,O158,3,GlcpNAc,10
+G75594JP,O-glycan_b-D-GlcpNAc_582,O582,GlcNAc,b,D,p,O158,3,GlcpNAc,10,,,not validated

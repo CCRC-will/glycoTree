@@ -1,0 +1,6 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G46866BD,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,x,0,0,GalNAc,1,,,validated by Qrator
+G46866BD,O-glycan_sulfate_553,O553,sulfate,n,n,n,OC,3,sulfate,3,,,not validated
+G46866BD,unassigned,4,GlcNAc,x,D,p,OC,x,GlcpNAc,4
+G46866BD,unassigned,6,Gal,x,D,p,4,x,Galp,6
+G46866BD,unassigned,7,NeuNAc,x,D,p,6,x,NeupNAc,7

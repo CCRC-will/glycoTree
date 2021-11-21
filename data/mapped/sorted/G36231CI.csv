@@ -3,4 +3,4 @@ G36231CI,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,b,D,p,0,0,GalpNAc,1,,,validated b
 G36231CI,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
 G36231CI,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,4,,,validated by Qrator
 G36231CI,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,6,,,validated by Qrator
-G36231CI,unassigned,7,NeuNAc,a,D,p,O158,6,NeupNAc,7
+G36231CI,O-glycan_a-D-NeupNAc_588,O588,NeuNAc,a,D,p,O158,6,NeupNAc,7,,,not validated

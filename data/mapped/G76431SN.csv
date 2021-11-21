@@ -1,6 +1,6 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G76431SN,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
 G76431SN,O-glycan_b-D-GlcpNAc_156,O156,GlcNAc,b,D,p,OC,3,GlcpNAc,3,,,validated by Qrator
-G76431SN,unassigned,5,Fuc,a,L,p,O156,3,Fucp,5
-G76431SN,unassigned,6,Gal,b,D,p,O156,4,Galp,6
-G76431SN,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
+G76431SN,O-glycan_a-L-Fucp_563,O563,Fuc,a,L,p,O156,3,Fucp,5,,,not validated
+G76431SN,O-glycan_b-D-Galp_539,O539,Gal,b,D,p,O156,4,Galp,6,,,not validated
+G76431SN,O-glycan_a-L-Fucp_556,O556,Fuc,a,L,p,O539,2,Fucp,7,,,not validated

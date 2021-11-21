@@ -6,4 +6,4 @@ G75171WW,O-glycan_a-L-Fucp_154,O154,Fuc,a,L,p,O152,2,Fucp,4,,,validated by Qrato
 G75171WW,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,8,,,validated by Qrator
 G75171WW,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,10,,,validated by Qrator
 G75171WW,O-glycan_a-L-Fucp_167,O167,Fuc,a,L,p,O158,2,Fucp,11,,,validated by Qrator
-G75171WW,unassigned,6,Gal,b,D,p,O153,4,Galp,6
+G75171WW,O-glycan_b-D-Galp_555,O555,Gal,b,D,p,O153,4,Galp,6,,,not validated

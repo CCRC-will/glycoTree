@@ -1,9 +1,9 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G63754TT,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,o,D,ol,0,0,GalolNAc,1,,,validated by Qrator
 G63754TT,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G63754TT,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
 G63754TT,O-glycan_b-D-GlcpNAc_157,O157,GlcNAc,b,D,p,OC,6,GlcpNAc,9,,,validated by Qrator
 G63754TT,O-glycan_b-D-Galp_158,O158,Gal,b,D,p,O157,4,Galp,11,,,validated by Qrator
 G63754TT,O-glycan_a-D-NeupNAc_159,O159,NeuNAc,a,D,p,O158,3,NeupNAc,12,,,validated by Qrator
-G63754TT,unassigned,4,GlcNAc,b,D,p,O152,3,GlcpNAc,4
-G63754TT,unassigned,6,Gal,b,D,p,4,3,Galp,6
-G63754TT,unassigned,7,NeuNAc,a,D,p,6,3,NeupNAc,7
+G63754TT,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated
+G63754TT,O-glycan_a-D-NeupNAc_688,O688,NeuNAc,a,D,p,O567,3,NeupNAc,7,,,not validated

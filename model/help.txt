@@ -1,0 +1,25 @@
+To update canonical residues for a particular tree, run TreeBuilder3 with 'e 5' to identify additional
+   canonical residues (like unassigned O-glycan residues).
+This is more efficient if the input accession list is first sorted by file size:
+	
+This example worked (Nov. 2021) to extend the O-glycan tree:
+
+$ cd ~/glycoTree
+$ target=`pwd`/data/Olinked/csv
+Generate a sorted (smallest to largest) list of csv files containing O-linked glycans
+$ ls -1 -S -r $target | awk -v t=$target '$1 ~ "G*.csv" {printf("%s/%s\n", t, $1);}' > temp.lst
+Identify new canonical residues in these glycans
+$ java -jar ./code/TreeBuilder3.jar -l temp.lst -s ./model/sugars.csv -c ./model/O_canonical_residues.csv -n 2 -v 2 -m 3 -e 5 -o ./model/temp_ext.csv &> log/map_O.log
+$ rm temp.lst
+$ cat ./model/temp_ext.csv
+	
+Then add the resulting ext.csv file contents to canonical_residues.csv, like this:
+
+$ cd ~/glycoTree/model
+Make a copy of the 'official' canonical residue file for O-glycans
+$ cp O_canonical_residues.csv `date "+ %Y-%m-%d:%H:%M"`_O_canonical_residues.csv
+Add residues from temp_ext.csv to the 'official' O-glycan tree - start residue id numbering with 'O527'
+$ awk -v p=O -v m=526 -f renumberExt.awk O_canonical_residues.csv temp_ext.csv > new_O_canonical_residues.csv
+$ mv new_O_canonical_residues.csv O_canonical_residues.csv
+
+	Then run './build_all.sh clear &> ./log/build.log' to incorporate the new canonical residues in the data model

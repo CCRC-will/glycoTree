@@ -1,0 +1,8 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G94972RF,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,a,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G94972RF,O-glycan_a-D-GalpNAc_552,O552,GalNAc,a,D,p,OC,3,GalpNAc,3,,,not validated
+G94972RF,O-glycan_b-D-Galp_564,O564,Gal,b,D,p,O552,3,Galp,5,,,not validated
+G94972RF,O-glycan_b-D-GlcpNAc_649,O649,GlcNAc,b,D,p,O552,6,GlcpNAc,8,,,not validated
+G94972RF,O-glycan_a-D-NeupNAc_650,O650,NeuNAc,a,D,p,O564,3,NeupNAc,6,,,not validated
+G94972RF,O-glycan_b-D-Galp_651,O651,Gal,b,D,p,O649,4,Galp,10,,,not validated
+G94972RF,O-glycan_b-D-Galp_677,O677,Gal,b,D,p,O651,4,Galp,11,,,not validated
