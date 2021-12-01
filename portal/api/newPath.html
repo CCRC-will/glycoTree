@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+	
+<TITLE>GlycoTree Pathway API Test</TITLE>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	
+	
+function getData(end_ac, format, scope) {
+	$("#result_div").html("<h2>Attempted path for " + end_ac + "</h2>");
+	// Do not make a separate 'glycan' directory
+	// Put php files for API here and use .htaccess to redirect from fake directories
+	// url for information only, not invoked
+	var thisURL = window.location;
+	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" +
+		 thisURL.pathname.split('/')[1];
+	var url = urlBase + "/api/paths/genPath_v1.php?end=" + end_ac +
+		 "&fmt=" + format + "&scope=" + scope + "&head=0";
+	$.get("paths/genPath_v1.php",
+	{
+		end: end_ac,
+		fmt: format,
+		scope: scope,
+		head: "0"
+	},
+	function(result){
+		$("#url_div").html("<p><b>API for this query (GET method):</b><br>" +
+			url + "</p><p>If you want headers in the response, set 'head=1'.<br>" +
+			"This will facilitate automatic parsing of the results.</p>");
+		$("#result_div").html("<p><b>Results:</b></p><pre>" + result + "</pre>");	
+	})
+	.done(function() {
+		// alert( "yes, success" );
+	})
+	.fail(function() {
+		alert( "error retrieving data for " +  accession);
+	})
+	.always(function() {
+		// alert( "finished" );
+	});
+}
+	
+
+$(document).ready(function(){
+	
+	$("#get_path").click(function() {
+		var end = $("#end").val();
+		var format = $("#format").val();
+		var scope = $("#scope").val();
+		getData(end, format, scope);
+	});
+	
+});	
+
+	
+</script>
+	
+</head>
+<body>
+<center>
+<h2>Test glycotree Pathway API</h2>
+<label for="end">End Accession: </label>
+<input type="text" id="end" name="end" value="G31993QW">
+<br>
+<label for="format">Format: </label>
+<select name="format" id="format">
+	<option value="json">json</option>
+	<option value="tsv">tsv</option>
+</select>
+<label for="scope">Scope: </label>
+<select name="scope" id="scope">
+	<option value="full">full</option>
+	<option value="likely">most likely</option>
+</select>
+
+<button id="get_path">Get Pathway</button>
+</center>
+	
+<div id="url_div"><p>URL will appear here</p></div>
+<div id="result_div"><p>Results will appear here</p></div>
+	
+</body>
+</html>

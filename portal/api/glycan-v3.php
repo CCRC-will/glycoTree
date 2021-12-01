@@ -36,7 +36,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 		if ($resID === 'N19') $N19 = true;
 		if ($resID === 'N20') $N20 = true;
 		// temporarily check to make sure reducing end is b-D-...p (N-glycan)
-		//   more exte3nsive and general logic to be added later
+		//   more extensive and general logic to be added later
 		if ($resID === 'NA') {
 			$matchRE = checkRE($value);
 		}

@@ -1,0 +1,33 @@
+
+
+ ### 2021/12/01 03:11:00 GMT ###
+Generating pathways for glycan G40542QP
+ glycan reducing end structure is b-D-GlcpNAc
+ glycan type is N
+
+  canonical residues in glycan G40542QP 
+     N1 N14 N15 N16 N17 N2 N3 N4 N5 N6 N7 N8 NA NB NC
+
+  checking class hybrid
+    the distributed subset for class 'hybrid' contains these nodes:  N19 N20
+    the glycan does not contain any node in the distributed subset
+
+  checking class complex
+    the distributed subset for class 'complex' contains these nodes: 
+    ## no conflicts: assigning class 'complex' to the glycan ##
+
+  checking class high_mannose
+    the distributed subset for class 'high_mannose' contains these nodes: 
+    node N2 must be absent, but is present in the glycan
+
+  checking class core_fucosylated
+    the distributed subset for class 'core_fucosylated' contains these nodes:  N15 N40
+    node N15 is present in the glycan
+    ## no conflicts: assigning class 'core_fucosylated' to the glycan ##
+
+  glycan G40542QP assigned the following classes:
+   complex
+   core_fucosylated
+
+  pathway start-point is G61751GZ
+  pathway end-point is G40542QP
