@@ -1,10 +1,13 @@
 <?php
+// Usage: php commandLineGenPath.php fmt=json scope=likely end=G01354KL head=1 pw=[mysql_password]
 
 include '../../config.php';
 include 'class_map.php';
 
-$servername = getenv('MYSQL_SERVER_NAME');
-$password = getenv('MYSQL_PASSWORD');
+// the following two lines required for command-line invocation
+parse_str(implode('&', array_slice($argv, 1)), $_GET);
+$servername = 'localhost:8889';
+
 
 function getDP($accession, $connection) {
 	$sql = "SELECT COUNT(*) AS num FROM compositions WHERE glytoucan_ac=? ";
@@ -406,9 +409,7 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 				}
 			}
 		}
-		
 
-		
 		$edge = array(
 			"target" => $cIndex,
 			"source" => $pIndex,
@@ -535,7 +536,7 @@ function pathDAG($end, $start, $globalRE, $startDP, $rid, &$data, $connection, &
 
 
 
-function printResult($format, $data, $head) {	
+function printResult($format, $data, $head) {
 	switch ($format) {
 		case "json":
 			if ($head == 1) header('Content-Type: application/json; charset=utf-8');
@@ -552,6 +553,9 @@ function printResult($format, $data, $head) {
 
 // main method follows
 try {
+	// !!! password must be supplied on the command line !!!
+	$password = $_GET['pw'];
+	
 	//$logFile = fopen("php.log", "w") or die("Unable to open log file!");
 	$noteCount = 0;
 	$end = $_GET['end'];
@@ -566,8 +570,8 @@ try {
 
 	$data = [];
 	$data['glytoucan_ac'] = $queryEnd;	
-	$data['error'] = "";
 	$data['notes'] = [];
+	$data['error'] = "";
 
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
@@ -650,7 +654,6 @@ try {
 	$pc = [];  // the path count for each node
 	$data['nodes'] = []; 
 	$data['links'] = [];
-	
 	$endDP = getDP($end, $connection);
 	$startDP = getDP($start, $connection);
 	if ($startDP > $endDP) {
@@ -660,7 +663,6 @@ try {
 	
 	// traverse glycotree to find all paths
 	$totalPaths = pathDAG($end, $start, $reEnd, $startDP, $rid, $data, $connection, $pc);
-
 	if ($end !== $queryEnd) {
 		//fwrite($logFile, "  adding pseudo-end " . $queryEnd . " to account for reducing end mismatch\n");
 		addEdge($data, $queryEnd, $end, $connection);
@@ -681,18 +683,20 @@ try {
 		}
 		$dpDistribution[$value['dp']]++;
 	}
-	
+
 	$sortedNodes = sortColumn($nodeArray, 'dp');
 	$data['nodes'] = $sortedNodes;
 	$data['dp_distribution'] = $dpDistribution;
 	$data['path_count'] = $totalPaths;
 
-
 	// explicit pathway generation code is above
 	
-	if (count($data['nodes']) < 2) {
+	if (count($data['nodes']) < 2) {		
 		bail(5, ($start . "] to [" . $queryEnd), $format, $data);
 	}
+
+	// need else statement here !!
+
 	if ($scope === "full") {
 		printResult($format, $data, $head);
 	}
@@ -700,7 +704,7 @@ try {
 		// the following filter (likely) should be an independent function; msny arguments
 		//  $data, $end, &$likelyNodes, &$likelyLinks
 		$likelyNodes = [];
-		$likelyLinks = [];
+		$likelyLinks = [];		
 		mostLikely($queryEnd, $data['links'], $data['nodes'], $likelyNodes, $likelyLinks);
 		foreach($data['nodes'] as $key => $testNode) {
 			if ( ($queryEnd !== $end) && ($testNode['id'] === $queryEnd) ) {
@@ -714,8 +718,8 @@ try {
 		$sortedNodes = sortColumn($likelyNodes, 'dp');
 		$likelyData = [];
 		$likelyData['glytoucan_ac'] = $queryEnd;	
-		$likelyData['error'] = $data['error'];
 		$likelyData['notes'] = $data['notes'];
+		$likelyData['error'] = $data['error'];
 		$likelyData['nodes'] = $sortedNodes;
 		$likelyData['links'] = $likelyLinks;
 		printResult($format, $likelyData, $head);

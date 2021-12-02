@@ -25,6 +25,8 @@ model/json/complete/
 model/commands.txt
 code/bak/
 portal/wtf.php
+portal/api/paths/allPaths.json
+portal/api/paths/testCM.php
 portal/api/paths/getpath.php
 portal/api/paths/getpathD3.php
 portal/api/.htaccess
