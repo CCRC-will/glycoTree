@@ -7,13 +7,17 @@
 	
 	
 function getData(type, accession) {
+	var thisURL = window.location;
+	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" + thisURL.pathname.split('/')[1];
+	var url = urlBase + "/api/glycan-v3.php?ac=" + accession;
+	var msg = "<p><b>API for this query (GET method):</b><br>" + url + "</p>";
+
 	$.get("glycan-v3.php",
 	{
 		ac: accession
 	},
 	function(result){
-		$("#result_div").html("<h3>type is " + type + "; accession is " +
-		   accession + "</h3><pre>" + result + "</pre>");
+		$("#result_div").html(msg + "<pre>" + result + "</pre>");
 	})
 	.done(function() {
 		// alert( "yes, success" );

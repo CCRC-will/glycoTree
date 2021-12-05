@@ -13,7 +13,7 @@
 <script src="js/sbheader.js"></script>
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/renderPaths-v2.1.js"></script>
+<script src="js/renderPaths-v2.2.js"></script>
 <script src="js/json2svg_v1.4.js"></script>
 <!-- load a color palette for rendering the nodes -->
 <script src="js/palette-1.js"></script>
@@ -21,7 +21,12 @@
 
 <script>
 
+/* old dataPath
 var dataPath = "api/paths/getpathD3v6.php";
+*/
+// new dataPath API!!
+var dataPath = "api/paths/genPath_v1.php";
+	
 var glycanPath = "api/glycan-v3.php";
 var configPath = "json/sugars.json";
 var subURL = "https://gnome.glyomics.org/restrictions/GlyGen.StructureBrowser.html?focus";

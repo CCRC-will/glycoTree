@@ -16,6 +16,7 @@ function checkRE($value) {
 
 function getFeatures($resList, $accession, $homologs, $connection) {
 	// generate caveat objects and put into array $caveats
+
 	$caveats = [];
 	// get the residue_name of a required canonical residue
 	$required = "";
@@ -187,70 +188,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	}
 	// echo "<br><br>";
 	$features['caveats'] = $caveats;
-	
-	
-	$pathStart = "none";
-	if (!$matchRE) {
-		// look for a homolog with matching reducing end
-		$pathStart = "look";
-		// get reducing end residue info from compositions
-		$re_query = "SELECT name,anomer,absolute,ring FROM compositions WHERE residue_id='NA' AND glytoucan_ac=?";
-		$re_stmt = $connection->prepare($re_query);
-		$m = "";
-		$re_stmt->bind_param("s", $m);
-		
-		$c = 0;
-		if (is_countable($homologs)) {
-			$c = count($homologs);
-		}
-		for ($i = 0; $i < $c; $i++) {
-			$h = $homologs[$i];
-			if ($h['relative_dp'] === 0) {
-				$m = $h['homolog'];
-				$re_stmt->execute(); 
-				// echo "checking homolog: " . $m . "<br>";
-				$re_result = $re_stmt->get_result();
-				while ($re_row = $re_result->fetch_assoc()) {
-/*
-					echo "NA: " . $re_row['name'] . " " .
-						$re_row['anomer'] . " " . 
-						$re_row['absolute'] . " " . 
-						$re_row['ring'] . "<br>";
-*/
-					$altMatch = checkRE($re_row);
-					if ($altMatch) {
-						//echo $m . " has matching reducing end<br>";
-						$matchRE = true;
-						$features['alternate'] = $m;
-					}
-				}
-			}
-		}
-	} 
-	
-	if ($matchRE) {
-		if ($fullyDefined && $N2) {
-			if (!($N19) && !($N20)) { // complex glycan, neither N19 nor N20
-				// echo "complex glycan, neither N19 nor N20 - G61751GZ";
-				$pathStart = "G61751GZ";
-			} else {
-				if ($N19 && $N20) { // hybrid with both N19 and N20
-					// echo "hybrid with both N19 and N20 - G08520NM";
-					$pathStart = "G08520NM";
-				} else { // hybrid with either N19 or N20
-					if ($N19) { // hybrid with only N19
-						// echo "hybrid with only N19  - G53168IY";
-						$pathStart = "G53168IY";
-					} else { // hybrid with only N20
-						// echo "hybrid with only N20  - G75896PD";
-						$pathStart = "G75896PD";
-					}
-				}
-			}
-		}
-	}
-	$features['path_start'] = $pathStart;
-	
+
 	return $features;
 }  // end of function getFeatures()
 
@@ -401,8 +339,6 @@ try {
 	$glycan["residues"] = $sorted;
 	$glycan["related_glycans"] = $homologs;
 	$glycan["caveats"] = $features['caveats'];
-	$glycan["path_start"] = $features['path_start'];
-	$glycan["alternate"] = $features['alternate'];
 	echo json_encode($glycan, JSON_PRETTY_PRINT);
 
 

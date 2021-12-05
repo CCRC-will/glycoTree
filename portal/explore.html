@@ -38,20 +38,7 @@ var iframeCSS = "css/iframeCSS.css";
 // global scope tCount used in logo transformations
 var tCount = 0;
 var boxHighlightColor = "rgb(255,239,207)";
-/* json2svg parameters	migrated to .js
-var fontSize = 14;
-var spacer = 2; // grid coordinates
-var margin = 1; // grid coordinates
-var xScale = 50; // canvas coordinates
-var yScale = xScale / 2; // canvas coordinates
-var nodeRadius = 11; // canvas coordinates
-var labelOffset = 8; // canvas coordinates
-var labelFraction  = 0.36; 
-var canvasHeight = 900; // (tentative) canvas coordinates
-var canvasWidth = 900; // (tentative) canvas coordinates
-var defaultCanvasColor = "#FFFFFF";
-var highlightColor = "#EAEFF3";
-*/
+	
 </script>
 		
 </head>
@@ -64,11 +51,14 @@ var highlightColor = "#EAEFF3";
 	</a>
 	<object id="logo_svg" type="image/svg+xml" data="svg/sbLogo.svg" class="logo"></object>
 	<span id="header_2">Sand Box</span>
-	<button onclick="showPathway()" style="position:absolute; right: 200px; top: 20px;">
-		Show Pathways
+	<button onclick="showPathway()" style="position:absolute; right: 195px; top: 20px;">
+		Pathways
 	</button>
-	<button onclick="toggleResidueAnnotations()" style="position:absolute; right: 50px; top: 20px;">
-		Toggle Residue IDs
+	<button onclick="showMapped()" style="position:absolute; right: 125px; top: 20px;">
+		Mapped
+	</button>
+	<button onclick="toggleResidueAnnotations()" style="position:absolute; right: 30px; top: 20px;">
+		Residue IDs
 	</button>
 </div>
 	

@@ -362,7 +362,7 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 		$sizeDiff = sizeof($child_residues) - sizeof($parent_residues);
 
 		if ($sizeDiff == 0 ) {
-			$effect = "Reducing end modification (e.g., release of glycan)";
+			$effect = "Releases or transfers entire glycan";
 			//$residue_affected["residue_id"] = "";
 		} else {
 			$fullName = "";

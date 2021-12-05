@@ -41,9 +41,9 @@ function highlight(node) {
 	if (v > 3) console.log("  highlighting node " +
 							$(node).attr("id"));
 	resetSVG();
-	var idParts = parseID($(node).attr('id'));
-	var localAcc = idParts['accession'];
-	var type = idParts['type'];
+	var parts = parseID($(node).attr('id'));
+	var localAcc = parts['accession'];
+	var type = parts['type'];
 	// set thisCanvas to canvas of the clicked tree
 	var thisCanvas = null;
 	if (type == "C") {
@@ -139,24 +139,8 @@ function keySet(e) {
 
 function showPathway() {
 	var pathEnd = acc[0];
-	if (pathStart == "look") {
-		alert("Cannot yet generate full pathways for " + acc[0]);
-		return;
-	} else  {
-		if (pathStart == "none") {
-			alert("Cannot generate full pathways to " + acc[0] +
-					" - starting point cannot be determined");
-		} else {
-			if (alternate !== null) {
-				alert("The reducing end of " + acc[0] + 
-				" is not consistent with that of an N-glycan (beta-D-pyranose).  To show the relevant pathways, it is necessary to use the N-glycan that is homologous to " + acc[0] +
-				", but with a beta-D-pyranose residue at the reducing end.  Therefore, pathways for the fully-defined homolog " + alternate + " will be shown.");
-				pathEnd = alternate;				
-			}
-			var url = "vertical-path.html?" + pathEnd + "&" + pathStart;
-			window.open(url,'_blank');
-		}
-	}
+	var url = "vertical-path.html?" + pathEnd;
+	window.open(url,'_blank');
 }
 
 
@@ -558,14 +542,6 @@ function setupTabs() {
 } // end of function setupTabs()
 
 
-
-function downloadSVG(a) {
-	var s = document.createElement("a");
-	s.href = 'data:text/svg,' + encodeURIComponent(svgEncoding[a]);
-	s.download = a + ".svg";
-	s.click();
-} // end of function downloadSVG()
-
 function countResidues(residueData) {
 	var counts = {resCount:0, subCount:0};
 	for (var i = 0; i < residueData.length; i++) 
@@ -585,13 +561,19 @@ function getInfoText(accession, resID) {
 		var counts = countResidues(data[accession].residues);
 		// var thisSubCount = countElements(getSubstituents(accession));
 		txt += " - " + counts.resCount + " residues, " +
-			counts.subCount + " substituent(s)";
+			counts.subCount + " substituent(s) &nbsp; - &nbsp; Download ";
 		
 		// anchor tag to download svg
-		txt += "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"data:text/svg," +
+		txt += "<a href=\"data:text/svg," +
 			encodeURIComponent(svgEncoding[accession]) +
 			"\" download=\"" + accession +
-			".svg\">Download SVG Image</a></p> \n";
+			".svg\">Image</a> \n";
+		
+		// anchor tag to download glycan Data
+		txt += "&nbsp;<a href=\"data:text/json," +
+			encodeURIComponent(getData(accession)) +
+			"\" download=\"" + accession +
+			".json\">Data</a></p> \n";
 
 		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>\n";
 		
@@ -1098,22 +1080,35 @@ function getReducingEndStructure(accession) {
 	}
 } // end of function getReducingEndStructure()
 
-function showData() {
-	// show json data
-	// TODO: make txt depend on v
-	var txt = "<pre>";
-	
-	var count = 0;
-	var sep = "";
+function showMapped() { // !M
+	// grey out residues that are NOT mapped to the glycoTree
+	$('#'+hDiv).html("<br>&nbsp; Unmapped residues are 'greyed-out'");
+	getClickableSet().each(function( index ) {
+		// default opacity is 1.0
+		$(this).css('opacity', 1.0);
+		var id = $(this).attr("id");
+		// the id of each svg object is complex,
+		//    containing an accession, a resID, and a type
+		var parts = parseID(id)
+		var resID = parts['resID'];
+		// the resID of each UNMAPPED residue does NOT begin with [A-Z]
+		var n = resID.search(/^[A-Z]/i); 
+		if (n == -1) {
+			//  grey-out unmapped residues/links, but NOT canvas (type = "C")
+			type = parts['type'];
+			if (type != "C") $(this).css('opacity', 0.3);
+		}	
+	});
+}
+
+function getData(acc) {
 	for (var key in data) {
 		var glycan = data[key];
-		var total = JSON.stringify(glycan, undefined, 2);
-		if (count++ > 0) sep = ",\n\n";
-		txt += sep + total;
+		// return json data for glycan with 'glytoucan accession' = acc
+		if (key == acc) return(JSON.stringify(glycan, undefined, 2));
 	}
-	txt += "</pre>";
-	$('#' + iDiv).html(txt);
-}  // end of function showData()
+	return("not found");	
+}  // end of function getData()
 
 		
 	
