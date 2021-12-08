@@ -18,9 +18,13 @@ function getData(end_ac, format, scope) {
 	var thisURL = window.location;
 	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" +
 		 thisURL.pathname.split('/')[1];
-	var url = urlBase + "/api/paths/genPath_v1.php?end=" + end_ac +
+	var url = urlBase + "/api/paths/genPath_v2.php?end=" + end_ac +
 		 "&fmt=" + format + "&scope=" + scope + "&head=0";
-	$.get("paths/genPath_v1.php",
+	$("#url_div").html("<p><b>API for this query (GET method):</b><br>" +
+		url + "</p><p>If you want headers in the response, set 'head=1'.<br>" +
+		"This will facilitate automatic parsing of the results.</p>");
+	
+	$.get("paths/genPath_v2.php",
 	{
 		end: end_ac,
 		fmt: format,
@@ -28,9 +32,6 @@ function getData(end_ac, format, scope) {
 		head: "0"
 	},
 	function(result){
-		$("#url_div").html("<p><b>API for this query (GET method):</b><br>" +
-			url + "</p><p>If you want headers in the response, set 'head=1'.<br>" +
-			"This will facilitate automatic parsing of the results.</p>");
 		$("#result_div").html("<p><b>Results:</b></p><pre>" + result + "</pre>");	
 	})
 	.done(function() {
@@ -74,7 +75,7 @@ $(document).ready(function(){
 <label for="scope">Scope: </label>
 <select name="scope" id="scope">
 	<option value="full">full</option>
-	<option value="likely">most likely</option>
+	<option value="likely">likely</option>
 </select>
 
 <button id="get_path">Get Pathway</button>

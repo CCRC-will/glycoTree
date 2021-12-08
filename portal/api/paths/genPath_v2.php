@@ -1,12 +1,41 @@
 <?php
-// Usage: php commandLineGenPath.php fmt=json scope=likely end=G01354KL head=1 pw=[mysql_password]
+
+// Generate a set of pathways for a sandbox-supported glycan
+//  Usage: When called from the command line, use the following syntax
+// php genPath_v2.php fmt=json scope=full end=G01354KL head=0 pw=[mysql_password]
+//   "fmt" can be 'json' or 'tsv' (tsv not yet supported)
+//   "scope" can be either 'full' (retrieve a DAG with multiple pathways)
+//     or 'likely' (retrieve a single, likely, linear pathway)
+//   "head" can be '0' (no mime header) or '1' (add mime header)
+//   "end" is the glytoucan accession of the glycan at the end of the pathway
+//   When called as an API on a server, the password is not used (insecure)
+//  To get on-line syntax, invoke 	https://glygen.ccrc.uga.edu/sandbox/api/newPath.html
+//    Perform a query and then look at the query API line near the top
+//  Arguments are passed like this:
+// https://glygen.ccrc.uga.edu/sandbox/api/paths/genPath_v1.php?end=G01354KL&fmt=json&scope=full&head=0
+
 
 include '../../config.php';
 include 'class_map.php';
 
-// the following two lines required for command-line invocation
-parse_str(implode('&', array_slice($argv, 1)), $_GET);
-$servername = 'localhost:8889';
+$servername = "";
+$password = "";
+
+try {
+	if (empty($_GET)) {
+		// $_GET is not populated when called from command line
+		// the following lines are required for command-line invocation
+		parse_str(implode('&', array_slice($argv, 1)), $_GET);
+		$servername = 'localhost:8889';
+		// !!! password must be supplied on the command line !!!
+		$password = $_GET['pw'];
+	} else {
+		$servername = getenv('MYSQL_SERVER_NAME');
+		$password = getenv('MYSQL_PASSWORD');
+	}
+} catch(Exception $e) {
+	exit($e->getMessage());
+}
 
 
 function getDP($accession, $connection) {
@@ -409,7 +438,9 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 				}
 			}
 		}
+		
 
+		
 		$edge = array(
 			"target" => $cIndex,
 			"source" => $pIndex,
@@ -536,7 +567,7 @@ function pathDAG($end, $start, $globalRE, $startDP, $rid, &$data, $connection, &
 
 
 
-function printResult($format, $data, $head) {
+function printResult($format, $data, $head) {	
 	switch ($format) {
 		case "json":
 			if ($head == 1) header('Content-Type: application/json; charset=utf-8');
@@ -553,9 +584,6 @@ function printResult($format, $data, $head) {
 
 // main method follows
 try {
-	// !!! password must be supplied on the command line !!!
-	$password = $_GET['pw'];
-	
 	//$logFile = fopen("php.log", "w") or die("Unable to open log file!");
 	$noteCount = 0;
 	$end = $_GET['end'];
@@ -570,8 +598,8 @@ try {
 
 	$data = [];
 	$data['glytoucan_ac'] = $queryEnd;	
-	$data['notes'] = [];
 	$data['error'] = "";
+	$data['notes'] = [];
 
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
@@ -635,7 +663,7 @@ try {
 				}  
 				
 				// N-glycans lacking residue N2 apparently have not been processed by Mgat1
-				if ($value == "no_mgat1 ") bail(5, $end, $format, $data);
+				if ($value == "no_mgat1 ") bail(5, $end, $format, $data); 
 				// no_mgat1 pathways not ready yet (either a-D-GlcpNAc or b-D-GlcpNAc)
 
 				if ($value == "core_fucosylated") {
@@ -655,6 +683,7 @@ try {
 	$pc = [];  // the path count for each node
 	$data['nodes'] = []; 
 	$data['links'] = [];
+	
 	$endDP = getDP($end, $connection);
 	$startDP = getDP($start, $connection);
 	if ($start == "not determined") {
@@ -664,6 +693,7 @@ try {
 	
 	// traverse glycotree to find all paths
 	$totalPaths = pathDAG($end, $start, $reEnd, $startDP, $rid, $data, $connection, $pc);
+
 	if ($end !== $queryEnd) {
 		//fwrite($logFile, "  adding pseudo-end " . $queryEnd . " to account for reducing end mismatch\n");
 		addEdge($data, $queryEnd, $end, $connection);
@@ -684,7 +714,7 @@ try {
 		}
 		$dpDistribution[$value['dp']]++;
 	}
-
+	
 	$sortedNodes = sortColumn($nodeArray, 'dp');
 	$data['nodes'] = $sortedNodes;
 	$data['dp_distribution'] = $dpDistribution;
@@ -700,7 +730,6 @@ try {
 	if (count($data['nodes']) < $threshold) {
 		bail(9, ($queryEnd), $format, $data);
 	}
-
 	if ($scope === "full") {
 		printResult($format, $data, $head);
 	}
@@ -708,7 +737,7 @@ try {
 		// the following filter (likely) should be an independent function; msny arguments
 		//  $data, $end, &$likelyNodes, &$likelyLinks
 		$likelyNodes = [];
-		$likelyLinks = [];		
+		$likelyLinks = [];
 		mostLikely($queryEnd, $data['links'], $data['nodes'], $likelyNodes, $likelyLinks);
 		foreach($data['nodes'] as $key => $testNode) {
 			if ( ($queryEnd !== $end) && ($testNode['id'] === $queryEnd) ) {
@@ -722,8 +751,8 @@ try {
 		$sortedNodes = sortColumn($likelyNodes, 'dp');
 		$likelyData = [];
 		$likelyData['glytoucan_ac'] = $queryEnd;	
-		$likelyData['notes'] = $data['notes'];
 		$likelyData['error'] = $data['error'];
+		$likelyData['notes'] = $data['notes'];
 		$likelyData['nodes'] = $sortedNodes;
 		$likelyData['links'] = $likelyLinks;
 		printResult($format, $likelyData, $head);

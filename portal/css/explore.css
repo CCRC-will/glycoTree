@@ -275,6 +275,7 @@ svg.downloader {
 }
 
 select.downloader {
+	cursor: pointer;
 	border-style: none;
 	color: rgb(67,118,278);
 	background-color: white;

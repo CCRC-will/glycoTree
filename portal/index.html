@@ -39,14 +39,14 @@
 	text-align: center;
 }
 
-#selectDiv {
+#listDiv {
 	position: absolute;
 	z-index: 88;
 	left: 20px;
 	top: 60px;
 	width: 25%;
 	border-style: none;
-	text-align: center;
+	text-align: left;
 }
 
 </style>	
@@ -84,7 +84,7 @@ function downloadSVG(a) {
 	
 function showList(selectedGlycans) {
 	var ld = $("#listDiv");
-	var listHTML = "<table>\n";
+	var listHTML = "<h3>Filtered Glycan List</h3><table>\n";
 	for (var i = 0; i < selectedGlycans.length; i++) {
 		listHTML += "<tr>\n<td><a href=\"javascript:showImage('" +
 			selectedGlycans[i].glytoucan_ac + "');\">" +
@@ -118,7 +118,6 @@ function showImage(accession) {
 		sd.html(svgEncoding);
 		var bStr = "<br><input type='button' value='Dowload SVG Image'" +
 			 "onClick=\"downloadSVG('" + accession + "')\">";
-		bStr += "<br><a href=\"#top\">Go to Top of List</a>";
 		sd.append(bStr);
 		
 		$("#focus").val(accession);
@@ -252,46 +251,36 @@ function getGlycans() {
 
 
 <div id="imgDiv">
-	<h3>GlycoTree: Explore Gycan Structure</h3>
+	<h3>Explore Gycan Structures with GlycoTree</h3>
+	<label for="filter">Glycan List Filter:</label><br> 
+	<select name="filter" id="filter" onchange="getGlycans()">
+		<option value="all" selected>All glycans in DB</option>
+		<option value="all_N">All N-linked glycans in DB</option>
+		<option value="mapped_N">All fully mapped N-linked glycans in DB</option>
+		<option value="all_O">All O-linked glycans in DB</option>
+		<option value="mapped_O">All fully mapped O-linked glycans in DB</option>
+		<option value="res">All glycans containing a specified canonical residue</option>
+		<option value="sug">All glycans containing a specified sugar or substituent</option>
+	</select>
+
+	<div id="parDiv" style="visibility: hidden; text-align: center;" onchange="getGlycans()">
+		<label for="par" id="parLab">Data:</label>
+		<input name="par" id="par" type="text" maxlength="16" size="8" value="">
+	</div>
+	<br>
 	<form action="explore.html" method="get" target="_blank">
-	  <label for="fname">GlyTouCan Accession:</label>
-	  <input type="text" id="focus" name="focus">
-	  <input type="submit" value="Explore">
+		<label for="fname">GlyTouCan Accession:</label>
+		<input type="text" id="focus" name="focus">
+		<br><input type="submit" value="Explore This Glycan Structure">
 	</form>
-	<p id="glycan_info">Glycan Info</p>
+	
+	
 	<div id="iDiv">Structures will appear here<br>
-		<a href="#top">Go to Top of List</a>
 	</div>
 </div>
-	
-		
-<div id="selectDiv">
-   <a name="top"></a>
-  <h4>Select glycans to explore </h4>  
-  <select name="filter" id="filter" onchange="getGlycans()">
-    <option value="all" selected>All glycans in DB</option>
-    <option value="all_N">All N-linked glycans in DB</option>
-    <option value="mapped_N">All fully mapped N-linked glycans in DB</option>
-    <option value="all_O">All O-linked glycans in DB</option>
-    <option value="mapped_O">All fully mapped O-linked glycans in DB</option>
-    <option value="res">All glycans containing a specified canonical residue</option>
-    <option value="sug">All glycans containing a specified sugar or substituent</option>
-  </select>
   
-  <div id="parDiv" style="visibility: hidden; text-align: center;" onchange="getGlycans()">
-    <label for="par" id="parLab">Data:</label>
-    <input name="par" id="par" type="text" maxlength="16" size="8" value="">
-  </div>
- 
-  
-  <div id="listDiv" style="visibility: visible">
-    <br>
-    <table>
-      <tr>
-        <td><a href="javascript:showImage('G00012RZ');">G00012RZ</a></td>
-      </tr>
-   </table>
-  </div>
+<div id="listDiv" style="visibility: visible">
 </div>
+
 </body>
 </html>

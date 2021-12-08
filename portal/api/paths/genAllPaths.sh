@@ -21,7 +21,7 @@ while read line; do
     echo "," >> $output_file
   fi
   n=$((n+1))
-  php commandLineGenPath.php fmt=json scope=likely end=$line head=1 pw=$pw >> $output_file
+  php genPath_v2.php fmt=json scope=likely end=$line head=1 pw=$pw >> $output_file
 done < $input_file
 
 echo " ]" >> $output_file
