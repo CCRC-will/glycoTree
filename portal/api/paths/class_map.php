@@ -8,7 +8,7 @@
 	//       must also be in the glycan
 	$glycanClassMap['hybrid'] = array('NC'=>'1', 'N2'=>'1', 'N19'=>'-1', 'N20'=>'-1');
 	$glycanClassMap['complex'] = array('NC'=>'1', 'N2'=>'1', 'N19'=>'0', 'N20'=>'0');
-	$glycanClassMap['high_mannose'] = array('NC'=>'1', 'N2'=>'0');
+	$glycanClassMap['no_mgat1'] = array('NC'=>'1', 'N2'=>'0');
 	$glycanClassMap['core_fucosylated'] = array('NC'=>'1', 'N15'=>'-1', 'N40'=>'-1');
 
 	$startAccession['hybrid'] = 'G08520NM';

@@ -553,6 +553,34 @@ function countResidues(residueData) {
 	return(counts);
 } // end of function countResidues()
 
+
+// this is not a general download function - specific for glycotree glycans
+function downloadGlycan(acc, selector) {
+	var filename = "";
+	var dType = selector.value;
+	var content = "";
+	
+	if (dType == "svg") {
+		content = encodeURIComponent(svgEncoding[acc]);
+		filename = acc + ".svg";
+	}
+	if (dType == "json") {
+		content = encodeURIComponent(getData(acc));
+		filename = acc + ".json";
+	}
+	
+	var da = document.createElement('a');
+	// for svg, error occurs if there is a space between the comma and the content
+	da.setAttribute('href','data:text/' + dType + ',' + content);
+	da.setAttribute('download', filename);
+	document.body.appendChild(da);
+	da.click();
+	selector.value = "none";
+	document.body.removeChild(da);
+} // end of function downloadGlycan()
+
+
+
 function getInfoText(accession, resID) {
 	customStrings(accession, resID);
 	var txt = "<p class='head1'>" + mStr["infoHead"]; 
@@ -561,19 +589,20 @@ function getInfoText(accession, resID) {
 		var counts = countResidues(data[accession].residues);
 		// var thisSubCount = countElements(getSubstituents(accession));
 		txt += " - " + counts.resCount + " residues, " +
-			counts.subCount + " substituent(s) &nbsp; - &nbsp; Download ";
+			counts.subCount + " substituent(s) &nbsp; &nbsp; &nbsp; &nbsp; \n";
 		
-		// anchor tag to download svg
-		txt += "<a href=\"data:text/svg," +
-			encodeURIComponent(svgEncoding[accession]) +
-			"\" download=\"" + accession +
-			".svg\">Image</a> \n";
+		txt += "<svg xmlns:xlink='http://www.w3.org/1999/xlink' \n\
+xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
+  <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z' fill='rgb(67,118,278)'> \n\
+  </path> \n\
+</svg> \n"
 		
-		// anchor tag to download glycan Data
-		txt += "&nbsp;<a href=\"data:text/json," +
-			encodeURIComponent(getData(accession)) +
-			"\" download=\"" + accession +
-			".json\">Data</a></p> \n";
+		txt += "<select name='selDown' id='selDown' onchange=\"downloadGlycan('" +
+			accession + "', this);\" class='downloader'>\
+  <option value='none' selected disabled hidden>DOWNLOAD</option> \n\
+  <option value='svg'>SVG Image</option> \n\
+  <option value='json'>Glycan Data</option> \n\
+</select> \n";
 
 		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>\n";
 		

@@ -267,3 +267,21 @@ body {
 .zoomer:hover {
   transform: scale(1.2);
 }
+
+svg.downloader {
+	vertical-align: text-top;
+	height: 20px;
+	width: 20px;
+}
+
+select.downloader {
+	border-style: none;
+	color: rgb(67,118,278);
+	background-color: white;
+	font: 18px Arial, sans-serif;
+}
+
+select.downloader:focus {
+	outline: none;
+	box-shadow: none;
+}

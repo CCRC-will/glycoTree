@@ -149,16 +149,16 @@ function bail($errCode, $dStr, $format, $data) {
 			$errMsg = "Glycan type for [" . $dStr . "] could not be determined: no pathways were generated\"}";
 			break;
 		case 3:
-			$errMsg = "Currently, no pathways can be generated for O-glycans such as [" . $dStr . "]";
+			$errMsg = "Cannot yet generate pathways for O-glycans such as [" . $dStr . "]";
 			break;
 		case 4:
-			$errMsg = "DP error for glycan ["  . $dStr ."] at the end of the path; no pathways generated";
+			$errMsg = "Starting point for pathway to "  . $dStr ." could not be determined; no pathways were generated";
 			break;
 		case 5:
-			$errMsg = "No pathways from [" . $dStr . "] could be generated at this time";
+			$errMsg = "Cannot yet generate pathways for glycans like [" . $dStr . "] not processed by Mgat1";
 			break;
 		case 9:
-			$errMsg = "No pathways for [" . $dStr . "] could be generated at this time";
+			$errMsg = "Missing intermediate; no pathways to [" . $dStr . "] could be generated at this time";
 			break;
 		default:
 			$errMsg = "Unknown error";
@@ -359,7 +359,7 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 		$sizeDiff = sizeof($child_residues) - sizeof($parent_residues);
 
 		if ($sizeDiff == 0 ) {
-			$effect = "Releases or transfers entire glycan";
+			$effect = "Release or transfer entire glycan";
 			//$residue_affected["residue_id"] = "";
 		} else {
 			$fullName = "";
@@ -382,10 +382,10 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 			}
 			
 			if ($sizeDiff > 0 ) {
-				$effect = "Adds " . $fullName;
+				$effect = "Add " . $fullName;
 			}
 			if ($sizeDiff < 0 ) {
-				$effect = "Removes " . $fullName;
+				$effect = "Remove " . $fullName;
 			}
 			
 			if ($notFoundIn === "any organism") { 
@@ -630,8 +630,9 @@ try {
 					$start = $startAccession['complex'];				
 				}  
 				
-				if ($value == "high_mannose") bail(9, $end, $format, $data); 
-				// high_mannose pathways not ready yet (either a-D-GlcpNAc or b-D-GlcpNAc)
+				// N-glycans lacking residue N2 apparently have not been processed by Mgat1
+				if ($value == "no_mgat1 ") bail(5, $end, $format, $data); 
+				// no_mgat1 pathways not ready yet (either a-D-GlcpNAc or b-D-GlcpNAc)
 
 				if ($value == "core_fucosylated") {
 					$data['notes'][$noteCount++] = "glycan is core-fucosylated";
@@ -653,7 +654,7 @@ try {
 	
 	$endDP = getDP($end, $connection);
 	$startDP = getDP($start, $connection);
-	if ($startDP > $endDP) {
+	if ($start == "not determined") {
 		bail(4, $end, $format, $data);
 	}
 	// explicit pathway generation code follows
@@ -687,11 +688,15 @@ try {
 	$data['dp_distribution'] = $dpDistribution;
 	$data['path_count'] = $totalPaths;
 
-
 	// explicit pathway generation code is above
 	
-	if (count($data['nodes']) < 2) {
-		bail(5, ($start . "] to [" . $queryEnd), $format, $data);
+	// pathways to glycans with proper reducing end must have at least 2 elements
+	$threshold = 2;
+	// pathways to glycans with improper reducing end must have at least 3 elements
+	if ($queryEnd !== $end) $threshold = 3;
+	
+	if (count($data['nodes']) < $threshold) {
+		bail(9, ($queryEnd), $format, $data);
 	}
 	if ($scope === "full") {
 		printResult($format, $data, $head);
