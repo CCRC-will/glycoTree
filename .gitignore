@@ -8,6 +8,7 @@ log/*.txt
 log/*.log
 log/*.lst
 export/
+currentInput/
 data/*.lst
 data/*.zip
 data/fully_determined/
@@ -30,6 +31,8 @@ portal/api/paths/testCM.php
 portal/api/paths/getpath.php
 portal/api/paths/getpathD3.php
 portal/api/.htaccess
+portal/api/b64.php
+portal/api/testBitSet.php
 portal/api/bak/
 portal/force-layout.html
 portal/force-layout-v4.html

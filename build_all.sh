@@ -160,7 +160,7 @@ find ./data/mapped -name "G*.csv" -print -maxdepth 1  | sort > $mappedDir/files.
 
 echo
 echo "Calculating common canonical residues in all accession pairs and writing related glycan data in file:$NL    $sqlDir/correlation.csv"
-java -jar $codeDir/CorrelateGlycans.jar -v 2 -l $mappedDir/files.lst -c 512 -j $modelDir/json/match -o $sqlDir/correlation.csv &> ./log/correlate.log
+java -jar $codeDir/CorrelateGlycans.jar -v 2 -l $mappedDir/files.lst -c 1024 -j $modelDir/json/match -o $sqlDir/correlation.csv  -s $sqlDir/bitSet.tsv &> ./log/correlate.log
 
 echo
 echo "Generating a list of accessions currently supported by GlycoTree into file:$NL     $here/accessions.lst"

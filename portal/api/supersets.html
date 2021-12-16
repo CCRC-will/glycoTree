@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+	
+<TITLE>GlycoTree Supersets API Test</TITLE>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	
+	
+function getData(acc) {
+	$("#result_div").html("<h2>Supersets for " + acc + "</h2>");
+	var thisURL = window.location;
+	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" +
+		 thisURL.pathname.split('/')[1];
+	var url = urlBase + "/api/getSuperset.php?acc=" + acc + "&head=0";
+	$("#url_div").html("<p><b>API for this query (GET method):</b><br>" +
+		url + "</p><p>Set head=1 to include mime header on json output");
+	
+	$.get(url,
+	{
+		acc: acc,
+	},
+	function(result){
+		$("#result_div").html("<p><b>Results:</b></p><pre>" + result + "</pre>");	
+	})
+	.done(function() {
+		// alert( "yes, success" );
+	})
+	.fail(function() {
+		alert( "error retrieving data for " +  accession);
+	})
+	.always(function() {
+		// alert( "finished" );
+	});
+}
+	
+
+$(document).ready(function(){
+	
+	$("#get_supersets").click(function() {
+		var acc = $("#acc").val();
+		getData(acc);
+	});
+	
+});	
+
+	
+</script>
+	
+</head>
+<body>
+<center>
+<h2>Test glycotree Supersets</h2>
+<label for="acc">Accession: </label>
+<input type="text" id="acc" name="acc" value="G31993QW">
+<br>
+<button id="get_supersets">Get Supersets</button>
+</center>
+	
+<div id="url_div"><p>URL will appear here</p></div>
+<div id="result_div"><p>Results will appear here</p></div>
+	
+</body>
+</html>
