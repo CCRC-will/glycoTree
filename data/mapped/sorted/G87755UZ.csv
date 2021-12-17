@@ -1,0 +1,13 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G87755UZ,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,x,D,p,0,0,GalpNAc,1,,,validated by Qrator
+G87755UZ,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
+G87755UZ,O-glycan_b-D-GlcpNAc_153,O153,GlcNAc,b,D,p,O152,3,GlcpNAc,4,,,validated by Qrator
+G87755UZ,O-glycan_b-D-Galp_160,O160,Gal,b,D,p,OC,6,Galp,16,,,validated by Qrator
+G87755UZ,O-glycan_b-D-Galp_567,O567,Gal,b,D,p,O153,3,Galp,6,,,not validated
+G87755UZ,O-glycan_b-D-GlcpNAc_721,O721,GlcNAc,b,D,p,O567,3,GlcpNAc,7,,,not validated
+G87755UZ,O-glycan_b-D-GlcpNAc_722,O722,GlcNAc,b,D,p,O567,6,GlcpNAc,11,,,not validated
+G87755UZ,unassigned,9,Gal,b,D,p,O721,3,Galp,9
+G87755UZ,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G87755UZ,unassigned,13,Gal,b,D,p,O722,3,Galp,13
+G87755UZ,unassigned,14,Fuc,a,L,p,13,2,Fucp,14
+G87755UZ,unassigned,15,Fuc,a,L,p,O722,4,Fucp,15

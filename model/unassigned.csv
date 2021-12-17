@@ -207,6 +207,14 @@ G00653TI,unassigned,12,Fuc,a,L,p,O663,2,Fucp,12
 G00662UH,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G00670OT,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G00670OT,unassigned,15,Gal,b,D,p,x,x,Galp,15
+G00675GF,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
+G00675GF,unassigned,6,GlcNAc,b,D,p,5,3|6,GlcpNAc,6
+G00675GF,unassigned,7,Gal,b,D,p,6,3|4,Galp,7
+G00675GF,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G00675GF,unassigned,9,Fuc,a,L,p,6,3|4,Fucp,9
+G00675GF,unassigned,11,GlcNAc,b,D,p,5,3|6,GlcpNAc,11
+G00675GF,unassigned,12,Gal,b,D,p,11,3|4,Galp,12
+G00675GF,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
 G00691NS,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
 G00691NS,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G00691NS,unassigned,21,GlcNAc,b,D,p,20,3,GlcpNAc,21
@@ -499,10 +507,12 @@ G01473WV,unassigned,7,Xyl,x,D,p,NC,x,Xylp,7
 G01473WV,unassigned,8,Man,a,D,p,NC,x,Manp,8
 G01473WV,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G01473WV,unassigned,10,GlcNAc,b,D,p,9,x,GlcpNAc,10
+G01510MQ,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
 G01520KE,unassigned,5,Gal,x,D,p,O153,x,Galp,5
 G01520KE,unassigned,6,Fuc,x,L,p,O153,x,Fucp,6
 G01520KE,unassigned,9,Gal,x,D,p,O538,x,Galp,9
 G01520KE,unassigned,12,Gal,x,D,p,O157,x,Galp,12
+G01532FF,unassigned,8,Fuc,x,L,p,O158,x,Fucp,8
 G01543ZX,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
 G01543ZX,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G01584VI,unassigned,7,GlcNAc,x,D,p,O158,x,GlcpNAc,7
@@ -626,9 +636,6 @@ G01828CI,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G01828CI,unassigned,15,GalNAc,b,D,p,x,x,GalpNAc,15
 G01828CI,unassigned,17,Gal,b,D,p,x,x,Galp,17
 G01828CI,unassigned,18,Gal,b,D,p,x,x,Galp,18
-G01836CN,unassigned,3,HexNAc,x,x,x,OC,3,HexNAc,3
-G01836CN,unassigned,4,Hex,x,x,x,3,x,Hex,4
-G01836CN,unassigned,5,Fuc,x,x,x,4,x,Fuc,5
 G01855OX,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G01855OX,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G01855OX,unassigned,9,Gal,x,D,p,8,x,Galp,9
@@ -728,6 +735,9 @@ G02280UH,unassigned,11,Man,a,D,p,NC,x,Manp,11
 G02280UH,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G02280UH,unassigned,14,Gal,b,D,p,12,4,Galp,14
 G02280UH,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
+G02297WO,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
+G02297WO,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G02297WO,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
 G02368JK,unassigned,4,HexNAc,b,x,p,O152,x,HexpNAc,4
 G02379AH,unassigned,9,Gal,b,D,p,O721,3,Galp,9
 G02379AH,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
@@ -740,6 +750,13 @@ G02397SF,unassigned,12,Gal,b,D,p,10,4,Galp,12
 G02397SF,unassigned,13,Fuc,x,L,p,NA,6,Fucp,13
 G02402FF,unassigned,8,Man,x,D,p,x,x,Manp,8
 G02456AL,unassigned,14,NeuNAc,a,D,p,N6,x,NeupNAc,14
+G02469EJ,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G02469EJ,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G02469EJ,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G02469EJ,unassigned,10,Fuc,a,L,p,9,3,Fucp,10
+G02469EJ,unassigned,11,Man,a,D,p,NC,x,Manp,11
+G02469EJ,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
+G02469EJ,unassigned,14,GalNAc,b,D,p,12,4,GalpNAc,14
 G02482JV,unassigned,20,NeuNAc,a,D,p,N6,3|6,NeupNAc,20
 G02482JV,unassigned,25,NeuNAc,a,D,p,N10,3|6,NeupNAc,25
 G02494HC,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
@@ -890,9 +907,6 @@ G03151MA,unassigned,9,NeuNAc,x,D,p,8,x,NeupNAc,9
 G03151MA,unassigned,12,Man,a,D,p,NC,x,Manp,12
 G03151MA,unassigned,13,GlcNAc,x,D,p,12,x,GlcpNAc,13
 G03151MA,unassigned,14,Gal,x,D,p,13,x,Galp,14
-G03194JU,unassigned,3,HexNAc,x,x,x,OC,3,HexNAc,3
-G03194JU,unassigned,4,Hex,x,x,x,3,x,Hex,4
-G03194JU,unassigned,5,Fuc,x,x,x,4,x,Fuc,5
 G03195HW,unassigned,12,Gal,b,D,p,x,x,Galp,12
 G03196WF,unassigned,2,Fuc,a,L,p,NA,x,Fucp,2
 G03196WF,unassigned,9,Gal,b,D,p,N2,x,Galp,9
@@ -912,6 +926,14 @@ G03369CY,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G03369CY,unassigned,10,GlcNAc,b,D,p,9,2,GlcpNAc,10
 G03369CY,unassigned,12,Gal,b,D,p,10,4,Galp,12
 G03369CY,unassigned,13,NeuNAc,a,D,p,12,6,NeupNAc,13
+G03416EW,unassigned,17,Gal,b,D,p,x,x,Galp,17
+G03416EW,unassigned,18,Gal,b,D,p,x,x,Galp,18
+G03416EW,unassigned,19,Gal,b,D,p,x,x,Galp,19
+G03416EW,unassigned,20,Fuc,a,L,p,x,x,Fucp,20
+G03416EW,unassigned,21,Fuc,a,L,p,x,x,Fucp,21
+G03416EW,unassigned,22,Fuc,a,L,p,x,x,Fucp,22
+G03416EW,unassigned,23,Gal,b,D,p,x,x,Galp,23
+G03416EW,unassigned,24,NeuNAc,a,D,p,23,3,NeupNAc,24
 G03430DD,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
 G03430DD,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G03430DD,unassigned,8,GlcNAc,x,D,p,7,x,GlcpNAc,8
@@ -1042,6 +1064,7 @@ G03807MJ,unassigned,13,Man,a,D,p,NC,3|6,Manp,13
 G03807MJ,unassigned,14,GlcNAc,b,D,p,13,2,GlcpNAc,14
 G03807MJ,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G03807MJ,unassigned,17,NeuNAc,a,D,p,16,3,NeupNAc,17
+G03825XC,unassigned,5,GalNAc,b,D,p,OC,6,GalpNAc,5
 G03860PZ,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G03860PZ,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G03860PZ,unassigned,8,GlcNAc,b,D,p,7,x,GlcpNAc,8
@@ -1085,6 +1108,7 @@ G03917QY,unassigned,24,NeuNAc,x,D,p,x,x,NeupNAc,24
 G03917QY,unassigned,26,NeuNAc,x,D,p,x,x,NeupNAc,26
 G03941LE,unassigned,17,GlcNAc,b,D,p,x,x,GlcpNAc,17
 G03941LE,unassigned,19,Gal,b,D,p,17,4,Galp,19
+G03944IG,unassigned,19,Fuc,a,L,p,x,x,Fucp,19
 G03954RO,unassigned,20,GlcNAc,b,D,p,N10,x,GlcpNAc,20
 G03954RO,unassigned,22,Gal,b,D,p,20,4,Galp,22
 G03964XM,unassigned,9,Glc,x,D,p,N22,3,Glcp,9
@@ -1185,6 +1209,10 @@ G04286YE,unassigned,13,GlcNAc,b,D,p,N4,2|4,GlcpNAc,13
 G04286YE,unassigned,15,Gal,b,D,p,13,4,Galp,15
 G04286YE,unassigned,16,NeuNAc,a,D,p,15,6,NeupNAc,16
 G04291AF,unassigned,19,Gal,a,D,p,x,x,Galp,19
+G04298QC,unassigned,4,GlcNAc,b,D,p,O152,x,GlcpNAc,4
+G04298QC,unassigned,6,Gal,b,D,p,4,4,Galp,6
+G04298QC,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
+G04298QC,unassigned,8,sulfate,n,n,n,O152,x,sulfate,8
 G04302OV,unassigned,7,Man,x,D,p,N1,x,Manp,7
 G04302OV,unassigned,9,Man,x,D,p,N4,x,Manp,9
 G04302OV,unassigned,10,Man,x,D,p,N4,x,Manp,10
@@ -1238,6 +1266,8 @@ G04459VF,unassigned,8,Fuc,a,L,p,O157,x,Fucp,8
 G04501IZ,unassigned,11,NeuNGc,a,D,p,N3,3|6,NeupNGc,11
 G04503IF,unassigned,6,Gal,x,D,p,O157,x,Galp,6
 G04503IF,unassigned,7,HexNAc,x,x,p,6,x,HexpNAc,7
+G04505IS,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
+G04505IS,unassigned,8,sulfate,n,n,n,O158,x,sulfate,8
 G04528DU,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G04531ET,unassigned,4,NeuNAc,a,D,p,O152,3|6,NeupNAc,4
 G04561MG,unassigned,7,GlcNAc,b,D,p,N1,2|4,GlcpNAc,7
@@ -1303,6 +1333,12 @@ G04776DX,unassigned,17,GlcNAc,b,D,p,x,x,GlcpNAc,17
 G04776DX,unassigned,19,Gal,b,D,p,17,4,Galp,19
 G04788IP,unassigned,25,Gal,b,D,p,x,x,Galp,25
 G04788IP,unassigned,26,GlcNAc,b,D,p,25,3,GlcpNAc,26
+G04813ME,unassigned,15,Gal,b,D,p,x,x,Galp,15
+G04813ME,unassigned,16,Gal,b,D,p,x,x,Galp,16
+G04813ME,unassigned,17,Gal,b,D,p,x,x,Galp,17
+G04813ME,unassigned,18,Fuc,a,L,p,x,x,Fucp,18
+G04813ME,unassigned,19,Fuc,a,L,p,x,x,Fucp,19
+G04813ME,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G04820ZR,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
 G04820ZR,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
 G04823YN,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
@@ -1594,6 +1630,8 @@ G05817PZ,unassigned,12,Man,a,D,p,NC,x,Manp,12
 G05817PZ,unassigned,13,GlcNAc,b,D,p,12,2,GlcpNAc,13
 G05817PZ,unassigned,15,Gal,b,D,p,13,4,Galp,15
 G05817PZ,unassigned,16,Gal,a,D,p,15,4,Galp,16
+G05835TV,unassigned,13,GlcNAc,b,D,p,O160,3,GlcpNAc,13
+G05835TV,unassigned,15,Gal,b,D,p,13,4,Galp,15
 G05837QA,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G05837QA,unassigned,9,Fuc,a,L,p,8,2,Fucp,9
 G05837QA,unassigned,12,Gal,b,D,p,N7,x,Galp,12
@@ -1757,6 +1795,9 @@ G06216GN,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G06216GN,unassigned,10,Gal,b,D,p,9,4,Galp,10
 G06216GN,unassigned,11,Man,a,D,p,NC,x,Manp,11
 G06216GN,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
+G06240OP,unassigned,6,GalNAc,b,D,p,OC,6,GalpNAc,6
+G06240OP,unassigned,8,Gal,b,D,p,6,4,Galp,8
+G06240OP,unassigned,9,Gal,a,D,p,8,3,Galp,9
 G06276SU,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G06279ZC,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G06279ZC,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
@@ -1878,6 +1919,8 @@ G06777LB,unassigned,13,Man,x,D,p,11,x,Manp,13
 G06809IG,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
 G06809IG,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G06809IG,unassigned,21,GlcNAc,b,D,p,20,3,GlcpNAc,21
+G06828GD,unassigned,4,NeuNAc,a,D,p,OC,x,NeupNAc,4
+G06828GD,unassigned,6,sulfate,n,n,n,4,x,sulfate,6
 G06830JN,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G06830JN,unassigned,8,Fuc,x,L,p,7,x,Fucp,8
 G06830JN,unassigned,9,Gal,x,D,p,7,x,Galp,9
@@ -1988,6 +2031,7 @@ G07209EH,unassigned,26,NeuNAc,a,D,p,N10,3|6,NeupNAc,26
 G07265CE,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G07265CE,unassigned,15,NeuNAc,a,D,p,N8,3|6,NeupNAc,15
 G07265CE,unassigned,21,NeuNAc,a,D,p,N6,3|6,NeupNAc,21
+G07281UF,unassigned,6,GlcNAc,b,D,p,OC,4,GlcpNAc,6
 G07323GB,unassigned,11,Gal,x,D,p,N24,x,Galp,11
 G07323UU,unassigned,12,Gal,x,D,p,x,x,Galp,12
 G07323UU,unassigned,13,NeuNAc,a,D,p,12,6,NeupNAc,13
@@ -2141,9 +2185,6 @@ G08230UB,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G08230UB,unassigned,11,Gal,b,D,p,N7,x,Galp,11
 G08230UB,unassigned,15,Gal,b,D,p,N5,x,Galp,15
 G08230UB,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
-G08317JP,unassigned,4,Gal,x,D,x,x,x,Gal,4
-G08317JP,unassigned,5,GlcNAc,x,D,x,x,x,GlcNAc,5
-G08317JP,unassigned,7,NeuNAc,x,D,x,x,x,NeuNAc,7
 G08378WD,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
 G08380AT,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G08380AT,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
@@ -2602,6 +2643,15 @@ G10073SM,unassigned,9,Man,a,D,p,8,x,Manp,9
 G10073SM,unassigned,10,Man,a,D,p,8,x,Manp,10
 G10080RX,unassigned,8,Fuc,a,L,p,N2,3|4,Fucp,8
 G10080RX,unassigned,9,Gal,b,D,p,N2,3|4,Galp,9
+G10082ZS,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G10082ZS,unassigned,6,GlcNAc,a,D,p,5,x,GlcpNAc,6
+G10082ZS,unassigned,7,Gal,b,D,p,6,x,Galp,7
+G10082ZS,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G10082ZS,unassigned,9,GalNAc,a,D,p,7,3,GalpNAc,9
+G10082ZS,unassigned,12,GlcNAc,b,D,p,5,x,GlcpNAc,12
+G10082ZS,unassigned,13,Fuc,a,L,p,12,x,Fucp,13
+G10082ZS,unassigned,14,Gal,b,D,p,12,x,Galp,14
+G10082ZS,unassigned,15,Fuc,a,L,p,14,2,Fucp,15
 G10109RQ,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G10109RQ,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G10109RQ,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -2750,6 +2800,14 @@ G10794HZ,unassigned,17,Gal,b,D,p,15,4,Galp,17
 G10794HZ,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
 G10794HZ,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G10820KD,unassigned,8,Fuc,a,L,p,N2,x,Fucp,8
+G10859BP,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
+G10859BP,unassigned,6,GlcNAc,b,D,p,5,3|6,GlcpNAc,6
+G10859BP,unassigned,7,Gal,b,D,p,6,3|4,Galp,7
+G10859BP,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G10859BP,unassigned,9,Fuc,a,L,p,6,3|4,Fucp,9
+G10859BP,unassigned,11,GlcNAc,b,D,p,5,3|6,GlcpNAc,11
+G10859BP,unassigned,12,Gal,b,D,p,11,3|4,Galp,12
+G10859BP,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
 G10859ES,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G10859ES,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G10859ES,unassigned,9,Fuc,a,L,p,7,3,Fucp,9
@@ -2819,6 +2877,7 @@ G11058FS,unassigned,9,Gal,x,D,p,7,x,Galp,9
 G11058FS,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
 G11058FS,unassigned,13,Gal,x,D,p,11,x,Galp,13
 G11058FS,unassigned,15,GlcNAc,x,D,p,x,x,GlcpNAc,15
+G11091XO,unassigned,6,GlcNAc,b,D,p,OC,4,GlcpNAc,6
 G11105TT,unassigned,5,Gal,b,D,p,O153,x,Galp,5
 G11105TT,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
 G11105TT,unassigned,7,Gal,b,D,p,6,x,Galp,7
@@ -2896,6 +2955,12 @@ G11230GK,unassigned,21,GlcNAc,b,D,p,x,x,GlcpNAc,21
 G11230GK,unassigned,23,Gal,b,D,p,21,4,Galp,23
 G11230GK,unassigned,24,GlcNAc,b,D,p,x,x,GlcpNAc,24
 G11230GK,unassigned,26,Gal,b,D,p,24,4,Galp,26
+G11253UV,unassigned,10,NeuNAc,a,D,p,N488,x,NeupNAc,10
+G11253UV,unassigned,14,Man,b,D,p,N7,4,Manp,14
+G11253UV,unassigned,15,NeuNAc,a,D,p,14,x,NeupNAc,15
+G11253UV,unassigned,20,Man,b,D,p,N5,4,Manp,20
+G11253UV,unassigned,21,NeuNAc,a,D,p,20,x,NeupNAc,21
+G11253UV,unassigned,25,Man,b,D,p,N9,4,Manp,25
 G11254FL,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
 G11254FL,unassigned,12,Gal,b,D,p,x,x,Galp,12
 G11260US,unassigned,8,Gal,b,D,p,O578,3,Galp,8
@@ -3060,6 +3125,7 @@ G11837IG,unassigned,17,GalNAc,b,D,p,14,4,GalpNAc,17
 G11844EV,unassigned,4,HexNAc,b,x,x,O152,x,HexNAc,4
 G11848VF,unassigned,8,NeuNAc,a,D,p,x,x,NeupNAc,8
 G11860YJ,unassigned,14,Gal,x,D,p,N23,x,Galp,14
+G11863CH,unassigned,6,Glc,b,D,p,OC,6,Glcp,6
 G11865ZE,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G11865ZE,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G11865ZE,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -3589,6 +3655,9 @@ G14050KB,unassigned,10,Man,a,D,p,NC,x,Manp,10
 G14050KB,unassigned,11,GlcNAc,x,D,p,10,x,GlcpNAc,11
 G14050KB,unassigned,12,Fuc,a,L,p,11,x,Fucp,12
 G14050KB,unassigned,14,Gal,b,D,p,11,4,Galp,14
+G14066AX,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
+G14066AX,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
+G14148KI,unassigned,15,Fuc,a,L,p,x,x,Fucp,15
 G14176QY,unassigned,9,GlcNAc,x,D,p,x,x,GlcpNAc,9
 G14176QY,unassigned,10,Gal,x,D,p,9,x,Galp,10
 G14176QY,unassigned,11,NeuNAc,a,D,p,10,6,NeupNAc,11
@@ -3906,6 +3975,7 @@ G15433HJ,unassigned,21,GlcNAc,b,D,p,x,x,GlcpNAc,21
 G15433HJ,unassigned,23,Gal,b,D,p,21,4,Galp,23
 G15433HJ,unassigned,24,GlcNAc,b,D,p,x,x,GlcpNAc,24
 G15433HJ,unassigned,26,Gal,b,D,p,24,3,Galp,26
+G15446MA,unassigned,5,GalNAc,b,D,p,OC,6,GalpNAc,5
 G15455NO,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G15455NO,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G15455NO,unassigned,9,Man,a,D,p,NC,x,Manp,9
@@ -3985,6 +4055,7 @@ G15828HX,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G15828HX,unassigned,9,Man,a,D,p,NC,3|6,Manp,9
 G15828HX,unassigned,10,GlcNAc,x,D,p,9,x,GlcpNAc,10
 G15828HX,unassigned,12,GlcNAc,x,D,p,9,x,GlcpNAc,12
+G15849KC,unassigned,8,Fuc,a,L,p,O557,2,Fucp,8
 G15860LG,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G15860LG,unassigned,13,NeuNAc,a,D,p,11,8,NeupNAc,13
 G15867JB,unassigned,16,GlcNAc,b,D,p,x,x,GlcpNAc,16
@@ -4013,8 +4084,17 @@ G15949MV,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G15949MV,unassigned,12,GalNAc,b,D,p,N5,x,GalpNAc,12
 G15949MV,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
 G15956KF,unassigned,10,Man,a,D,p,x,x,Manp,10
+G15977KS,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G15977KS,unassigned,7,HexNAc,x,x,x,6,x,HexNAc,7
+G15977KS,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G15977KS,unassigned,10,NeuNAc,a,D,p,9,3,NeupNAc,10
+G15977KS,unassigned,11,acetyl,n,n,n,10,x,acetyl,11
+G15977KS,unassigned,13,Man,a,D,p,NC,x,Manp,13
+G15977KS,unassigned,14,HexNAc,x,x,x,13,x,HexNAc,14
+G15977KS,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G15988BO,unassigned,15,GlcNAc,b,D,p,x,x,GlcpNAc,15
 G15988BO,unassigned,17,Gal,b,D,p,15,4,Galp,17
+G16079QO,unassigned,6,Gal,b,D,p,O562,3,Galp,6
 G16086VT,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G16086VT,unassigned,17,NeuNAc,a,D,p,N6,3|6,NeupNAc,17
 G16086VT,unassigned,19,GlcNAc,b,D,p,x,x,GlcpNAc,19
@@ -4085,6 +4165,7 @@ G16411DN,unassigned,7,HexNAc,x,x,x,6,x,HexNAc,7
 G16411DN,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G16426GN,unassigned,15,Fuc,a,L,p,x,x,Fucp,15
 G16426GN,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
+G16433RL,unassigned,16,NeuNAc,a,D,p,N6,x,NeupNAc,16
 G16444ZD,unassigned,14,HexNAc,b,x,p,x,x,HexpNAc,14
 G16444ZD,unassigned,16,HexNAc,b,x,p,x,x,HexpNAc,16
 G16458JH,unassigned,10,Fuc,a,L,p,O749,2,Fucp,10
@@ -4106,10 +4187,13 @@ G16504VB,unassigned,21,Gal,b,D,p,19,4,Galp,21
 G16504VB,unassigned,22,NeuNAc,a,D,p,21,3|6,NeupNAc,22
 G16536EO,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G16536EO,unassigned,9,Fuc,a,L,p,N2,x,Fucp,9
+G16568AK,unassigned,9,GlcNAc,b,D,p,O160,3,GlcpNAc,9
+G16568AK,unassigned,11,Gal,b,D,p,9,4,Galp,11
 G16576OQ,unassigned,6,Gal,x,D,p,O157,x,Galp,6
 G16576OQ,unassigned,7,Fuc,x,L,p,6,x,Fucp,7
 G16598VU,unassigned,10,GlcNAc,b,D,p,O731,4,GlcpNAc,10
 G16598VU,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G16606QC,unassigned,15,Gal,b,D,p,x,x,Galp,15
 G16633VX,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G16633VX,unassigned,16,NeuNAc,a,D,p,N6,x,NeupNAc,16
 G16633VX,unassigned,21,NeuNAc,a,D,p,N10,x,NeupNAc,21
@@ -4193,6 +4277,8 @@ G16933JU,unassigned,29,NeuNAc,a,D,p,28,3,NeupNAc,29
 G16970LX,unassigned,7,NeuNAc,a,D,p,O157,x,NeupNAc,7
 G16977WM,unassigned,11,NeuNGc,a,D,p,N3,3|6,NeupNGc,11
 G16977WM,unassigned,18,NeuNGc,a,D,p,N6,3|6,NeupNGc,18
+G17028OG,unassigned,17,Gal,b,D,p,x,x,Galp,17
+G17028OG,unassigned,18,NeuNAc,a,D,p,17,x,NeupNAc,18
 G17032PX,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
 G17032PX,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G17032PX,unassigned,10,GlcNAc,b,D,p,N1,x,GlcpNAc,10
@@ -4246,6 +4332,8 @@ G17205DU,unassigned,9,Gal,b,D,p,N2,x,Galp,9
 G17205DU,unassigned,13,Gal,b,D,p,N5,x,Galp,13
 G17205DU,unassigned,15,HexNAc,x,x,p,x,x,HexpNAc,15
 G17207YJ,unassigned,8,GlcNAc,x,D,p,NB,6,GlcpNAc,8
+G17251XF,unassigned,3,GalNAc,b,D,p,OC,3,GalpNAc,3
+G17251XF,unassigned,5,NeuNAc,a,D,p,3,3,NeupNAc,5
 G17268FT,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G17268FT,unassigned,13,Man,a,D,p,N4,3|6,Manp,13
 G17307XM,unassigned,11,GlcNAc,b,D,p,N4,2|6,GlcpNAc,11
@@ -4592,6 +4680,9 @@ G18519LX,unassigned,5,Gal,x,D,p,O157,x,Galp,5
 G18519LX,unassigned,6,NeuNAc,x,D,p,5,x,NeupNAc,6
 G18544DI,unassigned,9,Gal,x,D,p,N22,x,Galp,9
 G18548RP,unassigned,14,Man,a,D,p,x,x,Manp,14
+G18559LN,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G18559LN,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G18559LN,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
 G18561NH,unassigned,9,GlcNAc,b,D,p,x,x,GlcpNAc,9
 G18573YO,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G18573YO,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -4745,6 +4836,7 @@ G18958EQ,unassigned,15,GlcNAc,x,D,p,N4,x,GlcpNAc,15
 G18958EQ,unassigned,16,Gal,x,D,p,15,x,Galp,16
 G18960KY,unassigned,17,Fuc,a,L,p,x,x,Fucp,17
 G18963DQ,unassigned,7,sulfate,n,n,n,O157,x,sulfate,7
+G18982QA,unassigned,9,Gal,b,D,p,O633,3,Galp,9
 G18999DB,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G18999DB,unassigned,8,GlcNAc,b,D,p,7,x,GlcpNAc,8
 G18999DB,unassigned,10,Man,a,D,p,NC,x,Manp,10
@@ -4791,6 +4883,9 @@ G19221SF,unassigned,10,Man,a,D,p,NC,x,Manp,10
 G19243JM,unassigned,15,GlcNAc,b,D,p,x,x,GlcpNAc,15
 G19243JM,unassigned,17,Gal,b,D,p,15,4,Galp,17
 G19252ZI,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
+G19292KY,unassigned,13,Fuc,a,L,p,x,x,Fucp,13
+G19292KY,unassigned,14,GalNAc,b,D,p,x,x,GalpNAc,14
+G19292KY,unassigned,16,Gal,b,D,p,x,x,Galp,16
 G19353SW,unassigned,8,GlcNAc,b,D,p,N1,x,GlcpNAc,8
 G19353SW,unassigned,11,GlcNAc,b,D,p,N4,x,GlcpNAc,11
 G19354PF,unassigned,2,Fuc,a,L,p,NA,x,Fucp,2
@@ -4804,9 +4899,17 @@ G19354PF,unassigned,15,GlcNAc,x,D,p,11,x,GlcpNAc,15
 G19354PF,unassigned,16,Gal,b,D,p,15,x,Galp,16
 G19354PF,unassigned,18,Gal,a,D,p,x,x,Galp,18
 G19370RO,unassigned,16,Gal,b,D,p,x,x,Galp,16
+G19382GM,unassigned,7,GlcNAc,b,D,p,O540,4,GlcpNAc,7
 G19397EJ,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
 G19397EJ,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G19397EJ,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
+G19430QH,unassigned,8,GlcNAc,b,D,p,x,x,GlcpNAc,8
+G19430QH,unassigned,10,Gal,b,D,p,8,4,Galp,10
+G19430QH,unassigned,11,GlcNAc,b,D,p,x,x,GlcpNAc,11
+G19430QH,unassigned,13,Gal,b,D,p,11,4,Galp,13
+G19430QH,unassigned,14,GlcNAc,b,D,p,x,x,GlcpNAc,14
+G19430QH,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G19430QH,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G19463UP,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G19463UP,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G19463UP,unassigned,9,GlcNAc,x,D,p,8,x,GlcpNAc,9
@@ -4995,6 +5098,7 @@ G20285AX,unassigned,11,Man,a,D,p,NC,3|6,Manp,11
 G20285AX,unassigned,12,GlcNAc,x,D,p,11,x,GlcpNAc,12
 G20285AX,unassigned,13,Gal,x,D,p,12,x,Galp,13
 G20285AX,unassigned,18,NeuNAc,x,D,p,x,x,NeupNAc,18
+G20290UI,unassigned,7,acetyl,n,n,n,O535,9,acetyl,7
 G20295SP,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G20295SP,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G20295SP,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
@@ -5020,6 +5124,7 @@ G20305DX,unassigned,23,GlcNAc,b,D,p,x,x,GlcpNAc,23
 G20305DX,unassigned,25,Gal,b,D,p,23,4,Galp,25
 G20305DX,unassigned,26,GlcNAc,b,D,p,x,x,GlcpNAc,26
 G20305DX,unassigned,28,Gal,b,D,p,26,4,Galp,28
+G20310DM,unassigned,9,Fuc,a,L,p,O557,2,Fucp,9
 G20352YV,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G20352YV,unassigned,16,NeuNAc,a,D,p,N6,x,NeupNAc,16
 G20352YV,unassigned,21,NeuNAc,a,D,p,N10,x,NeupNAc,21
@@ -5066,6 +5171,9 @@ G20522WI,unassigned,23,GlcNAc,b,D,p,x,x,GlcpNAc,23
 G20522WI,unassigned,25,Gal,b,D,p,23,4,Galp,25
 G20538OA,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G20538OA,unassigned,16,NeuNAc,a,D,p,N6,x,NeupNAc,16
+G20552DX,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
+G20552DX,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
+G20552DX,unassigned,22,GlcNAc,b,D,p,x,x,GlcpNAc,22
 G20559VV,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G20559VV,unassigned,12,NeuNAc,a,D,p,10,8,NeupNAc,12
 G20564XL,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
@@ -5128,6 +5236,8 @@ G20779SK,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G20779SK,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G20779SK,unassigned,10,GlcNAc,b,D,p,9,x,GlcpNAc,10
 G20779SK,unassigned,11,Gal,b,D,p,10,x,Galp,11
+G20830HU,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G20830HU,unassigned,21,Fuc,a,L,p,x,x,Fucp,21
 G20841PR,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G20841PR,unassigned,16,NeuNAc,a,D,p,N6,3|6,NeupNAc,16
 G20841PR,unassigned,21,NeuNAc,a,D,p,N10,3|6,NeupNAc,21
@@ -5397,6 +5507,9 @@ G21897ZX,unassigned,17,GlcNAc,b,D,p,N4,x,GlcpNAc,17
 G21897ZX,unassigned,18,Gal,b,D,p,17,x,Galp,18
 G21897ZX,unassigned,20,Fuc,x,L,p,x,x,Fucp,20
 G21897ZX,unassigned,21,Fuc,x,L,p,x,x,Fucp,21
+G21901DC,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
+G21901DC,unassigned,15,NeuNAc,a,D,p,N8,x,NeupNAc,15
+G21901DC,unassigned,21,NeuNAc,a,D,p,N6,x,NeupNAc,21
 G21933CU,unassigned,9,GlcNAc,b,D,p,x,x,GlcpNAc,9
 G21933CU,unassigned,11,Fuc,a,L,p,9,3,Fucp,11
 G21933CU,unassigned,12,Gal,b,D,p,9,4,Galp,12
@@ -5461,6 +5574,7 @@ G22163FP,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G22163FP,unassigned,10,GlcNAc,x,D,p,NC,4,GlcpNAc,10
 G22163FP,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
 G22163FP,unassigned,14,Gal,x,D,p,13,x,Galp,14
+G22185MF,unassigned,3,GlcNAc,b,D,p,OC,4,GlcpNAc,3
 G22204JI,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G22208HN,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G22208HN,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
@@ -5665,6 +5779,13 @@ G22981GY,unassigned,7,Man,a,D,p,6,2,Manp,7
 G22981GY,unassigned,8,Man,a,D,p,NC,x,Manp,8
 G22981GY,unassigned,9,Man,a,D,p,8,3,Manp,9
 G22981GY,unassigned,10,Man,a,D,p,8,6,Manp,10
+G22995SW,unassigned,4,GlcNAc,b,D,p,O152,x,GlcpNAc,4
+G22995SW,unassigned,5,Gal,b,D,p,4,x,Galp,5
+G22995SW,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G22995SW,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
+G22995SW,unassigned,10,GlcNAc,b,D,p,O152,x,GlcpNAc,10
+G22995SW,unassigned,11,Gal,b,D,p,10,x,Galp,11
+G22995SW,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
 G23024PQ,unassigned,16,NeuNAc,a,D,p,N10,x,NeupNAc,16
 G23082UF,unassigned,6,Gal,b,D,p,O157,4,Galp,6
 G23082UF,unassigned,7,GlcNAc,b,D,p,6,3,GlcpNAc,7
@@ -5803,6 +5924,7 @@ G23623ST,unassigned,10,HexNAc,b,x,p,N1,x,HexpNAc,10
 G23623ST,unassigned,13,HexNAc,b,x,p,N4,x,HexpNAc,13
 G23633EE,unassigned,7,sulfate,n,n,n,O157,x,sulfate,7
 G23633EE,unassigned,8,NeuNAc,a,D,p,O157,x,NeupNAc,8
+G23634MW,unassigned,15,NeuNAc,a,D,p,N6,x,NeupNAc,15
 G23661JI,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G23661JI,unassigned,18,NeuNAc,a,D,p,N6,3|6,NeupNAc,18
 G23667EF,unassigned,20,NeuNAc,x,D,p,x,x,NeupNAc,20
@@ -6120,6 +6242,10 @@ G24767MV,unassigned,19,Gal,x,D,p,18,x,Galp,19
 G24767MV,unassigned,20,Gal,x,D,p,19,x,Galp,20
 G24782UB,unassigned,9,GlcNAc,x,D,p,x,x,GlcpNAc,9
 G24782UB,unassigned,10,Gal,x,D,p,9,x,Galp,10
+G24796DA,unassigned,6,GalNAc,b,D,p,OC,6,GalpNAc,6
+G24796DA,unassigned,8,Gal,b,D,p,6,4,Galp,8
+G24796DA,unassigned,9,GlcNAc,b,D,p,8,3,GlcpNAc,9
+G24796DA,unassigned,11,Gal,b,D,p,9,4,Galp,11
 G24798VC,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G24798VC,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G24798VC,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -6165,6 +6291,8 @@ G24849NM,unassigned,19,Gal,b,D,p,16,4,Galp,19
 G24857RT,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G24857RT,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G24857RT,unassigned,21,Fuc,a,L,p,x,x,Fucp,21
+G24862OS,unassigned,6,GalNAc,b,D,p,OC,6,GalpNAc,6
+G24862OS,unassigned,8,Gal,b,D,p,6,4,Galp,8
 G24891EL,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G24891EL,unassigned,15,NeuNAc,a,D,p,N8,3|6,NeupNAc,15
 G24891EL,unassigned,24,NeuNAc,a,D,p,N60,3|6,NeupNAc,24
@@ -6374,6 +6502,8 @@ G25764FB,unassigned,13,Fuc,x,L,p,12,x,Fucp,13
 G25764FB,unassigned,14,Fuc,x,L,p,11,x,Fucp,14
 G25764FB,unassigned,16,GlcNAc,x,D,p,x,x,GlcpNAc,16
 G25764FB,unassigned,17,Gal,x,D,p,16,x,Galp,17
+G25776XU,unassigned,5,GlcNAc,b,D,p,O160,3,GlcpNAc,5
+G25778VW,unassigned,4,sulfate,n,n,n,O152,4,sulfate,4
 G25781GZ,unassigned,2,Fuc,a,L,p,NA,3|6,Fucp,2
 G25795DA,unassigned,5,Gal,x,D,p,O157,x,Galp,5
 G25795DA,unassigned,6,Fuc,x,L,p,O157,x,Fucp,6
@@ -6536,6 +6666,7 @@ G26335RK,unassigned,12,Man,x,D,p,x,x,Manp,12
 G26341TZ,unassigned,5,Gal,b,D,p,O153,x,Galp,5
 G26341TZ,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G26341TZ,unassigned,7,Gal,a,D,p,5,3,Galp,7
+G26358SO,unassigned,7,Fuc,a,L,p,O160,2,Fucp,7
 G26371XR,unassigned,11,GlcNAc,x,D,p,x,x,GlcpNAc,11
 G26371XR,unassigned,13,Fuc,a,L,p,11,3,Fucp,13
 G26371XR,unassigned,14,Gal,b,D,p,11,4,Galp,14
@@ -6547,6 +6678,8 @@ G26383OK,unassigned,12,GlcNAc,x,D,p,N4,6,GlcpNAc,12
 G26399DO,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G26399DO,unassigned,15,NeuNAc,a,D,p,14,x,NeupNAc,15
 G26403JU,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
+G26407DP,unassigned,13,Gal,b,D,p,x,x,Galp,13
+G26407DP,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G26421QW,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G26421QW,unassigned,7,Man,x,D,p,6,x,Manp,7
 G26421QW,unassigned,8,Man,x,D,p,6,x,Manp,8
@@ -6973,6 +7106,8 @@ G28020PE,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G28020PE,unassigned,21,NeuNAc,a,D,p,20,6,NeupNAc,21
 G28023AU,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
 G28023AU,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G28082CI,unassigned,13,HexNAc,x,x,p,x,x,HexpNAc,13
+G28082CI,unassigned,15,HexNAc,x,x,p,x,x,HexpNAc,15
 G28090UW,unassigned,10,sulfate,n,n,n,N29,x,sulfate,10
 G28090UW,unassigned,16,sulfate,n,n,n,N308,x,sulfate,16
 G28103WK,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
@@ -7128,6 +7263,8 @@ G28582VX,unassigned,6,GalNAc,a,D,p,4,3,GalpNAc,6
 G28635EM,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G28635EM,unassigned,16,NeuNAc,a,D,p,N6,3|6,NeupNAc,16
 G28635EM,unassigned,21,NeuNAc,a,D,p,N10,3|6,NeupNAc,21
+G28663QF,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G28663QF,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
 G28665FP,unassigned,4,GlcNAc,b,D,p,O152,3|6,GlcpNAc,4
 G28665FP,unassigned,6,Gal,b,D,p,4,4,Galp,6
 G28665FP,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
@@ -7218,6 +7355,7 @@ G28949EK,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G28949EK,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G28949EK,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
 G28949EK,unassigned,23,NeuNAc,a,D,p,x,x,NeupNAc,23
+G28974LC,unassigned,11,NeuNAc,a,D,p,N29,x,NeupNAc,11
 G28978TP,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G28978TP,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G28978TP,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -7373,6 +7511,7 @@ G29898IW,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G29898IW,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G29940LU,unassigned,7,Gal,b,D,p,O157,x,Galp,7
 G29940LU,unassigned,8,NeuNAc,a,D,p,7,3,NeupNAc,8
+G29956GF,unassigned,10,Fuc,a,L,p,O663,2,Fucp,10
 G29969FK,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G30013YE,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G30013YE,unassigned,17,GlcNAc,b,D,p,x,x,GlcpNAc,17
@@ -7605,6 +7744,7 @@ G30879ZB,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G30888FF,unassigned,9,Glc,x,D,p,N22,3,Glcp,9
 G30888FF,unassigned,10,Glc,x,D,p,9,3,Glcp,10
 G30888FF,unassigned,11,Glc,x,D,p,10,2,Glcp,11
+G30897RJ,unassigned,6,GlcNAc,b,D,p,OC,4,GlcpNAc,6
 G30897RN,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G30897RN,unassigned,14,Gal,b,D,p,N5,x,Galp,14
 G30897RN,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
@@ -7983,6 +8123,10 @@ G32522KP,unassigned,17,Gal,b,D,p,15,4,Galp,17
 G32525MO,unassigned,10,Man,x,D,p,N4,x,Manp,10
 G32525MO,unassigned,11,GalNAc,x,D,p,10,x,GalpNAc,11
 G32525MO,unassigned,13,Fuc,x,L,p,NA,x,Fucp,13
+G32541GR,unassigned,5,GlcNAc,b,D,p,OC,4,GlcpNAc,5
+G32541GR,unassigned,6,Gal,b,D,p,5,x,Galp,6
+G32541GR,unassigned,7,NeuNAc,a,D,p,6,3,NeupNAc,7
+G32541GR,unassigned,9,Fuc,a,L,p,5,x,Fucp,9
 G32551IQ,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G32551IQ,unassigned,22,NeuNAc,a,D,p,x,x,NeupNAc,22
 G32551IQ,unassigned,24,NeuNAc,a,D,p,x,x,NeupNAc,24
@@ -8251,6 +8395,10 @@ G33785ND,unassigned,18,Gal,b,D,p,15,4,Galp,18
 G33785ND,unassigned,19,GlcNAc,x,D,p,x,x,GlcpNAc,19
 G33785ND,unassigned,20,Gal,x,D,p,19,x,Galp,20
 G33785ND,unassigned,22,GlcNAc,x,D,p,x,x,GlcpNAc,22
+G33797QF,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
+G33797QF,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
+G33797QF,unassigned,22,NeuNAc,a,D,p,x,x,NeupNAc,22
+G33797QF,unassigned,24,Fuc,a,L,p,x,x,Fucp,24
 G33811WU,unassigned,21,Gal,b,D,p,x,x,Galp,21
 G33822TE,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G33822TE,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -8547,6 +8695,13 @@ G35291GU,unassigned,8,Man,a,D,p,6,6,Manp,8
 G35291GU,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G35291GU,unassigned,10,GlcNAc,b,D,p,9,2,GlcpNAc,10
 G35291GU,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G35312VR,unassigned,4,GlcNAc,b,D,p,O152,3|6,GlcpNAc,4
+G35312VR,unassigned,5,Gal,b,D,p,4,3|4,Galp,5
+G35312VR,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G35312VR,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
+G35312VR,unassigned,10,GlcNAc,b,D,p,O152,3|6,GlcpNAc,10
+G35312VR,unassigned,11,Gal,b,D,p,10,3|4,Galp,11
+G35312VR,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
 G35324SL,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G35324SL,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G35324SL,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -8649,6 +8804,8 @@ G35748HH,unassigned,21,NeuNAc,a,D,p,N6,3|6,NeupNAc,21
 G35748HH,unassigned,26,NeuNAc,a,D,p,N10,3|6,NeupNAc,26
 G35748VK,unassigned,17,Gal,b,D,p,x,x,Galp,17
 G35750SU,unassigned,6,Gal,b,D,p,O157,x,Galp,6
+G35758CT,unassigned,4,Neu,a,D,p,OC,6,Neup,4
+G35758CT,unassigned,5,amino,n,n,n,4,5,amino,5
 G35777BH,unassigned,9,Gal,a,x,f,N19,2,Galf,9
 G35791OW,unassigned,17,NeuNAc,a,D,p,N6,x,NeupNAc,17
 G35794UW,unassigned,9,Glc,x,D,p,N22,3,Glcp,9
@@ -8707,6 +8864,8 @@ G35941VN,unassigned,5,Gal,x,D,p,O153,x,Galp,5
 G35941VN,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G35941VN,unassigned,7,Fuc,x,L,p,O153,x,Fucp,7
 G35941VN,unassigned,10,Gal,x,D,p,O538,x,Galp,10
+G35949CT,unassigned,10,Gal,b,D,p,O613,4,Galp,10
+G35949CT,unassigned,11,Fuc,a,L,p,10,2,Fucp,11
 G35952BG,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G35952BG,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G35952BG,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -8899,6 +9058,13 @@ G36656LV,unassigned,17,NeuNGc,a,D,p,N6,3|6,NeupNGc,17
 G36686IS,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G36686IS,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G36686IS,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
+G36707KT,unassigned,6,Man,a,D,p,NC,x,Manp,6
+G36707KT,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
+G36707KT,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G36707KT,unassigned,10,Man,a,D,p,NC,x,Manp,10
+G36707KT,unassigned,11,GlcNAc,b,D,p,10,2,GlcpNAc,11
+G36707KT,unassigned,13,GalNAc,b,D,p,11,4,GalpNAc,13
+G36707KT,unassigned,15,Fuc,a,L,p,13,3,Fucp,15
 G36747XY,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G36747XY,unassigned,18,NeuNAc,a,D,p,N6,3|6,NeupNAc,18
 G36761DZ,unassigned,5,Gal,b,D,p,O153,x,Galp,5
@@ -8934,6 +9100,7 @@ G36836GD,unassigned,9,Gal,x,D,p,8,x,Galp,9
 G36836GD,unassigned,12,GlcNAc,x,D,p,N4,x,GlcpNAc,12
 G36836GD,unassigned,13,Gal,x,D,p,12,x,Galp,13
 G36839GD,unassigned,4,NeuNAc,a,D,p,O152,3|6,NeupNAc,4
+G36856ZX,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
 G36861QC,unassigned,13,Man,a,D,p,x,x,Manp,13
 G36881GV,unassigned,7,GlcNAc,x,D,p,N1,4,GlcpNAc,7
 G36888AO,unassigned,8,GlcNAc,b,D,p,x,x,GlcpNAc,8
@@ -9100,6 +9267,7 @@ G37485VW,unassigned,19,Gal,b,D,p,18,x,Galp,19
 G37488LQ,unassigned,29,Fuc,a,L,p,x,x,Fucp,29
 G37530LM,unassigned,3,Gal,x,D,p,OC,3,Galp,3
 G37530LM,unassigned,4,GlcNAc,b,D,p,3,4,GlcpNAc,4
+G37565XR,unassigned,12,Man,a,D,p,N4,x,Manp,12
 G37588ZB,unassigned,9,GlcNAc,x,D,p,x,x,GlcpNAc,9
 G37588ZB,unassigned,10,Gal,x,D,p,9,x,Galp,10
 G37588ZB,unassigned,11,NeuNAc,x,D,p,10,x,NeupNAc,11
@@ -9131,6 +9299,7 @@ G37676KD,unassigned,13,GlcNAc,b,D,p,N4,x,GlcpNAc,13
 G37676KD,unassigned,15,Gal,b,D,p,13,4,Galp,15
 G37682CJ,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G37682CJ,unassigned,23,NeuNAc,a,D,p,N10,3|6,NeupNAc,23
+G37689ZA,unassigned,3,Gal,b,D,p,OC,4,Galp,3
 G37696FJ,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G37696FJ,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G37696FJ,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
@@ -9218,6 +9387,7 @@ G38349VC,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G38349VC,unassigned,14,Gal,b,D,p,12,4,Galp,14
 G38349VC,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
 G38349VC,unassigned,17,NeuNAc,x,D,p,x,x,NeupNAc,17
+G38402DW,unassigned,3,Gal,b,D,p,OC,4,Galp,3
 G38407UP,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G38407UP,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G38407UP,unassigned,8,Man,x,D,p,7,x,Manp,8
@@ -9535,6 +9705,7 @@ G39397SW,unassigned,9,NeuNGc,x,D,p,8,x,NeupNGc,9
 G39397SW,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
 G39397SW,unassigned,14,Gal,x,D,p,13,x,Galp,14
 G39397SW,unassigned,15,NeuNGc,x,D,p,14,x,NeupNGc,15
+G39401ES,unassigned,7,acetyl,n,n,n,O535,9,acetyl,7
 G39401OQ,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G39401OQ,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G39401OQ,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
@@ -9604,6 +9775,8 @@ G39810GC,unassigned,13,Gal,x,D,p,12,x,Galp,13
 G39810GC,unassigned,14,NeuNAc,x,D,p,13,x,NeupNAc,14
 G39810GC,unassigned,18,GlcNAc,x,D,p,N4,x,GlcpNAc,18
 G39810GC,unassigned,19,Gal,x,D,p,18,x,Galp,19
+G39812HV,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
+G39812HV,unassigned,13,NeuNAc,a,D,p,11,8,NeupNAc,13
 G39841VH,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
 G39841VH,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G39841VH,unassigned,8,GlcNAc,b,D,p,7,2,GlcpNAc,8
@@ -9633,6 +9806,9 @@ G39908TT,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G39908TT,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G39908TT,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
 G39908TT,unassigned,23,Fuc,x,L,p,x,x,Fucp,23
+G39916NT,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G39916NT,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G39916NT,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
 G39917RN,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G39917RN,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G39917RN,unassigned,8,GlcNAc,x,D,p,7,x,GlcpNAc,8
@@ -9802,6 +9978,7 @@ G40365PX,unassigned,20,NeuNGc,x,D,p,x,x,NeupNGc,20
 G40373LS,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G40393FZ,unassigned,4,GlcNAc,b,D,p,O152,3|6,GlcpNAc,4
 G40393FZ,unassigned,6,Gal,b,D,p,4,3,Galp,6
+G40413JC,unassigned,6,sulfate,n,n,n,O539,4,sulfate,6
 G40442UK,unassigned,9,Glc,a,x,x,N22,3,Glc,9
 G40442UK,unassigned,10,Glc,a,x,x,9,3,Glc,10
 G40442UK,unassigned,11,Glc,a,x,x,10,2,Glc,11
@@ -9811,6 +9988,8 @@ G40452ID,unassigned,8,GlcNAc,b,D,p,x,x,GlcpNAc,8
 G40480SU,unassigned,3,Hex,x,x,p,OC,3,Hexp,3
 G40480SU,unassigned,4,HexNAc,x,x,p,3,x,HexpNAc,4
 G40480SU,unassigned,7,Gal,x,D,p,O157,x,Galp,7
+G40480ZI,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
+G40480ZI,unassigned,12,NeuNAc,a,D,p,10,8,NeupNAc,12
 G40490KT,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G40490KT,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G40490KT,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -9864,6 +10043,7 @@ G40734VV,unassigned,16,NeuNAc,x,D,p,x,x,NeupNAc,16
 G40760CH,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G40760CH,unassigned,17,NeuNAc,a,D,p,N8,3|6,NeupNAc,17
 G40760CH,unassigned,19,NeuNAc,a,D,p,17,8,NeupNAc,19
+G40778MP,unassigned,4,sulfate,n,n,n,O157,x,sulfate,4
 G40785MA,unassigned,15,GlcNAc,b,D,p,x,x,GlcpNAc,15
 G40785MA,unassigned,17,Gal,b,D,p,15,4,Galp,17
 G40791GU,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
@@ -9879,6 +10059,8 @@ G40806RJ,unassigned,21,Gal,b,D,p,19,4,Galp,21
 G40806RJ,unassigned,22,NeuNAc,a,D,p,21,6,NeupNAc,22
 G40813RE,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
 G40813RE,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G40838GB,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G40838GB,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G40852TV,unassigned,9,Gal,x,D,p,x,x,Galp,9
 G40857PC,unassigned,9,Gal,x,x,f,N22,x,Galf,9
 G40865GN,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
@@ -10215,6 +10397,8 @@ G42262TV,unassigned,8,Man,x,D,p,6,x,Manp,8
 G42262TV,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G42262TV,unassigned,10,GlcNAc,x,D,p,9,x,GlcpNAc,10
 G42262TV,unassigned,11,Gal,x,D,p,10,x,Galp,11
+G42263HE,unassigned,3,Gal,b,D,p,OC,4,Galp,3
+G42263HE,unassigned,5,Gal,b,D,p,O157,3|4,Galp,5
 G42264OV,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
 G42264OV,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G42292MP,unassigned,6,Man,a,D,p,NC,x,Manp,6
@@ -10271,6 +10455,7 @@ G42397NB,unassigned,12,GlcNAc,x,D,p,x,x,GlcpNAc,12
 G42397NB,unassigned,13,Gal,x,D,p,12,x,Galp,13
 G42397NB,unassigned,15,GlcNAc,x,D,p,x,x,GlcpNAc,15
 G42397NB,unassigned,16,Gal,x,D,p,15,x,Galp,16
+G42398CG,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
 G42398FX,unassigned,9,GlcNAc,x,D,p,N4,4,GlcpNAc,9
 G42420AV,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G42420AV,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
@@ -10353,6 +10538,7 @@ G42718VL,unassigned,11,sulfate,n,n,n,9,4,sulfate,11
 G42718VL,unassigned,12,Man,a,D,p,NC,3|6,Manp,12
 G42718VL,unassigned,13,GlcNAc,b,D,p,12,2,GlcpNAc,13
 G42735RP,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
+G42750RV,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
 G42772CJ,unassigned,12,Man,a,D,p,x,x,Manp,12
 G42797TX,unassigned,23,GlcNAc,x,D,p,x,x,GlcpNAc,23
 G42797TX,unassigned,25,Gal,x,D,p,23,x,Galp,25
@@ -10409,13 +10595,6 @@ G43027VE,unassigned,9,Gal,b,D,p,8,x,Galp,9
 G43027VE,unassigned,11,GlcNAc,x,D,p,7,x,GlcpNAc,11
 G43027VE,unassigned,12,Gal,b,D,p,11,x,Galp,12
 G43039PK,unassigned,7,Fuc,a,L,p,O655,2,Fucp,7
-G43050FO,unassigned,8,GlcNAc,b,D,p,x,x,GlcpNAc,8
-G43050FO,unassigned,10,Glc,b,D,p,8,4,Glcp,10
-G43050FO,unassigned,11,GlcNAc,b,D,p,x,x,GlcpNAc,11
-G43050FO,unassigned,13,Glc,b,D,p,11,4,Glcp,13
-G43050FO,unassigned,14,GlcNAc,b,D,p,x,x,GlcpNAc,14
-G43050FO,unassigned,16,Glc,b,D,p,14,4,Glcp,16
-G43050FO,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G43066JS,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G43066JS,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G43075NB,unassigned,9,GlcNAc,b,D,p,x,x,GlcpNAc,9
@@ -10594,6 +10773,9 @@ G43861TS,unassigned,11,Gal,b,D,p,9,3,Galp,11
 G43861TS,unassigned,12,GlcNAc,x,D,p,6,x,GlcpNAc,12
 G43861TS,unassigned,14,Man,a,D,p,NC,x,Manp,14
 G43861TS,unassigned,15,Man,x,D,p,14,x,Manp,15
+G43875XT,unassigned,4,GalNAc,b,D,p,OC,6,GalpNAc,4
+G43875XT,unassigned,6,Gal,b,D,p,4,4,Galp,6
+G43875XT,unassigned,7,GlcNAc,b,D,p,6,4,GlcpNAc,7
 G43876NZ,unassigned,9,GlcNAc,b,D,p,x,x,GlcpNAc,9
 G43876NZ,unassigned,11,Gal,b,D,p,9,4,Galp,11
 G43876NZ,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
@@ -10742,6 +10924,7 @@ G44369QM,unassigned,14,GlcNAc,x,D,p,11,x,GlcpNAc,14
 G44369QM,unassigned,17,Gal,x,D,p,x,x,Galp,17
 G44369QM,unassigned,18,NeuNAc,x,D,p,17,x,NeupNAc,18
 G44413JJ,unassigned,13,Gal,b,D,p,x,x,Galp,13
+G44414IQ,unassigned,6,Gal,b,D,p,O614,4,Galp,6
 G44444MB,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G44444MB,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G44444MB,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -10929,6 +11112,7 @@ G45116BB,unassigned,19,GlcNAc,x,D,p,N4,x,GlcpNAc,19
 G45116BB,unassigned,20,Gal,x,D,p,19,x,Galp,20
 G45116BB,unassigned,22,Fuc,x,L,p,NA,6,Fucp,22
 G45116BB,unassigned,23,Fuc,x,L,p,x,x,Fucp,23
+G45129XM,unassigned,4,GalNAc,b,D,p,OC,6,GalpNAc,4
 G45137VE,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G45137VE,unassigned,7,Man,a,D,p,6,x,Manp,7
 G45137VE,unassigned,8,Man,a,D,p,7,x,Manp,8
@@ -11102,6 +11286,8 @@ G45603KW,unassigned,10,NeuNGc,a,D,p,N3,3|6,NeupNGc,10
 G45603KW,unassigned,16,GlcNAc,b,D,p,x,x,GlcpNAc,16
 G45603KW,unassigned,18,Gal,b,D,p,16,4,Galp,18
 G45603KW,unassigned,19,NeuNGc,a,D,p,18,3|6,NeupNGc,19
+G45640DX,unassigned,11,Fuc,a,L,p,N29,3,Fucp,11
+G45656VV,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G45661NA,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
 G45661NA,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G45690OD,unassigned,4,Gal,b,D,p,O156,x,Galp,4
@@ -11391,6 +11577,7 @@ G46666WR,unassigned,12,Gal,b,D,p,10,4,Galp,12
 G46666WR,unassigned,13,Man,a,D,p,NC,x,Manp,13
 G46666WR,unassigned,14,GlcNAc,b,D,p,13,2,GlcpNAc,14
 G46666WR,unassigned,16,Gal,b,D,p,14,4,Galp,16
+G46711IU,unassigned,7,Fuc,a,L,p,O160,2,Fucp,7
 G46711XU,unassigned,2,Gal,x,D,p,OC,x,Galp,2
 G46711XU,unassigned,3,GlcNAc,b,D,p,2,4,GlcpNAc,3
 G46711XU,unassigned,5,Gal,b,D,p,3,4,Galp,5
@@ -11629,6 +11816,14 @@ G47325YJ,unassigned,21,NeuNAc,a,D,p,19,8,NeupNAc,21
 G47451TR,unassigned,4,Gal,b,D,p,O156,x,Galp,4
 G47451TR,unassigned,7,Gal,b,D,p,O157,x,Galp,7
 G47451TR,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G47452EQ,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G47452EQ,unassigned,6,GlcNAc,b,D,p,5,x,GlcpNAc,6
+G47452EQ,unassigned,7,Gal,b,D,p,6,x,Galp,7
+G47452EQ,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G47452EQ,unassigned,10,GlcNAc,b,D,p,5,x,GlcpNAc,10
+G47452EQ,unassigned,11,Fuc,a,L,p,10,x,Fucp,11
+G47452EQ,unassigned,12,Gal,b,D,p,10,x,Galp,12
+G47452EQ,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
 G47527ML,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G47527ML,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
 G47527ML,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -11891,6 +12086,7 @@ G48518CW,unassigned,17,Man,a,D,p,NC,x,Manp,17
 G48518CW,unassigned,18,GlcNAc,x,D,p,17,2,GlcpNAc,18
 G48518CW,unassigned,20,Gal,x,D,p,18,4,Galp,20
 G48518CW,unassigned,21,NeuNAc,x,D,p,20,3,NeupNAc,21
+G48533PM,unassigned,6,NeuNAc,a,D,p,O562,6,NeupNAc,6
 G48537BY,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G48537BY,unassigned,7,Man,a,D,p,6,3,Manp,7
 G48537BY,unassigned,8,Man,a,D,p,7,2,Manp,8
@@ -11937,6 +12133,8 @@ G48759RG,unassigned,5,Fuc,a,L,p,4,x,Fucp,5
 G48759RG,unassigned,6,Gal,b,D,p,4,x,Galp,6
 G48759RG,unassigned,8,GlcNAc,b,D,p,O152,x,GlcpNAc,8
 G48759RG,unassigned,9,Gal,b,D,p,8,x,Galp,9
+G48789OQ,unassigned,18,NeuNAc,a,D,p,x,x,NeupNAc,18
+G48789OQ,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G48795GB,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G48795GB,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G48795GB,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
@@ -12098,6 +12296,8 @@ G49447IS,unassigned,10,Man,a,D,p,8,x,Manp,10
 G49447IS,unassigned,11,Man,a,D,p,x,x,Manp,11
 G49462EF,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G49462EF,unassigned,18,NeuNAc,a,D,p,N6,3|6,NeupNAc,18
+G49464XD,unassigned,5,GlcNAc,b,D,p,O160,3,GlcpNAc,5
+G49464XD,unassigned,7,Gal,b,D,p,5,4,Galp,7
 G49465QD,unassigned,2,GlcNAc,b,D,p,OC,x,GlcpNAc,2
 G49465QD,unassigned,4,Gal,b,D,p,2,4,Galp,4
 G49467LT,unassigned,15,Gal,b,D,p,x,x,Galp,15
@@ -12500,6 +12700,7 @@ G50976TT,unassigned,16,NeuNGc,a,D,p,N6,3|6,NeupNGc,16
 G50976TT,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
 G50976TT,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G50976TT,unassigned,21,NeuNAc,a,D,p,20,3|6,NeupNAc,21
+G50977JR,unassigned,4,Gal,b,D,p,OC,4,Galp,4
 G50999TP,unassigned,4,NeuNAc,x,D,p,O152,3,NeupNAc,4
 G50999TP,unassigned,6,NeuNAc,x,D,p,OC,6,NeupNAc,6
 G51014ET,unassigned,6,Man,a,D,p,NC,x,Manp,6
@@ -12980,6 +13181,14 @@ G52894LG,unassigned,10,Man,a,D,p,9,x,Manp,10
 G52894LG,unassigned,11,Man,a,D,p,9,x,Manp,11
 G52894LG,unassigned,12,Man,a,D,p,x,x,Manp,12
 G52902IE,unassigned,13,Gal,x,D,p,N23,x,Galp,13
+G52937XP,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G52937XP,unassigned,6,GlcNAc,b,D,p,5,x,GlcpNAc,6
+G52937XP,unassigned,7,Gal,b,D,p,6,x,Galp,7
+G52937XP,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G52937XP,unassigned,9,Fuc,a,L,p,6,x,Fucp,9
+G52937XP,unassigned,11,GlcNAc,b,D,p,5,x,GlcpNAc,11
+G52937XP,unassigned,12,Gal,b,D,p,11,x,Galp,12
+G52937XP,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
 G52946YT,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G52946YT,unassigned,13,NeuNAc,a,D,p,11,8,NeupNAc,13
 G52962ZI,unassigned,2,Fuc,a,L,p,NA,x,Fucp,2
@@ -13037,6 +13246,7 @@ G53050ZJ,unassigned,25,Gal,b,D,p,23,4,Galp,25
 G53093MO,unassigned,21,Gal,a,D,p,x,x,Galp,21
 G53093MO,unassigned,22,Gal,a,D,p,x,x,Galp,22
 G53151DR,unassigned,12,Gal,b,D,p,x,x,Galp,12
+G53151WW,unassigned,11,Gal,b,D,p,O633,3,Galp,11
 G53178HH,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G53178HH,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G53178HH,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -13274,6 +13484,7 @@ G54079AB,unassigned,12,HexNAc,b,x,x,x,x,HexNAc,12
 G54096IJ,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G54096IJ,unassigned,15,NeuNAc,a,D,p,N8,x,NeupNAc,15
 G54096IJ,unassigned,21,NeuNAc,a,D,p,N6,x,NeupNAc,21
+G54121EO,unassigned,6,GlcNAc,b,D,p,OC,4,GlcpNAc,6
 G54133WC,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G54139VV,unassigned,9,GlcNAc,x,D,p,x,x,GlcpNAc,9
 G54139VV,unassigned,10,Gal,x,D,p,9,x,Galp,10
@@ -13308,6 +13519,9 @@ G54306CN,unassigned,9,NeuNAc,a,D,p,8,x,NeupNAc,9
 G54306CN,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
 G54306CN,unassigned,14,Gal,x,D,p,13,x,Galp,14
 G54306CN,unassigned,15,NeuNAc,a,D,p,14,x,NeupNAc,15
+G54323TO,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G54323TO,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
+G54323TO,unassigned,23,NeuNAc,a,D,p,x,x,NeupNAc,23
 G54324NP,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G54335XN,unassigned,10,Gal,a,D,p,O648,3,Galp,10
 G54341KJ,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
@@ -13489,6 +13703,7 @@ G54782QY,unassigned,17,GalNAc,b,D,p,x,x,GalpNAc,17
 G54782QY,unassigned,19,Gal,b,D,p,x,x,Galp,19
 G54782QY,unassigned,20,Gal,b,D,p,x,x,Galp,20
 G54782QY,unassigned,21,Gal,b,D,p,x,x,Galp,21
+G54795GY,unassigned,7,NeuNAc,a,D,p,x,x,NeupNAc,7
 G54802EG,unassigned,4,Fuc,a,L,p,O152,x,Fucp,4
 G54811KN,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G54811KN,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -13576,6 +13791,8 @@ G55184VW,unassigned,13,GlcNAc,x,D,p,x,x,GlcpNAc,13
 G55185WK,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
 G55185WK,unassigned,23,NeuNAc,a,D,p,x,x,NeupNAc,23
 G55185WK,unassigned,25,NeuNAc,a,D,p,x,x,NeupNAc,25
+G55200IX,unassigned,8,Man,a,D,p,N4,x,Manp,8
+G55200IX,unassigned,9,Man,a,D,p,8,x,Manp,9
 G55282VK,unassigned,4,GlcNAc,b,D,p,O152,x,GlcpNAc,4
 G55282VK,unassigned,5,Gal,b,D,p,4,x,Galp,5
 G55282VK,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
@@ -13858,6 +14075,8 @@ G56076WY,unassigned,16,Fuc,x,L,p,NA,6,Fucp,16
 G56102PZ,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G56102UT,unassigned,10,NeuNGc,a,D,p,N3,3|6,NeupNGc,10
 G56102UT,unassigned,22,NeuNGc,a,D,p,N10,3|6,NeupNGc,22
+G56124CR,unassigned,14,NeuNAc,a,D,p,x,x,NeupNAc,14
+G56124CR,unassigned,16,acetyl,n,n,n,14,x,acetyl,16
 G56238AO,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G56238AO,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G56238AO,unassigned,9,GlcNAc,x,D,p,6,x,GlcpNAc,9
@@ -13878,6 +14097,14 @@ G56256XB,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
 G56256XB,unassigned,14,Gal,x,D,p,13,x,Galp,14
 G56256XB,unassigned,15,Gal,x,D,p,14,x,Galp,15
 G56259BH,unassigned,16,NeuNAc,x,D,p,x,x,NeupNAc,16
+G56265FS,unassigned,8,NeuNAc,a,D,p,x,x,NeupNAc,8
+G56265FS,unassigned,10,GlcNAc,b,D,p,x,x,GlcpNAc,10
+G56265FS,unassigned,12,Gal,b,D,p,10,4,Galp,12
+G56265FS,unassigned,13,GlcNAc,b,D,p,x,x,GlcpNAc,13
+G56265FS,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G56265FS,unassigned,16,GlcNAc,b,D,p,x,x,GlcpNAc,16
+G56265FS,unassigned,18,Gal,b,D,p,16,4,Galp,18
+G56265FS,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G56285KF,unassigned,6,GlcNAc,a,D,p,O539,3,GlcpNAc,6
 G56285KF,unassigned,8,Gal,b,D,p,6,4,Galp,8
 G56285KF,unassigned,9,Fuc,a,L,p,8,2,Fucp,9
@@ -14222,6 +14449,7 @@ G57671SP,unassigned,19,Gal,b,D,p,18,3,Galp,19
 G57671SP,unassigned,20,GlcNAc,b,D,p,15,6,GlcpNAc,20
 G57671SP,unassigned,22,Gal,b,D,p,20,4,Galp,22
 G57671SP,unassigned,23,Gal,b,D,p,22,3,Galp,23
+G57672ST,unassigned,10,GlcNAc,b,D,p,O731,3,GlcpNAc,10
 G57677EU,unassigned,14,NeuNAc,a,D,p,x,x,NeupNAc,14
 G57677EU,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
 G57678YQ,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
@@ -14270,6 +14498,7 @@ G57914GV,unassigned,9,NeuNGc,x,D,p,8,x,NeupNGc,9
 G57914GV,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
 G57914GV,unassigned,14,Gal,x,D,p,13,x,Galp,14
 G57914GV,unassigned,15,NeuNGc,x,D,p,14,x,NeupNGc,15
+G57949TL,unassigned,9,Gal,b,D,p,O633,4,Galp,9
 G57951WQ,unassigned,2,Fuc,a,L,p,NA,x,Fucp,2
 G57951WQ,unassigned,8,GlcNAc,x,D,p,N1,x,GlcpNAc,8
 G57951WQ,unassigned,9,Gal,b,D,p,8,x,Galp,9
@@ -14468,6 +14697,15 @@ G58585VB,unassigned,19,Gal,x,D,p,18,x,Galp,19
 G58666XJ,unassigned,7,GlcNAc,x,D,p,N1,2,GlcpNAc,7
 G58666XJ,unassigned,9,GalNAc,x,D,p,7,4,GalpNAc,9
 G58666XJ,unassigned,10,sulfate,n,n,n,9,x,sulfate,10
+G58697JA,unassigned,4,GlcNAc,b,D,p,O152,x,GlcpNAc,4
+G58697JA,unassigned,5,Gal,b,D,p,4,x,Galp,5
+G58697JA,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
+G58697JA,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
+G58697JA,unassigned,10,GlcNAc,b,D,p,O152,x,GlcpNAc,10
+G58697JA,unassigned,11,Gal,b,D,p,10,x,Galp,11
+G58697JA,unassigned,12,Fuc,a,L,p,11,2,Fucp,12
+G58736XQ,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
+G58736XQ,unassigned,13,NeuNAc,a,D,p,11,8,NeupNAc,13
 G58742HD,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G58742HD,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G58742HD,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -15076,6 +15314,7 @@ G61108WE,unassigned,4,Gal,x,D,p,O156,x,Galp,4
 G61108WE,unassigned,7,Gal,b,D,p,O157,x,Galp,7
 G61108WE,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
 G61108WE,unassigned,9,GalNAc,a,D,p,7,3,GalpNAc,9
+G61119KT,unassigned,6,NeuNAc,a,D,p,O562,3,NeupNAc,6
 G61151LQ,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
 G61151LQ,unassigned,8,Gal,b,D,p,7,x,Galp,8
 G61151LQ,unassigned,11,GlcNAc,b,D,p,N4,x,GlcpNAc,11
@@ -15401,6 +15640,8 @@ G62630DP,unassigned,10,NeuNAc,a,D,p,9,x,NeupNAc,10
 G62630DP,unassigned,12,Man,a,D,p,NC,x,Manp,12
 G62630DP,unassigned,13,GlcNAc,b,D,p,12,2,GlcpNAc,13
 G62630DP,unassigned,15,Gal,b,D,p,13,4,Galp,15
+G62654HS,unassigned,18,Fuc,a,L,p,x,x,Fucp,18
+G62654HS,unassigned,19,Fuc,a,L,p,x,x,Fucp,19
 G62689JX,unassigned,15,NeuNAc,a,D,p,x,x,NeupNAc,15
 G62690FM,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G62690FM,unassigned,7,Man,a,D,p,NC,x,Manp,7
@@ -15515,6 +15756,15 @@ G62970ZD,unassigned,19,Gal,b,D,p,N5,x,Galp,19
 G62970ZD,unassigned,20,NeuNAc,a,D,p,19,3,NeupNAc,20
 G63020KP,unassigned,5,Gal,b,D,p,O157,x,Galp,5
 G63020KP,unassigned,6,NeuNAc,a,D,p,5,3,NeupNAc,6
+G63043YQ,unassigned,17,Gal,b,D,p,x,x,Galp,17
+G63043YQ,unassigned,18,Gal,b,D,p,x,x,Galp,18
+G63043YQ,unassigned,19,Gal,b,D,p,x,x,Galp,19
+G63043YQ,unassigned,20,Gal,b,D,p,x,x,Galp,20
+G63043YQ,unassigned,21,NeuNAc,a,D,p,20,3,NeupNAc,21
+G63043YQ,unassigned,23,NeuNAc,a,D,p,21,8,NeupNAc,23
+G63043YQ,unassigned,25,phosphate,n,n,n,23,x,phosphate,25
+G63043YQ,unassigned,26,Fuc,a,L,p,x,x,Fucp,26
+G63043YQ,unassigned,27,Fuc,a,L,p,x,x,Fucp,27
 G63046OH,unassigned,11,GlcNAc,x,D,p,x,x,GlcpNAc,11
 G63046OH,unassigned,13,Fuc,a,L,p,11,3,Fucp,13
 G63046OH,unassigned,14,Gal,b,D,p,11,4,Galp,14
@@ -15534,6 +15784,7 @@ G63111RL,unassigned,19,GlcNAc,b,D,p,x,x,GlcpNAc,19
 G63111RL,unassigned,21,Gal,b,D,p,19,4,Galp,21
 G63176TU,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G63179CS,unassigned,7,GlcNAc,x,D,p,N1,4,GlcpNAc,7
+G63185SB,unassigned,16,NeuNAc,a,D,p,N30,x,NeupNAc,16
 G63188OY,unassigned,6,Gal,b,D,p,O157,4,Galp,6
 G63188OY,unassigned,7,GlcNAc,b,D,p,6,6,GlcpNAc,7
 G63188OY,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -15554,6 +15805,7 @@ G63285XT,unassigned,16,Gal,b,D,p,13,4,Galp,16
 G63286MF,unassigned,8,Gal,b,D,p,O640,4,Galp,8
 G63303ZY,unassigned,16,Gal,b,D,p,x,x,Galp,16
 G63303ZY,unassigned,17,Gal,b,D,p,x,x,Galp,17
+G63349JM,unassigned,4,GlcNAc,a,D,x,OC,6,GlcNAc,4
 G63377SE,unassigned,5,Gal,x,D,p,O153,x,Galp,5
 G63377SE,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G63377SE,unassigned,7,Gal,a,D,p,5,3,Galp,7
@@ -15615,6 +15867,8 @@ G63648EU,unassigned,15,NeuNAc,a,D,p,14,6,NeupNAc,15
 G63648XO,unassigned,8,NeuNAc,a,D,p,N2,3|6,NeupNAc,8
 G63648XO,unassigned,12,NeuNAc,a,D,p,N3,3|6,NeupNAc,12
 G63648XO,unassigned,18,NeuNAc,a,D,p,N6,3|6,NeupNAc,18
+G63664GB,unassigned,13,GlcNAc,b,D,p,O160,3,GlcpNAc,13
+G63664GB,unassigned,15,Gal,b,D,p,13,4,Galp,15
 G63666YX,unassigned,10,GlcNAc,b,D,p,N4,x,GlcpNAc,10
 G63679SF,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G63679SF,unassigned,16,NeuNAc,a,D,p,N6,x,NeupNAc,16
@@ -15779,6 +16033,10 @@ G64458EC,unassigned,5,Gal,b,D,p,O157,x,Galp,5
 G64458EC,unassigned,6,Fuc,a,L,p,O157,x,Fucp,6
 G64514KF,unassigned,7,GlcNAc,x,D,p,N1,3,GlcpNAc,7
 G64514KF,unassigned,10,GlcNAc,x,D,p,NC,4,GlcpNAc,10
+G64518MA,unassigned,6,GalNAc,b,D,p,OC,6,GalpNAc,6
+G64518MA,unassigned,8,Gal,b,D,p,6,4,Galp,8
+G64518MA,unassigned,9,GlcNAc,b,D,p,8,3,GlcpNAc,9
+G64518MA,unassigned,11,Gal,b,D,p,9,4,Galp,11
 G64541LV,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
 G64541LV,unassigned,8,GlcNAc,x,D,p,N1,x,GlcpNAc,8
 G64541LV,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
@@ -15836,6 +16094,7 @@ G64719FL,unassigned,13,Gal,b,D,p,10,4,Galp,13
 G64774WV,unassigned,5,Gal,x,D,p,O153,x,Galp,5
 G64774WV,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G64774WV,unassigned,7,GalNAc,a,D,p,5,3,GalpNAc,7
+G64793CD,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G64799ZA,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G64799ZA,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G64799ZA,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -15955,6 +16214,8 @@ G65249DN,unassigned,10,GlcNAc,b,D,p,5,6,GlcpNAc,10
 G65249DN,unassigned,12,Gal,b,D,p,10,4,Galp,12
 G65249DN,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
 G65249DN,unassigned,14,GalNAc,a,D,p,12,3,GalpNAc,14
+G65262KR,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
+G65262KR,unassigned,10,sulfate,n,n,n,O158,x,sulfate,10
 G65263TV,unassigned,4,Gal,b,D,p,O156,x,Galp,4
 G65263TV,unassigned,7,Gal,b,D,p,O157,x,Galp,7
 G65263TV,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
@@ -16002,6 +16263,7 @@ G65365UP,unassigned,18,GlcNAc,x,D,p,x,x,GlcpNAc,18
 G65396UE,unassigned,4,GlcNAc,x,D,p,O152,x,GlcpNAc,4
 G65396UE,unassigned,6,Gal,b,D,p,4,4,Galp,6
 G65396UE,unassigned,7,GlcNAc,x,D,p,O152,x,GlcpNAc,7
+G65447BW,unassigned,4,sulfate,n,n,n,O152,4,sulfate,4
 G65466VT,unassigned,18,Gal,a,D,p,x,x,Galp,18
 G65466VT,unassigned,19,Gal,a,D,p,x,x,Galp,19
 G65516CQ,unassigned,15,NeuNAc,a,D,p,N8,3|6,NeupNAc,15
@@ -16378,6 +16640,8 @@ G67263WT,unassigned,9,GlcNAc,b,D,p,6,2,GlcpNAc,9
 G67263WT,unassigned,11,Man,a,D,p,NC,x,Manp,11
 G67263WT,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G67263WT,unassigned,15,Gal,b,D,p,x,x,Galp,15
+G67270IV,unassigned,14,NeuNAc,a,D,p,x,x,NeupNAc,14
+G67270IV,unassigned,15,acetyl,n,n,n,14,4,acetyl,15
 G67277GK,unassigned,2,Gal,x,D,p,OC,x,Galp,2
 G67281LU,unassigned,7,Fuc,a,L,p,x,x,Fucp,7
 G67323SW,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
@@ -16679,6 +16943,7 @@ G68582KT,unassigned,17,GalNAc,b,D,p,x,x,GalpNAc,17
 G68582KT,unassigned,19,GalNAc,b,D,p,x,x,GalpNAc,19
 G68582KT,unassigned,21,Gal,b,D,p,x,x,Galp,21
 G68582KT,unassigned,22,Gal,b,D,p,x,x,Galp,22
+G68672OT,unassigned,6,Gal,b,D,p,O562,3,Galp,6
 G68686HN,unassigned,15,Fuc,a,L,p,x,x,Fucp,15
 G68686HN,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
 G68691YG,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
@@ -16990,6 +17255,8 @@ G69962LT,unassigned,11,Gal,x,D,p,10,x,Galp,11
 G69962LT,unassigned,13,Man,a,D,p,NC,x,Manp,13
 G69962LT,unassigned,14,GlcNAc,x,D,p,13,x,GlcpNAc,14
 G69962LT,unassigned,15,Gal,x,D,p,14,x,Galp,15
+G69963GQ,unassigned,11,Man,a,D,p,N4,x,Manp,11
+G69963GQ,unassigned,13,Fuc,a,L,p,x,x,Fucp,13
 G69983FE,unassigned,17,GlcNAc,b,D,p,x,x,GlcpNAc,17
 G69983FE,unassigned,19,Gal,b,D,p,17,4,Galp,19
 G69994YJ,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
@@ -17232,6 +17499,8 @@ G71071YT,unassigned,17,NeuNAc,x,D,p,16,x,NeupNAc,17
 G71077LD,unassigned,6,GlcNAc,x,D,p,OC,6,GlcpNAc,6
 G71077LD,unassigned,8,Gal,b,D,p,6,4,Galp,8
 G71077LD,unassigned,9,NeuNAc,a,D,p,8,3,NeupNAc,9
+G71094KR,unassigned,10,Gal,b,D,p,O613,4,Galp,10
+G71094KR,unassigned,11,Fuc,a,L,p,10,2,Fucp,11
 G71108XZ,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
 G71108XZ,unassigned,20,Gal,b,D,p,18,3,Galp,20
 G71145QW,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
@@ -17260,6 +17529,7 @@ G71200GP,unassigned,10,NeuNAc,a,D,p,9,x,NeupNAc,10
 G71200GP,unassigned,14,GlcNAc,x,D,p,N4,x,GlcpNAc,14
 G71200GP,unassigned,15,Gal,b,D,p,14,x,Galp,15
 G71200GP,unassigned,16,NeuNAc,a,D,p,15,x,NeupNAc,16
+G71202JE,unassigned,6,Glc,b,D,p,OC,6,Glcp,6
 G71221VI,unassigned,8,GlcNAc,x,D,p,x,x,GlcpNAc,8
 G71221VI,unassigned,9,Gal,x,D,p,8,x,Galp,9
 G71221VI,unassigned,10,NeuNAc,x,D,p,9,x,NeupNAc,10
@@ -17314,6 +17584,7 @@ G71289YC,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G71289YC,unassigned,21,GlcNAc,b,D,p,x,x,GlcpNAc,21
 G71289YC,unassigned,23,Gal,b,D,p,21,4,Galp,23
 G71298BD,unassigned,13,Man,a,D,p,N4,x,Manp,13
+G71304WV,unassigned,3,GlcNAc,b,D,p,OC,4,GlcpNAc,3
 G71307CC,unassigned,5,Gal,b,D,p,O157,3|4,Galp,5
 G71309WZ,unassigned,14,NeuNAc,a,D,p,x,x,NeupNAc,14
 G71331ST,unassigned,5,Gal,x,D,p,O156,x,Galp,5
@@ -17760,6 +18031,9 @@ G73173YQ,unassigned,13,Gal,b,D,p,11,4,Galp,13
 G73173YQ,unassigned,14,Man,a,D,p,NC,3|6,Manp,14
 G73173YQ,unassigned,15,GlcNAc,b,D,p,14,2,GlcpNAc,15
 G73173YQ,unassigned,17,Gal,b,D,p,15,4,Galp,17
+G73196AS,unassigned,13,Gal,b,D,p,x,x,Galp,13
+G73196AS,unassigned,14,NeuNAc,a,D,p,13,x,NeupNAc,14
+G73196AS,unassigned,16,NeuNAc,a,D,p,14,x,NeupNAc,16
 G73223XO,unassigned,15,GlcNAc,b,D,p,x,x,GlcpNAc,15
 G73223XO,unassigned,17,Fuc,a,L,p,15,3,Fucp,17
 G73223XO,unassigned,18,GalNAc,b,D,p,15,4,GalpNAc,18
@@ -17821,6 +18095,15 @@ G73519FS,unassigned,9,Gal,b,D,p,7,4,Galp,9
 G73519FS,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
 G73519FS,unassigned,13,Gal,b,D,p,11,4,Galp,13
 G73519FS,unassigned,14,NeuNGc,a,D,p,x,x,NeupNGc,14
+G73544PN,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G73544PN,unassigned,6,GlcNAc,b,D,p,5,x,GlcpNAc,6
+G73544PN,unassigned,7,Fuc,a,L,p,6,x,Fucp,7
+G73544PN,unassigned,8,Gal,b,D,p,6,x,Galp,8
+G73544PN,unassigned,9,Fuc,a,L,p,8,2,Fucp,9
+G73544PN,unassigned,11,GlcNAc,a,D,p,5,x,GlcpNAc,11
+G73544PN,unassigned,12,Gal,b,D,p,11,x,Galp,12
+G73544PN,unassigned,13,Fuc,a,L,p,12,2,Fucp,13
+G73544PN,unassigned,14,GalNAc,a,D,p,12,3,GalpNAc,14
 G73572ZZ,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G73572ZZ,unassigned,12,Gal,b,D,p,N5,x,Galp,12
 G73572ZZ,unassigned,14,NeuNAc,a,D,p,x,x,NeupNAc,14
@@ -17850,6 +18133,7 @@ G73888CI,unassigned,11,NeuNAc,a,D,p,9,6,NeupNAc,11
 G73888CI,unassigned,13,Man,a,D,p,NC,x,Manp,13
 G73888CI,unassigned,14,GlcNAc,b,D,p,13,2,GlcpNAc,14
 G73896IF,unassigned,9,Glc,x,D,p,N22,3,Glcp,9
+G73913LV,unassigned,3,Gal,b,D,p,OC,4,Galp,3
 G73930OK,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G73930OK,unassigned,16,NeuNAc,a,D,p,N6,3|6,NeupNAc,16
 G74038AG,unassigned,7,GlcNAc,b,D,p,O158,x,GlcpNAc,7
@@ -17925,6 +18209,7 @@ G74339LA,unassigned,15,Fuc,a,L,p,14,2,Fucp,15
 G74339LA,unassigned,16,GalNAc,a,D,p,14,3,GalpNAc,16
 G74368SI,unassigned,10,GlcNAc,b,D,p,N4,x,GlcpNAc,10
 G74368SI,unassigned,12,GlcNAc,b,D,p,N4,x,GlcpNAc,12
+G74371CZ,unassigned,11,acetyl,n,n,n,N12,4,acetyl,11
 G74372YP,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G74372YP,unassigned,9,NeuNAc,a,D,p,8,x,NeupNAc,9
 G74396ZF,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
@@ -17947,6 +18232,7 @@ G74429YM,unassigned,20,Gal,b,D,p,18,4,Galp,20
 G74429YM,unassigned,21,NeuNAc,a,D,p,20,3|6,NeupNAc,21
 G74471QR,unassigned,7,NeuNAc,a,D,p,x,x,NeupNAc,7
 G74473MP,unassigned,9,Gal,x,D,p,x,x,Galp,9
+G74503BE,unassigned,8,Gal,b,D,p,O581,3,Galp,8
 G74508NJ,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
 G74508NJ,unassigned,8,Gal,b,D,p,7,x,Galp,8
 G74508NJ,unassigned,11,GlcNAc,b,D,p,N4,x,GlcpNAc,11
@@ -17986,6 +18272,7 @@ G74594TP,unassigned,18,Gal,b,D,p,x,x,Galp,18
 G74605HK,unassigned,12,GlcNAc,x,D,p,N1,x,GlcpNAc,12
 G74605HK,unassigned,14,Gal,b,D,p,12,4,Galp,14
 G74605HK,unassigned,15,Gal,a,D,p,14,4,Galp,15
+G74607VK,unassigned,5,Fuc,a,L,p,O532,2,Fucp,5
 G74612QZ,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G74657OD,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G74674RX,unassigned,2,Fuc,a,L,p,NA,x,Fucp,2
@@ -17995,6 +18282,15 @@ G74674RX,unassigned,10,NeuNAc,a,D,p,9,x,NeupNAc,10
 G74674RX,unassigned,14,GlcNAc,x,D,p,N4,x,GlcpNAc,14
 G74674RX,unassigned,15,Gal,b,D,p,14,x,Galp,15
 G74674RX,unassigned,16,NeuNAc,a,D,p,15,x,NeupNAc,16
+G74678FD,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G74678FD,unassigned,6,GlcNAc,a,D,p,5,x,GlcpNAc,6
+G74678FD,unassigned,7,Gal,b,D,p,6,x,Galp,7
+G74678FD,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G74678FD,unassigned,9,GalNAc,a,D,p,7,3,GalpNAc,9
+G74678FD,unassigned,12,GlcNAc,b,D,p,5,x,GlcpNAc,12
+G74678FD,unassigned,13,Gal,b,D,p,12,x,Galp,13
+G74678FD,unassigned,14,Fuc,a,L,p,13,2,Fucp,14
+G74678FD,unassigned,15,Fuc,a,L,p,12,x,Fucp,15
 G74679FP,unassigned,3,GlcNAc,x,D,p,OC,3,GlcpNAc,3
 G74679FP,unassigned,4,Fuc,a,L,p,3,x,Fucp,4
 G74679FP,unassigned,5,Gal,b,D,p,3,x,Galp,5
@@ -18442,6 +18738,8 @@ G76055XW,unassigned,14,GlcNAc,b,D,p,10,4,GlcpNAc,14
 G76055XW,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G76055XW,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
 G76055XW,unassigned,20,Gal,b,D,p,18,3,Galp,20
+G76073CC,unassigned,4,Neu,a,D,p,OC,6,Neup,4
+G76073CC,unassigned,5,amino,n,n,n,4,5,amino,5
 G76079RC,unassigned,10,Man,a,D,p,x,x,Manp,10
 G76079RC,unassigned,11,Man,a,D,p,x,x,Manp,11
 G76079RC,unassigned,12,Man,a,D,p,x,x,Manp,12
@@ -18558,6 +18856,7 @@ G76430NK,unassigned,12,GlcNAc,b,x,p,N1,4,GlcpNAc,12
 G76430NK,unassigned,14,Gal,b,D,p,12,3,Galp,14
 G76430NK,unassigned,15,NeuNAc,a,D,p,14,3,NeupNAc,15
 G76430NK,unassigned,17,NeuNAc,a,D,p,12,6,NeupNAc,17
+G76448VA,unassigned,15,acetyl,n,n,n,N13,4,acetyl,15
 G76459TW,unassigned,23,GlcNAc,x,D,p,x,x,GlcpNAc,23
 G76459TW,unassigned,25,Gal,x,D,p,23,x,Galp,25
 G76459TW,unassigned,26,GlcNAc,x,D,p,x,x,GlcpNAc,26
@@ -18804,6 +19103,12 @@ G77371VZ,unassigned,16,GlcNAc,x,D,p,N4,x,GlcpNAc,16
 G77371VZ,unassigned,17,Gal,x,D,p,16,x,Galp,17
 G77385XQ,unassigned,15,Fuc,a,L,p,x,x,Fucp,15
 G77408FM,unassigned,17,NeuNAc,a,D,p,N6,3|6,NeupNAc,17
+G77442QN,unassigned,10,GlcNAc,b,D,p,x,x,GlcpNAc,10
+G77442QN,unassigned,12,Fuc,a,L,p,10,3,Fucp,12
+G77442QN,unassigned,13,Gal,b,D,p,10,4,Galp,13
+G77442QN,unassigned,14,NeuNAc,a,D,p,13,3,NeupNAc,14
+G77442QN,unassigned,16,NeuNAc,a,D,p,14,8,NeupNAc,16
+G77442QN,unassigned,18,phosphate,n,n,n,16,x,phosphate,18
 G77447DK,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G77447DK,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G77447DK,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -19376,6 +19681,7 @@ G79762CW,unassigned,21,GlcNAc,b,D,p,5,6,GlcpNAc,21
 G79762CW,unassigned,23,Gal,b,D,p,21,4,Galp,23
 G79762CW,unassigned,24,Fuc,a,L,p,23,2,Fucp,24
 G79762CW,unassigned,25,GalNAc,a,D,p,23,3,GalpNAc,25
+G79764DY,unassigned,4,sulfate,n,n,n,O157,x,sulfate,4
 G79794WE,unassigned,18,Gal,a,D,p,x,x,Galp,18
 G79794WE,unassigned,19,Gal,a,D,p,x,x,Galp,19
 G79798AT,unassigned,8,Gal,b,D,p,O578,3,Galp,8
@@ -19430,6 +19736,11 @@ G80155BS,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G80155BS,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G80155BS,unassigned,8,GlcNAc,x,D,p,7,x,GlcpNAc,8
 G80155BS,unassigned,9,Gal,x,D,p,8,x,Galp,9
+G80155SP,unassigned,4,GalNAc,b,D,p,OC,6,GalpNAc,4
+G80155SP,unassigned,6,Gal,b,D,p,4,4,Galp,6
+G80155SP,unassigned,7,GlcNAc,b,D,p,6,3,GlcpNAc,7
+G80155SP,unassigned,9,Gal,b,D,p,7,4,Galp,9
+G80155SP,unassigned,10,NeuNAc,a,D,p,9,3,NeupNAc,10
 G80194BT,unassigned,15,Fuc,a,L,p,x,x,Fucp,15
 G80194BT,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
 G80218BM,unassigned,6,Man,a,D,p,NC,x,Manp,6
@@ -19455,6 +19766,7 @@ G80228NL,unassigned,22,Gal,x,D,p,21,x,Galp,22
 G80276UF,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G80276UF,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
 G80276UF,unassigned,9,Man,a,D,p,NC,x,Manp,9
+G80295DJ,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G80308BA,unassigned,10,sulfate,n,n,n,O672,6,sulfate,10
 G80316IP,unassigned,10,GlcNAc,b,D,p,O158,x,GlcpNAc,10
 G80316IP,unassigned,11,Gal,b,D,p,10,x,Galp,11
@@ -19517,6 +19829,8 @@ G80678MA,unassigned,14,GlcNAc,x,D,p,13,x,GlcpNAc,14
 G80678MA,unassigned,15,Gal,x,D,p,14,x,Galp,15
 G80678MA,unassigned,19,NeuNAc,x,D,p,x,x,NeupNAc,19
 G80700YJ,unassigned,8,Fuc,a,L,p,x,x,Fucp,8
+G80729WA,unassigned,18,GlcNAc,b,D,p,x,x,GlcpNAc,18
+G80729WA,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G80733LA,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G80733LA,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G80733LA,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -19533,6 +19847,7 @@ G80735WD,unassigned,21,NeuNAc,a,D,p,20,6,NeupNAc,21
 G80735WD,unassigned,23,GlcNAc,b,D,p,N4,x,GlcpNAc,23
 G80735WD,unassigned,25,Gal,b,D,p,23,4,Galp,25
 G80735WD,unassigned,26,NeuNAc,a,D,p,25,3,NeupNAc,26
+G80738BU,unassigned,4,sulfate,n,n,n,O152,4,sulfate,4
 G80759CD,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G80767XX,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G80767XX,unassigned,7,Man,a,D,p,6,2,Manp,7
@@ -19687,6 +20002,8 @@ G81443QG,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G81443QG,unassigned,15,NeuNAc,a,D,p,N209,3|6,NeupNAc,15
 G81443QG,unassigned,21,NeuNAc,a,D,p,N6,3|6,NeupNAc,21
 G81443QG,unassigned,26,NeuNAc,a,D,p,N32,3|6,NeupNAc,26
+G81456UA,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
+G81456UA,unassigned,12,NeuNAc,a,D,p,10,8,NeupNAc,12
 G81459MV,unassigned,10,NeuNAc,x,D,p,N3,x,NeupNAc,10
 G81459MV,unassigned,16,NeuNAc,x,D,p,N6,x,NeupNAc,16
 G81486AM,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
@@ -19719,6 +20036,8 @@ G81586UQ,unassigned,21,NeuNAc,x,D,p,20,x,NeupNAc,21
 G81586UQ,unassigned,24,HexNAc,x,x,p,18,x,HexpNAc,24
 G81586UQ,unassigned,25,Hex,x,x,p,24,x,Hexp,25
 G81586UQ,unassigned,27,HexNAc,x,x,p,x,x,HexpNAc,27
+G81599LG,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G81599LG,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
 G81632WR,unassigned,10,Fuc,a,L,p,O158,x,Fucp,10
 G81650EZ,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G81650EZ,unassigned,9,NeuNAc,a,D,p,8,6,NeupNAc,9
@@ -19726,6 +20045,12 @@ G81650EZ,unassigned,13,Gal,b,D,p,N7,x,Galp,13
 G81650EZ,unassigned,14,NeuNAc,a,D,p,13,3,NeupNAc,14
 G81650EZ,unassigned,19,Gal,b,D,p,N5,x,Galp,19
 G81650EZ,unassigned,20,NeuNAc,a,D,p,19,3,NeupNAc,20
+G81677FM,unassigned,14,Gal,b,D,p,x,x,Galp,14
+G81677FM,unassigned,15,Gal,b,D,p,x,x,Galp,15
+G81677FM,unassigned,16,Gal,b,D,p,x,x,Galp,16
+G81677FM,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
+G81677FM,unassigned,19,Fuc,a,L,p,x,x,Fucp,19
+G81677FM,unassigned,20,Fuc,a,L,p,x,x,Fucp,20
 G81728BG,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G81728BG,unassigned,15,NeuNAc,a,D,p,N8,3|6,NeupNAc,15
 G81728BG,unassigned,23,NeuNAc,a,D,p,N6,3|6,NeupNAc,23
@@ -19766,7 +20091,6 @@ G81910BW,unassigned,14,GlcNAc,b,D,p,N4,x,GlcpNAc,14
 G81910BW,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G81914RV,unassigned,10,sulfate,n,n,n,N29,3|4,sulfate,10
 G81914RV,unassigned,16,sulfate,n,n,n,N30,3|4,sulfate,16
-G81947NN,unassigned,4,Gal,x,D,x,x,x,Gal,4
 G81954US,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G81954US,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G81954US,unassigned,10,GlcNAc,x,D,p,N1,x,GlcpNAc,10
@@ -19801,10 +20125,23 @@ G82159VB,unassigned,9,Fuc,a,L,p,7,3,Fucp,9
 G82159VB,unassigned,10,Gal,b,D,p,7,4,Galp,10
 G82159VB,unassigned,11,Man,a,D,p,NC,3|6,Manp,11
 G82159VB,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
+G82216JH,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
+G82216JH,unassigned,6,GlcNAc,b,D,p,5,3|6,GlcpNAc,6
+G82216JH,unassigned,7,Gal,b,D,p,6,3|4,Galp,7
+G82216JH,unassigned,8,Fuc,a,L,p,7,2,Fucp,8
+G82216JH,unassigned,9,GalNAc,a,D,p,7,3,GalpNAc,9
+G82216JH,unassigned,12,GlcNAc,b,D,p,5,3|6,GlcpNAc,12
+G82216JH,unassigned,13,Gal,b,D,p,12,3|4,Galp,13
+G82216JH,unassigned,14,Fuc,a,L,p,13,2,Fucp,14
+G82216JH,unassigned,15,Fuc,a,L,p,12,3|4,Fucp,15
 G82251XS,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
 G82251XS,unassigned,17,GlcNAc,b,D,p,x,x,GlcpNAc,17
 G82251XS,unassigned,19,Gal,b,D,p,17,4,Galp,19
 G82251XS,unassigned,20,NeuNAc,a,D,p,19,3|6,NeupNAc,20
+G82251ZP,unassigned,6,Gal,a,D,p,O153,3,Galp,6
+G82251ZP,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
+G82251ZP,unassigned,8,GlcNAc,b,D,p,6,3,GlcpNAc,8
+G82251ZP,unassigned,12,Gal,a,D,p,O538,3,Galp,12
 G82264VK,unassigned,4,GlcNAc,b,D,p,O152,x,GlcpNAc,4
 G82264VK,unassigned,6,Gal,b,D,p,4,4,Galp,6
 G82273ZM,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
@@ -19879,6 +20216,7 @@ G82514MH,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G82514MH,unassigned,10,GlcNAc,x,D,p,N4,x,GlcpNAc,10
 G82514MH,unassigned,13,Gal,x,D,p,x,x,Galp,13
 G82514MH,unassigned,14,NeuNAc,a,D,p,13,6,NeupNAc,14
+G82528MC,unassigned,11,acetyl,n,n,n,N12,4,acetyl,11
 G82531JQ,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G82531JQ,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
 G82531JQ,unassigned,9,GlcNAc,b,D,p,6,x,GlcpNAc,9
@@ -20275,12 +20613,16 @@ G84064VM,unassigned,7,Gal,x,D,p,O157,x,Galp,7
 G84106ZV,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G84122DM,unassigned,8,Gal,x,D,p,O157,x,Galp,8
 G84122DM,unassigned,9,GlcNAc,a,D,p,8,3,GlcpNAc,9
+G84122EI,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
+G84122EI,unassigned,19,Fuc,a,L,p,x,x,Fucp,19
 G84155GY,unassigned,9,Man,x,D,p,x,x,Manp,9
 G84155GY,unassigned,10,Man,x,D,p,x,x,Manp,10
 G84160ZT,unassigned,6,Xyl,b,D,f,NC,x,Xylf,6
 G84160ZT,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G84160ZT,unassigned,8,Man,a,D,p,NC,x,Manp,8
 G84160ZT,unassigned,9,Man,a,D,p,8,x,Manp,9
+G84165BQ,unassigned,11,NeuNAc,a,D,p,N29,x,NeupNAc,11
+G84165BQ,unassigned,17,NeuNAc,a,D,p,N6,x,NeupNAc,17
 G84181KU,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G84181KU,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
 G84181KU,unassigned,8,Gal,b,D,p,7,x,Galp,8
@@ -20413,6 +20755,9 @@ G84753OK,unassigned,14,GlcNAc,b,D,p,13,2,GlcpNAc,14
 G84753OK,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G84753OK,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G84753OK,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G84754BQ,unassigned,15,Gal,b,D,p,x,x,Galp,15
+G84754BQ,unassigned,16,NeuNAc,a,D,p,15,x,NeupNAc,16
+G84754BQ,unassigned,18,NeuNAc,a,D,p,16,x,NeupNAc,18
 G84756CG,unassigned,20,GlcNAc,b,D,p,x,x,GlcpNAc,20
 G84756CG,unassigned,22,Gal,b,D,p,20,4,Galp,22
 G84756CG,unassigned,23,GlcNAc,b,D,p,x,x,GlcpNAc,23
@@ -20423,6 +20768,7 @@ G84756VW,unassigned,9,GlcNAc,b,D,p,6,4,GlcpNAc,9
 G84756VW,unassigned,11,Man,a,D,p,NC,x,Manp,11
 G84756VW,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G84756VW,unassigned,14,GlcNAc,b,D,p,11,6,GlcpNAc,14
+G84791TM,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
 G84811LS,unassigned,2,Fuc,x,L,p,NA,x,Fucp,2
 G84811LS,unassigned,7,Man,a,D,p,NC,x,Manp,7
 G84811LS,unassigned,8,Man,a,D,p,NC,x,Manp,8
@@ -20472,6 +20818,7 @@ G85122WC,unassigned,16,Gal,b,D,p,N5,3|4,Galp,16
 G85122WC,unassigned,17,NeuNAc,a,D,p,16,3|6,NeupNAc,17
 G85139RC,unassigned,15,Man,a,D,p,x,x,Manp,15
 G85139RC,unassigned,16,Man,a,D,p,x,x,Manp,16
+G85143CH,unassigned,10,NeuNAc,a,D,p,N488,x,NeupNAc,10
 G85176IW,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G85192EG,unassigned,10,NeuNGc,a,D,p,N3,3|6,NeupNGc,10
 G85192EG,unassigned,16,NeuNGc,a,D,p,N6,3|6,NeupNGc,16
@@ -20522,6 +20869,7 @@ G85310SF,unassigned,5,Gal,x,D,p,O153,x,Galp,5
 G85310SF,unassigned,6,GlcNAc,a,D,p,5,4,GlcpNAc,6
 G85310SF,unassigned,10,Gal,x,D,p,O157,x,Galp,10
 G85310SF,unassigned,11,GlcNAc,a,D,p,10,4,GlcpNAc,11
+G85401TI,unassigned,16,NeuNAc,a,D,p,x,x,NeupNAc,16
 G85425ER,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G85425ER,unassigned,7,Man,a,D,p,6,3,Manp,7
 G85425ER,unassigned,8,Man,a,D,p,6,6,Manp,8
@@ -20662,6 +21010,8 @@ G86022PE,unassigned,21,GlcNAc,b,D,p,x,x,GlcpNAc,21
 G86022PE,unassigned,23,Gal,b,D,p,21,4,Galp,23
 G86022PE,unassigned,24,NeuNAc,a,D,p,x,x,NeupNAc,24
 G86022PE,unassigned,26,NeuNAc,a,D,p,x,x,NeupNAc,26
+G86050NV,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
+G86050NV,unassigned,5,NeuNAc,a,D,p,OC,x,NeupNAc,5
 G86065DJ,unassigned,3,Fuc,x,L,p,NA,3,Fucp,3
 G86065DJ,unassigned,7,Xyl,x,D,p,NC,x,Xylp,7
 G86065DJ,unassigned,8,Man,a,D,p,NC,x,Manp,8
@@ -20739,6 +21089,8 @@ G86368KM,unassigned,16,Gal,b,D,p,14,4,Galp,16
 G86375CM,unassigned,5,Fuc,a,L,p,O153,x,Fucp,5
 G86375CM,unassigned,6,Gal,b,D,p,O153,x,Galp,6
 G86375CM,unassigned,7,Fuc,a,L,p,6,2,Fucp,7
+G86387VT,unassigned,5,Gal,b,D,p,O153,x,Galp,5
+G86387VT,unassigned,6,Fuc,a,L,p,5,2,Fucp,6
 G86389LM,unassigned,5,GalNAc,b,D,p,O153,x,GalpNAc,5
 G86399IJ,unassigned,8,Man,a,D,p,N4,3|6,Manp,8
 G86401DW,unassigned,31,NeuNAc,a,D,p,x,x,NeupNAc,31
@@ -20791,6 +21143,8 @@ G86705PH,unassigned,11,Man,a,D,p,NC,x,Manp,11
 G86705PH,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G86705PH,unassigned,14,Gal,b,D,p,12,4,Galp,14
 G86705PH,unassigned,15,NeuNAc,a,D,p,x,x,NeupNAc,15
+G86713OE,unassigned,11,NeuNAc,a,D,p,N3,3|6,NeupNAc,11
+G86713OE,unassigned,13,NeuNAc,a,D,p,11,8,NeupNAc,13
 G86718PI,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G86718PI,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G86718PI,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -21010,6 +21364,11 @@ G87727MU,unassigned,12,Man,a,D,p,10,6,Manp,12
 G87743LS,unassigned,11,GlcNAc,b,D,p,N4,2|6,GlcpNAc,11
 G87743LS,unassigned,13,Gal,b,D,p,11,4,Galp,13
 G87743LS,unassigned,14,GlcNAc,b,D,p,N4,2|6,GlcpNAc,14
+G87755UZ,unassigned,9,Gal,b,D,p,O721,3,Galp,9
+G87755UZ,unassigned,10,Fuc,a,L,p,9,2,Fucp,10
+G87755UZ,unassigned,13,Gal,b,D,p,O722,3,Galp,13
+G87755UZ,unassigned,14,Fuc,a,L,p,13,2,Fucp,14
+G87755UZ,unassigned,15,Fuc,a,L,p,O722,4,Fucp,15
 G87769EG,unassigned,12,Gal,b,D,p,x,x,Galp,12
 G87802WG,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G87802WG,unassigned,8,GlcNAc,x,D,p,7,x,GlcpNAc,8
@@ -21099,6 +21458,7 @@ G88216WD,unassigned,7,Gal,a,D,p,O555,3,Galp,7
 G88229ZV,unassigned,8,HexNAc,b,x,p,N2,x,HexpNAc,8
 G88229ZV,unassigned,10,NeuNAc,a,D,p,8,6,NeupNAc,10
 G88235NV,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
+G88263BY,unassigned,3,Gal,b,D,p,OC,4,Galp,3
 G88325OQ,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G88325OQ,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G88325OQ,unassigned,9,GlcNAc,x,D,p,6,x,GlcpNAc,9
@@ -21671,6 +22031,7 @@ G90700NG,unassigned,11,Xyl,x,D,f,NC,x,Xylf,11
 G90717TP,unassigned,15,Gal,b,D,p,x,x,Galp,15
 G90743AT,unassigned,7,GlcNAc,x,D,p,N1,2,GlcpNAc,7
 G90743AT,unassigned,10,GlcNAc,x,D,p,N4,2,GlcpNAc,10
+G90764JW,unassigned,11,NeuNAc,a,D,p,N3,x,NeupNAc,11
 G90789YQ,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G90789YQ,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G90789YQ,unassigned,10,GlcNAc,x,D,p,N1,x,GlcpNAc,10
@@ -21750,6 +22111,7 @@ G90999QY,unassigned,10,GlcNAc,b,D,p,O670,6,GlcpNAc,10
 G90999QY,unassigned,11,Gal,b,D,p,10,3|4,Galp,11
 G91005JW,unassigned,10,NeuNAc,a,D,p,N44,x,NeupNAc,10
 G91005JW,unassigned,18,NeuNAc,a,D,p,N6,x,NeupNAc,18
+G91021AJ,unassigned,4,sulfate,n,n,n,O152,x,sulfate,4
 G91047NA,unassigned,5,Gal,b,D,p,O153,x,Galp,5
 G91047NA,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
 G91047NA,unassigned,8,Gal,b,D,p,6,3,Galp,8
@@ -21871,6 +22233,7 @@ G91474LB,unassigned,7,NeuNAc,a,D,p,6,3,NeupNAc,7
 G91503PY,unassigned,8,Gal,b,D,p,N2,x,Galp,8
 G91503PY,unassigned,12,Gal,b,D,p,N5,x,Galp,12
 G91503PY,unassigned,15,NeuNAc,a,D,p,x,x,NeupNAc,15
+G91508RU,unassigned,11,acetyl,n,n,n,N12,4,acetyl,11
 G91517AG,unassigned,14,NeuNAc,a,D,p,N6,x,NeupNAc,14
 G91518YX,unassigned,13,GlcNAc,b,D,p,x,x,GlcpNAc,13
 G91591MO,unassigned,14,Fuc,x,L,p,NA,6,Fucp,14
@@ -22013,6 +22376,8 @@ G92289SP,unassigned,23,GlcNAc,b,D,p,x,x,GlcpNAc,23
 G92289SP,unassigned,25,Gal,b,D,p,23,4,Galp,25
 G92337QR,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G92337QR,unassigned,19,Fuc,a,L,p,x,x,Fucp,19
+G92348LW,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
+G92348LW,unassigned,17,Fuc,a,L,p,x,x,Fucp,17
 G92389OS,unassigned,4,Gal,b,D,p,O156,x,Galp,4
 G92389OS,unassigned,5,GlcNAc,b,D,p,4,3,GlcpNAc,5
 G92389OS,unassigned,6,Gal,b,D,p,5,x,Galp,6
@@ -22034,6 +22399,9 @@ G92466QX,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G92466QX,unassigned,10,Man,a,D,p,NC,x,Manp,10
 G92466QX,unassigned,11,Man,x,D,p,10,x,Manp,11
 G92500KM,unassigned,9,GlcNAc,b,D,p,N1,x,GlcpNAc,9
+G92527PR,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
+G92527PR,unassigned,12,NeuNAc,a,D,p,10,x,NeupNAc,12
+G92527PR,unassigned,15,Man,a,D,p,N4,x,Manp,15
 G92534LG,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G92534LG,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G92534LG,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -22209,6 +22577,7 @@ G93412AQ,unassigned,8,Gal,b,D,p,N2,3|4,Galp,8
 G93412AQ,unassigned,9,Fuc,a,L,p,8,2,Fucp,9
 G93412AQ,unassigned,10,GalNAc,a,D,p,8,3,GalpNAc,10
 G93412AQ,unassigned,12,Fuc,a,L,p,N2,3|4,Fucp,12
+G93438EY,unassigned,12,Man,a,D,p,N4,x,Manp,12
 G93450CE,unassigned,5,Gal,b,D,p,O153,3|4,Galp,5
 G93450CE,unassigned,6,GlcNAc,b,D,p,5,3,GlcpNAc,6
 G93450CE,unassigned,7,Gal,b,D,p,6,3|4,Galp,7
@@ -22339,6 +22708,7 @@ G93856AJ,unassigned,11,Man,a,D,p,NC,x,Manp,11
 G93856AJ,unassigned,12,GlcNAc,b,D,p,11,2,GlcpNAc,12
 G93856AJ,unassigned,14,Gal,b,D,p,12,4,Galp,14
 G93856AJ,unassigned,16,Fuc,a,L,p,x,x,Fucp,16
+G93857UP,unassigned,13,Man,a,D,p,N4,x,Manp,13
 G93860XO,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G93860XO,unassigned,7,GlcNAc,x,D,p,6,x,GlcpNAc,7
 G93860XO,unassigned,8,Gal,x,D,p,7,x,Galp,8
@@ -22623,6 +22993,8 @@ G94873VZ,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
 G94873VZ,unassigned,8,Gal,x,D,p,7,x,Galp,8
 G94873VZ,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
 G94873VZ,unassigned,12,Gal,x,D,p,11,x,Galp,12
+G94937SR,unassigned,18,Fuc,a,L,p,x,x,Fucp,18
+G94937SR,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
 G94973XS,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G94973XS,unassigned,22,NeuNAc,a,D,p,x,x,NeupNAc,22
 G94989HM,unassigned,7,GlcNAc,x,D,p,N1,x,GlcpNAc,7
@@ -22635,6 +23007,8 @@ G94989HM,unassigned,17,GlcNAc,x,D,p,N4,x,GlcpNAc,17
 G94989HM,unassigned,19,Gal,b,D,p,17,4,Galp,19
 G94989HM,unassigned,20,GlcNAc,x,D,p,x,x,GlcpNAc,20
 G94989HM,unassigned,22,Gal,b,D,p,20,4,Galp,22
+G95000MR,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
+G95000MR,unassigned,12,NeuNAc,a,D,p,10,8,NeupNAc,12
 G95010JN,unassigned,6,Man,a,D,p,NC,3|6,Manp,6
 G95010JN,unassigned,7,GlcNAc,b,D,p,6,2,GlcpNAc,7
 G95010JN,unassigned,9,GlcNAc,b,D,p,6,4,GlcpNAc,9
@@ -22767,6 +23141,7 @@ G95660LN,unassigned,9,NeuNAc,a,D,p,8,x,NeupNAc,9
 G95660LN,unassigned,13,GlcNAc,x,D,p,N4,x,GlcpNAc,13
 G95660LN,unassigned,14,Gal,b,D,p,13,x,Galp,14
 G95660LN,unassigned,15,NeuNAc,a,D,p,14,x,NeupNAc,15
+G95675JM,unassigned,4,Gal,b,D,p,OC,4,Galp,4
 G95715FI,unassigned,7,NeuNAc,a,D,p,O655,3,NeupNAc,7
 G95720YT,unassigned,9,Man,a,D,p,x,x,Manp,9
 G95721QY,unassigned,7,Man,a,D,p,NC,x,Manp,7
@@ -22866,6 +23241,7 @@ G96373XG,unassigned,11,GlcNAc,x,D,p,N4,x,GlcpNAc,11
 G96373XG,unassigned,12,Gal,x,D,p,11,x,Galp,12
 G96373XG,unassigned,14,NeuNGc,x,D,p,x,x,NeupNGc,14
 G96396MI,unassigned,8,Gal,b,D,p,N2,x,Galp,8
+G96409DQ,unassigned,4,GalNAc,b,D,p,OC,6,GalpNAc,4
 G96430HF,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G96430HF,unassigned,7,Man,a,D,p,6,x,Manp,7
 G96430HF,unassigned,8,Man,a,D,p,6,x,Manp,8
@@ -23084,6 +23460,8 @@ G97286VY,unassigned,10,NeuNAc,a,D,p,N3,x,NeupNAc,10
 G97286VY,unassigned,15,NeuNAc,a,D,p,N8,x,NeupNAc,15
 G97286VY,unassigned,21,NeuNAc,a,D,p,N6,x,NeupNAc,21
 G97317HP,unassigned,19,Gal,a,D,p,x,x,Galp,19
+G97363HP,unassigned,13,Gal,b,D,p,x,x,Galp,13
+G97363HP,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G97367IY,unassigned,14,Gal,b,D,p,x,x,Galp,14
 G97367IY,unassigned,15,Gal,b,D,p,x,x,Galp,15
 G97369LO,unassigned,6,Man,a,D,p,NC,x,Manp,6
@@ -23130,6 +23508,7 @@ G97489LK,unassigned,12,GlcNAc,b,x,p,N1,4,GlcpNAc,12
 G97489LK,unassigned,14,Gal,b,D,p,12,3,Galp,14
 G97489LK,unassigned,15,NeuNAc,a,D,p,14,3,NeupNAc,15
 G97489LK,unassigned,17,NeuNAc,a,D,p,12,6,NeupNAc,17
+G97529OC,unassigned,3,Gal,b,D,p,OC,4,Galp,3
 G97539CG,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G97539CG,unassigned,15,NeuNAc,a,D,p,N8,3|6,NeupNAc,15
 G97539CG,unassigned,21,NeuNAc,a,D,p,N6,3|6,NeupNAc,21
@@ -23199,6 +23578,9 @@ G97693ZT,unassigned,9,Man,a,D,p,NC,x,Manp,9
 G97693ZT,unassigned,10,GlcNAc,b,D,p,9,2,GlcpNAc,10
 G97693ZT,unassigned,12,Gal,b,D,p,10,4,Galp,12
 G97693ZT,unassigned,13,Gal,a,D,p,12,3,Galp,13
+G97764XA,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G97764XA,unassigned,21,NeuNAc,a,D,p,x,x,NeupNAc,21
+G97764XA,unassigned,23,NeuNAc,a,D,p,x,x,NeupNAc,23
 G97781PB,unassigned,7,GalNAc,b,D,p,O622,4,GalpNAc,7
 G97798SS,unassigned,8,GlcNAc,b,D,p,x,x,GlcpNAc,8
 G97798SS,unassigned,10,Fuc,a,L,p,8,3,Fucp,10
@@ -23299,6 +23681,7 @@ G97938ZK,unassigned,13,Man,a,D,p,x,x,Manp,13
 G97938ZK,unassigned,14,Man,a,D,p,x,x,Manp,14
 G97967SD,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
 G97967SD,unassigned,15,NeuNAc,a,D,p,N209,3|6,NeupNAc,15
+G97972BA,unassigned,4,sulfate,n,n,n,O152,4,sulfate,4
 G97980DR,unassigned,6,Man,a,D,p,NC,x,Manp,6
 G97980DR,unassigned,7,GlcNAc,b,D,p,6,x,GlcpNAc,7
 G97980DR,unassigned,9,Gal,b,D,p,7,4,Galp,9
@@ -23497,6 +23880,7 @@ G98481KT,unassigned,20,NeuNAc,a,D,p,x,x,NeupNAc,20
 G98481KT,unassigned,22,NeuNGc,a,D,p,x,x,NeupNGc,22
 G98516TP,unassigned,17,NeuNAc,a,D,p,x,x,NeupNAc,17
 G98516TP,unassigned,19,NeuNAc,a,D,p,x,x,NeupNAc,19
+G98518WL,unassigned,14,Fuc,a,L,p,O663,2,Fucp,14
 G98535LH,unassigned,4,NeuNAc,x,D,p,O152,x,NeupNAc,4
 G98536AW,unassigned,9,Glc,a,x,x,N22,3,Glc,9
 G98536AW,unassigned,10,Glc,a,x,x,9,3,Glc,10
@@ -23647,6 +24031,8 @@ G99041WC,unassigned,12,sulfate,n,n,n,O672,6,sulfate,12
 G99102GZ,unassigned,9,Glc,x,D,p,N22,3,Glcp,9
 G99102GZ,unassigned,10,Glc,x,D,p,9,3,Glcp,10
 G99110FH,unassigned,10,NeuNAc,a,D,p,N3,3|6,NeupNAc,10
+G99137GH,unassigned,7,Fuc,b,L,p,O157,6,Fucp,7
+G99137GH,unassigned,8,NeuNAc,a,D,p,x,x,NeupNAc,8
 G99220BF,unassigned,7,GlcNAc,b,D,p,N1,x,GlcpNAc,7
 G99220BF,unassigned,8,Gal,b,D,p,7,x,Galp,8
 G99220BF,unassigned,10,GlcNAc,b,D,p,N1,x,GlcpNAc,10

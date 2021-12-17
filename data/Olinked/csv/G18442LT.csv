@@ -1,8 +1,0 @@
-glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
-G18442LT,unassigned,11,NeuNAc,x,D,x,x,x,NeuNAc
-G18442LT,unassigned,1,Hex,x,x,x,0,0,Hex
-G18442LT,unassigned,2,Hex,x,x,x,x,x,Hex
-G18442LT,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
-G18442LT,unassigned,5,HexNAc,x,x,x,x,x,HexNAc
-G18442LT,unassigned,7,HexNAc,x,x,x,x,x,HexNAc
-G18442LT,unassigned,9,HexNAc,x,x,x,x,x,HexNAc

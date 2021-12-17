@@ -1,0 +1,14 @@
+glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
+G03944IG,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
+G03944IG,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
+G03944IG,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
+G03944IG,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
+G03944IG,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
+G03944IG,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,14,,,validated by Qrator,,PMID: 25165152
+G03944IG,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,15,,,validated by Qrator,,PMID: 25165163
+G03944IG,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,17,,,validated by Qrator,,PMID: 25165174
+G03944IG,N-glycan_b-D-GlcpNAc_7,N7,GlcNAc,b,D,p,N1,4,GlcpNAc,11,,,validated by Qrator,,PMID: 25165185,Not a valid node
+G03944IG,N-glycan_b-D-Galp_8,N8,Gal,b,D,p,N7,4,Galp,13,,,validated by Qrator,,PMID: 25165195
+G03944IG,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,18,,,validated by Qrator,,PMID: 25165122
+G03944IG,N-glycan_b-D-GalpNAc_29,N29,GalNAc,b,D,p,N2,4,GalpNAc,9,,,validated by Qrator,,PMID: 25165140
+G03944IG,unassigned,19,Fuc,a,L,p,x,x,Fucp,19

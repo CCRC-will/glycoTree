@@ -1,3 +1,0 @@
-RES
-1b:x-HEX-x:x
-2b:x-lgal-HEX-x:x|6:d

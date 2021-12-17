@@ -1,7 +1,0 @@
-RES
-1b:x-dglc-HEX-x:x
-2s:n-acetyl
-3b:o-HEX-x:x|1:aldi
-4b:x-dgal-HEX-x:x
-LIN
-1:1d(2+1)2n

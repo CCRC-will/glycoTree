@@ -1,5 +1,0 @@
-glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
-G23341KY,unassigned,1,none,x,x,x,0,0,none
-G23341KY,unassigned,2,amino,n,n,n,1,5,amino
-G23341KY,unassigned,3,HexNAc,x,x,x,x,x,HexNAc
-G23341KY,unassigned,5,Hex,x,x,x,x,x,Hex

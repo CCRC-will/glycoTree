@@ -1,5 +1,0 @@
-glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName
-G53790NZ,unassigned,1,Gal,x,D,x,0,0,Gal
-G53790NZ,unassigned,2,Neu,x,D,x,x,x,Neu
-G53790NZ,unassigned,3,amino,n,n,n,2,5,amino
-G53790NZ,unassigned,4,GalNAc,x,D,x,x,x,GalNAc

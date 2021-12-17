@@ -1,7 +1,0 @@
-RES
-1b:x-dgal-HEX-x:x
-2b:x-dgal-HEX-x:x
-3s:n-acetyl
-4s:sulfate
-LIN
-1:2d(2+1)3n
