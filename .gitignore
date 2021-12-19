@@ -19,6 +19,11 @@ data/und/
 data/gct/
 data/svg/
 data/bak/
+data/Nlinked/
+data/Olinked/
+data/input_N/
+data/input_O/
+data/mapped/
 model/bak/
 model/nodes/
 model/json/match/

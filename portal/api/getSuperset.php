@@ -43,6 +43,8 @@ try {
 		exit("connection failure");
 	}
 	
+	$output = [];
+	$probe_found = 0;
 	$bitData = [];
 	$probe_b64 = "";
 	$bit_query = "SELECT * FROM bitSet"; 
@@ -53,9 +55,17 @@ try {
 		$bitData[$row['glytoucan_ac']] = $row['base64_composition'];
 		if ($row['glytoucan_ac'] == $acc) {
 			$probe_b64 = $row['base64_composition'];
+			$probe_found = 1;
 		}
 	}
 	
+	if ($probe_found == 0) {
+		$output['glytoucan_ac'] = $acc;
+		$output['error'] = "Accession '" . $acc . "' was not found in the DB";
+		if ($head == "1") header('Content-Type: application/json; charset=utf-8');
+		echo json_encode($output, JSON_PRETTY_PRINT);
+		exit("");
+	}
 	//echo "\n### Fetched " . sizeof($bitData) . " data sets ###";
 	// echo "\n    data set for " . $acc . " is: \n" . $probe_b64;
 	
@@ -64,6 +74,7 @@ try {
 	// echo "\nprobeFuzzy is " . $probeFuzzy;
 	// fuzziness is specified: clear(0) to facilitate logic
 	$probe_bs->clear(0);
+
 	$cp = $probe_bs->cardinality();
 
 	$extended = [];
@@ -72,6 +83,7 @@ try {
 	$extended_fuzzy = [];
 	$record = [];
 	
+	$counter = 0;
 	foreach($bitData as $a => $data) {
 		$target_bs = new BitSet($data, "base64");
 		$targetFuzzy = checkFuzzy($target_bs);
@@ -82,7 +94,6 @@ try {
 		$cAnd = $target_bs->cardinality(); // i.e., the number of common bits
 		// cp, ct, and cAnd hold information for classifying targets
 
-		
 		if (!$probeFuzzy) { // process probes that are NOT fuzzy
 			if (!$targetFuzzy) {
 				// neither probe nor target are fuzzy: and logic is easy
@@ -119,7 +130,7 @@ try {
 		}
 	}
 	
-	$output = [];
+	$output['message'] = "some valid results may not be in the DB (e.g., G15407YE [Man-GlcNAc-GlcNAc] or G57321FI [GalNAc])";
 	$output['glytoucan_ac'] = $acc;
 	$output['bit_sets'] = sizeof($bitData);
 	$output['identical'] = $identical;
