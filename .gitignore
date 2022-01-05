@@ -30,6 +30,7 @@ model/json/match/
 model/json/complete/
 model/commands.txt
 code/bak/
+portal/api/temp/
 portal/wtf.php
 portal/api/paths/allPaths.json
 portal/api/paths/testCM.php

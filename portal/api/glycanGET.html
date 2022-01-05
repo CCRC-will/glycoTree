@@ -9,10 +9,10 @@
 function getData(type, accession) {
 	var thisURL = window.location;
 	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" + thisURL.pathname.split('/')[1];
-	var url = urlBase + "/api/glycan-v3.php?ac=" + accession;
+	var url = urlBase + "/api/glycan-v4.php?ac=" + accession;
 	var msg = "<p><b>API for this query (GET method):</b><br>" + url + "</p>";
 
-	$.get("glycan-v3.php",
+	$.get("glycan-v4.php",
 	{
 		ac: accession
 	},

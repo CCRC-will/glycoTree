@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+	
+<TITLE>GlycoTree Check Structure API Test</TITLE>
+
+<style>
+svg.downloader {
+	vertical-align: text-top;
+	height: 20px;
+	width: 20px;
+}
+	
+span.clickable {
+	cursor: pointer;
+	text-decoration: underline;
+	color: blue;
+}
+	
+span.clickable:visited {
+  color: red;
+}
+</style>
+	
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../js/json2svg_v1.4.js"></script>
+<script src="../js/jquery-3.5.1.min.js"></script>
+
+<script>
+
+var v = 0;
+// var probeSVG = "";
+var configPath = "../json/sugars.json";
+var probeSVG = "";
+var probeData = null;
+var url = "";
+	
+function fetchConfiguration(theURL) {
+	$.get(theURL, function(result){
+		if (v > 3) {
+			console.log("  fetched sugar configuration data from " +
+							theURL + ":\n  " + result);
+		}
+		if (theURL.includes(".json")) {
+			// jquery automatically parses files with extension '.json'
+			conf = result;
+		} else {
+			// JSON.parse is not automatically invoked
+			conf = JSON.parse(result);
+		}
+	});
+	
+} // end of function fetchConfiguration()
+	
+	
+// this is not a general download function - specific for glycotree glycans
+function downloadProbeData(selector) {
+	if (v > 5) {
+		console.log("### inside downloadProbeData()");
+		console.log("svg encoding\n" + probeSVG);
+		console.log("probe data\n" + probeData);
+	}
+	
+	var filename = "";
+	var dType = selector.value;
+	var content = "";
+	var json2Download = JSON.stringify(probeData, undefined, 2);
+	var acc = probeData['glytoucan_ac'];
+	if (dType == "svg") {
+		content = encodeURIComponent(probeSVG); // probeSVG is global
+		filename = acc + ".svg";
+	}
+	if (dType == "json") {
+		content = encodeURIComponent(json2Download);
+		filename = acc + ".json";
+	}
+	
+	var da = document.createElement('a');
+	// for svg, error occurs if there is a space between the comma and the content
+	da.setAttribute('href','data:text/' + dType + ',' + content);
+	da.setAttribute('download', filename);
+	document.body.appendChild(da);
+	da.click();
+	selector.value = "none";
+	document.body.removeChild(da);
+} // end of function downloadProbeData()
+	
+	
+function generateResultsText(probeData) {
+	probeTree = plantTree(probeData);
+	if (v > 4) logTree(probeTree);
+	probeSVG = layout(probeTree); // global for download
+	var id = probeData['glytoucan_ac'];
+	var txt = "<h2>This structure has been assigned a temporary id: [" + id + "]</h2>";
+	txt += probeSVG + "<br>";
+	txt += "<svg xmlns:xlink='http://www.w3.org/1999/xlink' \n\
+xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
+  <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z' fill='rgb(67,118,278)'> \n\
+  </path> \n\
+</svg> \n"
+
+	txt += "<select name='selDown' id='selDown' onchange=\"downloadProbeData(this);\" class='downloader'>";
+
+	txt += "<option value='none' selected disabled hidden>DOWNLOAD</option> \n\
+  <option value='svg'>SVG Image</option> \n\
+  <option value='json'>Glycan Data</option> \n\
+</select> \n";
+	
+	var caveats = probeData['caveats'];
+	for (i = 0; i < caveats.length; i++) {
+		txt += "<br><br><b>Caveat:</b> " + caveats[i]['msg'];
+	}
+	
+	var identical = probeData['related_glycans']['identical'];
+	txt += "<br><br><b>" + identical.length +
+		" glycan(s) in the DB have the same canonical residue composition:</b>";
+	for (i = 0; i < identical.length; i++) {
+		var id = identical[i]['id'];
+		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
+	}
+	
+	var extended = probeData['related_glycans']['extended'];
+	txt += "<br><br><b>" + identical.length +
+		" glycan(s) in the DB can be made by extending the structure with canonical residues:</b>";
+	for (i = 0; i < extended.length; i++) {
+		id = extended[i]['id'];
+		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
+	}
+	
+	var extendedFuzzy = probeData['related_glycans']['extended_fuzzy'];
+	txt += "<br><br><b>" + extendedFuzzy.length +
+		" glycan(s) in the DB can be made by extending the structure with non-canonical residues:</b>";
+	for (i = 0; i < extendedFuzzy.length; i++) {
+		id = extendedFuzzy[i]['id'];
+		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
+	}
+	
+	var pruned = probeData['related_glycans']['pruned'];
+	txt += "<br><br><b>" + pruned.length +
+		" glycan(s) in the DB are composed exclusively of canonical residues and can be made by pruning the structure:</b>";
+	for (i = 0; i < pruned.length; i++) {
+		id = pruned[i]['id'];
+		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
+	}
+	
+	return(txt);
+} // end of function generateResultsText()
+
+	
+	
+function processProbe(probeData) {
+	var txt = generateResultsText(probeData);
+	$("#result_div").html(txt);
+} // end of function processProbe()
+	
+	
+function showQueryURL() {
+	alert("Use this url to query the API directly:\n\n" + url);
+}
+	
+	
+function getProbeData(glycoct, glycanType) {
+	if (!glycoct.startsWith("RES")) {
+		$("#result_div").html("<h2>Invalid GlycoCT Encoding</h2>'" + glycoct + "'");
+		return(-1);
+	}
+	$("#result_div").html("<h2>Checking Structure</h2>");
+	var thisURL = window.location;
+	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" +
+		 thisURL.pathname.split('/')[1];
+	// convert line feeds to spaces
+	var glycoct = glycoct.replace(/(?:\r\n|\r|\n)/g, ' ');
+	// need to encode + characters: use encodeURIComponent rather than encodeURI
+	var encoding = encodeURIComponent(glycoct);
+	// url is global
+	url = urlBase + "/api/checkers.php?glycoct=" + encoding +
+		 "&type=" + glycanType;
+	urlTxt = "<span id='show_query' class='clickable'>Show Query</span> &nbsp;" +
+		" <a href=\"" + url + "\" target=\"_blank\">Direct Query</a>";
+	$("#url_div").html(urlTxt);
+	document.getElementById("show_query").onclick=function() {showQueryURL()};
+	$.get(url,
+	function(result){
+		probeData = JSON.parse(result); // global for download
+		processProbe(probeData);		
+	})
+	.done(function() {
+		// alert( "yes, success" );
+	})
+	.fail(function() {
+		$("#result_div").html("<h2>Error retrieving data for input structure</h2>");
+	})
+	.always(function() {
+		// alert( "finished" );
+	});
+} // end of function getProbeData()
+	
+
+// plantTree() returns a JS data object containing only those elements 
+//   required for encoding the SVG image of the glycan
+//  treeData is a JS data object directly produced when JSON.parse()
+// 	is applied to the input JSON data
+function plantTree(treeData) {
+	if (v > 5) console.log("@@@ planting tree:  " + treeData['glytoucan_ac']);
+	//  extract information and populate the object 'tree'
+	// tree is the data object consumed by json2svg
+	var tree = new Array();
+	tree['accession'] = treeData.glytoucan_ac;
+	tree['nodes'] = new Array();
+	// treeData is original data from json file 
+	//   for this example, the nodes are called 'residues' in the original
+	var residues = treeData.residues; // residues is the local name of the array
+	for (var i=0; i < residues.length; i++) {
+		var node = new Array(); // this array will be an element of object 'tree'
+		var nameParts = residues[i].name.split("-");
+		node["node_id"] = residues[i].residue_id;
+		node["name"] = nameParts[0];
+		node["substituent"] = "";
+		if (nameParts.length > 1) { // the residue has a substituent
+			node["substituent"] = nameParts[1];
+		}
+		node["parent_id"] = residues[i].parent_id;
+		node["anomer"] = residues[i].anomer;
+		node["absolute"] = residues[i].absolute;
+		node["ring"] = residues[i].ring;
+		node["site"] = residues[i].site;
+		node['touched'] = false;
+		tree['nodes'].push(node);
+	}
+	return (tree);
+} // end of function plantTree()
+	
+	
+	
+$(document).ready(function() {
+	$("#check_it").click(function() {
+		var glycoct = $("#glycoct").val();
+		var glycanType = $("#treeid").val();
+		fetchConfiguration(configPath);
+		getProbeData(glycoct, glycanType);
+	});
+	
+});	
+
+	
+</script>
+	
+</head>
+<body>
+<center>
+<h2>Check Structure</h2>
+<label for="treeid">Choose a tree:</label>
+<select name="treeid" id="treeid">
+  <option value="N">N-linked glycan</option>
+  <option value="O">O-linked (mucin) glycan</option>
+</select> <br>
+	
+<label for="glycoct">GlycoCT:</label><br>
+<textarea id="glycoct" name="glycoct" rows="9" cols="40">RES
+1b:b-dglc-HEX-1:5
+2s:n-acetyl
+3b:a-dgal-HEX-1:5|6:d
+4b:b-dglc-HEX-1:5
+5s:n-acetyl
+6b:b-dman-HEX-1:5
+7b:a-dman-HEX-1:5
+8b:b-dglc-HEX-1:5
+9s:n-acetyl
+10b:b-dgal-HEX-1:5
+11b:a-dgal-HEX-1:5|6:d
+12b:a-dman-HEX-1:5
+LIN
+1:1d(2+1)2n
+2:1o(3+1)3d
+3:1o(4+1)4d
+4:4d(2+1)5n
+5:4o(4+1)6d
+6:6o(3+1)7d
+7:7o(2+1)8d
+8:8d(2+1)9n
+9:8o(4+1)10d
+10:8o(6+1)11d
+11:6o(6+1)12d</textarea>
+<br>
+<button id="check_it">Check It</button>
+</center>
+	
+<div id="url_div"><p>URL will appear here</p></div>
+<div id="result_div"><p>Results will appear here</p></div>
+	
+</body>
+</html>
