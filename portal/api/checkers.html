@@ -124,7 +124,7 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 	}
 	
 	var extended = probeData['related_glycans']['extended'];
-	txt += "<br><br><b>" + identical.length +
+	txt += "<br><br><b>" + extended.length +
 		" glycan(s) in the DB can be made by extending the structure with canonical residues:</b>";
 	for (i = 0; i < extended.length; i++) {
 		id = extended[i]['id'];
