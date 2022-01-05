@@ -90,6 +90,17 @@ function downloadProbeData(selector) {
 } // end of function downloadProbeData()
 	
 	
+function listTxt(list, msg) {
+	var txt = "<br><br><b>" + list.length + msg + "</b>";
+	for (i = 0; i < list.length; i++) {
+		var id = list[i]['id'];
+		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a> ";
+		txt += "has " + list[i]['mapped'] + " mapped residues, " + list[i]['matched'] + " matching";
+	}	
+	return(txt);
+}
+	
+	
 function generateResultsText(probeData) {
 	probeTree = plantTree(probeData);
 	if (v > 4) logTree(probeTree);
@@ -115,37 +126,17 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 		txt += "<br><br><b>Caveat:</b> " + caveats[i]['msg'];
 	}
 	
-	var identical = probeData['related_glycans']['identical'];
-	txt += "<br><br><b>" + identical.length +
-		" glycan(s) in the DB have the same canonical residue composition:</b>";
-	for (i = 0; i < identical.length; i++) {
-		var id = identical[i]['id'];
-		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
-	}
+	txt += listTxt(probeData['related_glycans']['identical'],
+		" fully mapped glycan(s) in the DB have the same canonical residue composition");
 	
-	var extended = probeData['related_glycans']['extended'];
-	txt += "<br><br><b>" + extended.length +
-		" glycan(s) in the DB can be made by extending the structure with canonical residues:</b>";
-	for (i = 0; i < extended.length; i++) {
-		id = extended[i]['id'];
-		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
-	}
+	txt += listTxt(probeData['related_glycans']['extended'],
+		" fully mapped glycan(s) in the DB can be made by extending the structure with canonical residues");		
 	
-	var extendedFuzzy = probeData['related_glycans']['extended_fuzzy'];
-	txt += "<br><br><b>" + extendedFuzzy.length +
-		" glycan(s) in the DB can be made by extending the structure with non-canonical residues:</b>";
-	for (i = 0; i < extendedFuzzy.length; i++) {
-		id = extendedFuzzy[i]['id'];
-		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
-	}
+	txt += listTxt(probeData['related_glycans']['extended_fuzzy'],
+		" fuzzy glycan(s) in the DB can be made by extending the structure with both non-canonical and canonical residues");
 	
-	var pruned = probeData['related_glycans']['pruned'];
-	txt += "<br><br><b>" + pruned.length +
-		" glycan(s) in the DB are composed exclusively of canonical residues and can be made by pruning the structure:</b>";
-	for (i = 0; i < pruned.length; i++) {
-		id = pruned[i]['id'];
-		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a>";
-	}
+	txt += listTxt(probeData['related_glycans']['pruned'],
+		" fully mapped glycan(s) in the DB can be made by pruning the structure");
 	
 	return(txt);
 } // end of function generateResultsText()
