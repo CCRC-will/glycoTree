@@ -69,7 +69,7 @@ function downloadProbeData(selector) {
 	var dType = selector.value;
 	var content = "";
 	var json2Download = JSON.stringify(probeData, undefined, 2);
-	var acc = probeData['glytoucan_ac'];
+	var acc = probeData['temp_id'];
 	if (dType == "svg") {
 		content = encodeURIComponent(probeSVG); // probeSVG is global
 		filename = acc + ".svg";
@@ -103,9 +103,14 @@ function listTxt(list, msg) {
 	
 function generateResultsText(probeData) {
 	probeTree = plantTree(probeData);
-	if (v > 4) logTree(probeTree);
-	probeSVG = layout(probeTree); // global for download
-	var id = probeData['glytoucan_ac'];
+	//if (v > 4) logTree("probeTree:\n" + probeTree);
+	if (v > 4) {
+		console.log("initial probeTree:\n");
+		logTree(probeTree);
+	}
+	var id = probeData['temp_id'];
+	accession = id; // accession is a global variable used by json2svg; must be set before calling layout()
+	probeSVG = layout(probeTree); // probeSVG is global for download
 	var txt = "<h2>This structure has been assigned a temporary id: [" + id + "]</h2>";
 	txt += probeSVG + "<br>";
 	txt += "<svg xmlns:xlink='http://www.w3.org/1999/xlink' \n\
@@ -176,6 +181,7 @@ function getProbeData(glycoct, glycanType) {
 	document.getElementById("show_query").onclick=function() {showQueryURL()};
 	$.get(url,
 	function(result){
+		if (v > 4) console.log("result returned from checkers.php:\n" + result);
 		probeData = JSON.parse(result); // global for download
 		processProbe(probeData);		
 	})
@@ -196,11 +202,11 @@ function getProbeData(glycoct, glycanType) {
 //  treeData is a JS data object directly produced when JSON.parse()
 // 	is applied to the input JSON data
 function plantTree(treeData) {
-	if (v > 5) console.log("@@@ planting tree:  " + treeData['glytoucan_ac']);
+	if (v > 5) console.log("@@@ planting tree:  " + treeData['temp_id']);
 	//  extract information and populate the object 'tree'
 	// tree is the data object consumed by json2svg
 	var tree = new Array();
-	tree['accession'] = treeData.glytoucan_ac;
+	tree['accession'] = treeData.temp_id;
 	tree['nodes'] = new Array();
 	// treeData is original data from json file 
 	//   for this example, the nodes are called 'residues' in the original
@@ -244,7 +250,13 @@ $(document).ready(function() {
 <body>
 <center>
 <h2>Check Structure</h2>
-<label for="treeid">Choose a tree:</label>
+<label for="scope">Scope of Result:</label>
+<select name="scope" id="scope">
+  <option value="1">structure/caveats</option>
+  <option value="2">structure/caveats/enzymes</option>
+  <option value="3">structure/caveats/enzymes/glycans</option>
+</select> <br>
+	<label for="treeid">Choose a tree:</label>
 <select name="treeid" id="treeid">
   <option value="N">N-linked glycan</option>
   <option value="O">O-linked (mucin) glycan</option>

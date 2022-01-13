@@ -63,7 +63,7 @@ function drawSVG() {
 		(2 * margin + em + innerSpace['width'] + outerSpace['width']);
 	
 	if (v > 1) {
-		console.log("### Generating SVG string ###");
+		console.log("### Generating SVG string for " + accession + " ###");
 		console.log("  Canvas dimensions: " + canvasWidth +
 						", " + canvasHeight);
 	}
@@ -573,7 +573,7 @@ function logTree(tree) {
 }	
 
 function layout(tree) {
-	console.log("### Generating SVG - verbacity is " + v + " ###");
+	if (v > 0) console.log("### Generating SVG - verbacity is " + v + " ###");
 	var svgStr = "This is the svg string returned from layout()!"
 
 	nodes = tree.nodes;

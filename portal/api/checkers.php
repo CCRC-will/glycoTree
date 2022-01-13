@@ -35,14 +35,15 @@ $servername = getenv('MYSQL_SERVER_NAME');
 $password = getenv('MYSQL_PASSWORD');
 
 
-$codeDir = "~/glycotree/code/";
+$codeDir = "./java/";
 $csvCode = $codeDir . "TextToCSV.jar";
-$mapCode = $codeDir . "TreeBuilder3.jar";
-$sugarFile = "~/glycotree/model/sugars.csv";
-$nodeFileN = "~/glycotree/model/N_canonical_residues.csv";
-$nodeFileO = "~/glycotree/model/O_canonical_residues.csv";
+$mapCode = $codeDir . "TreeBuilder4.jar";
+$sugarFile = $codeDir . "sugars.csv";
+$nodeFileN = $codeDir . "N_canonical_residues.csv";
+$nodeFileO = $codeDir . "O_canonical_residues.csv";
 $v = 0;
 
+if ($v > 0) echo "<pre>";
 if ($v > 1) echo "Development in progress: showing intermediate data processing steps\n\n";
 
 if ($v > 2) echo "verbosity is " . $v . "\n\n";
@@ -69,7 +70,7 @@ if ($v > 3) {
 //    encloses GlycoCT string in single quotes
 //   the quoted string is split into 'words' by the java program
 $command = "java -jar " . $csvCode . " " . escapeshellarg($glycoct);
-
+if ($v > 3) echo "\ncsv command:\n" . $command . "\n";
 $csvEncoding = shell_exec($command);
 
 if ($v > 3) echo "\ncsv encoding\n" . $csvEncoding;
@@ -81,37 +82,29 @@ $space = ' ';
 //if ($v > 3) echo "\n\none-line csv encoding\n" . $oneLineCSV;
 
 // use the first 8 characters of the hash for the temporary glycan accession
-$tempAccession = $glycan_type . substr(hash('ripemd160', $csvEncoding), 0, 7);
-// fn is file name in temporary directory ./temp/ - this directory must already exist
-$ffn = "./temp/" . $tempAccession . ".csv";
-if ($v > 3) echo "\n\ntemporary glycan accession is " . $tempAccession . "\nwriting csv encoding to " . $ffn . "\n";
-
-$file = fopen($ffn,"w");
-fwrite($file,$csvEncoding);
-fclose($file);
-
-if ($v > 3) echo shell_exec("cat " . escapeshellarg($ffn));
-// remove $ffn after processing
+$tempID = $glycan_type . substr(hash('ripemd160', $glycoct), 0, 7);
+if ($v > 3) echo "\n\ntemporary glycan id is " . $tempID . "\n";
+// $csvEncoding = str_replace('undetermined', $tempID, $csvEncoding);
+if ($v > 3) echo "\nannotated csv encoding\n" . $csvEncoding;
 
 // the directory ./temp/mapped/ must already exist
-$command = "java -jar " . $mapCode . " -g " . escapeshellarg($ffn) . " -s " . $sugarFile . " -c " . $nodeFile . " -n 2 -v 1 -m 3 -e 3 -o ./temp/ext.csv"; 
-$result =  "\n\n" . shell_exec($command);
-$mfn = "./temp/mapped/" . $tempAccession . ".csv"; // the mapped file name
+$command = "java -jar " . $mapCode . " -t " . escapeshellarg($csvEncoding) . " -s " . $sugarFile . " -c " . $nodeFile . " -n 2 -v 0 -m 3 -e 3"; 
 if ($v > 3) {
-	echo "\n\nmapping residues to tree:\n" . $command . "\n" . $result . "\n\n";
+	echo "\n\nmapping residues to tree with command:\n" . $command . "\n\n";
 }
 
-// csvText is the raw text from the mapped glycan csv file
-$csvText = shell_exec("cat " . escapeshellarg($mfn));
+$result =  shell_exec($command);
+// $result = str_replace('glytoucan_ac', 'temp_ac', $result);
+
 if ($v > 3) {
-	echo "\n\nmapped structure as csv file " . $mfn . "\n";
-	echo $csvText;
+	echo "\n\nmapped structure as csv:\n";
+	echo "\n" . $result . "\n";
 }
 
 // mappedStringArray is an array of strings, one for each residue
-$mappedStringArray = explode("\n", $csvText);
+$mappedStringArray = explode("\n", $result);
 if ($v > 4) {
-	echo "\n\nmapped structure as array of strings extracted from file " . $mfn . "\n";
+	echo "\n\nmapped structure as array of strings\n";
 	print_r($mappedStringArray);
 }
 
@@ -153,7 +146,7 @@ foreach($mappedStringArray as $i => $resStr) {
 }
 
 if ($v > 4) {
-	echo "\n\nfull associative array for accession " . $tempAccession . "\n";
+	echo "\n\nfull associative array for temporary id " . $tempID . "\n";
 	print_r($compositionArray);
 }
 
@@ -165,7 +158,7 @@ if ($connection->connect_error) {
 	die("<br>Connection failed: " . $connection->connect_error);
 }
 
-$integratedData = integrateData($connection, $compositionArray, $tempAccession);
+$integratedData = integrateData($connection, $compositionArray, 'undetermined');
 
 // generate the structure's bit set with appropriate size for current DB contents
 $probeBS = generateEmptyBitSet($connection);  
@@ -182,12 +175,12 @@ for ($i = 0; $i < sizeof($compositionArray); $i++) {
 	if ($v > 5) echo "\n residue " . $resID . " has bitID " . $bitID;
 	$probeBS->set($bitID);
 }
-if ($v > 2) echo "\n\n### bit set for probe [" . $tempAccession . "]: " .
+if ($v > 2) echo "\n\n### bit set for probe [" . $tempID . "]: " .
 	$probeBS->toString();
 
 $bitData = [];
 $probe_b64 = "";
-fetchBitSetData($connection, $bitData, $probe_b64, $tempAccession);
+fetchBitSetData($connection, $bitData, $probe_b64, $tempID);
 if ($v > 4) echo "\n\n";
 
 $extended = [];
@@ -197,7 +190,11 @@ $extended_fuzzy = [];
 
 compareBitSets($bitData, $probeBS, $identical, $extended, $pruned, $extended_fuzzy);
 
-//$relatedGlycans = $integratedData['related_glycans'];
+$finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
+$finalData['temp_id'] = $tempID;
+$finalData['caveats'] = $integratedData['caveats'];
+$finalData['residues'] = $integratedData['residues'];
+	
 $relatedGlycans = [];
 $relatedGlycans['message'] = "some related glycans may not be in the DB (e.g., G15407YE [Man-GlcNAc-GlcNAc] or G57321FI [GalNAc])";
 $relatedGlycans['glycans_evaluated'] = sizeof($bitData);
@@ -205,15 +202,17 @@ $relatedGlycans['identical'] = $identical;
 $relatedGlycans['extended'] = $extended;
 $relatedGlycans['extended_fuzzy'] = $extended_fuzzy;
 $relatedGlycans['pruned'] = $pruned;
-$integratedData['related_glycans'] = $relatedGlycans;
+
+$finalData['related_glycans'] = $relatedGlycans;
 
 if ($v > 4) echo "\n\n";
 header_remove(); 
 header("Cache-Control: no-cache, must-revalidate");
-header("Content-Disposition: attachment; filename=$tempAccession.json");
-echo json_encode($integratedData, JSON_PRETTY_PRINT);
+header("Content-Disposition: attachment; filename=$tempID.json");
+echo json_encode($finalData, JSON_PRETTY_PRINT);
 
 $connection->close();
+if ($v > 0) echo "</pre>";
 
-// NEXT: extend $integratedData with related glycans not mappable to $tempAccession
+// NEXT: extend $integratedData with related glycans not mappable to $tempID
 ?>

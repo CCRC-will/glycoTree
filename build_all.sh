@@ -111,7 +111,7 @@ mv $modelDir/N_canonical_residues*.csv.bak $modelDir/bak/
 
 echo
 echo Mapping residues in N-glycan csv files to canonical tree 
-java -jar $codeDir/TreeBuilder3.jar -l $csvN_Dir/files.lst -s $sugar_file -c $node_file -n 3 -v 1 -m 3 -e 1 -o $modelDir/ext.csv &> $logDir/map_N.log
+java -jar $codeDir/TreeBuilder4.jar -l $csvN_Dir/files.lst -s $sugar_file -c $node_file -n 3 -v 1 -m 3 -e 1 -o $modelDir/ext.csv &> $logDir/map_N.log
 
 echo
 echo "Copying GlycoCt files from $gctIn_O to $O_Dir"
