@@ -41,9 +41,16 @@ $mapCode = $codeDir . "TreeBuilder4.jar";
 $sugarFile = $codeDir . "sugars.csv";
 $nodeFileN = $codeDir . "N_canonical_residues.csv";
 $nodeFileO = $codeDir . "O_canonical_residues.csv";
-$v = 0;
+$v = 9;
 
 if ($v > 0) echo "<pre>";
+echo "code Dir is " . $codeDir . "\n";
+echo "csv code is " . $csvCode . "\n";
+echo "map code is " . $mapCode . "\n";
+echo "sugar file is " . $sugarFile . "\n";
+echo "N node file is " . $nodeFileN . "\n";
+echo "O node file is " . $nodeFileO . "\n";
+
 if ($v > 1) echo "Development in progress: showing intermediate data processing steps\n\n";
 
 if ($v > 2) echo "verbosity is " . $v . "\n\n";

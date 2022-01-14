@@ -173,7 +173,7 @@ function getProbeData(glycoct, glycanType) {
 	// need to encode + characters: use encodeURIComponent rather than encodeURI
 	var encoding = encodeURIComponent(glycoct);
 	// url is global
-	url = urlBase + "/api/checkers.php?glycoct=" + encoding +
+	url = urlBase + "/checkers.php?glycoct=" + encoding +
 		 "&type=" + glycanType;
 	urlTxt = "<span id='show_query' class='clickable'>Show Query</span> &nbsp;" +
 		" <a href=\"" + url + "\" target=\"_blank\">Direct Query</a>";
