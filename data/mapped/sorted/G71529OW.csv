@@ -8,5 +8,5 @@ G71529OW,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,12,,,validated by Qrator,,PM
 G71529OW,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,13,,,validated by Qrator,,PMID: 25165163
 G71529OW,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,15,,,validated by Qrator,,PMID: 25165174
 G71529OW,N-glycan_a-D-NeupNAc_13,N13,NeuNAc,a,D,p,N6,6,NeupNAc,16,,,validated by Qrator,,PMID: 25165102
-G71529OW,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G71529OW,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 G71529OW,N-glycan_a-D-NeupNAc_259,N259,NeuNAc,a,D,p,N223,6,NeupNAc,10,,any organism,abiotic linkage,MT

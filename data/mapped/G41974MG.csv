@@ -16,5 +16,5 @@ G41974MG,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMI
 G41974MG,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
 G41974MG,N-glycan_a-L-Fucp_41,N41,Fuc,a,L,p,N2,3,Fucp,9,,,validated by Qrator,,PMID: 25165154
 G41974MG,N-glycan_a-L-Fucp_42,N42,Fuc,a,L,p,N5,3,Fucp,20,,,validated by Qrator,,PMID: 25165155
-G41974MG,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,10,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G41974MG,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,10,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 G41974MG,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,21,,,validated by Qrator,,PMID: 25165174

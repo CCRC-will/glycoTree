@@ -9,5 +9,5 @@ G42095CU,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,13,,,validated by Q
 G42095CU,N-glycan_b-D-Galp_6,N6,Gal,b,D,p,N5,4,Galp,15,,,validated by Qrator,,PMID: 25165174
 G42095CU,N-glycan_a-D-NeupNAc_13,N13,NeuNAc,a,D,p,N6,6,NeupNAc,16,,,validated by Qrator,,PMID: 25165102
 G42095CU,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,18,,,validated by Qrator,,PMID: 25165122
-G42095CU,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G42095CU,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 G42095CU,N-glycan_a-D-NeupNAc_259,N259,NeuNAc,a,D,p,N223,6,NeupNAc,10,,any organism,abiotic linkage,MT

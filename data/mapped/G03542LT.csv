@@ -12,5 +12,5 @@ G03542LT,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated 
 G03542LT,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
 G03542LT,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
 G03542LT,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
-G03542LT,N-glycan_a-D-NeupNAc_247,N247,NeuNAc,a,D,p,N2,3,NeupNAc,9,,any organism,abiotic linkage,MT,PMID: 8354224,Reference does not support residue 
+G03542LT,N-glycan_a-D-NeupNAc_247,N247,NeuNAc,a,D,p,N2,3,NeupNAc,9,,any organism,abiotic linkage,MT,PMID: 8354224,Reference does not support residue 
 G03542LT,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,20,,,validated by Qrator,,PMID: 25165163

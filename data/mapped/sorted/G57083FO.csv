@@ -8,6 +8,6 @@ G57083FO,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,10,,,validated by Qrator,,PM
 G57083FO,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,11,,,validated by Qrator,,PMID: 25165163
 G57083FO,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,17,,,validated by Qrator,,PMID: 25165122
 G57083FO,N-glycan_b-D-GlcpNAc_31,N31,GlcNAc,b,D,p,N4,4,GlcpNAc,14,,,validated by Qrator,,PMID: 25165143,PMID: 2525556 by MT.  GNT6 only makes penta-antennary; i.e. requires previous GlcNAc addition to 6-position of 6-linked Man (by GNT5).  Activity not yet detected in mammals.  Activity reported in chicken oviduct.  But even in chicken the triantennary glycan (4-substitution without 6-substititutioni) is not allowed
-G57083FO,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G57083FO,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 G57083FO,N-glycan_a-D-Galp_322,N322,Gal,a,D,p,N5,4,Galp,13,,any organism,abiotic linkage,MT
 G57083FO,N-glycan_a-D-Galp_420,N420,Gal,a,D,p,N31,4,Galp,16,,any organism,abiotic linkage,MT

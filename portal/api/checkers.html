@@ -165,25 +165,34 @@ function getProbeData(glycoct, glycanType) {
 		return(-1);
 	}
 	$("#result_div").html("<h2>Checking Structure</h2>");
-	var thisURL = window.location;
-	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" +
-		 thisURL.pathname.split('/')[1];
+	var thisURL = "" + window.location; // force thisURL to be a String
+	var urlSplit = thisURL.split('/');
+	var urlBase = "";
+	for (var i = 0; i < (urlSplit.length - 1); i++) // everything except the file name
+		urlBase += urlSplit[i] + "/";
+	
 	// convert line feeds to spaces
 	var glycoct = glycoct.replace(/(?:\r\n|\r|\n)/g, ' ');
 	// need to encode + characters: use encodeURIComponent rather than encodeURI
 	var encoding = encodeURIComponent(glycoct);
 	// url is global
-	url = urlBase + "/checkers.php?glycoct=" + encoding +
-		 "&type=" + glycanType;
+	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType;
 	urlTxt = "<span id='show_query' class='clickable'>Show Query</span> &nbsp;" +
 		" <a href=\"" + url + "\" target=\"_blank\">Direct Query</a>";
 	$("#url_div").html(urlTxt);
 	document.getElementById("show_query").onclick=function() {showQueryURL()};
 	$.get(url,
 	function(result){
-		if (v > 4) console.log("result returned from checkers.php:\n" + result);
+		if (v > 4) 
+			console.log("result returned from checkers.php:\n" + result);
 		probeData = JSON.parse(result); // global for download
-		processProbe(probeData);		
+		if (probeData.residues === null) {
+			$("#result_div").html("<h2>Data could not be mapped to (" +
+						glycanType + "-linked) glycoTree ");
+		} else {
+			if (v > 4) console.log("Number of residues: " + probeData.residues.length);
+			processProbe(probeData);
+		}	
 	})
 	.done(function() {
 		// alert( "yes, success" );
@@ -250,12 +259,14 @@ $(document).ready(function() {
 <body>
 <center>
 <h2>Check Structure</h2>
+<!--
 <label for="scope">Scope of Result:</label>
 <select name="scope" id="scope">
   <option value="1">structure/caveats</option>
   <option value="2">structure/caveats/enzymes</option>
   <option value="3">structure/caveats/enzymes/glycans</option>
 </select> <br>
+-->
 	<label for="treeid">Choose a tree:</label>
 <select name="treeid" id="treeid">
   <option value="N">N-linked glycan</option>

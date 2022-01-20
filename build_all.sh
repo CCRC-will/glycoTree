@@ -37,6 +37,8 @@ sqlDir=$here/SQL
 echo "SQL directory is $sqlDir"
 portalDir=$here/portal
 echo "portal directory is $portalDir"
+portalJavaDir=$portalDir/api/java
+echo "portal java directory is $portalJavaDir"
 
 for i in "$@"; do
   ## the key word 'clear' is in the argument list
@@ -98,16 +100,13 @@ echo Fetching current model files
 ## There should be only one file in ./model/ that matches 'N-canonical_residues*.csv'
 node_file=`ls $modelDir/N_canonical_residues*.csv`
 echo using node file $node_file
+cp $node_file $portalJavaDir
 
 sugar_file=`ls $modelDir/sugars*.csv`
 echo using sugar file:\n    $sugar_file
 
 enzyme_file=`ls $modelDir/enzyme_mappings*.csv`
 echo using enzyme file:\n    $enzyme_file
-
-echo formatting node file
-sed -i.bak 's///g' $node_file
-mv $modelDir/N_canonical_residues*.csv.bak $modelDir/bak/
 
 echo
 echo Mapping residues in N-glycan csv files to canonical tree 
@@ -134,10 +133,11 @@ find $csvO_Dir -name "G*.csv" -print -maxdepth 1 | sort > $csvO_Dir/files.lst
 ## There should be only one file in ./model/ that matches 'O-canonical_residues*.csv'
 node_file=`ls $modelDir/O_canonical_residues*.csv`
 echo using node file $node_file
+cp $node_file $portalJavaDir
 
 echo
 echo Mapping residues in O-glycan csv files to canonical tree 
-java -jar $codeDir/TreeBuilder3.jar -l $csvO_Dir/files.lst -s $sugar_file -c $node_file -n 2 -v 1 -m 3 -e 1 -o $modelDir/ext.csv &> $logDir/map_O.log
+java -jar $codeDir/TreeBuilder4.jar -l $csvO_Dir/files.lst -s $sugar_file -c $node_file -n 2 -v 1 -m 3 -e 1 -o $modelDir/ext.csv &> $logDir/map_O.log
 
 echo 
 echo Sorting mapped residues

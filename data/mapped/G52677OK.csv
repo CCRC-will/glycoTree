@@ -6,5 +6,5 @@ G52677OK,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated 
 G52677OK,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
 G52677OK,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
 G52677OK,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
-G52677OK,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G52677OK,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 G52677OK,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,10,,,validated by Qrator,,PMID: 25165152

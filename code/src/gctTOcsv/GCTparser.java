@@ -46,7 +46,7 @@ public class GCTparser {
 			"1:4,f",
 			"1:5,p",
 			"2:6,p",
-			"0:0,o",
+			"0:0,ol",
 			"x:x,x",
 			"1:x,x"
 	};
@@ -89,7 +89,8 @@ public class GCTparser {
 			"2:keto,2:keto",
 			"3:d,3:d",
 			"6:d,6:d",
-			"6:a,6:a"
+			"6:a,6:a",
+			"1:aldi,1:aldi"
 	};
 	
 	/**
@@ -182,8 +183,10 @@ public class GCTparser {
 		String result = "";
 		for(String k2 : features.keySet()) {
 			 Map<String, String> fClass = features.get(k2);
+			 // fClass is a HashMap "submap" of HashMap features, like the Hashmap called "anomer"
 				for(String k1 : fClass.keySet()) {
 					String fValue = fClass.get(k1);
+					// check if the fClass HashMap has an element that matches fString
 					if (k1.toLowerCase().matches(fString.toLowerCase())) {
 						result = String.format("%s,%s", k2, fValue);
 					}
@@ -238,8 +241,39 @@ public class GCTparser {
 		}
 			
 		return(result);
-	} // end of parseGCT()
+	} // end of method parseBaseType()
 		
+	
+	/**
+	 * generates a map of features for a given substituent, indexed by feature type
+	 * @param sString a string holding the data part of a single line from the RES section of a GlycoCT file
+	 * @param v the verbosity of the output to StdOut
+	 * @return a map of features for a given substituent, indexed by feature type
+	 */
+	public Map<String, String> parseSubstituent(String baseString, int v) {
+		// process the features 
+		Map<String, String> result = new HashMap<String, String>();
+		result.put("anomer", "n");
+		result.put("absConfig", "n");
+		result.put("relConfig", "n");
+		result.put("sugSize", "n");
+		result.put("ring", "n");
+		result.put("sugMod", "x");
+		
+		if (v > 4) {
+			System.out.printf("\n%s", baseString );
+			System.out.printf("\nabsConfig is %s", result.get("absConfig") );
+			System.out.printf("\nrelConfig is %s", result.get("relConfig") );
+			System.out.printf("\nanomer is %s", result.get("anomer") );
+			System.out.printf("\nsugSize is %s", result.get("sugSize") );
+			System.out.printf("\nring is %s", result.get("ring") );
+			System.out.printf("\nsugarMod is %s", result.get("sugMod") );
+		}
+			
+		return(result);
+	} // end of method parseSubstituent()
+	
+	
 	
 	/**
 	 * adds feature attribute(s) (key-value pair) to the feature Map for a given monosaccharide residue  
@@ -304,10 +338,11 @@ public class GCTparser {
 	 */
 	public String extendName(String resName, String substituentName, String linkPos) {
 		String extendedName = resName;
+		// TODO: account for second N-substituent - this should be a full-fledged residue
 		for (int i = 0; i < NSUBTITUTES.length; i++ ) {
 			String[] kv = NSUBTITUTES[i].split(",");
 			if (kv[0].matches(substituentName.toLowerCase()) ) {
-				// make sure that existing O-substituents are KEPT at the END of the name
+				// ensure that previously processed O-substituents are KEPT at the END of the name
 				if (resName.contains("-")) {
 					String[] nameParts = resName.split("-");
 					System.out.printf("\n!!!!!!! split components are %s %s %s", nameParts[0], kv[1], nameParts[1]);
@@ -318,6 +353,7 @@ public class GCTparser {
 			}
 		}
 		
+		// TODO: delete the following - substitutents now are full-fledged glycotree residues
 		for (int i = 0; i < OSUBTITUTES.length; i++ ) {
 			String[] kv = OSUBTITUTES[i].split(",");
 			if (kv[0].matches(substituentName.toLowerCase()) )

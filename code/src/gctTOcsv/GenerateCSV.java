@@ -94,69 +94,80 @@ public class GenerateCSV {
 
 			
 			try {
-				// get GlycoCT string from file
-				ArrayList<String> gtcLines = new ArrayList<String>();
-				gtcLines = getInputFileLines(theFile);
-				String whichSection = "none";
-
-				for (Iterator<String> cgt_iter = gtcLines.iterator(); cgt_iter.hasNext();) {
-					String gtcLine = cgt_iter.next();
-					// whichSection is modified by parseGTCline - but ONLY when line is "RES" or "LIN"
-					// otherwise parseGTCline parses the line and returns the same value of whichSection
-					whichSection = parseGCTline(gtcLine, whichSection, residueList, substituentList);
-				}
-
-				// find the index of the root of the structure tree
-				System.out.printf("\n\nfinding root residue ..");
-				String rootID =  getRoot(residueList);
-				// assign "0" to root's parent and link_position
-				if (v > 5) System.out.printf("\n\n rootID is %s", rootID);
-				residueList.get(rootID).put("parent", "0");
-				residueList.get(rootID).put("link_position", "0");
-				
-			
-				// grab the glycan's name from the input file name 
+				// grab information from the input file name 
 				Path path = Paths.get(theFile);
 				String fileName = path.getFileName().toString();
 				String outDir = path.getParent().toString() + "/csv/";
 				String glycanName = fileName.substring(0, fileName.indexOf(".") );
 
-				// generate csvStr
-				csvStr = new StringBuilder("glycan_ID,residue,residue_ID,name,anomer,absolute,ring,parent_ID,site,formName");
-
-				for (String k1 : residueList.keySet()) {
-					// ToDo: check if each res element has an apropriate value ... otherwise append appropriate default value (e.g., "0" or "x")
-					Map<String, String> res = residueList.get(k1);
-					csvStr.append("\n" + glycanName + ",unassigned," + k1) ;
-					
-					appendCSVstr(res.get("name"), "none", csvStr);
-					appendCSVstr(res.get("anomer"), "x", csvStr);
-					// since the following line generates a substring, it must be first checked
-					if ( (res.get("absConfig") != null) && (!res.get("absConfig").isEmpty() ) ) 
-						appendCSVstr(res.get("absConfig").substring(0, 1), "x", csvStr);
-					appendCSVstr(res.get("ring"), "x", csvStr);
-					appendCSVstr(res.get("parent"), "x", csvStr);
-					appendCSVstr(res.get("link_position"), "x", csvStr);
-					appendCSVstr(res.get("formName"), "none", csvStr);
-					/*
-					csvStr.append("," + res.get("name")) ;
-					csvStr.append("," + res.get("anomer")) ;
-					csvStr.append("," + res.get("absConfig").substring(0, 1)) ;
-					csvStr.append("," + res.get("ring")) ;
-					csvStr.append("," + res.get("parent")) ;
-					csvStr.append("," + res.get("link_position")) ;
-					csvStr.append("," + res.get("formName")) ;
-					*/
-				}
-				// csvStr is now complete, so write it out
-
-				String outFile = outDir + glycanName + ".csv";
-				if (v > 0) System.out.printf("\nCSV output written to file %s\n\n%s\n", outFile, csvStr);
+				// get GlycoCT string from file
+				ArrayList<String> gtcLines = new ArrayList<String>();
+				gtcLines = getInputFileLines(theFile);
+				String whichSection = "none";
+				Boolean ok2go = true; // may change during iteration of gtcLines
 				
-				PrintWriter writer = new PrintWriter(outFile, "UTF-8");
-				writer.println(csvStr);
-				writer.close();
+				for (Iterator<String> cgt_iter = gtcLines.iterator(); cgt_iter.hasNext();) {
+					String gtcLine = cgt_iter.next();
+					// whichSection is modified by parseGTCline - but ONLY when line is "RES" or "LIN"
+					// otherwise parseGTCline parses the line and returns the same value of whichSection
+					whichSection = parseGCTline(gtcLine, whichSection, residueList, substituentList);
+					// System.out.printf("\n\nwhichSection is %s", whichSection);
+					if (whichSection.compareTo("REP") == 0) {
+						System.out.printf("\n\n!!! Repeating structures are not supported !!!\n No file generated for %s", glycanName);
+						ok2go = false;
+						break;
+					}
+				}
 
+				if (ok2go) { // no repeating structures
+					// find the index of the root of the structure tree
+					if (v > 5) System.out.printf("\n\nfinding root residue ..");
+					String rootID =  getRoot(residueList);
+					// assign "0" to root's parent and link_position
+					if (v > 5) System.out.printf("\n\n rootID is %s", rootID);
+					residueList.get(rootID).put("parent", "0");
+					residueList.get(rootID).put("link_position", "0");
+
+					// generate csvStr
+					csvStr = new StringBuilder("glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,formName");
+
+					for (String k1 : residueList.keySet()) {
+						// ToDo: check if each res element has an apropriate value ... otherwise append appropriate default value (e.g., "0" or "x")
+						Map<String, String> res = residueList.get(k1);
+						csvStr.append("\n" + glycanName + ",unassigned," + k1) ;
+
+						appendCSVstr(res.get("name"), "none", csvStr);
+						appendCSVstr(res.get("anomer"), "x", csvStr);
+						// since the following line generates a substring, it must be first checked
+						if ( (res.get("absConfig") != null) && (!res.get("absConfig").isEmpty() ) ) 
+							appendCSVstr(res.get("absConfig").substring(0, 1), "x", csvStr);
+						appendCSVstr(res.get("ring"), "x", csvStr);
+						appendCSVstr(res.get("parent"), "x", csvStr);
+						appendCSVstr(res.get("link_position"), "x", csvStr);
+						appendCSVstr(res.get("formName"), "none", csvStr);
+					}
+					// csvStr is now complete, so write it out
+
+					String outFile = outDir + glycanName + ".csv";
+					if (v > 0) System.out.printf("\nOutput written to file %s\n", outFile);
+					if (v > 2) System.out.printf("%s\n", csvStr);
+
+					PrintWriter writer = new PrintWriter(outFile, "UTF-8");
+					writer.println(csvStr);
+					writer.close();
+					if (v > 8) {
+						for (String k1 : residueList.keySet()) {
+							Map<String, String> res = residueList.get(k1);
+							System.out.printf("\n\n## residue[%s] ##", k1);
+							for (String k2 : res.keySet()) {
+								System.out.printf("\n %s %s", k2, res.get(k2) );
+							}
+						}
+						for (String k3 : substituentList.keySet()) {
+							System.out.printf("\n\n substituent[%s]: %s", k3, substituentList.get(k3) );
+						}
+					}
+				}
 			} catch (FileNotFoundException e) {
 				System.out.printf("Error in file %s\n", theFile);
 				e.printStackTrace();
@@ -164,20 +175,6 @@ public class GenerateCSV {
 				System.out.printf("Error in file %s\n", theFile);
 				e.printStackTrace();
 			}
-			
-			if (v > 8) {
-				for (String k1 : residueList.keySet()) {
-					Map<String, String> res = residueList.get(k1);
-					System.out.printf("\n\n## residue[%s] ##", k1);
-					for (String k2 : res.keySet()) {
-						System.out.printf("\n %s %s", k2, res.get(k2) );
-					}
-				}
-				for (String k3 : substituentList.keySet()) {
-					System.out.printf("\n\n substituent[%s]: %s", k3, substituentList.get(k3) );
-				}
-			}
-			 
 		}
 
 	} // end of main
@@ -207,12 +204,15 @@ public class GenerateCSV {
 		if (gctLine.matches("LIN")) {
 			return("LIN"); // no data in this line
 		}
+		if (gctLine.matches("REP.*")) {
+			return("REP"); // no data in this line
+		}
 		// catch different types of GlycoCT section headers
 		if (gctLine.matches("UND.*")) {
 			return("UND"); // no data in this line
 		}
 
-		// the following code is reachable if the section is "RES" or "LIN" or "UND"
+		// the following code is reachable if the section passed to method is "RES" or "LIN" or "UND"
 		GCTparser gctParser = new GCTparser();
 
 		int splitIndex = 0;
@@ -220,26 +220,24 @@ public class GenerateCSV {
 		String suffix = "";
 		String gctID = "";
 
-		if ( (section.matches("RES") ) || (section.matches("LIN") ) ) {
-			// parse the gctLine
-			splitIndex = gctLine.indexOf(':');
-			prefix = gctLine.substring(0, splitIndex);
-			suffix = gctLine.substring(splitIndex+1, gctLine.length());
-			gctID = prefix.split("[a-zA-Z]+")[0];
-		}
-		
 		try {
+			if ( (section.matches("RES") ) || (section.matches("LIN") ) ) {
+				// parse the gctLine
+				splitIndex = gctLine.indexOf(':');
+				prefix = gctLine.substring(0, splitIndex);
+				suffix = gctLine.substring(splitIndex+1, gctLine.length());
+				gctID = prefix.split("[a-zA-Z]+")[0];
+			}
+		
 			switch(section) {
 			case "RES":
 				String type = prefix.split("[0-9]+")[1];
 				if (v > 1) System.out.printf("\n\nRES: id %s;  type %s", gctID, type);
+				Map<String, String> sugarAtts =  new HashMap();
 				switch (type) {
 				case "b":
-
-					if (type.matches("b") ) {
-						
 						if (v > 6) System.out.printf("\ngctLine suffix is %s", suffix);
-						Map<String, String> sugarAtts =  gctParser.parseBaseType(suffix, v);
+						sugarAtts =  gctParser.parseBaseType(suffix, v);
 						String sugarName = gctParser.getSugarName(sugarAtts);
 						sugarAtts.put("name", sugarName);
 						String formName = getFormName(sugarAtts);
@@ -254,13 +252,22 @@ public class GenerateCSV {
 							}
 						}
 						resList.put(gctID, sugarAtts);
-					}
 					break;
 				case "s":
+					String subType = "O";
+					if (suffix.indexOf('n') == 0) subType = "N";
 					if (v > 2) {
-						System.out.printf("\n[%s] ", suffix);
+						System.out.printf("\n[%s]:  This is an %s-linked substituent", suffix, subType);
 					}
-					subList.put(gctID, suffix);
+					if (subType.equals("N")) {
+						subList.put(gctID, suffix);
+					} else {
+						sugarAtts =  gctParser.parseSubstituent(suffix, v);
+						sugarAtts.put("name", suffix);
+						sugarAtts.put("formName", suffix);
+						sugarAtts.put("gctID", gctID);
+						resList.put(gctID, sugarAtts);
+					}
 					break;
 				}
 				break;
@@ -270,11 +277,11 @@ public class GenerateCSV {
 				String parentID = parts[0].replaceAll("[a-zA-Z].*", "");  // numerical part before parentheses open
 				String childID = parts[2].replaceAll("[a-zA-Z].*", ""); // numerical part after parentheses close
 				String linkPos = parts[1].split("[+]")[0]; // part in parentheses before +
+				if (v > 2) System.out.printf("\n\nLIN: [%s]: parentID %s; childID %s; link %s", suffix, parentID, childID, linkPos);
 				if (linkPos.matches("-1")) {
-					System.out.printf("\n ### linkPos undefined %s",  linkPos);
+					if (v > 2) System.out.printf("\n ### linkPos undefined %s",  linkPos);
 					linkPos = "";
 				}
-				if (v > 2) System.out.printf("\n\nLIN: [%s]: parentID %s; childID %s; link %s", suffix, parentID, childID, linkPos);
 				if ( resList.containsKey(parentID) ) { // the parent is a residue
 					if ( resList.containsKey(childID) ) { // the child is a residue
 						Map<String, String> childNode = resList.get(childID);
@@ -285,14 +292,17 @@ public class GenerateCSV {
 						String pName = resList.get(parentID).get("name");
 						String sName = subList.get(childID);
 
+						// extend parent (base) name
 						String extName = gctParser.extendName(pName, sName, linkPos);
+						// System.out.printf("\n outside");
 						if (v > 3) System.out.printf("\n extended parent residue name for substituent %s is %s", childID, extName);
 						resList.get(parentID).replace("name", extName);
-						// extend parent formName
 
 
-						// !! Extend formName ONLY for N-substituents !!
+						// !! Extend formName ONLY for N-substituents !! 
+						//    I.e., do not extend formName for O-substutuents
 						if (sName.contains("n-") ) {
+							// System.out.printf("\n inside");
 							pName = resList.get(parentID).get("formName");
 							extName = gctParser.extendName(pName, sName, linkPos);
 							if (v > 3) System.out.printf("\n extended parent residue formName for substituent %s is %s", childID, extName);
@@ -324,7 +334,7 @@ public class GenerateCSV {
 		// do not include any chars in name after "-"
 		String formName = query.get("name");
 		for(String k : query.keySet()) {
-			if (query.get(k).matches("[fp]") ) {
+			if (query.get(k).matches("[fp]|ol") ) {
 				formName = formName + query.get(k);
 				return(formName);
 			}

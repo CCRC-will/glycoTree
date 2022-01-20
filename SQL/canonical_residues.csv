@@ -163,7 +163,7 @@ N-glycan_a-D-Manp_219,N219,Man,a,D,p,N204,2,Manp,fungi,,N-mannans,,https://pubme
 N-glycan_a-D-Manp_220,N220,Man,a,D,p,N1,3,Manp,fungi,,N-mannans,,https://pubmed.ncbi.nlm.nih.gov/8505334/,
 N-glycan_a-D-Manp_221,N221,Man,a,D,p,N202,2,Manp,fungi,,N-mannans,,https://pubmed.ncbi.nlm.nih.gov/8505334/,
 N-glycan_a-D-NeupNAc_222,N222,NeuNAc,a,D,p,N32,6,NeupNAc,,,,,,
-N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 N-glycan_b-D-Fucp_224,N224,Fuc,b,D,p,NA,6,Fucp,,any organism,abiotic configuration,,,
 N-glycan_a-D-Manp_225,N225,Man,a,D,p,N221,3,Manp,fungi,,N-mannans,,https://pubmed.ncbi.nlm.nih.gov/8505334/,
 N-glycan_b-D-GlcpNAc_226,N226,GlcNAc,b,D,p,N3,4,GlcpNAc,,any organism,abiotic linkage,MT,,4-substituted GlcNAc ok but should be 3-linked
@@ -187,7 +187,7 @@ N-glycan_b-D-Galp_243,N243,Gal,b,D,p,N228,4,Galp,,,,,,
 N-glycan_a-D-Galp_244,N244,Gal,a,D,p,N10,4,Galp,,any organism,abiotic context,MT,,Gala4Gal on glycolipids only; Gala3Gal OK
 N-glycan_a-D-Galp_245,N245,Gal,a,D,p,N8,4,Galp,,any organism,abiotic context,MT,https://www.glygen.org/motif/GGM.000069,Gala4Gal on glycolipids only; Gala3Gal OK
 N-glycan_a-D-Galp_246,N246,Gal,a,D,p,N3,4,Galp,,any organism,abiotic context,MT,https://www.glygen.org/motif/GGM.000069,Gala4Gal on glycolipids only; Gala3Gal OK
-N-glycan_a-D-NeupNAc_247,N247,NeuNAc,a,D,p,N2,3,NeupNAc,,any organism,abiotic linkage,MT,PMID: 8354224,Reference does not support residue 
+N-glycan_a-D-NeupNAc_247,N247,NeuNAc,a,D,p,N2,3,NeupNAc,,any organism,abiotic linkage,MT,PMID: 8354224,Reference does not support residue 
 N-glycan_b-D-GlcpNAc_249,N249,GlcNAc,b,D,p,N8,6,GlcpNAc,,any organism,abiotic context,MT,,I' branching GlcNAc only added to internal Gal residues of LacNAc repeats
 N-glycan_b-D-GlcpNAc_250,N250,GlcNAc,b,D,p,N5,4,GlcpNAc,,any organism,abiotic linkage,MT,,
 N-glycan_a-D-NeupNAc_251,N251,NeuNAc,a,D,p,N8,2,NeupNAc,,any organism,abiotic linkage,MT,,

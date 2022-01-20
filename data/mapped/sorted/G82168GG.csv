@@ -6,5 +6,5 @@ G82168GG,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMI
 G82168GG,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qrator,,PMID: 25165130
 G82168GG,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,10,,,validated by Qrator,,PMID: 25165152
 G82168GG,N-glycan_b-D-GlcpNAc_5,N5,GlcNAc,b,D,p,N4,2,GlcpNAc,11,,,validated by Qrator,,PMID: 25165163
-G82168GG,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
+G82168GG,N-glycan_a-D-Galp_223,N223,Gal,a,D,p,N2,4,Galp,9,,any organism,abiotic linkage,MT,PMID: 2411221,Reference refutes residue 
 G82168GG,N-glycan_a-D-Galp_322,N322,Gal,a,D,p,N5,4,Galp,13,,any organism,abiotic linkage,MT

@@ -41,19 +41,20 @@ $mapCode = $codeDir . "TreeBuilder4.jar";
 $sugarFile = $codeDir . "sugars.csv";
 $nodeFileN = $codeDir . "N_canonical_residues.csv";
 $nodeFileO = $codeDir . "O_canonical_residues.csv";
-$v = 9;
+$v = 0;  // $v MUST be zero for API to function
 
-if ($v > 0) echo "<pre>";
-echo "code Dir is " . $codeDir . "\n";
-echo "csv code is " . $csvCode . "\n";
-echo "map code is " . $mapCode . "\n";
-echo "sugar file is " . $sugarFile . "\n";
-echo "N node file is " . $nodeFileN . "\n";
-echo "O node file is " . $nodeFileO . "\n";
+if ($v > 0) {
+	echo "<pre>";
+	echo "verbosity is " . $v . "\n";
+	echo "code Dir is " . $codeDir . "\n";
+	echo "csv code is " . $csvCode . "\n";
+	echo "map code is " . $mapCode . "\n";
+	echo "sugar file is " . $sugarFile . "\n";
+	echo "N node file is " . $nodeFileN . "\n";
+	echo "O node file is " . $nodeFileO . "\n";
+}
 
 if ($v > 1) echo "Development in progress: showing intermediate data processing steps\n\n";
-
-if ($v > 2) echo "verbosity is " . $v . "\n\n";
 
 $glycoct = $_GET['glycoct'];
 $glycan_type = $_GET['type'];
@@ -95,7 +96,7 @@ if ($v > 3) echo "\n\ntemporary glycan id is " . $tempID . "\n";
 if ($v > 3) echo "\nannotated csv encoding\n" . $csvEncoding;
 
 // the directory ./temp/mapped/ must already exist
-$command = "java -jar " . $mapCode . " -t " . escapeshellarg($csvEncoding) . " -s " . $sugarFile . " -c " . $nodeFile . " -n 2 -v 0 -m 3 -e 3"; 
+$command = "java -jar " . $mapCode . " -t " . escapeshellarg($csvEncoding) . " -s " . $sugarFile . " -c " . $nodeFile . " -n 1 -v 0 -m 3 -e 3"; 
 if ($v > 3) {
 	echo "\n\nmapping residues to tree with command:\n" . $command . "\n\n";
 }
