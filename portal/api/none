@@ -1,3 +1,2 @@
 glycan_ID,total score,mismatched leaf ID,rank,description,path score,matching pruned path length,longest matching path,path length threshold,strongest rejection criterion
-undetermined,2,6,4,pruned path matches,2,1,0,1,2: unmatched internal
-undetermined,2,summary,-,-,,-,0,1,2: unmatched internal
+undetermined,0,summary,-,-,,-,6,1,0: perfect match
