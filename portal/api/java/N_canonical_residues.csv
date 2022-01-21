@@ -214,7 +214,7 @@ N-glycan_a-D-NeupNAc_271,N271,NeuNAc,a,D,p,N29,3,NeupNAc,,,manually validated,MT
 N-glycan_a-D-NeupNAc_272,N272,NeuNAc,a,D,p,N30,3,NeupNAc,,,Manually validated,MT,,
 N-glycan_a-D-Glcp_273,N273,Glc,a,D,p,N1,3,Glcp,,any organism,abiotic context,MT,,
 N-glycan_b-D-Galp_274,N274,Gal,b,D,p,N10,3,Galp,,,not validated,MT,PMID: 7430154,Galb3Gal?  Based on b-galactosidase digestion from biological source; check this out; PMID: 7430154
-N-glycan_b-D-Galp_275,N275,Gal,b,D,p,N15,4,Galp,nematode; mollusc,,manually validated,MT,https://doi.org/10.1017/S0031182019000398
+N-glycan_b-D-Galp_275,N275,Gal,b,D,p,N15,4,Galp,nematode mollusc,,manually validated,MT,https://doi.org/10.1017/S0031182019000398
 N-glycan_a-L-Fucp_276,N276,Fuc,a,L,p,N6,6,Fucp,,any organism,abiotic linkage,MT,,
 N-glycan_a-L-Fucp_277,N277,Fuc,a,L,p,N232,3,Fucp,,,,MT,,no response from sandbox/nodes; removed?
 N-glycan_b-D-GlcpNAc_278,N278,GlcNAc,b,D,p,N88,3,GlcpNAc,,,,,,no response from sandbox/nodes; removed?
