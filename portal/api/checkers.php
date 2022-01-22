@@ -43,8 +43,15 @@ $nodeFileN = $codeDir . "N_canonical_residues.csv";
 $nodeFileO = $codeDir . "O_canonical_residues.csv";
 $v = 0;  // $v MUST be zero for API to function
 
+$glycoct = $_GET['glycoct'];
+$glycan_type = $_GET['type'];
+if (strcmp($_GET['debug'], 'on') == 0) {
+	$v = 9;
+}
+
 if ($v > 0) {
 	echo "<pre>";
+	echo "debug is '" . $_GET['debug'] . "'\n";
 	echo "verbosity is " . $v . "\n";
 	echo "code Dir is " . $codeDir . "\n";
 	echo "csv code is " . $csvCode . "\n";
@@ -54,10 +61,9 @@ if ($v > 0) {
 	echo "O node file is " . $nodeFileO . "\n";
 }
 
-if ($v > 1) echo "Development in progress: showing intermediate data processing steps\n\n";
+if ($v > 1) echo "\nShowing intermediate data processing steps\n";
 
-$glycoct = $_GET['glycoct'];
-$glycan_type = $_GET['type'];
+
 
 switch ($glycan_type) {
 	case "N":
@@ -71,14 +77,14 @@ switch ($glycan_type) {
 }
 
 if ($v > 3) {
-	echo "GlycoCT encoding is \n" . $glycoct . "\n";
+	echo "\nGlycoCT encoding is \n" . $glycoct . "\n";
 	echo "Glycan type is " . $glycan_type . "\n\n";
 }
 // to prevent code injection, escapeshellarg($glycoct) is invoked 
 //    encloses GlycoCT string in single quotes
 //   the quoted string is split into 'words' by the java program
 $command = "java -jar " . $csvCode . " " . escapeshellarg($glycoct);
-if ($v > 3) echo "\ncsv command:\n" . $command . "\n";
+if ($v > 3) echo "\nCOMMAND to generate CSV encoding:\n\n" . $command . "\n";
 $csvEncoding = shell_exec($command);
 
 if ($v > 3) echo "\ncsv encoding\n" . $csvEncoding;
@@ -92,27 +98,23 @@ $space = ' ';
 // use the first 8 characters of the hash for the temporary glycan accession
 $tempID = $glycan_type . substr(hash('ripemd160', $glycoct), 0, 7);
 if ($v > 3) echo "\n\ntemporary glycan id is " . $tempID . "\n";
-// $csvEncoding = str_replace('undetermined', $tempID, $csvEncoding);
-if ($v > 3) echo "\nannotated csv encoding\n" . $csvEncoding;
 
-// the directory ./temp/mapped/ must already exist
 $command = "java -jar " . $mapCode . " -t " . escapeshellarg($csvEncoding) . " -s " . $sugarFile . " -c " . $nodeFile . " -n 1 -v 0 -m 3 -e 3"; 
 if ($v > 3) {
-	echo "\n\nmapping residues to tree with command:\n" . $command . "\n\n";
+	echo "\n\nCOMMAND to generate MAPPED CSV encoding:\n\n" . $command . "\n";
 }
 
 $result =  shell_exec($command);
-// $result = str_replace('glytoucan_ac', 'temp_ac', $result);
 
 if ($v > 3) {
-	echo "\n\nmapped structure as csv:\n";
+	echo "\nMAPPED CSV encoding:\n";
 	echo "\n" . $result . "\n";
 }
 
 // mappedStringArray is an array of strings, one for each residue
 $mappedStringArray = explode("\n", $result);
 if ($v > 4) {
-	echo "\n\nmapped structure as array of strings\n";
+	echo "\n\nMAPPED encoding as array of strings\n";
 	print_r($mappedStringArray);
 }
 
@@ -125,7 +127,7 @@ foreach($mappedStringArray as $i => $resStr) {
 	$resStringArray = explode(",", $resStr);
 	// $residueAssociativeArray is an array of parameters describing the residue
 	$residueAssociativeArray = [];
-	if ($v > 4) echo "\n\ncsv string:\n    " . $resStr;
+	if ($v > 4) echo "\n\nCSV string:\n    " . $resStr;
 	
 	if ($i == 0) { // zeoth line holds names of parameters
 		foreach($resStringArray as $j => $parName) {
@@ -134,7 +136,7 @@ foreach($mappedStringArray as $i => $resStr) {
 			}
 		}
 		if ($v > 4) {
-			echo "\n\nfirst csv string - setting parameter keys \n    ";
+			echo "\n\nfirst csv string - parameter keys \n    ";
 			print_r($paramKeys);
 		}
 	} else if (sizeof($resStringArray) > 1)  { // do not process blank lines
@@ -145,7 +147,7 @@ foreach($mappedStringArray as $i => $resStr) {
 		}
 		
 		if ($v > 4) {
-			echo "\nassociative array for residue " . ($i - 1) . "\n";
+			echo "\nassociative array from CSV string\n";
 			print_r($residueAssociativeArray);
 		}
 		// add the associative array for the residue to $compositionArray
@@ -213,10 +215,12 @@ $relatedGlycans['pruned'] = $pruned;
 
 $finalData['related_glycans'] = $relatedGlycans;
 
-if ($v > 4) echo "\n\n";
-header_remove(); 
-header("Cache-Control: no-cache, must-revalidate");
-header("Content-Disposition: attachment; filename=$tempID.json");
+if ($v > 4) echo "\n\nJSON result:\n";
+if ($v == 0) {
+	header_remove(); 
+	header("Cache-Control: no-cache, must-revalidate");
+	header("Content-Disposition: attachment; filename=$tempID.json");
+}
 echo json_encode($finalData, JSON_PRETTY_PRINT);
 
 $connection->close();

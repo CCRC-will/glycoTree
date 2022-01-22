@@ -175,8 +175,10 @@ function getProbeData(glycoct, glycanType) {
 	var glycoct = glycoct.replace(/(?:\r\n|\r|\n)/g, ' ');
 	// need to encode + characters: use encodeURIComponent rather than encodeURI
 	var encoding = encodeURIComponent(glycoct);
+	var debug = "off";
+	if ($("#debug").prop("checked") == true) debug = "on";
 	// url is global
-	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType;
+	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType + "&debug=" + debug;
 	urlTxt = "<span id='show_query' class='clickable'>Show Query</span> &nbsp;" +
 		" <a href=\"" + url + "\" target=\"_blank\">Direct Query</a>";
 	$("#url_div").html(urlTxt);
@@ -185,14 +187,18 @@ function getProbeData(glycoct, glycanType) {
 	function(result){
 		if (v > 4) 
 			console.log("result returned from checkers.php:\n" + result);
-		probeData = JSON.parse(result); // global for download
-		if (probeData.residues === null) {
-			$("#result_div").html("<h2>Data could not be mapped to (" +
-						glycanType + "-linked) glycoTree ");
-		} else {
-			if (v > 4) console.log("Number of residues: " + probeData.residues.length);
-			processProbe(probeData);
-		}	
+		if ($("#debug").prop("checked") == true) { // do not process probe data, just show result
+			$("#result_div").html("<br><h2>Debugging Information</h2>" + result);
+		} else { // process probe data
+			probeData = JSON.parse(result); // global for download
+			if (probeData.residues === null) {
+				$("#result_div").html("<h2>Data could not be mapped to (" +
+							glycanType + "-linked) glycoTree ");
+			} else {
+				if (v > 4) console.log("Number of residues: " + probeData.residues.length);
+				processProbe(probeData);
+			}
+		}
 	})
 	.done(function() {
 		// alert( "yes, success" );
@@ -249,7 +255,6 @@ $(document).ready(function() {
 		fetchConfiguration(configPath);
 		getProbeData(glycoct, glycanType);
 	});
-	
 });	
 
 	
@@ -301,6 +306,9 @@ LIN
 11:6o(6+1)12d</textarea>
 <br>
 <button id="check_it">Check It</button>
+<br>
+<input type="checkbox" id="debug" name="debug" value="debug">
+<label for="debug">Debug PHP</label>	
 </center>
 	
 <div id="url_div"><p>URL will appear here</p></div>
