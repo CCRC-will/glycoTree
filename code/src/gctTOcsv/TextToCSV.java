@@ -1,23 +1,9 @@
 package gctTOcsv;
 
-import java.awt.List;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.SortedSet;
-import java.util.TreeMap;
-import java.util.TreeSet;
+
 
 /**
  * Converts GlycoCT encoding into glycoTree csv encoding, without using eurocarbDB libraries. 
@@ -74,7 +60,6 @@ public class TextToCSV {
 			//System.out.println(args[i]);  
 		}
 				
-		v = 0;
 		if (v > 0) System.out.printf("\nverbosity is %d", v);
 			
 			Map<String, Map<String, String>> residueList = new HashMap<String, Map<String, String>>();
@@ -198,7 +183,7 @@ public class TextToCSV {
 			case "RES":
 				String type = prefix.split("[0-9]+")[1];
 				if (v > 1) System.out.printf("\n\nRES: id %s;  type %s", gctID, type);
-				Map<String, String> sugarAtts =  new HashMap();
+				Map<String, String> sugarAtts =  new HashMap<String, String>();
 				switch (type) {
 				case "b":
 						if (v > 6) System.out.printf("\ngctLine suffix is %s", suffix);
@@ -336,58 +321,6 @@ public class TextToCSV {
 	} // end of method getRoot()
 	
 	
-	/**
-	 * generates a list of input files from a text file holding them
-	 * @param fn the name of the list file
-	 * @return a list of input files
-	 */
-	public static ArrayList<String> getInputFileLines(String fn) {
-		ArrayList<String> result = new ArrayList<String>();
-		File file = new File(fn);
-		if (file.exists()) {
-			try {
-				Scanner input = new Scanner(file);
-				while (input.hasNext()) {
-					String line = input.next();
-					result.add(line);
-				}
-				input.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else {
-			System.out.printf("file %s does not exist", fn);
-		}
-		return(result);
-	}	
 
-
-	/**
-	 * reads a text file, producing a single String
-	 * @param fn the text file to read
-	 * @return the text string with lines delimited by "\n"
-	 */
-	public static String readTextFile(String fn) {
-		String text = "";
-		File file = new File(fn);
-		if (file.exists()) {
-			try {
-				Scanner input = new Scanner(file);
-				while (input.hasNext()) {
-					String line = input.next();
-					text += line + "\n";
-				}
-				input.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else {
-			System.out.printf("file %s does not exist", fn);
-		}
-		return(text);
-	}	
-	
 
 }
