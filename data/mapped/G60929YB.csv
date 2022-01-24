@@ -1,6 +1,6 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
 G60929YB,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,22,,,validated by Qrator,,PMID: 25165122
-G60929YB,N-glycan_a-D-NeupNAc_410,N410,NeuNAc,a,D,p,N28,6,NeupNAc,12,,,,MT,PMID: 2477057,"not supported by evidence; disialylated Gal found on GlcNAcT4 arm
+G60929YB,N-glycan_a-D-NeupNAc_410,N410,NeuNAc,a,D,p,N28,6,NeupNAc,12,,,,MT,PMID: 2477057,not supported by evidence; disialylated Gal found on GlcNAcT4 arm
 G60929YB,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,14,,,validated by Qrator,,PMID: 25165152
 G60929YB,N-glycan_b-D-GlcpNAc_31,N31,GlcNAc,b,D,p,N4,4,GlcpNAc,15,,,validated by Qrator,,PMID: 25165143,PMID: 2525556 by MT.  GNT6 only makes penta-antennary; i.e. requires previous GlcNAc addition to 6-position of 6-linked Man (by GNT5).  Activity not yet detected in mammals.  Activity reported in chicken oviduct.  But even in chicken the triantennary glycan (4-substitution without 6-substititutioni) is not allowed
 G60929YB,N-glycan_b-D-Galp_297,N297,Gal,b,D,p,N31,3,Galp,17,,,,MT

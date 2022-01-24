@@ -7,4 +7,4 @@ G90000WS,N-glycan_b-D-GlcpNAc_2,N2,GlcNAc,b,D,p,N1,2,GlcpNAc,7,,,validated by Qr
 G90000WS,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,10,,,validated by Qrator,,PMID: 25165152
 G90000WS,N-glycan_a-L-Fucp_15,N15,Fuc,a,L,p,NA,6,Fucp,11,,,validated by Qrator,,PMID: 25165122
 G90000WS,N-glycan_b-D-Galp_44,N44,Gal,b,D,p,N2,3,Galp,9,,,validated by Qrator,,PMID: 25165157
-G90000WS,N-glycan_b-D-Galp_275,N275,Gal,b,D,p,N15,4,Galp,12,"nematode, mollusc",,manually validated,MT,https://doi.org/10.1017/S0031182019000398
+G90000WS,N-glycan_b-D-Galp_275,N275,Gal,b,D,p,N15,4,Galp,12,nematode mollusc,,manually validated,MT,https://doi.org/10.1017/S0031182019000398

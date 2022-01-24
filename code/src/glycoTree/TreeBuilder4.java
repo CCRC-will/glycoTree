@@ -724,9 +724,6 @@ public class TreeBuilder4 {
 						}
 
 					}
-					
-					
-					
 				} else {
 					if (v > 0) System.out.printf("\n### Generating mapped CSV (%s) ###\n", outFileName);
 					csvRejectCode = writeCSV(probeNodes, outFileName, glycanID, reportString);
@@ -745,7 +742,7 @@ public class TreeBuilder4 {
 		}
 
 		if (foundInputData) {
-			if (dataMethod != "single_file") {
+			if (dataMethod != "passed_value") {
 				if (v > 0)
 					System.out.printf("\n\n### Writing to Report file (%s) ###", mismatchFileName);
 				writeData(reportString, mismatchFileName);

@@ -1,5 +1,5 @@
 glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G24994OK,N-glycan_b-D-Galp_275,N275,Gal,b,D,p,N15,4,Galp,11,"nematode, mollusc",,manually validated,MT,https://doi.org/10.1017/S0031182019000398
+G24994OK,N-glycan_b-D-Galp_275,N275,Gal,b,D,p,N15,4,Galp,11,nematode mollusc,,manually validated,MT,https://doi.org/10.1017/S0031182019000398
 G24994OK,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,b,D,p,0,0,GlcpNAc,1,,,validated by Qrator,,PMID: 25165210
 G24994OK,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
 G24994OK,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212

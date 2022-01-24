@@ -61,9 +61,10 @@ if ($v > 0) {
 	echo "O node file is " . $nodeFileO . "\n";
 }
 
-if ($v > 1) echo "\nShowing intermediate data processing steps\n";
-
-
+$st = "@@@ DATA START @@@";
+$et = "@@@ DATA END @@@";
+if ($v > 1) echo "\nShowing intermediate data processing steps\n" . 
+	"Data processed and returned by java programs are enclosed by the following lines\n" . $st . "\n   data goes here\n" . $et . "\n";
 
 switch ($glycan_type) {
 	case "N":
@@ -77,38 +78,50 @@ switch ($glycan_type) {
 }
 
 if ($v > 3) {
-	echo "\nGlycoCT encoding is \n" . $glycoct . "\n";
-	echo "Glycan type is " . $glycan_type . "\n\n";
+	echo "\nGlycoCT encoding (to be processed by java) is \n" . $st . "\n" . $glycoct . "\n" . $et . "\n";
+	echo "\nGlycan type is " . $glycan_type . "\n";
 }
+// use the first 8 characters of the hash for the temporary glycan accession
+$tempID = $glycan_type . substr(hash('ripemd160', $glycoct), 0, 7);
+if ($v > 3) echo "\ntemporary glycan id is " . $tempID . "\n";
+
 // to prevent code injection, escapeshellarg($glycoct) is invoked 
 //    encloses GlycoCT string in single quotes
 //   the quoted string is split into 'words' by the java program
 $command = "java -jar " . $csvCode . " " . escapeshellarg($glycoct);
-if ($v > 3) echo "\nCOMMAND to generate CSV encoding:\n\n" . $command . "\n";
+// $command = "java -jar somecrap.jar " . escapeshellarg($glycoct);
 $csvEncoding = shell_exec($command);
+if ($v > 3) echo "\nThe following COMMAND was passed from PHP (via shell_exec) to generate CSV encoding:\n" . $st . "\n" .
+	$command . "\n" . $et . "\n";
 
-if ($v > 3) echo "\ncsv encoding\n" . $csvEncoding;
 
-$linefeeds   = array("\r\n", "\n", "\r");
-$space = ' ';
+if ($v > 3) echo "\nThe following result was returned by the java program." .
+	"\nIf execution was successful, this should be a CSV encoding.\n\n" . $st . 
+	"\n" . $csvEncoding . "\n" . $et . "";
 
-//$oneLineCSV = str_replace($linefeeds, $space, $csvEncoding);
-//if ($v > 3) echo "\n\none-line csv encoding\n" . $oneLineCSV;
+if (strpos($csvEncoding, "glytoucan_ac") === false) {
+	$errorMsg = "";
+	if ($v > 0) {
+		$errorMsg = "\n\nThe java program did not return a CSV encoding; terminated execution of checkers.php";
+	} else {
+		$errorMsg = "\n{\n\"residues\": null\n}";
+	}	
+	exit($errorMsg);
+}
 
-// use the first 8 characters of the hash for the temporary glycan accession
-$tempID = $glycan_type . substr(hash('ripemd160', $glycoct), 0, 7);
-if ($v > 3) echo "\n\ntemporary glycan id is " . $tempID . "\n";
+
 
 $command = "java -jar " . $mapCode . " -t " . escapeshellarg($csvEncoding) . " -s " . $sugarFile . " -c " . $nodeFile . " -n 1 -v 0 -m 3 -e 3"; 
 if ($v > 3) {
-	echo "\n\nCOMMAND to generate MAPPED CSV encoding:\n\n" . $command . "\n";
+	echo "\n\nThe following COMMAND was passed from PHP (via shell_exec) to generate the MAPPED CSV encoding:\n" .
+		$st . "\n" . $command . "\n" . $et . "\n";
 }
 
 $result =  shell_exec($command);
 
 if ($v > 3) {
-	echo "\nMAPPED CSV encoding:\n";
-	echo "\n" . $result . "\n";
+	echo "\nThe following MAPPED CSV encoding was returned by the java program:\n";
+	echo $st . "\n" . $result . "\n" . $et . "\n";
 }
 
 // mappedStringArray is an array of strings, one for each residue
