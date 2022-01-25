@@ -45,13 +45,15 @@ $v = 0;  // $v MUST be zero for API to function
 
 $glycoct = $_GET['glycoct'];
 $glycan_type = $_GET['type'];
-if (strcmp($_GET['debug'], 'on') == 0) {
+if (strcmp($_GET['debug'], 'true') == 0) {
 	$v = 9;
 }
 
 if ($v > 0) {
 	echo "<pre>";
 	echo "debug is '" . $_GET['debug'] . "'\n";
+	echo "show Enzymes is '" . $_GET['enz'] . "'\n";
+	echo "show Related is '" . $_GET['related'] . "'\n";
 	echo "verbosity is " . $v . "\n";
 	echo "code Dir is " . $codeDir . "\n";
 	echo "csv code is " . $csvCode . "\n";
@@ -183,50 +185,79 @@ if ($connection->connect_error) {
 
 $integratedData = integrateData($connection, $compositionArray, 'undetermined');
 
-// generate the structure's bit set with appropriate size for current DB contents
-$probeBS = generateEmptyBitSet($connection);  
-if ($v > 4) echo "\n### new bit set: size " . $probeBS->size() . ";  length " . $probeBS->length();
-$bitSetSize = $probeBS->size();
-
-$hotChars = "NO";
-$specialIDs = array("NA" => $bitSetSize - 3, "NB" => $bitSetSize - 2, 
-						 "NC" => $bitSetSize - 1, "OC" => $bitSetSize - 4);
-
-for ($i = 0; $i < sizeof($compositionArray); $i++) {
-	$resID = $compositionArray[$i]["residue_id"];
-	$bitID = bitIDfromResID($resID, $bitSetSize, $hotChars, $specialIDs);
-	if ($v > 5) echo "\n residue " . $resID . " has bitID " . $bitID;
-	$probeBS->set($bitID);
-}
-if ($v > 2) echo "\n\n### bit set for probe [" . $tempID . "]: " .
-	$probeBS->toString();
-
-$bitData = [];
-$probe_b64 = "";
-fetchBitSetData($connection, $bitData, $probe_b64, $tempID);
-if ($v > 4) echo "\n\n";
-
-$extended = [];
-$identical = [];
-$pruned = [];
-$extended_fuzzy = [];
-
-compareBitSets($bitData, $probeBS, $identical, $extended, $pruned, $extended_fuzzy);
-
 $finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
 $finalData['temp_id'] = $tempID;
 $finalData['caveats'] = $integratedData['caveats'];
-$finalData['residues'] = $integratedData['residues'];
-	
-$relatedGlycans = [];
-$relatedGlycans['message'] = "some related glycans may not be in the DB (e.g., G15407YE [Man-GlcNAc-GlcNAc] or G57321FI [GalNAc])";
-$relatedGlycans['glycans_evaluated'] = sizeof($bitData);
-$relatedGlycans['identical'] = $identical;
-$relatedGlycans['extended'] = $extended;
-$relatedGlycans['extended_fuzzy'] = $extended_fuzzy;
-$relatedGlycans['pruned'] = $pruned;
 
-$finalData['related_glycans'] = $relatedGlycans;
+if (strcmp($_GET['enz'], "false") == 0) {
+	if ($v > 5) {
+		echo("\n Enzymes are not in scope of the query");
+		echo("\n### Rebuilding 'residues' array, removing 'enzymes' ###\n");
+	}
+	$tempResidues = [];
+	foreach($integratedData['residues'] as $x => $res_value) {
+		$thisResidue = [];
+		if ($v > 5) {
+			echo "\nBefore rebuilding, residue [" . $res_value['residue_id'] . "] has enzymes:\n";
+			print_r($res_value['enzymes']);
+		}
+		foreach($res_value as $y => $res_parameter) {
+			if (strcmp($y, "enzymes") != 0) $thisResidue[$y] = $res_parameter;
+		}
+		$thisResidue['enzymes'] = null;
+		array_push($tempResidues, $thisResidue);
+	}
+	$finalData['residues'] = $tempResidues;
+	if ($v > 5) {
+		echo "\n### all residues with enzymes removed ###\n";
+		print_r($finalData['residues']);	
+	}
+} else {
+	$finalData['residues'] = $integratedData['residues'];
+}
+
+	
+if (strcmp($_GET['related'], "true") == 0) {
+	// generate the structure's bit set with appropriate size for current DB contents
+	$probeBS = generateEmptyBitSet($connection);  
+	if ($v > 4) echo "\n### new bit set: size " . $probeBS->size() . ";  length " . $probeBS->length();
+	$bitSetSize = $probeBS->size();
+
+	$hotChars = "NO";
+	$specialIDs = array("NA" => $bitSetSize - 3, "NB" => $bitSetSize - 2, 
+							 "NC" => $bitSetSize - 1, "OC" => $bitSetSize - 4);
+
+	for ($i = 0; $i < sizeof($compositionArray); $i++) {
+		$resID = $compositionArray[$i]["residue_id"];
+		$bitID = bitIDfromResID($resID, $bitSetSize, $hotChars, $specialIDs);
+		if ($v > 5) echo "\n residue " . $resID . " has bitID " . $bitID;
+		$probeBS->set($bitID);
+	}
+	if ($v > 2) echo "\n\n### bit set for probe [" . $tempID . "]: " .
+		$probeBS->toString();
+
+	$bitData = [];
+	$probe_b64 = "";
+	fetchBitSetData($connection, $bitData, $probe_b64, $tempID);
+	if ($v > 4) echo "\n\n";
+
+	$extended = [];
+	$identical = [];
+	$pruned = [];
+	$extended_fuzzy = [];
+
+	compareBitSets($bitData, $probeBS, $identical, $extended, $pruned, $extended_fuzzy);
+
+	$relatedGlycans = [];
+	$relatedGlycans['message'] = "some related glycans may not be in the DB (e.g., G15407YE [Man-GlcNAc-GlcNAc] or G57321FI [GalNAc])";
+	$relatedGlycans['glycans_evaluated'] = sizeof($bitData);
+	$relatedGlycans['identical'] = $identical;
+	$relatedGlycans['extended'] = $extended;
+	$relatedGlycans['extended_fuzzy'] = $extended_fuzzy;
+	$relatedGlycans['pruned'] = $pruned;
+
+	$finalData['related_glycans'] = $relatedGlycans;
+}
 
 if ($v > 4) echo "\n\nJSON result:\n";
 if ($v == 0) {

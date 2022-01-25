@@ -33,11 +33,11 @@ span.clickable:visited {
 <script>
 
 var v = 0;
-// var probeSVG = "";
 var configPath = "../json/sugars.json";
 var probeSVG = "";
 var probeData = null;
 var url = "";
+var debug = false;
 	
 function fetchConfiguration(theURL) {
 	$.get(theURL, function(result){
@@ -131,17 +131,19 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 		txt += "<br><br><b>Caveat:</b> " + caveats[i]['msg'];
 	}
 	
-	txt += listTxt(probeData['related_glycans']['identical'],
-		" fully mapped glycan(s) in the DB have the same canonical residue composition");
-	
-	txt += listTxt(probeData['related_glycans']['extended'],
-		" fully mapped glycan(s) in the DB can be made by extending the structure with canonical residues");		
-	
-	txt += listTxt(probeData['related_glycans']['extended_fuzzy'],
-		" fuzzy glycan(s) in the DB can be made by extending the structure with both non-canonical and canonical residues");
-	
-	txt += listTxt(probeData['related_glycans']['pruned'],
+	if ($("#related").is(':checked')) {
+		txt += listTxt(probeData['related_glycans']['identical'],
+			" fully mapped glycan(s) in the DB have the same canonical residue composition");
+
+		txt += listTxt(probeData['related_glycans']['extended'],
+			" fully mapped glycan(s) in the DB can be made by extending the structure with canonical residues");		
+
+		txt += listTxt(probeData['related_glycans']['extended_fuzzy'],
+			" fuzzy glycan(s) in the DB can be made by extending the structure with both non-canonical and canonical residues");
+
+		txt += listTxt(probeData['related_glycans']['pruned'],
 		" fully mapped glycan(s) in the DB can be made by pruning the structure");
+	}
 	
 	return(txt);
 } // end of function generateResultsText()
@@ -159,9 +161,14 @@ function showQueryURL() {
 }
 	
 	
-function getProbeData(glycoct, glycanType) {
-	if (!glycoct.startsWith("RES")) {
-		$("#result_div").html("<h2>Invalid GlycoCT Encoding</h2>'" + glycoct + "'");
+function getProbeData() {
+	var gctEncoding = $("#glycoct").val();
+	var glycanType = $("#treeid").val();
+	var enz = $("#enz").is(':checked');
+	var related = $("#related").is(':checked');
+
+	if (!gctEncoding.startsWith("RES")) {
+		$("#result_div").html("<h2>Invalid GlycoCT Encoding</h2>'" + gctEncoding + "'");
 		return(-1);
 	}
 	$("#result_div").html("<h2>Checking Structure</h2>");
@@ -172,13 +179,12 @@ function getProbeData(glycoct, glycanType) {
 		urlBase += urlSplit[i] + "/";
 	
 	// convert line feeds to spaces
-	var glycoct = glycoct.replace(/(?:\r\n|\r|\n)/g, ' ');
+	var gctEncoding = gctEncoding.replace(/(?:\r\n|\r|\n)/g, ' ');
 	// need to encode + characters: use encodeURIComponent rather than encodeURI
-	var encoding = encodeURIComponent(glycoct);
-	var debug = "off";
-	if ($("#debug").prop("checked") == true) debug = "on";
+	var encoding = encodeURIComponent(gctEncoding);
 	// url is global
-	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType + "&debug=" + debug;
+	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType +
+		"&enz=" + enz + "&related=" + related + "&debug=" + debug;
 	urlTxt = "<span id='show_query' class='clickable'>Show Query</span> &nbsp;" +
 		" <a href=\"" + url + "\" target=\"_blank\">Direct Query</a>";
 	$("#url_div").html(urlTxt);
@@ -187,7 +193,7 @@ function getProbeData(glycoct, glycanType) {
 	function(result){
 		if (v > 4) 
 			console.log("result returned from checkers.php:\n" + result);
-		if ($("#debug").prop("checked") == true) { // do not process probe data, just show result
+		if (debug) { // do not process probe data, just show result
 			$("#result_div").html("<br><h2>Debugging Information</h2>" + result);
 		} else { // process probe data
 			probeData = JSON.parse(result); // global for download
@@ -247,13 +253,17 @@ function plantTree(treeData) {
 } // end of function plantTree()
 	
 	
-	
 $(document).ready(function() {
+	
 	$("#check_it").click(function() {
-		var glycoct = $("#glycoct").val();
-		var glycanType = $("#treeid").val();
+		debug = false;
 		fetchConfiguration(configPath);
-		getProbeData(glycoct, glycanType);
+		getProbeData();
+	});
+	$("#debug").click(function() {
+		debug = true;
+		fetchConfiguration(configPath);
+		getProbeData();
 	});
 });	
 
@@ -263,16 +273,9 @@ $(document).ready(function() {
 </head>
 <body>
 <center>
-<h2>Check Structure</h2>
-<!--
-<label for="scope">Scope of Result:</label>
-<select name="scope" id="scope">
-  <option value="1">structure/caveats</option>
-  <option value="2">structure/caveats/enzymes</option>
-  <option value="3">structure/caveats/enzymes/glycans</option>
-</select> <br>
--->
-	<label for="treeid">Choose a tree:</label>
+<h2>Check Structure Using GlycoTree</h2>
+	
+<label for="treeid">Choose a tree:</label>
 <select name="treeid" id="treeid">
   <option value="N">N-linked glycan</option>
   <option value="O">O-linked (mucin) glycan</option>
@@ -280,19 +283,44 @@ $(document).ready(function() {
 	
 <label for="glycoct">GlycoCT:</label><br>
 <textarea id="glycoct" name="glycoct" rows="9" cols="40">RES
-1b:b-dglc-HEX-1:5
+1b:x-dglc-HEX-1:5
 2s:n-acetyl
 3b:b-dglc-HEX-1:5
 4s:n-acetyl
+5b:b-dman-HEX-1:5
+6b:a-dman-HEX-1:5
+7b:b-dglc-HEX-1:5
+8s:n-acetyl
+9b:b-dgal-HEX-1:5
+10b:a-dman-HEX-1:5
+11b:b-dglc-HEX-1:5
+12s:n-acetyl
+13b:b-dgal-HEX-1:5
+14b:a-lgal-HEX-1:5|6:d
 LIN
 1:1d(2+1)2n
 2:1o(4+1)3d
-4:3d(2+1)4n</textarea>
+3:3d(2+1)4n
+4:3o(4+1)5d
+5:5o(3+1)6d
+6:6o(2+1)7d
+7:7d(2+1)8n
+8:7o(4+1)9d
+9:5o(6+1)10d
+10:10o(2+1)11d
+11:11d(2+1)12n
+12:11o(4+1)13d
+13:1o(6+1)14d</textarea>
+
+<br><b>Broaden Scope:</b>
+<input type="checkbox" id="enz" name="enz" value="enz">
+<label for="enz">Enzymes</label>
+<input type="checkbox" id="related" name="related" value="related">
+<label for="related">Related Glycans</label>
+
 <br>
-<button id="check_it">Check It</button>
-<br>
-<input type="checkbox" id="debug" name="debug" value="debug">
-<label for="debug">Debug PHP</label>	
+<button id="check_it">Check Structure</button>
+<button id="debug">Debug PHP</button>
 </center>
 	
 <div id="url_div"><p>URL will appear here</p></div>
