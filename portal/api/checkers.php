@@ -189,7 +189,7 @@ $finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
 $finalData['temp_id'] = $tempID;
 $finalData['caveats'] = $integratedData['caveats'];
 
-if (strcmp($_GET['enz'], "false") == 0) {
+if ((strcmp($_GET['enz'], "false") == 0) && ($integratedData['residues'] != null) ) {
 	if ($v > 5) {
 		echo("\n Enzymes are not in scope of the query");
 		echo("\n### Rebuilding 'residues' array, removing 'enzymes' ###\n");
