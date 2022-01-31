@@ -24,6 +24,7 @@ data/Olinked/*
 data/input_N/*
 data/input_O/*
 data/mapped/*
+data/mapped/sorted/*
 model/bak/
 model/nodes/
 model/json/match/

@@ -1,9 +1,0 @@
-glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G66692CW,N-glycan_core_D-GlcNAc_A,NA,GlcNAc,x,D,x,0,0,GlcNAc,1,,,validated by Qrator,,PMID: 25165210
-G66692CW,N-glycan_core_b-D-GlcpNAc_B,NB,GlcNAc,b,D,p,NA,4,GlcpNAc,3,,,validated by Qrator,,PMID: 25165211
-G66692CW,N-glycan_core_b-D-Manp_C,NC,Man,b,D,p,NB,4,Manp,5,,,validated by Qrator,,PMID: 25165212
-G66692CW,N-glycan_a-D-Manp_1,N1,Man,a,D,p,NC,3,Manp,6,,,validated by Qrator,,PMID: 25165068
-G66692CW,N-glycan_a-D-Manp_4,N4,Man,a,D,p,NC,6,Manp,7,,,validated by Qrator,,PMID: 25165152
-G66692CW,N-glycan_a-D-Manp_19,N19,Man,a,D,p,N4,3,Manp,8,,,validated by Qrator,,PMID: 25165129
-G66692CW,N-glycan_a-D-Galf_215,N215,Gal,a,D,f,N19,2,Galf,9,,any organism,abiotic linkage,MT,https://febs.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1432-1033.1980.tb06144.x
-G66692CW,N-glycan_a-D-Manp_20,N20,Man,a,D,p,N4,6,Manp,10,,,validated by Qrator,,PMID: 25165131

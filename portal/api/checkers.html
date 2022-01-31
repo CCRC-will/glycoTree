@@ -147,7 +147,8 @@ function generateResultsText(probeData) {
 	
 	var caveats = probeData['caveats'];
 	for (i = 0; i < caveats.length; i++) {
-		txt += "<br><b>Caveat:</b> " + caveats[i]['msg'] + "<br>";
+		var cMsg = caveats[i]['msg'].replace(/undetermined/g, id);
+		txt += "<br><b>Caveat:</b> " + cMsg + "<br>";
 	}
 	
 	var r = probeData['residues'];
