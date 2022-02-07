@@ -1,0 +1,3 @@
+rule_id	class	description	logic
+1	biosynthesis	glycosyltransferase acceptor substrate specificity	transfer of residue $focus by $agent requires residue $factor_1
+2	biosynthesis	glycosyltransferase acceptor substrate specificity	transfer of residue $focus by $agent blocked by residue $factor_1
