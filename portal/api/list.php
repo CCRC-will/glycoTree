@@ -6,6 +6,7 @@ $password = getenv('MYSQL_PASSWORD');
 try {
 	$par = $_GET['par'];
 	$mode = $_GET['mode'];
+	
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
 

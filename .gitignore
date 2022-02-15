@@ -2,6 +2,7 @@
 notes
 bak/
 glycotree_accessions.tsv
+startDocker.sh
 prepare_N-tree.sh
 old_build_N-tree.sh
 log/*.txt

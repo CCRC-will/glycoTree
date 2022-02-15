@@ -84,7 +84,7 @@ if ($v > 3) {
 	echo "\nGlycan type is " . $glycan_type . "\n";
 }
 // use the first 8 characters of the hash for the temporary glycan accession
-$tempID = $glycan_type . substr(hash('ripemd160', $glycoct), 0, 7);
+$tempID = $glycan_type . "TEMP" . substr(hash('ripemd160', $glycoct), 0, 7);
 if ($v > 3) echo "\ntemporary glycan id is " . $tempID . "\n";
 
 // to prevent code injection, escapeshellarg($glycoct) is invoked 
@@ -187,7 +187,17 @@ $integratedData = integrateData($connection, $compositionArray, 'undetermined');
 
 $finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
 $finalData['temp_id'] = $tempID;
-$finalData['caveats'] = $integratedData['caveats'];
+
+// in each caveat, replace the string "undetermined" with $tempID
+$modCaveats = [];  // modified array of caveats
+foreach($integratedData['caveats'] as $caveat) {
+	$newCaveat = []; // a single, new, modified caveat
+	foreach($caveat as $key => $value) {
+		$newCaveat[$key] = str_replace("undetermined", $tempID, $value);
+	}
+	array_push($modCaveats, $newCaveat);
+}
+$finalData['caveats'] = $modCaveats;
 
 if ((strcmp($_GET['enz'], "false") == 0) && ($integratedData['residues'] != null) ) {
 	if ($v > 5) {

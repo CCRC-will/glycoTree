@@ -1,0 +1,185 @@
+instance	rule_id	focus	agent	factor_1	factor_2	taxonomy	curator_id	refs	comment
+1	1	N7	Q812F8	N2	NULL	mouse	MT	https://pubmed.ncbi.nlm.nih.gov/1533386/	GNT obligate order
+2	1	N7	Q812G0	N2	NULL	mouse	MT	https://pubmed.ncbi.nlm.nih.gov/1533386/	GNT obligate order
+3	1	N7	Q9D306	N2	NULL	mouse	MT	https://pubmed.ncbi.nlm.nih.gov/1533386/	GNT obligate order
+4	1	N7	Q9UBM8	N2	NULL	human	MT	https://pubmed.ncbi.nlm.nih.gov/1533386/	GNT obligate order
+5	1	N7	Q9UM21	N2	NULL	human	MT	https://pubmed.ncbi.nlm.nih.gov/1533386/	GNT obligate order
+6	1	N7	Q9UQ53	N2	NULL	human	MT	https://pubmed.ncbi.nlm.nih.gov/1533386/	GNT obligate order
+7	1	N39	P16442	N71	NULL	human	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+8	1	N39	P38649	N71	NULL	mouse	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+9	1	N50	P16442	N54	NULL	human	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+10	1	N50	P38649	N54	NULL	mouse	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+11	1	N51	P16442	N200	NULL	human	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+12	1	N51	P38649	N200	NULL	mouse	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+13	1	N52	P16442	N53	NULL	human	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+14	1	N52	P38649	N53	NULL	mouse	AN	https://pubmed.ncbi.nlm.nih.gov/12198488/	ABO glycosylation system
+200	4	N206	NULL	NULL	NULL	NULL	MT	https://www.jstage.jst.go.jp/article/biochemistry1922/91/1/91_1_233/_pdf/-char/en	Reference refutes residue 
+201	4	N207	NULL	NULL	NULL	NULL	MT		4-substituted GlcNAc ok but should be 3-linked
+202	4	N208	NULL	NULL	NULL	NULL	MT		Man linkage not even present in fungi
+203	4	N214	NULL	NULL	NULL	NULL	MT	https://febs.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1432-1033.1980.tb06144.x	Linkage undefined in original reference
+204	4	N215	NULL	NULL	NULL	NULL	MT	https://febs.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1432-1033.1980.tb06144.x	
+205	4	N223	NULL	NULL	NULL	NULL	MT	PMID: 2411221	Reference refutes residue 
+206	4	N226	NULL	NULL	NULL	NULL	MT		4-substituted GlcNAc ok but should be 3-linked
+207	4	N228	NULL	NULL	NULL	NULL	MT		4-substituted GlcNAc ok but should be 3-linked
+208	4	N238	NULL	NULL	NULL	NULL	MT		
+209	4	N239	NULL	NULL	NULL	NULL	MT		
+210	4	N240	NULL	NULL	NULL	NULL	MT		
+211	4	N247	NULL	NULL	NULL	NULL	MT	PMID: 8354224	Reference does not support residue 
+212	4	N250	NULL	NULL	NULL	NULL	MT		
+213	4	N251	NULL	NULL	NULL	NULL	MT		
+214	4	N252	NULL	NULL	NULL	NULL	MT		
+215	4	N253	NULL	NULL	NULL	NULL	MT		
+216	4	N259	NULL	NULL	NULL	NULL	MT		
+217	4	N260	NULL	NULL	NULL	NULL	MT	https://pubmed.ncbi.nlm.nih.gov/2065672/	reported in plants but no linkage position proposed
+218	4	N261	NULL	NULL	NULL	NULL	MT	https://pubmed.ncbi.nlm.nih.gov/2065672/	reported in plants but no linkage position proposed
+219	4	N276	NULL	NULL	NULL	NULL	MT		
+220	4	N282	NULL	NULL	NULL	NULL	MT		
+221	4	N293	NULL	NULL	NULL	NULL	MT		
+222	4	N299	NULL	NULL	NULL	NULL	MT		
+223	4	N301	NULL	NULL	NULL	NULL	MT		
+224	4	N302	NULL	NULL	NULL	NULL	MT		
+225	4	N305	NULL	NULL	NULL	NULL	MT		
+226	4	N306	NULL	NULL	NULL	NULL	MT		
+227	4	N319	NULL	NULL	NULL	NULL	MT		
+228	4	N320	NULL	NULL	NULL	NULL	MT		
+229	4	N321	NULL	NULL	NULL	NULL	MT		
+230	4	N322	NULL	NULL	NULL	NULL	MT		
+231	4	N344	NULL	NULL	NULL	NULL	MT		
+232	4	N347	NULL	NULL	NULL	NULL	MT		
+233	4	N348	NULL	NULL	NULL	NULL	MT		
+234	4	N353	NULL	NULL	NULL	NULL	MT		
+235	4	N355	NULL	NULL	NULL	NULL	MT		
+236	4	N357	NULL	NULL	NULL	NULL	MT		
+237	4	N359	NULL	NULL	NULL	NULL	MT		
+238	4	N360	NULL	NULL	NULL	NULL	MT		
+239	4	N363	NULL	NULL	NULL	NULL	MT		
+240	4	N369	NULL	NULL	NULL	NULL	MT		
+241	4	N378	NULL	NULL	NULL	NULL	MT		
+242	4	N380	NULL	NULL	NULL	NULL	MT		
+243	4	N383	NULL	NULL	NULL	NULL	MT		
+244	4	N384	NULL	NULL	NULL	NULL	MT		
+245	4	N385	NULL	NULL	NULL	NULL	MT		
+246	4	N387	NULL	NULL	NULL	NULL	MT		
+247	4	N396	NULL	NULL	NULL	NULL	MT		
+248	4	N397	NULL	NULL	NULL	NULL	MT		
+249	4	N404	NULL	NULL	NULL	NULL	MT		
+250	4	N406	NULL	NULL	NULL	NULL	MT		
+251	4	N413	NULL	NULL	NULL	NULL	MT		
+252	4	N415	NULL	NULL	NULL	NULL	MT		
+253	4	N416	NULL	NULL	NULL	NULL	MT		
+254	4	N417	NULL	NULL	NULL	NULL	MT		
+255	4	N420	NULL	NULL	NULL	NULL	MT		
+256	4	N426	NULL	NULL	NULL	NULL	MT		
+257	4	N428	NULL	NULL	NULL	NULL	MT		
+258	4	N431	NULL	NULL	NULL	NULL	MT		
+259	4	N438	NULL	NULL	NULL	NULL	MT		
+260	4	N439	NULL	NULL	NULL	NULL	MT		
+261	4	N441	NULL	NULL	NULL	NULL	MT		
+262	4	N444	NULL	NULL	NULL	NULL	MT		
+263	4	N445	NULL	NULL	NULL	NULL	MT		
+264	4	N450	NULL	NULL	NULL	NULL	MT		
+265	4	N453	NULL	NULL	NULL	NULL	MT		
+266	4	N454	NULL	NULL	NULL	NULL	MT		
+267	4	N455	NULL	NULL	NULL	NULL	MT		
+268	4	N458	NULL	NULL	NULL	NULL	MT		
+269	4	N459	NULL	NULL	NULL	NULL	MT		
+270	4	N460	NULL	NULL	NULL	NULL	MT		
+271	4	N461	NULL	NULL	NULL	NULL	MT		
+272	4	N464	NULL	NULL	NULL	NULL	MT		
+273	4	N465	NULL	NULL	NULL	NULL	MT		
+400	5	N201	NULL	NULL	NULL	NULL			
+401	5	N216	NULL	NULL	NULL	NULL			
+402	5	N224	NULL	NULL	NULL	NULL			
+403	5	N237	NULL	NULL	NULL	NULL	MT		
+404	5	N255	NULL	NULL	NULL	NULL			
+405	5	N256	NULL	NULL	NULL	NULL			
+406	5	N294	NULL	NULL	NULL	NULL	MT		
+407	5	N298	NULL	NULL	NULL	NULL	MT		
+408	5	N313	NULL	NULL	NULL	NULL			
+409	5	N316	NULL	NULL	NULL	NULL			
+410	5	N335	NULL	NULL	NULL	NULL	MT		
+411	5	N362	NULL	NULL	NULL	NULL	MT		
+412	5	N395	NULL	NULL	NULL	NULL	MT		
+413	5	N400	NULL	NULL	NULL	NULL	MT		
+600	6	N205	NULL	NULL	NULL	NULL	MT		
+601	6	N244	NULL	NULL	NULL	NULL	MT		Gala4Gal on glycolipids only; Gala3Gal OK
+602	6	N245	NULL	NULL	NULL	NULL	MT	https://www.glygen.org/motif/GGM.000069	Gala4Gal on glycolipids only; Gala3Gal OK
+603	6	N246	NULL	NULL	NULL	NULL	MT	https://www.glygen.org/motif/GGM.000069	Gala4Gal on glycolipids only; Gala3Gal OK
+604	6	N249	NULL	NULL	NULL	NULL	MT		I' branching GlcNAc only added to internal internal Gal residues of LacNAc repeats
+605	6	N257	NULL	NULL	NULL	NULL		https://www.glygen.org/motif/GGM.000069	Gala4Gal on glycolipids only; Gala3Gal OK
+606	6	N262	NULL	NULL	NULL	NULL	MT	https://pubmed.ncbi.nlm.nih.gov/2065672/ - https://link.springer.com/article/10.1007/BF00731292	Glc alpha extension only on 3-arm of trimannosysl core
+607	6	N267	NULL	NULL	NULL	NULL	MT		
+608	6	N273	NULL	NULL	NULL	NULL	MT		
+609	6	N303	NULL	NULL	NULL	NULL	MT		
+610	6	N304	NULL	NULL	NULL	NULL	MT		
+611	6	N309	NULL	NULL	NULL	NULL	MT		
+612	6	N310	NULL	NULL	NULL	NULL	MT		
+613	6	N311	NULL	NULL	NULL	NULL	MT		
+614	6	N314	NULL	NULL	NULL	NULL	MT		
+615	6	N315	NULL	NULL	NULL	NULL	MT		
+616	6	N325	NULL	NULL	NULL	NULL	MT		Gala4Gal on glycolipids only; Gala3Gal OK
+617	6	N326	NULL	NULL	NULL	NULL	MT		Gala4Gal on glycolipids only; Gala3Gal OK
+618	6	N327	NULL	NULL	NULL	NULL	MT		
+619	6	N336	NULL	NULL	NULL	NULL	MT		
+620	6	N337	NULL	NULL	NULL	NULL	MT		
+621	6	N338	NULL	NULL	NULL	NULL	MT		
+622	6	N341	NULL	NULL	NULL	NULL	MT		
+623	6	N343	NULL	NULL	NULL	NULL	MT		
+624	6	N350	NULL	NULL	NULL	NULL	MT		
+625	6	N352	NULL	NULL	NULL	NULL	MT		
+626	6	N354	NULL	NULL	NULL	NULL	MT		
+627	6	N364	NULL	NULL	NULL	NULL	MT		
+628	6	N365	NULL	NULL	NULL	NULL	MT	PMID: 27477117	mis-asignment of bisecting GlcNAc
+629	6	N366	NULL	NULL	NULL	NULL	MT		
+630	6	N368	NULL	NULL	NULL	NULL	MT	https://doi.org/10.1016/S0008-6215(00)90370-7	glycan structure not present in evidence; mis-interpretation of IUPAC nomenclature?
+631	6	N372	NULL	NULL	NULL	NULL	MT		
+632	6	N373	NULL	NULL	NULL	NULL	MT		
+633	6	N398	NULL	NULL	NULL	NULL	MT		
+634	6	N399	NULL	NULL	NULL	NULL	MT		
+635	6	N405	NULL	NULL	NULL	NULL	MT		
+636	6	N408	NULL	NULL	NULL	NULL	MT		
+637	6	N418	NULL	NULL	NULL	NULL	MT		
+638	6	N421	NULL	NULL	NULL	NULL	MT		
+639	6	N422	NULL	NULL	NULL	NULL	MT		
+640	6	N430	NULL	NULL	NULL	NULL	MT		
+641	6	N435	NULL	NULL	NULL	NULL	MT		
+642	6	N436	NULL	NULL	NULL	NULL	MT		Gala4Gal on glycolipids only; Gala3Gal OK
+643	6	N446	NULL	NULL	NULL	NULL	MT		
+644	6	N447	NULL	NULL	NULL	NULL	MT		
+645	6	N448	NULL	NULL	NULL	NULL	MT		
+646	6	N449	NULL	NULL	NULL	NULL	MT		
+647	6	N451	NULL	NULL	NULL	NULL	MT		
+648	6	N462	NULL	NULL	NULL	NULL	MT		
+649	6	N463	NULL	NULL	NULL	NULL	MT		
+650	6	N87	NULL	NULL	NULL	NULL	MT	PMID: 25165203	Not a valid node
+1000	7	N202	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1001	7	N204	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1002	7	N211	NULL	N-glycans	NULL	schistosomes	MT	http://www.glycosciences.de/database/start.php?action=list_structures_from_reference&referenceid=6981	Poorly defined antigen
+1003	7	N212	NULL	N-glycans	NULL	schistosomes	MT	http://www.glycosciences.de/database/start.php?action=list_structures_from_reference&referenceid=6981	Poorly defined antigen
+1004	7	N213	NULL	N-glycans	NULL	schistosomes	MT	http://www.glycosciences.de/database/start.php?action=list_structures_from_reference&referenceid=6981	Poorly defined antigen
+1005	7	N217	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1006	7	N218	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1007	7	N219	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1008	7	N220	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1009	7	N221	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1010	7	N225	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1011	7	N263	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1012	7	N264	NULL	N-mannans	NULL	fungi	MT		
+1013	7	N269	NULL	N-mannans	NULL	fungi			
+1014	7	N270	NULL	N-mannans	NULL	fungi		https://pubmed.ncbi.nlm.nih.gov/8505334/	
+1015	7	N275	NULL	N-glycans	NULL	nematodes molluscs	MT	https://doi.org/10.1017/S0031182019000398	
+1016	7	N283	NULL	N-mannans	NULL	fungi			
+1017	7	N286	NULL	N-mannans	NULL	fungi	MT		
+1018	7	N296	NULL	N-mannans	NULL	fungi	MT		
+1019	7	N300	NULL	N-mannans	NULL	fungi	MT		
+1020	7	N330	NULL	N-mannans	NULL	fungi	MT		
+1021	7	N367	NULL	N-mannans	NULL	fungi			
+1022	7	N389	NULL	N-mannans	NULL	fungi			
+1023	7	N393	NULL	N-mannans	NULL	fungi			
+1024	7	N402	NULL	N-glycans	NULL	nematodes	MT		
+1025	7	N403	NULL	N-glycans	NULL	nematodes	MT		
+1026	7	N414	NULL	N-mannans	NULL	fungi	MT		
+1027	7	N419	NULL	N-mannans	NULL	fungi			
+1028	7	N425	NULL	N-mannans	NULL	fungi			
+1029	7	N456	NULL	N-mannans	NULL	fungi	MT		
+1030	7	N467	NULL	N-glycans	NULL	nematodes	MT		

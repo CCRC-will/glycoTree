@@ -6,7 +6,8 @@
 <meta http-equiv="Expires" content="0" />
 	
 <TITLE>GlycoTree Check Structure API Test</TITLE>
-
+<link rel="icon" type="image/svg" href="/svg/favicon.svg">
+	
 <style>
 svg.downloader {
 	vertical-align: text-top;
@@ -365,7 +366,41 @@ function plantTree(treeData) {
 function showExample(which) {
 	var gct = [];
 	gct[0] = "RES\n\
-1b:b-dglc-HEX-1:5\n\
+1b:a-dglc-HEX-1:5\n\
+2s:n-acetyl\n\
+3b:b-dglc-HEX-1:5\n\
+4s:n-acetyl\n\
+5b:b-dman-HEX-1:5\n\
+6b:a-dman-HEX-1:5\n\
+7b:b-dglc-HEX-1:5\n\
+8s:n-acetyl\n\
+9b:a-dgal-HEX-1:5|6:d\n\
+10b:b-dgal-HEX-1:5\n\
+11b:a-dman-HEX-1:5\n\
+12b:b-dglc-HEX-1:5\n\
+13s:n-acetyl\n\
+14b:a-dgal-HEX-1:5|6:d\n\
+15b:b-dgal-HEX-1:5\n\
+16b:a-dgal-HEX-1:5|6:d\n\
+LIN\n\
+1:1d(2+1)2n\n\
+2:1o(4+1)3d\n\
+3:3d(2+1)4n\n\
+4:3o(4+1)5d\n\
+5:5o(3+1)6d\n\
+6:6o(2+1)7d\n\
+7:7d(2+1)8n\n\
+8:7o(3+1)9d\n\
+9:7o(4+1)10d\n\
+10:5o(6+1)11d\n\
+11:11o(2+1)12d\n\
+12:12d(2+1)13n\n\
+13:12o(3+1)14d\n\
+14:12o(4+1)15d\n\
+15:1o(6+1)16d";
+
+	gct[1] = "RES\n\
+1b:x-dglc-HEX-1:5\n\
 2s:n-acetyl\n\
 3b:b-dglc-HEX-1:5\n\
 4s:n-acetyl\n\
@@ -374,17 +409,15 @@ function showExample(which) {
 7b:b-dglc-HEX-1:5\n\
 8s:n-acetyl\n\
 9b:b-dgal-HEX-1:5\n\
-10b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+10b:b-dglc-HEX-1:5\n\
 11s:n-acetyl\n\
-12b:a-dman-HEX-1:5\n\
-13b:b-dglc-HEX-1:5\n\
-14s:n-acetyl\n\
-15b:b-dglc-HEX-1:5\n\
-16s:n-acetyl\n\
-17b:b-dgal-HEX-1:5\n\
-18b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
-19s:n-acetyl\n\
-20b:a-dgal-HEX-1:5|6:d\n\
+12b:b-dgal-HEX-1:5\n\
+13b:a-dman-HEX-1:5\n\
+14b:b-dglc-HEX-1:5\n\
+15s:n-acetyl\n\
+16b:b-dgal-HEX-1:5\n\
+17b:a-dgal-HEX-1:5\n\
+18b:a-lgal-HEX-1:5|6:d\n\
 LIN\n\
 1:1d(2+1)2n\n\
 2:1o(4+1)3d\n\
@@ -394,41 +427,32 @@ LIN\n\
 6:6o(2+1)7d\n\
 7:7d(2+1)8n\n\
 8:7o(4+1)9d\n\
-9:9o(3+2)10d\n\
-10:10d(5+1)11n\n\
-11:5o(6+1)12d\n\
-12:12o(2+1)13d\n\
-13:13d(2+1)14n\n\
-14:12o(4+1)15d\n\
-15:15d(2+1)16n\n\
-16:15o(4+1)17d\n\
-17:17o(3+2)18d\n\
-18:18d(5+1)19n\n\
-19:1o(6+1)20d";
-
-	gct[1] = "RES\n\
-1b:x-dglc-HEX-x:x\n\
-2s:n-acetyl\n\
-3b:b-dglc-HEX-1:5\n\
-4s:n-acetyl\n\
-5b:b-dman-HEX-1:5\n\
-6b:a-dman-HEX-1:5\n\
-7b:b-dglc-HEX-1:5\n\
-8s:n-acetyl\n\
-9b:a-dman-HEX-1:5\n\
-10b:b-dglc-HEX-1:5\n\
-11s:n-acetyl\n\
+9:6o(4+1)10d\n\
+10:10d(2+1)11n\n\
+11:10o(4+1)12d\n\
+12:5o(6+1)13d\n\
+13:13o(2+1)14d\n\
+14:14d(2+1)15n\n\
+15:14o(4+1)16d\n\
+16:16o(3+1)17d\n\
+17:1o(6+1)18d\n\
+UND\n\
+UND1:100.0:100.0\n\
+ParentIDs:1|3|5|6|7|9|10|12|13|14|16|17|18\n\
+SubtreeLinkageID1:o(3+2)d\n\
+RES\n\
+19b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+20s:n-acetyl\n\
 LIN\n\
-1:1d(2+1)2n\n\
-2:1o(4+1)3d\n\
-3:3d(2+1)4n\n\
-4:3o(4+1)5d\n\
-5:5o(3+1)6d\n\
-6:6o(2|4+1)7d\n\
-7:7d(2+1)8n\n\
-8:5o(6+1)9d\n\
-9:9o(2|4+1)10d\n\
-10:10d(2+1)11n";
+18:19d(5+1)20n\n\
+UND2:100.0:100.0\n\
+ParentIDs:1|3|5|6|7|9|10|12|13|14|16|17|18\n\
+SubtreeLinkageID1:o(6+2)d\n\
+RES\n\
+21b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+22s:n-acetyl\n\
+LIN\n\
+19:21d(5+1)22n";
 	
 	gct[2] = "RES\n\
 1b:a-dgal-HEX-1:5\n\
