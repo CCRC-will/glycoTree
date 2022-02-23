@@ -60,6 +60,6 @@ $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" 
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c rule_id,class,description,logic glycotree rules.tsv 
 
-$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c instance,rule_id,focus,agent,factor_1,factor_2,taxonomy,curator_id,refs,comment glycotree rule_data.tsv 
+$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c instance,rule_id,focus,agent,factor_1,factor_2,taxonomy,curator_id,refs,comment,status glycotree rule_data.tsv 
 
 $dir/mysqldump -u gt_user -p$pw glycotree > glycotree.sql

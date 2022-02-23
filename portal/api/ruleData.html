@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>GlyGen Sandbox</title>
+	
+<link rel="icon" href="../svg/sbSmall.svg" type="image/icon type">
+<link rel="stylesheet" type="text/css" href="../css/explore.css">
+	
+<script src="../js/sbheader.js"></script>
+	
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="../js/json2svg_v1.4.js"></script>
+
+<style>
+
+#rules_table td {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+#rules_table tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
+	
+#rule_select_table {
+		text-align: left;
+}
+
+</style>	
+	
+<script>
+	
+var rulePath = "getAllRuleData.php";
+var v = 1;
+	
+function initialize() {
+	console.log("##### Initializing #####");
+	$.get(rulePath,
+	{},
+	function(result){
+		if (v > 5) {
+			console.log(" the URL " + rulePath + 
+				" returned this json data:\n  " + result.toString());
+		}
+		resultData = JSON.parse(result); // global for download
+		showRules(resultData);
+	});
+} // end of function initialize()
+	
+function showRules(data) {
+	var resID = data['residue_id'];
+	var resultStr = "<h2>Rule Inferences for All Canonical Residues</h2>" +
+		 "Click a residue ID to explore or extend its rules<br>";
+	
+	var instances = [];
+	resultStr += "<table id='rules_table'>\n  ";
+	resultStr += "<tr><th>Residue</th><th>Inference</th><th>Reference(s)</th><th>Comment</th><th>Curator</th><th>Status</th></tr>";
+	for (var i = 0; i < data.length; i++) {
+		var resid = data[i]['residue_id'];
+		var focus = data[i]['focus'];
+		var ruleInference = data[i]['inference'];
+		var ruleRef = data[i]['refs'];
+		var ruleComment = data[i]['comment'];
+		var curator = data[i]['curator_id'];
+		var status = data[i]['status'];
+		var resLink = "<a href='rules1.html?focus=" + resid + "' target='_blank'>" + resid + "</a>";
+		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + ruleInference +
+			"</td><td>" + ruleRef + "</td><td>" + ruleComment +
+			"</td><td>" + curator + "</td><td>" + status + "</td></tr>\n  ";
+	}
+	resultStr += "</table>\n  ";
+	$("#ruleDiv").html(resultStr);
+}
+	
+</script>	
+
+</head>
+
+<body onLoad=initialize();>
+	
+<div id="ruleDiv"></div>
+	
+</body>

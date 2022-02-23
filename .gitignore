@@ -31,6 +31,7 @@ model/nodes/
 model/json/match/
 model/json/complete/
 model/commands.txt
+model/renumberRules.awk
 code/bak/
 portal/api/temp/*.csv
 portal/api/temp/mapped/*.csv

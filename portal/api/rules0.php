@@ -17,11 +17,23 @@ if ($connection->connect_error) {
 
 $finalResult = [];
 $finalResult['residue_id'] = $focus;
+
+$query = "SELECT * FROM canonical_residues WHERE residue_id=?";
+$stmt = $connection->prepare($query);
+$stmt->bind_param("s", $focus);
+$stmt->execute(); 
+$result = $stmt->get_result();
+if ( ($result->num_rows) > 0) {
+	$row = $result->fetch_assoc();
+	$anomer = str_replace(array("a","b"), array("&alpha;","&beta;"), $row['anomer']);
+	$finalResult['structure'] = $anomer . "-" . $row['absolute'] . "-" . $row['form_name'];
+	$finalResult['snfg_name'] = $row['name'];
+}
+
 $finalResult['rule_instances'] = [];
 $query = "SELECT rule_data.*,rules.* FROM rule_data JOIN rules on (rule_data.rule_id=rules.rule_id) WHERE rule_data.focus=?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $focus);
-
 $stmt->execute(); 
 $result = $stmt->get_result();
 if ( ($result->num_rows) > 0) {

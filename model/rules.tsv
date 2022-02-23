@@ -2,7 +2,8 @@ rule_id	class	description	logic
 1	biosynthesis	positive glycosyltransferase acceptor substrate specificity	transfer of residue [focus] by [agent] in [taxonomy] requires residue [factor_1]
 2	biosynthesis	negative glycosyltransferase acceptor substrate specificity	transfer of residue [focus] by [agent] in [taxonomy] blocked by residue [factor_1]
 3	biosynthesis	TBD when this rule is more explicitly specified	residue [focus] demands [factor_1]
-4	structure	abiotic glycosyl linkage	residue [focus] has an abiotic glycosyl linkage
-5	structure	abiotic configuration	residue [focus] has an abiotic configuration
-6	structure	abiotic context (location)	residue [focus] has an abiotic structural context
-7	taxonomy	taxonomic limitation	residue [focus] is limited to [factor_1] in [taxonomy]
+4	structure	abiotic glycosyl linkage (attachment atom)	residue [focus] has an abiotic glycosyl linkage
+5	structure	abiotic absolute configuration (D or L)	residue [focus] has an abiotic absolute configuration
+6	structure	abiotic anomeric configuration (alpha or beta)	residue [focus] has an abiotic anomeric configuration
+7	structure	abiotic context (location in glycan)	residue [focus] has an abiotic structural context
+8	taxonomy	taxonomic limitation (species restriction)	residue [focus] is limited to [factor_1] in [taxonomy]

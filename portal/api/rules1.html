@@ -24,7 +24,7 @@
 	z-index: 88;
 	right: 20px;
 	top: 60px;
-	width: 70%;
+	width: 800px;
 	border-style: none;
 	text-align: center;
 }
@@ -34,7 +34,6 @@
 	z-index: 88;
 	top: 20px;
 	width: 100%;
-	
 	border-style: none;
 	text-align: center;
 }
@@ -44,9 +43,23 @@
 	z-index: 88;
 	left: 20px;
 	top: 60px;
-	width: 25%;
+	width: 200px;
 	border-style: none;
 	text-align: left;
+}
+
+#rules_table td {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+#rules_table tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
+	
+#rule_select_table {
+		text-align: left;
 }
 
 </style>	
@@ -58,11 +71,20 @@ function initialize() {
 	console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
 	fetchConfiguration(configPath);
-		$("#check_it").click(function() {
-		getRules();
+	$("#check_it").click(function() {
+		getRules(true);
+	});
+	$("#generate_rule").click(function() {
+		generateRule();
 	});
 	console.log("list URL is " + listPath);
-
+	
+	var arg = window.location.search.substring(1).split("&")[0];
+	var a = arg.split("=");
+	if (arg.length > 1) {
+		$("#resid").val(a[a.length - 1]);
+		getRules(true);
+	}
 } // end of function initialize()
 
 	
@@ -72,8 +94,13 @@ function initialize() {
 var listPath = "list.php";
 var glycanPath = "glycan-v4.php";
 var configPath = "../json/sugars.json";
-var v =  9;
+var v =  5;
 var svgEncoding = "";
+var newRule = null; // object
+var newRuleStr = ""; // string
+var allRuleStrs = new Array(); // string[]
+var allRules = new Array(); // object[]
+var jsonRules = "";
 	
 	
 function downloadSVG(a) {
@@ -86,7 +113,6 @@ function downloadSVG(a) {
 	
 	
 function showList(selectedGlycans, resID) {
-	if (v > 3) console.log("selectedGlycans" + selectedGlycans);
 	var ld = $("#listDiv");
 	var listHTML = "<h3>Glycans Containing Residue " + resID + "</h3><table>\n";
 	for (var i = 0; i < selectedGlycans.length; i++) {
@@ -99,6 +125,7 @@ function showList(selectedGlycans, resID) {
 	showImage(selectedGlycans[0].glytoucan_ac, resID);
 } // end of function showList()
 	
+
 	
 	
 function showImage(accession, resID) {
@@ -119,20 +146,20 @@ function showImage(accession, resID) {
 		svgEncoding = generateOneSVG(accession, jsonResult);
 		
 		var sd = $("#iDiv");
-		sd.html("<h3>Example Structure " + accession + " containing (highlighted) residue " + resID + "</h3>")
+		sd.html("<h3>Structure " + accession + " contains residue " + resID + " (highlighted)</h3>")
 		sd.append(svgEncoding);
 		
 		var bStr = "<br>\
 	<form action=\"../explore.html\" method=\"get\" target=\"_blank\">\
 		<label for=\"fname\">GlyTouCan Accession:</label>\
-		<input type=\"text\" id=\"focus\" name=\"focus\">\
+		<input type=\"text\" id=\"focus\" name=\"focus\" size=\"10\">\
 		<br><input type=\"submit\" value=\"Explore This Glycan Structure\">\
 	</form>";
 		
 		
 		bStr += "<br><input type='button' value='Dowload SVG Image'" +
 			 "onClick=\"downloadSVG('" + accession + "')\">";
-		bStr += "<p><b>Automated methods to generate new 'Rule Instances' are currently being developed for implementation here</b></p>";
+
 		sd.append(bStr);
 		
 		$("#focus").val(accession);
@@ -145,8 +172,8 @@ function showImage(accession, resID) {
 		if (v > 8) console.log("clickableSet.length: " + clickableSet.length);
 		
 		clickableSet.each(function( index ) {
-			// default opacity in this context is 0.6
-			$(this).css('opacity', 0.6);
+			// default opacity in this context is 0.4
+			$(this).css('opacity', 0.4);
 			var id = $(this).attr("id");
 			// the id of each svg object is complex,
 			//    containing an accession, a resID, and a type
@@ -254,9 +281,9 @@ function plantTree(treeData) {
 } // end of function plantTree()
 
 	
-function getRules() {
+function getRules(showEm) {
 	var resid = $("#resid").val();
-	$("#ruleDiv").html("<p>Getting rules for " + resid + "</p>");
+	if (showEm) $("#ruleDiv").html("<p>Getting rules for " + resid + "</p>");
 	
 	var thisURL = "" + window.location; // force thisURL to be a String
 	var urlSplit = thisURL.split('/');
@@ -265,32 +292,172 @@ function getRules() {
 		urlBase += urlSplit[i] + "/";
 	url = urlBase + "rules0.php?focus=" + resid; 
 	
-	
 	$.get(url,
 	function(result){
 		if (v > 4) console.log("result returned from " + url + "\n " + result);
 		 // process rule data
 		resultData = JSON.parse(result); // global for download
-		showRules(resultData);
+		if (showEm) showRules(resultData);
 	});
 }
 	
 function showRules(data) {
 	var resID = data['residue_id'];
-	var resultStr = "<h2>Inferences for canonical residue " + resID + "</h2>";
+	var resStructure = data['structure'];
+	var snfgImgRef = "../snfg_images/" + data['snfg_name'] + ".svg";
+	var resultStr = "<h2>Established Inferences for Residue " + resID + " <img src=\"" + snfgImgRef +
+		 "\"> " + resStructure + "</h2>";
+	
 	var instances = [];
-	var sep = ""; // separates instances in html
-	for (var i = 0; i < data['rule_instances'].length; i++) {
-		resultStr += sep + "Rule " + data['rule_instances'][i]['rule_id'] + " Inference:	<b>" +
-			data['rule_instances'][i]['inference'] + "</b>";
-		sep = "<br>";
-	}
 	if (data['rule_instances'].length == 0) {
 		resultStr += "<b>" + data['message'] + "</b>";
+	} else {
+		resultStr += "<table id='rules_table'>\n  ";
+		resultStr += "<tr><th>Inference</th><th>References</th><th>Comment</th></tr>";
+		for (var i = 0; i < data['rule_instances'].length; i++) {
+			var focus = data['rule_instances'][i]['focus'];
+			var ruleInference = data['rule_instances'][i]['inference'];
+			var ruleRef = data['rule_instances'][i]['refs'];
+			var ruleComment = data['rule_instances'][i]['comment'];
+			resultStr += "<tr><td style='white-space: nowrap'>" + ruleInference +
+				"</td><td>" + ruleRef + "</td><td>" + ruleComment + "</td></tr>\n  ";
+		}
+		resultStr += "</table>\n  ";
 	}
 
 	$("#ruleDiv").html(resultStr);
 	fetchList(resID);
+}
+	
+	
+function getRuleLogic(ruleID) {
+	// required because rules are in a regular array (not an associative array)
+	var ruleLogic = "";
+	for (var i = 0; i < resultData['rules'].length; i++) {
+		if (resultData['rules'][i]['rule_id'] == ruleID) {
+			ruleLogic = resultData['rules'][i]['logic'];
+		}
+	}
+	return(ruleLogic);
+}
+	
+function continue4() {
+	// submit all saved rules
+	jsonRules = JSON.stringify(allRules, null, 4);
+	var confirmStr = "Are you sure you want to submit the following data?\n" + jsonRules;
+		
+	if (confirm(confirmStr)) {
+		alert("Back-End not yet ready\n");
+	} else {
+		alert("No data sent to server");
+	} 
+	var sd = $("#iDiv");
+	sd.html("");
+}
+	
+function continue3() {
+	// (save new rule) push the new rule and rule string to arrays, then show all saved rules
+	$("#continue_3").attr('disabled', true);
+	allRules.push(newRule);
+	allRuleStrs.push(newRuleStr);
+	console.log(allRuleStrs);
+	var sd = $("#iDiv");
+	sd.html("<h2>Saved Rules:</h2>");
+	var sd = $("#iDiv");
+	for (var i = 0; i < allRuleStrs.length; i++) {
+		if (v > 3) console.log(allRuleStrs[i]);
+		sd.append(allRuleStrs[i] + "<br>");
+	}
+	sd.append("<br><button id='send' onclick='continue4();'>Submit Saved Rules</button></p>");
+}
+	
+function continue2() {
+	// instantiate the rule using input fields and generate a string describing it
+	$("#continue_2").attr('disabled', true);
+	var sd = $("#iDiv");
+	var ruleID = $('input[name="chosen_rule"]:checked').val();
+	// newRule is global
+	newRule = {
+		rule_id: ruleID,
+		focus: $("#resid").val(),
+		agent: $("#rule_agent").val(),
+		factor_1: $("#rule_factor_1").val(),
+		factor_2: $("#rule_factor_2").val(),
+		taxonomy: $("#rule_taxonomy").val(),
+		refs: $("#rule_refs").val(),
+		comment: $("#rule_comment").val()
+	} 
+	if (v > 3) console.log(newRule);
+	
+	var ruleLogic = getRuleLogic(ruleID);
+	var inference = ruleLogic.replace("[focus]", "<b>" + newRule['focus'] + "</b>");
+	// newRuleStr is global
+	newRuleStr = inference.replace("[agent]", "<b>" + newRule['agent'] + "</b>");
+	newRuleStr = newRuleStr.replace("[factor_1]", "<b>" + newRule['factor_1'] + "</b>");
+	newRuleStr = newRuleStr.replace("[factor_2]", "<b>" + newRule['factor_2'] + "</b>");
+	newRuleStr = newRuleStr.replace("[taxonomy]", "<b>" + newRule['taxonomy'] + "</b>");
+
+	var newRuleParStr = "<br><br><b>References:</b> " + newRule['refs'];
+	newRuleParStr += "<br><b>Comment:</b> " + newRule['comment'];
+	
+	sd.html("<h3>New Rule Application:</h3>" + newRuleStr + newRuleParStr);
+	sd.append("<p><button id='continue_3' onclick='continue3();'>Save Rule</button></p>");
+}
+	
+	
+function continue1() {
+	// enter the parameters for the rule
+	$("#continue_1").attr('disabled', true);
+	var sd = $("#iDiv");
+	var resID = $("#resid").val();
+	var ruleID = $('input[name="chosen_rule"]:checked').val();
+	var ruleLogic = getRuleLogic(ruleID);
+	/*
+	var skipToNextStep = (ruleLogic.search(/(agent|factor|taxonomy)/) == -1);
+	if  (skipToNextStep) {
+		continue2();
+		return;
+	}
+	*/
+
+	var inference = ruleLogic.replace("[focus]", resID);
+	if (v > 3) console.log("Rule " + ruleID + " applied to " + resID + "\n" + inference);
+	var ruleInput = inference.replace("[agent]", "<input type='text' id='rule_agent' size='12'>");
+	ruleInput = ruleInput.replace("[factor_1]", "<input type='text' id='rule_factor_1' size='12'>");
+	ruleInput = ruleInput.replace("[factor_2]", "<input type='text' id='rule_factor_2' size='12'>");
+	ruleInput = ruleInput.replace("[taxonomy]", "<input type='text' id='rule_taxonomy' size='12'>");
+	
+	ruleInput += "<br><label for=\"rule_refs\">Literature references for the rule:</label>";
+	ruleInput += "<br><input type='text' id='rule_refs' size='96'>";
+	ruleInput += "<br><label for=\"rule_comment\">Curator comments for the rule:</label>";
+	ruleInput += "<br><input type='text' id='rule_comment' size='96'>";
+	
+	var divHTML = "<h2>Enter any additional values required to implement the rule</h2>";
+	divHTML += ruleInput;
+	divHTML += "<p><button id=\"continue_2\" onclick=\"continue2();\">Continue</button></p>";
+	sd.append(divHTML);
+}
+	
+	
+function generateRule() {
+	// display a list of rules to choose from
+	getRules(false);
+	var resID = $("#resid").val();
+	var sd = $("#iDiv");
+	var ruleStr = "<h2>Select a Rule to apply to Residue " + resID + "</h2>";
+	ruleStr += "<table id='rule_select_table'>\n";
+	for (var i = 0; i < resultData['rules'].length; i++) {
+		var ruleID = resultData['rules'][i]['rule_id'];
+		var ruleLogic = resultData['rules'][i]['logic'];
+		ruleLogic = ruleLogic.replace("[focus]", resID);
+		ruleStr += "  <tr><td><input type=\"radio\" id=\"rule" +
+			ruleID + "\" name=\"chosen_rule\" value=\"" + ruleID + "\">" +
+			" <label for=\"rule" + ruleID + "\">" + ruleLogic + "</label>"
+			"</td></tr>\n"
+	}
+	ruleStr += "</table>\n";
+	ruleStr += "<p><button id=\"continue_1\" onclick=\"continue1();\">Continue</button></p>";
+	sd.html(ruleStr);
 }
 	
 </script>
@@ -310,13 +477,10 @@ function showRules(data) {
 <h2>Curate Rules for Canonical Residues</h2>
 	
 <label for="resid">Enter a canonical residue id:</label>
-<input type="text" id="resid" name="resid" size="6" value="N7"> 
+<input type="text" id="resid" name="resid" size="5" value="N224"> 
 <button id="check_it">Check Rules</button>
-
-<div id="ruleDiv"></div>
-		
-
-	
+<button id="generate_rule">Apply a Rule to This Residue</button>
+<div id="ruleDiv"></div>	
 	<div id="iDiv">Structures will appear here<br></div>
 	
 </div>
