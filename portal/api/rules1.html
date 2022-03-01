@@ -61,6 +61,16 @@
 #rule_select_table {
 		text-align: left;
 }
+	
+#saved_rules td {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+#saved_rules tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
 
 </style>	
 	
@@ -76,6 +86,9 @@ function initialize() {
 	});
 	$("#generate_rule").click(function() {
 		generateRule();
+	});
+	$("#show_rule_list").click(function() {
+		showRuleList();
 	});
 	console.log("list URL is " + listPath);
 	
@@ -93,13 +106,17 @@ function initialize() {
 // use next line when running under MAMP
 var listPath = "list.php";
 var glycanPath = "glycan-v4.php";
+var submitPath = "submitRules.php";
 var configPath = "../json/sugars.json";
 var v =  5;
 var svgEncoding = "";
 var newRule = null; // object
 var newRuleStr = ""; // string
 var allRuleStrs = new Array(); // string[]
-var allRules = new Array(); // object[]
+var allRules = new Object(); // object[]
+allRules['curator'] = "";
+allRules['curator_pw'] = "";
+allRules['data'] = new Array();
 var jsonRules = "";
 	
 	
@@ -343,11 +360,35 @@ function getRuleLogic(ruleID) {
 	
 function continue4() {
 	// submit all saved rules
-	jsonRules = JSON.stringify(allRules, null, 4);
-	var confirmStr = "Are you sure you want to submit the following data?\n" + jsonRules;
+	var confirmStr = "Are you sure you want to submit the new rules to the server?\n" +
+		 "This will clear all of the data in the (local) submission list.";
 		
-	if (confirm(confirmStr)) {
-		alert("Back-End not yet ready\n");
+	if (confirm(confirmStr)) {	
+		var curator = prompt("Please enter your curator ID", "");
+		var pw = prompt("Please enter your curator password", "");
+		allRules['curator'] = curator;
+		allRules['curator_pw'] = pw;
+		if (v > 3) console.log(allRules);
+		jsonRules = JSON.stringify(allRules);
+		$.get(submitPath,
+		{
+			json_data: jsonRules
+		},
+		function(result){
+			if (v > 3) {
+				console.log("  submitted data to " + submitPath + "\n" + jsonRules + "\n  " + result);
+			}
+			var responseStr = "<h3>Server Response:</h3><pre style='text-align: left;'>" + result + "</pre>";
+			var sd = $("#iDiv");
+			$("#iDiv").html(responseStr);
+			newRule = null; // object
+			newRuleStr = ""; // string
+			allRuleStrs = new Array(); // string[]
+			allRules = new Object(); // object[]
+			allRules['curator'] = "";
+			allRules['curator_pw'] = "";
+			allRules['data'] = new Array();
+		});
 	} else {
 		alert("No data sent to server");
 	} 
@@ -355,20 +396,30 @@ function continue4() {
 	sd.html("");
 }
 	
-function continue3() {
-	// (save new rule) push the new rule and rule string to arrays, then show all saved rules
-	$("#continue_3").attr('disabled', true);
-	allRules.push(newRule);
-	allRuleStrs.push(newRuleStr);
-	console.log(allRuleStrs);
+function showRuleList() {
 	var sd = $("#iDiv");
-	sd.html("<h2>Saved Rules:</h2>");
-	var sd = $("#iDiv");
+	if (allRuleStrs.length < 1) {
+		$("#iDiv").html("<h2>Rule Submission List is Empty</h2>");
+		return;
+	}
+
+	var tableData = "<h2>Rule Submission List:</h2><table id='saved_rules'>\n  ";
 	for (var i = 0; i < allRuleStrs.length; i++) {
 		if (v > 3) console.log(allRuleStrs[i]);
-		sd.append(allRuleStrs[i] + "<br>");
+		tableData += "<tr><td>" + allRuleStrs[i] + "</td></tr>\n  ";
 	}
-	sd.append("<br><button id='send' onclick='continue4();'>Submit Saved Rules</button></p>");
+
+	tableData += "</table>\n<br><button id='send' onclick='continue4();'>Submit These Rules to Server</button></p>";
+	$("#iDiv").html(tableData);
+}
+	
+function continue3() {
+	// (save new rule) push the new rule and rule string to arrays, then show all saved rules
+	console.log("saving rule:\n" + newRuleStr);
+	$("#continue_3").attr('disabled', true);
+	allRules['data'].push(newRule);
+	allRuleStrs.push(newRuleStr);
+	showRuleList();
 }
 	
 function continue2() {
@@ -400,8 +451,8 @@ function continue2() {
 	var newRuleParStr = "<br><br><b>References:</b> " + newRule['refs'];
 	newRuleParStr += "<br><b>Comment:</b> " + newRule['comment'];
 	
-	sd.html("<h3>New Rule Application:</h3>" + newRuleStr + newRuleParStr);
-	sd.append("<p><button id='continue_3' onclick='continue3();'>Save Rule</button></p>");
+	sd.html("<h3>New Application of Rule " + ruleID + "</h3>" + newRuleStr + newRuleParStr);
+	sd.append("<p><button id='continue_3' onclick='continue3();'>Add This Rule to Submission List</button></p>");
 }
 	
 	
@@ -479,7 +530,9 @@ function generateRule() {
 <label for="resid">Enter a canonical residue id:</label>
 <input type="text" id="resid" name="resid" size="5" value="N224"> 
 <button id="check_it">Check Rules</button>
-<button id="generate_rule">Apply a Rule to This Residue</button>
+<br>
+<button id="generate_rule">Apply a New Rule to This Residue</button>
+<button id="show_rule_list">Show List of New Rules</button>
 <div id="ruleDiv"></div>	
 	<div id="iDiv">Structures will appear here<br></div>
 	
