@@ -110,6 +110,7 @@ var submitPath = "submitRules.php";
 var configPath = "../json/sugars.json";
 var v =  5;
 var svgEncoding = "";
+var newRuleID = null;
 var newRule = null; // object
 var newRuleStr = ""; // string
 var allRuleStrs = new Array(); // string[]
@@ -330,14 +331,16 @@ function showRules(data) {
 		resultStr += "<b>" + data['message'] + "</b>";
 	} else {
 		resultStr += "<table id='rules_table'>\n  ";
-		resultStr += "<tr><th>Inference</th><th>References</th><th>Comment</th></tr>";
+		resultStr += "<tr><th>Inference</th><th>References</th><th>Comment</th><th>Status</th></tr>";
 		for (var i = 0; i < data['rule_instances'].length; i++) {
 			var focus = data['rule_instances'][i]['focus'];
 			var ruleInference = data['rule_instances'][i]['inference'];
 			var ruleRef = data['rule_instances'][i]['refs'];
 			var ruleComment = data['rule_instances'][i]['comment'];
+			var ruleStatus = data['rule_instances'][i]['status'];
 			resultStr += "<tr><td style='white-space: nowrap'>" + ruleInference +
-				"</td><td>" + ruleRef + "</td><td>" + ruleComment + "</td></tr>\n  ";
+				"</td><td>" + ruleRef + "</td><td>" + ruleComment + "</td><td>" +
+				ruleStatus + "</td></tr>\n  ";
 		}
 		resultStr += "</table>\n  ";
 	}
@@ -378,9 +381,9 @@ function continue4() {
 			if (v > 3) {
 				console.log("  submitted data to " + submitPath + "\n" + jsonRules + "\n  " + result);
 			}
-			var responseStr = "<h3>Server Response:</h3><pre style='text-align: left;'>" + result + "</pre>";
-			var sd = $("#iDiv");
-			$("#iDiv").html(responseStr);
+			// var responseStr = "<h3>Server Response:</h3><pre style='text-align: left;'>" + result + "</pre>";
+			// var sd = $("#iDiv");
+			// $("#iDiv").html(responseStr);
 			newRule = null; // object
 			newRuleStr = ""; // string
 			allRuleStrs = new Array(); // string[]
@@ -388,6 +391,7 @@ function continue4() {
 			allRules['curator'] = "";
 			allRules['curator_pw'] = "";
 			allRules['data'] = new Array();
+			getRules(true);
 		});
 	} else {
 		alert("No data sent to server");
@@ -426,10 +430,9 @@ function continue2() {
 	// instantiate the rule using input fields and generate a string describing it
 	$("#continue_2").attr('disabled', true);
 	var sd = $("#iDiv");
-	var ruleID = $('input[name="chosen_rule"]:checked').val();
 	// newRule is global
 	newRule = {
-		rule_id: ruleID,
+		rule_id: newRuleID,
 		focus: $("#resid").val(),
 		agent: $("#rule_agent").val(),
 		factor_1: $("#rule_factor_1").val(),
@@ -440,7 +443,7 @@ function continue2() {
 	} 
 	if (v > 3) console.log(newRule);
 	
-	var ruleLogic = getRuleLogic(ruleID);
+	var ruleLogic = getRuleLogic(newRuleID);
 	var inference = ruleLogic.replace("[focus]", "<b>" + newRule['focus'] + "</b>");
 	// newRuleStr is global
 	newRuleStr = inference.replace("[agent]", "<b>" + newRule['agent'] + "</b>");
@@ -451,7 +454,7 @@ function continue2() {
 	var newRuleParStr = "<br><br><b>References:</b> " + newRule['refs'];
 	newRuleParStr += "<br><b>Comment:</b> " + newRule['comment'];
 	
-	sd.html("<h3>New Application of Rule " + ruleID + "</h3>" + newRuleStr + newRuleParStr);
+	sd.html("<h3>New Application of Rule " + newRuleID + "</h3>" + newRuleStr + newRuleParStr);
 	sd.append("<p><button id='continue_3' onclick='continue3();'>Add This Rule to Submission List</button></p>");
 }
 	
@@ -461,8 +464,8 @@ function continue1() {
 	$("#continue_1").attr('disabled', true);
 	var sd = $("#iDiv");
 	var resID = $("#resid").val();
-	var ruleID = $('input[name="chosen_rule"]:checked').val();
-	var ruleLogic = getRuleLogic(ruleID);
+	newRuleID = $('input[name="chosen_rule"]:checked').val(); // global
+	var ruleLogic = getRuleLogic(newRuleID);
 	/*
 	var skipToNextStep = (ruleLogic.search(/(agent|factor|taxonomy)/) == -1);
 	if  (skipToNextStep) {
@@ -472,7 +475,7 @@ function continue1() {
 	*/
 
 	var inference = ruleLogic.replace("[focus]", resID);
-	if (v > 3) console.log("Rule " + ruleID + " applied to " + resID + "\n" + inference);
+	if (v > 3) console.log("Rule " + newRuleID + " applied to " + resID + "\n" + inference);
 	var ruleInput = inference.replace("[agent]", "<input type='text' id='rule_agent' size='12'>");
 	ruleInput = ruleInput.replace("[factor_1]", "<input type='text' id='rule_factor_1' size='12'>");
 	ruleInput = ruleInput.replace("[factor_2]", "<input type='text' id='rule_factor_2' size='12'>");
@@ -486,7 +489,7 @@ function continue1() {
 	var divHTML = "<h2>Enter any additional values required to implement the rule</h2>";
 	divHTML += ruleInput;
 	divHTML += "<p><button id=\"continue_2\" onclick=\"continue2();\">Continue</button></p>";
-	sd.append(divHTML);
+	sd.html(divHTML);
 }
 	
 	
@@ -532,7 +535,7 @@ function generateRule() {
 <button id="check_it">Check Rules</button>
 <br>
 <button id="generate_rule">Apply a New Rule to This Residue</button>
-<button id="show_rule_list">Show List of New Rules</button>
+<button id="show_rule_list">Show Rule Submission List</button>
 <div id="ruleDiv"></div>	
 	<div id="iDiv">Structures will appear here<br></div>
 	

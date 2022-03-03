@@ -42,8 +42,16 @@ var v = 1;
 	
 function initialize() {
 	console.log("##### Initializing #####");
+	var arg = window.location.search.substring(1).split("&")[0];
+	var a = arg.split("=");
+	var limit = "false";
+	if (arg.length > 1) {
+		limit = a[a.length - 1];
+	}
 	$.get(rulePath,
-	{},
+	{
+		limit: limit
+	},
 	function(result){
 		if (v > 5) {
 			console.log(" the URL " + rulePath + 
@@ -56,7 +64,7 @@ function initialize() {
 	
 function showRules(data) {
 	var resID = data['residue_id'];
-	var resultStr = "<h2>Rule Inferences for All Canonical Residues</h2>" +
+	var resultStr = "<h2>Rule Inferences for Canonical Residues</h2>" +
 		 "Click a residue ID to explore or extend its rules<br>";
 	
 	var instances = [];
