@@ -34,6 +34,10 @@ if(!empty($limiter)) switch ($limiter) {
 	  $whereClause = "WHERE focus=?";
 	  $nPars = 1;
 	  break;
+	case "residue_id":
+	  $whereClause = "WHERE residue_id=?";
+	  $nPars = 1;
+	  break;		
 	case "rule_id":
 	  $whereClause = "WHERE rules.rule_id=?";
 	  $nPars = 1;
@@ -75,14 +79,14 @@ if(!empty($limiter)) switch ($limiter) {
 	  // if this code is reached, the specified $limiter is not supported
 	  $msg = "The specified limiter ($limiter) is not supported -";
 	  $msg .= "  Try one of the following:";
-	  $msg .= "  focus; status; rule_id; curator; taxonomy; agent; logic_substr; comment_substr; reference_substr;";
+	  $msg .= "  focus; status; rule_id; curator; taxonomy; agent; logic_substr; comment_substr; reference_substr";
 	  $dataWrap['msg'] = $msg;
 	  $nPars = 0;
 	  $whereClause = "WHERE rule_data.rule_id=0";
 }
 
 $query = "SELECT canonical_residues.residue_id,canonical_residues.anomer,canonical_residues.absolute,canonical_residues.form_name,canonical_residues.site,rule_data.*,rules.logic FROM canonical_residues LEFT JOIN rule_data ON (rule_data.focus = canonical_residues.residue_id) LEFT JOIN rules ON (rules.rule_id = rule_data.rule_id) $whereClause ORDER BY SUBSTR(canonical_residues.residue_id, 1, 1), cast(SUBSTR(canonical_residues.residue_id, 2, 4) as UNSIGNED)";
-// echo "$query\n\n";
+//echo "$query\n\n";
 
 $stmt = $connection->prepare($query);
 if ($nPars == 1) {
@@ -105,16 +109,8 @@ if ( ($result->num_rows) > 0) {
 		array_push($ruleData,$row);
 	}
 } else {
-	$row = [];
-	$row['residue_id'] = "none";
-	$row['inference'] = "none";
-	$row['status'] = "none";
-	$row['status'] = "none";
-	$row['refs'] = "none";
-	$row['comment'] = "none";
-	$row['curator_id'] = "none";
-		
-	array_push($ruleData,$row);
+	$msg = "The query generated no results.  " . $dataWrap['msg'];
+	$dataWrap['msg'] = $msg;
 }
 
 $dataWrap['data'] = $ruleData;

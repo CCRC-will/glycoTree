@@ -82,22 +82,28 @@ function fetchData() {
 	function(result){
 		if (v > 1) {
 			console.log(" the URL " + rulePath + 
-				" returned this json data:\n  " + result.toString());
+				" returned this data:\n  message: " + result['msg'] +
+				"\n  limiter: " + result['limiter'] +
+				"\n  limiter value: " + result['limiter_value'] +
+				"\n  data: " + JSON.stringify(result['data']) );
 		}
-		var dataList = result['data'];
-		showRules(dataList);
+			
+		// result['msg'] is defined ONLY when no results are returned
+		if (typeof result['msg'] !== 'undefined') {
+			var errorStr = "Query - limiter: " + result['limiter'] + "; limiter value: " +
+				 result['limiter_value'] + "; " + result['msg'];
+			$("#ruleDiv").html(errorStr);
+		} else {
+			var dataList = result['data'];
+			showRules(dataList);
+		}
 	});
 }
 	
 	
 function showRules(data) {
-	var resID = data['residue_id'];
-	var resultStr = "";
-	
-	// TODO: add residue structure column, e.g., a-D-Glcp
-	var instances = [];
-	resultStr += "<table id='rules_table'>\n  ";
-	resultStr += "<tr><th>Residue</th><th>Structure</th><th>Inference</th><th>Status</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
+	var resultStr = "<table id='rules_table'>\n  ";
+	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Inference</th><th>Status</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
 	for (var i = 0; i < data.length; i++) {
 		var resid = data[i]['residue_id'];
 		var anomer = data[i]['anomer'].replace("a","&alpha;");
@@ -111,7 +117,8 @@ function showRules(data) {
 		var curator = data[i]['curator_id'];
 		var status = data[i]['status'];
 		var resLink = "<a href='rules1.html?focus=" + resid + "' target='_blank'>" + resid + "</a>";
-		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + structure + 
+		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + focus + 
+			"</td><td>" + structure + 
 			"</td><td>" + ruleInference + "</td><td>" + status +
 			"</td><td>" + ruleRef + "</td><td>" + ruleComment +
 			"</td><td>" + curator +  "</td></tr>\n  ";
@@ -134,6 +141,7 @@ function showRules(data) {
 		<option value="no_filter">no filter</option>
 		<option value="status">status equals</option>
 		<option value="focus">focus equals</option>
+		<option value="residue_id">residue ID equals</option>
 		<option value="rule_id">rule ID equals</option>
 		<option value="curator">curator equals</option>
 		<option value="taxonomy">taxonomy equals</option>
