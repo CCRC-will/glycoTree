@@ -47,7 +47,7 @@
 	border-style: none;
 	text-align: left;
 }
-
+	
 #rules_table td {
 	text-align: left;
 	padding-left: 10px;
@@ -366,11 +366,11 @@ function continue4() {
 	var confirmStr = "Are you sure you want to submit the new rules to the server?\n" +
 		 "This will clear all of the data in the (local) submission list.";
 		
-	if (confirm(confirmStr)) {	
-		var curator = prompt("Please enter your curator ID", "");
-		var pw = prompt("Please enter your curator password", "");
-		allRules['curator'] = curator;
-		allRules['curator_pw'] = pw;
+	if (confirm(confirmStr)) {
+		if ( (allRules['curator'].length == 0) || (allRules['curator_pw'].length == 0)) {
+			allRules['curator'] = prompt("Please enter your curator ID", "");
+			allRules['curator_pw'] = prompt("Please enter your curator password", "");
+		}
 		if (v > 3) console.log(allRules);
 		jsonRules = JSON.stringify(allRules);
 		$.get(submitPath,

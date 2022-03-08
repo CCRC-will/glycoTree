@@ -61,6 +61,7 @@ for (( i=1; i<=$#; i++)); do
   fi
 done
 
+# MAYBE RULE ADMINISTRATION SHOULD BE COMPLETELY SEPARATE AND INVOKED FROM '../build_all.sh'
 rule_api=$api$rule_php
 echo "Rule API is $rule_api"
 
@@ -73,7 +74,6 @@ echo
 
 curl -s $rule_api -o newRules.tsv > /dev/null
 echo
-
 
 function check_rule() {
     echo
@@ -124,6 +124,9 @@ then
   echo "copying $RULE_DATA to ./bak/$timestamp-$RULE_DATA"
   echo "appending these rules to $RULE_DATA"
 fi
+
+rm newRules.tsv
+rm $TFILE
 
 echo
 echo "populating SQL Tables"

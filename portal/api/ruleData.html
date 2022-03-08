@@ -20,6 +20,9 @@
 <style>
 
 #rules_table td {
+	white-space: nowrap;
+	font-size: 12px;
+	font-family: "Lucida Console", "Courier New", monospace;
 	text-align: left;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -38,40 +41,70 @@
 <script>
 	
 var rulePath = "getAllRuleData.php";
-var v = 1;
+var v = 2;
 	
 function initialize() {
 	console.log("##### Initializing #####");
 	var arg = window.location.search.substring(1).split("&")[0];
 	var a = arg.split("=");
-	var limit = "false";
+	var limiter = "none";
+	var limiterVal = "none";
 	if (arg.length > 1) {
-		limit = a[a.length - 1];
+		$("#limit").val(a[0]);
+		$("#limit_value").val(a[1]);
+	} else {
+		$("#limit").val("no_filter");
 	}
+	$("#go").click(function() {
+		fetchData();
+	});
+	$("#limit").change(function() {
+		alert($("#limit").val());
+		if ($("#limit").val() == "no_filter") {
+			$("#limit_value").prop('disabled', true);
+			$("#limit_value").val("no parameter");
+		} else {
+			$("#limit_value").prop('disabled', false);		
+			$("#limit_value").val("");
+		}
+	});
+	fetchData();
+	// TODO: 'get' should be in a separate function, with arguments from input tags, fetched by jquery
+
+} // end of function initialize()
+	
+	
+function fetchData() {
 	$.get(rulePath,
 	{
-		limit: limit
+		limiter: $("#limit").val(),
+		val: $("#limit_value").val()
 	},
 	function(result){
-		if (v > 5) {
+		if (v > 1) {
 			console.log(" the URL " + rulePath + 
 				" returned this json data:\n  " + result.toString());
 		}
-		resultData = JSON.parse(result); // global for download
-		showRules(resultData);
+		var dataList = result['data'];
+		showRules(dataList);
 	});
-} // end of function initialize()
+}
+	
 	
 function showRules(data) {
 	var resID = data['residue_id'];
-	var resultStr = "<h2>Rule Inferences for Canonical Residues</h2>" +
-		 "Click a residue ID to explore or extend its rules<br>";
+	var resultStr = "";
 	
+	// TODO: add residue structure column, e.g., a-D-Glcp
 	var instances = [];
 	resultStr += "<table id='rules_table'>\n  ";
-	resultStr += "<tr><th>Residue</th><th>Inference</th><th>Reference(s)</th><th>Comment</th><th>Curator</th><th>Status</th></tr>";
+	resultStr += "<tr><th>Residue</th><th>Structure</th><th>Inference</th><th>Status</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
 	for (var i = 0; i < data.length; i++) {
 		var resid = data[i]['residue_id'];
+		var anomer = data[i]['anomer'].replace("a","&alpha;");
+		anomer = anomer.replace("b","&beta;");
+		var structure = anomer + "-" + data[i]['absolute'] +
+			 "-" + data[i]['form_name'] + "->" + data[i]['site'];
 		var focus = data[i]['focus'];
 		var ruleInference = data[i]['inference'];
 		var ruleRef = data[i]['refs'];
@@ -79,9 +112,10 @@ function showRules(data) {
 		var curator = data[i]['curator_id'];
 		var status = data[i]['status'];
 		var resLink = "<a href='rules1.html?focus=" + resid + "' target='_blank'>" + resid + "</a>";
-		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + ruleInference +
+		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + structure + 
+			"</td><td>" + ruleInference + "</td><td>" + status +
 			"</td><td>" + ruleRef + "</td><td>" + ruleComment +
-			"</td><td>" + curator + "</td><td>" + status + "</td></tr>\n  ";
+			"</td><td>" + curator +  "</td></tr>\n  ";
 	}
 	resultStr += "</table>\n  ";
 	$("#ruleDiv").html(resultStr);
@@ -93,6 +127,38 @@ function showRules(data) {
 
 <body onLoad=initialize();>
 	
+<div id="topDiv">
+	<h2>Rule Inferences for Canonical Residues</h2>
+	Filtering Options: 
+	<select id="limit">
+		<option value="" disabled selected hidden>Select a FIELD</option>
+		<option value="no_filter">no filter</option>
+		<option value="status">status equals</option>
+		<option value="focus">focus equals</option>
+		<option value="rule_id">rule ID equals</option>
+		<option value="curator">curator equals</option>
+		<option value="taxonomy">taxonomy equals</option>
+		<option value="agent">agent equals</option>
+		<option value="logic_substr">logic contains</option>
+		<option value="comment_substr">comment contains</option>
+		<option value="reference_substr">reference contains</option>
+	</select>
+	<input type="text" id="limit_value" size="16">
+	<input type="button" id="go" value="GO!">
+	<br>
+	<h4>Click a residue ID to explore or extend its rules</h4>
+</div>
 <div id="ruleDiv"></div>
 	
 </body>
+	
+<!--
+
+example jquery
+	var x = "Rene R";
+	$("#person").val(x);
+	alert($("#person").val());
+	x = "Mike T";
+	$("#person").val(x);
+	alert($("#person").val());
+-->
