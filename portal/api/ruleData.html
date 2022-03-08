@@ -59,7 +59,6 @@ function initialize() {
 		fetchData();
 	});
 	$("#limit").change(function() {
-		alert($("#limit").val());
 		if ($("#limit").val() == "no_filter") {
 			$("#limit_value").prop('disabled', true);
 			$("#limit_value").val("no parameter");
