@@ -1,5 +1,7 @@
 glycoTree is a system to support semantic annotation of glycan structures, based on canonical representations of those structures.
 
+----
+
 This representation is based on concepts originally introduced by Takahashi and Kato (https://doi.org/10.4052/tigg.15.235),
 and extended by implementing a description logics approach that facilitates semantic annotation of glycan structure.	See:
 York, W.S., A. Sheth, K. Kochut, J.A. Miller, C. Thomas, K. Gomadam, X. Yi, and M. Nagarajan.  2004.
