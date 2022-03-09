@@ -54,6 +54,11 @@ if(!empty($limiter)) switch ($limiter) {
 	  $whereClause = "WHERE rule_data.agent=?";
 	  $nPars = 1;
 	  break;
+	case "assertion_substr":
+	  $limiterVal = "%$limiterVal%"; // required for "WHERE LIKE"
+	  $whereClause = "WHERE (rule_data.focus LIKE ? OR rule_data.agent LIKE ? OR rule_data.factor_1 LIKE ? OR rule_data.factor_2 LIKE ? OR rule_data.taxonomy LIKE ?)";
+	  $nPars = 5;
+	  break;
 	case "logic_substr":
 	  $limiterVal = "%$limiterVal%"; // required for "WHERE LIKE"
 	  $whereClause = "WHERE rules.logic LIKE ?";
@@ -79,7 +84,7 @@ if(!empty($limiter)) switch ($limiter) {
 	  // if this code is reached, the specified $limiter is not supported
 	  $msg = "The specified limiter ($limiter) is not supported -";
 	  $msg .= "  Try one of the following:";
-	  $msg .= "  focus; status; rule_id; curator; taxonomy; agent; logic_substr; comment_substr; reference_substr";
+	  $msg .= "  focus, status, rule_id, curator, taxonomy, agent, assertion_substr, logic_substr, comment_substr, reference_substr";
 	  $dataWrap['msg'] = $msg;
 	  $nPars = 0;
 	  $whereClause = "WHERE rule_data.rule_id=0";
@@ -89,9 +94,18 @@ $query = "SELECT canonical_residues.residue_id,canonical_residues.anomer,canonic
 //echo "$query\n\n";
 
 $stmt = $connection->prepare($query);
-if ($nPars == 1) {
-	$stmt->bind_param("s", $limiterVal);
+
+switch ($nPars) { 
+	case 1 :
+		$stmt->bind_param("s", $limiterVal);
+		break;
+	case 5 :
+		$stmt->bind_param("sssss", $limiterVal, $limiterVal, $limiterVal, $limiterVal, $limiterVal);
+		break;
+	default:
+		break;
 }
+
 $stmt->execute(); 
 $result = $stmt->get_result();
 if ( ($result->num_rows) > 0) {

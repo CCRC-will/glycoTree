@@ -203,6 +203,7 @@ function showImage(accession, resID) {
 			}
 		});
 		
+		annotateResidues();
 	})			
 	.fail(function() {
 		unavailable.push("JSON data for " + accession);
@@ -323,7 +324,7 @@ function showRules(data) {
 	var resID = data['residue_id'];
 	var resStructure = data['structure'];
 	var snfgImgRef = "../snfg_images/" + data['snfg_name'] + ".svg";
-	var resultStr = "<h2>Established Inferences for Residue " + resID + " <img src=\"" + snfgImgRef +
+	var resultStr = "<h2>Assertions for Residue " + resID + " <img src=\"" + snfgImgRef +
 		 "\"> " + resStructure + "</h2>";
 	
 	var instances = [];
@@ -331,7 +332,7 @@ function showRules(data) {
 		resultStr += "<b>" + data['message'] + "</b>";
 	} else {
 		resultStr += "<table id='rules_table'>\n  ";
-		resultStr += "<tr><th>Inference</th><th>References</th><th>Comment</th><th>Status</th></tr>";
+		resultStr += "<tr><th>Assertion</th><th>References</th><th>Comment</th><th>Status</th></tr>";
 		for (var i = 0; i < data['rule_instances'].length; i++) {
 			var focus = data['rule_instances'][i]['focus'];
 			var ruleInference = data['rule_instances'][i]['inference'];
@@ -513,6 +514,109 @@ function generateRule() {
 	ruleStr += "<p><button id=\"continue_1\" onclick=\"continue1();\">Continue</button></p>";
 	sd.html(ruleStr);
 }
+
+	
+function generateTextElement(x, y, c, id, t) {
+	var te = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	te. setAttributeNS(null, 'x', x);
+	te. setAttributeNS(null, 'y', y);
+	te. setAttributeNS(null, 'class', c);
+	if (id != "") {
+		te. setAttributeNS(null, 'id', id);
+	}
+	var txt = document.createTextNode(t);
+	te. appendChild(txt);
+	return(te);
+} // end of function generateTextElement()
+	
+
+function parseID(id) {
+	if (v > 5) console.log("   parsing " + id);
+	var parts = new Array();
+	var dashSplit = id.split("-");
+	parts["type"] = dashSplit[0];
+	var colonSplit = dashSplit[1].split(":");
+	parts["accession"] = colonSplit[0];
+	parts["resID"] = colonSplit[1];
+	return(parts);
+}  // end of function parseID()
+	
+	
+function annotateResidues() {
+	var sd = $('#iDiv');
+	var s = sd.find("svg"); // all <svg> elements in iframe body
+
+	for (var i = 0 ; i < s.length; i++) { // for each svg image
+		var localAcc = s[i].id.split("_")[1];
+		if (v > 3) console.log("##### Annotating glycan " +
+									  localAcc + " #####");
+
+		// svg image to jquery object
+		var ss = $(s[i]); 
+		// <g> elements with 'id' attribute
+		var g = ss.find('g[id]');  
+
+		g.each(function( index2 ) {
+			// each descendant <g> element having 'id'
+
+			var parts = parseID(this.id);
+			var type =  parts['type'];
+			var resID = parts['resID'];
+			if (type == "R") { // annotate residues only
+				var x = 0;
+				var y = 0;
+				// first child of the <g> element having 'id'
+				var d = this.children[0];
+				if (v > 4) console.log("    annotating node " +
+							index2 + ": type " + type + "; id " + resID);
+				var nn = d.nodeName;
+				switch(nn) {
+					case "circle":
+						x = 1 * $(d).attr('cx');
+						y = 1 * $(d).attr('cy');
+						if (v > 4) console.log("         <circle> at " +
+													  x + "," + y);
+						break;
+					case "rect":
+						var h = 1 * $(d).attr('height')
+						x = 1 * $(d).attr('x') + h/2;
+						var w = 1 * $(d).attr('width')
+						y = 1 * $(d).attr('y') + w/2;
+						if (v > 4) console.log("         <rect> at " + x +
+													  "," + y);
+						break;
+					case "polygon":
+						var p = $(d).attr("points").trim();
+						var pa = p.split(' ');
+						var maxEven = 0;
+						var minEven = 1000;
+						var maxOdd = 0;
+						var minOdd = 1000;
+						for (var q = 0; q < pa.length; q++) {
+							if (q%2 == 0) {
+								minEven = Math.min(minEven, pa[q]);
+								maxEven = Math.max(maxEven, pa[q]);
+							} else {
+								minOdd = Math.min(minOdd, pa[q]);
+								maxOdd = Math.max(maxOdd, pa[q]);									
+							}
+						}
+						y = (minOdd + maxOdd) / 2;
+						x = (minEven + maxEven) / 2;
+						if (v > 4) console.log("         <polygon> at " +
+													  x + "," + y);
+						break;
+				}
+				var elemID = "A-" + localAcc + ":" + resID;
+				var element = generateTextElement(x, y, 'annotationShown', elemID, resID);
+				s[i].appendChild(element);
+			}
+
+		});
+
+	};
+
+} // end of function annotateResidues()
 	
 </script>
 		

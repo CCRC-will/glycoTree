@@ -103,7 +103,7 @@ function fetchData() {
 	
 function showRules(data) {
 	var resultStr = "<table id='rules_table'>\n  ";
-	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Inference</th><th>Status</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
+	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Rule ID</th><th>Status</th><th>Assertion</th><th>Logic</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
 	for (var i = 0; i < data.length; i++) {
 		var resid = data[i]['residue_id'];
 		var anomer = data[i]['anomer'].replace("a","&alpha;");
@@ -111,15 +111,17 @@ function showRules(data) {
 		var structure = anomer + "-" + data[i]['absolute'] +
 			 "-" + data[i]['form_name'] + "->" + data[i]['site'];
 		var focus = data[i]['focus'];
-		var ruleInference = data[i]['inference'];
+		var ruleID = data[i]['rule_id'];
+		var assertion = data[i]['inference'];
+		var logic = data[i]['logic'];
 		var ruleRef = data[i]['refs'];
 		var ruleComment = data[i]['comment'];
 		var curator = data[i]['curator_id'];
 		var status = data[i]['status'];
 		var resLink = "<a href='rules1.html?focus=" + resid + "' target='_blank'>" + resid + "</a>";
 		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + focus + 
-			"</td><td>" + structure + 
-			"</td><td>" + ruleInference + "</td><td>" + status +
+			"</td><td>" + structure + "</td><td>" + ruleID + "</td><td>" + status +
+			"</td><td>" + assertion + "</td><td>" + logic +
 			"</td><td>" + ruleRef + "</td><td>" + ruleComment +
 			"</td><td>" + curator +  "</td></tr>\n  ";
 	}
@@ -139,16 +141,17 @@ function showRules(data) {
 	<select id="limit">
 		<option value="" disabled selected hidden>Select a FIELD</option>
 		<option value="no_filter">no filter</option>
-		<option value="status">status equals</option>
-		<option value="focus">focus equals</option>
 		<option value="residue_id">residue ID equals</option>
+		<option value="focus">focus equals</option>
 		<option value="rule_id">rule ID equals</option>
+		<option value="status">status equals</option>
+		<option value="assertion_substr">assertion contains value</option>
+		<option value="logic_substr">logic contains</option>
+		<option value="reference_substr">reference contains</option>
+		<option value="comment_substr">comment contains</option>
 		<option value="curator">curator equals</option>
 		<option value="taxonomy">taxonomy equals</option>
 		<option value="agent">agent equals</option>
-		<option value="logic_substr">logic contains</option>
-		<option value="comment_substr">comment contains</option>
-		<option value="reference_substr">reference contains</option>
 	</select>
 	<input type="text" id="limit_value" size="16">
 	<input type="button" id="go" value="GO!">
