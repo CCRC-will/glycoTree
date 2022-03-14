@@ -7,7 +7,6 @@ services:
            dockerfile: Dockerfile
         environment:
           - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-          - JAVA_TOOL_OPTIONS=-Xms256m -Xmx1024m
           - SUGAR=${SUGAR}
           - SPICE=${SPICE}
         volumes:
@@ -30,4 +29,4 @@ services:
         ports:
             - 3306:3306
         volumes:
-           - $PWD/SQL:/docker-entrypoint-initdb.d
+           - $PWD/SQL/server:/docker-entrypoint-initdb.d

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>GlyGen Sandbox</title>
+	
+<link rel="icon" href="../svg/sbSmall.svg" type="image/icon type">
+<link rel="stylesheet" type="text/css" href="../css/explore.css">
+	
+<script src="../js/sbheader.js"></script>
+	
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="../js/json2svg_v1.4.js"></script>
+
+<style>
+
+#rules_table td {
+	white-space: nowrap;
+	font-size: 12px;
+	font-family: "Lucida Console", "Courier New", monospace;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+#rules_table tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
+	
+#rule_select_table {
+		text-align: left;
+}
+
+</style>	
+	
+<script>
+	
+var rulePath = "getAllRuleData.php";
+var v = 2;
+	
+function initialize() {
+	console.log("##### Initializing #####");
+	var arg = window.location.search.substring(1).split("&")[0];
+	var a = arg.split("=");
+	var limiter = "none";
+	var limiterVal = "none";
+	if (arg.length > 1) {
+		$("#limit").val(a[0]);
+		$("#limit_value").val(a[1]);
+	} else {
+		$("#limit").val("no_filter");
+	}
+	$("#go").click(function() {
+		fetchData();
+	});
+	$("#limit").change(function() {
+		if ($("#limit").val() == "no_filter") {
+			$("#limit_value").prop('disabled', true);
+			$("#limit_value").val("");
+			fetchData();
+		} else {
+			$("#limit_value").prop('disabled', false);		
+			//$("#limit_value").val("");
+		}
+	});
+	fetchData();
+	// TODO: 'get' should be in a separate function, with arguments from input tags, fetched by jquery
+
+} // end of function initialize()
+	
+	
+function fetchData() {
+	$.get(rulePath,
+	{
+		limiter: $("#limit").val(),
+		val: $("#limit_value").val()
+	},
+	function(result){
+		if (v > 1) {
+			console.log(" the URL " + rulePath + 
+				" returned this data:\n  message: " + result['msg'] +
+				"\n  limiter: " + result['limiter'] +
+				"\n  limiter_value: " + result['limiter_value'] +
+				"\n  data: " + JSON.stringify(result['data']) );
+		}
+			
+		var port = window.location.port;
+		if (port.length > 0) port = ":" + port;
+		var fullWindowPath = window.location.hostname + port + window.location.pathname;
+		var spl = fullWindowPath.split("/");
+		var windowFileName = spl[spl.length - 1];
+		var fullAPIpath = fullWindowPath.split(windowFileName)[0] + rulePath;
+		var fullGetURL = fullAPIpath + "?limiter=" + result['limiter'] + "&val=" + result['limiter_value'] ;
+		var URIbutton = "<button onclick=\"navigator.clipboard.writeText('" +
+				fullGetURL + "');\">Copy the URL for the API (GET Method)</button>";
+		// result['msg'] is defined ONLY when no results are returned
+		if (typeof result['msg'] !== 'undefined') {
+			var errorStr = "<h1>Query Sent to the Sandbox API:</h1>" + fullGetURL ;
+			errorStr += "<br>" + URIbutton + "<p>" + result['msg'] + "</p>";
+			$("#ruleDiv").html(errorStr);
+		} else {
+			var dataList = result['data'];
+			showRules(dataList, URIbutton);
+		}
+	});
+}
+	
+	
+function showRules(data, URIbutton) {
+	var resultStr = URIbutton + "<table id='rules_table'>\n  ";
+	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Rule ID</th><th>Status</th><th>Assertion</th><th>Logic</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
+	for (var i = 0; i < data.length; i++) {
+		var resid = data[i]['residue_id'];
+		var anomer = data[i]['anomer'].replace("a","&alpha;");
+		anomer = anomer.replace("b","&beta;");
+		var structure = anomer + "-" + data[i]['absolute'] +
+			 "-" + data[i]['form_name'] + "->" + data[i]['site'];
+		var focus = data[i]['focus'];
+		var ruleID = data[i]['rule_id'];
+		var assertion = data[i]['inference'];
+		var logic = data[i]['logic'];
+		var ruleRef = data[i]['refs'];
+		var ruleComment = data[i]['comment'];
+		var curator = data[i]['curator_id'];
+		var status = data[i]['status'];
+		var resLink = "<a href='rules1.html?focus=" + resid + "' target='_blank'>" + resid + "</a>";
+		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + focus + 
+			"</td><td>" + structure + "</td><td>" + ruleID + "</td><td>" + status +
+			"</td><td>" + assertion + "</td><td>" + logic +
+			"</td><td>" + ruleRef + "</td><td>" + ruleComment +
+			"</td><td>" + curator +  "</td></tr>\n  ";
+	}
+	resultStr += "</table>\n  ";
+	$("#ruleDiv").html(resultStr);
+}
+	
+</script>	
+
+</head>
+
+<body onLoad=initialize();>
+	
+<div id="topDiv">
+	<h2>Rule Inferences for Canonical Residues</h2>
+	Filtering Options: 
+	<select id="limit">
+		<option value="" disabled selected hidden>Select a FIELD</option>
+		<option value="no_filter">no filter</option>
+		<option value="residue_id">residue ID equals</option>
+		<option value="focus">focus equals</option>
+		<option value="rule_id">rule ID equals</option>
+		<option value="status">status equals</option>
+		<option value="assertion_val">assertion cites value</option>
+		<option value="logic_substr">logic contains</option>
+		<option value="reference_substr">reference contains</option>
+		<option value="comment_substr">comment contains</option>
+		<option value="curator">curator equals</option>
+		<option value="taxonomy">taxonomy equals</option>
+		<option value="enzyme">enzyme equals</option>
+	</select>
+	<input type="text" id="limit_value" size="16">
+	<input type="button" id="go" value="GO!">
+	<br>
+	<h4>Click a residue ID to explore or extend its rules</h4>
+</div>
+<div id="ruleDiv"></div>
+	
+</body>
+	
+<!--
+
+example jquery
+	var x = "Rene R";
+	$("#person").val(x);
+	alert($("#person").val());
+	x = "Mike T";
+	$("#person").val(x);
+	alert($("#person").val());
+-->

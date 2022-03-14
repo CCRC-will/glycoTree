@@ -2,6 +2,7 @@
 notes
 bak/
 glycotree_accessions.tsv
+startDocker.sh
 prepare_N-tree.sh
 old_build_N-tree.sh
 log/*.txt
@@ -24,11 +25,13 @@ data/Olinked/*
 data/input_N/*
 data/input_O/*
 data/mapped/*
+data/mapped/sorted/*
 model/bak/
 model/nodes/
 model/json/match/
 model/json/complete/
 model/commands.txt
+model/renumberRules.awk
 code/bak/
 portal/api/temp/*.csv
 portal/api/temp/mapped/*.csv
@@ -40,6 +43,7 @@ portal/api/paths/getpathD3.php
 portal/api/.htaccess
 portal/api/b64.php
 portal/api/testBitSet.php
+portal/api/testPW.php
 portal/api/bak/
 portal/force-layout.html
 portal/force-layout-v4.html

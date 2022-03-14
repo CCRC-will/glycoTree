@@ -6,7 +6,8 @@
 <meta http-equiv="Expires" content="0" />
 	
 <TITLE>GlycoTree Check Structure API Test</TITLE>
-
+<link rel="icon" type="image/svg" href="/svg/favicon.svg">
+	
 <style>
 svg.downloader {
 	vertical-align: text-top;
@@ -23,6 +24,17 @@ span.clickable {
 span.clickable:visited {
   color: red;
 }
+	
+tr:nth-child(even) {
+  background-color: #E4eBF0;
+}
+	
+span {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #4376B2;
+}
+	
 </style>
 	
 	
@@ -33,11 +45,11 @@ span.clickable:visited {
 <script>
 
 var v = 0;
-// var probeSVG = "";
 var configPath = "../json/sugars.json";
 var probeSVG = "";
 var probeData = null;
 var url = "";
+var debug = false;
 	
 function fetchConfiguration(theURL) {
 	$.get(theURL, function(result){
@@ -90,15 +102,35 @@ function downloadProbeData(selector) {
 } // end of function downloadProbeData()
 	
 	
-function listTxt(list, msg) {
-	var txt = "<br><br><b>" + list.length + msg + "</b>";
-	for (i = 0; i < list.length; i++) {
-		var id = list[i]['id'];
-		txt += "<br><a href=\"../explore.html?" + id + "\" target=\"_blank\">" + id + "</a> ";
-		txt += "has " + list[i]['mapped'] + " mapped residues, " + list[i]['matched'] + " matching";
-	}	
-	return(txt);
-}
+function encodeTable(tableData, caption, headings, keys, linkFlags, url, width) {
+	// generally useful function generates html encoding of a table showing tableData
+	var tableStr = "<table style='width:" + width + "'>\n";
+		tableStr += "  <caption><b>" + tableData.length + " " +
+			caption + "</b></caption>\n  <tr>\n";
+	if (tableData.length > 0) {
+		for (var j = 0; j < headings.length; j++) {
+			tableStr += "    <th>" + headings[j] + "</th>\n";
+		}
+		tableStr += "  <tr>\n";
+		for (var i = 0; i < tableData.length; i++) {
+			tableStr += "  <tr>    \n";
+			var record = tableData[i];
+			for (var j = 0; j < keys.length; j++) {
+				var t = tableData[i][keys[j]];
+				if (linkFlags[j] == 1) {
+					tableStr += "    <td style='text-align:center'><a href=\"" +
+						url + t + "\" target=\"_blank\">" + t + "</a></td>\n";
+				} else {
+					tableStr += "    <td style='text-align:center'>" + t + "</td>\n";
+				}
+			}
+			tableStr += "  </tr>    ";
+		}	
+	} 
+	tableStr += "</table>";
+	
+	return(tableStr);
+} // end of function encodeTable()
 	
 	
 function generateResultsText(probeData) {
@@ -113,55 +145,126 @@ function generateResultsText(probeData) {
 	probeSVG = layout(probeTree); // probeSVG is global for download
 	var txt = "<h2>This structure has been assigned a temporary id: [" + id + "]</h2>";
 	txt += probeSVG + "<br>";
-	txt += "<svg xmlns:xlink='http://www.w3.org/1999/xlink' \n\
-xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
-  <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z' fill='rgb(67,118,278)'> \n\
-  </path> \n\
-</svg> \n"
-
-	txt += "<select name='selDown' id='selDown' onchange=\"downloadProbeData(this);\" class='downloader'>";
-
-	txt += "<option value='none' selected disabled hidden>DOWNLOAD</option> \n\
-  <option value='svg'>SVG Image</option> \n\
-  <option value='json'>Glycan Data</option> \n\
-</select> \n";
 	
 	var caveats = probeData['caveats'];
 	for (i = 0; i < caveats.length; i++) {
-		txt += "<br><br><b>Caveat:</b> " + caveats[i]['msg'];
+		var cMsg = caveats[i]['msg'].replace(/undetermined/g, id);
+		txt += "<br><b>Caveat:</b> " + cMsg + "<br>";
 	}
 	
-	txt += listTxt(probeData['related_glycans']['identical'],
-		" fully mapped glycan(s) in the DB have the same canonical residue composition");
+	var r = probeData['residues'];
+	if ($("#enz").is(':checked')) {
+		var enzArray = [];
+		for (var i = 0; i < r.length; i++) {
+			//console.log(r[i].residue_id);
+			var en = r[i].enzymes;
+			for (var j = 0; j < en.length; j++) {
+				//console.log(en[j].type);
+				var anEnzyme = [];
+				anEnzyme.residue_id = r[i].residue_id;
+				anEnzyme.res_structure = r[i].anomer + "-" + r[i].absolute + "-" + r[i].form_name;
+				anEnzyme.type = en[j].type;
+				anEnzyme.uniprot = en[j].uniprot;
+				//console.log(anEnzyme);
+				enzArray.push(anEnzyme);
+			}
+		}
+		var eCaption = "Reactions catalyzed by enzymes known to be involved in the synthesis of the structure";
+		var eHeader = new Array("Residue ID&nbsp;", "&nbsp;Residue Structure&nbsp;", "&nbspEnzyme Type&nbsp;", "&nbsp;GlyGen Link");
+		var dataKey = new Array('residue_id', 'res_structure', 'type', 'uniprot');
+		var linkFlags = new Array(0, 0, 0, 1);
+		var url = "https://www.glygen.org/protein/";
+		txt += "<br>" + encodeTable(enzArray, eCaption, eHeader, dataKey, linkFlags, url, "350px");
+	}
 	
-	txt += listTxt(probeData['related_glycans']['extended'],
-		" fully mapped glycan(s) in the DB can be made by extending the structure with canonical residues");		
-	
-	txt += listTxt(probeData['related_glycans']['extended_fuzzy'],
-		" fuzzy glycan(s) in the DB can be made by extending the structure with both non-canonical and canonical residues");
-	
-	txt += listTxt(probeData['related_glycans']['pruned'],
-		" fully mapped glycan(s) in the DB can be made by pruning the structure");
+	var rg = probeData['related_glycans'];
+	if ($("#related").is(':checked')) {
+		// data in the next group of lines can be put in a function "getParams()"
+		//    to make them globally available, but not actually global
+		var relHeader = new Array("Sandbox Link&nbsp;", "&nbsp;Mapped Residues&nbsp;", "&nbsp;Matching Residues");
+		var dataKey = new Array("id", "mapped", "matched");
+		var typeKey = new Array("identical", "pruned", "extended", "extended_fuzzy");
+		var gCaption = [];
+		gCaption.identical = "fully mapped glycan(s) in the DB<br>with the same residue composition"
+		gCaption.extended = "fully mapped glycan(s) in the DB<br>made by extending the structure",
+		gCaption.extended_fuzzy = "fuzzy glycan(s) in the DB<br>made by extending the structure",
+		gCaption.pruned = "fully mapped glycan(s) in the DB<br>made by pruning the structure";
+		var linkFlags = new Array(1, 0, 0);
+		var url = "../explore.html?";
+		
+
+		for (var i = 0; i < typeKey.length; i++) {
+			var tKey = typeKey[i];
+			txt += "<br>" + encodeTable(rg[tKey], gCaption[tKey], relHeader, dataKey, linkFlags, url, "350px");
+		}
+	}
 	
 	return(txt);
 } // end of function generateResultsText()
 
 	
+
+	function parseID(id) {
+	if (v > 5) console.log("   parsing " + id);
+	var parts = new Array();
+	var dashSplit = id.split("-");
+	parts["type"] = dashSplit[0];
+	var colonSplit = dashSplit[1].split(":");
+	parts["accession"] = colonSplit[0];
+	parts["resID"] = colonSplit[1];
+	return(parts);
+}  // end of function parseID()
 	
 function processProbe(probeData) {
 	var txt = generateResultsText(probeData);
 	$("#result_div").html(txt);
+	
+	// highlight mapped residues: first get clickable svg elements
+	var rd = $("#result_div");
+	var  clickableSet = rd.find('[class$=_node]').children();
+	var  edgeSet = rd.find('[class$=_edge]').children();
+	var canvasSet = rd.find("[id^=C-]");
+	$.merge(clickableSet, edgeSet);
+	$.merge(clickableSet, canvasSet);
+	if (v > 8) console.log("clickableSet.length: " + clickableSet.length);
+	
+	clickableSet.each(function( index ) {
+		// default opacity is 1.0
+		$(this).css('opacity', 1.0);
+		var id = $(this).attr("id");
+		// the id of each svg object is complex,
+		//    containing an accession, a resID, and a type
+		var parts = parseID(id)
+		var resID = parts['resID'];
+		// the resID of each UNMAPPED residue does NOT begin with [A-Z]
+		var n = resID.search(/^[A-Z]/i); 
+		if (n == -1) {
+			//  grey-out unmapped residues/links, but NOT canvas (type = "C")
+			type = parts['type'];
+			if (type != "C") $(this).css('opacity', 0.5);
+		}
+	});
 } // end of function processProbe()
 	
 	
 function showQueryURL() {
-	alert("Use this url to query the API directly:\n\n" + url);
+	$("#result_div").html("<h4>Use the url below to query the API directly:</h4><br>" + url);
 }
 	
 	
-function getProbeData(glycoct, glycanType) {
-	if (!glycoct.startsWith("RES")) {
-		$("#result_div").html("<h2>Invalid GlycoCT Encoding</h2>'" + glycoct + "'");
+function openURL() {
+	window.open(url);
+}
+	
+	
+function getProbeData() {
+	var gctEncoding = $("#glycoct").val();
+	var glycanType = $("#treeid").val();
+	var enz = $("#enz").is(':checked');
+	var related = $("#related").is(':checked');
+
+	if (!gctEncoding.startsWith("RES")) {
+		$("#result_div").html("<h2>Invalid GlycoCT Encoding</h2>'" + gctEncoding + "'");
 		return(-1);
 	}
 	$("#result_div").html("<h2>Checking Structure</h2>");
@@ -172,23 +275,36 @@ function getProbeData(glycoct, glycanType) {
 		urlBase += urlSplit[i] + "/";
 	
 	// convert line feeds to spaces
-	var glycoct = glycoct.replace(/(?:\r\n|\r|\n)/g, ' ');
+	var gctEncoding = gctEncoding.replace(/(?:\r\n|\r|\n)/g, ' ');
 	// need to encode + characters: use encodeURIComponent rather than encodeURI
-	var encoding = encodeURIComponent(glycoct);
-	var debug = "off";
-	if ($("#debug").prop("checked") == true) debug = "on";
+	var encoding = encodeURIComponent(gctEncoding);
 	// url is global
-	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType + "&debug=" + debug;
-	urlTxt = "<span id='show_query' class='clickable'>Show Query</span> &nbsp;" +
-		" <a href=\"" + url + "\" target=\"_blank\">Direct Query</a>";
+	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType +
+		"&enz=" + enz + "&related=" + related + "&debug=" + debug;
+	var urlTxt = "<br><b>To examine results shown below:</b> &nbsp;";
+	urlTxt += "<button id='show_query'>Show Query</button> &nbsp;" +
+		" <button id='direct_query'>Direct Query</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;";
+	urlTxt += "<svg xmlns:xlink='http://www.w3.org/1999/xlink' \n\
+xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
+  <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z' fill='rgb(67,118,278)'> \n\
+  </path> \n\
+</svg> \n";
+	urlTxt += "<select name='selDown' id='selDown' onchange=\"downloadProbeData(this);\" class='downloader'>";
+	urlTxt += "<option value='none' selected disabled hidden>DOWNLOAD</option> \n\
+  <option value='svg'>SVG Image</option> \n\
+  <option value='json'>Glycan Data</option> \n\
+</select> \n";
+	
 	$("#url_div").html(urlTxt);
-	document.getElementById("show_query").onclick=function() {showQueryURL()};
+	$("#show_query").click(function() {showQueryURL()});
+	$("#direct_query").click(function() {openURL()});
+	
 	$.get(url,
 	function(result){
 		if (v > 4) 
 			console.log("result returned from checkers.php:\n" + result);
-		if ($("#debug").prop("checked") == true) { // do not process probe data, just show result
-			$("#result_div").html("<br><h2>Debugging Information</h2>" + result);
+		if (debug) { // do not process probe data, just show result
+			$("#result_div").html("<br><h2>PHP data processing details</h2>" + result);
 		} else { // process probe data
 			probeData = JSON.parse(result); // global for download
 			if (probeData.residues === null) {
@@ -247,13 +363,169 @@ function plantTree(treeData) {
 } // end of function plantTree()
 	
 	
+function showExample(which) {
+	var gct = [];
+	gct[0] = "RES\n\
+1b:a-dglc-HEX-1:5\n\
+2s:n-acetyl\n\
+3b:b-dglc-HEX-1:5\n\
+4s:n-acetyl\n\
+5b:b-dman-HEX-1:5\n\
+6b:a-dman-HEX-1:5\n\
+7b:b-dglc-HEX-1:5\n\
+8s:n-acetyl\n\
+9b:a-dgal-HEX-1:5|6:d\n\
+10b:b-dgal-HEX-1:5\n\
+11b:a-dman-HEX-1:5\n\
+12b:b-dglc-HEX-1:5\n\
+13s:n-acetyl\n\
+14b:a-dgal-HEX-1:5|6:d\n\
+15b:b-dgal-HEX-1:5\n\
+16b:a-dgal-HEX-1:5|6:d\n\
+LIN\n\
+1:1d(2+1)2n\n\
+2:1o(4+1)3d\n\
+3:3d(2+1)4n\n\
+4:3o(4+1)5d\n\
+5:5o(3+1)6d\n\
+6:6o(2+1)7d\n\
+7:7d(2+1)8n\n\
+8:7o(3+1)9d\n\
+9:7o(4+1)10d\n\
+10:5o(6+1)11d\n\
+11:11o(2+1)12d\n\
+12:12d(2+1)13n\n\
+13:12o(3+1)14d\n\
+14:12o(4+1)15d\n\
+15:1o(6+1)16d";
+
+	gct[1] = "RES\n\
+1b:x-dglc-HEX-1:5\n\
+2s:n-acetyl\n\
+3b:b-dglc-HEX-1:5\n\
+4s:n-acetyl\n\
+5b:b-dman-HEX-1:5\n\
+6b:a-dman-HEX-1:5\n\
+7b:b-dglc-HEX-1:5\n\
+8s:n-acetyl\n\
+9b:b-dgal-HEX-1:5\n\
+10b:b-dglc-HEX-1:5\n\
+11s:n-acetyl\n\
+12b:b-dgal-HEX-1:5\n\
+13b:a-dman-HEX-1:5\n\
+14b:b-dglc-HEX-1:5\n\
+15s:n-acetyl\n\
+16b:b-dgal-HEX-1:5\n\
+17b:a-dgal-HEX-1:5\n\
+18b:a-lgal-HEX-1:5|6:d\n\
+LIN\n\
+1:1d(2+1)2n\n\
+2:1o(4+1)3d\n\
+3:3d(2+1)4n\n\
+4:3o(4+1)5d\n\
+5:5o(3+1)6d\n\
+6:6o(2+1)7d\n\
+7:7d(2+1)8n\n\
+8:7o(4+1)9d\n\
+9:6o(4+1)10d\n\
+10:10d(2+1)11n\n\
+11:10o(4+1)12d\n\
+12:5o(6+1)13d\n\
+13:13o(2+1)14d\n\
+14:14d(2+1)15n\n\
+15:14o(4+1)16d\n\
+16:16o(3+1)17d\n\
+17:1o(6+1)18d\n\
+UND\n\
+UND1:100.0:100.0\n\
+ParentIDs:1|3|5|6|7|9|10|12|13|14|16|17|18\n\
+SubtreeLinkageID1:o(3+2)d\n\
+RES\n\
+19b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+20s:n-acetyl\n\
+LIN\n\
+18:19d(5+1)20n\n\
+UND2:100.0:100.0\n\
+ParentIDs:1|3|5|6|7|9|10|12|13|14|16|17|18\n\
+SubtreeLinkageID1:o(6+2)d\n\
+RES\n\
+21b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+22s:n-acetyl\n\
+LIN\n\
+19:21d(5+1)22n";
+	
+	gct[2] = "RES\n\
+1b:a-dgal-HEX-1:5\n\
+2s:n-acetyl\n\
+3b:b-dgal-HEX-1:5\n\
+4b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+5s:n-acetyl\n\
+6b:b-dglc-HEX-1:5\n\
+7s:n-acetyl\n\
+8b:b-dgal-HEX-1:5\n\
+9b:b-dglc-HEX-1:5\n\
+10s:n-acetyl\n\
+11b:a-lgal-HEX-1:5|6:d\n\
+12b:b-dgal-HEX-1:5\n\
+13b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+14s:n-acetyl\n\
+LIN\n\
+1:1d(2+1)2n\n\
+2:1o(3+1)3d\n\
+3:3o(3+2)4d\n\
+4:4d(5+1)5n\n\
+5:1o(6+1)6d\n\
+6:6d(2+1)7n\n\
+7:6o(4+1)8d\n\
+8:8o(3+1)9d\n\
+9:9d(2+1)10n\n\
+10:9o(3+1)11d\n\
+11:9o(4+1)12d\n\
+12:12o(3+2)13d\n\
+13:13d(5+1)14n";
+
+	gct[3] = "RES\n\
+1b:x-dgal-HEX-1:5\n\
+2s:n-acetyl\n\
+3b:b-dgal-HEX-1:5\n\
+4b:b-dglc-HEX-1:5\n\
+5s:n-acetyl\n\
+6b:b-dgal-HEX-1:5\n\
+7b:b-dglc-HEX-1:5\n\
+8s:n-acetyl\n\
+9b:b-dgal-HEX-1:5\n\
+LIN\n\
+1:1d(2+1)2n\n\
+2:1o(3+1)3d\n\
+3:1o(6+1)4d\n\
+4:4d(2+1)5n\n\
+5:4o(4+1)6d\n\
+6:6o(-1+1)7d\n\
+7:7d(2+1)8n\n\
+8:7o(4+1)9d";
+
+	gct[4] = "RES\n\
+1b:x-dgal-HEX-1:5\n\
+2s:n-typographicalError\n\
+3b:b-dgal-HEX-1:5\n\
+LIN\n\
+1:1d(2+1)2n\n\
+2:1o(3+1)3d";
+	
+	$("#glycoct").val(gct[which]);
+}
 	
 $(document).ready(function() {
+	
 	$("#check_it").click(function() {
-		var glycoct = $("#glycoct").val();
-		var glycanType = $("#treeid").val();
+		debug = false;
 		fetchConfiguration(configPath);
-		getProbeData(glycoct, glycanType);
+		getProbeData();
+	});
+	$("#debug").click(function() {
+		debug = true;
+		fetchConfiguration(configPath);
+		getProbeData();
 	});
 });	
 
@@ -263,36 +535,34 @@ $(document).ready(function() {
 </head>
 <body>
 <center>
-<h2>Check Structure</h2>
-<!--
-<label for="scope">Scope of Result:</label>
-<select name="scope" id="scope">
-  <option value="1">structure/caveats</option>
-  <option value="2">structure/caveats/enzymes</option>
-  <option value="3">structure/caveats/enzymes/glycans</option>
-</select> <br>
--->
-	<label for="treeid">Choose a tree:</label>
+<h2>Check Structure Using GlycoTree</h2>
+	
+<label for="treeid">Choose a tree:</label>
 <select name="treeid" id="treeid">
   <option value="N">N-linked glycan</option>
   <option value="O">O-linked (mucin) glycan</option>
 </select> <br>
 	
 <label for="glycoct">GlycoCT:</label><br>
-<textarea id="glycoct" name="glycoct" rows="9" cols="40">RES
-1b:b-dglc-HEX-1:5
-2s:n-acetyl
-3b:b-dglc-HEX-1:5
-4s:n-acetyl
-LIN
-1:1d(2+1)2n
-2:1o(4+1)3d
-4:3d(2+1)4n</textarea>
+<textarea id="glycoct" name="glycoct" rows="9" cols="40">
+</textarea>
+
+<br><b>Examples:</b>
+	<br><span onclick="showExample(0)">fully-mapped N-linked</span>&nbsp;
+	&nbsp;<span onclick="showExample(1)">fuzzy N-linked</span>&nbsp;
+	<br><span onclick="showExample(2)">fully-mapped O-linked</span>&nbsp;
+	&nbsp;<span onclick="showExample(3)">fuzzy O-linked</span>&nbsp;
+	<br><span onclick="showExample(4)">corrupted data</span>&nbsp;
+
+<br><b>Broaden Scope:</b>
+<input type="checkbox" id="enz" name="enz" value="enz">
+<label for="enz">Enzymes</label>
+<input type="checkbox" id="related" name="related" value="related">
+<label for="related">Related Glycans</label>
+
 <br>
-<button id="check_it">Check It</button>
-<br>
-<input type="checkbox" id="debug" name="debug" value="debug">
-<label for="debug">Debug PHP</label>	
+<button id="check_it">Check Structure</button>
+<button id="debug">PHP Details</button>
 </center>
 	
 <div id="url_div"><p>URL will appear here</p></div>

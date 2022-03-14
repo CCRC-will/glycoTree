@@ -1,6 +1,0 @@
-glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,limited_to,not_found_in,notes,who,evidence,comment
-G11236BB,O-glycan_core_a-D-GalpNAc_C,OC,GalNAc,b,D,p,0,0,GalpNAc,1,,,validated by Qrator
-G11236BB,O-glycan_b-D-Galp_152,O152,Gal,b,D,p,OC,3,Galp,3,,,validated by Qrator
-G11236BB,O-glycan_b-D-GalpNAc_614,O614,GalNAc,b,D,p,O152,3,GalpNAc,4,,,not validated
-G11236BB,O-glycan_a-D-Galp_531,O531,Gal,a,D,p,O152,4,Galp,6,,,not validated
-G11236BB,O-glycan_b-D-ManpNAc_621,O621,ManNAc,b,D,p,O531,4,ManpNAc,7,,,not validated
