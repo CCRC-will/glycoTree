@@ -61,10 +61,11 @@ function initialize() {
 	$("#limit").change(function() {
 		if ($("#limit").val() == "no_filter") {
 			$("#limit_value").prop('disabled', true);
-			$("#limit_value").val("no parameter");
+			$("#limit_value").val("");
+			fetchData();
 		} else {
 			$("#limit_value").prop('disabled', false);		
-			$("#limit_value").val("");
+			//$("#limit_value").val("");
 		}
 	});
 	fetchData();
@@ -84,25 +85,34 @@ function fetchData() {
 			console.log(" the URL " + rulePath + 
 				" returned this data:\n  message: " + result['msg'] +
 				"\n  limiter: " + result['limiter'] +
-				"\n  limiter value: " + result['limiter_value'] +
+				"\n  limiter_value: " + result['limiter_value'] +
 				"\n  data: " + JSON.stringify(result['data']) );
 		}
 			
+		var port = window.location.port;
+		if (port.length > 0) port = ":" + port;
+		var fullWindowPath = window.location.hostname + port + window.location.pathname;
+		var spl = fullWindowPath.split("/");
+		var windowFileName = spl[spl.length - 1];
+		var fullAPIpath = fullWindowPath.split(windowFileName)[0] + rulePath;
+		var fullGetURL = fullAPIpath + "?limiter=" + result['limiter'] + "&val=" + result['limiter_value'] ;
+		var URIbutton = "<button onclick=\"navigator.clipboard.writeText('" +
+				fullGetURL + "');\">Copy the URL for the API (GET Method)</button>";
 		// result['msg'] is defined ONLY when no results are returned
 		if (typeof result['msg'] !== 'undefined') {
-			var errorStr = "Query - limiter: " + result['limiter'] + "; limiter value: " +
-				 result['limiter_value'] + "; " + result['msg'];
+			var errorStr = "<h1>Query Sent to the Sandbox API:</h1>" + fullGetURL ;
+			errorStr += "<br>" + URIbutton + "<p>" + result['msg'] + "</p>";
 			$("#ruleDiv").html(errorStr);
 		} else {
 			var dataList = result['data'];
-			showRules(dataList);
+			showRules(dataList, URIbutton);
 		}
 	});
 }
 	
 	
-function showRules(data) {
-	var resultStr = "<table id='rules_table'>\n  ";
+function showRules(data, URIbutton) {
+	var resultStr = URIbutton + "<table id='rules_table'>\n  ";
 	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Rule ID</th><th>Status</th><th>Assertion</th><th>Logic</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
 	for (var i = 0; i < data.length; i++) {
 		var resid = data[i]['residue_id'];
@@ -145,13 +155,13 @@ function showRules(data) {
 		<option value="focus">focus equals</option>
 		<option value="rule_id">rule ID equals</option>
 		<option value="status">status equals</option>
-		<option value="assertion_substr">assertion contains value</option>
+		<option value="assertion_val">assertion cites value</option>
 		<option value="logic_substr">logic contains</option>
 		<option value="reference_substr">reference contains</option>
 		<option value="comment_substr">comment contains</option>
 		<option value="curator">curator equals</option>
 		<option value="taxonomy">taxonomy equals</option>
-		<option value="agent">agent equals</option>
+		<option value="enzyme">enzyme equals</option>
 	</select>
 	<input type="text" id="limit_value" size="16">
 	<input type="button" id="go" value="GO!">

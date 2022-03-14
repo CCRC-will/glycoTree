@@ -18,22 +18,22 @@ $query = "SELECT * FROM `rule_data` WHERE `status`='proposed'";
 $stmt = $connection->prepare($query);
 $stmt->execute(); 
 $result = $stmt->get_result();
-echo "instance	rule_id	focus	agent	factor_1	factor_2	taxonomy	curator_id	refs	comment	status	administrator";
+echo "instance	rule_id	focus	agent	other_residue	polymer	taxonomy	curator_id	refs	comment	status	administrator";
 if ( ($result->num_rows) > 0) { 
 	while ($row = $result->fetch_assoc()) {
 		$instance = $row['instance'];
 		$rule_id = $row['rule_id'];
 		$focus = $row['focus'];
 		$agent = $row['agent'];
-		$factor_1 = $row['factor_1'];
-		$factor_2 = $row['factor_2'];
+		$other_residue = $row['other_residue'];
+		$polymer = $row['polymer'];
 		$taxonomy = $row['taxonomy'];
 		$curator_id = $row['curator_id'];
 		$refs = $row['refs'];
 		$comment = $row['comment'];
 		$status = $row['status'];
 		$adminisrator = "unspecified";
-		echo "\n$instance\t$rule_id\t$focus\t$agent\t$factor_1\t$factor_2\t$taxonomy\t$curator_id\t$refs\t$comment\t$status\t$adminisrator";
+		echo "\n$instance\t$rule_id\t$focus\t$agent\t$other_residue\t$polymer\t$taxonomy\t$curator_id\t$refs\t$comment\t$status\t$adminisrator";
 	}
 }
 ?>

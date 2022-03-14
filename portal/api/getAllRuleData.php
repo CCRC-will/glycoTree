@@ -50,13 +50,12 @@ if(!empty($limiter)) switch ($limiter) {
 	  $whereClause = "WHERE rule_data.taxonomy=?";
 	  $nPars = 1;
 	  break;
-	case "agent":
-	  $whereClause = "WHERE rule_data.agent=?";
+	case "enzyme":
+	  $whereClause = "WHERE rule_data.enzyme=?";
 	  $nPars = 1;
 	  break;
-	case "assertion_substr":
-	  $limiterVal = "%$limiterVal%"; // required for "WHERE LIKE"
-	  $whereClause = "WHERE (rule_data.focus LIKE ? OR rule_data.agent LIKE ? OR rule_data.factor_1 LIKE ? OR rule_data.factor_2 LIKE ? OR rule_data.taxonomy LIKE ?)";
+	case "assertion_val":
+	  $whereClause = "WHERE (rule_data.focus=? OR rule_data.enzyme=? OR rule_data.other_residue=? OR rule_data.polymer=? OR rule_data.taxonomy=?)";
 	  $nPars = 5;
 	  break;
 	case "logic_substr":
@@ -84,7 +83,7 @@ if(!empty($limiter)) switch ($limiter) {
 	  // if this code is reached, the specified $limiter is not supported
 	  $msg = "The specified limiter ($limiter) is not supported -";
 	  $msg .= "  Try one of the following:";
-	  $msg .= "  focus, status, rule_id, curator, taxonomy, agent, assertion_substr, logic_substr, comment_substr, reference_substr";
+	  $msg .= "  focus, status, rule_id, curator, taxonomy, enzyme, assertion_substr, logic_substr, comment_substr, reference_substr";
 	  $dataWrap['msg'] = $msg;
 	  $nPars = 0;
 	  $whereClause = "WHERE rule_data.rule_id=0";
@@ -111,13 +110,13 @@ $result = $stmt->get_result();
 if ( ($result->num_rows) > 0) {
 	while ($row = $result->fetch_assoc() ) {
 		$focus = $row['focus'];
-		$agent = $row['agent'];
-		$factor_1 = $row['factor_1'];
-		$factor_2 = $row['factor_2'];
+		$enzyme = $row['enzyme'];
+		$other_residue = $row['other_residue'];
+		$polymer = $row['polymer'];
 		$taxonomy = $row['taxonomy'];
 		$logic = $row['logic'];
-		$keys = array("[focus]", "[agent]", "[factor_1]", "[factor_2]", "[taxonomy]");
-		$vals = array($focus, $agent, $factor_1, $factor_2, $taxonomy);
+		$keys = array("[focus]", "[enzyme]", "[other_residue]", "[polymer]", "[taxonomy]");
+		$vals = array($focus, $enzyme, $other_residue, $polymer, $taxonomy);
 		$inference = str_replace($keys,$vals,$logic);
 		$row['inference'] = $inference;
 		array_push($ruleData,$row);

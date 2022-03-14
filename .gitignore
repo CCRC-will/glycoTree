@@ -43,6 +43,7 @@ portal/api/paths/getpathD3.php
 portal/api/.htaccess
 portal/api/b64.php
 portal/api/testBitSet.php
+portal/api/testPW.php
 portal/api/bak/
 portal/force-layout.html
 portal/force-layout-v4.html

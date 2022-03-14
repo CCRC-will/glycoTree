@@ -1,4 +1,4 @@
-instance	rule_id	focus	agent	factor_1	factor_2	taxonomy	curator_id	refs	comment	status	administrator
+instance	rule_id	focus	enzyme	affecting_residue	polymer	taxonomy	curator_id	refs	comment	status	administrator
 1	1	N7	Q812F8	N2	NULL	mouse	MT	PMID: 1533386	GNT obligate order	active	
 2	1	N7	Q812G0	N2	NULL	mouse	MT	PMID: 1533386	GNT obligate order	active	
 3	1	N7	Q9D306	N2	NULL	mouse	MT	PMID: 1533386	GNT obligate order	active	
@@ -153,34 +153,34 @@ instance	rule_id	focus	agent	factor_1	factor_2	taxonomy	curator_id	refs	comment	
 152	7	N462	NULL	NULL	NULL	NULL	MT			active	
 153	7	N463	NULL	NULL	NULL	NULL	MT			active	
 154	7	N87	NULL	NULL	NULL	NULL	MT	PMID: 25165203	Not a valid node	active	
-155	8	N202	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-156	8	N204	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-157	8	N211	NULL	N-glycans	NULL	schistosomes	MT	http://www.glycosciences.de reference 6981	Poorly defined antigen	active	
-158	8	N212	NULL	N-glycans	NULL	schistosomes	MT	http://www.glycosciences.de reference 6981	Poorly defined antigen	active	
-159	8	N213	NULL	N-glycans	NULL	schistosomes	MT	http://www.glycosciences.de reference 6981	Poorly defined antigen	active	
-160	8	N217	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-161	8	N218	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-162	8	N219	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-163	8	N220	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-164	8	N221	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-165	8	N225	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-166	8	N263	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-167	8	N264	NULL	N-mannans	NULL	fungi	MT			active	
-168	8	N269	NULL	N-mannans	NULL	fungi				active	
-169	8	N270	NULL	N-mannans	NULL	fungi		PMID: 8505334		active	
-170	8	N275	NULL	N-glycans	NULL	nematodes molluscs	MT	PMID: 31046847		active	
-171	8	N283	NULL	N-mannans	NULL	fungi				active	
-172	8	N286	NULL	N-mannans	NULL	fungi	MT			active	
-173	8	N296	NULL	N-mannans	NULL	fungi	MT			active	
-174	8	N300	NULL	N-mannans	NULL	fungi	MT			active	
-175	8	N330	NULL	N-mannans	NULL	fungi	MT			active	
-176	8	N367	NULL	N-mannans	NULL	fungi				active	
-177	8	N389	NULL	N-mannans	NULL	fungi				active	
-178	8	N393	NULL	N-mannans	NULL	fungi				active	
-179	8	N402	NULL	N-glycans	NULL	nematodes	MT			active	
-180	8	N403	NULL	N-glycans	NULL	nematodes	MT			active	
-181	8	N414	NULL	N-mannans	NULL	fungi	MT			active	
-182	8	N419	NULL	N-mannans	NULL	fungi				active	
-183	8	N425	NULL	N-mannans	NULL	fungi				active	
-184	8	N456	NULL	N-mannans	NULL	fungi	MT			active	
-185	8	N467	NULL	N-glycans	NULL	nematodes	MT			active	
+155	8	N202	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+156	8	N204	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+157	8	N211	NULL	NULL	N-glycans	schistosomes	MT	http://www.glycosciences.de reference 6981	Poorly defined antigen	active	
+158	8	N212	NULL	NULL	N-glycans	schistosomes	MT	http://www.glycosciences.de reference 6981	Poorly defined antigen	active	
+159	8	N213	NULL	NULL	N-glycans	schistosomes	MT	http://www.glycosciences.de reference 6981	Poorly defined antigen	active	
+160	8	N217	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+161	8	N218	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+162	8	N219	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+163	8	N220	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+164	8	N221	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+165	8	N225	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+166	8	N263	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+167	8	N264	NULL	NULL	N-mannans	fungi	MT			active	
+168	8	N269	NULL	NULL	N-mannans	fungi				active	
+169	8	N270	NULL	NULL	N-mannans	fungi		PMID: 8505334		active	
+170	8	N275	NULL	NULL	N-glycans	nematodes molluscs	MT	PMID: 31046847		active	
+171	8	N283	NULL	NULL	N-mannans	fungi				active	
+172	8	N286	NULL	NULL	N-mannans	fungi	MT			active	
+173	8	N296	NULL	NULL	N-mannans	fungi	MT			active	
+174	8	N300	NULL	NULL	N-mannans	fungi	MT			active	
+175	8	N330	NULL	NULL	N-mannans	fungi	MT			active	
+176	8	N367	NULL	NULL	N-mannans	fungi				active	
+177	8	N389	NULL	NULL	N-mannans	fungi				active	
+178	8	N393	NULL	NULL	N-mannans	fungi				active	
+179	8	N402	NULL	NULL	N-glycans	nematodes	MT			active	
+180	8	N403	NULL	NULL	N-glycans	nematodes	MT			active	
+181	8	N414	NULL	NULL	N-mannans	fungi	MT			active	
+182	8	N419	NULL	NULL	N-mannans	fungi				active	
+183	8	N425	NULL	NULL	N-mannans	fungi				active	
+184	8	N456	NULL	NULL	N-mannans	fungi	MT			active	
+185	8	N467	NULL	NULL	N-glycans	nematodes	MT			active	

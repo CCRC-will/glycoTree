@@ -38,14 +38,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 if ( ($result->num_rows) > 0) {
 	while ($row = $result->fetch_assoc()) {
-		$agent = $row['agent'];;
-		$factor_1 = $row['factor_1'];;
-		$factor_2 = $row['factor_2'];;
+		$enzyme = $row['enzyme'];;
+		$other_residue = $row['other_residue'];;
+		$polymer = $row['polymer'];;
 		$taxonomy = $row['taxonomy'];;
 		$logic = $row['logic'];
 
-		$keys = array("[focus]", "[agent]", "[factor_1]", "[factor_2]", "[taxonomy]");
-		$vals = array($focus, $agent, $factor_1, $factor_2, $taxonomy);
+		$keys = array("[focus]", "[enzyme]", "[other_residue]", "[polymer]", "[taxonomy]");
+		$vals = array($focus, $enzyme, $other_residue, $polymer, $taxonomy);
 		$inference = str_replace($keys,$vals,$logic);
 		$row['inference'] = $inference;
 		array_push($finalResult['rule_instances'],$row);

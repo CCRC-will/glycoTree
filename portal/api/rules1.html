@@ -24,7 +24,8 @@
 	z-index: 88;
 	right: 20px;
 	top: 60px;
-	width: 800px;
+	left: 256px;
+	width: 1024px;
 	border-style: none;
 	text-align: center;
 }
@@ -35,7 +36,7 @@
 	top: 20px;
 	width: 100%;
 	border-style: none;
-	text-align: center;
+	text-align: left;
 }
 
 #listDiv {
@@ -72,10 +73,31 @@
 	background-color: rgb(228,235,240);
 }
 
+.zoomer {
+	transform: scale(1);
+	transition: all 300ms;
+}
+
+.zoomer:hover {
+  transform: scale(1.4);
+}
+	
 </style>	
 	
 <script>
+var v = 2;
 var tCount = 0;
+// additional stuff
+// global vars	
+// use next line when running under MAMP
+var listPath = "list.php";
+var glycanPath = "glycan-v4.php";
+var submitPath = "submitRules.php";
+var configPath = "../json/sugars.json";
+var svgEncoding = "";
+var newRule = null;
+
+var uniprotURL = "https://www.uniprot.org/uniprot/?query=[rule_enzyme]&sort=score&columns=id,organism&format=tab";	
 
 function initialize() {
 	console.log("##### Initializing #####");
@@ -87,9 +109,6 @@ function initialize() {
 	$("#generate_rule").click(function() {
 		generateRule();
 	});
-	$("#show_rule_list").click(function() {
-		showRuleList();
-	});
 	console.log("list URL is " + listPath);
 	
 	var arg = window.location.search.substring(1).split("&")[0];
@@ -100,25 +119,6 @@ function initialize() {
 	}
 } // end of function initialize()
 
-	
-// additional stuff
-// global vars	
-// use next line when running under MAMP
-var listPath = "list.php";
-var glycanPath = "glycan-v4.php";
-var submitPath = "submitRules.php";
-var configPath = "../json/sugars.json";
-var v =  5;
-var svgEncoding = "";
-var newRuleID = null;
-var newRule = null; // object
-var newRuleStr = ""; // string
-var allRuleStrs = new Array(); // string[]
-var allRules = new Object(); // object[]
-allRules['curator'] = "";
-allRules['curator_pw'] = "";
-allRules['data'] = new Array();
-var jsonRules = "";
 	
 	
 function downloadSVG(a) {
@@ -140,7 +140,11 @@ function showList(selectedGlycans, resID) {
 	}
 	listHTML += "</table>";
 	ld.html(listHTML);
-	showImage(selectedGlycans[0].glytoucan_ac, resID);
+	if (selectedGlycans.length > 0) {
+		showImage(selectedGlycans[0].glytoucan_ac, resID);
+	} else {
+		$("#iDiv").html("<h2>No glycans containing " + resID + " were found</h2>");
+	}
 } // end of function showList()
 	
 
@@ -164,19 +168,16 @@ function showImage(accession, resID) {
 		svgEncoding = generateOneSVG(accession, jsonResult);
 		
 		var sd = $("#iDiv");
-		sd.html("<h3>Structure " + accession + " contains residue " + resID + " (highlighted)</h3>")
-		sd.append(svgEncoding);
+		var spaceOut = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		sd.html("<h3>Structure " + accession + " contains residue " + resID +
+			" (highlighted)</h3><br>" + svgEncoding + "<br><br><br><br>");
 		
-		var bStr = "<br>\
-	<form action=\"../explore.html\" method=\"get\" target=\"_blank\">\
+		var bStr = "<form action=\"../explore.html\" method=\"get\" target=\"_blank\">\
 		<label for=\"fname\">GlyTouCan Accession:</label>\
-		<input type=\"text\" id=\"focus\" name=\"focus\" size=\"10\">\
-		<br><input type=\"submit\" value=\"Explore This Glycan Structure\">\
-	</form>";
-		
-		
-		bStr += "<br><input type='button' value='Dowload SVG Image'" +
-			 "onClick=\"downloadSVG('" + accession + "')\">";
+		<input type=\"text\" id=\"focus\" name=\"focus\" size=\"10\">" +
+		spaceOut + "<input type=\"submit\" value=\"Explore This Glycan Structure\">" +
+		spaceOut + "<input type='button' value='Dowload SVG Image'" +
+			 "onClick=\"downloadSVG('" + accession + "')\"></form>";
 
 		sd.append(bStr);
 		
@@ -204,6 +205,8 @@ function showImage(accession, resID) {
 		});
 		
 		annotateResidues();
+		var svgElem = sd.find("svg"); // all <svg> elements in svgDiv
+		svgElem.addClass("zoomer");
 	})			
 	.fail(function() {
 		unavailable.push("JSON data for " + accession);
@@ -327,7 +330,6 @@ function showRules(data) {
 	var resultStr = "<h2>Assertions for Residue " + resID + " <img src=\"" + snfgImgRef +
 		 "\"> " + resStructure + "</h2>";
 	
-	var instances = [];
 	if (data['rule_instances'].length == 0) {
 		resultStr += "<b>" + data['message'] + "</b>";
 	} else {
@@ -362,37 +364,31 @@ function getRuleLogic(ruleID) {
 	return(ruleLogic);
 }
 	
-function continue4() {
-	// submit all saved rules
-	var confirmStr = "Are you sure you want to submit the new rules to the server?\n" +
-		 "This will clear all of the data in the (local) submission list.";
+function continue3() {
+	// submit a new rule
+	var confirmStr = "Are you sure you want to submit the new rule to the server?";
 		
 	if (confirm(confirmStr)) {
-		if ( (allRules['curator'].length == 0) || (allRules['curator_pw'].length == 0)) {
-			allRules['curator'] = prompt("Please enter your curator ID", "");
-			allRules['curator_pw'] = prompt("Please enter your curator password", "");
-		}
-		if (v > 3) console.log(allRules);
-		jsonRules = JSON.stringify(allRules);
+		var submission = {};
+		if (v > 0) console.log("rule:\n" + JSON.stringify(newRule));
+		submission['curator'] = prompt("Please enter your curator ID", "");
+		submission['curator_pw'] = prompt("Please enter your curator password", "");
+		submission['data'] = newRule;
+		submittedJSON = JSON.stringify(submission);
+
 		$.get(submitPath,
 		{
-			json_data: jsonRules
+			json_data: submittedJSON
 		},
 		function(result){
-			if (v > 3) {
-				console.log("  submitted data to " + submitPath + "\n" + jsonRules + "\n  " + result);
+			if (v > 0) {
+				var sd = $("#iDiv");
+				var htmlResult = result.replace(/\n/g, "<br>"); 
+				var resultMSG = "<center><h2>Response from API (" + submitPath + ")</h2></center>" +
+					 htmlResult +  "<br><button onclick='getRules(true);'>Continue</button>";
+				sd.html(resultMSG);
 			}
-			// var responseStr = "<h3>Server Response:</h3><pre style='text-align: left;'>" + result + "</pre>";
-			// var sd = $("#iDiv");
-			// $("#iDiv").html(responseStr);
 			newRule = null; // object
-			newRuleStr = ""; // string
-			allRuleStrs = new Array(); // string[]
-			allRules = new Object(); // object[]
-			allRules['curator'] = "";
-			allRules['curator_pw'] = "";
-			allRules['data'] = new Array();
-			getRules(true);
 		});
 	} else {
 		alert("No data sent to server");
@@ -401,43 +397,114 @@ function continue4() {
 	sd.html("");
 }
 	
-function showRuleList() {
-	var sd = $("#iDiv");
-	if (allRuleStrs.length < 1) {
-		$("#iDiv").html("<h2>Rule Submission List is Empty</h2>");
-		return;
-	}
-
-	var tableData = "<h2>Rule Submission List:</h2><table id='saved_rules'>\n  ";
-	for (var i = 0; i < allRuleStrs.length; i++) {
-		if (v > 3) console.log(allRuleStrs[i]);
-		tableData += "<tr><td>" + allRuleStrs[i] + "</td></tr>\n  ";
-	}
-
-	tableData += "</table>\n<br><button id='send' onclick='continue4();'>Submit These Rules to Server</button></p>";
-	$("#iDiv").html(tableData);
-}
 	
-function continue3() {
-	// (save new rule) push the new rule and rule string to arrays, then show all saved rules
-	console.log("saving rule:\n" + newRuleStr);
-	$("#continue_3").attr('disabled', true);
-	allRules['data'].push(newRule);
-	allRuleStrs.push(newRuleStr);
-	showRuleList();
-}
+function continue2(newRuleID) {
+	var resID = $("#resid").val();
+	var ruleLogic = getRuleLogic(newRuleID);
+
+	var ruleOtherRes = $("#rule_other_residue").val();
+	if (ruleLogic.search(/(other_residue)/) > -1) {
+		if (v > 1) console.log("Rule cites other_residue");
+		if (ruleOtherRes.length == 0) {
+			alert("Please enter a value for other_residue");
+			return;
+		}
+	}
 	
-function continue2() {
-	// instantiate the rule using input fields and generate a string describing it
-	$("#continue_2").attr('disabled', true);
+	var rulePolymer = $("#rule_polymer").val();
+	if (ruleLogic.search(/(polymer)/) > -1) {
+		if (v > 1) console.log("Rule cites polymer");
+		if (rulePolymer.length == 0) {
+			alert("Please enter a value for polymer");
+			return;
+		}
+	}
+	
+	var ruleTaxonomy = $("#rule_taxonomy").val();
+	if (ruleLogic.search(/(taxonomy)/) > -1) {
+		if (v > 1) console.log("Rule cites taxonomy");
+		if (ruleTaxonomy.length == 0) {
+			alert("Please enter a value for the rule taxonomy");
+			return;
+		}
+	}
+		
+	var ruleEnzyme = $("#rule_enzyme").val();
+	if (ruleLogic.search(/(enzyme)/) > -1) {
+		if (v > 1) console.log("Rule cites enzyme");
+		// the rule cites an enzyme (enzyme)
+		if (ruleEnzyme.length == 0) {
+			alert("Please enter a uniprot id for the enzyme");
+			return;
+		}
+		
+		var enzymeOK = false;
+		if (ruleEnzyme.length < 6) {
+			alert("uniprot accession '" + ruleEnzyme + "' has too few characters");
+			return;
+		}
+		// The uniprot URL with parameters
+		var url = uniprotURL.replace("[rule_enzyme]", ruleEnzyme);
+		if (v > 0) console.log("uniprot URL for " + ruleEnzyme + "\n" + url);
+		var errStr = "";
+		$.get(url, {},
+		function(result){
+			if (v > 0) {
+				console.log("  results for uniprot accession " + ruleEnzyme + "\n" + result);
+			}
+			// check if any result line contains ruleEnzyme and (when appropriate)
+			//   if the line also contains ruleTaxonomy
+			var rSplit = result.split("\n");
+			for (var i = 0; i < rSplit.length; i++) {
+				if (v > 2) console.log(rSplit[i]);
+				if (rSplit[i].includes(ruleEnzyme)) {
+					// ruleEnzyme is a (case-sensitive) valid uniprot accession
+					if (v > 0) console.log("found uniprot accession " + ruleEnzyme);
+					if (ruleLogic.search(/(taxonomy)/) > -1) {
+						// the rule includes a taxonomy field
+						if (v > 1) console.log("the rule includes a taxonomy field");
+						errStr = ": not consistent with taxonomy '" + ruleTaxonomy + "'";
+						// match each word in line exactly to ruleTaxonomy
+						var words = rSplit[i].split(/[\s\(\)]/);
+						if (v > 2) console.log("words in uniprot result line\n" + words);						
+						for (var j = 0; j < words.length; j++) {
+							if (v > 2) console.log("comparing word " + words[j] + " with " + ruleTaxonomy);
+							if (words[j].toLowerCase() == ruleTaxonomy.toLowerCase()) {
+								// the line associates ruleTaxonomy with ruleEnzyme
+								if (v > 1) console.log("taxonomy '" + ruleTaxonomy +
+									"' matches accession '" + ruleEnzyme + "'");
+								enzymeOK = true;
+							}
+						}
+					} else {
+						if (v > 1) console.log("no taxonomy required");
+						enzymeOK = true;
+					}
+				}
+			}
+			if (enzymeOK == false) {  
+				alert("uniprot accession '" + ruleEnzyme + "' error" + errStr);
+				return;
+			} else {
+				assembleRule(newRuleID);
+			}
+		});
+	} else {
+		assembleRule(newRuleID);
+	}
+	
+}
+
+
+function  assembleRule(newRuleID) {
 	var sd = $("#iDiv");
-	// newRule is global
+	// newRule is global!!!
 	newRule = {
 		rule_id: newRuleID,
 		focus: $("#resid").val(),
-		agent: $("#rule_agent").val(),
-		factor_1: $("#rule_factor_1").val(),
-		factor_2: $("#rule_factor_2").val(),
+		enzyme: $("#rule_enzyme").val(),
+		other_residue: $("#rule_other_residue").val(),
+		polymer: $("#rule_polymer").val(),
 		taxonomy: $("#rule_taxonomy").val(),
 		refs: $("#rule_refs").val(),
 		comment: $("#rule_comment").val()
@@ -447,50 +514,47 @@ function continue2() {
 	var ruleLogic = getRuleLogic(newRuleID);
 	var inference = ruleLogic.replace("[focus]", "<b>" + newRule['focus'] + "</b>");
 	// newRuleStr is global
-	newRuleStr = inference.replace("[agent]", "<b>" + newRule['agent'] + "</b>");
-	newRuleStr = newRuleStr.replace("[factor_1]", "<b>" + newRule['factor_1'] + "</b>");
-	newRuleStr = newRuleStr.replace("[factor_2]", "<b>" + newRule['factor_2'] + "</b>");
+	newRuleStr = inference.replace("[enzyme]", "<b>" + newRule['enzyme'] + "</b>");
+	newRuleStr = newRuleStr.replace("[other_residue]", "<b>" + newRule['other_residue'] + "</b>");
+	newRuleStr = newRuleStr.replace("[polymer]", "<b>" + newRule['polymer'] + "</b>");
 	newRuleStr = newRuleStr.replace("[taxonomy]", "<b>" + newRule['taxonomy'] + "</b>");
 
 	var newRuleParStr = "<br><br><b>References:</b> " + newRule['refs'];
 	newRuleParStr += "<br><b>Comment:</b> " + newRule['comment'];
 	
 	sd.html("<h3>New Application of Rule " + newRuleID + "</h3>" + newRuleStr + newRuleParStr);
-	sd.append("<p><button id='continue_3' onclick='continue3();'>Add This Rule to Submission List</button></p>");
+	sd.append("<p><button id='continue_3' onclick='continue3();'>Submit This Rule to the DB</button></p>");
 }
 	
 	
 function continue1() {
 	// enter the parameters for the rule
-	$("#continue_1").attr('disabled', true);
-	var sd = $("#iDiv");
-	var resID = $("#resid").val();
-	newRuleID = $('input[name="chosen_rule"]:checked').val(); // global
-	var ruleLogic = getRuleLogic(newRuleID);
-	/*
-	var skipToNextStep = (ruleLogic.search(/(agent|factor|taxonomy)/) == -1);
-	if  (skipToNextStep) {
-		continue2();
+	if ($('input[name="chosen_rule"]:checked').length === 0) {
+		alert("Please select a rule to apply before continuing");
 		return;
 	}
-	*/
+	var sd = $("#iDiv");
+	var resID = $("#resid").val();
+	var newRuleID = $('input[name="chosen_rule"]:checked').val();
+	var ruleLogic = getRuleLogic(newRuleID);
 
 	var inference = ruleLogic.replace("[focus]", resID);
 	if (v > 3) console.log("Rule " + newRuleID + " applied to " + resID + "\n" + inference);
-	var ruleInput = inference.replace("[agent]", "<input type='text' id='rule_agent' size='12'>");
-	ruleInput = ruleInput.replace("[factor_1]", "<input type='text' id='rule_factor_1' size='12'>");
-	ruleInput = ruleInput.replace("[factor_2]", "<input type='text' id='rule_factor_2' size='12'>");
-	ruleInput = ruleInput.replace("[taxonomy]", "<input type='text' id='rule_taxonomy' size='12'>");
+	var ruleInput = inference.replace("[enzyme]", "<input type='text' id='rule_enzyme' size='12' placeholder='uniprot id'>");
+	ruleInput = ruleInput.replace("[other_residue]", "<input type='text' id='rule_other_residue' size='12' placeholder='residue_id'>");
+	ruleInput = ruleInput.replace("[polymer]", "<input type='text' id='rule_polymer' size='12' placeholder='polymer'>");
+	ruleInput = ruleInput.replace("[taxonomy]", "<input type='text' id='rule_taxonomy' size='12' placeholder='species'>");
 	
 	ruleInput += "<br><label for=\"rule_refs\">Literature references for the rule:</label>";
-	ruleInput += "<br><input type='text' id='rule_refs' size='96'>";
+	ruleInput += "<br><input type='text' id='rule_refs' size='96' placeholder='e.g. \"PMID: 12345\"'>";
 	ruleInput += "<br><label for=\"rule_comment\">Curator comments for the rule:</label>";
-	ruleInput += "<br><input type='text' id='rule_comment' size='96'>";
+	ruleInput += "<br><input type='text' id='rule_comment' size='96' placeholder='e.g., \"reference refutes structue\"'>";
 	
 	var divHTML = "<h2>Enter any additional values required to implement the rule</h2>";
 	divHTML += ruleInput;
-	divHTML += "<p><button id=\"continue_2\" onclick=\"continue2();\">Continue</button></p>";
+	divHTML += "<p><button id=\"continue_2\" onclick=\"continue2('" + newRuleID + "');\">Continue</button></p>";
 	sd.html(divHTML);
+	$("\#rule_enzyme").focus();
 }
 	
 	
@@ -639,7 +703,6 @@ function annotateResidues() {
 <button id="check_it">Check Rules</button>
 <br>
 <button id="generate_rule">Apply a New Rule to This Residue</button>
-<button id="show_rule_list">Show Rule Submission List</button>
 <div id="ruleDiv"></div>	
 	<div id="iDiv">Structures will appear here<br></div>
 	
