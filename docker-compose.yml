@@ -6,7 +6,10 @@ services:
            context: .
            dockerfile: Dockerfile
         environment:
-           - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+          - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+          - JAVA_TOOL_OPTIONS=-Xms256m -Xmx1024m
+          - SUGAR=${SUGAR}
+          - SPICE=${SPICE}
         volumes:
            - $PWD/portal:/var/www/html
         ports:
@@ -22,6 +25,8 @@ services:
            - MYSQL_USER=gt_user
            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
            - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+           - SUGAR=${SUGAR}
+           - SPICE=${SPICE}
         ports:
             - 3306:3306
         volumes:
