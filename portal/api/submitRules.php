@@ -5,7 +5,7 @@ include 'glycanCommon.php';
 $servername = getenv('MYSQL_SERVER_NAME');
 $password = getenv('MYSQL_PASSWORD');
 $uSugar = getenv('SUGAR');
-$uSpice = getenv('SPICE');
+$uSpice = 1 * getenv('SPICE'); 
 
 $jsonData = $_GET['json_data'];
 
