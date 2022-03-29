@@ -123,6 +123,7 @@ var configPath = "../json/sugars.json";
 var svgEncoding = "";
 var newRule = null;
 var curatorID = "";
+var ruleData = null;
 
 var uniprotURL = "https://www.uniprot.org/uniprot/?query=[rule_enzyme]&sort=score&columns=id,organism&format=tab";	
 	
@@ -157,9 +158,11 @@ function downloadSVG(a) {
 } // end of function downloadSVG()
 	
 	
-function showList(selectedGlycans, resID) {
+function showList(selectedGlycans, resID, mode, par2) {
 	var ld = $("#listDiv");
-	var listHTML = "<h3>Glycans Containing Residue " + resID + "</h3><table>\n";
+	var limitStr = resID;
+	if (mode.includes("with") ) limitStr += " " + mode + " residue " + par2;
+	var listHTML = "<h3>Glycans Containing residue " + limitStr + "</h3><table>\n";
 	for (var i = 0; i < selectedGlycans.length; i++) {
 		listHTML += "<tr>\n<td><a href=\"javascript:showImage('" +
 			selectedGlycans[i].glytoucan_ac + "', '" + resID + "');\">" +
@@ -170,7 +173,7 @@ function showList(selectedGlycans, resID) {
 	if (selectedGlycans.length > 0) {
 		showImage(selectedGlycans[0].glytoucan_ac, resID);
 	} else {
-		$("#layer_div_1").html("<h2>No glycans containing " + resID + " were found</h2>");
+		$("#layer_div_1").html("<h2>No glycans containing residue " + limitStr + " were found</h2>");
 	}
 } // end of function showList()
 	
@@ -269,24 +272,25 @@ function fetchConfiguration(theURL) {
 	
 } // end of function fetchConfiguration()
 	
-function fetchList(resID) {
-	var mode = "res";
+function fetchList(resID, mode, par2) {
+	console.log("fetching: " + resID + " - " + mode + " - " + par2);
 	var selectedGlycans = "";
 	if (v > 3) console.log("Fetching list from " + listPath + " using parameters " + resID + " and " + mode);
 	$.get(listPath,
 	{
 		par: resID,
-		mode: mode
+		mode: mode,
+		par2: par2
 	},
 	function(result){
 		
-		if (v > 3) {
+		if (v > 1) {
 			console.log("  fetched list from " +
 							listPath + ":\n  " + result);
 		}
 		
 		selectedGlycans = JSON.parse(result);
-		showList(selectedGlycans, resID);	
+		showList(selectedGlycans, resID, mode, par2);	
 
 	});
 	
@@ -350,10 +354,10 @@ function getRules(showEm) {
 	
 	$.get(url,
 	function(result){
-		if (v > 4) console.log("result returned from " + url + "\n " + result);
+		if (v > 1) console.log("result returned from " + url + "\n " + result);
 		 // process rule data
-		resultData = JSON.parse(result); // global for download
-		if (showEm) showRules(resultData);
+		ruleData = JSON.parse(result); // global for download
+		if (showEm) showRules(ruleData);
 	});
 }
 	
@@ -375,41 +379,248 @@ function showRules(data) {
 			var ruleRef = data['rule_instances'][i]['refs'];
 			var ruleComment = data['rule_instances'][i]['comment'];
 			var ruleStatus = data['rule_instances'][i]['status'];
-			var radioID = "rule_" + data['rule_instances'][i]['instance'] + "_choose";
-			resultStr += "<tr><td><input type=\"radio\" id=\"" + radioID +
-				"\" name=\"rule_choose\" value=\"" + radioID +
-				"\"></td><td style='white-space: nowrap'>" + ruleInference +
+			var otherResidue = data['rule_instances'][i]['other_residue'];
+			var radioID = data['rule_instances'][i]['instance'];
+			resultStr += "<tr><td><input type=\"radio\" id=\"instance_select_" + radioID +
+				"\" name=\"remove_choose\" value=\"" + radioID +
+				"\" onclick=\"filterButtons()\"></td><td style='white-space: nowrap'>" + ruleInference +
 				"</td><td>" + ruleRef + "</td><td>" + ruleComment + "</td><td>" +
 				ruleStatus + "</td></tr>\n  ";
-		}
+		}		
+		
 		resultStr += "</table>\n  ";
-		resultStr += "<br><button onclick=\"alert('Remove assertion is not yet implemented');\">Remove selected assertion</button>";
+		resultStr += "<br>Show: &nbsp;" +
+			"<button id=\"all_glycans\" onclick=\"filterGlycans('res');\">All Glycans With Residue " + resID +
+				"</button> &nbsp;" +
+			"&nbsp;<button id=\"with_res\" onclick=\"filterGlycans('with');\">All Glycans With Residues " + resID +
+			" AND unselected</button> &nbsp;" +
+			"&nbsp;<button id=\"without_res\" onclick=\"filterGlycans('without');\">All Glycans With Residue " + resID +
+			" but NOT unselected</button>" +
+			"<br><button id=\"dispute_button\" onclick=\"disputeRule();\">Dispute selected assertion</button>" +
+			"&nbsp;<button id=\"withdraw_button\" onclick=\"withdrawRule();\">Withdraw selected assertion</button>";
+	if (v > 4) console.log("htmlString:\n" + resultStr);
 	}
 	$("#ruleDiv").html(resultStr);
-	fetchList(resID);
+	toggleFilterButtons(); // null argument disables buttons
+	fetchList(resID, "res", null);
+}
+
+	
+function filterButtons() {
+	// disable buttons that do not apply to the selected assertion
+	var selectedInstance = $('input[name="remove_choose"]:checked').val();
+
+	var instanceObjects = $(ruleData['rule_instances']);
+	var instObj = getInstanceData(selectedInstance);
+	if (v > 1) console.log("you selected instance " +  selectedInstance + "\n" +
+					JSON.stringify(instObj, 3, 3));
+	toggleFilterButtons(instObj);
+
+}
+	
+	
+function toggleFilterButtons(inst) {
+	// takes instance data
+	var focusID = "none selected";
+	var otherResidueID = "none selected";
+	var filterStatus = true; // only changes when inst is defined
+	var disputeStatus = true;
+	var withdrawStatus = true;
+	if (typeof inst !== 'undefined') {
+		focusID = inst['focus'];
+		otherResidueID = inst['other_residue'];
+
+		
+		$('#with_res').html("Glycans With Residue " + focusID + " AND Residue " + otherResidueID);
+		$('#without_res').html("Glycans With Residue " + focusID + " but NOT Residue " + otherResidueID);
+		
+		if (inst['status'] == 'active') {
+			disputeStatus =  false;
+		}
+		if (inst['status'] == 'proposed') {
+			withdrawStatus =  false;
+		}
+		if (inst['logic'].includes('other_residue')) {
+			filterStatus = false;
+		}
+	}
+	
+	// '...Status' is false when button is not disabled
+	$('#dispute_button').prop('disabled', disputeStatus);
+	$('#withdraw_button').prop('disabled', withdrawStatus);
+	$('#with_res').prop('disabled', filterStatus);
+	$('#without_res').prop('disabled', filterStatus);
+	$('#all_glycans').prop('disabled', filterStatus);
+	
+	var focusResidue = $("#resid").val();
+	fetchList(focusResidue, "res", null);
+}
+	
+	
+function filterGlycans(mode) {
+	var selectedAssertion = $('input[name="remove_choose"]:checked').val();
+	var selectedAssertionData = getInstanceData(selectedAssertion);
+	var focusResidue = selectedAssertionData['focus'];
+	var otherResidue = selectedAssertionData['other_residue'];
+	if (v > 0) console.log(" showing: (" + mode + ") for rule " + selectedAssertion + ": data\n" +
+			JSON.stringify(selectedAssertionData, 3, 3));
+	fetchList(focusResidue, mode, otherResidue);
+}
+	
+	
+	
+function getInstanceData(targetAssertionID) {
+	// returns an instance OBJECT
+	var instanceList = ruleData['rule_instances'];
+	for (var i = 0; i < instanceList.length; i++) {
+		if (instanceList[i]['instance'] == targetAssertionID) {
+			var theInstance = instanceList[i];
+			if (v > 3) console.log("Found target instance: " + targetAssertionID + "\n" +
+							JSON.stringify(theInstance, 3, 3));
+			return(theInstance);
+		}
+	}
+	return null;
+}
+	
+	
+function disputeRule() {
+	var disputeID = $('input[name="remove_choose"]:checked').val();
+	if (typeof disputeID === 'undefined') {
+		alert("Please select an assertion to dispute");
+	} else {
+		var assertionToDispute = getInstanceData(disputeID);
+		var authDiv = $("#layer_div_4");
+		var submitHTML = "<h2>Dispute Assertion " + disputeID + "</h2>" +
+			 "<b><pre>" + JSON.stringify(assertionToDispute, 3, 3) + "</pre></b>";
+	
+		submitHTML +=	"<p><label for=\"curator\">Your Curator ID: </label>" +
+			"<input type=\"text\" id=\"curator\" name=\"curator\" size=\"5\" value=\"" + curatorID + "\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<label for=\"curator_pw\">Password: </label>" +
+			"<input type=\"password\" id=\"curator_pw\" name=\"curator_pw\" size=\"16\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<button id=\"submit_dispute\" onclick=\"submitDispute('" +
+			disputeID + "');\">Submit Dispute to Server</button></p>";
+
+		authDiv.html(submitHTML);
+
+		hideAllLayerDivs();
+		showLayerDiv(authDiv);
+	}
+}
+	
+function withdrawRule() {
+	var withdrawID = $('input[name="remove_choose"]:checked').val();
+	if (typeof withdrawID === 'undefined') {
+		alert("Please select an assertion to withdraw");
+	} else {
+		var assertionToDispute = getInstanceData(withdrawID);
+		var authDiv = $("#layer_div_4");
+		var submitHTML = "<h2>Withdraw Assertion " + withdrawID + "</h2>" +
+			 "<b><pre>" + JSON.stringify(assertionToDispute, 3, 3) + "</pre></b>";
+	
+		submitHTML +=	"<p><label for=\"curator\">Your Curator ID: </label>" +
+			"<input type=\"text\" id=\"curator\" name=\"curator\" size=\"5\" value=\"" + curatorID + "\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<label for=\"curator_pw\">Password: </label>" +
+			"<input type=\"password\" id=\"curator_pw\" name=\"curator_pw\" size=\"16\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<button id=\"submit_withdraw\" onclick=\"submitWithdraw('" +
+			withdrawID + "');\">Submit Withdrawal to Server</button></p>";
+
+		authDiv.html(submitHTML);
+
+		hideAllLayerDivs();
+		showLayerDiv(authDiv);
+	}
 }
 	
 	
 function getRuleLogic(ruleID) {
 	// required because rules are in a regular array (not an associative array)
 	var ruleLogic = "";
-	for (var i = 0; i < resultData['rules'].length; i++) {
-		if (resultData['rules'][i]['rule_id'] == ruleID) {
-			ruleLogic = resultData['rules'][i]['logic'];
+	for (var i = 0; i < ruleData['rules'].length; i++) {
+		if (ruleData['rules'][i]['rule_id'] == ruleID) {
+			ruleLogic = ruleData['rules'][i]['logic'];
 		}
 	}
 	return(ruleLogic);
 }
 	
+
+function submitDispute(disputeID) {
+	var submission = {};
+	if (v > 0) console.log("assertion being disputed:\n" + disputeID);
+	curatorID = $("#curator").val();
+	submission['curator'] = $("#curator").val();
+	submission['curator_pw'] = $("#curator_pw").val();
+	submission['disputed_id'] = disputeID; 
+	submittedJSON = JSON.stringify(submission);
+	if (v > 0) console.log("submitted JSON:\n" + submittedJSON);
+	$.get(submitPath,
+	{
+		json_data: submittedJSON
+	},
+	function(result) {
+		if (v > 0) {
+			var sd = $("#layer_div_5");
+			hideAllLayerDivs();
+			showLayerDiv(sd);
+			var htmlResult = result.replace(/\n/g, "<br>"); 
+			var resultMSG = "<center><h2>Response from API (" + submitPath + ")</h2></center>" + htmlResult;
+			
+			if (result.includes("successfully") ) {
+				 resultMSG +=  "<br><button onclick='getRules(true);'>Continue</button>";
+			 } else {
+				// resultMSG +=  "";
+			 }
+			sd.html(resultMSG);
+		}
+		newRule = null; // object
+	});
+}
+	
+	
+	
+function submitWithdraw(withdrawID) {
+	var submission = {};
+	if (v > 0) console.log("assertion being withdrawn:\n" + withdrawID);
+	curatorID = $("#curator").val();
+	submission['curator'] = $("#curator").val();
+	submission['curator_pw'] = $("#curator_pw").val();
+	submission['withdrawn_id'] = withdrawID; 
+	submittedJSON = JSON.stringify(submission);
+	if (v > 0) console.log("submitted JSON:\n" + submittedJSON);	// MORE ...
+	$.get(submitPath,
+	{
+		json_data: submittedJSON
+	},
+	function(result) {
+		if (v > 0) {
+			var sd = $("#layer_div_5");
+			hideAllLayerDivs();
+			showLayerDiv(sd);
+			var htmlResult = result.replace(/\n/g, "<br>"); 
+			var resultMSG = "<center><h2>Response from API (" + submitPath + ")</h2></center>" + htmlResult;
+			
+			if (result.includes("successfully") ) {
+				 resultMSG +=  "<br><button onclick='getRules(true);'>Continue</button>";
+			 } else {
+				// resultMSG +=  "";
+			 }
+			sd.html(resultMSG);
+		}
+		newRule = null; // object
+	});
+}
+	
 	
 function submitRule(newRuleID) {
 	var submission = {};
-	if (v > 0) console.log("rule to be submitted:\n" + JSON.stringify(newRule));
+	if (v > 0) console.log("assertion being submitted:\n" + JSON.stringify(newRule));
 	curatorID = $("#curator").val();
 	submission['curator'] = $("#curator").val();
 	submission['curator_pw'] = $("#curator_pw").val();
 	submission['data'] = newRule; // global
 	submittedJSON = JSON.stringify(submission);
+	if (v > 0) console.log("submitted JSON:\n" + submittedJSON);
 	$.get(submitPath,
 	{
 		json_data: submittedJSON
@@ -639,9 +850,9 @@ function generateRule(selectedRuleID) {
 	sd.show().css("visibility", "visible");
 	var ruleStr = "<h2>Select a Rule to apply to Residue " + resID + "</h2>";
 	ruleStr += "<table id='rule_select_table'>\n";
-	for (var i = 0; i < resultData['rules'].length; i++) {
-		var ruleID = resultData['rules'][i]['rule_id'];
-		var ruleLogic = resultData['rules'][i]['logic'];
+	for (var i = 0; i < ruleData['rules'].length; i++) {
+		var ruleID = ruleData['rules'][i]['rule_id'];
+		var ruleLogic = ruleData['rules'][i]['logic'];
 		ruleLogic = ruleLogic.replace("[focus]", resID);
 		ruleStr += "  <tr><td><input type=\"radio\" id=\"rule" +
 			ruleID + "\" name=\"chosen_rule\" value=\"" + ruleID + "\">" +
@@ -775,7 +986,6 @@ function annotateResidues() {
 <div id="container_div">
 	
 	<h2>Curate Rules for Canonical Residues</h2>
-
 	<label for="resid">Enter a canonical residue id:</label>
 	<input type="text" id="resid" name="resid" size="5" value="N224"> 
 	<button id="check_it">Check Rules</button>

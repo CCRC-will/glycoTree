@@ -10,6 +10,7 @@ log/*.log
 log/*.lst
 export/
 currentInput/
+documentation/
 data/*.lst
 data/*.zip
 data/fully_determined/

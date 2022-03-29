@@ -41,31 +41,34 @@
 <script>
 	
 var rulePath = "getAllRuleData.php";
-var v = 2;
+var v = 3;
 	
 function initialize() {
 	console.log("##### Initializing #####");
-	var arg = window.location.search.substring(1).split("&")[0];
-	var a = arg.split("=");
+	// split on '&' THEN on '='
+	var arg = window.location.search.substring(1).split("&");
+
 	var limiter = "none";
 	var limiterVal = "none";
 	if (arg.length > 1) {
-		$("#limit").val(a[0]);
-		$("#limit_value").val(a[1]);
+		for (var i = 0; i < arg.length; i++) {
+			var a = arg[i].split("=");
+			if (a[0] === "limiter") $("#limiter").val(a[1]);
+			if (a[0] === "val") $("#limiter_value").val(a[1]);
+		}
 	} else {
-		$("#limit").val("no_filter");
+		$("#limiter").val("no_filter");
 	}
 	$("#go").click(function() {
 		fetchData();
 	});
-	$("#limit").change(function() {
-		if ($("#limit").val() == "no_filter") {
-			$("#limit_value").prop('disabled', true);
-			$("#limit_value").val("");
+	$("#limiter").change(function() {
+		if ($("#limiter").val() == "no_filter") {
+			$("#limiter_value").prop('disabled', true);
+			$("#limiter_value").val("");
 			fetchData();
 		} else {
-			$("#limit_value").prop('disabled', false);		
-			//$("#limit_value").val("");
+			$("#limiter_value").prop('disabled', false);		
 		}
 	});
 	fetchData();
@@ -77,8 +80,8 @@ function initialize() {
 function fetchData() {
 	$.get(rulePath,
 	{
-		limiter: $("#limit").val(),
-		val: $("#limit_value").val()
+		limiter: $("#limiter").val(),
+		val: $("#limiter_value").val()
 	},
 	function(result){
 		if (v > 1) {
@@ -113,7 +116,7 @@ function fetchData() {
 	
 function showRules(data, URIbutton) {
 	var resultStr = URIbutton + "<table id='rules_table'>\n  ";
-	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Rule ID</th><th>Status</th><th>Assertion</th><th>Logic</th><th>Reference(s)</th><th>Comment</th><th>Curator</th></tr>";
+	resultStr += "<tr><th>Residue ID</th><th>Focus</th><th>Structure</th><th>Rule ID</th><th>Status</th><th>Assertion</th><th>Logic</th><th>Reference(s)</th><th>Comment</th><th>proposer</th><th>disputer</th></tr>";
 	for (var i = 0; i < data.length; i++) {
 		var resid = data[i]['residue_id'];
 		var anomer = data[i]['anomer'].replace("a","&alpha;");
@@ -126,14 +129,16 @@ function showRules(data, URIbutton) {
 		var logic = data[i]['logic'];
 		var ruleRef = data[i]['refs'];
 		var ruleComment = data[i]['comment'];
-		var curator = data[i]['curator_id'];
+		var proposer = data[i]['proposer_id'];
+		var disputer = data[i]['disputer_id'];
 		var status = data[i]['status'];
 		var resLink = "<a href='rules1.html?focus=" + resid + "' target='_blank'>" + resid + "</a>";
 		resultStr += "<tr><td style='white-space: nowrap'>" + resLink + "</td><td>" + focus + 
 			"</td><td>" + structure + "</td><td>" + ruleID + "</td><td>" + status +
 			"</td><td>" + assertion + "</td><td>" + logic +
 			"</td><td>" + ruleRef + "</td><td>" + ruleComment +
-			"</td><td>" + curator +  "</td></tr>\n  ";
+			"</td><td>" + proposer +  
+			"</td><td>" + disputer +  "</td></tr>\n  ";
 	}
 	resultStr += "</table>\n  ";
 	$("#ruleDiv").html(resultStr);
@@ -148,7 +153,7 @@ function showRules(data, URIbutton) {
 <div id="topDiv">
 	<h2>Rule Inferences for Canonical Residues</h2>
 	Filtering Options: 
-	<select id="limit">
+	<select id="limiter">
 		<option value="" disabled selected hidden>Select a FIELD</option>
 		<option value="no_filter">no filter</option>
 		<option value="residue_id">residue ID equals</option>
@@ -159,11 +164,11 @@ function showRules(data, URIbutton) {
 		<option value="logic_substr">logic contains</option>
 		<option value="reference_substr">reference contains</option>
 		<option value="comment_substr">comment contains</option>
-		<option value="curator">curator equals</option>
+		<option value="proposer">proposer equals</option>
 		<option value="taxonomy">taxonomy equals</option>
 		<option value="enzyme">enzyme equals</option>
 	</select>
-	<input type="text" id="limit_value" size="16">
+	<input type="text" id="limiter_value" size="16">
 	<input type="button" id="go" value="GO!">
 	<br>
 	<h4>Click a residue ID to explore or extend its rules</h4>
@@ -171,14 +176,3 @@ function showRules(data, URIbutton) {
 <div id="ruleDiv"></div>
 	
 </body>
-	
-<!--
-
-example jquery
-	var x = "Rene R";
-	$("#person").val(x);
-	alert($("#person").val());
-	x = "Mike T";
-	$("#person").val(x);
-	alert($("#person").val());
--->

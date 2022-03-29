@@ -14,7 +14,7 @@ if ($connection->connect_error) {
 	die("Connection failed: " . $connection->connect_error);
 }
 
-$query = "SELECT * FROM `rule_data` WHERE `status`='proposed'";
+$query = "SELECT * FROM `rule_data` WHERE (`status`='proposed' OR `status`='disputed')";
 $stmt = $connection->prepare($query);
 $stmt->execute(); 
 $result = $stmt->get_result();

@@ -6,6 +6,7 @@ $password = getenv('MYSQL_PASSWORD');
 try {
 	$par = $_GET['par'];
 	$mode = $_GET['mode'];
+	$par2 = $_GET['par2'];
 	
 	// Create connection
 	$connection = new mysqli($servername, $username, $password, $dbname);
@@ -18,33 +19,43 @@ try {
 	$list = [];
 	$numPars = 0;
 	switch ($mode) {
+		case "with": 
+			// glycans containing $par1 AND $par3
+			$numPars = 2;
+			$query = "SELECT DISTINCT glytoucan_ac FROM compositions c WHERE residue_id=? AND glytoucan_ac IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id=?)";
+			break;
+		case "without":
+			// glycans containing $par1 BUT NOT $par3
+			$numPars = 2;
+			$query = "SELECT DISTINCT glytoucan_ac FROM compositions c WHERE residue_id=? AND glytoucan_ac NOT IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id=?)";
+			break;
 		case "all":
 		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions";
 		  break;
 		case "all_N":
-		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE '%N%'";
+		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE 'N%'";
 		  break;
 		case "mapped_N":
-		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE '%N%' AND glytoucan_ac NOT IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_name='unassigned')";
+		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE 'N%' AND glytoucan_ac NOT IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_name='unassigned')";
 		  break;
 		case "all_O":
-		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE '%O%'";
+		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE 'O%'";
 		  break;
 		case "mapped_O":
-		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE '%O%' AND glytoucan_ac NOT IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_name='unassigned')";
+		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id LIKE 'O%' AND glytoucan_ac NOT IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_name='unassigned')";
 		  break;	
 		case "res":
 		  $numPars = 1;
 		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_id=?";
 		  break;	
 		case "sug":
-		  $parIn = "%" . $par . "%";
+		  $par2 = "%" . $par . "%";
 		  $numPars = 2;
 		  if ((strpos($par, "NAc") !== false) || (strpos($par, "NGc") !== false)) {
-			  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_name LIKE ? OR name=?";
+			  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE name=? OR residue_name LIKE ?";
 		  } else {
 			  // the query does not contain 'NAc' or 'NGc' so filter these out
-			  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE (residue_name LIKE ?  OR name=?) AND residue_name NOT IN (SELECT residue_name FROM compositions WHERE residue_name LIKE '%NAc%' OR residue_name LIKE '%NGc%')";	
+			  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE (name=? OR residue_name LIKE ?) AND residue_name NOT IN (SELECT residue_name FROM compositions WHERE residue_name LIKE '%NAc%' OR residue_name LIKE '%NGc%')";	
 		  }
 		  break;
 		default:
@@ -57,7 +68,7 @@ try {
 		$stmt->bind_param("s", $par);
 	}
 	if ($numPars === 2) {
-		$stmt->bind_param("ss", $parIn, $par);
+		$stmt->bind_param("ss", $par, $par2);
 	}
 	$stmt->execute(); 
 	$result = $stmt->get_result();

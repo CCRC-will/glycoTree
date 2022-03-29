@@ -42,8 +42,12 @@ if(!empty($limiter)) switch ($limiter) {
 	  $whereClause = "WHERE rules.rule_id=?";
 	  $nPars = 1;
 	  break;
-	case "curator":
-	  $whereClause = "WHERE rule_data.curator_id=?";
+	case "proposer":
+	  $whereClause = "WHERE rule_data.proposer_id=?";
+	  $nPars = 1;
+	  break;
+	case "disputer":
+	  $whereClause = "WHERE rule_data.disputer_id=?";
 	  $nPars = 1;
 	  break;
 	case "taxonomy":
@@ -83,7 +87,7 @@ if(!empty($limiter)) switch ($limiter) {
 	  // if this code is reached, the specified $limiter is not supported
 	  $msg = "The specified limiter ($limiter) is not supported -";
 	  $msg .= "  Try one of the following:";
-	  $msg .= "  focus, status, rule_id, curator, taxonomy, enzyme, assertion_substr, logic_substr, comment_substr, reference_substr";
+	  $msg .= "  focus, status, rule_id, proposer, taxonomy, enzyme, assertion_substr, logic_substr, comment_substr, reference_substr";
 	  $dataWrap['msg'] = $msg;
 	  $nPars = 0;
 	  $whereClause = "WHERE rule_data.rule_id=0";
@@ -91,7 +95,7 @@ if(!empty($limiter)) switch ($limiter) {
 
 $query = "SELECT canonical_residues.residue_id,canonical_residues.anomer,canonical_residues.absolute,canonical_residues.form_name,canonical_residues.site,rule_data.*,rules.logic FROM canonical_residues LEFT JOIN rule_data ON (rule_data.focus = canonical_residues.residue_id) LEFT JOIN rules ON (rules.rule_id = rule_data.rule_id) $whereClause ORDER BY SUBSTR(canonical_residues.residue_id, 1, 1), cast(SUBSTR(canonical_residues.residue_id, 2, 4) as UNSIGNED)";
 //echo "$query\n\n";
-
+//echo "limiterVal is $limiterVal";
 $stmt = $connection->prepare($query);
 
 switch ($nPars) { 

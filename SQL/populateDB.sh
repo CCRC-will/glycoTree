@@ -19,10 +19,12 @@ accept="n"
 COUNT=0
 
 rule_php="ruleDataUpdates.php"
-rule_html="ruleData.html?limit=true"
+rule_html="ruleData.html?limiter=status&val=proposed"
 TFILE="tempfile.tsv"
+TFILE2="tempfile2.tsv"
 rm $TFILE
-RULE_DATA="rule_data.tsv"
+rm $TFILE2
+RULE_DATA="../model/rule_data.tsv"
 
 # initiate (global) canonical_residues.csv with N_canonical_residues.csv
 cp ../model/N_canonical_residues.csv ./canonical_residues.csv
@@ -66,67 +68,72 @@ rule_api=$api$rule_php
 echo "Rule API is $rule_api"
 
 echo
-read -s -p "Please enter the MYSQL password for $user: " pw
-echo
+read -p "Do you want to import changes in the DB from the public serve? (y/n)" imp
+if [ $imp == 'y' ]; then
 
-read -p "Please enter your ID: " admin_id
-echo
+  read -p "Please enter your ID: " admin_id
+  echo
 
-curl -s $rule_api -o newRules.tsv > /dev/null
-echo
+  curl -s $rule_api -o $TFILE > /dev/null
+  echo
 
-function check_rule() {
-    echo
-    echo "Rule $COUNT:"
-    rule=$1
-    echo "$rule"
-    rule="${rule/unspecified/${admin_id}}"
-    read -u 1 -p "Accept this rule? (y/n) " accept
-    if [ $accept == "y" ]
-    then
-      echo "Rule $COUNT accepted"
-      rule="${rule/proposed/active}"
-    else
-      echo "Rule $COUNT rejected"
-      rule="${rule/proposed/rejected}"
-    fi
-    if test -f "$TFILE"
-    then
-        echo "$rule" >> $TFILE
-    else
-        echo "$rule" > $TFILE
-    fi
-}
+  function check_rule() {
+      echo
+      echo "Rule $COUNT:"
+      rule=$1
+      echo "$rule"
+      rule="${rule/unspecified/${admin_id}}"
+      read -u 1 -p "Accept this rule? (y/n) " accept
+      if [ $accept == "y" ]
+      then
+        echo "Rule $COUNT accepted"
+        rule="${rule/proposed/active}"
+      else
+        echo "Rule $COUNT rejected"
+        rule="${rule/proposed/rejected}"
+      fi
+      if test -f "$TFILE2"
+      then
+          echo "$rule" >> $TFILE2
+      else
+          echo "$rule" > $TFILE2
+      fi
+  }
 
-echo "To examine the proposed rules (below), direct your browser to:"
-echo $api$rule_html 
-echo
+  echo "To examine the proposed rules (below), direct your browser to:"
+  echo $api$rule_html 
+  echo
 
-while IFS='' read -r in || [[ -n "${in}" ]]; do
-   if [ $COUNT -gt 0 ]
-   then
-     check_rule "$in"
-   else
-     echo "$in"
-   fi
-   ((COUNT++))
-done < newRules.tsv
-
-echo
-echo "Processed rules:"
-cat $TFILE
-
-read -u 1 -p "Append these rules to $RULE_DATA? (y/n) " accept
-if [ $accept == "y" ]
-then
-  timestamp=$(date +%s)
-  echo "the following trivial actions are not yet implemented"
-  echo "copying $RULE_DATA to ./bak/$timestamp-$RULE_DATA"
-  echo "appending these rules to $RULE_DATA"
+  while IFS='' read -r in || [[ -n "${in}" ]]; do
+     if [ $COUNT -gt 0 ]
+     then
+       check_rule "$in"
+     else
+       echo "$in"
+     fi
+     ((COUNT++))
+  done < $TFILE 
+  
+  echo
+  echo "Processed rules:"
+  cat $TFILE2
+  
+  read -u 1 -p "\n\nAppend these rules to $RULE_DATA? (y/n) " accept
+  if [ $accept == "y" ]
+  then
+    timestamp=$(date +%s)
+    echo "the following trivial actions are not yet implemented"
+    echo "copying $RULE_DATA to ./bak/$timestamp-$RULE_DATA"
+    echo "appending these rules to $RULE_DATA"
+  fi
+  
+  rm $TFILE
+  rm $TFILE2
 fi
 
-rm newRules.tsv
-rm $TFILE
+echo
+read -s -p "Please enter the MYSQL password for $user: " pw
+echo
 
 echo
 echo "populating SQL Tables"
@@ -146,7 +153,7 @@ $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" 
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c rule_id,class,description,logic glycotree rules.tsv 
 
-$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c instance,rule_id,focus,enzyme,other_residue,polymer,taxonomy,curator_id,refs,comment,status,administrator glycotree rule_data.tsv 
+$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c instance,rule_id,focus,enzyme,other_residue,polymer,taxonomy,proposer_id,refs,comment,status,administrator,disputer_id glycotree rule_data.tsv 
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c id,name,auth,role glycotree curators.tsv 
 

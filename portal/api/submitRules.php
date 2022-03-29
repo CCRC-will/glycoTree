@@ -14,7 +14,6 @@ $submittedData = json_decode($jsonData, true);
 $curator_id = strtolower($submittedData['curator']); //case insensitive
 $curator_pw = $submittedData['curator_pw']; // case sensitive
 $combo = "$curator_pw/$curator_id";
-
 // Create connection
 $connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -52,38 +51,80 @@ $refs = "";
 $comment = "";
 $status = "proposed";
 
+if (is_null($submittedData['data'])) {
+	if (!is_null($submittedData['disputed_id'])) {
+		echo "Disputing assertion " . $submittedData['disputed_id'];
+		// process 'dispute assertion'
+		//   NOTE: 'curator_id' is associated with 'disputer_id'
+		$query = "UPDATE rule_data SET disputer_id=?,status='disputed' WHERE instance=?"; 
+		$stmt = $connection->prepare($query);
+		$stmt->bind_param("si", $curator_id, $disputedID);
 
+		$disputedID = $submittedData['disputed_id'];
+		echo "\ndisputed assertion id: '" . $disputedID . "'";
+		echo "\ndisputer: '" . $curator_id . "'";
 
-$query = "INSERT INTO rule_data (rule_id, focus, enzyme, other_residue, polymer, taxonomy, curator_id, refs, comment, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-$stmt = $connection->prepare($query);
-$stmt->bind_param("isssssssss", $rule_id, $focus, $enzyme, $other_residue, $polymer, $taxonomy, $curator_id, $refs, $comment, $status);
+		if ($stmt->execute()) {
+			echo "\n\nAssertion " . $disputedID . " successfully disputed";
+		} else {
+			echo "\n\nUnable to dispute assertion";
+		}
+	} else if (!is_null($submittedData['withdrawn_id'])) {
+		echo "Withdrawing assertion " . $submittedData['withdrawn_id'];
+		// process 'withdraw assertion'
+		//   NOTE: 'curator_id' must equal 'proposer_id' 
+		//    only proposer can withdraw proposal 
+		//    only assertions with status='proposed' can be withdrawn
+		$query = "DELETE FROM rule_data WHERE instance=? AND status='proposed' AND proposer_id=?";
+		$stmt = $connection->prepare($query);
+		$stmt->bind_param("is", $withdrawnID, $curator_id);
 
+		$withdrawnID = $submittedData['withdrawn_id'];
+		echo "\nassertion id: '" . $withdrawnID . "'";
+		echo "\nwithdrawn by: '" . $curator_id . "'";
 
-	echo "\ncurator: '" . $curator_id . "'";
-	$rule_id = 1 * $submittedData['data']['rule_id'];
-	echo "\n  rule id: " . $rule_id; 
-	$focus = $submittedData['data']['focus'];
+		if (($stmt->execute()) && (mysqli_affected_rows($connection) > 0) ) {
+			echo "\n\nAssertion " . $withdrawnID . " successfully withdrawn";
+		} else {
+			echo "\n\nUnable to withdraw assertion";
+		}		
+	}
+} else {
+	$sData = $submittedData['data'];
+	echo "Proposing new assertion of rule " . $sData['rule_id'];
+	// process 'propose assertion' - data is in $submittedData['data']
+	//   NOTE: 'curator_id' is associated with 'proposer_id'
+	$query = "INSERT INTO rule_data (rule_id, focus, enzyme, other_residue, polymer, taxonomy, proposer_id, refs, comment, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	$stmt = $connection->prepare($query);
+	$stmt->bind_param("isssssssss", $rule_id, $focus, $enzyme, $other_residue, $polymer, $taxonomy, $curator_id, $refs, $comment, $status);
+
+	
+	echo "\nproposer: '" . $curator_id . "'";
+	$rule_id = 1 * $sData['rule_id'];
+	echo "\n  proposed assertion id: " . $rule_id; 
+	$focus = $sData['focus'];
 	echo "\n  focus: '" . $focus . "'"; 
-	$enzyme = $submittedData['data']['enzyme'];
+	$enzyme = $sData['enzyme'];
 	echo "\n  enzyme: '" . $enzyme . "'"; 
-	$other_residue = $submittedData['data']['other_residue'];
+	$other_residue = $sData['other_residue'];
 	echo "\n  other_residue: '" . $other_residue . "'"; 
-	$polymer = $submittedData['data']['polymer'];
+	$polymer = $sData['polymer'];
 	echo "\n  polymer: '" . $polymer . "'"; 
-	$taxonomy = $submittedData['data']['taxonomy'];
+	$taxonomy = $sData['taxonomy'];
 	echo "\n  taxonomy: '" . $taxonomy . "'"; 
-	$refs = $submittedData['data']['refs'];
+	$refs = $sData['refs'];
 	echo "\n  refs: '" . $refs . "'"; 
-	$comment = $submittedData['data']['comment'];
+	$comment = $sData['comment'];
 	echo "\n  comment: '" . $comment . "'"; 
 	echo "\n  status: '" . $status . "'"; 
-		
+
 	if ($stmt->execute()) {
 		echo "\n\nNew record created successfully";
 	} else {
 		echo "\n\nUnable to create record";
 	}
-
+	
+}
 
 $connection->close();
 
