@@ -1,9 +1,9 @@
 #!/bin/bash
 # Usage: ./populateDB -u <user> -d <mysql_bin_directory>  -a <sandbox api server>
 # Example:
-#  ./populateDB.sh -u gt_user -d /Applications/MAMP/Library/bin/ -a https://glygen.ccrc.uga.edu/sandbox/api/
+#  ./populateDB.sh -u gt_user -d /Applications/MAMP/Library/bin/ -a https://glygen.ccrc.uga.edu/sandbox/api
 # Example:
-# ./populateDB.sh -u gt_user -d /Applications/MAMP/Library/bin/ -a localhost:8080/api/
+# ./populateDB.sh -u gt_user -d /Applications/MAMP/Library/bin/ -a localhost:8080/api
 #  This script populates the glycotree DB using the mysqlimport command
 #  For security reasons, YOU must supply the 
 #    DB user_name and directory containing mysqlimport
@@ -14,17 +14,7 @@
 
 start=$(date)
 echo $start
-admin_id=""
-accept="n"
 COUNT=0
-
-rule_php="ruleDataUpdates.php"
-rule_html="ruleData.html?limiter=status&val=proposed"
-TFILE="tempfile.tsv"
-TFILE2="tempfile2.tsv"
-rm $TFILE
-rm $TFILE2
-RULE_DATA="../model/rule_data.tsv"
 
 # initiate (global) canonical_residues.csv with N_canonical_residues.csv
 cp ../model/N_canonical_residues.csv ./canonical_residues.csv
@@ -63,73 +53,19 @@ for (( i=1; i<=$#; i++)); do
   fi
 done
 
-# MAYBE RULE ADMINISTRATION SHOULD BE COMPLETELY SEPARATE AND INVOKED FROM '../build_all.sh'
-rule_api=$api$rule_php
-echo "Rule API is $rule_api"
-
 echo
-read -p "Do you want to import changes in the DB from the public serve? (y/n)" imp
-if [ $imp == 'y' ]; then
-
-  read -p "Please enter your ID: " admin_id
-  echo
-
-  curl -s $rule_api -o $TFILE > /dev/null
-  echo
-
-  function check_rule() {
-      echo
-      echo "Rule $COUNT:"
-      rule=$1
-      echo "$rule"
-      rule="${rule/unspecified/${admin_id}}"
-      read -u 1 -p "Accept this rule? (y/n) " accept
-      if [ $accept == "y" ]
-      then
-        echo "Rule $COUNT accepted"
-        rule="${rule/proposed/active}"
-      else
-        echo "Rule $COUNT rejected"
-        rule="${rule/proposed/rejected}"
-      fi
-      if test -f "$TFILE2"
-      then
-          echo "$rule" >> $TFILE2
-      else
-          echo "$rule" > $TFILE2
-      fi
-  }
-
-  echo "To examine the proposed rules (below), direct your browser to:"
-  echo $api$rule_html 
-  echo
-
-  while IFS='' read -r in || [[ -n "${in}" ]]; do
-     if [ $COUNT -gt 0 ]
-     then
-       check_rule "$in"
-     else
-       echo "$in"
-     fi
-     ((COUNT++))
-  done < $TFILE 
-  
-  echo
-  echo "Processed rules:"
-  cat $TFILE2
-  
-  read -u 1 -p "\n\nAppend these rules to $RULE_DATA? (y/n) " accept
-  if [ $accept == "y" ]
-  then
-    timestamp=$(date +%s)
-    echo "the following trivial actions are not yet implemented"
-    echo "copying $RULE_DATA to ./bak/$timestamp-$RULE_DATA"
-    echo "appending these rules to $RULE_DATA"
-  fi
-  
-  rm $TFILE
-  rm $TFILE2
+echo "This macro will NOT put newly curated changes into the DB"
+echo "The tsv file holding rule data MUST be updated to matcfh newly curated changes in the DB"
+echo "Otherwise, deployment of the DB to the server will DESTROY the newly curated changes "
+echo "Please review the the changes by visiting the Web page $api/curatorAdmin.html,"
+echo "   then download, and execute the auto-generated macro"
+read -p "Do you want to continue without reviewing curation data? (y/n)" goon
+if ! [ $goon = 'y' ]; then
+  echo "Point your browser to $api/curatorAdmin.html"
+  exit
 fi
+
+echo "Continuing without reviewing curation data"
 
 echo
 read -s -p "Please enter the MYSQL password for $user: " pw

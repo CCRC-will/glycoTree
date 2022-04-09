@@ -1,4 +1,4 @@
-instance	rule_id	focus	enzyme	affecting_residue	polymer	taxonomy	proposer_id	refs	comment	status	administrator	disputer_id
+instance	rule_id	focus	enzyme	other_residue	polymer	taxonomy	proposer_id	refs	comment	status	administrator	disputer_id
 1	1	N7	Q812F8	N2	NULL	Mus musculus	MT	PMID: 1533386	GNT obligate order	active		NULL
 2	1	N7	Q812G0	N2	NULL	Mus musculus	MT	PMID: 1533386	GNT obligate order	active		NULL
 3	1	N7	Q9D306	N2	NULL	Mus musculus	MT	PMID: 1533386	GNT obligate order	active		NULL
@@ -17,7 +17,7 @@ instance	rule_id	focus	enzyme	affecting_residue	polymer	taxonomy	proposer_id	ref
 16	4	N207	NULL	NULL	NULL	NULL	MT		4-substituted GlcNAc ok but should be 3-linked	active		NULL
 17	4	N208	NULL	NULL	NULL	NULL	MT		Man linkage not even present in Fungi	active		NULL
 18	4	N214	NULL	NULL	NULL	NULL	MT	PMID: 7460954	Linkage undefined in original reference	active		NULL
-19	4	N215	NULL	NULL	NULL	NULL	MT	PMID: 7460954		active			NULL
+19	4	N215	NULL	NULL	NULL	NULL	MT	PMID: 7460954		active		NULL
 20	4	N223	NULL	NULL	NULL	NULL	MT	PMID: 2411221	Reference refutes residue 	active		NULL
 21	4	N226	NULL	NULL	NULL	NULL	MT		4-substituted GlcNAc ok but should be 3-linked	active		NULL
 22	4	N228	NULL	NULL	NULL	NULL	MT		4-substituted GlcNAc ok but should be 3-linked	active		NULL

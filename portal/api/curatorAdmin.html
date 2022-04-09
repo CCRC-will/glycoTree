@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>Sandbox Curation Update</title>
+	
+<link rel="icon" href="../svg/sbSmall.svg" type="image/icon type">
+
+<style>
+		
+table td {
+	white-space: nowrap;
+	font-size: 12px;
+	font-family: "Lucida Console", "Courier New", monospace;
+	text-align: left;
+	padding: 10px;
+}
+	
+table tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
+	
+</style>
+
+<script src="../js/sbheader.js"></script>
+	
+<script src="../js/jquery-3.5.1.min.js"></script>
+
+<script>
+	
+var rulePath = "curatedData.php";
+var v = 3;
+	
+// the strings "[dt]", "[admin]", and "[data_arrays]" are replaced with other strings
+var scriptTemplate = "## Usage: awk -f [dt]_adminRules.awk [rule data file] > [temporary file]\n\
+  ## 1. Back up the rule_data file\n\
+  ## 2. Execute this script to generate a temporary rule_data file\n\
+  ## 3. Check the temporary file for accuracy\n\
+  ## 4. Overwrite the rule_data file with the temporary file\n\
+  BEGIN {\n\
+  FS = \"\\t\";\n\
+  admin = \"[admin]\";\n\
+  ##   the arrays \"status\", \"disputer\" and \"proposed\" in the next lines were generated\n\
+  ##      on the client-side by javascript and hold the values that YOU approved\n\
+  \n[data_arrays]\n\
+  touched[0] = \"none\"\n\
+  target[0] = \"0\";\n\
+}\n\
+\n\
+NR == 1 {\n\
+  ##   the indices of the \"status\" and \"administrator\" columns are identified from the header\n\
+  printf(\"%s\\n\", $0);\n\
+  for (i = 1; i <= NF ; i++) {\n\
+    if ($i == \"status\") target[i] = \"status\";\n\
+    if ($i == \"administrator\") target[i] = \"administrator\";\n\
+    if ($i == \"disputer_id\") target[i] = \"disputer_id\";\n\
+  }\n\
+}\n\
+\n\
+NR > 1 {\n\
+  ##   as appropriate, the value of the \"status\", \"disputer_id\", and \"administrator\"\n\
+  ##   columns are changed in each line \n\
+  for (i = 1; i <= NF; i++) {\n\
+    ##  each field (i) in the line  is processed\n\
+    sep = \"\\t\"; ## tab-separated\n\
+    if (i == NF) sep = \"\\n\";  ## last field terminated by line-feed\n\
+    if ($1 in status) {\n\
+      ##  \"target columns\" in this LINE should be modified\n\
+      ##  the record in this line has been processed and should not be appended to the file\n\
+      touched[$1] = status[$1];\n\
+      if (i in target) {\n\
+        ##  only the \"status\", \"disputer_id\", and \"administrator\" COLUMNS should be modified\n\
+		  if (target[i] == \"status\") printf(\"%s%s\", status[$1], sep);\n\
+		  if (target[i] == \"administrator\") printf(\"%s%s\", admin, sep);\n\
+		  if (target[i] == \"disputer_id\") printf(\"%s%s\", disputer[$1], sep);\n\
+      } else {\n\
+        ## other COLUMNS should NOT be modified\n\
+        printf(\"%s%s\", $i, sep);\n\
+      }\n\
+    } else {\n\
+      ## keep the initial values of ALL columns for this line\n\
+      printf(\"%s%s\", $i, sep);\n\
+    }\n\
+  }\n\
+}\n\
+\n\
+END {\n\
+  ## append proposed records that have not been processed in (N > 1) section\n\
+  for (key in proposed) if (!key in touched) {\n\
+    printf(\"%s%s\",proposed[key], sep);\n\
+  }\n\
+}";
+
+var disputed = new Array();
+var proposed = new Array();
+// end of global variables
+	
+function initialize() {
+	console.log("##### Initializing #####");
+	fetchData();
+}
+	
+function fetchData() {
+ console.log("fetching data from " + rulePath);
+	$.get(rulePath,
+	{},
+	function(result){
+		if (v > 1) {
+			console.log(" the URL " + rulePath + 
+				" returned this data:\n" + JSON.stringify(result, 3, 3) );
+		}
+		showCurationTable(result);
+		disputed = result['disputed'];
+		proposed = result['proposed'];
+	});
+}
+	
+	
+function generateScript() {
+	if ($("#admin_id").val().length < 2) {
+		alert("Please enter your Administrator ID");
+		return;
+	}
+	alert("Save the script to the glycotree/model directory and follow the instructions in the script");
+		
+	var dt = new Date();
+	var dtStr = dt.getFullYear() + "_" + (1 + dt.getMonth()) + "_" + dt.getDate();
+	var awkScript = scriptTemplate.replace("[dt]", dtStr);
+	awkScript = awkScript.replace("[admin]", $("#admin_id").val());
+	var status = new Array();
+	var dataArrayStr = "";
+	for (var i = 0; i < disputed.length; i++) {
+		var dis = disputed[i];
+		var instance = dis['instance'];
+		var status = $("#disputedChoice_" + instance).val();
+		dataArrayStr +=  "  status[" + instance + "]= \"" + status + "\";\n";
+		var disputerID = dis['disputer_id'];
+		dataArrayStr +=  "  disputer[" + instance + "]= \"" + disputerID + "\";\n";
+	}
+	
+	for (var i = 0; i < proposed.length; i++) {
+		var pro = proposed[i];
+		var instance = pro['instance'];
+		var rule_id = pro['rule_id'];
+		var focus = pro['focus'];
+		var enzyme = pro['enzyme'];
+		var other_residue = pro['other_residue'];
+		var polymer = pro['polymer'];
+		var taxonomy = pro['taxonomy'];
+		var proposer_id = pro['proposer_id'];
+		var refs = pro['refs'];
+		var comment = pro['comment'];
+		var administrator = $("#admin_id").val();
+		var disputer_id = "null";
+		var status = $("#proposedChoice_" + instance).val();
+		dataArrayStr +=  "  status[" + instance + "]= \"" + status + "\";\n";
+		dataArrayStr +=  "  proposed[" + instance + "]= \"" + instance + "\\t" +
+			rule_id + "\\t" + focus + "\\t" + enzyme +
+			"\\t" + other_residue + "\\t" + polymer + "\\t" + taxonomy + "\\t" +
+			proposer_id + "\\t" + refs + "\\t" + comment + "\\t" + status + "\\t" +
+			administrator + "\\t" + disputer_id + "\";\n";
+	}
+	awkScript = awkScript.replace("[data_arrays]", dataArrayStr);
+	
+	console.log("auto-generated bash script:\n" + awkScript);
+	downloadScript(awkScript, dtStr);
+}
+	
+function downloadScript(awkScript, dtStr) {
+	var s = document.createElement("a");
+	s.href = 'data:text/plain,' + encodeURIComponent(awkScript);
+	s.download = dtStr + "_adminRules.awk";
+	s.click();
+} // end of function downloadScript()
+	
+	
+function showCurationTable(result) {
+	var msg1 = "<p>As appropriate, set the 'status' value for each curated assertion, then " +
+		 "<b>download and execute</b> the script generated by this page to permanently incorporate the changes in the DB</p>" +
+		 "Your Administrator ID: <input type=\"text\" id=\"admin_id\"> &nbsp; &nbsp; " + 
+		 "<button onclick=\"generateScript();\">Download Script</button>" +
+		 "<h2>Proposed Assertions</h2>";
+	var headerStr = "  <tr>\n" +
+	"    <th>status</th>\n" +
+	"    <th>focus</th>\n" +
+	"    <th>assertion</th>\n" +
+	"    <th>instance</th>\n" +
+	"    <th>rule_id</th>\n" +
+	"    <th>enzyme</th>\n" +
+	"    <th>other_residue</th>\n" +
+	"    <th>polymer</th>\n" +
+	"    <th>taxonomy</th>\n" +
+	"    <th>proposer_id</th>,\n" +
+	"    <th>refs</th>\n" +
+	"    <th>comment\n" +
+	"    <th>administrator</th>\n" +
+	"    <th>disputer_id</th>\n" +
+	"  </tr>\n";
+	
+	var tableStr = msg1 + "<table id='proposed_table'>\n" + headerStr;
+
+	var ruleDefs = result['rule_defs'];
+	var proposed = result['proposed'];
+	for (var i = 0; i < proposed.length; i++) {
+		var resLink = "<a href='rules1.html?focus=" + proposed[i]['focus'] +
+			 "' target='_blank'>" + proposed[i]['focus'] + "</a>";
+		var statusChoice = "<select id='proposedChoice_" +  proposed[i]['instance'] + "'>" +
+			"<option value=\"proposed\" selected>proposed</option>" +
+			"<option value=\"active\">active</option>" +
+			"<option value=\"rejected\">rejected</option>" + 
+			"</select>";
+		// TODO:  substitute to generate assertion
+		var assertion = ruleDefs[proposed[i]['rule_id']]['logic'].replace("[focus]", proposed[i]['focus']);
+		assertion = assertion.replace("[enzyme]", proposed[i]['enzyme']);
+		assertion = assertion.replace("[taxonomy]", proposed[i]['taxonomy']);
+		assertion = assertion.replace("[other_residue]", proposed[i]['other_residue']);
+		assertion = assertion.replace("[polymer]", proposed[i]['polymer']);
+		tableStr += "  <tr>" +
+			"    <td>" + statusChoice + "</td>" +
+			"    <td>" + resLink + "</td>" +
+			"    <td>" + assertion + "</td>" +
+			"    <td>" + proposed[i]['instance'] + "</td>" +
+			"    <td>" + proposed[i]['rule_id'] + "</td>" +
+			"    <td>" + proposed[i]['enzyme'] + "</td>" +
+			"    <td>" + proposed[i]['other_residue'] + "</td>" +
+			"    <td>" + proposed[i]['polymer'] + "</td>" +
+			"    <td>" + proposed[i]['taxonomy'] + "</td>" +
+			"    <td>" + proposed[i]['proposer_id'] + "</td>" +
+			"    <td>" + proposed[i]['refs'] + "</td>" +
+			"    <td>" + proposed[i]['comment'] + "</td>" +
+			"    <td>" + proposed[i]['administrator'] + "</td>" +
+			"    <td>" + proposed[i]['disputer_id'] + "</td>" +
+			"  </tr>\n";
+	}
+	tableStr += "</table>\n<h2>Disputed Assertions</h2>";
+
+	tableStr += "<table id='disputed_table'>\n" + headerStr;
+	
+	var disputed = result['disputed'];
+
+	for (var i = 0; i < disputed.length; i++) {
+		var resLink = "<a href='rules1.html?focus=" + disputed[i]['focus'] +
+			 "' target='_blank'>" + disputed[i]['focus'] + "</a>";
+		statusChoice = "<select id='disputedChoice_"  +  disputed[i]['instance'] + "'>" +
+			"<option value=\"disputed\" selected>disputed</option>" +
+			"<option value=\"rejected\">rejected</option>" + 
+			"<option value=\"active\">active</option>" +
+			"</select>";
+		
+		var assertion = ruleDefs[disputed[i]['rule_id']]['logic'].replace("[focus]", disputed[i]['focus']);
+		assertion = assertion.replace("[enzyme]", disputed[i]['enzyme']);
+		assertion = assertion.replace("[taxonomy]", disputed[i]['taxonomy']);
+		assertion = assertion.replace("[other_residue]", disputed[i]['other_residue']);
+		assertion = assertion.replace("[polymer]", disputed[i]['polymer']);
+		
+		tableStr += "  <tr>" +
+			"    <td>" + statusChoice + "</td>" +
+			"    <td>" + resLink + "</td>" +
+			"    <td>" + assertion + "</td>" +
+			"    <td>" + disputed[i]['instance'] + "</td>" +
+			"    <td>" + disputed[i]['rule_id'] + "</td>" +
+			"    <td>" + disputed[i]['enzyme'] + "</td>" +
+			"    <td>" + disputed[i]['other_residue'] + "</td>" +
+			"    <td>" + disputed[i]['polymer'] + "</td>" +
+			"    <td>" + disputed[i]['taxonomy'] + "</td>" +
+			"    <td>" + disputed[i]['proposer_id'] + "</td>" +
+			"    <td>" + disputed[i]['refs'] + "</td>" +
+			"    <td>" + disputed[i]['comment'] + "</td>" +
+			"    <td>" + disputed[i]['administrator'] + "</td>" +
+			"    <td>" + disputed[i]['disputer_id'] + "</td>" +
+			"  </tr>\n";
+	}
+	tableStr += "</table>\n  ";
+	$("#dataDiv").html(tableStr);
+}
+	
+</script>	
+
+</head>
+
+<body onLoad=initialize();>
+	
+<div id="topDiv">
+	<center><h1>Curator Updates</h1></center>
+</div>
+<div id="dataDiv">Data Goes Here</div>
+	
+</body>
