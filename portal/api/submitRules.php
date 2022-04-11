@@ -4,15 +4,16 @@ include 'glycanCommon.php';
 
 $servername = getenv('MYSQL_SERVER_NAME');
 $password = getenv('MYSQL_PASSWORD');
-$uSugar = getenv('SUGAR');
-$uSpice = 1 * getenv('SPICE'); 
+$SUGAR = getenv('SUGAR');
+$SPICE = 1 * getenv('SPICE'); 
 
 $jsonData = $_GET['json_data'];
 
 $submittedData = json_decode($jsonData, true);
 
-$curator_id = strtolower($submittedData['curator']); //case insensitive
-$curator_pw = $submittedData['curator_pw']; // case sensitive
+$curator_id = $submittedData['curator'];
+$curator_pw = $submittedData['curator_pw']; 
+// id and pw ar both case-sensitive
 $combo = "$curator_pw/$curator_id";
 // Create connection
 $connection = new mysqli($servername, $username, $password, $dbname);
@@ -34,10 +35,17 @@ if ($result->num_rows == 1) { // exactly one row (index = 0) per id
 	$h1 = $result->fetch_assoc()['auth'];
 }
 
-$h2 = hash_pbkdf2("sha256", $combo, $uSugar, $uSpice, 32);
+$h2 = hash_pbkdf2("sha256", $combo, $SUGAR, $SPICE, 32);
 
 if ($h1 != $h2) {
-	die("Authentication Failure!\n\nPlease check your curator id ($curator_id) and password (******)");
+  $httpHost = $_SERVER['HTTP_REFERER'];
+  $hostSplit = explode("/", $httpHost);
+  $changePWurl = "";
+  for ($i = 0; $i < (sizeof($hostSplit) - 1); $i++) $changePWurl .= $hostSplit[$i] . "/";
+  $changePWurl .= "changePW.php?id=" . $curator_id . "&pw=[your password]";
+  $fMsg = "Authentication Failure!\n\nPlease check your curator id ($curator_id) and password (******)";
+  $fMsg .= "<br>  To change your password, point your browser to $changePWurl";
+  die($fMsg);
 }
 
 // initialize rule parameters
