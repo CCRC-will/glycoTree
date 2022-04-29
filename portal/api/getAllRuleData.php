@@ -19,6 +19,9 @@ if ($connection->connect_error) {
 $dataWrap = [];
 $dataWrap['limiter'] = $limiter;
 $dataWrap['limiter_value'] = $limiterVal;
+// echo "limiter is " . $limiter . " - limiterVal is " . $limiterVal . "<br>";
+
+
 $ruleData = [];
 
 $query = "none";
@@ -108,6 +111,7 @@ switch ($nPars) {
 	default:
 		break;
 }
+
 
 $stmt->execute(); 
 $result = $stmt->get_result();

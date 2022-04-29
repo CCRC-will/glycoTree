@@ -1,5 +1,6 @@
 #!/bin/bash
 # Usage: ./populateDB -u <user> -d <mysql_bin_directory>  -a <sandbox api server>
+#  !!! The examples below work ONLY for mysql operating within MAMP !!!
 # Example:
 #  ./populateDB.sh -u gt_user -d /Applications/MAMP/Library/bin/ -a https://glygen.ccrc.uga.edu/sandbox/api
 # Example:
@@ -75,7 +76,7 @@ echo
 echo "populating SQL Tables"
 echo
 
-$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,limited_to,not_found_in,notes,who,evidence,comment glycotree canonical_residues.csv 
+$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,notes glycotree canonical_residues.csv 
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c type,orthology_group,uniprot,protein_refseq,dna_refseq,gene_name,gene_id,species,branch_site_specificity glycotree enzymes.csv 
 
@@ -83,7 +84,7 @@ $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," -
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,dp,homolog,relative_dp,shared glycotree correlation.csv
  
-$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c residue_name,residue_id,type,uniprot,requires_residue,blocked_by_residue,notes glycotree enzyme_mappings.csv
+$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c residue_name,residue_id,type,uniprot,notes glycotree enzyme_mappings.csv
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,base64_composition glycotree bitSet.tsv 
 

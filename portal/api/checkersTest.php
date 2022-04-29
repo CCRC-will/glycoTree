@@ -1,7 +1,6 @@
 <?php
 
 include '../config.php';
-include 'glycanCommon.php';
 include 'bitSet.php';
 
 function generateEmptyBitSet($connection) {

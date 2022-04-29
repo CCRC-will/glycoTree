@@ -9,7 +9,7 @@
 
 include '../config.php';
 include 'bitSet.php';
-include 'glycanCommon.php';
+include 'glycanCommon2.php';
 
 $servername = "";
 $password = "";

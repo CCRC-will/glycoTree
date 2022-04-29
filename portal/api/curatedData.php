@@ -1,6 +1,5 @@
 <?php
 include '../config.php';
-include 'glycanCommon.php';
 
 $servername = getenv('MYSQL_SERVER_NAME');
 $password = getenv('MYSQL_PASSWORD');

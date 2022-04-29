@@ -1,5 +1,7 @@
 #!/bin/bash
 # Usage: ./genAllPaths.sh [accessions filename] [output file]
+# !!! MUST BE CALLED USING MAMP - SEE genPath_v2.php !!!
+#  TO call using docker, the servername must be changed inside genPath_v2.php
 #   Example:
 #              ./genAllPaths.sh ./mappedNglycans.txt ./allPaths.json
 

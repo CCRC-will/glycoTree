@@ -241,11 +241,18 @@ function clickResponse(node) {
 	var rd = data[localAcc].residues;
 	if (v > 5) console.log("clicked " + type + " in image of " + localAcc +
 			" (" + id + ")");
+	//$("#caveatDiv").css("visibility", "hidden");
 	highlight(node);
 	var resID = parts["resID"];
 	var txt = getInfoText(localAcc, resID);
 	if (v > 5) console.log("##### Info Box content #####\n" + txt + "\n#####");
 	$("#"+iDiv).html(txt);
+	
+	var caveats = data[localAcc].caveats;
+	if (caveats.length > 0) {
+		showCaveats(localAcc);
+		minimizeCaveats(localAcc);
+	}
 	if ((resID != '0') && (resID.match(/S/) == null) ) { 
 		// the canvas itself was not clicked
 		//  and the residue is mappable to a glycoTree object
@@ -580,6 +587,49 @@ function downloadGlycan(acc, selector) {
 } // end of function downloadGlycan()
 
 
+function minimizeCaveats(acc) {
+	var cavPanel = $("#caveatDiv");
+	var caveatTxt = "<center><img src='../svg/warn.svg' style='vertical-align: -5px' width='25' height='25'> " +
+		"&nbsp; <b>Caveats for Glycan " + acc +
+		"</b>&nbsp; <img src='../svg/warn.svg' style='vertical-align: -5px' width='25' height='25'> " +
+		"&nbsp; <a href=\"javascript:showCaveats('" + acc + "');\">more ...</a></b></center>";
+	cavPanel.html(caveatTxt);
+	cavPanel.css("visibility","visible");
+		// setup the caveatDiv
+	repositionInfo(acc);
+}
+
+function showCaveats(acc) {
+	var caveats = data[acc].caveats;
+	var cavPanel = $("#caveatDiv");
+	if (caveats.length == 0) {
+		cavPanel.css("visibility","hidden");
+		return;
+	}
+	var caveatTxt = "<center><h2>Caveats for Glycan " + acc + "</h2></center><ul>";
+	for (var i in caveats) {
+		var msg = caveats[i]['msg'];
+		var htmlMsg = msg.replace(":", "<ul><li>");
+		htmlMsg = htmlMsg.replace(/\#/g, "</li><li>") + "</li></ul>";
+		console.log(htmlMsg);
+		caveatTxt += "<li>" + htmlMsg + "</li>";
+	}
+	caveatTxt += "</ul> &nbsp; <a href=\"javascript:minimizeCaveats('" + acc + "');\">less ...</a>";
+	cavPanel.html(caveatTxt);
+	cavPanel.css("visibility","visible");
+	repositionInfo(acc);
+}
+
+function repositionInfo(acc) {
+	var caveats = data[acc].caveats;
+	var cavPanel = $("#caveatDiv");
+	var tabTop = cavPanel.height() + 122;
+	$("#tabbox").css("top", tabTop + "px");
+	var contentTop = tabTop + 60;
+	$("#contentbox").css("top", contentTop + "px");
+	cavPanel.css('left', $("#infoDiv").css("left"));
+}
+
 
 function getInfoText(accession, resID) {
 	customStrings(accession, resID);
@@ -606,22 +656,14 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 
 		txt += "<p class='head1'>" + mStr["gnomeLink"] + "</p>\n";
 		
-		// show caveats
-		var caveats = data[accession].caveats;
-		var cHeight = 100;
+		var cavTop = 92;
+		var tabTop = cavTop;
+		var contentTop = tabTop + 60;
 		
-		for (var i in caveats) {
-			var msg = caveats[i]['msg'];
-			cHeight += 30 + msg.length / 8;
-			if (v > 7) console.log("caveat has " + msg.length + 
-				" characters; caveat space is now " + cHeight + " pixels high");
-			txt += "<p><b>Caveat:</b> " +
-				msg + "</p>";
-		}
-		var cTop = cHeight + 60;
+		txt += "<div id='caveatDiv' style='top: " + cavTop + "px;'> ... </div>";
 		
 		// START OF TABS DIV
-		txt += "<div id='tabbox' style='top: " + cHeight +"px'> \n\
+		txt += "<div id='tabbox' style='top: " + tabTop + "px;'> \n\
 <ul id='tabs'> \n\
 	<li><a href='#residue_table_div'>Residues</a></li> \n\
 	<li><a href='#enzyme_table_div'>Enzymes</a></li> \n\
@@ -631,7 +673,7 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 		// END OF TABS DIV
 		
 		// START OF CONTENT BOX
-		txt += "<div id='contentbox' style='top: " + cTop +"px'> \n";
+		txt += "<div id='contentbox' style='top: " + contentTop +"px'> \n";
 	
 		// START OF RESIDUE TABLE SECTION
 		txt += "<div class='tableHolder' id='residue_table_div'> \n\
@@ -880,6 +922,9 @@ function setupFrames() {
 	
 	// setup the infoDiv
 	$('#' + iDiv).css('left', newLeft + 'px');
+	
+	// setup the caveatDiv
+	//$('#' + cDiv).css('left', newLeft + 'px');
 	
 	if (v > 4) {
 		console.log("  canvas -> height: " + canvasH + "; width: " +
@@ -1175,7 +1220,9 @@ function fetchGlycanData(theURL, type, accession) {
 		if (type === 'json') {
 			// 'data' is a global Object containing glycan data
 			data[accession] = JSON.parse(result);
-			
+			if (v > 2) {
+				console.log("Data for accession " + accession + ":\n" +  JSON.stringify(data[accession], 3, 3));
+			}
 			if (data[accession].residues === null) {
 				noData(accession, theURL);
 			} else {

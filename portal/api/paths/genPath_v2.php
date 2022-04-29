@@ -1,6 +1,7 @@
 <?php
 
 // Generate a set of pathways for a sandbox-supported glycan
+//  !!! COMMAND LINE MUST BE CALLED WITH MAMP -  $servername = 'localhost:8889' !!!
 //  Usage: When called from the command line, use the following syntax
 // php genPath_v2.php fmt=json scope=full end=G01354KL head=0 pw=[mysql_password]
 //   "fmt" can be 'json' or 'tsv' (tsv not yet supported)
@@ -12,7 +13,7 @@
 //  To get on-line syntax, invoke 	https://glygen.ccrc.uga.edu/sandbox/api/newPath.html
 //    Perform a query and then look at the query API line near the top
 //  Arguments are passed like this:
-// https://glygen.ccrc.uga.edu/sandbox/api/paths/genPath_v1.php?end=G01354KL&fmt=json&scope=full&head=0
+// https://glygen.ccrc.uga.edu/sandbox/api/paths/genPath_v2.php?end=G01354KL&fmt=json&scope=full&head=0
 
 
 include '../../config.php';
@@ -26,6 +27,7 @@ try {
 		// $_GET is not populated when called from command line
 		// the following lines are required for command-line invocation
 		parse_str(implode('&', array_slice($argv, 1)), $_GET);
+		// this is the mysql server name when run in the docker container
 		$servername = 'localhost:8889';
 		// !!! password must be supplied on the command line !!!
 		$password = $_GET['pw'];
@@ -37,6 +39,8 @@ try {
 	exit($e->getMessage());
 }
 
+// echo "servername now is $servername\n";
+// echo "password now is $password\n";
 
 function getDP($accession, $connection) {
 	$sql = "SELECT COUNT(*) AS num FROM compositions WHERE glytoucan_ac=? ";
@@ -395,7 +399,9 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 			//$residue_affected["residue_id"] = "";
 		} else {
 			$fullName = "";
-			$sql = "select name,anomer,absolute,form_name,not_found_in from canonical_residues where residue_id=?";
+			// new way to generate text for abiotic residues - "not_found_in" is deprecated 
+			$sql = "SELECT name,anomer,absolute,form_name,rules.logic FROM canonical_residues LEFT JOIN rule_data ON (rule_data.focus = canonical_residues.residue_id) LEFT JOIN rules ON (rules.rule_id = rule_data.rule_id) WHERE residue_id=?";
+			// $sql = "select name,anomer,absolute,form_name,not_found_in from canonical_residues where residue_id=?";
 			$stmt = $connection->prepare($sql);
 			$stmt->bind_param("s", $ra);
 			$stmt->execute(); 
@@ -410,7 +416,7 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 				// may need to extend $greek
 				$fullName = $greek[$row["anomer"]] . "-" . $row["absolute"] . "-" . $row["form_name"];
 				$residue_affected["full_name"] = $fullName;
-				$notFoundIn = $row["not_found_in"];
+				$logic = $row["logic"];
 			}
 			
 			if ($sizeDiff > 0 ) {
@@ -420,7 +426,7 @@ function addEdge(&$data, $child_node, $parent_node, $connection) {
 				$effect = "Remove " . $fullName;
 			}
 			
-			if ($notFoundIn === "any organism") { 
+			if (strpos($logic, "abiotic")) { 
 				// echo ($residue_affected["residue_id"] . " is abiotic<br>");
 				$row["gene_name"] = "abiotic";
 				$row["uniprot"] = "abiotic";
@@ -602,6 +608,11 @@ try {
 	$data['notes'] = [];
 
 	// Create connection
+
+// echo "servername now is $servername\n";
+// echo "username now is $username\n";
+// echo "password now is $password\n";
+// echo "dbname now is $dbname\n";
 	$connection = new mysqli($servername, $username, $password, $dbname);
 
 	// Check connection

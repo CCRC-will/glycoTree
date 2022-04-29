@@ -15,7 +15,7 @@ function getData(acc) {
 	var thisURL = window.location;
 	var urlBase = thisURL.protocol + "//" + thisURL.host + "/" +
 		 thisURL.pathname.split('/')[1];
-	var url = urlBase + "/api/getSuperset.php?acc=" + acc + "&head=0";
+	var url = urlBase + "/getSuperset.php?acc=" + acc + "&head=0";
 	$("#url_div").html("<p><b>API for this query (GET method):</b><br>" +
 		url + "</p><p>Set head=1 to include mime header on json output");
 	

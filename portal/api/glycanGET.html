@@ -12,7 +12,7 @@ function getData(type, accession) {
 	var url = urlBase + "/api/glycan-v4.php?ac=" + accession;
 	var msg = "<p><b>API for this query (GET method):</b><br>" + url + "</p>";
 
-	$.get("glycan-v4.php",
+	$.get("glycan-v5.php",
 	{
 		ac: accession
 	},
