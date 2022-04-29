@@ -589,9 +589,9 @@ function downloadGlycan(acc, selector) {
 
 function minimizeCaveats(acc) {
 	var cavPanel = $("#caveatDiv");
-	var caveatTxt = "<center><img src='../svg/warn.svg' style='vertical-align: -5px' width='25' height='25'> " +
+	var caveatTxt = "<center><img src='./svg/warn.svg' style='vertical-align: -5px' width='25' height='25'> " +
 		"&nbsp; <b>Caveats for Glycan " + acc +
-		"</b>&nbsp; <img src='../svg/warn.svg' style='vertical-align: -5px' width='25' height='25'> " +
+		"</b>&nbsp; <img src='./svg/warn.svg' style='vertical-align: -5px' width='25' height='25'> " +
 		"&nbsp; <a href=\"javascript:showCaveats('" + acc + "');\">more ...</a></b></center>";
 	cavPanel.html(caveatTxt);
 	cavPanel.css("visibility","visible");
