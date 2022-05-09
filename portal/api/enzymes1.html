@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>Sandbox Curate Enzyme Mappings</title>
+	
+<link rel="icon" href="../svg/sbSmall.svg" type="image/icon type">
+<link rel="stylesheet" type="text/css" href="../css/explore.css">
+	
+<script src="../js/sbheader.js"></script>
+	
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="../js/json2svg_v1.4.js"></script>
+	
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<style>
+
+#container_div {
+	position: fixed;
+	right: 20px;
+	top: 60px;
+	left: 256px;
+	width: 1600px;
+	border-style: none;
+	text-align: left;
+}
+		
+#layer_div_1 {
+	position: relative;
+	top: 20px;
+	width: 100%;
+	border-style: none;
+	text-align: left;
+}
+#layer_div_2 {
+	position: relative;
+	top: 20px;
+	width: 100%;
+	border-style: none;
+	text-align: left;
+	height: 340px;
+	overflow: auto;
+}
+
+#listDiv {
+	position: absolute;
+	z-index: 88;
+	left: 20px;
+	top: 60px;
+	width: 200px;
+	border-style: none;
+	text-align: left;
+}
+	
+.annotationShown {
+	font-size: 8px;
+	stroke: none;
+	text-anchor: middle;
+	dominant-baseline: middle;
+	fill: rgb(0, 0, 63);
+	stroke: none;
+	visibility: visible;
+	pointer-events: none;
+}
+
+.annotationHidden {
+	visibility: hidden;
+}
+	
+input:focus {
+  background-color: #FFEEAA;
+}
+	
+#enzyme_table th,td {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+#enzyme_table tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
+	
+#enzyme_select_table {
+	text-align: left;
+}
+	
+#enzyme_select_table th,td {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+#enzyme_select_table tr:nth-child(even) {
+	background-color: rgb(228,235,240);
+}
+
+.zoomer {
+	transform: scale(1);
+	transition: all 300ms;
+}
+
+.zoomer:hover {
+  transform: scale(1.4);
+}
+	
+</style>	
+	
+<script>
+var v = 3;
+var tCount = 0;
+// additional stuff
+// global vars	
+// use next line when running under MAMP
+var listPath = "list.php";
+var glycanPath = "glycan-v5.php";
+var submitPath = "submitMappings.php";//!!!
+var configPath = "../json/sugars.json";
+var svgEncoding = "";
+var curatorID = "";
+var enzymeData = null;
+	
+function initialize() {
+	console.log("##### Initializing #####");
+	setupAnimation('logo_svg', 'header');
+	fetchConfiguration(configPath);
+	$("#check_it").click(function() {
+		getEnzymes(true);
+	});
+	$("#map_residue").click(function() {
+		mapResidue();
+	});
+	console.log("list URL is " + listPath);
+	
+	var arg = window.location.search.substring(1).split("&")[0];
+	var a = arg.split("=");
+	if (arg.length > 1) {
+		$("#resid").val(a[a.length - 1]);
+		getEnzymes(true);
+	}
+} // end of function initialize()
+
+	
+	
+function downloadSVG(a) {
+	var s = document.createElement("a");
+	// svgEncoding is a global variable
+	s.href = 'data:text/svg,' + encodeURIComponent(svgEncoding);
+	s.download = a + ".svg";
+	s.click();
+} // end of function downloadSVG()
+	
+	
+function showList(selectedGlycans, resID, mode, par2) {
+	var ld = $("#listDiv");
+	var limitStr = resID;
+	if (mode.includes("with") ) limitStr += " " + mode + " residue " + par2;
+	var listHTML = "<h3>Glycans Containing residue " + limitStr + "</h3><table>\n";
+	for (var i = 0; i < selectedGlycans.length; i++) {
+		listHTML += "<tr>\n<td><a href=\"javascript:showImage('" +
+			selectedGlycans[i].glytoucan_ac + "', '" + resID + "');\">" +
+			selectedGlycans[i].glytoucan_ac + "</a></td>\n</tr>\n"
+	}
+	listHTML += "</table>";
+	ld.html(listHTML);
+	if (selectedGlycans.length > 0) {
+		showImage(selectedGlycans[0].glytoucan_ac, resID);
+	} else {
+		$("#layer_div_1").html("<h2>No glycans containing residue " + limitStr + " were found</h2>");
+	}
+} // end of function showList()
+	
+function hideAllLayerDivs() {
+	$("[id*='layer_div_']").hide().css("visibility", "hidden");
+}
+	
+function showLayerDiv(whichDiv) {
+	whichDiv.show().css("visibility", "visible");
+}
+
+function showImage(accession, resID) {
+	$.get(glycanPath,
+	{
+		ac: accession,
+		type: 'json'
+	},
+	function(result){
+		if (v > 5) {
+			console.log(" the URL " + glycanPath + 
+				" returned this json data for " + accession + "\n  " + result.toString());
+		}
+
+		var jsonResult = JSON.parse(result);
+		if (v > 5) console.log(result);
+		// svgEncoding is a global variable
+		svgEncoding = generateOneSVG(accession, jsonResult);
+		
+		hideAllLayerDivs();
+		var sd = $("#layer_div_1");
+		showLayerDiv(sd);
+		var spaceOut = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		sd.html("<h3>Structure " + accession + " contains residue " + resID +
+			" (highlighted)</h3><br>" + svgEncoding + "<br><br><br><br>");
+		
+		var bStr = "<form action=\"../explore.html\" method=\"get\" target=\"_blank\">\
+		<label for=\"fname\">GlyTouCan Accession:</label>\
+		<input type=\"text\" id=\"focus\" name=\"focus\" size=\"10\">" +
+		spaceOut + "<input type=\"submit\" value=\"Explore This Glycan Structure\">" +
+		spaceOut + "<input type='button' value='Dowload SVG Image'" +
+			 "onClick=\"downloadSVG('" + accession + "')\"></form>";
+
+		sd.append(bStr);
+		
+		$("#focus").val(accession);
+		
+		var  clickableSet = sd.find('[class$=_node]').children();
+		var  edgeSet = sd.find('[class$=_edge]').children();
+		var canvasSet = sd.find("[id^=C-]");
+		$.merge(clickableSet, edgeSet);
+		$.merge(clickableSet, canvasSet);
+		if (v > 8) console.log("clickableSet.length: " + clickableSet.length);
+		
+		clickableSet.each(function( index ) {
+			// default opacity in this context is 0.4
+			$(this).css('opacity', 0.4);
+			var id = $(this).attr("id");
+			// the id of each svg object is complex,
+			//    containing an accession, a resID, and a type
+
+			var selectedID = "R-" + accession + ":" + resID;
+			if (id == selectedID) {
+				//  grey-out all residues/links, but except focus residue
+				$(this).css('opacity', 1.0);
+			}
+		});
+		
+		annotateResidues();
+		var svgElem = sd.find("svg"); // all <svg> elements in svgDiv
+		svgElem.addClass("zoomer");
+	})			
+	.fail(function() {
+		unavailable.push("JSON data for " + accession);
+		console.log("File " + glycanPath + " not found");
+		dataAvailable = false;
+	});
+	
+} // end of function showImage()	
+
+
+function fetchConfiguration(theURL) {
+	$.get(theURL, 
+	function(result){
+		if (v > 3) {
+			console.log("  fetched sugar configuration data from " +
+							theURL + ":\n  " + result);
+		}
+		if (theURL.includes(".json")) {
+			// jquery automatically parses files with extension '.json'
+			conf = result;
+		} else {
+			// JSON.parse is not automatically invoked
+			conf = JSON.parse(result);
+		}
+	});
+	
+} // end of function fetchConfiguration()
+	
+function fetchList(resID, mode, par2) {
+	console.log("fetching: " + resID + " - " + mode + " - " + par2);
+	var selectedGlycans = "";
+	if (v > 3) console.log("Fetching list from " + listPath + " using parameters " + resID + " and " + mode);
+	$.get(listPath,
+	{
+		par: resID,
+		mode: mode,
+		par2: par2
+	},
+	function(result){
+		
+		if (v > 1) {
+			console.log("  fetched list from " +
+							listPath + ":\n  " + result);
+		}
+		
+		selectedGlycans = JSON.parse(result);
+		showList(selectedGlycans, resID, mode, par2);	
+
+	});
+	
+} // end of function fetchList()
+	
+	
+function generateOneSVG(ac, jsonResult) {
+	theTree = plantTree(jsonResult);
+	accession = ac;
+	svgEncoding = layout(theTree); // modifies trees object
+	return svgEncoding;
+} // end of function generateOneSVG()
+
+	
+// plantTree() returns a JS data object containing only those elements 
+//   required for encoding the SVG image of the glycan
+//  treeData is a JS data object directly produced when JSON.parse()
+// 	is applied to the input JSON data
+function plantTree(treeData) {
+	if (v > 5) console.log("@@@ planting tree\n" +
+									  treeData['glytoucan_ac']);
+	//  extract information and populate the object 'tree'
+	// tree is the data object consumed by json2svg
+	var tree = new Array();
+	tree['accession'] = treeData.glytoucan_ac;
+	tree['nodes'] = new Array();
+	// treeData is original data from json file 
+	//   for this example, the nodes are called 'residues' in the original
+	var residues = treeData.residues; // residues is the local name of the array
+	for (var i=0; i < residues.length; i++) {
+		var node = new Array(); // this array will be an element of object 'tree'
+		var nameParts = residues[i].name.split("-");
+		node["node_id"] = residues[i].residue_id;
+		node["name"] = nameParts[0];
+		node["substituent"] = "";
+		if (nameParts.length > 1) { // the residue has a substituent
+			node["substituent"] = nameParts[1];
+		}
+		node["parent_id"] = residues[i].parent_id;
+		node["anomer"] = residues[i].anomer;
+		node["absolute"] = residues[i].absolute;
+		node["ring"] = residues[i].ring;
+		node["site"] = residues[i].site;
+		node['touched'] = false;
+		tree['nodes'].push(node);
+	}
+	return (tree);
+} // end of function plantTree()
+
+	
+function getEnzymes(showEm) {
+	var resid = $("#resid").val();
+	if (showEm) $("#mapDiv").html("<p>Getting enzymes for " + resid + "</p>");
+	
+	var thisURL = "" + window.location; // force thisURL to be a String
+	var urlSplit = thisURL.split('/');
+	var urlBase = "";
+	for (var i = 0; i < (urlSplit.length - 1); i++) // everything except the file name
+		urlBase += urlSplit[i] + "/";
+	url = urlBase + "enzymes0.php?focus=" + resid; 
+	
+	$.get(url,
+	function(result){
+		if (v > 1) console.log("result returned from " + url + "\n " + result);
+		 // process mapping data
+		enzymeData = JSON.parse(result); // global for download
+		if (showEm) showMappings(enzymeData);
+	});
+}
+	
+function showMappings(data) {
+	var resID = data['residue_id'];
+	var resStructure = data['structure'];
+	var snfgImgRef = "../snfg_images/" + data['snfg_name'] + ".svg";
+	var resultStr = "<h2>Enzymes Mapped to Residue " + resID + " <img src=\"" + snfgImgRef +
+		 "\"> " + resStructure + "</h2>";
+	
+	if (data['mapped_enzymes'].length == 0) {
+		resultStr += "<b>" + data['message'] + "</b>";
+	} else {
+		resultStr += "<table id='enzyme_table'>\n  ";
+		resultStr += "<tr><th></th><th>Gene</th><th>UniProt</th><th>Type</th><th>Status</th><th>Species</th><th>Notes</th></tr>";
+		for (var i = 0; i < data['mapped_enzymes'].length; i++) {
+			var gene = data['mapped_enzymes'][i]['gene_name'];
+			var uniprot = data['mapped_enzymes'][i]['uniprot'];
+			var type = data['mapped_enzymes'][i]['type'];
+			var status = data['mapped_enzymes'][i]['status'];
+			var proposer = data['mapped_enzymes'][i]['proposer'];
+			var notes = data['mapped_enzymes'][i]['notes'];
+			var species = data['mapped_enzymes'][i]['species'];
+			var radioID = data['mapped_enzymes'][i]['instance'];
+			resultStr += "<tr><td><input type=\"radio\" id=\"instance_select_" + radioID +
+				"\" name=\"remove_choose\" value=\"" + radioID +
+				"\" onclick=\"filterButtons()\"></td><td style='white-space: nowrap'>" + gene +
+				"</td><td><a href='https://www.glygen.org/protein/" + uniprot +
+				"' target='_new'>" + uniprot + "</a></td><td>" + type + "</td><td>" +
+				status + "</td><td>" + species + "</td><td>" + notes + "</td></tr>\n  ";
+		}	
+		
+		
+		
+		
+		resultStr += "</table>\n  ";
+		resultStr += "<br><button id=\"dispute_button\" onclick=\"disputeMapping();\">Dispute Selected Mapping</button>" +
+			"&nbsp;<button id=\"withdraw_button\" onclick=\"withdrawMapping();\">Withdraw selected mapping</button>";
+	if (v > 4) console.log("htmlString:\n" + resultStr);
+	}
+	$("#mapDiv").html(resultStr);
+	toggleFilterButtons(); // null argument disables buttons
+	fetchList(resID, "res", null);
+}
+
+	
+function filterButtons() {
+	// disable buttons that do not apply to the selected assertion
+	var selectedInstance = $('input[name="remove_choose"]:checked').val();
+
+	var instanceObjects = $(enzymeData['mapped_enzymes']);
+	var instObj = getInstanceData(selectedInstance);
+	if (v > 1) console.log("you selected instance " +  selectedInstance + "\n" +
+					JSON.stringify(instObj, 3, 3));
+	toggleFilterButtons(instObj);
+
+}
+	
+	
+function toggleFilterButtons(inst) {
+	// takes instance data
+	var focusID = "none selected";
+	var filterStatus = true; // only changes when inst is defined
+	var disputeStatus = true;
+	var withdrawStatus = true;
+	if (typeof inst !== 'undefined') {
+		focusID = inst['residue_id'];		
+		if (inst['status'] == 'active') {
+			disputeStatus =  false;
+		}
+		if (inst['status'] == 'proposed') {
+			withdrawStatus =  false;
+		}
+	}
+	
+	// when 'disputeStatus' or 'withdrawStatus' is true, the button is disabled
+	$('#dispute_button').prop('disabled', disputeStatus);
+	$('#withdraw_button').prop('disabled', withdrawStatus);
+	
+}	
+	
+	
+function getInstanceData(targetAssertionID) {
+	// returns an instance OBJECT
+	var instanceList = enzymeData['mapped_enzymes'];
+	for (var i = 0; i < instanceList.length; i++) {
+		if (instanceList[i]['instance'] == targetAssertionID) {
+			var theInstance = instanceList[i];
+			if (v > 3) console.log("Found target instance: " + targetAssertionID + "\n" +
+							JSON.stringify(theInstance, 3, 3));
+			return(theInstance);
+		}
+	}
+	return null;
+}
+	
+	
+function disputeMapping() {
+	var disputeID = $('input[name="remove_choose"]:checked').val();
+	if (typeof disputeID === 'undefined') {
+		alert("Please select a mapping to dispute");
+	} else {
+		var mappingToDispute = getInstanceData(disputeID);
+		var authDiv = $("#layer_div_4");
+		var submitHTML = "<h2>Dispute Mapping " + disputeID + "</h2>" +
+			 "<b><pre>" + JSON.stringify(mappingToDispute, 3, 3) + "</pre></b>";
+	
+		submitHTML +=	"<p><label for=\"curator\">Your Curator ID: </label>" +
+			"<input type=\"text\" id=\"curator\" name=\"curator\" size=\"5\" value=\"" + curatorID + "\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<label for=\"curator_pw\">Password: </label>" +
+			"<input type=\"password\" id=\"curator_pw\" name=\"curator_pw\" size=\"16\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<button id=\"submit_dispute\" onclick=\"submitDispute('" +
+			disputeID + "');\">Submit Dispute to Server</button></p>";
+
+		authDiv.html(submitHTML);
+
+		hideAllLayerDivs();
+		showLayerDiv(authDiv);
+	}
+}
+	
+function withdrawMapping() {
+	var withdrawID = $('input[name="remove_choose"]:checked').val();
+	if (typeof withdrawID === 'undefined') {
+		alert("Please select an assertion to withdraw");
+	} else {
+		var mappingToDispute = getInstanceData(withdrawID);
+		var authDiv = $("#layer_div_4");
+		var submitHTML = "<h2>Withdraw Assertion " + withdrawID + "</h2>" +
+			 "<b><pre>" + JSON.stringify(mappingToDispute, 3, 3) + "</pre></b>";
+	
+		submitHTML +=	"<p><label for=\"curator\">Your Curator ID: </label>" +
+			"<input type=\"text\" id=\"curator\" name=\"curator\" size=\"5\" value=\"" + curatorID + "\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<label for=\"curator_pw\">Password: </label>" +
+			"<input type=\"password\" id=\"curator_pw\" name=\"curator_pw\" size=\"16\">" +
+			"&nbsp;&nbsp;&nbsp;&nbsp;<button id=\"submit_withdraw\" onclick=\"submitWithdraw('" +
+			withdrawID + "');\">Submit Withdrawal to Server</button></p>";
+
+		authDiv.html(submitHTML);
+
+		hideAllLayerDivs();
+		showLayerDiv(authDiv);
+	}
+}
+	
+
+function submitDispute(disputeID) {
+	var submission = {};
+	if (v > 0) console.log("assertion being disputed:\n" + disputeID);
+	curatorID = $("#curator").val();
+	submission['curator'] = $("#curator").val();
+	submission['curator_pw'] = $("#curator_pw").val();
+	submission['disputed_id'] = disputeID; 
+	submittedJSON = JSON.stringify(submission);
+	if (v > 0) console.log("submitted JSON:\n" + submittedJSON);
+	$.get(submitPath,
+	{
+		json_data: submittedJSON
+	},
+	function(result) {
+		if (v > 0) {
+			var sd = $("#layer_div_5");
+			hideAllLayerDivs();
+			showLayerDiv(sd);
+			var htmlResult = result.replace(/\n/g, "<br>"); 
+			var resultMSG = "<h2>Response from API (" + submitPath + ")</h2>" + htmlResult;
+			
+			if (result.includes("successfully") ) {
+				 resultMSG +=  "<br><button onclick='getEnzymes(true);'>Continue</button>";
+			 } else {
+				// resultMSG +=  "";
+			 }
+			sd.html(resultMSG);
+		}
+	});
+}
+	
+	
+	
+function submitWithdraw(withdrawID) {
+	var submission = {};
+	if (v > 0) console.log("assertion being withdrawn:\n" + withdrawID);
+	curatorID = $("#curator").val();
+	submission['curator'] = $("#curator").val();
+	submission['curator_pw'] = $("#curator_pw").val();
+	submission['withdrawn_id'] = withdrawID; 
+	submittedJSON = JSON.stringify(submission);
+	if (v > 0) console.log("submitted JSON:\n" + submittedJSON);	// MORE ...
+	$.get(submitPath,
+	{
+		json_data: submittedJSON
+	},
+	function(result) {
+		if (v > 0) {
+			var sd = $("#layer_div_5");
+			hideAllLayerDivs();
+			showLayerDiv(sd);
+			var htmlResult = result.replace(/\n/g, "<br>"); 
+			var resultMSG = "<h2>Response from API (" + submitPath + ")</h2>" + htmlResult;
+			
+			if (result.includes("successfully") ) {
+				 resultMSG +=  "<br><button onclick='getEnzymes(true);'>Continue</button>";
+			 } else {
+				// resultMSG +=  "";
+			 }
+			sd.html(resultMSG);
+		}
+	});
+}
+	
+	
+function submitMapping(newUniprot) {
+	var submission = {};
+	if (v > 0) console.log("mapping being submitted:\n" + newUniprot);
+	curatorID = $("#curator").val();
+	submission['curator'] = $("#curator").val();
+	submission['curator_pw'] = $("#curator_pw").val();
+	var newMapping = {};
+	newMapping['residue_name'] = enzymeData['residue_name'];
+	newMapping['residue_id'] = enzymeData['residue_id'];
+	newMapping['uniprot'] = newUniprot;
+	newMapping['notes'] = enzymeData['notes'];
+	submission['data'] = newMapping; 
+	submittedJSON = JSON.stringify(submission);
+	if (v > 0) console.log("submitted JSON:\n" + submittedJSON);
+	$.get(submitPath,
+	{
+		json_data: submittedJSON
+	},
+	function(result) {
+		if (v > 0) {
+			var sd = $("#layer_div_5");
+			hideAllLayerDivs();
+			showLayerDiv(sd);
+			var htmlResult = result.replace(/\n/g, "<br>"); 
+			var resultMSG = "<center><h2>Response from API (" + submitPath + ")</h2></center>" + htmlResult;
+			
+			if (result.includes("record created successfully") ) {
+				 resultMSG +=  "<br><button onclick='getEnzymes(true);'>Continue</button>";
+			 } else {
+				resultMSG +=  "<br><button <button id=\"review_map\" onclick=\"continue2('" +
+					newUniprot + "');\">Review Mapping Submission</button>";
+			 }
+			sd.html(resultMSG);
+		}
+	});
+	
+}
+	
+	
+function continue2(newUniprot) {
+	// compose and submit a new mapping
+	var sd = $("#layer_div_4");
+	enzymeData['notes'] = $('#newNotes').val();
+	hideAllLayerDivs();
+	showLayerDiv(sd);
+	var resID = $("#resid").val();
+
+	var submitHTML = "<h2>New Mapping of Enzyme " + newUniprot + " to Residue " + resID + "</h2>";
+	
+	submitHTML +=	"<p><button id=\"review_parameters\" onclick=\"continue1(true);\">Review Mapping Parameters</button></p>" +
+		"<p><label for=\"curator\">Your Curator ID: </label>" +
+		"<input type=\"text\" id=\"curator\" name=\"curator\" size=\"5\" value=\"" + curatorID + "\">" +
+		"&nbsp;&nbsp;&nbsp;&nbsp;<label for=\"curator_pw\">Password: </label>" +
+		"<input type=\"password\" id=\"curator_pw\" name=\"curator_pw\" size=\"16\">" +
+		"&nbsp;&nbsp;&nbsp;&nbsp;<button id=\"submit_mapping\" onclick=\"submitMapping('" +
+		newUniprot + "');\">Submit Mapping to Server</button></p>";
+	
+	sd.html(submitHTML);
+}
+	
+
+function continue1(keepParameters) {
+	// enter the parameters for the enzyme
+	var resID = $("#resid").val();
+	if ($('input[name="chosen_uniprot"]:checked').length === 0) {
+		alert("Please select an enzyme to map to residue " + resID + " before continuing");
+		return;
+	}
+	var newUniprot = $('input[name="chosen_uniprot"]:checked').val();
+
+	if (v > 3) console.log("Enzyme " + newUniprot + " mapped to " + resID + "\n");
+
+	var divHTML = "<h2>Enter additional values required to map the enzyme</h2>";
+	var mapInput = "You selected enzyme <b>" + newUniprot + "</b> to map to residue " + resID + "<br>";
+	mapInput += "<label for='newNotes'>Notes:</label> <input type='text' id='newNotes' size='100'><br>"
+		
+	
+	divHTML += mapInput;
+	divHTML += "<p><button id=\"continue_2\" onclick=\"continue2('" + newUniprot + "');\">Continue</button>";
+	divHTML += " <button id=\"start_over\" onclick=\"mapResidue('" + newUniprot + "');\">Start Over</button></p>";
+	
+	hideAllLayerDivs();
+	var sd = $("#layer_div_3");
+	// when keepParameters is undefined, this is a new mapping; when true, this is a review
+	if (typeof keepParameters === 'undefined') sd.html(divHTML);
+	showLayerDiv(sd);
+}
+	
+	
+function mapResidue(newUniprot) {
+	// TODO: display list of ENZYMES to choose from
+	hideAllLayerDivs();
+	getEnzymes(false);
+	var resID = $("#resid").val();
+	var sd = $("#layer_div_2");
+	sd.show().css("visibility", "visible");
+	var mapStr = "<b>Select an enzyme to map to residue " + resID + ", then </b>";
+	mapStr += "<button id=\"continue_1\" onclick=\"continue1();\">Continue</button>";
+	mapStr += "<table id='enzyme_select_table'>\n";
+	mapStr += "  <tr><th>Gene</th><th>UniProt</th><th>Type</th><th>Species</th></tr>\n";
+	for (var i = 0; i < enzymeData['enzymes'].length; i++) {
+		var geneID = enzymeData['enzymes'][i]['gene_name'];
+		var uniprot = enzymeData['enzymes'][i]['uniprot'];
+		var species = enzymeData['enzymes'][i]['species'];
+		var eType = enzymeData['enzymes'][i]['type'];
+		
+		mapStr += "  <tr><td><input type=\"radio\" id=\"enzyme_" + uniprot +
+			"\" name=\"chosen_uniprot\" value=\"" + uniprot + "\">" +
+			" <label for=\"enzyme_" + uniprot + "\">" + geneID + "</label>" +
+			"</td><td><a href='https://www.glygen.org/protein/" + uniprot +
+			"' target='_new'>" + uniprot + "</a></td><td>" + eType + "</td><td>" + species + "</td></tr>\n"
+	}
+	mapStr += "</table>\n";
+	mapStr += "<p><button id=\"continue_1\" onclick=\"continue1();\">Continue</button></p>";
+	console.log(mapStr);
+	sd.html(mapStr);
+	if (selectedGeneID !== undefined) {
+		$("#enzyme_" + newUniprot).attr('checked',true);
+	}
+}
+
+	
+function generateTextElement(x, y, c, id, t) {
+	var te = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	te. setAttributeNS(null, 'x', x);
+	te. setAttributeNS(null, 'y', y);
+	te. setAttributeNS(null, 'class', c);
+	if (id != "") {
+		te. setAttributeNS(null, 'id', id);
+	}
+	var txt = document.createTextNode(t);
+	te. appendChild(txt);
+	return(te);
+} // end of function generateTextElement()
+	
+
+function parseID(id) {
+	if (v > 5) console.log("   parsing " + id);
+	var parts = new Array();
+	var dashSplit = id.split("-");
+	parts["type"] = dashSplit[0];
+	var colonSplit = dashSplit[1].split(":");
+	parts["accession"] = colonSplit[0];
+	parts["resID"] = colonSplit[1];
+	return(parts);
+}  // end of function parseID()
+	
+	
+function annotateResidues() {
+	var sd = $('#layer_div_1');
+	var s = sd.find("svg"); // all <svg> elements in layer_div_1
+
+	for (var i = 0 ; i < s.length; i++) { // for each svg image
+		var localAcc = s[i].id.split("-")[1];
+		if (v > 1) console.log("##### Annotating glycan " +
+									  localAcc + " #####");
+
+		// svg image to jquery object
+		var ss = $(s[i]); 
+		// <g> elements with 'id' attribute
+		var g = ss.find('g[id]');  
+
+		g.each(function( index2 ) {
+			// each descendant <g> element having 'id'
+
+			var parts = parseID(this.id);
+			var type =  parts['type'];
+			var resID = parts['resID'];
+			if (type == "R") { // annotate residues only
+				var x = 0;
+				var y = 0;
+				// first child of the <g> element having 'id'
+				var d = this.children[0];
+				if (v > 1) console.log("    annotating node " +
+							index2 + ": type " + type + "; id " + resID);
+				var nn = d.nodeName;
+				switch(nn) {
+					case "circle":
+						x = 1 * $(d).attr('cx');
+						y = 1 * $(d).attr('cy');
+						if (v > 4) console.log("         <circle> at " +
+													  x + "," + y);
+						break;
+					case "rect":
+						var h = 1 * $(d).attr('height')
+						x = 1 * $(d).attr('x') + h/2;
+						var w = 1 * $(d).attr('width')
+						y = 1 * $(d).attr('y') + w/2;
+						if (v > 4) console.log("         <rect> at " + x +
+													  "," + y);
+						break;
+					case "polygon":
+						var p = $(d).attr("points").trim();
+						var pa = p.split(' ');
+						var maxEven = 0;
+						var minEven = 1000;
+						var maxOdd = 0;
+						var minOdd = 1000;
+						for (var q = 0; q < pa.length; q++) {
+							if (q%2 == 0) {
+								minEven = Math.min(minEven, pa[q]);
+								maxEven = Math.max(maxEven, pa[q]);
+							} else {
+								minOdd = Math.min(minOdd, pa[q]);
+								maxOdd = Math.max(maxOdd, pa[q]);									
+							}
+						}
+						y = (minOdd + maxOdd) / 2;
+						x = (minEven + maxEven) / 2;
+						if (v > 4) console.log("         <polygon> at " +
+													  x + "," + y);
+						break;
+				}
+				var elemID = "A-" + localAcc + ":" + resID;
+				var element = generateTextElement(x, y, 'annotationShown', elemID, resID);
+				this.appendChild(element);
+			}
+
+		});
+
+	};
+
+} // end of function annotateResidues()
+	
+</script>
+		
+</head>
+
+<body onLoad=initialize();>
+	
+<div id="header" width=100%>
+<span id="header_1">GlyGen</span>
+<object id="logo_svg" type="image/svg+xml" data="../svg/sbLogo.svg" class="logo"></object>
+<span id="header_2">Sand Box</span>
+</div>
+
+
+<div id="container_div">
+	
+	<h2>Curate Enzyme Mappings for Canonical Residues</h2>
+	<label for="resid">Enter a canonical residue id:</label>
+	<input type="text" id="resid" name="resid" size="5" value="N224"> 
+	<button id="check_it">Check Enzymes</button>
+	&nbsp;&nbsp;&nbsp;
+	<button id="map_residue">Map Another Enzyme to This Residue</button>
+	<div id="mapDiv"></div>	
+	<div id="layer_div_1">Structures will appear here</div>
+	<div id="layer_div_2">Mapping Selection will appear here</div>
+	<div id="layer_div_3">Mapping Parameter Selection will appear here</div>
+	<div id="layer_div_4">Mapping Submission will appear here</div>
+	<div id="layer_div_5">Submission Results will appear here</div>
+	
+</div>
+  
+<div id="listDiv" style="visibility: visible">
+</div>
+
+</body>
+</html>

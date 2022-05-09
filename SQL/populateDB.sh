@@ -84,7 +84,7 @@ $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," -
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,dp,homolog,relative_dp,shared glycotree correlation.csv
  
-$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c residue_name,residue_id,type,uniprot,notes glycotree enzyme_mappings.csv
+$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c instance,residue_name,residue_id,type,uniprot,notes,status,proposer_id,administrator,disputer_id glycotree enzyme_mappings.csv
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="\t" --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,base64_composition glycotree bitSet.tsv 
 
