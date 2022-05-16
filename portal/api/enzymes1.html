@@ -592,7 +592,7 @@ function submitMapping(newUniprot) {
 			hideAllLayerDivs();
 			showLayerDiv(sd);
 			var htmlResult = result.replace(/\n/g, "<br>"); 
-			var resultMSG = "<center><h2>Response from API (" + submitPath + ")</h2></center>" + htmlResult;
+			var resultMSG = "<h2>Response from API (" + submitPath + ")</h2>" + htmlResult;
 			
 			if (result.includes("record created successfully") ) {
 				 resultMSG +=  "<br><button onclick='getEnzymes(true);'>Continue</button>";
