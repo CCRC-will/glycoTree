@@ -44,7 +44,7 @@ span {
 
 <script>
 
-var v = 0;
+var v = 9;
 var configPath = "../json/sugars.json";
 var probeSVG = "";
 var probeData = null;
@@ -306,7 +306,8 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 		if (debug) { // do not process probe data, just show result
 			$("#result_div").html("<br><h2>PHP data processing details</h2>" + result);
 		} else { // process probe data
-			probeData = JSON.parse(result); // global for download
+			// probeData = JSON.parse(result); // global for download
+			probeData = result; // global for download
 			if (probeData.residues === null) {
 				$("#result_div").html("<h2>Data could not be mapped to (" +
 							glycanType + "-linked) glycoTree ");
@@ -366,7 +367,7 @@ function plantTree(treeData) {
 function showExample(which) {
 	var gct = [];
 	gct[0] = "RES\n\
-1b:a-dglc-HEX-1:5\n\
+1b:b-dglc-HEX-1:5\n\
 2s:n-acetyl\n\
 3b:b-dglc-HEX-1:5\n\
 4s:n-acetyl\n\
@@ -374,30 +375,44 @@ function showExample(which) {
 6b:a-dman-HEX-1:5\n\
 7b:b-dglc-HEX-1:5\n\
 8s:n-acetyl\n\
-9b:a-dgal-HEX-1:5|6:d\n\
-10b:b-dgal-HEX-1:5\n\
-11b:a-dman-HEX-1:5\n\
-12b:b-dglc-HEX-1:5\n\
-13s:n-acetyl\n\
-14b:a-dgal-HEX-1:5|6:d\n\
+9b:b-dgal-HEX-1:5\n\
+10b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+11s:n-acetyl\n\
+12b:a-dman-HEX-1:5\n\
+13b:b-dglc-HEX-1:5\n\
+14s:n-acetyl\n\
 15b:b-dgal-HEX-1:5\n\
-16b:a-dgal-HEX-1:5|6:d\n\
+16b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+17s:n-acetyl\n\
+18b:b-dglc-HEX-1:5\n\
+19s:n-acetyl\n\
+20b:b-dgal-HEX-1:5\n\
+21b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d\n\
+22s:n-acetyl\n\
+23b:a-dgal-HEX-1:5|6:d\n\
 LIN\n\
 1:1d(2+1)2n\n\
 2:1o(4+1)3d\n\
 3:3d(2+1)4n\n\
 4:3o(4+1)5d\n\
 5:5o(3+1)6d\n\
-6:6o(2+1)7d\n\
+6:6o(4+1)7d\n\
 7:7d(2+1)8n\n\
-8:7o(3+1)9d\n\
-9:7o(4+1)10d\n\
-10:5o(6+1)11d\n\
-11:11o(2+1)12d\n\
-12:12d(2+1)13n\n\
-13:12o(3+1)14d\n\
-14:12o(4+1)15d\n\
-15:1o(6+1)16d";
+8:7o(4+1)9d\n\
+9:9o(3+2)10d\n\
+10:10d(5+1)11n\n\
+11:5o(6+1)12d\n\
+12:12o(2+1)13d\n\
+13:13d(2+1)14n\n\
+14:13o(4+1)15d\n\
+15:15o(3+2)16d\n\
+16:16d(5+1)17n\n\
+17:12o(6+1)18d\n\
+18:18d(2+1)19n\n\
+19:18o(4+1)20d\n\
+20:20o(3+2)21d\n\
+21:21d(5+1)22n\n\
+22:1o(6+1)23d";
 
 	gct[1] = "RES\n\
 1b:x-dglc-HEX-1:5\n\

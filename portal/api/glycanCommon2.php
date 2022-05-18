@@ -12,7 +12,10 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	// generate caveat objects and put into array $caveats
 
 	$caveats = [];
-	$ruleData = [];
+	// $groupedRuleData is an array of arrays of ruleData arrays, grouped (1st index) by rule_id
+	$groupedRuleData = [];
+	// $rawRuleData is an array of ruleData arrays, indexed by 'instance'
+	$rawRuleData = [];
 	$countQuery = "SELECT COUNT(rule_id) AS rule_count FROM rules";
 	$stmt = $connection->prepare($countQuery);	
 	$stmt->execute(); 
@@ -20,7 +23,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	$row = $result->fetch_assoc();
 	$ruleCount = $row['rule_count'];
 	// initialize elements of ruleData array
-	for ($i = 1; $i <= $ruleCount; $i++) $ruleData[$i] = [];
+	for ($i = 1; $i <= $ruleCount; $i++) $groupedRuleData[$i] = [];
 	
 	$resStructureArray = [];
 	$otherStructureArray = [];
@@ -71,7 +74,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 						$otherResidue. " (" . $otherStructureArray[$otherResidue] . ")",
 						$theRule['polymer']);
 				$theRule['assertion'] = str_replace($ruleFind, $ruleReplace, $theRule['logic']);
-				$ruleData[$ruleID][$instance] = $theRule;
+				$groupedRuleData[$ruleID][$instance] = $theRule;
 			}
 		}
 		
@@ -83,10 +86,12 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	$limitViolation = [];
 	for ($i = 1; $i <= $ruleCount; $i++) {
 		// each of the different canonical rules
-		if (sizeof($ruleData[$i]) > 0) {
+		if (sizeof($groupedRuleData[$i]) > 0) {
 			// each instance of rule $i
-			foreach ($ruleData[$i] as $key => $value) {
+			foreach ($groupedRuleData[$i] as $key => $value) {
+				// $value is an associative array desribing an instance of rule $i
 				$focus = $value['focus'];
+				$instance = $value['instance'];
 				if (strpos($value['logic'], "requires residue [other_residue]")) {
 					$reqRes = $value['other_residue'];
 					if (!array_key_exists($reqRes, $resStructureArray) ) {
@@ -96,6 +101,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 							  " (" . $resStructureArray[$focus] . ") in " .
 							  $value['taxonomy'] . " - missing residue " . $reqRes .
 							  " (" . $otherStructureArray[$reqRes] . ")");
+						$rawRuleData[$instance] = $value;
 					}
 				}
 				if (strpos($value['logic'], "blocked by residue [other_residue]")) {
@@ -108,13 +114,16 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 							  "; &nbsp; blocking: " . $blockRes .
 							  " (" . $otherStructureArray[$blockRes] . ")" .
 							  "; &nbsp; species: " . $value['taxonomy']);
+						$rawRuleData[$instance] = $value;
 					}
 				}
 				if (strpos($value['logic'], "abiotic")) {
 					array_push($structureViolation, $value['assertion']); 
+					$rawRuleData[$instance] = $value;
 				}
 				if (strpos($value['logic'], "limited to")) {
 					array_push($limitViolation, $value['assertion'] );
+					$rawRuleData[$instance] = $value;
 				}
 			}
 		}
@@ -182,6 +191,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 	
 	$features['rules'] = $ruleArray;
 	$features['caveats'] = $caveats;
+	$features['rule_violations'] = $rawRuleData;
 	return $features;
 }  // end of function getFeatures()
 
@@ -362,6 +372,7 @@ function integrateData($connection, $compArray, $accession) {
 	$glycan["related_glycans"] = $homologs;
 	$glycan["rules"] = $features['rules'];
 	$glycan["caveats"] = $features['caveats'];
+	$glycan["rule_violations"] = $features['rule_violations'];
 	return($glycan);
 
 } // end function integrateData()

@@ -187,6 +187,7 @@ $integratedData = integrateData($connection, $compositionArray, 'undetermined');
 
 $finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
 $finalData['temp_id'] = $tempID;
+$finalData['rule_violations'] = $integratedData['rule_violations'];
 
 // in each caveat, replace the string "undetermined" with $tempID
 $modCaveats = [];  // modified array of caveats
@@ -197,6 +198,7 @@ foreach($integratedData['caveats'] as $caveat) {
 	}
 	array_push($modCaveats, $newCaveat);
 }
+
 $finalData['caveats'] = $modCaveats;
 
 if ((strcmp($_GET['enz'], "false") == 0) && ($integratedData['residues'] != null) ) {
@@ -274,6 +276,7 @@ if ($v == 0) {
 	header_remove(); 
 	header("Cache-Control: no-cache, must-revalidate");
 	header("Content-Disposition: attachment; filename=$tempID.json");
+	header("Content-type: application/json");
 }
 echo json_encode($finalData, JSON_PRETTY_PRINT);
 
