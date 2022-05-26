@@ -105,24 +105,31 @@ public class Node {
 	public String formName;
 
 	/**
-	 * a String describing species to which observation of the Node has been limited
+	 * a comma separated string of arbitrary length holding all attributes not used for mapping
+	 * This allows the number and identity of annotations to change over time
 	 */
-	public String limitedTo;
+	public String annotations;
+	
+	
+	/**
+	 * a String describing species to which observation of the Node has been limited
+	 * deprecated - all annotations put in a single, arbitrary length, comma separated string
+	public String limitedTo;  */
 	
 	/**
 	 * a String describing species in which the Node has been not been found
-	 */
-	public String notFoundIn;
+	 * deprecated - all annotations put in a single, arbitrary length, comma separated string
+	public String notFoundIn; */
 	
 	/**
-	 * a String consining glycoTree curator's notes for the Node
-	 */
-	public String notes;
+	 * a String specifying glycoTree curator's notes for the Node
+	 * deprecated - all annotations put in a single, arbitrary length, comma separated string
+	public String notes;  */
 	
 	/**
 	 * A string specifying evidence for the curators annotations
-	 */
-	public String evidence;
+	 * deprecated - all annotations put in a single, arbitrary length, comma separated string
+	public String evidence;  */
 	
 	
 	/**
@@ -155,7 +162,7 @@ public class Node {
 	 * but including the ring form (used to name new canonical residues)
 	 */
 	public Node(NodeArchetype archetype, String residueName, String nodeID, String site, String nodeName, String parentID, String formName,
-			String limitedTo, String notFoundIn, String notes, String evidence) {
+			String annotations) {
 		super();
 		this.archetype = archetype;
 		this.nodeID = nodeID;
@@ -164,10 +171,7 @@ public class Node {
 		this.residueName = residueName;
 		this.formName = formName;
 		this.nodeName = nodeName;
-		this.limitedTo = limitedTo;
-		this.notFoundIn = notFoundIn;
-		this.notes = notes;
-		this.evidence = evidence;
+		this.annotations = annotations;
 	}
 	
 	

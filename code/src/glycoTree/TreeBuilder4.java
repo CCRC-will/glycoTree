@@ -1232,8 +1232,8 @@ public class TreeBuilder4 {
 				csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", glycanID, residueName, residueID,
 					n.nodeName, na.anomer, na.absolute, na.ring, parentID, site, n.formName, n.nodeID, cn.annotations);
 			} else {
-				csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", glycanID, residueName, residueID,
-					n.nodeName, na.anomer, na.absolute, na.ring, parentID, site, n.formName, n.nodeID);
+				csvString = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", glycanID, residueName, residueID,
+					n.nodeName, na.anomer, na.absolute, na.ring, parentID, site, n.formName, n.nodeID, "");
 			}
 		}
 		if (v > 4)
@@ -1449,9 +1449,9 @@ public class TreeBuilder4 {
 	public static String getOutputHeader(String canonicalHeader) {
 		// build csvOutputHeader from elements of canonical node file header
 		// insert new column 'glytoucan_ac' as first column
-		// insert new column 'glycoct_index' just before 'limited_to'
-		String[] halfHead = canonicalHeader.split("limited_to");
-		String csvHeader = "glytoucan_ac," + halfHead[0] + "glycoct_index," + "limited_to" + halfHead[1];
+		// insert new column 'glycoct_index' just before 'notes'
+		String[] halfHead = canonicalHeader.split("notes");
+		String csvHeader = "glytoucan_ac," + halfHead[0] + "glycoct_index," + "notes";
 
 		return(csvHeader);
 	}

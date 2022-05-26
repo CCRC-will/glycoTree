@@ -80,7 +80,7 @@ $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," -
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c type,orthology_group,uniprot,protein_refseq,dna_refseq,gene_name,gene_id,species,branch_site_specificity glycotree enzymes.csv 
 
-$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index glycotree compositions.csv
+$dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,residue_name,residue_id,name,anomer,absolute,ring,parent_id,site,form_name,glycoct_index,notes glycotree compositions.csv
 
 $dir/mysqlimport -u $user -p$pw --local --delete -v --fields-terminated-by="," --ignore-lines=1 --lines-terminated-by="\n" -c glytoucan_ac,dp,homolog,relative_dp,shared glycotree correlation.csv
  

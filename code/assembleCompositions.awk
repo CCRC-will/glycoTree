@@ -1,11 +1,9 @@
-BEGIN {
-  FS = ",";
-}
-
 NR == 1 {
-  printf("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);
+  # the first line of the first input file
+  printf("%s\n", $0);
 }
 
 FNR > 1 {
-  printf("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);
+  # not the first line of all input files
+  printf("%s\n", $0);
 }
