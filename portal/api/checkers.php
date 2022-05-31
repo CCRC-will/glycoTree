@@ -49,6 +49,19 @@ if (strcmp($_GET['debug'], 'true') == 0) {
 	$v = 9;
 }
 
+$error = [];
+
+if (is_null($glycoct) || (strlen($glycoct) < 1)) {
+	$gctErr['type'] = "input error";
+	$gctErr['message'] = "GlycoCT is absent or invalid";
+	array_push($error, $gctErr);
+}
+if (is_null($glycan_type) || (strlen($glycoct) < 1)) {
+	$typeErr['type'] = "input error";
+	$typeErr['message'] = "glycan type is absent or invalid";
+	array_push($error, $typeErr);
+}
+
 if ($v > 0) {
 	echo "<pre>";
 	echo "debug is '" . $_GET['debug'] . "'\n";
@@ -63,8 +76,12 @@ if ($v > 0) {
 	echo "O node file is " . $nodeFileO . "\n";
 }
 
-$st = "@@@ DATA START @@@";
-$et = "@@@ DATA END @@@";
+$input = [];
+$input['glycoct'] = $glycoct;
+$input['glycan_type'] = $glycan_type;
+
+$st = "@@@@@@";
+$et = "@@@@@@";
 if ($v > 1) echo "\nShowing intermediate data processing steps\n" . 
 	"Data processed and returned by java programs are enclosed by the following lines\n" . $st . "\n   data goes here\n" . $et . "\n";
 
@@ -102,13 +119,12 @@ if ($v > 3) echo "\nThe following result was returned by the java program." .
 	"\n" . $csvEncoding . "\n" . $et . "";
 
 if (strpos($csvEncoding, "glytoucan_ac") === false) {
-	$errorMsg = "";
-	if ($v > 0) {
-		$errorMsg = "\n\nThe java program did not return a CSV encoding; terminated execution of checkers.php";
-	} else {
-		$errorMsg = "\n{\n\"residues\": null\n}";
-	}	
-	exit($errorMsg);
+	$gctDecodeErr['type'] = "decoding error";
+	$gctDecodeErr['message'] = "GlycoCT could not be decoded";
+	array_push($error, $gctDecodeErr);
+	if ($v > 3) {
+		echo "\nGlycoCT could not be decoded";
+	}
 }
 
 
@@ -126,6 +142,15 @@ if ($v > 3) {
 	echo $st . "\n" . $result . "\n" . $et . "\n";
 }
 
+if (strlen($result) == 0) {
+	$result = $csvEncoding;
+	$mappingErr['type'] = "mapping error";
+	$mappingErr['message'] = "No residues in the structure could be mapped to the $glycan_type glycotree";
+	array_push($error, $mappingErr);
+	if ($v > 3) {
+		echo "\nNo residues in the structure could be mapped ";
+	}
+}
 // mappedStringArray is an array of strings, one for each residue
 $mappedStringArray = explode("\n", $result);
 if ($v > 4) {
@@ -185,10 +210,6 @@ if ($connection->connect_error) {
 
 $integratedData = integrateData($connection, $compositionArray, 'undetermined');
 
-$finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
-$finalData['temp_id'] = $tempID;
-$finalData['rule_violations'] = $integratedData['rule_violations'];
-
 // in each caveat, replace the string "undetermined" with $tempID
 $modCaveats = [];  // modified array of caveats
 foreach($integratedData['caveats'] as $caveat) {
@@ -199,33 +220,42 @@ foreach($integratedData['caveats'] as $caveat) {
 	array_push($modCaveats, $newCaveat);
 }
 
-$finalData['caveats'] = $modCaveats;
+$finalData['input'] = $input;
+$finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
+$finalData['temp_id'] = $tempID;
+if (sizeof($finalData) > 0) $finalData['error'] = $error;
+if (sizeof($integratedData['rule_violations']) > 0) $finalData['rule_violations'] = $integratedData['rule_violations'];
+if (sizeof($modCaveats) > 0) $finalData['caveats'] = $modCaveats;
 
-if ((strcmp($_GET['enz'], "false") == 0) && ($integratedData['residues'] != null) ) {
-	if ($v > 5) {
-		echo("\n Enzymes are not in scope of the query");
-		echo("\n### Rebuilding 'residues' array, removing 'enzymes' ###\n");
-	}
-	$tempResidues = [];
-	foreach($integratedData['residues'] as $x => $res_value) {
-		$thisResidue = [];
-		if ($v > 5) {
-			echo "\nBefore rebuilding, residue [" . $res_value['residue_id'] . "] has enzymes:\n";
-			print_r($res_value['enzymes']);
-		}
-		foreach($res_value as $y => $res_parameter) {
-			if (strcmp($y, "enzymes") != 0) $thisResidue[$y] = $res_parameter;
-		}
-		$thisResidue['enzymes'] = null;
-		array_push($tempResidues, $thisResidue);
-	}
-	$finalData['residues'] = $tempResidues;
-	if ($v > 5) {
-		echo "\n### all residues with enzymes removed ###\n";
-		print_r($finalData['residues']);	
-	}
+$finalData['residues'] = $integratedData['residues'];
+
+if (strcmp($_GET['enz'], "true") == 0) {
+	if ($v > 5) echo("\nEnzymes are included in scope of the query");
 } else {
-	$finalData['residues'] = $integratedData['residues'];
+	if ($integratedData['residues'] != null) {
+		if ($v > 5) {
+			echo("\n Enzymes are not included in scope of the query");
+			echo("\n### Rebuilding default 'residues' object, removing 'enzymes' property ###\n");
+		}
+		$tempResidues = [];
+		foreach($integratedData['residues'] as $x => $res_value) {
+			$thisResidue = [];
+			if ($v > 5) {
+				echo "\nBefore rebuilding, residue [" . $res_value['residue_id'] . "] has enzymes:\n";
+				print_r($res_value['enzymes']);
+			}
+			foreach($res_value as $y => $res_parameter) {
+				if (strcmp($y, "enzymes") != 0) $thisResidue[$y] = $res_parameter;
+			}
+			$thisResidue['enzymes'] = null;
+			array_push($tempResidues, $thisResidue);
+		}
+		$finalData['residues'] = $tempResidues;
+		if ($v > 5) {
+			echo "\n### all residues with enzymes removed ###\n";
+			print_r($finalData['residues']);	
+		}
+	}
 }
 
 	
@@ -270,6 +300,8 @@ if (strcmp($_GET['related'], "true") == 0) {
 
 	$finalData['related_glycans'] = $relatedGlycans;
 }
+
+
 
 if ($v > 4) echo "\n\nJSON result:\n";
 if ($v == 0) {

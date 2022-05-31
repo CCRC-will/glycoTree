@@ -101,7 +101,7 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 							  " (" . $resStructureArray[$focus] . ") in " .
 							  $value['taxonomy'] . " - missing residue " . $reqRes .
 							  " (" . $otherStructureArray[$reqRes] . ")");
-						$rawRuleData[$instance] = $value;
+						array_push($rawRuleData, $value);
 					}
 				}
 				if (strpos($value['logic'], "blocked by residue [other_residue]")) {
@@ -114,16 +114,16 @@ function getFeatures($resList, $accession, $homologs, $connection) {
 							  "; &nbsp; blocking: " . $blockRes .
 							  " (" . $otherStructureArray[$blockRes] . ")" .
 							  "; &nbsp; species: " . $value['taxonomy']);
-						$rawRuleData[$instance] = $value;
+						array_push($rawRuleData, $value);
 					}
 				}
 				if (strpos($value['logic'], "abiotic")) {
 					array_push($structureViolation, $value['assertion']); 
-					$rawRuleData[$instance] = $value;
+					array_push($rawRuleData, $value);
 				}
 				if (strpos($value['logic'], "limited to")) {
 					array_push($limitViolation, $value['assertion'] );
-					$rawRuleData[$instance] = $value;
+					array_push($rawRuleData, $value);
 				}
 			}
 		}
@@ -330,9 +330,7 @@ function integrateData($connection, $compArray, $accession) {
 	$match_stmt->bind_param("s", $accession);
 
 	$residues = [];
-	//foreach($compArray as $x => $resdata) {
-	//	print_r($resdata);
-	//}
+	
 	foreach($compArray as $i => $resdata) {
 		$enzymes = [];
 		$homologs = [];
@@ -346,6 +344,11 @@ function integrateData($connection, $compArray, $accession) {
 			$fullrow = array_merge($resdata, $canon_row);
 		}
 
+		if (is_null($fullrow['residue_name'])) {
+			$fullrow['glycotree'] = "none";
+		} else {
+			$fullrow['glycotree'] = explode("_", $fullrow['residue_name'])[0];
+		}
 		// query enzyme_mappings using the current residue_id
 		$map_stmt->execute(); 
 		$map_result = $map_stmt->get_result();

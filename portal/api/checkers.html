@@ -144,6 +144,7 @@ function generateResultsText(probeData) {
 	accession = id; // accession is a global variable used by json2svg; must be set before calling layout()
 	probeSVG = layout(probeTree); // probeSVG is global for download
 	var txt = "<h2>This structure has been assigned a temporary id: [" + id + "]</h2>";
+	txt += "Unmapped residues are 'greyed-out'<br>";
 	txt += probeSVG + "<br>";
 	
 	var caveats = probeData['caveats'];
@@ -263,10 +264,6 @@ function getProbeData() {
 	var enz = $("#enz").is(':checked');
 	var related = $("#related").is(':checked');
 
-	if (!gctEncoding.startsWith("RES")) {
-		$("#result_div").html("<h2>Invalid GlycoCT Encoding</h2>'" + gctEncoding + "'");
-		return(-1);
-	}
 	$("#result_div").html("<h2>Checking Structure</h2>");
 	var thisURL = "" + window.location; // force thisURL to be a String
 	var urlSplit = thisURL.split('/');
