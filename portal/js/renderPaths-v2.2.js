@@ -60,8 +60,8 @@ function	reactionHTMLtop(d, fromGlycan, toGlycan, multiple) {
 	tStr += "<body style='font-family: Helvetica, sans-serif;' >";
 	tStr += "<center><h3>Reaction Details</h3>";
 	tStr += "Species: <select onchange=\"speciate();\" id='species'>\
-	  <option value='human'>human</option>\
-	  <option value='mouse'>mouse</option>\
+	  <option value='Homo sapiens'>Homo sapiens</option>\
+	  <option value='Mus musculus'>Mus musculus</option>\
 	  <option value='all' selected>all</option>\
 	</select>";
 	tStr += "<table width='640px'>";

@@ -148,9 +148,16 @@ function generateResultsText(probeData) {
 	txt += probeSVG + "<br>";
 	
 	var caveats = probeData['caveats'];
-	for (i = 0; i < caveats.length; i++) {
+	
+	if (typeof caveats !== 'undefined') for (i = 0; i < caveats.length; i++) {
 		var cMsg = caveats[i]['msg'].replace(/undetermined/g, id);
 		txt += "<br><b>Caveat:</b> " + cMsg + "<br>";
+	}
+	
+	var errors = probeData['error'];
+	if (typeof errors !== 'undefined') for (i = 0; i < errors.length; i++) {
+		var eMsg = errors[i]['message'];
+		txt += "<br><b>Error:</b> " + eMsg + "<br>";
 	}
 	
 	var r = probeData['residues'];
@@ -278,7 +285,7 @@ function getProbeData() {
 	// url is global
 	url = urlBase + "checkers.php?glycoct=" + encoding + "&type=" + glycanType +
 		"&enz=" + enz + "&related=" + related + "&debug=" + debug;
-	var urlTxt = "<br><b>To examine results shown below:</b> &nbsp;";
+	var urlTxt = "<br><b>To examine results <i>THAT ARE SHOWN BELOW</i>:</b> &nbsp;";
 	urlTxt += "<button id='show_query'>Show Query</button> &nbsp;" +
 		" <button id='direct_query'>Direct Query</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;";
 	urlTxt += "<svg xmlns:xlink='http://www.w3.org/1999/xlink' \n\
@@ -305,13 +312,14 @@ xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='downloader'> \n\
 		} else { // process probe data
 			// probeData = JSON.parse(result); // global for download
 			probeData = result; // global for download
-			if (probeData.residues === null) {
-				$("#result_div").html("<h2>Data could not be mapped to (" +
-							glycanType + "-linked) glycoTree ");
+			if ((probeData.residues === null) || (typeof probeData.residues === 'undefined')) {
+				nRes = 0;
 			} else {
-				if (v > 4) console.log("Number of residues: " + probeData.residues.length);
-				processProbe(probeData);
+				nRes = probeData.residues.length;
 			}
+			if (v > 4) console.log("Number of residues detected: " + nRes);
+			processProbe(probeData);
+			
 		}
 	})
 	.done(function() {
@@ -551,8 +559,10 @@ $(document).ready(function() {
 	
 <label for="treeid">Choose a tree:</label>
 <select name="treeid" id="treeid">
-  <option value="N">N-linked glycan</option>
-  <option value="O">O-linked (mucin) glycan</option>
+  <option value="N">N-linked glycan tree</option>
+  <option value="O">O-linked (mucin) glycan tree </option>
+  <option value="">no tree</option>
+  <option value="f">unsupported tree</option>
 </select> <br>
 	
 <label for="glycoct">GlycoCT:</label><br>

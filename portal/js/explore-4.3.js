@@ -339,16 +339,6 @@ function setupResidueTable(tableName, tableData) {
 				"data": "site"
 			},
 			{ 
-				"title": "Found Only In",
-				"data": "limited_to",
-				"defaultContent": "---"
-			},
-			{ 
-				"title": "Not Found In",
-				"data": "not_found_in",
-				"defaultContent": "---"
-			},
-			{ 
 				"title": "Notes",
 				"data": "notes",
 				"defaultContent": "---"

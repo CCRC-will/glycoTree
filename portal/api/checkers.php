@@ -53,13 +53,21 @@ $error = [];
 
 if (is_null($glycoct) || (strlen($glycoct) < 1)) {
 	$gctErr['type'] = "input error";
-	$gctErr['message'] = "GlycoCT is absent or invalid";
+	$gctErr['message'] = "GlycoCT is absent";
 	array_push($error, $gctErr);
 }
-if (is_null($glycan_type) || (strlen($glycoct) < 1)) {
+
+if (is_null($glycan_type) || (strlen($glycan_type) < 1) ) {
 	$typeErr['type'] = "input error";
-	$typeErr['message'] = "glycan type is absent or invalid";
+	$typeErr['message'] = "glycan type ($glycan_type) is absent";
 	array_push($error, $typeErr);
+} else {
+	$supportedTypes = "/[NO]/";
+	if ((strlen($glycan_type) > 1) || preg_match($supportedTypes, $glycan_type) == 0) {
+		$typeErr['type'] = "input error";
+		$typeErr['message'] = "glycan type ($glycan_type) is not supported";
+		array_push($error, $typeErr);
+	}
 }
 
 if ($v > 0) {
@@ -145,7 +153,7 @@ if ($v > 3) {
 if (strlen($result) == 0) {
 	$result = $csvEncoding;
 	$mappingErr['type'] = "mapping error";
-	$mappingErr['message'] = "No residues in the structure could be mapped to the $glycan_type glycotree";
+	$mappingErr['message'] = "No residues in $tempID could be mapped to the $glycan_type-glycotree";
 	array_push($error, $mappingErr);
 	if ($v > 3) {
 		echo "\nNo residues in the structure could be mapped ";
@@ -223,16 +231,17 @@ foreach($integratedData['caveats'] as $caveat) {
 $finalData['input'] = $input;
 $finalData['glytoucan_ac'] = $integratedData['glytoucan_ac'];
 $finalData['temp_id'] = $tempID;
-if (sizeof($finalData) > 0) $finalData['error'] = $error;
+if (sizeof($error) > 0) $finalData['error'] = $error;
 if (sizeof($integratedData['rule_violations']) > 0) $finalData['rule_violations'] = $integratedData['rule_violations'];
 if (sizeof($modCaveats) > 0) $finalData['caveats'] = $modCaveats;
-
-$finalData['residues'] = $integratedData['residues'];
+if (isset($integratedData['residues']))
+	if (sizeof($integratedData['residues']) > 0)
+		$finalData['residues'] = $integratedData['residues'];
 
 if (strcmp($_GET['enz'], "true") == 0) {
 	if ($v > 5) echo("\nEnzymes are included in scope of the query");
 } else {
-	if ($integratedData['residues'] != null) {
+	if (isset($integratedData['residues'])) {
 		if ($v > 5) {
 			echo("\n Enzymes are not included in scope of the query");
 			echo("\n### Rebuilding default 'residues' object, removing 'enzymes' property ###\n");
