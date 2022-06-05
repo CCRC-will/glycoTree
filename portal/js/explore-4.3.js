@@ -599,15 +599,44 @@ function showCaveats(acc) {
 	var caveatTxt = "<center><h2>Caveats for Glycan " + acc + "</h2></center><ul>";
 	for (var i in caveats) {
 		var msg = caveats[i]['msg'];
+		
+		// enclose each residue_id in an anchor referring to method 'highlightResidue()'
+		var resStr = msg.match(/[NO][0-9]+/g);
+		var uniqueResStr = [...new Set(resStr)];
+		$.each(uniqueResStr, function(index, value) { 
+			var replacement = "<a href=\"javascript:highlightResidue('" + value + "');\">" + value + "</a>";
+			var regex = new RegExp(value, "g");
+			msg = msg.replace(regex, replacement);
+		});
+		
+		// put individual rule violations in a list
 		var htmlMsg = msg.replace(":", "<ul><li>");
 		htmlMsg = htmlMsg.replace(/\#/g, "</li><li>") + "</li></ul>";
-		console.log(htmlMsg);
+		if (v > 2) console.log("Caveat message:\n" + htmlMsg);
 		caveatTxt += "<li>" + htmlMsg + "</li>";
 	}
 	caveatTxt += "</ul> &nbsp; <a href=\"javascript:minimizeCaveats('" + acc + "');\">less ...</a>";
 	cavPanel.html(caveatTxt);
 	cavPanel.css("visibility","visible");
 	repositionInfo(acc);
+}
+
+function highlightResidue(resName) {
+	// highlights the residue within acc[0] whose id ends with resName
+	// acc[0] holds the accession of the reference glycan
+
+	var sd = $('#' + sDiv);
+	var regex = new RegExp(resName + "$");
+	var nodeToHighlight = sd.find('[class$=_node]').children().filter(function () {
+		return this.id.indexOf(acc[0]) > -1;
+	}).filter(function () {
+		return this.id.search(regex) > -1;
+	});
+	if (nodeToHighlight.length > 0) {
+		highlight(nodeToHighlight);
+	} else {
+		alert("Glycan " + acc[0] + " does NOT contain residue " + resName);
+	}
 }
 
 function repositionInfo(acc) {

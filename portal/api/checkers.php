@@ -151,12 +151,13 @@ if ($v > 3) {
 }
 
 if (strlen($result) == 0) {
+	// TreeBuilder failed, so use the raw $csvEncoding
 	$result = $csvEncoding;
 	$mappingErr['type'] = "mapping error";
 	$mappingErr['message'] = "No residues in $tempID could be mapped to the $glycan_type-glycotree";
 	array_push($error, $mappingErr);
 	if ($v > 3) {
-		echo "\nNo residues in the structure could be mapped ";
+		echo "\nNo residues in the structure could be mapped";
 	}
 }
 // mappedStringArray is an array of strings, one for each residue
@@ -176,24 +177,35 @@ foreach($mappedStringArray as $i => $resStr) {
 	// $residueAssociativeArray is an array of parameters describing the residue
 	$residueAssociativeArray = [];
 	if ($v > 4) echo "\n\nCSV string:\n    " . $resStr;
-	
+
+	$glycoctIndexPresent = false;
 	if ($i == 0) { // zeoth line holds names of parameters
 		foreach($resStringArray as $j => $parName) {
-			if ($j < 11) { // only use the first 11 parameters
 				$paramKeys[$j] = $parName;
-			}
+				if ($parName == "glycoct_index") $glycoctIndexPresent = true;
+		}
+		// add glycoct_index if not already added by TreeBuilder
+		if (!$glycoctIndexPresent) {
+			$paramKeys[sizeof($resStringArray)] = "glycoct_index";
+			if ($v > 4) echo "\nAdded glycoct_index to parameters";
 		}
 		if ($v > 4) {
 			echo "\n\nfirst csv string - parameter keys \n    ";
 			print_r($paramKeys);
 		}
-	} else if (sizeof($resStringArray) > 1)  { // do not process blank lines
+	} else if (sizeof($resStringArray) > 1)  { // process data lines but not blank lines
+		$glycoctIndexPresent = false;
 		foreach($resStringArray as $j => $parVal) {
-			if ( ($j < 11) && ($j > 1) ) { // use only selected parameters
+			if ($j > 1)  { 
 				$residueAssociativeArray[$paramKeys[$j]] = $parVal;
+				if ($paramKeys[$j] == "glycoct_index") $glycoctIndexPresent = true;
 			}
 		}
-		
+		// add glycoct_index value if not already added by TreeBuilder
+		if (!$glycoctIndexPresent) { 
+			if ($v > 4) echo "\nAdded glycoct_index value (glycoctIndexPresent is $glycoctIndexPresent)";
+			$residueAssociativeArray['glycoct_index'] = $residueAssociativeArray['residue_id'];
+		}
 		if ($v > 4) {
 			echo "\nassociative array from CSV string\n";
 			print_r($residueAssociativeArray);
@@ -261,7 +273,7 @@ if (strcmp($_GET['enz'], "true") == 0) {
 		}
 		$finalData['residues'] = $tempResidues;
 		if ($v > 5) {
-			echo "\n### all residues with enzymes removed ###\n";
+			echo "\n### all enzymes removed ###\n";
 			print_r($finalData['residues']);	
 		}
 	}
