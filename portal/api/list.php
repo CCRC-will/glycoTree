@@ -58,11 +58,20 @@ try {
 			  $query = "SELECT DISTINCT glytoucan_ac FROM compositions WHERE (name=? OR residue_name LIKE ?) AND residue_name NOT IN (SELECT residue_name FROM compositions WHERE residue_name LIKE '%NAc%' OR residue_name LIKE '%NGc%')";	
 		  }
 		  break;
+		case "mapped_example":
+		  // the following query retrieves glytoucan_ac and DP (ordered by DP)
+		  //   for each fully mapped glycan containing a specific residue (specified by $par)
+		  $query = "SELECT glytoucan_ac,count(DISTINCT residue_id) AS DP FROM compositions AS C1 WHERE EXISTS (SELECT glytoucan_ac FROM compositions AS C2 WHERE C1.glytoucan_ac = C2.glytoucan_ac AND residue_id=?) AND glytoucan_ac NOT IN (SELECT DISTINCT glytoucan_ac FROM compositions WHERE residue_name='unassigned') GROUP BY glytoucan_ac ORDER BY DP";
+		  
+		  $numPars = 1;
+		  break;
 		default:
 		  $query = "SELECT DISTINCT glytoucan_ac FROM compositions";
 	}
 	
-	
+	/* to get DPs of all glycans containing a specific residue
+	SELECT glytoucan_ac,count(DISTINCT residue_id) AS DP FROM compositions AS C1 WHERE EXISTS (SELECT glytoucan_ac FROM compositions AS C2 WHERE C1.glytoucan_ac = C2.glytoucan_ac AND residue_id='N53') GROUP BY glytoucan_ac;
+	*/
 	$stmt = $connection->prepare($query);	
 	if ($numPars === 1) {
 		$stmt->bind_param("s", $par);

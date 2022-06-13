@@ -11,11 +11,12 @@
 */
 
 // constants
-var v = 1; // verbosity of console.log
+var v = 0; // verbosity of console.log
 var nodeType = {'R':'residue', 'L':'link', 'LI':'text', 'C':'canvas', 'A':'annotation'};
 var greek = {'a': '&alpha;', 'b': '&beta;', 'x': '?','o': 'acyclic', 'n': ""};
 // data variables
 var acc = []; // an array of GlyTouCan accessions
+var hRes = ""; // residue_id of residue to hightlight on load
 var svgEncoding = [];
 var data = [];
 var selectedData = [];
@@ -328,11 +329,21 @@ function setupResidueTable(tableName, tableData) {
 			},
 			{ 
 				"title": "Residue ID",
-				"data": "residue_id"
+				"data": "residue_id",
+				render: function(data, type, row, meta) {
+					return "<a href=\"javascript:highlightResidue('" + data + "');\">" + data + "</a>"
+				}
 			},
 			{ 
 				"title": "Linked to Residue",
-				"data": "parent_id"
+				"data": "parent_id",
+				render: function(data, type, row, meta) {
+					if (data === "0") {
+						return data;
+					} else {
+						return "<a href=\"javascript:highlightResidue('" + data + "');\">" + data + "</a>"
+					}
+				}
 			},
 			{ 
 				"title": "Linkage Site",
@@ -621,21 +632,65 @@ function showCaveats(acc) {
 	repositionInfo(acc);
 }
 
-function highlightResidue(resName) {
-	// highlights the residue within acc[0] whose id ends with resName
-	// acc[0] holds the accession of the reference glycan
 
+function findNodeByResidueID(rid) {
+	// finds node in the reference glycan where residue_id=rid
 	var sd = $('#' + sDiv);
-	var regex = new RegExp(resName + "$");
-	var nodeToHighlight = sd.find('[class$=_node]').children().filter(function () {
+	var regex = new RegExp(rid + "$");
+	var foundNode = sd.find('[class$=_node]').children().filter(function () {
 		return this.id.indexOf(acc[0]) > -1;
 	}).filter(function () {
 		return this.id.search(regex) > -1;
 	});
+	return foundNode;
+} // end of method findNodeByResidueID()
+
+function showGlycanWithResidue(res1, missing) {
+	// retrieves and displays an example of a fully mapped glycan containing res1
+	//alert("res1 is " + res1);
+	var theURL = "api/list.php?mode=mapped_example&par=" + res1;
+	//var glycanList = null;
+	$.get(theURL, function(result) {
+		if (v > 3) {
+			console.log("result" + result);
+		}
+		if (theURL.includes(".json")) {
+			// jquery automatically parses files with extension '.json'
+			glycanList = result
+		} else {
+			// JSON.parse is not automatically invoked
+			glycanList = JSON.parse(result);
+		}
+		var glycanWithResidue = glycanList[0]["glytoucan_ac"];
+		//alert("found glycan: " + glycanWithResidue);
+		var missingMsg = "";
+		if (missing) {
+			missingMsg = "Glycan " + acc[0] + " does NOT contain residue " + res1;
+		}
+		if (confirm(missingMsg +
+			"\nClick OK to open a new tab showing residue " + res1 +
+				" in " + glycanWithResidue +
+				", the smallest fully-mapped glycan in the Sandbox DB that contains " + res1)) {
+					// executed upon clicking 'OK'
+    				window.open('explore.html?focus=' + glycanWithResidue +
+									'&residue=' + res1,'_blank');		
+			}
+	})
+	.fail(function() {
+		alert("File " + theURL + " failed");
+	});
+}
+
+function highlightResidue(resID) {
+	// highlights the residue within acc[0] whose id ends with resName
+	// acc[0] holds the accession of the reference glycan
+
+	var nodeToHighlight = findNodeByResidueID(resID);
 	if (nodeToHighlight.length > 0) {
 		highlight(nodeToHighlight);
 	} else {
-		alert("Glycan " + acc[0] + " does NOT contain residue " + resName);
+		// nodeToHighlight is NOT in the reference glycan (acc[0])
+		showGlycanWithResidue(resID, true);
 	}
 }
 
@@ -1418,9 +1473,15 @@ function processFiles() {
 		if (v > 2) console.log("##### Finished Setup #####");
 		$("#progressDiv").css("visibility","hidden");
 		if (allDataRequested == true)  {
-			// simulate click of probe glycan canvas 
-			var topCanvas = $('#' + sDiv).find("g")[1];
-			clickResponse(topCanvas);
+			if (hRes.length > 0) {
+				// simulate click of hRes node
+				var hResNode = findNodeByResidueID(hRes);
+				clickResponse(hResNode);
+			} else {
+				// simulate click of reference glycan canvas 
+				var topCanvas = $('#' + sDiv).find("g")[1];
+				clickResponse(topCanvas);			
+			}
 		}
 }
 
@@ -1459,7 +1520,6 @@ function dataReady() {
 	return((n1 > 0) && (n3 === n1));
 } // end of function dataReady()
 
-
 function wait2add() {
 	if (dataReady() == false) {
 		if (v > 3) console.log("  'reference glycan data loaded' is " +
@@ -1484,6 +1544,7 @@ function wait2add() {
 		}
 	}
 } // end of function wait2add()
+
 
 
 function wait2process () {
@@ -1563,17 +1624,29 @@ function initialize() {
 	$("#progressDiv").css("visibility","visible");
 	if (v > 0) console.log("##### Initializing #####");
 	setupAnimation('logo_svg', 'header');
-	var arg = window.location.search.substring(1).split("&")[0];
+	var arg = window.location.search.substring(1);
 	// setup arrays with input parameters
 	// account for http requests from html <form> (GET method)
-	var a = arg.split("=");
-	a = a[a.length - 1];
-	populateInput(a);	
-	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, a);
+	var foc = "";
+	var aParts = arg.split("&");
+	for (var i = 0; i < aParts.length; i++) {
+		aSplit = aParts[i].split("=");
+		switch(aSplit[0]) {
+			case("focus"):
+				foc = aSplit[1];
+				break;
+			case("residue"):
+				hRes = aSplit[1];
+				break;
+			default:
+				foc = aSplit[0];
+		}
+	}
+	populateInput(foc);	
+	mStr["listHead"] = templates["listHead"].replace(/@ACCESSION/g, foc);
 
 	// fetch configuration data
 	fetchConfiguration(configPath);
-
 	// fetch and process the images and data
 	getFiles(0);
 	wait2add();
