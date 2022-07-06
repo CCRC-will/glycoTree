@@ -330,6 +330,8 @@ if ($v == 0) {
 	header("Cache-Control: no-cache, must-revalidate");
 	header("Content-Disposition: attachment; filename=$tempID.json");
 	header("Content-type: application/json");
+	header("Access-Control-Allow-Origin: *");
+	header("Access-Control-Allow-Methods: POST, GET");
 }
 echo json_encode($finalData, JSON_PRETTY_PRINT);
 
