@@ -331,7 +331,7 @@ function setupResidueTable(tableName, tableData) {
 				"title": "Residue ID",
 				"data": "residue_id",
 				render: function(data, type, row, meta) {
-					return "<a href=\"javascript:highlightResidue('" + data + "');\">" + data + "</a>"
+					return "<a href=\"javascript:highlightResidue('" + data + "','" + acc[0] + "');\">" + data + "</a>"
 				}
 			},
 			{ 
@@ -341,7 +341,7 @@ function setupResidueTable(tableName, tableData) {
 					if (data === "0") {
 						return data;
 					} else {
-						return "<a href=\"javascript:highlightResidue('" + data + "');\">" + data + "</a>"
+						return "<a href=\"javascript:highlightResidue('" + data + "','" + acc[0] + "');\">" + data + "</a>"
 					}
 				}
 			},
@@ -615,7 +615,7 @@ function showCaveats(acc) {
 		var resStr = msg.match(/[NO][0-9]+/g);
 		var uniqueResStr = [...new Set(resStr)];
 		$.each(uniqueResStr, function(index, value) { 
-			var replacement = "<a href=\"javascript:highlightResidue('" + value + "');\">" + value + "</a>";
+			var replacement = "<a href=\"javascript:highlightResidue('" + value + "','" + acc + "');\">" + value + "</a>";
 			var regex = new RegExp(value, "g");
 			msg = msg.replace(regex, replacement);
 		});
@@ -633,15 +633,17 @@ function showCaveats(acc) {
 }
 
 
-function findNodeByResidueID(rid) {
-	// finds node in the reference glycan where residue_id=rid
+function findNodeByResidueID(rid, ac) {
+	// finds node in the glycan where accession=ac and residue_id=rid
+	if (v > 3) console.log("finding residue " + rid + " in glycan " + acc[0]);
 	var sd = $('#' + sDiv);
-	var regex = new RegExp(rid + "$");
+	var regex = new RegExp(":" + rid + "$"); // regex must begin with ":"
 	var foundNode = sd.find('[class$=_node]').children().filter(function () {
-		return this.id.indexOf(acc[0]) > -1;
+		return this.id.indexOf(ac) > -1;
 	}).filter(function () {
 		return this.id.search(regex) > -1;
 	});
+	if (v > 3) console.log("found residue " + foundNode[foundNode.length-1].id);
 	return foundNode;
 } // end of method findNodeByResidueID()
 
@@ -681,15 +683,14 @@ function showGlycanWithResidue(res1, missing) {
 	});
 }
 
-function highlightResidue(resID) {
-	// highlights the residue within acc[0] whose id ends with resName
-	// acc[0] holds the accession of the reference glycan
+function highlightResidue(resID, ac) {
+	// highlights the residue within ac whose id ends with resName
 
-	var nodeToHighlight = findNodeByResidueID(resID);
+	var nodeToHighlight = findNodeByResidueID(resID, ac);
 	if (nodeToHighlight.length > 0) {
 		highlight(nodeToHighlight);
 	} else {
-		// nodeToHighlight is NOT in the reference glycan (acc[0])
+		// nodeToHighlight is NOT in the glycan where accession = ac
 		showGlycanWithResidue(resID, true);
 	}
 }
@@ -1475,7 +1476,7 @@ function processFiles() {
 		if (allDataRequested == true)  {
 			if (hRes.length > 0) {
 				// simulate click of hRes node
-				var hResNode = findNodeByResidueID(hRes);
+				var hResNode = findNodeByResidueID(hRes, acc[0]);
 				clickResponse(hResNode);
 			} else {
 				// simulate click of reference glycan canvas 
